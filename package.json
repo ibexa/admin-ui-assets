@@ -1,5 +1,5 @@
 {
-    "name": "ezplatform-admin-ui-assets",
+    "name": "admin-ui-assets",
     "scripts": {
         "create-folder": "rm -rf Resources; mkdir Resources; mkdir Resources/public; mkdir Resources/public/vendors",
         "move-bootstrap": "cp -r node_modules/bootstrap Resources/public/vendors/bootstrap",
@@ -23,14 +23,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ezsystems/ezplatform-admin-ui-assets.git"
+        "url": "git+https://github.com/ibexa/admin-ui-assets.git"
     },
     "author": "eZ Systems",
     "license": "GPL-2.0",
     "bugs": {
-        "url": "https://github.com/ezsystems/ezplatform-admin-ui-assets/issues"
+        "url": "https://github.com/ibexa/admin-ui-assets/issues"
     },
-    "homepage": "https://github.com/ezsystems/ezplatform-admin-ui-assets#readme",
+    "homepage": "https://github.com/ibexa/admin-ui-assets#readme",
     "dependencies": {
         "@ckeditor/ckeditor5-alignment": "^26.0.0",
         "@ckeditor/ckeditor5-build-inline": "^26.0.0",

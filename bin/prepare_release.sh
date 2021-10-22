@@ -1,11 +1,11 @@
 #! /bin/sh
-# Script to prepare a ezplatform-admin-ui-assets bundle release
+# Script to prepare a admin-ui-assets bundle release
 
 [ ! -f "bin/prepare_release.sh" ] && echo "This script has to be run the root of the bundle" && exit 1
 
 print_usage()
 {
-    echo "Create a new version of ezplatform-admin-ui-assets bundle by creating a local tag"
+    echo "Create a new version of admin-ui-assets bundle by creating a local tag"
     echo "This script MUST be run from the bundle root directory. It will create"
     echo "a tag but this tag will NOT be pushed"
     echo ""
@@ -208,4 +208,4 @@ echo "The tag '$TAG' has been created, please check that everything is correct"
 echo "then you can run:"
 echo "  git push origin $TAG"
 echo "and create the corresponding release on Github"
-echo "https://github.com/ezsystems/ezplatform-admin-ui-assets/releases"
+echo "https://github.com/ibexa/admin-ui-assets/releases"
