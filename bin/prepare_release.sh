@@ -44,7 +44,7 @@ check_process()
 check_command "git"
 check_command "npm"
 
-VENDOR_DIR="Resources/public/vendors/"
+VENDOR_DIR="src/bundle/Resources/public/vendors/"
 ALLOY_DIR="$VENDOR_DIR/alloyeditor"
 ALLOY_NOTICE="$ALLOY_DIR/ALLOY_IN_EZPLATFORMADMINUIASSETS.txt"
 BOOTSTRAP_DIR="$VENDOR_DIR/bootstrap"
@@ -187,7 +187,7 @@ git checkout -q -b "$TMP_BRANCH" > /dev/null
 check_process "create the branch '$TMP_BRANCH'"
 
 echo "# Commiting"
-git add Resources > /dev/null
+git add src/bundle/Resources > /dev/null
 git commit -q -m "Version $VERSION"
 check_process "commit the assets"
 
