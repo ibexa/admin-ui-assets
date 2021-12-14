@@ -1,20 +1,29 @@
 {
-  "name": "ezsystems/ezplatform-admin-ui-assets",
-  "description": "External assets dependencies for EzPlatform AdminUI",
-  "license": "GPL-2.0",
-  "authors": [
-    {
-      "name": "eZ dev-team & eZ Community",
-      "homepage": "https://github.com/ezsystems/ezplatform/contributors"
+    "name": "ibexa/admin-ui-assets",
+    "description": "External assets dependencies for Ibexa AdminUI",
+    "license": "GPL-2.0",
+    "replace": {
+        "ezsystems/ezplatform-admin-ui-assets": "*"
+    },
+    "authors": [
+        {
+            "name": "eZ dev-team & eZ Community",
+            "homepage": "https://github.com/ezsystems/ezplatform/contributors"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "symfony/http-kernel": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "EzSystems\\EzPlatformAdminUiAssetsBundle\\": "/",
+            "Ibexa\\Bundle\\AdminUiAssets\\": "src/bundle/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "4.0.x-dev"
+        }
     }
-  ],
-  "require": {
-    "php": "^7.3 || ^8.0",
-    "symfony/http-kernel": "^5.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "EzSystems\\EzPlatformAdminUiAssetsBundle\\": "/"
-    }
-  }
 }
