@@ -1,0 +1,93 @@
+{
+  "_from": "@ckeditor/ckeditor5-theme-lark@31.1.0",
+  "_id": "@ckeditor/ckeditor5-theme-lark@31.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-fPtDEMmr7HFS3w9X1fr2ipzQv7DeVYF4vyJjybhsQht1Stoa8w7T8By7k+/5h7HIl2/EjHP4P1oPuMGXaXV9OA==",
+  "_location": "/@ckeditor/ckeditor5-theme-lark",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-theme-lark@31.1.0",
+    "name": "@ckeditor/ckeditor5-theme-lark",
+    "escapedName": "@ckeditor%2fckeditor5-theme-lark",
+    "scope": "@ckeditor",
+    "rawSpec": "31.1.0",
+    "saveSpec": null,
+    "fetchSpec": "31.1.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-theme-lark/-/ckeditor5-theme-lark-31.1.0.tgz",
+  "_shasum": "806e9e1feced6ce7ef553077e0a201682da43317",
+  "_spec": "@ckeditor/ckeditor5-theme-lark@31.1.0",
+  "_where": "/Users/dariuszszut/projects/ibexa-commerce.v4/vendor/ibexa/admin-ui-assets",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@ckeditor/ckeditor5-ui": "^31.1.0"
+  },
+  "deprecated": false,
+  "description": "A bright theme for CKEditor 5.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-basic-styles": "^31.1.0",
+    "@ckeditor/ckeditor5-ckfinder": "^31.1.0",
+    "@ckeditor/ckeditor5-code-block": "^31.1.0",
+    "@ckeditor/ckeditor5-core": "^31.1.0",
+    "@ckeditor/ckeditor5-editor-balloon": "^31.1.0",
+    "@ckeditor/ckeditor5-editor-classic": "^31.1.0",
+    "@ckeditor/ckeditor5-find-and-replace": "^31.1.0",
+    "@ckeditor/ckeditor5-font": "^31.1.0",
+    "@ckeditor/ckeditor5-heading": "^31.1.0",
+    "@ckeditor/ckeditor5-highlight": "^31.1.0",
+    "@ckeditor/ckeditor5-html-embed": "^31.1.0",
+    "@ckeditor/ckeditor5-indent": "^31.1.0",
+    "@ckeditor/ckeditor5-link": "^31.1.0",
+    "@ckeditor/ckeditor5-list": "^31.1.0",
+    "@ckeditor/ckeditor5-media-embed": "^31.1.0",
+    "@ckeditor/ckeditor5-page-break": "^31.1.0",
+    "@ckeditor/ckeditor5-paragraph": "^31.1.0",
+    "@ckeditor/ckeditor5-remove-format": "^31.1.0",
+    "@ckeditor/ckeditor5-restricted-editing": "^31.1.0",
+    "@ckeditor/ckeditor5-select-all": "^31.1.0",
+    "@ckeditor/ckeditor5-source-editing": "^31.1.0",
+    "@ckeditor/ckeditor5-special-characters": "^31.1.0",
+    "@ckeditor/ckeditor5-table": "^31.1.0",
+    "@ckeditor/ckeditor5-undo": "^31.1.0",
+    "@ckeditor/ckeditor5-utils": "^31.1.0",
+    "ckeditor5": "^31.1.0"
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src",
+    "theme",
+    "ckeditor5-metadata.json"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-theme"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "./theme/theme.css",
+  "name": "@ckeditor/ckeditor5-theme-lark",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-theme-lark"
+  },
+  "version": "31.1.0"
+}
