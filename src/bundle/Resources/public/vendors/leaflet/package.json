@@ -1,0 +1,175 @@
+{
+  "_from": "leaflet@^1.7.1",
+  "_id": "leaflet@1.8.0",
+  "_inBundle": false,
+  "_integrity": "sha512-gwhMjFCQiYs3x/Sf+d49f10ERXaEFCPr+nVTryhAW8DWbMGqJqt9G4XuIaHmFW08zYvhgdzqXGr8AlW8v8dQkA==",
+  "_location": "/leaflet",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "leaflet@^1.7.1",
+    "name": "leaflet",
+    "escapedName": "leaflet",
+    "rawSpec": "^1.7.1",
+    "saveSpec": null,
+    "fetchSpec": "^1.7.1"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/leaflet/-/leaflet-1.8.0.tgz",
+  "_shasum": "4615db4a22a304e8e692cae9270b983b38a2055e",
+  "_spec": "leaflet@^1.7.1",
+  "_where": "/Users/nattfarinn/Projects/ibexa/commerce/vendor/ibexa/admin-ui-assets",
+  "bugs": {
+    "url": "https://github.com/Leaflet/Leaflet/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "JavaScript library for mobile-friendly interactive maps",
+  "devDependencies": {
+    "@rollup/plugin-json": "^4.1.0",
+    "bundlemon": "^1.3.0",
+    "eslint": "^8.10.0",
+    "eslint-config-mourner": "^2.0.3",
+    "eslint-plugin-script-tags": "^0.5.0",
+    "git-rev-sync": "^3.0.2",
+    "happen": "~0.3.2",
+    "karma": "^6.3.17",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-edge-launcher": "^0.4.2",
+    "karma-expect": "^1.1.3",
+    "karma-firefox-launcher": "^2.1.2",
+    "karma-ie-launcher": "^1.0.0",
+    "karma-mocha": "^2.0.1",
+    "karma-rollup-preprocessor": "^7.0.8",
+    "karma-safari-launcher": "~1.0.0",
+    "karma-sinon": "^1.0.5",
+    "leafdoc": "^2.3.0",
+    "mocha": "^9.2.1",
+    "prosthetic-hand": "^1.4.0",
+    "rollup": "^2.70.0",
+    "rollup-plugin-git-version": "^0.3.1",
+    "sinon": "^7.5.0",
+    "ssri": "^9.0.0",
+    "uglify-js": "^3.15.2"
+  },
+  "eslintConfig": {
+    "ignorePatterns": [
+      "dist",
+      "debug",
+      "docs/docs/highlight",
+      "docs/SlavaUkraini",
+      "docs/examples/choropleth/us-states.js",
+      "docs/examples/geojson/sample-geojson.js",
+      "docs/examples/map-panes/eu-countries.js",
+      "docs/examples/extending/extending-2-layers.md",
+      "docs/_posts/2012*",
+      "docs/_site"
+    ],
+    "root": true,
+    "globals": {
+      "L": true
+    },
+    "env": {
+      "commonjs": true,
+      "amd": true,
+      "node": false
+    },
+    "extends": "mourner",
+    "plugins": [
+      "script-tags"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "rules": {
+      "linebreak-style": [
+        0,
+        "unix"
+      ],
+      "no-mixed-spaces-and-tabs": [
+        2,
+        "smart-tabs"
+      ],
+      "indent": [
+        2,
+        "tab",
+        {
+          "VariableDeclarator": 0,
+          "flatTernaryExpressions": true
+        }
+      ],
+      "curly": 2,
+      "spaced-comment": 2,
+      "strict": 0,
+      "wrap-iife": 0,
+      "key-spacing": 0,
+      "consistent-return": 0,
+      "no-unused-expressions": [
+        "error",
+        {
+          "allowShortCircuit": true
+        }
+      ]
+    },
+    "overrides": [
+      {
+        "files": [
+          "build/**/*"
+        ],
+        "env": {
+          "node": true
+        },
+        "rules": {
+          "global-require": 0
+        }
+      },
+      {
+        "files": [
+          "*.md"
+        ],
+        "rules": {
+          "eol-last": 0,
+          "no-unused-vars": 0
+        }
+      }
+    ]
+  },
+  "files": [
+    "dist",
+    "src",
+    "!dist/leaflet.zip",
+    "!*.leafdoc",
+    "CHANGELOG.md"
+  ],
+  "homepage": "https://leafletjs.com/",
+  "keywords": [
+    "gis",
+    "map"
+  ],
+  "license": "BSD-2-Clause",
+  "main": "dist/leaflet-src.js",
+  "name": "leaflet",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Leaflet/Leaflet.git"
+  },
+  "scripts": {
+    "build": "npm run rollup && npm run uglify",
+    "bundlemon": "bundlemon --subProject no-compression --defaultCompression none && bundlemon --subProject gzip-compression --defaultCompression gzip",
+    "docs": "node ./build/docs.js",
+    "integrity": "node ./build/integrity.js",
+    "lint": "eslint .",
+    "lintfix": "npm run lint -- --fix",
+    "rollup": "rollup -c build/rollup-config.js",
+    "serve": "cd docs && bundle exec jekyll serve",
+    "test": "karma start ./spec/karma.conf.js",
+    "uglify": "uglifyjs dist/leaflet-src.js -c -m -o dist/leaflet.js --source-map filename=dist/leaflet.js.map --source-map content=dist/leaflet-src.js.map --source-map url=leaflet.js.map --comments",
+    "watch": "rollup -w -c build/rollup-config.js"
+  },
+  "style": "dist/leaflet.css",
+  "version": "1.8.0"
+}

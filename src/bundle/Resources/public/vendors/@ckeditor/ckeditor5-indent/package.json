@@ -1,0 +1,83 @@
+{
+  "_from": "@ckeditor/ckeditor5-indent@^31.1.0",
+  "_id": "@ckeditor/ckeditor5-indent@31.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-kHme0J60/y8NCD2VBkYPY0fb3ypx1FqlE1Dt+2rujd2d+boSbML72eAkDDhHODcBohUDyudjm8wflJSsadBbhw==",
+  "_location": "/@ckeditor/ckeditor5-indent",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-indent@^31.1.0",
+    "name": "@ckeditor/ckeditor5-indent",
+    "escapedName": "@ckeditor%2fckeditor5-indent",
+    "scope": "@ckeditor",
+    "rawSpec": "^31.1.0",
+    "saveSpec": null,
+    "fetchSpec": "^31.1.0"
+  },
+  "_requiredBy": [
+    "/@ckeditor/ckeditor5-build-inline"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-indent/-/ckeditor5-indent-31.1.0.tgz",
+  "_shasum": "ce0422071a8b04b18bb5e35c3afb620d4107e773",
+  "_spec": "@ckeditor/ckeditor5-indent@^31.1.0",
+  "_where": "/Users/nattfarinn/Projects/ibexa/commerce/vendor/ibexa/admin-ui-assets/node_modules/@ckeditor/ckeditor5-build-inline",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "ckeditor5": "^31.1.0"
+  },
+  "deprecated": false,
+  "description": "Block indentation feature for CKEditor 5.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-core": "^31.1.0",
+    "@ckeditor/ckeditor5-dev-utils": "^26.0.0",
+    "@ckeditor/ckeditor5-editor-classic": "^31.1.0",
+    "@ckeditor/ckeditor5-engine": "^31.1.0",
+    "@ckeditor/ckeditor5-heading": "^31.1.0",
+    "@ckeditor/ckeditor5-paragraph": "^31.1.0",
+    "@ckeditor/ckeditor5-theme-lark": "^31.1.0",
+    "@ckeditor/ckeditor5-ui": "^31.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src",
+    "theme",
+    "build",
+    "ckeditor5-metadata.json"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-feature",
+    "ckeditor5-plugin",
+    "ckeditor5-dll"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "src/index.js",
+  "name": "@ckeditor/ckeditor5-indent",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-indent"
+  },
+  "scripts": {
+    "dll:build": "webpack"
+  },
+  "version": "31.1.0"
+}
