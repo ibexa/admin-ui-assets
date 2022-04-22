@@ -1,0 +1,91 @@
+{
+  "_from": "@ckeditor/ckeditor5-dev-utils@^27.4.0",
+  "_id": "@ckeditor/ckeditor5-dev-utils@27.4.0",
+  "_inBundle": false,
+  "_integrity": "sha512-Ro+HwQdVCbCQbcqVYud+QQr4XBf1QqoSFF7Cst61cHACv2LofEAu6CaXqTYVE8yAkNEnATcBDrQwRVtJ64odrg==",
+  "_location": "/@ckeditor/ckeditor5-dev-utils",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-dev-utils@^27.4.0",
+    "name": "@ckeditor/ckeditor5-dev-utils",
+    "escapedName": "@ckeditor%2fckeditor5-dev-utils",
+    "scope": "@ckeditor",
+    "rawSpec": "^27.4.0",
+    "saveSpec": null,
+    "fetchSpec": "^27.4.0"
+  },
+  "_requiredBy": [
+    "/",
+    "/@ckeditor/ckeditor5-dev-webpack-plugin"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-dev-utils/-/ckeditor5-dev-utils-27.4.0.tgz",
+  "_shasum": "1ebce28b38e14dbfc99a51a8316c9eab536e8140",
+  "_spec": "@ckeditor/ckeditor5-dev-utils@^27.4.0",
+  "_where": "/Users/nattfarinn/Projects/ibexa/commerce/vendor/ibexa/admin-ui-assets",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@ckeditor/ckeditor5-dev-webpack-plugin": "^27.4.0",
+    "acorn": "^6.2.1",
+    "acorn-walk": "^6.2.0",
+    "chalk": "^3.0.0",
+    "cli-cursor": "^3.1.0",
+    "cli-spinners": "^2.6.1",
+    "cssnano": "^4.0.0",
+    "del": "^5.0.0",
+    "escodegen": "^1.9.0",
+    "fs-extra": "^8.1.0",
+    "is-interactive": "^1.0.0",
+    "javascript-stringify": "^1.6.0",
+    "pofile": "^1.0.9",
+    "postcss": "^7.0.39",
+    "postcss-import": "^12.0.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-mixins": "^6.2.0",
+    "postcss-nesting": "^7.0.0",
+    "raw-loader": "^4.0.1",
+    "shelljs": "^0.8.1",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^4.2.3",
+    "through2": "^3.0.1"
+  },
+  "deprecated": false,
+  "description": "Utils for CKEditor 5 development tools packages.",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "lodash": "^4.17.15",
+    "mockery": "^2.1.0",
+    "proxyquire": "^2.1.0",
+    "sinon": "^7.3.2",
+    "vinyl": "^2.1.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lib"
+  ],
+  "homepage": "https://github.com/ckeditor/ckeditor5-dev/tree/master/packages/ckeditor5-dev-utils",
+  "keywords": [],
+  "license": "GPL-2.0-or-later",
+  "main": "lib/index.js",
+  "name": "@ckeditor/ckeditor5-dev-utils",
+  "peerDependencies": {
+    "webpack": "^4.43.0 || ^5.24.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5-dev.git",
+    "directory": "packages/ckeditor5-dev-utils"
+  },
+  "version": "27.4.0"
+}
