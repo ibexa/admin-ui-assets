@@ -1,7 +1,7 @@
 {
     "name": "admin-ui-assets",
     "scripts": {
-        "create-folder": "rm -rf src/bundle/Resources; mkdir src/bundle/Resources; mkdir src/bundle/Resources/public; mkdir src/bundle/Resources/public/vendors",
+        "create-folder": "rm -rf src/bundle/Resources/public/vendors;  mkdir src/bundle/Resources/public/vendors",
         "move-bootstrap": "cp -r node_modules/bootstrap src/bundle/Resources/public/vendors/bootstrap",
         "move-alloyeditor": "cp -r node_modules/alloyeditor src/bundle/Resources/public/vendors/alloyeditor",
         "move-leaflet": "cp -r node_modules/leaflet src/bundle/Resources/public/vendors/leaflet",
