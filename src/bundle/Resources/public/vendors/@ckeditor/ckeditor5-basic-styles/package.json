@@ -1,0 +1,84 @@
+{
+  "_from": "@ckeditor/ckeditor5-basic-styles@^31.1.0",
+  "_id": "@ckeditor/ckeditor5-basic-styles@31.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-NqxlHwAN14istEMpIYgwRHljs7DHvntWE9k9VxThNjSUeWedv5JmQgyMXnexXwm2GY/K4Sx1wT6/FrlVsJq4NQ==",
+  "_location": "/@ckeditor/ckeditor5-basic-styles",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-basic-styles@^31.1.0",
+    "name": "@ckeditor/ckeditor5-basic-styles",
+    "escapedName": "@ckeditor%2fckeditor5-basic-styles",
+    "scope": "@ckeditor",
+    "rawSpec": "^31.1.0",
+    "saveSpec": null,
+    "fetchSpec": "^31.1.0"
+  },
+  "_requiredBy": [
+    "/@ckeditor/ckeditor5-build-inline"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-basic-styles/-/ckeditor5-basic-styles-31.1.0.tgz",
+  "_shasum": "2c454d62dad2d5e4c7297cc0a458b7064fdefac3",
+  "_spec": "@ckeditor/ckeditor5-basic-styles@^31.1.0",
+  "_where": "/Users/dariuszszut/projects/temp/nig/vendor/ibexa/admin-ui-assets/node_modules/@ckeditor/ckeditor5-build-inline",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "ckeditor5": "^31.1.0"
+  },
+  "deprecated": false,
+  "description": "Basic styles feature for CKEditor 5.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-core": "^31.1.0",
+    "@ckeditor/ckeditor5-dev-utils": "^26.0.0",
+    "@ckeditor/ckeditor5-editor-classic": "^31.1.0",
+    "@ckeditor/ckeditor5-engine": "^31.1.0",
+    "@ckeditor/ckeditor5-essentials": "^31.1.0",
+    "@ckeditor/ckeditor5-paragraph": "^31.1.0",
+    "@ckeditor/ckeditor5-theme-lark": "^31.1.0",
+    "@ckeditor/ckeditor5-ui": "^31.1.0",
+    "@ckeditor/ckeditor5-utils": "^31.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src",
+    "theme",
+    "build",
+    "ckeditor5-metadata.json"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-feature",
+    "ckeditor5-plugin",
+    "ckeditor5-dll"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "src/index.js",
+  "name": "@ckeditor/ckeditor5-basic-styles",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-basic-styles"
+  },
+  "scripts": {
+    "dll:build": "webpack"
+  },
+  "version": "31.1.0"
+}
