@@ -45,8 +45,6 @@ check_command "git"
 check_command "npm"
 
 VENDOR_DIR="src/bundle/Resources/public/vendors/"
-ALLOY_DIR="$VENDOR_DIR/alloyeditor"
-ALLOY_NOTICE="$ALLOY_DIR/ALLOY_IN_EZPLATFORMADMINUIASSETS.txt"
 BOOTSTRAP_DIR="$VENDOR_DIR/bootstrap"
 BOOTSTRAP_NOTICE="$BOOTSTRAP_DIR/BOOTSTRAP_IN_EZPLATFORMADMINUIASSETS.txt"
 FLATPICKR_DIR="$VENDOR_DIR/flatpickr"
@@ -91,12 +89,6 @@ rm -rf "package-lock.json"
 echo "# Installing dependendencies"
 npm install
 npm run prepare-release
-
-echo "# Removing unused files from Alloy Editor"
-rm -rf "$ALLOY_DIR/api" "$ALLOY_DIR/api-theme" "$ALLOY_DIR/gulp-tasks" "$ALLOY_DIR/lib" "$ALLOY_DIR/src" "$ALLOY_DIR/test" "$ALLOY_DIR/dist/.gitignore" $ALLOY_DIR/dist/alloy-editor/alloy-editor-all-min.js $ALLOY_DIR/dist/alloy-editor/alloy-editor-all.js $ALLOY_DIR/dist/alloy-editor/alloy-editor-core-min.js $ALLOY_DIR/dist/alloy-editor/alloy-editor-core.js $ALLOY_DIR/dist/alloy-editor/alloy-editor-no-ckeditor-min.js $ALLOY_DIR/dist/alloy-editor/alloy-editor-no-ckeditor.js $ALLOY_DIR/dist/alloy-editor/alloy-editor-no-react.js $ALLOY_DIR/dist/alloy-editor/BREAKING_CHANGES.md $ALLOY_DIR/dist/alloy-editor/CHANGELOG.md $ALLOY_DIR/.editorconfig $ALLOY_DIR/.eslintrc.js $ALLOY_DIR/.jshintrc $ALLOY_DIR/.travis.yml $ALLOY_DIR/bower.json $ALLOY_DIR/BREAKING_CHANGES.md $ALLOY_DIR/CHANGELOG.md $ALLOY_DIR/gulpfile.js $ALLOY_DIR/README.md $ALLOY_DIR/yarn.lock
-check_process "clean alloyeditor"
-echo "This is a customized Alloy Editor version." > $ALLOY_NOTICE
-echo "To decrease the size of the bundle, it includes production-only files" >> $ALLOY_NOTICE
 
 echo "# Removing unused files from Bootstrap"
 rm -rf "$BOOTSTRAP_DIR/build" "$BOOTSTRAP_DIR/dist/css" "$BOOTSTRAP_DIR/js" $BOOTSTRAP_DIR/dist/js/bootstrap.js $BOOTSTRAP_DIR/dist/js/bootstrap.js.map $BOOTSTRAP_DIR/dist/js/bootstrap.bundle.js $BOOTSTRAP_DIR/dist/js/bootstrap.bundle.js.map $BOOTSTRAP_DIR/dist/js/bootstrap.bundle.min.js $BOOTSTRAP_DIR/dist/js/bootstrap.bundle.min.js.map $BOOTSTRAP_DIR/.eslintignore $BOOTSTRAP_DIR/Gemfile
