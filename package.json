@@ -3,7 +3,7 @@
     "scripts": {
         "create-folder": "rm -rf src/bundle/Resources/public/vendors;  mkdir src/bundle/Resources/public/vendors",
         "move-bootstrap": "cp -r node_modules/bootstrap src/bundle/Resources/public/vendors/bootstrap",
-        "move-jquery": "cp -r node_modules/jquery Resources/public/vendors/jquery",
+        "move-jquery": "cp -r node_modules/jquery src/bundle/Resources/public/vendors/jquery",
         "move-leaflet": "cp -r node_modules/leaflet src/bundle/Resources/public/vendors/leaflet",
         "move-react": "cp -r node_modules/react src/bundle/Resources/public/vendors/react",
         "move-react-dom": "cp -r node_modules/react-dom src/bundle/Resources/public/vendors/react-dom",
