@@ -3,6 +3,7 @@
     "scripts": {
         "create-folder": "rm -rf src/bundle/Resources/public/vendors;  mkdir src/bundle/Resources/public/vendors",
         "move-bootstrap": "cp -r node_modules/bootstrap src/bundle/Resources/public/vendors/bootstrap",
+        "move-jquery": "cp -r node_modules/jquery Resources/public/vendors/jquery",
         "move-leaflet": "cp -r node_modules/leaflet src/bundle/Resources/public/vendors/leaflet",
         "move-react": "cp -r node_modules/react src/bundle/Resources/public/vendors/react",
         "move-react-dom": "cp -r node_modules/react-dom src/bundle/Resources/public/vendors/react-dom",
@@ -18,7 +19,7 @@
         "move-chart-js": "cp -r node_modules/chart.js src/bundle/Resources/public/vendors/chart-js",
         "move-js-md5": "cp -r node_modules/js-md5 src/bundle/Resources/public/vendors/js-md5",
         "move-ckeditor5": "cp -r node_modules/@ckeditor src/bundle/Resources/public/vendors/@ckeditor",
-        "prepare-release": "npm run create-folder; npm run move-bootstrap; npm run move-leaflet; npm run move-react; npm run move-react-dom; npm run move-taggify; npm run move-popperjs; npm run move-flatpickr; npm run move-create-react-class; npm run move-prop-types; npm run move-moment; npm run move-moment-timezone; npm run move-d3; npm run move-dagre-d3; npm run move-chart-js; npm run move-js-md5; npm run move-ckeditor5"
+        "prepare-release": "npm run create-folder; npm run move-bootstrap; npm run move-jquery; npm run move-leaflet; npm run move-react; npm run move-react-dom; npm run move-taggify; npm run move-popperjs; npm run move-flatpickr; npm run move-create-react-class; npm run move-prop-types; npm run move-moment; npm run move-moment-timezone; npm run move-d3; npm run move-dagre-d3; npm run move-chart-js; npm run move-js-md5; npm run move-ckeditor5"
     },
     "repository": {
         "type": "git",
@@ -43,6 +44,7 @@
         "d3": "^5.16.0",
         "dagre-d3": "^0.6.4",
         "flatpickr": "^4.6.13",
+        "jquery": "^3.5.1",
         "js-md5": "0.7.3",
         "leaflet": "^1.8.0",
         "moment-timezone": "^0.5.34",

@@ -49,6 +49,8 @@ BOOTSTRAP_DIR="$VENDOR_DIR/bootstrap"
 BOOTSTRAP_NOTICE="$BOOTSTRAP_DIR/BOOTSTRAP_IN_EZPLATFORMADMINUIASSETS.txt"
 FLATPICKR_DIR="$VENDOR_DIR/flatpickr"
 FLATPICKR_NOTICE="$FLATPICKR_DIR/FLATPICKR_IN_EZPLATFORMADMINUIASSETS.txt"
+JQUERY_DIR="$VENDOR_DIR/jquery"
+JQUERY_NOTICE="$JQUERY_DIR/JQUERY_IN_EZPLATFORMADMINUIASSETS.txt"
 LEAFLET_DIR="$VENDOR_DIR/leaflet"
 LEAFLET_NOTICE="$LEAFLET_DIR/LEAFLET_IN_EZPLATFORMADMINUIASSETS.txt"
 POPPER_DIR="$VENDOR_DIR/@popperjs"
@@ -101,6 +103,12 @@ rm -rf "$FLATPICKR_DIR/src" $FLATPICKR_DIR/dist/flatpickr.css $FLATPICKR_DIR/dis
 check_process "clean flatpickr"
 echo "This is a customized Flatpickr version." > $FLATPICKR_NOTICE
 echo "To decrease the size of the bundle, it includes production-only files" >> $FLATPICKR_NOTICE
+
+echo "# Removing unused files from jQuery"
+rm -rf "$JQUERY_DIR/external" "$JQUERY_DIR/src" $JQUERY_DIR/dist/core.js $JQUERY_DIR/dist/jquery.js $JQUERY_DIR/dist/jquery.min.map $JQUERY_DIR/dist/jquery.slim.js $JQUERY_DIR/dist/jquery.slim.min.js $JQUERY_DIR/dist/jquery.slim.min.map $JQUERY_DIR/AUTHORS.txt $JQUERY_DIR/bower.json $JQUERY_DIR/README.md
+check_process "clean jquery"
+echo "This is a customized jQuery version." > $JQUERY_NOTICE
+echo "To decrease the size of the bundle, it includes production-only files" >> $JQUERY_NOTICE
 
 echo "# Removing unused files from Leaflet"
 rm -rf "$LEAFLET_DIR/src" $LEAFLET_DIR/CHANGELOG.md $LEAFLET_DIR/README.md
