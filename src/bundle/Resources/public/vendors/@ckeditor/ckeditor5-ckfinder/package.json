@@ -1,0 +1,88 @@
+{
+  "_from": "@ckeditor/ckeditor5-ckfinder@^35.3.2",
+  "_id": "@ckeditor/ckeditor5-ckfinder@35.3.2",
+  "_inBundle": false,
+  "_integrity": "sha512-AGVshHFOE+Hd+PrjaoscEQeAj92LTRQkl/uXDLxsTDALV9VHm6bBzgCEYLDXf3e/k10Zxcnv6gNm3hi4FaOFMg==",
+  "_location": "/@ckeditor/ckeditor5-ckfinder",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-ckfinder@^35.3.2",
+    "name": "@ckeditor/ckeditor5-ckfinder",
+    "escapedName": "@ckeditor%2fckeditor5-ckfinder",
+    "scope": "@ckeditor",
+    "rawSpec": "^35.3.2",
+    "saveSpec": null,
+    "fetchSpec": "^35.3.2"
+  },
+  "_requiredBy": [
+    "/@ckeditor/ckeditor5-build-inline"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-ckfinder/-/ckeditor5-ckfinder-35.3.2.tgz",
+  "_shasum": "ae47a7305768d86068ad44bc22c5128df2bb8138",
+  "_spec": "@ckeditor/ckeditor5-ckfinder@^35.3.2",
+  "_where": "/Users/dariuszszut/projects/ibexa-commerce.v4/vendor/ibexa/admin-ui-assets/node_modules/@ckeditor/ckeditor5-build-inline",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "ckeditor5": "^35.3.2"
+  },
+  "deprecated": false,
+  "description": "CKFinder integration for CKEditor 5.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-adapter-ckfinder": "^35.3.2",
+    "@ckeditor/ckeditor5-clipboard": "^35.3.2",
+    "@ckeditor/ckeditor5-core": "^35.3.2",
+    "@ckeditor/ckeditor5-dev-utils": "^31.0.0",
+    "@ckeditor/ckeditor5-editor-classic": "^35.3.2",
+    "@ckeditor/ckeditor5-engine": "^35.3.2",
+    "@ckeditor/ckeditor5-image": "^35.3.2",
+    "@ckeditor/ckeditor5-link": "^35.3.2",
+    "@ckeditor/ckeditor5-paragraph": "^35.3.2",
+    "@ckeditor/ckeditor5-theme-lark": "^35.3.2",
+    "@ckeditor/ckeditor5-ui": "^35.3.2",
+    "@ckeditor/ckeditor5-utils": "^35.3.2",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src",
+    "theme",
+    "build",
+    "ckeditor5-metadata.json",
+    "CHANGELOG.md"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-feature",
+    "ckeditor5-plugin",
+    "ckeditor5-dll"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "src/index.js",
+  "name": "@ckeditor/ckeditor5-ckfinder",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-ckfinder"
+  },
+  "scripts": {
+    "dll:build": "webpack"
+  },
+  "version": "35.3.2"
+}

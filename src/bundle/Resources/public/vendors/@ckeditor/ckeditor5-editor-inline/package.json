@@ -1,0 +1,89 @@
+{
+  "_from": "@ckeditor/ckeditor5-editor-inline@^35.3.2",
+  "_id": "@ckeditor/ckeditor5-editor-inline@35.3.2",
+  "_inBundle": false,
+  "_integrity": "sha512-WvhPg1uzmQnINIyuzkYnD9pk8TZoSJKhoKb0GE7nvGckKaLoUYExZBVwUM0B0q8i77+q0cErlGSIBZz3HnS1/w==",
+  "_location": "/@ckeditor/ckeditor5-editor-inline",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-editor-inline@^35.3.2",
+    "name": "@ckeditor/ckeditor5-editor-inline",
+    "escapedName": "@ckeditor%2fckeditor5-editor-inline",
+    "scope": "@ckeditor",
+    "rawSpec": "^35.3.2",
+    "saveSpec": null,
+    "fetchSpec": "^35.3.2"
+  },
+  "_requiredBy": [
+    "/@ckeditor/ckeditor5-build-inline"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-editor-inline/-/ckeditor5-editor-inline-35.3.2.tgz",
+  "_shasum": "61f632e1915dbfc8426f212d3052c232ce5e6686",
+  "_spec": "@ckeditor/ckeditor5-editor-inline@^35.3.2",
+  "_where": "/Users/dariuszszut/projects/ibexa-commerce.v4/vendor/ibexa/admin-ui-assets/node_modules/@ckeditor/ckeditor5-build-inline",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "ckeditor5": "^35.3.2",
+    "lodash-es": "^4.17.15"
+  },
+  "deprecated": false,
+  "description": "Inline editor implementation for CKEditor 5.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-basic-styles": "^35.3.2",
+    "@ckeditor/ckeditor5-core": "^35.3.2",
+    "@ckeditor/ckeditor5-dev-utils": "^31.0.0",
+    "@ckeditor/ckeditor5-engine": "^35.3.2",
+    "@ckeditor/ckeditor5-enter": "^35.3.2",
+    "@ckeditor/ckeditor5-heading": "^35.3.2",
+    "@ckeditor/ckeditor5-image": "^35.3.2",
+    "@ckeditor/ckeditor5-paragraph": "^35.3.2",
+    "@ckeditor/ckeditor5-theme-lark": "^35.3.2",
+    "@ckeditor/ckeditor5-typing": "^35.3.2",
+    "@ckeditor/ckeditor5-ui": "^35.3.2",
+    "@ckeditor/ckeditor5-undo": "^35.3.2",
+    "@ckeditor/ckeditor5-utils": "^35.3.2",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src",
+    "theme",
+    "build",
+    "ckeditor5-metadata.json",
+    "CHANGELOG.md"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-editor",
+    "ckeditor5-dll"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "src/index.js",
+  "name": "@ckeditor/ckeditor5-editor-inline",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-editor-inline"
+  },
+  "scripts": {
+    "dll:build": "webpack"
+  },
+  "version": "35.3.2"
+}

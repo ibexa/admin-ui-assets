@@ -1,0 +1,90 @@
+{
+  "_from": "@ckeditor/ckeditor5-paragraph@^35.3.2",
+  "_id": "@ckeditor/ckeditor5-paragraph@35.3.2",
+  "_inBundle": false,
+  "_integrity": "sha512-1t0cEio8fW28pSw1J2kFKH6N7aiwx7H9NQ+GSfCufeSZcI/PUs+oWfehLcNswrdD4M77o+AZrc3BYrmxQYSLOw==",
+  "_location": "/@ckeditor/ckeditor5-paragraph",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-paragraph@^35.3.2",
+    "name": "@ckeditor/ckeditor5-paragraph",
+    "escapedName": "@ckeditor%2fckeditor5-paragraph",
+    "scope": "@ckeditor",
+    "rawSpec": "^35.3.2",
+    "saveSpec": null,
+    "fetchSpec": "^35.3.2"
+  },
+  "_requiredBy": [
+    "/@ckeditor/ckeditor5-build-inline",
+    "/ckeditor5"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-paragraph/-/ckeditor5-paragraph-35.3.2.tgz",
+  "_shasum": "22e7c1f44fc293eea110288370127082827231f5",
+  "_spec": "@ckeditor/ckeditor5-paragraph@^35.3.2",
+  "_where": "/Users/dariuszszut/projects/ibexa-commerce.v4/vendor/ibexa/admin-ui-assets/node_modules/ckeditor5",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@ckeditor/ckeditor5-core": "^35.3.2",
+    "@ckeditor/ckeditor5-ui": "^35.3.2",
+    "@ckeditor/ckeditor5-utils": "^35.3.2"
+  },
+  "deprecated": false,
+  "description": "Paragraph feature for CKEditor 5.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-basic-styles": "^35.3.2",
+    "@ckeditor/ckeditor5-clipboard": "^35.3.2",
+    "@ckeditor/ckeditor5-editor-classic": "^35.3.2",
+    "@ckeditor/ckeditor5-engine": "^35.3.2",
+    "@ckeditor/ckeditor5-enter": "^35.3.2",
+    "@ckeditor/ckeditor5-heading": "^35.3.2",
+    "@ckeditor/ckeditor5-link": "^35.3.2",
+    "@ckeditor/ckeditor5-typing": "^35.3.2",
+    "@ckeditor/ckeditor5-undo": "^35.3.2",
+    "typescript": "^4.8.4",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src/**/*.js",
+    "src/**/*.d.ts",
+    "theme",
+    "ckeditor5-metadata.json",
+    "CHANGELOG.md"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-feature",
+    "ckeditor5-plugin",
+    "ckeditor5-dll"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "src/index.js",
+  "name": "@ckeditor/ckeditor5-paragraph",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-paragraph"
+  },
+  "scripts": {
+    "build": "tsc -p ./tsconfig.release.json",
+    "postversion": "npm run build"
+  },
+  "version": "35.3.2"
+}
