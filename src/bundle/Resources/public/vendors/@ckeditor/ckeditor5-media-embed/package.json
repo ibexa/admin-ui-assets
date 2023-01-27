@@ -1,0 +1,94 @@
+{
+  "_from": "@ckeditor/ckeditor5-media-embed@^35.4.0",
+  "_id": "@ckeditor/ckeditor5-media-embed@35.4.0",
+  "_inBundle": false,
+  "_integrity": "sha512-So+BYkI82pdIGP2VQ+b+gstEOnHLHA9yBX94pTJM9eW1O+ZTPMR1t2wJFFmEbCjQUYDVC8SdGUGaOb1gaeVXiw==",
+  "_location": "/@ckeditor/ckeditor5-media-embed",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-media-embed@^35.4.0",
+    "name": "@ckeditor/ckeditor5-media-embed",
+    "escapedName": "@ckeditor%2fckeditor5-media-embed",
+    "scope": "@ckeditor",
+    "rawSpec": "^35.4.0",
+    "saveSpec": null,
+    "fetchSpec": "^35.4.0"
+  },
+  "_requiredBy": [
+    "/@ckeditor/ckeditor5-build-inline"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-media-embed/-/ckeditor5-media-embed-35.4.0.tgz",
+  "_shasum": "884f9ea715297b9b268fa16c1e803f66f8f15ec7",
+  "_spec": "@ckeditor/ckeditor5-media-embed@^35.4.0",
+  "_where": "/Users/dariuszszut/projects/ibexa-commerce.v4/vendor/ibexa/admin-ui-assets/node_modules/@ckeditor/ckeditor5-build-inline",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@ckeditor/ckeditor5-ui": "^35.4.0",
+    "ckeditor5": "^35.4.0"
+  },
+  "deprecated": false,
+  "description": "Media embed feature for CKEditor 5.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-basic-styles": "^35.4.0",
+    "@ckeditor/ckeditor5-clipboard": "^35.4.0",
+    "@ckeditor/ckeditor5-core": "^35.4.0",
+    "@ckeditor/ckeditor5-dev-utils": "^31.0.0",
+    "@ckeditor/ckeditor5-editor-balloon": "^35.4.0",
+    "@ckeditor/ckeditor5-editor-classic": "^35.4.0",
+    "@ckeditor/ckeditor5-engine": "^35.4.0",
+    "@ckeditor/ckeditor5-image": "^35.4.0",
+    "@ckeditor/ckeditor5-link": "^35.4.0",
+    "@ckeditor/ckeditor5-paragraph": "^35.4.0",
+    "@ckeditor/ckeditor5-table": "^35.4.0",
+    "@ckeditor/ckeditor5-theme-lark": "^35.4.0",
+    "@ckeditor/ckeditor5-typing": "^35.4.0",
+    "@ckeditor/ckeditor5-undo": "^35.4.0",
+    "@ckeditor/ckeditor5-utils": "^35.4.0",
+    "@ckeditor/ckeditor5-widget": "^35.4.0",
+    "lodash-es": "^4.17.15",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src",
+    "theme",
+    "build",
+    "ckeditor5-metadata.json",
+    "CHANGELOG.md"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-feature",
+    "ckeditor5-plugin",
+    "ckeditor5-dll"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "src/index.js",
+  "name": "@ckeditor/ckeditor5-media-embed",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-media-embed"
+  },
+  "scripts": {
+    "dll:build": "webpack"
+  },
+  "version": "35.4.0"
+}
