@@ -1,0 +1,90 @@
+{
+  "_from": "@ckeditor/ckeditor5-widget@^34.1.0",
+  "_id": "@ckeditor/ckeditor5-widget@34.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-h2iF/RRK+GjvVHb6VY7+slnIV+IdWdLfZS83OECQNYp2e+6kN/JZp+PxiyYC4asPTraL43zJGzlgT53Jof77vw==",
+  "_location": "/@ckeditor/ckeditor5-widget",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-widget@^34.1.0",
+    "name": "@ckeditor/ckeditor5-widget",
+    "escapedName": "@ckeditor%2fckeditor5-widget",
+    "scope": "@ckeditor",
+    "rawSpec": "^34.1.0",
+    "saveSpec": null,
+    "fetchSpec": "^34.1.0"
+  },
+  "_requiredBy": [
+    "/",
+    "/@ckeditor/ckeditor5-clipboard",
+    "/ckeditor5"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-widget/-/ckeditor5-widget-34.2.0.tgz",
+  "_shasum": "0df140bc4c40287251cf5f5a970f616bdbd470e3",
+  "_spec": "@ckeditor/ckeditor5-widget@^34.1.0",
+  "_where": "/Users/dariuszszut/projects/temp/43/vendor/ibexa/admin-ui-assets",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@ckeditor/ckeditor5-core": "^34.2.0",
+    "@ckeditor/ckeditor5-engine": "^34.2.0",
+    "@ckeditor/ckeditor5-enter": "^34.2.0",
+    "@ckeditor/ckeditor5-typing": "^34.2.0",
+    "@ckeditor/ckeditor5-ui": "^34.2.0",
+    "@ckeditor/ckeditor5-utils": "^34.2.0",
+    "lodash-es": "^4.17.15"
+  },
+  "deprecated": false,
+  "description": "Widget API for CKEditor 5.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-basic-styles": "^34.2.0",
+    "@ckeditor/ckeditor5-block-quote": "^34.2.0",
+    "@ckeditor/ckeditor5-clipboard": "^34.2.0",
+    "@ckeditor/ckeditor5-editor-balloon": "^34.2.0",
+    "@ckeditor/ckeditor5-editor-classic": "^34.2.0",
+    "@ckeditor/ckeditor5-essentials": "^34.2.0",
+    "@ckeditor/ckeditor5-heading": "^34.2.0",
+    "@ckeditor/ckeditor5-horizontal-line": "^34.2.0",
+    "@ckeditor/ckeditor5-image": "^34.2.0",
+    "@ckeditor/ckeditor5-link": "^34.2.0",
+    "@ckeditor/ckeditor5-media-embed": "^34.2.0",
+    "@ckeditor/ckeditor5-paragraph": "^34.2.0",
+    "@ckeditor/ckeditor5-table": "^34.2.0",
+    "@ckeditor/ckeditor5-undo": "^34.2.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src",
+    "theme",
+    "ckeditor5-metadata.json"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-lib",
+    "ckeditor5-dll"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "src/index.js",
+  "name": "@ckeditor/ckeditor5-widget",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-widget"
+  },
+  "version": "34.2.0"
+}

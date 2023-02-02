@@ -1,0 +1,68 @@
+{
+  "_from": "@ckeditor/ckeditor5-upload@^34.2.0",
+  "_id": "@ckeditor/ckeditor5-upload@34.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-HBJr0/wFE+R13aIXRF/xJVQqo6Yh34EgbnrNYYhlNiHG40Vr6079eCuoZrnY3vwEsjtFNnTRQ433+RqxJ652zw==",
+  "_location": "/@ckeditor/ckeditor5-upload",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-upload@^34.2.0",
+    "name": "@ckeditor/ckeditor5-upload",
+    "escapedName": "@ckeditor%2fckeditor5-upload",
+    "scope": "@ckeditor",
+    "rawSpec": "^34.2.0",
+    "saveSpec": null,
+    "fetchSpec": "^34.2.0"
+  },
+  "_requiredBy": [
+    "/ckeditor5"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-upload/-/ckeditor5-upload-34.2.0.tgz",
+  "_shasum": "8a55065bba3e2e3f6134872f0735a4ed0257bf6b",
+  "_spec": "@ckeditor/ckeditor5-upload@^34.2.0",
+  "_where": "/Users/dariuszszut/projects/temp/43/vendor/ibexa/admin-ui-assets/node_modules/ckeditor5",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@ckeditor/ckeditor5-core": "^34.2.0",
+    "@ckeditor/ckeditor5-ui": "^34.2.0",
+    "@ckeditor/ckeditor5-utils": "^34.2.0"
+  },
+  "deprecated": false,
+  "description": "Upload feature for CKEditor 5.",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src",
+    "theme",
+    "ckeditor5-metadata.json"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-lib",
+    "ckeditor5-dll"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "src/index.js",
+  "name": "@ckeditor/ckeditor5-upload",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-upload"
+  },
+  "version": "34.2.0"
+}
