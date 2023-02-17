@@ -1,0 +1,101 @@
+{
+  "_from": "@ckeditor/ckeditor5-table@^34.2.0",
+  "_id": "@ckeditor/ckeditor5-table@34.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-ALJAldO7x+gvY7AeOg7j9PuG0ftQekkPTN3QvLHMqDFBfeRh76fK7xPGz+A42DeSFGIcMQ8IS9jpiT4PRKC7cw==",
+  "_location": "/@ckeditor/ckeditor5-table",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-table@^34.2.0",
+    "name": "@ckeditor/ckeditor5-table",
+    "escapedName": "@ckeditor%2fckeditor5-table",
+    "scope": "@ckeditor",
+    "rawSpec": "^34.2.0",
+    "saveSpec": null,
+    "fetchSpec": "^34.2.0"
+  },
+  "_requiredBy": [
+    "/@ckeditor/ckeditor5-build-inline"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-table/-/ckeditor5-table-34.2.0.tgz",
+  "_shasum": "14ea7d858fa7f90b8cada42c5fd331bf4f65fc1e",
+  "_spec": "@ckeditor/ckeditor5-table@^34.2.0",
+  "_where": "/Users/dariuszszut/projects/43/vendor/ibexa/admin-ui-assets/node_modules/@ckeditor/ckeditor5-build-inline",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "ckeditor5": "^34.2.0",
+    "lodash-es": "^4.17.15"
+  },
+  "deprecated": false,
+  "description": "Table feature for CKEditor 5.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-alignment": "^34.2.0",
+    "@ckeditor/ckeditor5-basic-styles": "^34.2.0",
+    "@ckeditor/ckeditor5-block-quote": "^34.2.0",
+    "@ckeditor/ckeditor5-clipboard": "^34.2.0",
+    "@ckeditor/ckeditor5-core": "^34.2.0",
+    "@ckeditor/ckeditor5-dev-utils": "^30.0.0",
+    "@ckeditor/ckeditor5-editor-classic": "^34.2.0",
+    "@ckeditor/ckeditor5-engine": "^34.2.0",
+    "@ckeditor/ckeditor5-highlight": "^34.2.0",
+    "@ckeditor/ckeditor5-horizontal-line": "^34.2.0",
+    "@ckeditor/ckeditor5-html-support": "^34.2.0",
+    "@ckeditor/ckeditor5-image": "^34.2.0",
+    "@ckeditor/ckeditor5-indent": "^34.2.0",
+    "@ckeditor/ckeditor5-link": "^34.2.0",
+    "@ckeditor/ckeditor5-list": "^34.2.0",
+    "@ckeditor/ckeditor5-media-embed": "^34.2.0",
+    "@ckeditor/ckeditor5-paragraph": "^34.2.0",
+    "@ckeditor/ckeditor5-source-editing": "^34.2.0",
+    "@ckeditor/ckeditor5-theme-lark": "^34.2.0",
+    "@ckeditor/ckeditor5-typing": "^34.2.0",
+    "@ckeditor/ckeditor5-ui": "^34.2.0",
+    "@ckeditor/ckeditor5-undo": "^34.2.0",
+    "@ckeditor/ckeditor5-utils": "^34.2.0",
+    "@ckeditor/ckeditor5-widget": "^34.2.0",
+    "json-diff": "^0.5.4",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src",
+    "theme",
+    "build",
+    "ckeditor5-metadata.json"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-feature",
+    "ckeditor5-plugin",
+    "ckeditor5-dll"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "src/index.js",
+  "name": "@ckeditor/ckeditor5-table",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-table"
+  },
+  "scripts": {
+    "dll:build": "webpack"
+  },
+  "version": "34.2.0"
+}
