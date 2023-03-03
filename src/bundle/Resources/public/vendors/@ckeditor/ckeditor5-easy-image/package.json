@@ -1,0 +1,85 @@
+{
+  "_from": "@ckeditor/ckeditor5-easy-image@^34.2.0",
+  "_id": "@ckeditor/ckeditor5-easy-image@34.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-0enLOsyy8cYAb85BA+TxZqg2sDWrup62Ph31dv97EBry0+XjvD5ViEhgpr15WoY/4B3HZZbxy4W+/zJz3GmO5w==",
+  "_location": "/@ckeditor/ckeditor5-easy-image",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-easy-image@^34.2.0",
+    "name": "@ckeditor/ckeditor5-easy-image",
+    "escapedName": "@ckeditor%2fckeditor5-easy-image",
+    "scope": "@ckeditor",
+    "rawSpec": "^34.2.0",
+    "saveSpec": null,
+    "fetchSpec": "^34.2.0"
+  },
+  "_requiredBy": [
+    "/@ckeditor/ckeditor5-build-inline"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-easy-image/-/ckeditor5-easy-image-34.2.0.tgz",
+  "_shasum": "ca70267e6187e8b2b60c2b1f79552d609f8f34aa",
+  "_spec": "@ckeditor/ckeditor5-easy-image@^34.2.0",
+  "_where": "/Users/dariuszszut/projects/43/vendor/ibexa/admin-ui-assets/node_modules/@ckeditor/ckeditor5-build-inline",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "ckeditor5": "^34.2.0"
+  },
+  "deprecated": false,
+  "description": "Easy Image feature for CKEditor 5.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-clipboard": "^34.2.0",
+    "@ckeditor/ckeditor5-cloud-services": "^34.2.0",
+    "@ckeditor/ckeditor5-core": "^34.2.0",
+    "@ckeditor/ckeditor5-dev-utils": "^30.0.0",
+    "@ckeditor/ckeditor5-editor-classic": "^34.2.0",
+    "@ckeditor/ckeditor5-image": "^34.2.0",
+    "@ckeditor/ckeditor5-paragraph": "^34.2.0",
+    "@ckeditor/ckeditor5-theme-lark": "^34.2.0",
+    "@ckeditor/ckeditor5-upload": "^34.2.0",
+    "@ckeditor/ckeditor5-utils": "^34.2.0",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src",
+    "theme",
+    "build",
+    "ckeditor5-metadata.json"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-feature",
+    "ckeditor5-plugin",
+    "ckeditor5-dll"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "src/index.js",
+  "name": "@ckeditor/ckeditor5-easy-image",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-easy-image"
+  },
+  "scripts": {
+    "dll:build": "webpack"
+  },
+  "version": "34.2.0"
+}

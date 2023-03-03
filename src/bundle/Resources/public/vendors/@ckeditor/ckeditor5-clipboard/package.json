@@ -1,0 +1,90 @@
+{
+  "_from": "@ckeditor/ckeditor5-clipboard@^34.2.0",
+  "_id": "@ckeditor/ckeditor5-clipboard@34.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-OcdFj9yT7C5yKPHtTKWvjGMJLpigrkdJN4AZhdJJPigiuYG0c5mnCuTvOYxp2kVijFWRjhPlwIyPVTtDZ0vnzw==",
+  "_location": "/@ckeditor/ckeditor5-clipboard",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-clipboard@^34.2.0",
+    "name": "@ckeditor/ckeditor5-clipboard",
+    "escapedName": "@ckeditor%2fckeditor5-clipboard",
+    "scope": "@ckeditor",
+    "rawSpec": "^34.2.0",
+    "saveSpec": null,
+    "fetchSpec": "^34.2.0"
+  },
+  "_requiredBy": [
+    "/ckeditor5"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-clipboard/-/ckeditor5-clipboard-34.2.0.tgz",
+  "_shasum": "ab69636365b0bd95631817fe4f5c3cc22bc6fce3",
+  "_spec": "@ckeditor/ckeditor5-clipboard@^34.2.0",
+  "_where": "/Users/dariuszszut/projects/43/vendor/ibexa/admin-ui-assets/node_modules/ckeditor5",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@ckeditor/ckeditor5-core": "^34.2.0",
+    "@ckeditor/ckeditor5-engine": "^34.2.0",
+    "@ckeditor/ckeditor5-utils": "^34.2.0",
+    "@ckeditor/ckeditor5-widget": "^34.2.0",
+    "lodash-es": "^4.17.11"
+  },
+  "deprecated": false,
+  "description": "Clipboard integration feature for CKEditor 5.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-alignment": "^34.2.0",
+    "@ckeditor/ckeditor5-basic-styles": "^34.2.0",
+    "@ckeditor/ckeditor5-block-quote": "^34.2.0",
+    "@ckeditor/ckeditor5-cloud-services": "^34.2.0",
+    "@ckeditor/ckeditor5-code-block": "^34.2.0",
+    "@ckeditor/ckeditor5-easy-image": "^34.2.0",
+    "@ckeditor/ckeditor5-editor-classic": "^34.2.0",
+    "@ckeditor/ckeditor5-enter": "^34.2.0",
+    "@ckeditor/ckeditor5-horizontal-line": "^34.2.0",
+    "@ckeditor/ckeditor5-image": "^34.2.0",
+    "@ckeditor/ckeditor5-link": "^34.2.0",
+    "@ckeditor/ckeditor5-page-break": "^34.2.0",
+    "@ckeditor/ckeditor5-paragraph": "^34.2.0",
+    "@ckeditor/ckeditor5-paste-from-office": "^34.2.0",
+    "@ckeditor/ckeditor5-remove-format": "^34.2.0",
+    "@ckeditor/ckeditor5-table": "^34.2.0",
+    "@ckeditor/ckeditor5-typing": "^34.2.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src",
+    "theme",
+    "ckeditor5-metadata.json"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-feature",
+    "ckeditor5-plugin",
+    "ckeditor5-dll"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "src/index.js",
+  "name": "@ckeditor/ckeditor5-clipboard",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-clipboard"
+  },
+  "version": "34.2.0"
+}

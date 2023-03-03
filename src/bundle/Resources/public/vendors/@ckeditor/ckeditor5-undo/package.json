@@ -1,0 +1,80 @@
+{
+  "_from": "@ckeditor/ckeditor5-undo@^34.2.0",
+  "_id": "@ckeditor/ckeditor5-undo@34.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-WW3f6ku36DpKhUxXACfNFm2DaKcJ2Rz0EFEkol0+offpOjltJnUEJ7LvfOthGdMvGz+5lmnySTbkvOvNruq1Ew==",
+  "_location": "/@ckeditor/ckeditor5-undo",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-undo@^34.2.0",
+    "name": "@ckeditor/ckeditor5-undo",
+    "escapedName": "@ckeditor%2fckeditor5-undo",
+    "scope": "@ckeditor",
+    "rawSpec": "^34.2.0",
+    "saveSpec": null,
+    "fetchSpec": "^34.2.0"
+  },
+  "_requiredBy": [
+    "/ckeditor5"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-undo/-/ckeditor5-undo-34.2.0.tgz",
+  "_shasum": "7ea368fc46d4f1f663a2e59cba7390bd90b62017",
+  "_spec": "@ckeditor/ckeditor5-undo@^34.2.0",
+  "_where": "/Users/dariuszszut/projects/43/vendor/ibexa/admin-ui-assets/node_modules/ckeditor5",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@ckeditor/ckeditor5-core": "^34.2.0",
+    "@ckeditor/ckeditor5-engine": "^34.2.0",
+    "@ckeditor/ckeditor5-ui": "^34.2.0"
+  },
+  "deprecated": false,
+  "description": "Undo feature for CKEditor 5.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-basic-styles": "^34.2.0",
+    "@ckeditor/ckeditor5-clipboard": "^34.2.0",
+    "@ckeditor/ckeditor5-editor-classic": "^34.2.0",
+    "@ckeditor/ckeditor5-enter": "^34.2.0",
+    "@ckeditor/ckeditor5-heading": "^34.2.0",
+    "@ckeditor/ckeditor5-paragraph": "^34.2.0",
+    "@ckeditor/ckeditor5-table": "^34.2.0",
+    "@ckeditor/ckeditor5-typing": "^34.2.0",
+    "@ckeditor/ckeditor5-utils": "^34.2.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src",
+    "theme",
+    "ckeditor5-metadata.json"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-feature",
+    "ckeditor5-plugin",
+    "ckeditor5-dll"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "src/index.js",
+  "name": "@ckeditor/ckeditor5-undo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-undo"
+  },
+  "version": "34.2.0"
+}
