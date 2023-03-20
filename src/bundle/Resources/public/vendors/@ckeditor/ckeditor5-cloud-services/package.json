@@ -1,0 +1,80 @@
+{
+  "_from": "@ckeditor/ckeditor5-cloud-services@^36.0.1",
+  "_id": "@ckeditor/ckeditor5-cloud-services@36.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-o+Xp3mAWISx+LCHeV8wYN1v7ZA0XUtIOXPb6N+6lJcS9fDSdc/B4+0KnpHoDZQThgvs9UoNb6ty2f3H5Den/Bg==",
+  "_location": "/@ckeditor/ckeditor5-cloud-services",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-cloud-services@^36.0.1",
+    "name": "@ckeditor/ckeditor5-cloud-services",
+    "escapedName": "@ckeditor%2fckeditor5-cloud-services",
+    "scope": "@ckeditor",
+    "rawSpec": "^36.0.1",
+    "saveSpec": null,
+    "fetchSpec": "^36.0.1"
+  },
+  "_requiredBy": [
+    "/@ckeditor/ckeditor5-build-inline"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-cloud-services/-/ckeditor5-cloud-services-36.0.1.tgz",
+  "_shasum": "b9861e9305edf978cdc2ebee51058c0a229ae07d",
+  "_spec": "@ckeditor/ckeditor5-cloud-services@^36.0.1",
+  "_where": "/Users/dariuszszut/projects/ibexa-commerce.v4/vendor/ibexa/admin-ui-assets/node_modules/@ckeditor/ckeditor5-build-inline",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "ckeditor5": "^36.0.1"
+  },
+  "deprecated": false,
+  "description": "CKEditor 5's Cloud Services integration layer.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-core": "^36.0.1",
+    "@ckeditor/ckeditor5-dev-utils": "^32.0.0",
+    "@ckeditor/ckeditor5-editor-classic": "^36.0.1",
+    "@ckeditor/ckeditor5-theme-lark": "^36.0.1",
+    "@ckeditor/ckeditor5-utils": "^36.0.1",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src",
+    "theme",
+    "build",
+    "ckeditor5-metadata.json",
+    "CHANGELOG.md"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-lib",
+    "ckeditor5-dll"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "src/index.js",
+  "name": "@ckeditor/ckeditor5-cloud-services",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-cloud-services"
+  },
+  "scripts": {
+    "dll:build": "webpack"
+  },
+  "version": "36.0.1"
+}
