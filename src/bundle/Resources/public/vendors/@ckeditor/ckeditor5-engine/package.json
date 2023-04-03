@@ -1,0 +1,116 @@
+{
+  "_from": "@ckeditor/ckeditor5-engine@^35.4.0",
+  "_id": "@ckeditor/ckeditor5-engine@35.4.0",
+  "_inBundle": false,
+  "_integrity": "sha512-67QKtUGJeLM072h9qURvzczYGU3ecuxR9LLmM4dffnV+PBNQ9e8RDCY7PuuEP0pplmAUI6/XqoZJIbk6h7ZV3Q==",
+  "_location": "/@ckeditor/ckeditor5-engine",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-engine@^35.4.0",
+    "name": "@ckeditor/ckeditor5-engine",
+    "escapedName": "@ckeditor%2fckeditor5-engine",
+    "scope": "@ckeditor",
+    "rawSpec": "^35.4.0",
+    "saveSpec": null,
+    "fetchSpec": "^35.4.0"
+  },
+  "_requiredBy": [
+    "/@ckeditor/ckeditor5-clipboard",
+    "/@ckeditor/ckeditor5-core",
+    "/@ckeditor/ckeditor5-enter",
+    "/@ckeditor/ckeditor5-typing",
+    "/@ckeditor/ckeditor5-undo",
+    "/@ckeditor/ckeditor5-widget",
+    "/ckeditor5"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-engine/-/ckeditor5-engine-35.4.0.tgz",
+  "_shasum": "cb0ed9f0c5a9ef00b24ffbd8d2100fff1e0e90cb",
+  "_spec": "@ckeditor/ckeditor5-engine@^35.4.0",
+  "_where": "/Users/dariuszszut/projects/44/vendor/ibexa/admin-ui-assets/node_modules/ckeditor5",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@ckeditor/ckeditor5-utils": "^35.4.0",
+    "lodash-es": "^4.17.15"
+  },
+  "deprecated": false,
+  "description": "The editing engine of CKEditor 5 – the best browser-based rich text editor.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-basic-styles": "^35.4.0",
+    "@ckeditor/ckeditor5-block-quote": "^35.4.0",
+    "@ckeditor/ckeditor5-clipboard": "^35.4.0",
+    "@ckeditor/ckeditor5-cloud-services": "^35.4.0",
+    "@ckeditor/ckeditor5-core": "^35.4.0",
+    "@ckeditor/ckeditor5-editor-classic": "^35.4.0",
+    "@ckeditor/ckeditor5-enter": "^35.4.0",
+    "@ckeditor/ckeditor5-essentials": "^35.4.0",
+    "@ckeditor/ckeditor5-heading": "^35.4.0",
+    "@ckeditor/ckeditor5-image": "^35.4.0",
+    "@ckeditor/ckeditor5-link": "^35.4.0",
+    "@ckeditor/ckeditor5-list": "^35.4.0",
+    "@ckeditor/ckeditor5-mention": "^35.4.0",
+    "@ckeditor/ckeditor5-paragraph": "^35.4.0",
+    "@ckeditor/ckeditor5-table": "^35.4.0",
+    "@ckeditor/ckeditor5-theme-lark": "^35.4.0",
+    "@ckeditor/ckeditor5-typing": "^35.4.0",
+    "@ckeditor/ckeditor5-ui": "^35.4.0",
+    "@ckeditor/ckeditor5-undo": "^35.4.0",
+    "@ckeditor/ckeditor5-widget": "^35.4.0",
+    "typescript": "^4.8.4",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src/**/*.js",
+    "src/**/*.d.ts",
+    "theme",
+    "ckeditor5-metadata.json",
+    "CHANGELOG.md"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "wysiwyg",
+    "rich text",
+    "editor",
+    "html",
+    "contentEditable",
+    "editing",
+    "operational transformation",
+    "ot",
+    "collaboration",
+    "collaborative",
+    "real-time",
+    "framework",
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-lib",
+    "ckeditor5-dll"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "src/index.js",
+  "name": "@ckeditor/ckeditor5-engine",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-engine"
+  },
+  "scripts": {
+    "build": "tsc -p ./tsconfig.release.json",
+    "postversion": "npm run build"
+  },
+  "version": "35.4.0"
+}
