@@ -1,0 +1,87 @@
+{
+  "_from": "@ckeditor/ckeditor5-enter@^36.0.1",
+  "_id": "@ckeditor/ckeditor5-enter@36.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-FHZ43bltDGFyihfBOTwBOgsS2mMU2ATR9xxFEKlDP+8+P1bq4e0YkC3t4PuwtHIZMvNHiFxqvmFtA2eznGS7sQ==",
+  "_location": "/@ckeditor/ckeditor5-enter",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-enter@^36.0.1",
+    "name": "@ckeditor/ckeditor5-enter",
+    "escapedName": "@ckeditor%2fckeditor5-enter",
+    "scope": "@ckeditor",
+    "rawSpec": "^36.0.1",
+    "saveSpec": null,
+    "fetchSpec": "^36.0.1"
+  },
+  "_requiredBy": [
+    "/@ckeditor/ckeditor5-widget",
+    "/ckeditor5"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-enter/-/ckeditor5-enter-36.0.1.tgz",
+  "_shasum": "00a473406e2d310c6d7b76c32483b58233e24f15",
+  "_spec": "@ckeditor/ckeditor5-enter@^36.0.1",
+  "_where": "/Users/dariuszszut/projects/ibexa-commerce.v4/vendor/ibexa/admin-ui-assets/node_modules/ckeditor5",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@ckeditor/ckeditor5-core": "^36.0.1",
+    "@ckeditor/ckeditor5-engine": "^36.0.1"
+  },
+  "deprecated": false,
+  "description": "Enter feature for CKEditor 5.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-basic-styles": "^36.0.1",
+    "@ckeditor/ckeditor5-editor-classic": "^36.0.1",
+    "@ckeditor/ckeditor5-heading": "^36.0.1",
+    "@ckeditor/ckeditor5-link": "^36.0.1",
+    "@ckeditor/ckeditor5-paragraph": "^36.0.1",
+    "@ckeditor/ckeditor5-typing": "^36.0.1",
+    "@ckeditor/ckeditor5-undo": "^36.0.1",
+    "typescript": "^4.8.4",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src/**/*.js",
+    "src/**/*.d.ts",
+    "theme",
+    "ckeditor5-metadata.json",
+    "CHANGELOG.md"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-feature",
+    "ckeditor5-plugin",
+    "ckeditor5-dll"
+  ],
+  "license": "GPL-2.0-or-later",
+  "main": "src/index.js",
+  "name": "@ckeditor/ckeditor5-enter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-enter"
+  },
+  "scripts": {
+    "build": "tsc -p ./tsconfig.release.json",
+    "postversion": "npm run build"
+  },
+  "version": "36.0.1"
+}
