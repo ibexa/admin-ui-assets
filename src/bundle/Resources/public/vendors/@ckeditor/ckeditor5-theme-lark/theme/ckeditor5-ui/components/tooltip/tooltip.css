@@ -1,0 +1,30 @@
+/*
+ * Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ */
+
+@import "../../../mixins/_rounded.css";
+
+.ck.ck-balloon-panel.ck-tooltip {
+	--ck-balloon-border-width: 0px;
+	--ck-balloon-arrow-offset: 0px;
+	--ck-balloon-arrow-half-width: 4px;
+	--ck-balloon-arrow-height: 4px;
+	--ck-color-panel-background: var(--ck-color-tooltip-background);
+
+	padding: 0 var(--ck-spacing-medium);
+
+	& .ck-tooltip__text {
+		font-size: .9em;
+		line-height: 1.5;
+		color: var(--ck-color-tooltip-text);
+	}
+
+	/* Reset balloon panel styles */
+	box-shadow: none;
+
+	/* Hide the default shadow of the .ck-balloon-panel tip */
+	&::before {
+		display: none;
+	}
+}
