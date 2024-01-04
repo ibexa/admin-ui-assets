@@ -31,8 +31,3 @@ export default class CKBoxUploadAdapter extends Plugin {
      */
     afterInit(): Promise<void>;
 }
-export interface AvailableCategory {
-    id: string;
-    name: string;
-    extensions: Array<string>;
-}

@@ -32,7 +32,10 @@ export default class MediaEmbedEditing extends Plugin {
             providers: [
                 {
                     name: 'dailymotion',
-                    url: /^dailymotion\.com\/video\/(\w+)/,
+                    url: [
+                        /^dailymotion\.com\/video\/(\w+)/,
+                        /^dai.ly\/(\w+)/
+                    ],
                     html: match => {
                         const id = match[1];
                         return ('<div style="position: relative; padding-bottom: 100%; height: 0; ">' +

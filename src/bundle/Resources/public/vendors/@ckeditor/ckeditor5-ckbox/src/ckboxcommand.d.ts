@@ -3,12 +3,7 @@
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 import { Command, type Editor } from 'ckeditor5/src/core';
-import type { CKBoxAssetDefinition } from './ckboxconfig';
-declare global {
-    var CKBox: {
-        mount(wrapper: Element, options: Record<string, unknown>): void;
-    };
-}
+import type { CKBoxAssetDefinition, CKBoxAssetImageAttributesDefinition, CKBoxRawAssetDefinition } from './ckboxconfig';
 /**
  * The CKBox command. It is used by the {@link module:ckbox/ckboxediting~CKBoxEditing CKBox editing feature} to open the CKBox file manager.
  * The file manager allows inserting an image or a link to a file into the editor content.
@@ -78,6 +73,7 @@ export default class CKBoxCommand extends Command {
      * - language The language for CKBox dialog.
      * - tokenUrl The token endpoint URL.
      * - serviceOrigin The base URL of the API service.
+     * - forceDemoLabel Whether to force "Powered by CKBox" link.
      * - dialog.onClose The callback function invoked after closing the CKBox dialog.
      * - assets.onChoose The callback function invoked after choosing the assets.
      */
@@ -110,3 +106,9 @@ export default class CKBoxCommand extends Command {
      */
     private _insertLink;
 }
+/**
+ * Parses the assets attributes into the internal data format.
+ *
+ * @internal
+ */
+export declare function prepareImageAssetAttributes(asset: CKBoxRawAssetDefinition): CKBoxAssetImageAttributesDefinition;

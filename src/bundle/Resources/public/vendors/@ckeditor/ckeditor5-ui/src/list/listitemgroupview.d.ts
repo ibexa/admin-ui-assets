@@ -53,7 +53,7 @@ export default class ListItemGroupView extends View {
      */
     constructor(locale?: Locale, labelView?: LabelView);
     /**
-     * Focuses the list item.
+     * Focuses the list item (which is not a separator).
      */
     focus(): void;
 }

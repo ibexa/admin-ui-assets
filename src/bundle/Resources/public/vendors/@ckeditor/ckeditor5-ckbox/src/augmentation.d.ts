@@ -2,7 +2,7 @@
  * @license Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
-import type { CKBox, CKBoxCommand, CKBoxConfig, CKBoxEditing } from './index';
+import type { CKBox, CKBoxCommand, CKBoxConfig, CKBoxEditing, CKBoxImageEdit, CKBoxImageEditEditing, CKBoxImageEditCommand, CKBoxImageEditUI } from './index';
 declare module '@ckeditor/ckeditor5-core' {
     interface EditorConfig {
         /**
@@ -15,8 +15,18 @@ declare module '@ckeditor/ckeditor5-core' {
     interface PluginsMap {
         [CKBox.pluginName]: CKBox;
         [CKBoxEditing.pluginName]: CKBoxEditing;
+        [CKBoxImageEdit.pluginName]: CKBoxImageEdit;
+        [CKBoxImageEditEditing.pluginName]: CKBoxImageEditEditing;
+        [CKBoxImageEditUI.pluginName]: CKBoxImageEditUI;
     }
     interface CommandsMap {
         ckbox: CKBoxCommand;
+        ckboxImageEdit: CKBoxImageEditCommand;
     }
+}
+declare global {
+    var CKBox: {
+        mount(wrapper: Element, options: Record<string, unknown>): void;
+        mountImageEditor(wrapper: Element, options: Record<string, unknown>): void;
+    };
 }

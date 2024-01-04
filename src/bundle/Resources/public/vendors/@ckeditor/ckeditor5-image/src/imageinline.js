@@ -9,6 +9,7 @@ import { Plugin } from 'ckeditor5/src/core';
 import { Widget } from 'ckeditor5/src/widget';
 import ImageTextAlternative from './imagetextalternative';
 import ImageInlineEditing from './image/imageinlineediting';
+import ImageInsertUI from './imageinsert/imageinsertui';
 import '../theme/image.css';
 /**
  * The image inline plugin.
@@ -26,7 +27,7 @@ export default class ImageInline extends Plugin {
      * @inheritDoc
      */
     static get requires() {
-        return [ImageInlineEditing, Widget, ImageTextAlternative];
+        return [ImageInlineEditing, Widget, ImageTextAlternative, ImageInsertUI];
     }
     /**
      * @inheritDoc

@@ -180,6 +180,39 @@ export default class TwoStepCaretMovement extends Plugin {
      */
     private _handleBackwardMovement;
     /**
+     * Starts listening to {@link module:engine/view/document~Document#event:mousedown} and
+     * {@link module:engine/view/document~Document#event:selectionChange} and puts the selection before/after a 2-step node
+     * if clicked at the beginning/ending of the 2-step node.
+     *
+     * The purpose of this action is to allow typing around the 2-step node directly after a click.
+     *
+     * See https://github.com/ckeditor/ckeditor5/issues/1016.
+     */
+    private _enableClickingAfterNode;
+    /**
+     * Starts listening to {@link module:engine/model/model~Model#event:insertContent} and corrects the model
+     * selection attributes if the selection is at the end of a two-step node after inserting the content.
+     *
+     * The purpose of this action is to improve the overall UX because the user is no longer "trapped" by the
+     * two-step attribute of the selection, and they can type a "clean" (`linkHref`–less) text right away.
+     *
+     * See https://github.com/ckeditor/ckeditor5/issues/6053.
+     */
+    private _enableInsertContentSelectionAttributesFixer;
+    /**
+     * Starts listening to {@link module:engine/model/model~Model#deleteContent} and checks whether
+     * removing a content right after the tow-step attribute.
+     *
+     * If so, the selection should not preserve the two-step attribute. However, if
+     * the {@link module:typing/twostepcaretmovement~TwoStepCaretMovement} plugin is active and
+     * the selection has the two-step attribute due to overridden gravity (at the end), the two-step attribute should stay untouched.
+     *
+     * The purpose of this action is to allow removing the link text and keep the selection outside the link.
+     *
+     * See https://github.com/ckeditor/ckeditor5/issues/7521.
+     */
+    private _handleDeleteContentAfterNode;
+    /**
      * `true` when the gravity is overridden for the plugin.
      */
     private get _isGravityOverridden();

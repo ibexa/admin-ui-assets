@@ -2,15 +2,15 @@
  * @license Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
-/* globals AbortController, FormData, URL, XMLHttpRequest, window */
+/* globals AbortController, FormData, URL, window */
 /**
  * @module ckbox/ckboxuploadadapter
  */
 import { Plugin } from 'ckeditor5/src/core';
 import { FileRepository } from 'ckeditor5/src/upload';
-import { logError } from 'ckeditor5/src/utils';
 import CKBoxEditing from './ckboxediting';
-import { getImageUrls, getWorkspaceId } from './utils';
+import { getImageUrls, sendHttpRequest } from './utils';
+import CKBoxUtils from './ckboxutils';
 /**
  * A plugin that enables file uploads in CKEditor 5 using the CKBox server–side connector.
  * See the {@glink features/file-management/ckbox CKBox file manager integration} guide to learn how to configure
@@ -47,10 +47,8 @@ export default class CKBoxUploadAdapter extends Plugin {
             return;
         }
         const fileRepository = editor.plugins.get(FileRepository);
-        const ckboxEditing = editor.plugins.get(CKBoxEditing);
-        fileRepository.createUploadAdapter = loader => {
-            return new Adapter(loader, ckboxEditing.getToken(), editor);
-        };
+        const ckboxUtils = editor.plugins.get(CKBoxUtils);
+        fileRepository.createUploadAdapter = loader => new Adapter(loader, editor, ckboxUtils);
         const shouldInsertDataId = !editor.config.get('ckbox.ignoreDataId');
         const imageUploadEditing = editor.plugins.get('ImageUploadEditing');
         // Mark uploaded assets with the `ckboxImageId` attribute. Its value represents an ID in CKBox.
@@ -70,97 +68,13 @@ class Adapter {
     /**
      * Creates a new adapter instance.
      */
-    constructor(loader, token, editor) {
+    constructor(loader, editor, ckboxUtils) {
         this.loader = loader;
-        this.token = token;
+        this.token = ckboxUtils.getToken();
+        this.ckboxUtils = ckboxUtils;
         this.editor = editor;
         this.controller = new AbortController();
         this.serviceOrigin = editor.config.get('ckbox.serviceOrigin');
-    }
-    /**
-     * The ID of workspace to use.
-     */
-    getWorkspaceId() {
-        const t = this.editor.t;
-        const cannotAccessDefaultWorkspaceError = t('Cannot access default workspace.');
-        const defaultWorkspaceId = this.editor.config.get('ckbox.defaultUploadWorkspaceId');
-        const workspaceId = getWorkspaceId(this.token, defaultWorkspaceId);
-        if (workspaceId == null) {
-            /**
-             * The user is not authorized to access the workspace defined in  the`ckbox.defaultUploadWorkspaceId` configuration.
-             *
-             * @error ckbox-access-default-workspace-error
-             */
-            logError('ckbox-access-default-workspace-error');
-            throw cannotAccessDefaultWorkspaceError;
-        }
-        return workspaceId;
-    }
-    /**
-     * Resolves a promise with an array containing available categories with which the uploaded file can be associated.
-     *
-     * If the API returns limited results, the method will collect all items.
-     */
-    async getAvailableCategories(offset = 0) {
-        const ITEMS_PER_REQUEST = 50;
-        const categoryUrl = new URL('categories', this.serviceOrigin);
-        categoryUrl.searchParams.set('limit', ITEMS_PER_REQUEST.toString());
-        categoryUrl.searchParams.set('offset', offset.toString());
-        categoryUrl.searchParams.set('workspaceId', this.getWorkspaceId());
-        return this._sendHttpRequest({ url: categoryUrl })
-            .then(async (data) => {
-            const remainingItems = data.totalCount - (offset + ITEMS_PER_REQUEST);
-            if (remainingItems > 0) {
-                const offsetItems = await this.getAvailableCategories(offset + ITEMS_PER_REQUEST);
-                return [
-                    ...data.items,
-                    ...offsetItems
-                ];
-            }
-            return data.items;
-        })
-            .catch(() => {
-            this.controller.signal.throwIfAborted();
-            /**
-             * Fetching a list of available categories with which an uploaded file can be associated failed.
-             *
-             * @error ckbox-fetch-category-http-error
-             */
-            logError('ckbox-fetch-category-http-error');
-        });
-    }
-    /**
-     * Resolves a promise with an object containing a category with which the uploaded file is associated or an error code.
-     */
-    async getCategoryIdForFile(file) {
-        const extension = getFileExtension(file.name);
-        const allCategories = await this.getAvailableCategories();
-        // Couldn't fetch all categories. Perhaps the authorization token is invalid.
-        if (!allCategories) {
-            return null;
-        }
-        // The plugin allows defining to which category the uploaded file should be assigned.
-        const defaultCategories = this.editor.config.get('ckbox.defaultUploadCategories');
-        // If a user specifies the plugin configuration, find the first category that accepts the uploaded file.
-        if (defaultCategories) {
-            const userCategory = Object.keys(defaultCategories).find(category => {
-                return defaultCategories[category].find(e => e.toLowerCase() == extension);
-            });
-            // If found, return its ID if the category exists on the server side.
-            if (userCategory) {
-                const serverCategory = allCategories.find(category => category.id === userCategory || category.name === userCategory);
-                if (!serverCategory) {
-                    return null;
-                }
-                return serverCategory.id;
-            }
-        }
-        // Otherwise, find the first category that accepts the uploaded file and returns its ID.
-        const category = allCategories.find(category => category.extensions.find(e => e.toLowerCase() == extension));
-        if (!category) {
-            return null;
-        }
-        return category.id;
     }
     /**
      * Starts the upload process.
@@ -168,16 +82,13 @@ class Adapter {
      * @see module:upload/filerepository~UploadAdapter#upload
      */
     async upload() {
+        const ckboxUtils = this.ckboxUtils;
         const t = this.editor.t;
-        const cannotFindCategoryError = t('Cannot determine a category for the uploaded file.');
         const file = (await this.loader.file);
-        const category = await this.getCategoryIdForFile(file);
-        if (!category) {
-            return Promise.reject(cannotFindCategoryError);
-        }
+        const category = await ckboxUtils.getCategoryIdForFile(file, { signal: this.controller.signal });
         const uploadUrl = new URL('assets', this.serviceOrigin);
         const formData = new FormData();
-        uploadUrl.searchParams.set('workspaceId', this.getWorkspaceId());
+        uploadUrl.searchParams.set('workspaceId', ckboxUtils.getWorkspaceId());
         formData.append('categoryId', category);
         formData.append('file', file);
         const requestConfig = {
@@ -190,9 +101,11 @@ class Adapter {
                     this.loader.uploadTotal = evt.total;
                     this.loader.uploaded = evt.loaded;
                 }
-            }
+            },
+            signal: this.controller.signal,
+            authorization: this.token.value
         };
-        return this._sendHttpRequest(requestConfig)
+        return sendHttpRequest(requestConfig)
             .then(async (data) => {
             const imageUrls = getImageUrls(data.imageUrls);
             return {
@@ -214,62 +127,4 @@ class Adapter {
     abort() {
         this.controller.abort();
     }
-    /**
-     * Sends the HTTP request.
-     *
-     * @param config.url the URL where the request will be sent.
-     * @param config.method The HTTP method.
-     * @param config.data Additional data to send.
-     * @param config.onUploadProgress A callback informing about the upload progress.
-     */
-    _sendHttpRequest({ url, method = 'GET', data, onUploadProgress }) {
-        const signal = this.controller.signal;
-        const xhr = new XMLHttpRequest();
-        xhr.open(method, url.toString(), true);
-        xhr.setRequestHeader('Authorization', this.token.value);
-        xhr.setRequestHeader('CKBox-Version', 'CKEditor 5');
-        xhr.responseType = 'json';
-        // The callback is attached to the `signal#abort` event.
-        const abortCallback = () => {
-            xhr.abort();
-        };
-        return new Promise((resolve, reject) => {
-            signal.addEventListener('abort', abortCallback);
-            xhr.addEventListener('loadstart', () => {
-                signal.addEventListener('abort', abortCallback);
-            });
-            xhr.addEventListener('loadend', () => {
-                signal.removeEventListener('abort', abortCallback);
-            });
-            xhr.addEventListener('error', () => {
-                reject();
-            });
-            xhr.addEventListener('abort', () => {
-                reject();
-            });
-            xhr.addEventListener('load', async () => {
-                const response = xhr.response;
-                if (!response || response.statusCode >= 400) {
-                    return reject(response && response.message);
-                }
-                return resolve(response);
-            });
-            /* istanbul ignore else -- @preserve */
-            if (onUploadProgress) {
-                xhr.upload.addEventListener('progress', evt => {
-                    onUploadProgress(evt);
-                });
-            }
-            // Send the request.
-            xhr.send(data);
-        });
-    }
-}
-/**
- * Returns an extension from the given value.
- */
-function getFileExtension(value) {
-    const extensionRegExp = /\.(?<ext>[^.]+)$/;
-    const match = value.match(extensionRegExp);
-    return match.groups.ext.toLowerCase();
 }

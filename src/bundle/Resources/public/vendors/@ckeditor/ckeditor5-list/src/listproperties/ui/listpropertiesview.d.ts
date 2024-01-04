@@ -5,9 +5,8 @@
 /**
  * @module list/listproperties/ui/listpropertiesview
  */
-import { View, ViewCollection, FocusCycler, SwitchButtonView, LabeledFieldView, type ButtonView, type InputNumberView } from 'ckeditor5/src/ui';
+import { View, ViewCollection, FocusCycler, SwitchButtonView, LabeledFieldView, CollapsibleView, type ButtonView, type InputNumberView } from 'ckeditor5/src/ui';
 import { FocusTracker, KeystrokeHandler, type Locale } from 'ckeditor5/src/utils';
-import CollapsibleView from './collapsibleview';
 import type { ListPropertiesConfig } from '../../listconfig';
 import '../../../theme/listproperties.css';
 /**

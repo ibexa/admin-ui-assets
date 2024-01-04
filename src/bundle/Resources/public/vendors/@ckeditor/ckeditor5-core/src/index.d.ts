@@ -29,6 +29,9 @@ export declare const icons: {
     eraser: string;
     history: string;
     image: string;
+    imageUpload: string;
+    imageAssetManager: string;
+    imageUrl: string;
     lowVision: string;
     textAlternative: string;
     loupe: string;

@@ -94,6 +94,7 @@ export default class CKBoxCommand extends Command {
      * - language The language for CKBox dialog.
      * - tokenUrl The token endpoint URL.
      * - serviceOrigin The base URL of the API service.
+     * - forceDemoLabel Whether to force "Powered by CKBox" link.
      * - dialog.onClose The callback function invoked after closing the CKBox dialog.
      * - assets.onChoose The callback function invoked after choosing the assets.
      */
@@ -105,6 +106,7 @@ export default class CKBoxCommand extends Command {
             language: ckboxConfig.language,
             tokenUrl: ckboxConfig.tokenUrl,
             serviceOrigin: ckboxConfig.serviceOrigin,
+            forceDemoLabel: ckboxConfig.forceDemoLabel,
             dialog: {
                 onClose: () => this.fire('ckbox:close')
             },
@@ -281,8 +283,10 @@ function prepareAssets({ assets, isImageAllowed, isLinkAllowed }) {
 }
 /**
  * Parses the assets attributes into the internal data format.
+ *
+ * @internal
  */
-function prepareImageAssetAttributes(asset) {
+export function prepareImageAssetAttributes(asset) {
     const { imageFallbackUrl, imageSources } = getImageUrls(asset.data.imageUrls);
     const { description, width, height, blurHash } = asset.data.metadata;
     const imagePlaceholder = blurHashToDataUrl(blurHash);

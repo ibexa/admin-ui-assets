@@ -1,6 +1,6 @@
 {
   "name": "@ckeditor/ckeditor5-block-quote",
-  "version": "40.1.0",
+  "version": "40.2.0",
   "description": "Block quote feature for CKEditor 5.",
   "keywords": [
     "ckeditor",
@@ -12,7 +12,7 @@
   ],
   "main": "src/index.js",
   "dependencies": {
-    "ckeditor5": "40.1.0"
+    "ckeditor5": "40.2.0"
   },
   "author": "CKSource (http://cksource.com/)",
   "license": "GPL-2.0-or-later",

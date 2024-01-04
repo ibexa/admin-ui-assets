@@ -8,6 +8,7 @@
 import View from '../view';
 import ListView from './listview';
 import LabelView from '../label/labelview';
+import ListSeparatorView from './listseparatorview';
 /**
  * The list item group view class.
  */
@@ -53,11 +54,14 @@ export default class ListItemGroupView extends View {
         });
     }
     /**
-     * Focuses the list item.
+     * Focuses the list item (which is not a separator).
      */
     focus() {
-        if (this.items.first) {
-            this.items.first.focus();
+        if (this.items) {
+            const firstListItem = this.items.find(item => !(item instanceof ListSeparatorView));
+            if (firstListItem) {
+                firstListItem.focus();
+            }
         }
     }
 }

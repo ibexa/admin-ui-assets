@@ -5,9 +5,8 @@
 /**
  * @module list/listproperties/ui/listpropertiesview
  */
-import { View, ViewCollection, FocusCycler, SwitchButtonView, LabeledFieldView, createLabeledInputNumber, addKeyboardHandlingForGrid } from 'ckeditor5/src/ui';
+import { View, ViewCollection, FocusCycler, SwitchButtonView, LabeledFieldView, createLabeledInputNumber, addKeyboardHandlingForGrid, CollapsibleView } from 'ckeditor5/src/ui';
 import { FocusTracker, KeystrokeHandler, global } from 'ckeditor5/src/utils';
-import CollapsibleView from './collapsibleview';
 import '../../../theme/listproperties.css';
 /**
  * The list properties view to be displayed in the list dropdown.

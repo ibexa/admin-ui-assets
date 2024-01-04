@@ -26,7 +26,7 @@ export default class HtmlDataProcessor {
     }
     /**
      * Converts a provided {@link module:engine/view/documentfragment~DocumentFragment document fragment}
-     * to data format &mdash; in this case to an HTML string.
+     * to data format &ndash; in this case to an HTML string.
      *
      * @returns HTML string.
      */

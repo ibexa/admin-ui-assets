@@ -1,6 +1,6 @@
 {
   "name": "@ckeditor/ckeditor5-ui",
-  "version": "40.1.0",
+  "version": "40.2.0",
   "description": "The UI framework and standard UI library of CKEditor 5.",
   "keywords": [
     "ckeditor",
@@ -11,8 +11,8 @@
   ],
   "main": "src/index.js",
   "dependencies": {
-    "@ckeditor/ckeditor5-core": "40.1.0",
-    "@ckeditor/ckeditor5-utils": "40.1.0",
+    "@ckeditor/ckeditor5-core": "40.2.0",
+    "@ckeditor/ckeditor5-utils": "40.2.0",
     "color-convert": "2.0.1",
     "color-parse": "1.4.2",
     "lodash-es": "4.17.21",

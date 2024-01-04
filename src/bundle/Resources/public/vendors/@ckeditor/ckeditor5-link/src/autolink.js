@@ -6,8 +6,9 @@
  * @module link/autolink
  */
 import { Plugin } from 'ckeditor5/src/core';
-import { Delete, TextWatcher, getLastTextLine } from 'ckeditor5/src/typing';
+import { Delete, TextWatcher, getLastTextLine, findAttributeRange } from 'ckeditor5/src/typing';
 import { addLinkProtocolIfApplicable, linkHasProtocol } from './utils';
+import LinkEditing from './linkediting';
 const MIN_LINK_LENGTH_WITH_SPACE_AT_END = 4; // Ie: "t.co " (length 5).
 // This was a tweak from https://gist.github.com/dperini/729294.
 const URL_REG_EXP = new RegExp(
@@ -64,7 +65,7 @@ export default class AutoLink extends Plugin {
      * @inheritDoc
      */
     static get requires() {
-        return [Delete];
+        return [Delete, LinkEditing];
     }
     /**
      * @inheritDoc
@@ -90,6 +91,73 @@ export default class AutoLink extends Plugin {
     afterInit() {
         this._enableEnterHandling();
         this._enableShiftEnterHandling();
+        this._enablePasteLinking();
+    }
+    /**
+     * For given position, returns a range that includes the whole link that contains the position.
+     *
+     * If position is not inside a link, returns `null`.
+     */
+    _expandLinkRange(model, position) {
+        if (position.textNode && position.textNode.hasAttribute('linkHref')) {
+            return findAttributeRange(position, 'linkHref', position.textNode.getAttribute('linkHref'), model);
+        }
+        else {
+            return null;
+        }
+    }
+    /**
+     * Extends the document selection to includes all links that intersects with given `selectedRange`.
+     */
+    _selectEntireLinks(writer, selectedRange) {
+        const editor = this.editor;
+        const model = editor.model;
+        const selection = model.document.selection;
+        const selStart = selection.getFirstPosition();
+        const selEnd = selection.getLastPosition();
+        let updatedSelection = selectedRange.getJoined(this._expandLinkRange(model, selStart) || selectedRange);
+        if (updatedSelection) {
+            updatedSelection = updatedSelection.getJoined(this._expandLinkRange(model, selEnd) || selectedRange);
+        }
+        if (updatedSelection && (updatedSelection.start.isBefore(selStart) || updatedSelection.end.isAfter(selEnd))) {
+            // Only update the selection if it changed.
+            writer.setSelection(updatedSelection);
+        }
+    }
+    /**
+     * Enables autolinking on pasting a URL when some content is selected.
+     */
+    _enablePasteLinking() {
+        const editor = this.editor;
+        const model = editor.model;
+        const selection = model.document.selection;
+        const clipboardPipeline = editor.plugins.get('ClipboardPipeline');
+        const linkCommand = editor.commands.get('link');
+        clipboardPipeline.on('inputTransformation', (evt, data) => {
+            if (!this.isEnabled || !linkCommand.isEnabled || selection.isCollapsed) {
+                // Abort if we are disabled or the selection is collapsed.
+                return;
+            }
+            if (selection.rangeCount > 1) {
+                // Abort if there are multiple selection ranges.
+                return;
+            }
+            const selectedRange = selection.getFirstRange();
+            const newLink = data.dataTransfer.getData('text/plain');
+            if (!newLink) {
+                // Abort if there is no plain text on the clipboard.
+                return;
+            }
+            const matches = newLink.match(URL_REG_EXP);
+            // If the text in the clipboard has a URL, and that URL is the whole clipboard.
+            if (matches && matches[2] === newLink) {
+                model.change(writer => {
+                    this._selectEntireLinks(writer, selectedRange);
+                    linkCommand.execute(newLink);
+                });
+                evt.stop();
+            }
+        }, { priority: 'high' });
     }
     /**
      * Enables autolinking on typing.

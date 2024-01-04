@@ -33,14 +33,12 @@ export default class ImageUploadUI extends Plugin {
             const imageTypesRegExp = createImageTypeRegExp(imageTypes);
             view.set({
                 acceptedType: imageTypes.map(type => `image/${type}`).join(','),
-                allowMultipleFiles: true
-            });
-            view.buttonView.set({
-                label: t('Insert image'),
-                icon: icons.image,
+                allowMultipleFiles: true,
+                label: t('Upload image from computer'),
+                icon: icons.imageUpload,
                 tooltip: true
             });
-            view.buttonView.bind('isEnabled').to(command);
+            view.bind('isEnabled').to(command);
             view.on('done', (evt, files) => {
                 const imagesToUpload = Array.from(files).filter(file => imageTypesRegExp.test(file.type));
                 if (imagesToUpload.length) {
@@ -53,5 +51,31 @@ export default class ImageUploadUI extends Plugin {
         // Setup `uploadImage` button and add `imageUpload` button as an alias for backward compatibility.
         editor.ui.componentFactory.add('uploadImage', componentCreator);
         editor.ui.componentFactory.add('imageUpload', componentCreator);
+        if (editor.plugins.has('ImageInsertUI')) {
+            const imageInsertUI = editor.plugins.get('ImageInsertUI');
+            const command = editor.commands.get('uploadImage');
+            imageInsertUI.registerIntegration({
+                name: 'upload',
+                observable: command,
+                buttonViewCreator: () => {
+                    const uploadImageButton = editor.ui.componentFactory.create('uploadImage');
+                    uploadImageButton.bind('label').to(imageInsertUI, 'isImageSelected', isImageSelected => isImageSelected ?
+                        t('Replace image from computer') :
+                        t('Upload image from computer'));
+                    return uploadImageButton;
+                },
+                formViewCreator: () => {
+                    const uploadImageButton = editor.ui.componentFactory.create('uploadImage');
+                    uploadImageButton.withText = true;
+                    uploadImageButton.bind('label').to(imageInsertUI, 'isImageSelected', isImageSelected => isImageSelected ?
+                        t('Replace from computer') :
+                        t('Upload from computer'));
+                    uploadImageButton.on('execute', () => {
+                        imageInsertUI.dropdownView.isOpen = false;
+                    });
+                    return uploadImageButton;
+                }
+            });
+        }
     }
 }

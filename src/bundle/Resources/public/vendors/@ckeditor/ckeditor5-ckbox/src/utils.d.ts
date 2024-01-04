@@ -30,3 +30,34 @@ export declare function getWorkspaceId(token: InitializedToken, defaultWorkspace
  * Generates an image data URL from its `blurhash` representation.
  */
 export declare function blurHashToDataUrl(hash?: string): string | undefined;
+/**
+ * Sends the HTTP request.
+ *
+ * @internal
+ * @param config.url the URL where the request will be sent.
+ * @param config.method The HTTP method.
+ * @param config.data Additional data to send.
+ * @param config.onUploadProgress A callback informing about the upload progress.
+ */
+export declare function sendHttpRequest({ url, method, data, onUploadProgress, signal, authorization }: {
+    url: URL;
+    signal: AbortSignal;
+    authorization: string;
+    method?: 'GET' | 'POST';
+    data?: FormData | null;
+    onUploadProgress?: (evt: ProgressEvent) => void;
+}): Promise<any>;
+/**
+ * Returns an extension a typical file in the specified `mimeType` format would have.
+ */
+export declare function convertMimeTypeToExtension(mimeType: string): string;
+/**
+ * Tries to fetch the given `url` and returns 'content-type' of the response.
+ */
+export declare function getContentTypeOfUrl(url: string, options: {
+    signal: AbortSignal;
+}): Promise<string>;
+/**
+ * Returns an extension from the given value.
+ */
+export declare function getFileExtension(file: File): string;

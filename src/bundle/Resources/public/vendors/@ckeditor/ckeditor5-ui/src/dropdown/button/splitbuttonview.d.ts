@@ -10,6 +10,7 @@ import ButtonView from '../../button/buttonview';
 import type ViewCollection from '../../viewcollection';
 import type Button from '../../button/button';
 import type DropdownButton from './dropdownbutton';
+import type { FocusableView } from '../../focuscycler';
 import { KeystrokeHandler, FocusTracker, type Locale } from '@ckeditor/ckeditor5-utils';
 import '../../../theme/components/dropdown/splitbutton.css';
 /**
@@ -135,7 +136,7 @@ export default class SplitButtonView extends View<HTMLDivElement> implements Dro
     /**
      * @inheritDoc
      */
-    constructor(locale?: Locale);
+    constructor(locale?: Locale, actionButton?: ButtonView & FocusableView);
     /**
      * @inheritDoc
      */

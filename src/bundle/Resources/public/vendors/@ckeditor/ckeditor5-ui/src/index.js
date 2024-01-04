@@ -52,6 +52,7 @@ export { default as AutocompleteView } from './autocomplete/autocompleteview';
 export { default as SearchTextView } from './search/text/searchtextview';
 export { default as SearchInfoView } from './search/searchinfoview';
 export { default as HighlightedTextView } from './highlightedtext/highlightedtextview';
+export { default as CollapsibleView } from './collapsible/collapsibleview';
 export { default as TooltipManager } from './tooltipmanager';
 export { default as Template } from './template';
 export { default as SpinnerView } from './spinner/spinnerview';

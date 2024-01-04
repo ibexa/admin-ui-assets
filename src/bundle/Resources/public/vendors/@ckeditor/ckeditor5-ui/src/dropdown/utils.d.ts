@@ -76,11 +76,11 @@ import '../../theme/components/dropdown/listdropdown.css';
  * {@link module:ui/dropdown/utils~addToolbarToDropdown} utils.
  *
  * @param locale The locale instance.
- * @param ButtonClass The dropdown button view class. Needs to implement the
+ * @param ButtonClassOrInstance The dropdown button view class. Needs to implement the
  * {@link module:ui/dropdown/button/dropdownbutton~DropdownButton} interface.
  * @returns The dropdown view instance.
  */
-export declare function createDropdown(locale: Locale | undefined, ButtonClass?: new (locale?: Locale) => DropdownButton & FocusableView): DropdownView;
+export declare function createDropdown(locale: Locale | undefined, ButtonClassOrInstance?: (new (locale?: Locale) => DropdownButton & FocusableView) | (DropdownButton & FocusableView)): DropdownView;
 /**
  * Adds an instance of {@link module:ui/toolbar/toolbarview~ToolbarView} to a dropdown.
  *

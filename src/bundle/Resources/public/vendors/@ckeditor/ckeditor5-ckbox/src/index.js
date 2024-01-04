@@ -8,4 +8,7 @@
 export { default as CKBox } from './ckbox';
 export { default as CKBoxEditing } from './ckboxediting';
 export { default as CKBoxUI } from './ckboxui';
+export { default as CKBoxImageEditEditing } from './ckboximageedit/ckboximageeditediting';
+export { default as CKBoxImageEditUI } from './ckboximageedit/ckboximageeditui';
+export { default as CKBoxImageEdit } from './ckboximageedit';
 import './augmentation';

@@ -5,7 +5,7 @@
 /**
  * @module ckbox/ckboxui
  */
-import { Plugin } from 'ckeditor5/src/core';
+import { icons, Plugin } from 'ckeditor5/src/core';
 import { ButtonView } from 'ckeditor5/src/ui';
 import browseFilesIcon from '../theme/icons/browse-files.svg';
 /**
@@ -43,5 +43,32 @@ export default class CKBoxUI extends Plugin {
             });
             return button;
         });
+        if (editor.plugins.has('ImageInsertUI')) {
+            const imageInsertUI = editor.plugins.get('ImageInsertUI');
+            imageInsertUI.registerIntegration({
+                name: 'assetManager',
+                observable: command,
+                buttonViewCreator: () => {
+                    const button = this.editor.ui.componentFactory.create('ckbox');
+                    button.icon = icons.imageAssetManager;
+                    button.bind('label').to(imageInsertUI, 'isImageSelected', isImageSelected => isImageSelected ?
+                        t('Replace image with file manager') :
+                        t('Insert image with file manager'));
+                    return button;
+                },
+                formViewCreator: () => {
+                    const button = this.editor.ui.componentFactory.create('ckbox');
+                    button.icon = icons.imageAssetManager;
+                    button.withText = true;
+                    button.bind('label').to(imageInsertUI, 'isImageSelected', isImageSelected => isImageSelected ?
+                        t('Replace with file manager') :
+                        t('Insert with file manager'));
+                    button.on('execute', () => {
+                        imageInsertUI.dropdownView.isOpen = false;
+                    });
+                    return button;
+                }
+            });
+        }
     }
 }

@@ -18,9 +18,6 @@ import { ButtonView, View } from '@ckeditor/ckeditor5-ui';
  * view.set( {
  * 	acceptedType: 'image/*',
  * 	allowMultipleFiles: true
- * } );
- *
- * view.buttonView.set( {
  * 	label: t( 'Insert image' ),
  * 	icon: imageIcon,
  * 	tooltip: true
@@ -33,36 +30,33 @@ import { ButtonView, View } from '@ckeditor/ckeditor5-ui';
  * } );
  * ```
  */
-export default class FileDialogButtonView extends View {
+export default class FileDialogButtonView extends ButtonView {
     /**
      * @inheritDoc
      */
     constructor(locale) {
         super(locale);
-        this.buttonView = new ButtonView(locale);
+        // For backward compatibility.
+        this.buttonView = this;
         this._fileInputView = new FileInputView(locale);
         this._fileInputView.bind('acceptedType').to(this);
         this._fileInputView.bind('allowMultipleFiles').to(this);
         this._fileInputView.delegate('done').to(this);
-        this.setTemplate({
-            tag: 'span',
+        this.on('execute', () => {
+            this._fileInputView.open();
+        });
+        this.extendTemplate({
             attributes: {
                 class: 'ck-file-dialog-button'
-            },
-            children: [
-                this.buttonView,
-                this._fileInputView
-            ]
-        });
-        this.buttonView.on('execute', () => {
-            this._fileInputView.open();
+            }
         });
     }
     /**
-     * Focuses the {@link #buttonView}.
+     * @inheritDoc
      */
-    focus() {
-        this.buttonView.focus();
+    render() {
+        super.render();
+        this.children.add(this._fileInputView);
     }
 }
 /**

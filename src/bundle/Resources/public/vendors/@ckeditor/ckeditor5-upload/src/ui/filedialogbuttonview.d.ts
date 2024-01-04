@@ -5,7 +5,7 @@
 /**
  * @module upload/ui/filedialogbuttonview
  */
-import { ButtonView, View } from '@ckeditor/ckeditor5-ui';
+import { ButtonView } from '@ckeditor/ckeditor5-ui';
 import type { Locale } from '@ckeditor/ckeditor5-utils';
 /**
  * The file dialog button view.
@@ -19,9 +19,6 @@ import type { Locale } from '@ckeditor/ckeditor5-utils';
  * view.set( {
  * 	acceptedType: 'image/*',
  * 	allowMultipleFiles: true
- * } );
- *
- * view.buttonView.set( {
  * 	label: t( 'Insert image' ),
  * 	icon: imageIcon,
  * 	tooltip: true
@@ -34,9 +31,11 @@ import type { Locale } from '@ckeditor/ckeditor5-utils';
  * } );
  * ```
  */
-export default class FileDialogButtonView extends View {
+export default class FileDialogButtonView extends ButtonView {
     /**
      * The button view of the component.
+     *
+     * @deprecated
      */
     buttonView: ButtonView;
     /**
@@ -63,9 +62,9 @@ export default class FileDialogButtonView extends View {
      */
     constructor(locale?: Locale);
     /**
-     * Focuses the {@link #buttonView}.
+     * @inheritDoc
      */
-    focus(): void;
+    render(): void;
 }
 /**
  * Fired when file dialog is closed with file selected.

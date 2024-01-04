@@ -151,6 +151,9 @@ export default class DowncastDispatcher extends EmitterMixin() {
                 this._convertAttribute(entry.range, entry.attributeKey, entry.attributeOldValue, entry.attributeNewValue, conversionApi);
             }
         }
+        // Remove mappings for all removed view elements.
+        // Remove these mappings as soon as they are not needed (https://github.com/ckeditor/ckeditor5/issues/15411).
+        conversionApi.mapper.flushDeferredBindings();
         for (const markerName of conversionApi.mapper.flushUnboundMarkerNames()) {
             const markerRange = markers.get(markerName).getRange();
             this._convertMarkerRemove(markerName, markerRange, conversionApi);
@@ -160,8 +163,6 @@ export default class DowncastDispatcher extends EmitterMixin() {
         for (const change of differ.getMarkersToAdd()) {
             this._convertMarkerAdd(change.name, change.range, conversionApi);
         }
-        // Remove mappings for all removed view elements.
-        conversionApi.mapper.flushDeferredBindings();
         // Verify if all insert consumables were consumed.
         conversionApi.consumable.verifyAllConsumed('insert');
     }

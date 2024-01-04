@@ -30,7 +30,7 @@ export { default as RootAttributeOperation } from './model/operation/rootattribu
 export { default as RootOperation } from './model/operation/rootoperation';
 export { default as NoOperation } from './model/operation/nooperation';
 export { transformSets } from './model/operation/transform';
-export { default as DocumentSelection, type DocumentSelectionChangeRangeEvent, type DocumentSelectionChangeMarkerEvent } from './model/documentselection';
+export { default as DocumentSelection, type DocumentSelectionChangeRangeEvent, type DocumentSelectionChangeMarkerEvent, type DocumentSelectionChangeAttributeEvent } from './model/documentselection';
 export { default as Range } from './model/range';
 export { default as LiveRange, type LiveRangeChangeRangeEvent } from './model/liverange';
 export { default as LivePosition } from './model/liveposition';

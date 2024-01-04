@@ -7,6 +7,7 @@
  */
 import { Plugin } from '@ckeditor/ckeditor5-core';
 import { keyCodes } from '@ckeditor/ckeditor5-utils';
+import { MouseObserver } from '@ckeditor/ckeditor5-engine';
 /**
  * This plugin enables the two-step caret (phantom) movement behavior for
  * {@link module:typing/twostepcaretmovement~TwoStepCaretMovement#registerAttribute registered attributes}
@@ -142,6 +143,12 @@ export default class TwoStepCaretMovement extends Plugin {
      */
     constructor(editor) {
         super(editor);
+        /**
+         * A flag indicating that the automatic gravity restoration should not happen upon the next
+         * gravity restoration.
+         * {@link module:engine/model/selection~Selection#event:change:range} event.
+         */
+        this._isNextGravityRestorationSkipped = false;
         this.attributes = new Set();
         this._overrideUid = null;
     }
@@ -185,7 +192,6 @@ export default class TwoStepCaretMovement extends Plugin {
                 evt.stop();
             }
         }, { context: '$text', priority: 'highest' });
-        this._isNextGravityRestorationSkipped = false;
         // The automatic gravity restoration logic.
         this.listenTo(modelSelection, 'change:range', (evt, data) => {
             // Skipping the automatic restoration is needed if the selection should change
@@ -208,6 +214,12 @@ export default class TwoStepCaretMovement extends Plugin {
             }
             this._restoreGravity();
         });
+        // Handle a click at the beginning/end of a two-step element.
+        this._enableClickingAfterNode();
+        // Change the attributes of the selection in certain situations after the two-step node was inserted into the document.
+        this._enableInsertContentSelectionAttributesFixer();
+        // Handle removing the content after the two-step node.
+        this._handleDeleteContentAfterNode();
     }
     /**
      * Registers a given attribute for the two-step caret movement.
@@ -260,7 +272,18 @@ export default class TwoStepCaretMovement extends Plugin {
         //
         if (isBetweenDifferentAttributes(position, attributes)) {
             preventCaretMovement(data);
-            this._overrideGravity();
+            // CLEAR 2-SCM attributes if we are at the end of one 2-SCM and before
+            // the next one with a different value of the same attribute.
+            //
+            //		<paragraph>foo<$text attribute=1>bar{}</$text><$text attribute=2>bar</$text>baz</paragraph>
+            //
+            if (hasAnyAttribute(selection, attributes) &&
+                isBetweenDifferentAttributes(position, attributes, true)) {
+                clearSelectionAttributes(model, attributes);
+            }
+            else {
+                this._overrideGravity();
+            }
             return true;
         }
         return false;
@@ -288,7 +311,17 @@ export default class TwoStepCaretMovement extends Plugin {
         if (this._isGravityOverridden) {
             preventCaretMovement(data);
             this._restoreGravity();
-            setSelectionAttributesFromTheNodeBefore(model, attributes, position);
+            // CLEAR 2-SCM attributes if we are at the end of one 2-SCM and before
+            // the next one with a different value of the same attribute.
+            //
+            //		<paragraph>foo<$text attribute=1>bar</$text><$text attribute=2>{}bar</$text>baz</paragraph>
+            //
+            if (isBetweenDifferentAttributes(position, attributes, true)) {
+                clearSelectionAttributes(model, attributes);
+            }
+            else {
+                setSelectionAttributesFromTheNodeBefore(model, attributes, position);
+            }
             return true;
         }
         else {
@@ -304,6 +337,16 @@ export default class TwoStepCaretMovement extends Plugin {
                     return true;
                 }
                 return false;
+            }
+            // SET 2-SCM attributes if we are between nodes with the same attribute but with different values.
+            //
+            //		<paragraph>foo<$text attribute=1>bar</$text>[]<$text attribute=2>bar</$text>baz</paragraph>
+            //
+            if (!hasAnyAttribute(selection, attributes) &&
+                isBetweenDifferentAttributes(position, attributes, true)) {
+                preventCaretMovement(data);
+                setSelectionAttributesFromTheNodeBefore(model, attributes, position);
+                return true;
             }
             // When we are moving from natural gravity, to the position of the 2SCM, we need to override the gravity,
             // and make sure it won't be restored. Unless it's at the end of the block and an observed attribute.
@@ -339,6 +382,139 @@ export default class TwoStepCaretMovement extends Plugin {
             }
         }
         return false;
+    }
+    /**
+     * Starts listening to {@link module:engine/view/document~Document#event:mousedown} and
+     * {@link module:engine/view/document~Document#event:selectionChange} and puts the selection before/after a 2-step node
+     * if clicked at the beginning/ending of the 2-step node.
+     *
+     * The purpose of this action is to allow typing around the 2-step node directly after a click.
+     *
+     * See https://github.com/ckeditor/ckeditor5/issues/1016.
+     */
+    _enableClickingAfterNode() {
+        const editor = this.editor;
+        const model = editor.model;
+        const selection = model.document.selection;
+        const document = editor.editing.view.document;
+        editor.editing.view.addObserver(MouseObserver);
+        let clicked = false;
+        // Detect the click.
+        this.listenTo(document, 'mousedown', () => {
+            clicked = true;
+        });
+        // When the selection has changed...
+        this.listenTo(document, 'selectionChange', () => {
+            const attributes = this.attributes;
+            if (!clicked) {
+                return;
+            }
+            // ...and it was caused by the click...
+            clicked = false;
+            // ...and no text is selected...
+            if (!selection.isCollapsed) {
+                return;
+            }
+            // ...and clicked text is the 2-step node...
+            if (!hasAnyAttribute(selection, attributes)) {
+                return;
+            }
+            const position = selection.getFirstPosition();
+            if (!isBetweenDifferentAttributes(position, attributes)) {
+                return;
+            }
+            // The selection at the start of a block would use surrounding attributes
+            // from text after the selection so just clear 2-SCM attributes.
+            //
+            // Also, clear attributes for selection between same attribute with different values.
+            if (position.isAtStart ||
+                isBetweenDifferentAttributes(position, attributes, true)) {
+                clearSelectionAttributes(model, attributes);
+            }
+            else if (!this._isGravityOverridden) {
+                this._overrideGravity();
+            }
+        });
+    }
+    /**
+     * Starts listening to {@link module:engine/model/model~Model#event:insertContent} and corrects the model
+     * selection attributes if the selection is at the end of a two-step node after inserting the content.
+     *
+     * The purpose of this action is to improve the overall UX because the user is no longer "trapped" by the
+     * two-step attribute of the selection, and they can type a "clean" (`linkHref`–less) text right away.
+     *
+     * See https://github.com/ckeditor/ckeditor5/issues/6053.
+     */
+    _enableInsertContentSelectionAttributesFixer() {
+        const editor = this.editor;
+        const model = editor.model;
+        const selection = model.document.selection;
+        const attributes = this.attributes;
+        this.listenTo(model, 'insertContent', () => {
+            const position = selection.getFirstPosition();
+            if (hasAnyAttribute(selection, attributes) &&
+                isBetweenDifferentAttributes(position, attributes)) {
+                clearSelectionAttributes(model, attributes);
+            }
+        }, { priority: 'low' });
+    }
+    /**
+     * Starts listening to {@link module:engine/model/model~Model#deleteContent} and checks whether
+     * removing a content right after the tow-step attribute.
+     *
+     * If so, the selection should not preserve the two-step attribute. However, if
+     * the {@link module:typing/twostepcaretmovement~TwoStepCaretMovement} plugin is active and
+     * the selection has the two-step attribute due to overridden gravity (at the end), the two-step attribute should stay untouched.
+     *
+     * The purpose of this action is to allow removing the link text and keep the selection outside the link.
+     *
+     * See https://github.com/ckeditor/ckeditor5/issues/7521.
+     */
+    _handleDeleteContentAfterNode() {
+        const editor = this.editor;
+        const model = editor.model;
+        const selection = model.document.selection;
+        const view = editor.editing.view;
+        let isBackspace = false;
+        let shouldPreserveAttributes = false;
+        // Detect pressing `Backspace`.
+        this.listenTo(view.document, 'delete', (evt, data) => {
+            isBackspace = data.direction === 'backward';
+        }, { priority: 'high' });
+        // Before removing the content, check whether the selection is inside a two-step attribute.
+        // If so, we want to preserve those attributes.
+        this.listenTo(model, 'deleteContent', () => {
+            if (!isBackspace) {
+                return;
+            }
+            const position = selection.getFirstPosition();
+            shouldPreserveAttributes = hasAnyAttribute(selection, this.attributes) &&
+                !isStepAfterAnyAttributeBoundary(position, this.attributes);
+        }, { priority: 'high' });
+        // After removing the content, check whether the current selection should preserve the `linkHref` attribute.
+        this.listenTo(model, 'deleteContent', () => {
+            if (!isBackspace) {
+                return;
+            }
+            isBackspace = false;
+            // Do not escape two-step attribute if it was inside it before content deletion.
+            if (shouldPreserveAttributes) {
+                return;
+            }
+            // Use `model.enqueueChange()` in order to execute the callback at the end of the changes process.
+            editor.model.enqueueChange(() => {
+                const position = selection.getFirstPosition();
+                if (hasAnyAttribute(selection, this.attributes) &&
+                    isBetweenDifferentAttributes(position, this.attributes)) {
+                    if (position.isAtStart || isBetweenDifferentAttributes(position, this.attributes, true)) {
+                        clearSelectionAttributes(model, this.attributes);
+                    }
+                    else if (!this._isGravityOverridden) {
+                        this._overrideGravity();
+                    }
+                }
+            });
+        }, { priority: 'low' });
     }
     /**
      * `true` when the gravity is overridden for the plugin.
@@ -405,6 +581,14 @@ function setSelectionAttributesFromTheNodeBefore(model, attributes, position) {
     });
 }
 /**
+ * Removes 2-SCM attributes from the selection.
+ */
+function clearSelectionAttributes(model, attributes) {
+    model.change(writer => {
+        writer.removeSelectionAttribute(attributes);
+    });
+}
+/**
  * Prevents the caret movement in the view by calling `preventDefault` on the event data.
  *
  * @alias data.preventDefault
@@ -422,11 +606,14 @@ function isStepAfterAnyAttributeBoundary(position, attributes) {
 /**
  * Checks whether the given position is between different values of given attributes.
  */
-function isBetweenDifferentAttributes(position, attributes) {
+function isBetweenDifferentAttributes(position, attributes, isStrict = false) {
     const { nodeBefore, nodeAfter } = position;
     for (const observedAttribute of attributes) {
         const attrBefore = nodeBefore ? nodeBefore.getAttribute(observedAttribute) : undefined;
         const attrAfter = nodeAfter ? nodeAfter.getAttribute(observedAttribute) : undefined;
+        if (isStrict && (attrBefore === undefined || attrAfter === undefined)) {
+            continue;
+        }
         if (attrAfter !== attrBefore) {
             return true;
         }

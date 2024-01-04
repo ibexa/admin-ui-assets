@@ -6,8 +6,9 @@
  * @module ui/list/listview
  */
 import View from '../view';
-import type ListItemView from './listitemview';
+import ListItemView from './listitemview';
 import ListItemGroupView from './listitemgroupview';
+import type ListSeparatorView from './listseparatorview';
 import type DropdownPanelFocusable from '../dropdown/dropdownpanelfocusable';
 import ViewCollection from '../viewcollection';
 import { FocusTracker, KeystrokeHandler, type Locale } from '@ckeditor/ckeditor5-utils';
@@ -25,7 +26,7 @@ export default class ListView extends View<HTMLUListElement> implements Dropdown
     /**
      * Collection of the child list views.
      */
-    readonly items: ViewCollection<ListItemView | ListItemGroupView>;
+    readonly items: ViewCollection<ListItemView | ListItemGroupView | ListSeparatorView>;
     /**
      * Tracks information about DOM focus in the list.
      */

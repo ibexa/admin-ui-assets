@@ -26,6 +26,9 @@ import lowVision from './../theme/icons/low-vision.svg';
 import textAlternative from './../theme/icons/text-alternative.svg';
 import loupe from './../theme/icons/loupe.svg';
 import image from './../theme/icons/image.svg';
+import imageUpload from './../theme/icons/image-upload.svg';
+import imageAssetManager from './../theme/icons/image-asset-manager.svg';
+import imageUrl from './../theme/icons/image-url.svg';
 import alignBottom from './../theme/icons/align-bottom.svg';
 import alignMiddle from './../theme/icons/align-middle.svg';
 import alignTop from './../theme/icons/align-top.svg';
@@ -63,6 +66,9 @@ export const icons = {
     eraser,
     history,
     image,
+    imageUpload,
+    imageAssetManager,
+    imageUrl,
     lowVision,
     textAlternative,
     loupe,

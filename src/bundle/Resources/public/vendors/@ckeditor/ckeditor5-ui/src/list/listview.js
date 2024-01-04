@@ -7,6 +7,7 @@
  */
 import View from '../view';
 import FocusCycler from '../focuscycler';
+import ListItemView from './listitemview';
 import ListItemGroupView from './listitemgroupview';
 import ViewCollection from '../viewcollection';
 import { FocusTracker, KeystrokeHandler } from '@ckeditor/ckeditor5-utils';
@@ -69,7 +70,7 @@ export default class ListView extends View {
             if (item instanceof ListItemGroupView) {
                 this._registerFocusableItemsGroup(item);
             }
-            else {
+            else if (item instanceof ListItemView) {
                 this._registerFocusableListItem(item);
             }
         }

@@ -33,7 +33,7 @@ export default class SplitButtonView extends View {
     /**
      * @inheritDoc
      */
-    constructor(locale) {
+    constructor(locale, actionButton) {
         super(locale);
         const bind = this.bindTemplate;
         // Implement the Button interface.
@@ -53,7 +53,7 @@ export default class SplitButtonView extends View {
         this.set('type', 'button');
         this.set('withText', false);
         this.children = this.createCollection();
-        this.actionView = this._createActionView();
+        this.actionView = this._createActionView(actionButton);
         this.arrowView = this._createArrowView();
         this.keystrokes = new KeystrokeHandler();
         this.focusTracker = new FocusTracker();
@@ -114,9 +114,11 @@ export default class SplitButtonView extends View {
      * Creates a {@link module:ui/button/buttonview~ButtonView} instance as {@link #actionView} and binds it with main split button
      * attributes.
      */
-    _createActionView() {
-        const actionView = new ButtonView();
-        actionView.bind('icon', 'isEnabled', 'isOn', 'isToggleable', 'keystroke', 'label', 'tabindex', 'tooltip', 'tooltipPosition', 'type', 'withText').to(this);
+    _createActionView(actionButton) {
+        const actionView = actionButton || new ButtonView();
+        if (!actionButton) {
+            actionView.bind('icon', 'isEnabled', 'isOn', 'isToggleable', 'keystroke', 'label', 'tabindex', 'tooltip', 'tooltipPosition', 'type', 'withText').to(this);
+        }
         actionView.extendTemplate({
             attributes: {
                 class: 'ck-splitbutton__action'

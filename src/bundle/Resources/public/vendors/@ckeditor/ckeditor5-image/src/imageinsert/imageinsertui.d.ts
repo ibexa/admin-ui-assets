@@ -5,8 +5,10 @@
 /**
  * @module image/imageinsert/imageinsertui
  */
-import { Plugin } from 'ckeditor5/src/core';
-import { type DropdownView } from 'ckeditor5/src/ui';
+import { Plugin, type Editor } from 'ckeditor5/src/core';
+import { type Observable } from 'ckeditor5/src/utils';
+import { type ButtonView, type DropdownView, type FocusableView } from 'ckeditor5/src/ui';
+import ImageUtils from '../imageutils';
 /**
  * The image insert dropdown plugin.
  *
@@ -22,23 +24,49 @@ export default class ImageInsertUI extends Plugin {
      */
     static get pluginName(): "ImageInsertUI";
     /**
+     * @inheritDoc
+     */
+    static get requires(): readonly [typeof ImageUtils];
+    /**
      * The dropdown view responsible for displaying the image insert UI.
      */
     dropdownView?: DropdownView;
+    /**
+     * Observable property used to alter labels while some image is selected and when it is not.
+     *
+     * @observable
+     */
+    isImageSelected: boolean;
+    /**
+     * Registered integrations map.
+     */
+    private _integrations;
+    /**
+     * @inheritDoc
+     */
+    constructor(editor: Editor);
     /**
      * @inheritDoc
      */
     init(): void;
     /**
-     * Creates the dropdown view.
-     *
-     * @param locale The localization services instance.
+     * Registers the insert image dropdown integration.
      */
-    private _createDropdownView;
+    registerIntegration({ name, observable, buttonViewCreator, formViewCreator, requiresForm }: {
+        name: string;
+        observable: Observable & {
+            isEnabled: boolean;
+        };
+        buttonViewCreator: (isOnlyOne: boolean) => ButtonView;
+        formViewCreator: (isOnlyOne: boolean) => FocusableView;
+        requiresForm?: boolean;
+    }): void;
     /**
-     * Sets up the dropdown view.
-     *
-     * @param command An uploadImage or insertImage command.
+     * Creates the toolbar component.
      */
-    private _setUpDropdown;
+    private _createToolbarComponent;
+    /**
+     * Validates the integrations list.
+     */
+    private _prepareIntegrations;
 }
