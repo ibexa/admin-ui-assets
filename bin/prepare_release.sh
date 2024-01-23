@@ -66,11 +66,15 @@ MOMENT_NOTICE="$MOMENT_DIR/MOMENT_IN_EZPLATFORMADMINUIASSETS.txt"
 MOMENT_TIMEZONE_DIR="$VENDOR_DIR/moment-timezone"
 MOMENT_TIMEZONE_NOTICE="$MOMENT_TIMEZONE_DIR/MOMENT_TIMEZONE_IN_EZPLATFORMADMINUIASSETS.txt"
 D3_DIR="$VENDOR_DIR/d3"
-D3_NOTICE="$D3_DIR/D3_IN_EZPLATFORMUIASSETS.txt"
+D3_NOTICE="$D3_DIR/D3_IN_EZPLATFORMADMINUIASSETS.txt"
 DAGRE_D3_DIR="$VENDOR_DIR/dagre-d3"
-DAGRE_D3_NOTICE="$DAGRE_D3_DIR/DAGRE_D3_IN_EZPLATFORMUIASSETS.txt"
+DAGRE_D3_NOTICE="$DAGRE_D3_DIR/DAGRE_D3_IN_EZPLATFORMADMINUIASSETS.txt"
 JS_MD5_DIR="$VENDOR_DIR/js-md5"
-JS_MD5_NOTICE="$JS_MD5_DIR/JS_MD5_IN_EZPLATFORMUIASSETS.txt"
+JS_MD5_NOTICE="$JS_MD5_DIR/JS_MD5_IN_EZPLATFORMADMINUIASSETS.txt"
+CHART_JS_DIR="$VENDOR_DIR/chart-js"
+CHART_JS_NOTICE="CHART_JS_IN_EZPLATFORMADMINUIASSETS.txt"
+CHARTJS_PLUGIN_DATALABELS_DIR="$VENDOR_DIR/chartjs-plugin-datalabels"
+CHARTJS_PLUGIN_DATALABELS_NOTICE="CHARTJS_PLUGIN_DATALABELS_IN_EZPLATFORMADMINUIASSETS.txt"
 
 CURRENT_BRANCH=`git branch | grep '*' | cut -d ' ' -f 2`
 TMP_BRANCH="version_$VERSION"
@@ -181,6 +185,19 @@ rm -rf "$JS_MD5_DIR/src"
 check_process "clean js-md5"
 echo "This is a customized js-md5 version." > $JS_MD5_NOTICE
 echo "To decrease the size of the bundle, it includes production-only files" >> $JS_MD5_NOTICE
+
+echo "# Removing unused files from chart-js"
+rm -rf ""
+check_process "clean chart-js"
+echo "This is a customized chart-js version." > $CHART_JS_NOTICE
+echo "To decrease the size of the bundle, it includes production-only files" >> $CHART_JS_NOTICE
+
+echo "# Removing unused files from chartjs-plugin-datalabels"
+rm -rf ""
+check_process "clean chartjs-plugin-datalabels"
+echo "This is a customized chartjs-plugin-datalabels version." > $CHARTJS_PLUGIN_DATALABELS_NOTICE
+echo "To decrease the size of the bundle, it includes production-only files" >> $CHARTJS_PLUGIN_DATALABELS_NOTICE
+
 
 echo "# Creating the custom branch: $TMP_BRANCH"
 git checkout -q -b "$TMP_BRANCH" > /dev/null

@@ -17,9 +17,10 @@
         "move-d3": "cp -r node_modules/d3 src/bundle/Resources/public/vendors/d3",
         "move-dagre-d3": "cp -r node_modules/dagre-d3 src/bundle/Resources/public/vendors/dagre-d3",
         "move-chart-js": "cp -r node_modules/chart.js src/bundle/Resources/public/vendors/chart-js",
+        "move-chartjs-plugin-datalabels": "cp -r node_modules/chartjs-plugin-datalabels src/bundle/Resources/public/vendors/chartjs-plugin-datalabels",
         "move-js-md5": "cp -r node_modules/js-md5 src/bundle/Resources/public/vendors/js-md5",
         "move-ckeditor5": "cp -r node_modules/@ckeditor src/bundle/Resources/public/vendors/@ckeditor",
-        "prepare-release": "npm run create-folder; npm run move-bootstrap; npm run move-jquery; npm run move-leaflet; npm run move-react; npm run move-react-dom; npm run move-taggify; npm run move-popperjs; npm run move-flatpickr; npm run move-create-react-class; npm run move-prop-types; npm run move-moment; npm run move-moment-timezone; npm run move-d3; npm run move-dagre-d3; npm run move-chart-js; npm run move-js-md5; npm run move-ckeditor5"
+        "prepare-release": "npm run create-folder; npm run move-bootstrap; npm run move-jquery; npm run move-leaflet; npm run move-react; npm run move-react-dom; npm run move-taggify; npm run move-popperjs; npm run move-flatpickr; npm run move-create-react-class; npm run move-prop-types; npm run move-moment; npm run move-moment-timezone; npm run move-d3; npm run move-dagre-d3; npm run move-chart-js; npm run move-js-md5; npm run move-ckeditor5; npm run move-chartjs-plugin-datalabels"
     },
     "repository": {
         "type": "git",
@@ -40,6 +41,7 @@
         "@ckeditor/ckeditor5-code-block": "^40.1.0",
         "bootstrap": "^5.3.2",
         "chart.js": "^4.4.0",
+        "chartjs-plugin-datalabels": "^2.2.0",
         "create-react-class": "^15.7.0",
         "d3": "^5.16.0",
         "dagre-d3": "^0.6.4",
