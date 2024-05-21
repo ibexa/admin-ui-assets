@@ -17,7 +17,6 @@
     },
     "autoload": {
         "psr-4": {
-            "EzSystems\\EzPlatformAdminUiAssetsBundle\\": "/",
             "Ibexa\\Bundle\\AdminUiAssets\\": "src/bundle/"
         }
     },
