@@ -27,7 +27,7 @@ If you are tagging for eZPlatform 2.5.x LTS you should use the 4.x branch.
 
 ## COPYRIGHT
 
-Copyright (C) 1999-2021 Ibexa AS (formerly eZ Systems AS). All rights reserved.
+Copyright (C) 1999-2024 Ibexa AS (formerly eZ Systems AS). All rights reserved.
 
 ## LICENSE
 
