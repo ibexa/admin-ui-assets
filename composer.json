@@ -5,15 +5,9 @@
     "replace": {
         "ezsystems/ezplatform-admin-ui-assets": "*"
     },
-    "authors": [
-        {
-            "name": "eZ dev-team & eZ Community",
-            "homepage": "https://github.com/ezsystems/ezplatform/contributors"
-        }
-    ],
     "require": {
         "php": ">=8.3",
-        "symfony/http-kernel": "^5.0"
+        "symfony/http-kernel": "^6.4"
     },
     "autoload": {
         "psr-4": {
