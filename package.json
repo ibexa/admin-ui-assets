@@ -1,7 +1,7 @@
 {
     "name": "admin-ui-assets",
     "scripts": {
-        "create-folder": "rm -rf src/bundle/Resources/public/vendors;  mkdir src/bundle/Resources/public/vendors",
+        "create-folder": "rm -rf src/bundle/Resources/public/vendors;  mkdir -p src/bundle/Resources/public/vendors",
         "move-bootstrap": "cp -r node_modules/bootstrap src/bundle/Resources/public/vendors/bootstrap",
         "move-jquery": "cp -r node_modules/jquery src/bundle/Resources/public/vendors/jquery",
         "move-leaflet": "cp -r node_modules/leaflet src/bundle/Resources/public/vendors/leaflet",
@@ -39,6 +39,9 @@
         "@ckeditor/ckeditor5-widget": "^40.1.0",
         "@ckeditor/ckeditor5-theme-lark": "^40.1.0",
         "@ckeditor/ckeditor5-code-block": "^40.1.0",
+        "@ckeditor/ckeditor5-cloud-services": "^44.1.0",
+        "@ckeditor/ckeditor5-real-time-collaboration": "40.1.0",
+        "@ckeditor/ckeditor-cloud-services-collaboration": "^52.6.11",
         "bootstrap": "^5.3.2",
         "chart.js": "^4.4.0",
         "chartjs-plugin-datalabels": "^2.2.0",
