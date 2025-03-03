@@ -7,7 +7,7 @@
     },
     "require": {
         "php": ">=8.3",
-        "symfony/http-kernel": "^6.4"
+        "symfony/http-kernel": "^7.2"
     },
     "autoload": {
         "psr-4": {
