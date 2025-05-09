@@ -1,7 +1,7 @@
 {
     "name": "admin-ui-assets",
     "scripts": {
-        "create-folder": "rm -rf src/bundle/Resources/public/vendors;  mkdir src/bundle/Resources/public/vendors",
+        "create-folder": "rm -rf src/bundle/Resources/public/vendors; mkdir -p src/bundle/Resources/public/vendors",
         "move-bootstrap": "cp -r node_modules/bootstrap src/bundle/Resources/public/vendors/bootstrap",
         "move-jquery": "cp -r node_modules/jquery src/bundle/Resources/public/vendors/jquery",
         "move-leaflet": "cp -r node_modules/leaflet src/bundle/Resources/public/vendors/leaflet",
@@ -21,7 +21,9 @@
         "move-js-md5": "cp -r node_modules/js-md5 src/bundle/Resources/public/vendors/js-md5",
         "move-ckeditor5": "cp -r node_modules/@ckeditor src/bundle/Resources/public/vendors/@ckeditor",
         "move-ckeditor5-core": "cp -r node_modules/ckeditor5 src/bundle/Resources/public/vendors/ckeditor5",
-        "prepare-release": "npm run create-folder; npm run move-bootstrap; npm run move-jquery; npm run move-leaflet; npm run move-react; npm run move-react-dom; npm run move-taggify; npm run move-popperjs; npm run move-flatpickr; npm run move-create-react-class; npm run move-prop-types; npm run move-moment; npm run move-moment-timezone; npm run move-d3; npm run move-dagre-d3; npm run move-chart-js; npm run move-js-md5; npm run move-ckeditor5; npm run move-ckeditor5-core; npm run move-chartjs-plugin-datalabels"
+        "move-ids-assets": "mkdir src/bundle/Resources/public/vendors/ids-assets && cp -r node_modules/@ibexa/design-system/packages/assets/dist src/bundle/Resources/public/vendors/ids-assets/dist",
+        "move-ids-components": "mkdir src/bundle/Resources/public/vendors/ids-components && cp -r node_modules/@ibexa/design-system/packages/components/dist src/bundle/Resources/public/vendors/ids-components/dist",
+        "prepare-release": "yarn run create-folder; yarn run move-bootstrap; yarn run move-jquery; yarn run move-leaflet; yarn run move-react; yarn run move-react-dom; yarn run move-taggify; yarn run move-popperjs; yarn run move-flatpickr; yarn run move-create-react-class; yarn run move-prop-types; yarn run move-moment; yarn run move-moment-timezone; yarn run move-d3; yarn run move-dagre-d3; yarn run move-chart-js; yarn run move-js-md5; yarn run move-ckeditor5; yarn run move-ckeditor5-core; yarn run move-chartjs-plugin-datalabels; yarn run move-ids-assets; yarn run move-ids-components"
     },
     "repository": {
         "type": "git",
@@ -43,6 +45,7 @@
         "d3": "^5.16.0",
         "dagre-d3": "^0.6.4",
         "flatpickr": "^4.6.13",
+        "@ibexa/design-system": "https://github.com/ibexa/design-system#^v.1.0.0",
         "jquery": "^3.7.1",
         "js-md5": "0.7.3",
         "leaflet": "^1.9.4",
@@ -52,5 +55,6 @@
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
         "taggify": "^1.2.1"
-    }
+    },
+    "packageManager": "yarn@1.22.22"
 }
