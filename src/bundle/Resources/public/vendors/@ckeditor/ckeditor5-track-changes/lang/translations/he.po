@@ -1,0 +1,616 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: he\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "A suggestion for changing an item to the provided one."
+msgid "*Change to:* %0"
+msgstr "*שנה ל:* %0"
+
+msgctxt "A suggestion for changing a content of a widget."
+msgid "*Change %0 content*"
+msgstr "*שנה תוכן %0*"
+
+msgctxt "A suggestion for checking a to-do list item."
+msgid "*Check item*"
+msgstr "*בדוק פריט*"
+
+msgctxt "A suggestion for setting inline formatting."
+msgid "*Format:* %0"
+msgstr "*פורמט:* %0"
+
+msgctxt "A suggestion for indenting an item."
+msgid "*Indent:* %0"
+msgstr "*הסט פנימה:* %0"
+
+msgctxt "A suggestion for inserting an item."
+msgid "*Insert:* %0"
+msgstr "*הכנס:* %0"
+
+msgctxt "A suggestion for changing table properties."
+msgid "*Format:* change table properties"
+msgstr "*פורמט:* שינוי מאפייני טבלה"
+
+msgctxt "A suggestion for changing table cell properties."
+msgid "*Format:* change table cell properties"
+msgstr "*פורמט:* שינוי מאפייני תאי טבלה"
+
+msgctxt "A suggestion for inserting an item into another item."
+msgid "*Format:* insert into %0"
+msgstr "*תבנית:* הכנס לתוך %0"
+
+msgctxt "A suggestion for removing item from another item."
+msgid "*Format:* remove from %0"
+msgstr "*תבנית:* הסר מ- %0"
+
+msgctxt "A suggestion for resizing a table."
+msgid "*Format:* resize table"
+msgstr "*תבנית:* שנה גודל טבלה"
+
+msgctxt "A suggestion for changing the list order to reversed."
+msgid "*Format:* set order to reversed"
+msgstr "*תבנית:* הגדר סדר להפוך"
+
+msgctxt "A suggestion for changing the list order to regular."
+msgid "*Format:* set order to regular"
+msgstr "*תבנית:* הגדר סדר לרגיל"
+
+msgctxt "A suggestion for changing the start index of the list."
+msgid "*Format:* set start index to %0"
+msgstr "*תבנית:* הגדר תחילת אינדקס ל- %0"
+
+msgctxt "A suggestion for merging cells."
+msgid "*Merge cells*"
+msgstr "*מיזוג תאים*"
+
+msgctxt "A suggestion for merging items."
+msgid "*Merge:* %0"
+msgstr "*מזג:* %0"
+
+msgctxt "A suggestion for outdenting an item."
+msgid "*Outdent:* %0"
+msgstr "*הסט החוצה:* %0"
+
+msgctxt "A suggestion for removing all formatting."
+msgid "*Remove all formatting*"
+msgstr "*הסר את כל העיצוב*"
+
+msgctxt "A suggestion for removing an inline format."
+msgid "*Remove format:* %0"
+msgstr "*הסר עיצוב:* %0"
+
+msgctxt "A suggestion for removing the highlight."
+msgid "*Remove highlight*"
+msgstr "*הסר סימון*"
+
+msgctxt "A suggestion for removing image text alternative."
+msgid "*Remove image text alternative*"
+msgstr "*הסר חלופה לטקסט תמונה*"
+
+msgctxt "A suggestion for removing the link."
+msgid "*Remove link*"
+msgstr "*הסר קישור*"
+
+msgctxt "A suggestion for removing an item."
+msgid "*Remove:* %0"
+msgstr "*הסר:* %0"
+
+msgctxt "A suggestion for replacing table cells (table pasting)."
+msgid "*Replace table cells*"
+msgstr "*החלף תאי טבלה*"
+
+msgctxt "A suggestion for resetting the font background color."
+msgid "*Reset font background color*"
+msgstr "*אפס את צבע הרקע של הגופן*"
+
+msgctxt "A suggestion for resetting the font color."
+msgid "*Reset font color*"
+msgstr "*אפס את צבע הגופן*"
+
+msgctxt "A suggestion for resetting the font family."
+msgid "*Reset font family*"
+msgstr "*אפס את משפחת הגופנים*"
+
+msgctxt "A suggestion for resetting the font size."
+msgid "*Reset font size*"
+msgstr "*אפס את גודל הגופן*"
+
+msgctxt "A suggestion for resetting image width."
+msgid "*Reset image width*"
+msgstr "*אפס את רוחב התמונה*"
+
+msgctxt "A suggestion for setting the font background color to %0."
+msgid "*Set font background color:* %0"
+msgstr "*הגדר את צבע הרקע של הגופן:* %0"
+
+msgctxt "A suggestion for setting the font color to %0."
+msgid "*Set font color:* %0"
+msgstr "*הגדר את צבע הגופן:* %0"
+
+msgctxt "A suggestion for setting the font family to %0."
+msgid "*Set font family:* %0"
+msgstr "*הגדר את משפחת הגופנים:* %0"
+
+msgctxt "A suggestion for setting the font size to %0."
+msgid "*Set font size:* %0"
+msgstr "*הגדר את גודל הגופן:* %0"
+
+msgctxt "A suggestion for setting one or more formatting changes to %0"
+msgid "*Set format:* %0"
+msgstr "*הגדר פורמט:* %0"
+
+msgctxt "A suggestion for setting multiple inline formatting to %0"
+msgid "*Set format to:* %0"
+msgstr "*להגדיר את הפורמט ל:* %0"
+
+msgctxt "A suggestion for highlighting text."
+msgid "*Set highlight:* %0"
+msgstr "*הגדר סימון:* %0"
+
+msgctxt "A suggestion for setting image text alternative to %0."
+msgid "*Set image text alternative:* %0"
+msgstr "*הגדר חלופה לטקסט תמונה:* %0"
+
+msgctxt "A suggestion for setting the image width to %0."
+msgid "*Set image width:* %0"
+msgstr "*הגדר רוחב תמונה:* %0"
+
+msgctxt "A suggestion for setting the link URL."
+msgid "*Set link:* %0"
+msgstr "*הגדר קישור:* %0"
+
+msgctxt "A suggestion for splitting cells horizontally."
+msgid "*Split cell:* horizontally"
+msgstr "*פצל תא:* אופקית"
+
+msgctxt "A suggestion for splitting cells vertically."
+msgid "*Split cell:* vertically"
+msgstr "*פצל תא:* אנכית"
+
+msgctxt "A suggestion for splitting the item."
+msgid "*Split:* %0"
+msgstr "*פצל:* %0"
+
+msgctxt "A suggestion for unchecking a to-do list item."
+msgid "*Uncheck item*"
+msgstr "*בטל את סימון הפריט*"
+
+msgctxt "The label for the button which accepts all selected suggestions."
+msgid "Accept all selected suggestions"
+msgstr "קבל את כל ההצעות שנבחרו"
+
+msgctxt "The label for the button which accepts all suggestions."
+msgid "Accept all suggestions"
+msgstr "קבל את כל ההצעות"
+
+msgctxt "The label for the accept suggestion button."
+msgid "Accept suggestion"
+msgstr "קבל את ההצעה"
+
+msgctxt "The label for the button which discards all selected suggestions."
+msgid "Discard all selected suggestions"
+msgstr "בטל את כל ההצעות שנבחרו"
+
+msgctxt "The label for the button which discards all suggestions."
+msgid "Discard all suggestions"
+msgstr "בטל את כל ההצעות"
+
+msgctxt "The label for the discard suggestion button."
+msgid "Discard suggestion"
+msgstr "בטל את ההצעה"
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves an insertion suggestion."
+msgid "LEAVE_INSERTION_SUGGESTION_ANNOUNCEMENT"
+msgstr "עוזב הצעת הכנסה."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters an insertion suggestion."
+msgid "ENTER_INSERTION_SUGGESTION_ANNOUNCEMENT"
+msgstr "נכנס להצעת הכנסה. לחצו על %0 כדי לעבור לדיון."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a deletion suggestion."
+msgid "LEAVE_DELETION_SUGGESTION_ANNOUNCEMENT"
+msgstr "עוזב הצעת מחיקה."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters a deletion suggestion."
+msgid "ENTER_DELETION_SUGGESTION_ANNOUNCEMENT"
+msgstr "נכנס להצעת מחיקה. לחצו על %0 כדי לעבור לדיון."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a formatting suggestion."
+msgid "LEAVE_FORMATTING_SUGGESTION_ANNOUNCEMENT"
+msgstr "עוזב הצעת עיצוב."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters a formatting suggestion."
+msgid "ENTER_FORMATTING_SUGGESTION_ANNOUNCEMENT"
+msgstr "נכנס להצעת עיצוב. לחצו על %0 כדי לעבור לדיון."
+
+msgctxt "A text label for assistive technologies describing the suggestion thread."
+msgid "SUGGESTION_THREAD_ARIA_LABEL"
+msgid_plural "Suggestion by %1. Created on %2. %0 replies. %3"
+msgstr[0] "הצעה מאת %1. נוצרה ב-%2. %0 תשובה. %3"
+msgstr[1] "הצעה מאת %1. נוצרה ב-%2. %0 תשובה. %3"
+
+msgctxt "A text label for assistive technologies providing additional information about navigation in the suggestion thread."
+msgid "SUGGESTION_THREAD_DESCRIPTION"
+msgstr "לחצו על Enter לאפשרויות נוספות. לחצו על Escape כדי לצאת."
+
+msgctxt "The block quote element name displayed in the suggestion."
+msgid "ELEMENT_BLOCK_QUOTE"
+msgstr "בלוק ציטוט"
+
+msgctxt "The default styled list element name displayed in the suggestion."
+msgid "ELEMENT_DEFAULT_LIST_DEFAULT"
+msgstr "ברירת המחדל של סגנון רשימה"
+
+msgctxt "The bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST"
+msgstr "רשימה עם תבליטים"
+
+msgctxt "The default styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_DEFAULT"
+msgstr "רשימת תבליטים (ברירת מחדל)"
+
+msgctxt "The circle styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_CIRCLE"
+msgstr "רשימת תבליטים (עיגול)"
+
+msgctxt "The disc styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_DISC"
+msgstr "רשימת תבליטים (דיסק)"
+
+msgctxt "The square styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_SQUARE"
+msgstr "רשימת תבליטים (ריבוע)"
+
+msgctxt "The caption element name displayed in the suggestion."
+msgid "ELEMENT_CAPTION"
+msgstr "כיתוב"
+
+msgctxt "The code block element name displayed in the suggestion."
+msgid "ELEMENT_CODE_BLOCK"
+msgid_plural "%0 code blocks"
+msgstr[0] "בלוק קוד"
+msgstr[1] "%0 בלוק קוד"
+
+msgctxt "The heading element name displayed in the suggestion."
+msgid "ELEMENT_HEADING"
+msgid_plural "%0 headings (level %1)"
+msgstr[0] "כותרת (רמה %1)"
+msgstr[1] "%0 כותרת (רמה %1)"
+
+msgctxt "The heading element name displayed in the suggestion with a custom title."
+msgid "ELEMENT_HEADING_CUSTOM"
+msgid_plural "%0 headings (%1)"
+msgstr[0] "כותרת (%1)"
+msgstr[1] "%0 כותרת (%1)"
+
+msgctxt "The horizontal line element name displayed in the suggestion."
+msgid "ELEMENT_HORIZONTAL_LINE"
+msgid_plural "%0 horizontal lines"
+msgstr[0] "קו אופקי"
+msgstr[1] "%0 קו אופקי"
+
+msgctxt "The HTML embed element name displayed in the suggestion."
+msgid "ELEMENT_HTML_EMBED"
+msgid_plural "%0 HTML embeds"
+msgstr[0] "הטמעת HTML"
+msgstr[1] "%0 הטמעת HTML"
+
+msgctxt "The image element name displayed in the suggestion."
+msgid "ELEMENT_IMAGE"
+msgid_plural "%0 images"
+msgstr[0] "תמונה"
+msgstr[1] "%0 תמונה"
+
+msgctxt "The inline image element name displayed in the suggestion."
+msgid "ELEMENT_INLINE_IMAGE"
+msgid_plural "%0 images"
+msgstr[0] "תמונה"
+msgstr[1] "%0 תמונה"
+
+msgctxt "The line break element name displayed in the suggestion."
+msgid "ELEMENT_LINE_BREAK"
+msgid_plural "%0 line breaks"
+msgstr[0] "מעבר שורה"
+msgstr[1] "%0 מעבר שורה"
+
+msgctxt "The list item element name displayed in the suggestion."
+msgid "ELEMENT_LIST_ITEM"
+msgid_plural "%0 list items"
+msgstr[0] "פריט רשימה"
+msgstr[1] "%0 פריט רשימה"
+
+msgctxt "The media element name displayed in the suggestion."
+msgid "ELEMENT_MEDIA"
+msgid_plural "%0 media items"
+msgstr[0] "פריט מדיה"
+msgstr[1] "%0 פריט מדיה"
+
+msgctxt "The numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST"
+msgstr "רשימה ממוספרת"
+
+msgctxt "The default styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DEFAULT"
+msgstr "רשימה ממוספרת (ברירת מחדל)"
+
+msgctxt "The decimal styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DECIMAL"
+msgstr "רשימה ממוספרת (שבר עשרוני)"
+
+msgctxt "The decimal styled (with leading zero) numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DECIMAL_LEADING_ZERO"
+msgstr "רשימה ממוספרת (שבר עם אפס לפני הנקודה)"
+
+msgctxt "The lower latin styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_LOWER_LATIN"
+msgstr "רשימה ממוספרת (lower-latin)"
+
+msgctxt "The lower roman styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_LOWER_ROMAN"
+msgstr "רשימה ממוספרת (lower-roman)"
+
+msgctxt "The upper latin styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_UPPER_LATIN"
+msgstr "רשימה ממוספרת (upper-latin)"
+
+msgctxt "The upper roman styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_UPPER_ROMAN"
+msgstr "רשימה ממוספרת (upper-roman)"
+
+msgctxt "The page break element name displayed in the suggestion."
+msgid "ELEMENT_PAGE_BREAK"
+msgid_plural "%0 page breaks"
+msgstr[0] "מעבר עמוד"
+msgstr[1] "%0 מעבר עמוד"
+
+msgctxt "The paragraph element name displayed in the suggestion."
+msgid "ELEMENT_PARAGRAPH"
+msgid_plural "%0 paragraphs"
+msgstr[0] "פסקה"
+msgstr[1] "%0 פסקה"
+
+msgctxt "The space element name displayed in the suggestion."
+msgid "ELEMENT_SPACE"
+msgid_plural "%0 spaces"
+msgstr[0] "רווח"
+msgstr[1] "רווח"
+
+msgctxt "The table element name displayed in the suggestion."
+msgid "ELEMENT_TABLE"
+msgid_plural "%0 tables"
+msgstr[0] "טבלה"
+msgstr[1] "%0 טבלה"
+
+msgctxt "The table column element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_COLUMN"
+msgid_plural "%0 table columns"
+msgstr[0] "עמודת טבלה"
+msgstr[1] "%0 עמודת טבלה"
+
+msgctxt "The table column with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_COLUMN_WITH_TEXT"
+msgid_plural "%0 table columns *with text* %1"
+msgstr[0] "עמודת טבלה *עם טקסט* %1"
+msgstr[1] "%0 עמודת טבלה *עם טקסט* %1"
+
+msgctxt "The table of contents element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_OF_CONTENTS"
+msgid_plural "%0 tables of contents"
+msgstr[0] "תוכן העניינים"
+msgstr[1] "תוכן העניינים"
+
+msgctxt "The table row element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_ROW"
+msgid_plural "%0 table rows"
+msgstr[0] "שורת טבלה"
+msgstr[1] "%0 שורת טבלה"
+
+msgctxt "The table row with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_ROW_WITH_TEXT"
+msgid_plural "%0 table rows *with text* %1"
+msgstr[0] "שורת טבלה *עם טקסט* %1"
+msgstr[1] "%0 שורת טבלה *עם טקסט* %1"
+
+msgctxt "The table with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_WITH_TEXT"
+msgstr "טבלה *עם טקסט* %0"
+
+msgctxt "The title element name displayed in the suggestion."
+msgid "ELEMENT_TITLE"
+msgstr "כותרת"
+
+msgctxt "The to-do list element name displayed in the suggestion."
+msgid "ELEMENT_TODO_LIST"
+msgstr "רשימת מטלות"
+
+msgctxt "The multi-level list element name displayed in the suggestion."
+msgid "ELEMENT_MULTI_LEVEL_LIST"
+msgstr "רשימה מרובת רמות"
+
+msgctxt "The merge field element name displayed in the suggestion."
+msgid "ELEMENT_MERGE_FIELD"
+msgid_plural "%0 merge fields"
+msgstr[0] "שדה מיזוג"
+msgstr[1] "שדה מיזוג"
+
+msgctxt "The alignment format name displayed in a format suggestion."
+msgid "FORMAT_ALIGNMENT"
+msgstr "יישור"
+
+msgctxt "The align to center format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_CENTER"
+msgstr "יישור למרכז"
+
+msgctxt "The align to left format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_LEFT"
+msgstr "יישור לשמאל"
+
+msgctxt "The align to right format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_RIGHT"
+msgstr "יישור לימין"
+
+msgctxt "The bold format name displayed in a format suggestion."
+msgid "FORMAT_BOLD"
+msgstr "מודגש"
+
+msgctxt "The code format name displayed in a format suggestion."
+msgid "FORMAT_CODE"
+msgstr "קוד"
+
+msgctxt "The header column format name displayed in a format suggestion."
+msgid "FORMAT_HEADER_COLUMN"
+msgstr "עמודת כותרת"
+
+msgctxt "The header row format name displayed in a format suggestion."
+msgid "FORMAT_HEADER_ROW"
+msgstr "שורת כותרת"
+
+msgctxt "The highlight format name displayed in a format suggestion."
+msgid "FORMAT_HIGHLIGHT"
+msgstr "סימון"
+
+msgctxt "The italic format name displayed in a format suggestion."
+msgid "FORMAT_ITALIC"
+msgstr "נטוי"
+
+msgctxt "The justify text format name displayed in a format suggestion."
+msgid "FORMAT_JUSTIFY_TEXT"
+msgstr "יישור לשני הצדדים"
+
+msgctxt "The regular column format name displayed in a format suggestion."
+msgid "FORMAT_REGULAR_COLUMN"
+msgstr "עמודה רגילה"
+
+msgctxt "The regular row format name displayed in a format suggestion."
+msgid "FORMAT_REGULAR_ROW"
+msgstr "שורה רגילה"
+
+msgctxt "The label for area disabled in restricted editing area in a format suggestion."
+msgid "FORMAT_RESTRICTED_DISABLED"
+msgstr "*הפוך ללא זמין במצב עריכה מוגבל*"
+
+msgctxt "The label for area enabled in restricted editing area in a format suggestion."
+msgid "FORMAT_RESTRICTED_ENABLED"
+msgstr "*הפעל במצב עריכה מוגבל*"
+
+msgctxt "The side image format name displayed in a format suggestion."
+msgid "FORMAT_SIDE_IMAGE"
+msgstr "תמונת צד"
+
+msgctxt "The strikethrough format name displayed in a format suggestion."
+msgid "FORMAT_STRIKETHROUGH"
+msgstr "קו חוצה"
+
+msgctxt "The subscript format name displayed in a format suggestion."
+msgid "FORMAT_SUBSCRIPT"
+msgstr "כתב תחתי"
+
+msgctxt "The superscript format name displayed in a format suggestion."
+msgid "FORMAT_SUPERSCRIPT"
+msgstr "כתב עילי"
+
+msgctxt "The underline format name displayed in a format suggestion."
+msgid "FORMAT_UNDERLINE"
+msgstr "קו תחתון"
+
+msgctxt "The list or block indent format name displayed in a format suggestion."
+msgid "FORMAT_INDENT"
+msgstr "הזחה"
+
+msgctxt "The list reversed format name displayed in a format suggestion."
+msgid "FORMAT_LIST_REVERSED"
+msgstr "רשימה הפוכה"
+
+msgctxt "The list start format name displayed in a format suggestion."
+msgid "FORMAT_LIST_START"
+msgstr "התחלת רשימה"
+
+msgctxt "The font size format name displayed in a format suggestion."
+msgid "FORMAT_FONT_SIZE"
+msgstr "גודל גופן"
+
+msgctxt "The font family format name displayed in a format suggestion."
+msgid "FORMAT_FONT_FAMILY"
+msgstr "משפחת גופן"
+
+msgctxt "The font color format name displayed in a format suggestion."
+msgid "FORMAT_FONT_COLOR"
+msgstr "צבע גופן"
+
+msgctxt "The font background color format name displayed in a format suggestion."
+msgid "FORMAT_FONT_BACKGROUND"
+msgstr "צבע רקע של גופן"
+
+msgctxt "The image size change format name displayed in a format suggestion."
+msgid "FORMAT_IMAGE_SIZE"
+msgstr "גודל תמונה"
+
+msgctxt "The style format name displayed in a format suggestion."
+msgid "FORMAT_STYLE"
+msgstr "סגנון"
+
+msgctxt "The label for the alert shown when closing the editor with an unsaved track changes change."
+msgid "PENDING_ACTION_SUGGESTION"
+msgstr "שינוי שלא נשמר בהצעה."
+
+msgctxt "A suggestion for replacing one text with another."
+msgid "REPLACE_TEXT"
+msgstr "*החלף:* %0 *עם* %1"
+
+msgctxt "The label for the dropdown containing some options related to track changes."
+msgid "Track changes"
+msgstr "‏‏עקוב אחר שינויים"
+
+msgctxt "The additional information that suggestion comes from external source."
+msgid "EXTERNAL_SUGGESTION"
+msgstr "הצעה זו מגיעה ממקור חיצוני."
+
+msgctxt "The additional information that suggestion comes from imported word file."
+msgid "EXTERNAL_IMPORT_WORD_SUGGESTION"
+msgstr "הצעה זו מגיעה מקובץ Word מיובא."
+
+msgctxt "A suggestion for setting the bookmark name."
+msgid "*Set bookmark:* %0"
+msgstr "*הגדירו סימניה:* %0"
+
+msgctxt "The bookmark element name displayed in the suggestion."
+msgid "ELEMENT_BOOKMARK"
+msgid_plural "%0 bookmarks"
+msgstr[0] "סימניה"
+msgstr[1] "סימניה"
+
+msgctxt "A suggestion for replacing an image."
+msgid "*Replace image*"
+msgstr "*החלף תמונה*"
+
+msgctxt "The label for the button which shows the final content in the modal."
+msgid "Preview final content"
+msgstr "הצג תצוגה מקדימה של התוכן הסופי"
+
+msgctxt "The label for the final content preview modal heading."
+msgid "Final content preview"
+msgstr "תצוגה מקדימה של התוכן הסופי"
+
+msgctxt "A suggestion for setting type %0 to the table."
+msgid "*Set table type:* %0"
+msgstr "*הגדר סוג טבלה:* %0"
+
+msgctxt "The content table element name displayed in the suggestion."
+msgid "ELEMENT_CONTENT_TABLE"
+msgid_plural "%0 content tables"
+msgstr[0] "טבלת תוכן"
+msgstr[1] "טבלת תוכן"
+
+msgctxt "The layout table element name displayed in the suggestion."
+msgid "ELEMENT_LAYOUT_TABLE"
+msgid_plural "%0 layout tables"
+msgstr[0] "טבלת פריסה"
+msgstr[1] "טבלת פריסה"

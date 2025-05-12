@@ -1,0 +1,80 @@
+{
+  "name": "@ckeditor/ckeditor5-revision-history",
+  "version": "45.0.0",
+  "description": "Document revision history feature for CKEditor 5.",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "CKSource (http://cksource.com/)",
+  "bugs": {
+    "url": "https://support.ckeditor.com/hc/en-us/requests/new"
+  },
+  "homepage": "https://ckeditor.com/collaboration/",
+  "keywords": [
+    "CKEditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "WYSIWYG",
+    "WYSIWYW",
+    "text",
+    "rich-text",
+    "richtext",
+    "editor",
+    "editing",
+    "html",
+    "collaboration",
+    "framework",
+    "revision history",
+    "version history",
+    "versioning"
+  ],
+  "type": "module",
+  "main": "src/index.js",
+  "files": [
+    "build",
+    "dist",
+    "lang",
+    "src/**/*.js",
+    "src/**/*.d.ts",
+    "theme",
+    "ckeditor5-metadata.json",
+    "CHANGELOG.md"
+  ],
+  "dependencies": {
+    "@ckeditor/ckeditor5-autosave": "45.0.0",
+    "@ckeditor/ckeditor5-comments": "45.0.0",
+    "@ckeditor/ckeditor5-core": "45.0.0",
+    "@ckeditor/ckeditor5-editor-classic": "45.0.0",
+    "@ckeditor/ckeditor5-engine": "45.0.0",
+    "@ckeditor/ckeditor5-icons": "45.0.0",
+    "@ckeditor/ckeditor5-ui": "45.0.0",
+    "@ckeditor/ckeditor5-utils": "45.0.0",
+    "@types/luxon": "3.4.2",
+    "ckeditor5": "45.0.0",
+    "ckeditor5-collaboration": "45.0.0",
+    "es-toolkit": "1.32.0",
+    "luxon": "3.5.0"
+  },
+  "types": "src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    },
+    "./dist/*": {
+      "types": "./src/index.d.ts",
+      "import": "./dist/*",
+      "default": "./dist/*"
+    },
+    "./src/*": {
+      "types": "./src/*.d.ts",
+      "import": "./src/*",
+      "default": "./src/*"
+    },
+    "./build/*": "./build/*",
+    "./lang/*": "./lang/*",
+    "./theme/*": "./theme/*",
+    "./ckeditor5-metadata.json": "./ckeditor5-metadata.json",
+    "./package.json": "./package.json"
+  },
+  "obfuscated": true
+}

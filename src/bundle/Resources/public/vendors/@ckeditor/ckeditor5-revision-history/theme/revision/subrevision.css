@@ -1,0 +1,58 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck {
+	--ck-revision-history-subrevision-connector-background: hsl(0deg 0% 91%);
+}
+
+.ck.ck-revision-history-sidebar__revision-wrapper {
+	& .ck-revision-history-sidebar__revision {
+		&.ck-revision-history-sidebar__subrevision {
+			position: relative;
+			margin: var(--ck-revision-history-sidebar-revision-vertical-spacing) 0;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+
+			&::before {
+				content: "";
+				display: block;
+				width: 3px;
+				height: var(--ck-revision-history-sidebar-revision-vertical-spacing);
+				background: var(--ck-revision-history-subrevision-connector-background);
+				position: absolute;
+				top: calc(-1 * var(--ck-revision-history-sidebar-revision-vertical-spacing));
+				left: var(--ck-spacing-large);
+				transition: var(--ck-revision-history-revision-transitions), transform 100ms ease-in-out;
+
+				@media (prefers-reduced-motion: reduce) {
+					transition: none;
+				}
+			}
+
+			/* Subrevisions don't move when getting selected. */
+			&.ck-revision-history-sidebar__revision_selected {
+				border-radius: var(--ck-border-radius);
+
+				&::before {
+					transform: translateX(var(--ck-revision-history-sidebar-timeline-padding));
+				}
+			}
+
+			& .ck-revision-history-sidebar__revision-authors {
+				margin-top: var(--ck-spacing-standard);
+			}
+
+			& .ck-revision-history-sidebar__revision-author_creator {
+				font-weight: normal;
+			}
+		}
+	}
+}

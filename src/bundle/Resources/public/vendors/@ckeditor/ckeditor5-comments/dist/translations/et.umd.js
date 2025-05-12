@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+(_0x33c305=>{const {et:{dictionary:_0x2b5df8,getPluralForm:_0x1bcfd6}}={'et':{'dictionary':{'Comment\x20editor':'Kommentaari\x20redaktor','NUMBER_OF_COMMENTS':['%0\x20kommentaar','%0\x20kommentaari'],'TOO_LONG_COMMENT_ALERT':'Kommentaari\x20sisu\x20on\x20liiga\x20pikk.\x20Sinu\x20kommentaaris\x20on\x20%0\x20märki,\x20aga\x20maksimaalne\x20märkide\x20arv\x20on\x20%1.','Reply...':'Vasta...','Reply\x20to\x20reopen\x20discussion...':'Vastus\x20arutelu\x20taasavamiseks...','Write\x20a\x20comment...':'Kirjuta\x20kommentaar.','Comment\x20was\x20made\x20on\x20an\x20element':'Kommentaar\x20tehti\x20elemendi\x20kohta','Edit':'Muuda','Resolve':'Lahendama','Reopen':'Avama','Remove':'Eemalda','Reply':'Vasta','Delete\x20comment?':'Kustutada\x20kommentaar?','Delete\x20comment\x20thread?':'Kustutada\x20kommentati\x20lõim?','Marked\x20as\x20resolved':'Märgitud\x20lahendatuks','Comment':'Kommentaar','Annotations\x20sidebar':'Allmärkuste\x20külgriba','Annotations\x20list':'Allmärkuste\x20nimekiri','Thread\x20comments':'Teema\x20kommentaarid','THREAD_CONTEXT_LABEL':'Teema\x20kontekst:\x20%0','COMMENT_THREAD_LABEL':['Kommenteeritava\x20teema\x20koostas\x20%1.\x20%1\x20vastas.','Kommenteeritava\x20teema\x20koostas\x20%1.\x20%1\x20vastas.'],'COMMENT_THREAD_DESCRIPTION':'Rohkemateks\x20valikuteks\x20vajutage\x20Enter\x20klahvi.\x20Väljumiseks\x20vajutage\x20Escape.','COMMENT_ARIA_LABEL':'Kommenteeris\x20%0.\x20Koostatud\x20%1.\x20\x20%2.\x20%3','COMMENTS_ARCHIVE_LIST_LABEL':'Kommentaaride\x20nimekiri','ACCESSIBILITY_HELP_ANNOTATIONS_GROUP':'Allmärkuse\x20teemade\x20kasutamise\x20kiirklahvid\x20(nt\x20kommentaarid,\x20muudatuste\x20jälgimissoovitused)','ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO':'Keskendu\x20teemale,\x20kui\x20valik\x20püsib\x20omas\x20kohas','ACCESSIBILITY_HELP_ANNOTATIONS_EXIT':'Väljuge\x20allmärkusest\x20ja\x20keskenduge\x20taas\x20muudetud\x20sisule','ACCESSIBILITY_HELP_ANNOTATIONS_ENTER':'Sirvige\x20kasutusel\x20allmärkuste\x20teemale\x20või\x20teema\x20kommentaarile','ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS':'Vahetage\x20allmärkuste\x20teema\x20sisevalikuid','ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT':'Saatke\x20vastus\x20kommenteerimise\x20ajal','ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS':'Keskenduge\x20allmärkuste\x20külgriba\x20või\x20kommentaaride\x20arhiivi\x20eelmisele\x20või\x20järgmisele\x20teemale','ENTER_COMMENT_ANNOUNCEMENT':'Kommenteeritud\x20sisu\x20sisestamine.\x20Aruteluks\x20vajutage\x20%0.','LEAVE_COMMENT_ANNOUNCEMENT':'Kommenteeritud\x20sisu\x20avaldamine.','PENDING_ACTION_COMMENT_THREAD':'Salvestamata\x20muudatused\x20kommentaaride\x20lõimes.','EXTERNAL_COMMENT':'Kommentaar\x20pärineb\x20välisallikast.','EXTERNAL_IMPORT_WORD_COMMENT':'See\x20kommentaar\x20pärineb\x20imporditud\x20Wordi\x20failist.','EXTERNAL_AVATAR':'Kuvatud\x20autori\x20nimi\x20pärineb\x20välisest\x20allikast\x20(lisas\x20%0)','EXTERNAL_IMPORT_WORD_AVATAR':'Kuvatud\x20autori\x20nimi\x20pärineb\x20Wordi\x20dokumendist,\x20mille\x20on\x20importinud\x20%0','COMMENTS_ARCHIVE':'Kommentaarid\x20arhiiv','EMPTY_COMMENTS_ARCHIVE':'Puuduvad\x20arhiveeritud\x20kommentaar\x20niidid.'},'getPluralForm':_0x39b50b=>0x1!=_0x39b50b}};_0x33c305['et']||={'dictionary':{},'getPluralForm':null},_0x33c305['et']['dictionary']=Object['assign'](_0x33c305['et']['dictionary'],_0x2b5df8),_0x33c305['et']['getPluralForm']=_0x1bcfd6;})(window['CKEDITOR_TRANSLATIONS']||={});

@@ -1,0 +1,45 @@
+{
+	"plugins": [
+		{
+			"name": "Document outline",
+			"className": "DocumentOutline",
+			"description": "Displays a navigable list of document sections (headings) next to the editor.",
+			"docs": "features/document-outline.html",
+			"path": "src/documentoutline.js"
+		},
+		{
+			"name": "Table of contents",
+			"className": "TableOfContents",
+			"description": "Inserts a widget with a list of headings (section titles) that reflects the structure of the document.",
+			"docs": "features/table-of-contents.html",
+			"path": "src/tableofcontents.js",
+			"uiComponents": [
+				{
+					"type": "Button",
+					"name": "tableOfContents",
+					"iconPath": "@ckeditor/ckeditor5-icons/theme/icons/table-of-contents.svg"
+				}
+			],
+			"htmlOutput": [
+				{
+					"elements": "div",
+					"classes": [
+						"table-of-contents",
+						"table-of-contents_empty"
+					]
+				},
+				{
+					"elements": [
+						"ol",
+						"li",
+						"a"
+					]
+				},
+				{
+					"elements": "p",
+					"classes": "table-of-contents__placeholder"
+				}
+			]
+		}
+	]
+}

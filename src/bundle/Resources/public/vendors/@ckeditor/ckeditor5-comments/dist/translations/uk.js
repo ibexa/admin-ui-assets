@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+export default{'uk':{'dictionary':{'Comment\x20editor':'Редактор\x20коментарів','NUMBER_OF_COMMENTS':['%0\x20Коментар','%0\x20Коментаря','%0\x20Коментарів'],'TOO_LONG_COMMENT_ALERT':'Коментар\x20задовгий.\x20Ваш\x20коментар\x20містить\x20%0\x20знак\x20із\x20%1\x20допустимих.','Reply...':'Відповісти...','Reply\x20to\x20reopen\x20discussion...':'Відповісти,\x20щоб\x20відновити\x20обговорення...','Write\x20a\x20comment...':'Написати\x20коментар...','Comment\x20was\x20made\x20on\x20an\x20element':'Було\x20зроблено\x20коментар\x20до\x20елемента','Edit':'Редагувати','Resolve':'Вирішити','Reopen':'Відновити','Remove':'Видалити','Reply':'Відповісти','Delete\x20comment?':'Видалити\x20коментар?','Delete\x20comment\x20thread?':'Видати\x20ланцюжок\x20коментарів?','Marked\x20as\x20resolved':'Позначено\x20як\x20вирішене','Comment':'Коментар','Annotations\x20sidebar':'Бічна\x20панель\x20анотацій','Annotations\x20list':'Список\x20анотацій','Thread\x20comments':'Коментарі\x20до\x20теми','THREAD_CONTEXT_LABEL':'Контекст\x20теми:\x20%0','COMMENT_THREAD_LABEL':['Ланцюжок\x20коментарів\x20від\x20%1.\x20%1\x20відповідь.','Ланцюжок\x20коментарів\x20від\x20%1.\x20%1\x20відповіді.','Ланцюжок\x20коментарів\x20від\x20%1.\x20%1\x20відповідей.'],'COMMENT_THREAD_DESCRIPTION':'Натисніть\x20\x22Enter\x22,\x20щоб\x20переглянути\x20більше\x20варіантів.\x20Натисніть\x20\x22Escape\x22,\x20щоб\x20вийти.','COMMENT_ARIA_LABEL':'Коментар\x20від\x20%0.\x20Створено\x20%1.\x20%2.\x20%3','COMMENTS_ARCHIVE_LIST_LABEL':'Список\x20коментарів','ACCESSIBILITY_HELP_ANNOTATIONS_GROUP':'Натискання\x20клавіш\x20для\x20взаємодії\x20з\x20ланцюжками\x20анотацій\x20(напр.\x20коментарями,\x20відстеженням\x20пропозицій\x20змін)','ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO':'Перемістіть\x20фокус\x20на\x20ланцюжок,\x20коли\x20виділення\x20закріплене\x20у\x20його\x20маркері','ACCESSIBILITY_HELP_ANNOTATIONS_EXIT':'Вийдіть\x20з\x20анотації\x20та\x20перемістіть\x20фокус\x20назад\x20на\x20редагований\x20вміст','ACCESSIBILITY_HELP_ANNOTATIONS_ENTER':'Переглядайте\x20виділений\x20ланцюжок\x20анотації\x20або\x20коментар\x20до\x20теми','ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS':'Переміщуйтесь\x20між\x20внутрішніми\x20елементами\x20ланцюжка\x20анотацій','ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT':'Надсилайте\x20відповідь,\x20пишучи\x20коментар','ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS':'Переміщуйтесь\x20до\x20попереднього\x20або\x20наступного\x20ланцюжка\x20у\x20бічній\x20панелі\x20анотацій\x20або\x20архіві\x20коментарів','ENTER_COMMENT_ANNOUNCEMENT':'Вхід\x20до\x20контенту\x20з\x20коментарями.\x20Натисніть\x20%0,\x20щоб\x20перейти\x20до\x20обговорення.','LEAVE_COMMENT_ANNOUNCEMENT':'Вихід\x20з\x20контенту\x20з\x20коментарями.','PENDING_ACTION_COMMENT_THREAD':'Незбережена\x20зміна\x20ланцюжка\x20коментарів.','EXTERNAL_COMMENT':'Цей\x20коментар\x20походить\x20від\x20зовнішнього\x20джерела.','EXTERNAL_IMPORT_WORD_COMMENT':'Цей\x20коментар\x20походить\x20з\x20імпортованого\x20Word\x20файлу.','EXTERNAL_AVATAR':'Показане\x20ім\x27я\x20автора\x20походить\x20із\x20зовнішнього\x20джерела\x20(доданого\x20%0)','EXTERNAL_IMPORT_WORD_AVATAR':'Показане\x20ім\x27я\x20автора\x20походить\x20із\x20документу\x20Word\x20імпортованого\x20%0','COMMENTS_ARCHIVE':'Архів\x20коментарів','EMPTY_COMMENTS_ARCHIVE':'Немає\x20архівних\x20гілок\x20коментарів.'},'getPluralForm':_0x1c9a0c=>_0x1c9a0c%0xa==0x1&&_0x1c9a0c%0x64!=0xb?0x0:_0x1c9a0c%0xa>=0x2&&_0x1c9a0c%0xa<=0x4&&(_0x1c9a0c%0x64<0xa||_0x1c9a0c%0x64>=0x14)?0x1:0x2}};

@@ -1,0 +1,200 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+:root {
+	--ck-color-suggestion-widget-th-insertion-background: hsla(128, 71%, 65%, .12);
+	--ck-color-suggestion-widget-th-insertion-background-active: hsla(128, 71%, 50%, .14);
+
+	--ck-color-suggestion-widget-th-deletion-background: hsla(345, 71%, 65%, .14);
+	--ck-color-suggestion-widget-th-deletion-background-active: hsla(345, 71%, 45%, .16);
+}
+
+.ck-content figure.table .ck-suggestion-marker-formatBlock {
+	box-shadow: -3px 0 0 0 var(--ck-color-suggestion-marker-format-border);
+
+	&.ck-suggestion-marker--active {
+		box-shadow: -3px 0 0 0 var(--ck-color-suggestion-marker-format-border-active);
+	}
+}
+
+.ck-content .ck-widget.table > figcaption {
+	&.ck-suggestion-marker-deletion {
+		background-color: var(--ck-color-suggestion-widget-deletion-background);
+		border: none;
+
+		&.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+		}
+	}
+
+	&.ck-suggestion-marker-insertion {
+		background-color: var(--ck-color-suggestion-widget-insertion-background);
+		border: none;
+
+		&.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+		}
+	}
+}
+
+.ck-content .ck-suggestion-marker-insertion.table {
+	border-color: var(--ck-color-suggestion-marker-insertion-border);
+
+	& > figcaption {
+		background-color: var(--ck-color-suggestion-widget-insertion-background);
+	}
+
+	& > table {
+		& > tbody > tr > th {
+			background-color: var(--ck-color-suggestion-widget-th-insertion-background);
+			border-color: var(--ck-color-suggestion-marker-insertion-border);
+		}
+
+		& > thead > tr > th {
+			background-color: var(--ck-color-suggestion-widget-th-insertion-background);
+			border-color: var(--ck-color-suggestion-marker-insertion-border);
+		}
+
+		& > tbody > tr > td {
+			background-color: var(--ck-color-suggestion-widget-insertion-background);
+			border-color: var(--ck-color-suggestion-marker-insertion-border);
+		}
+	}
+}
+
+.ck-content .ck-suggestion-marker-insertion.ck-suggestion-marker--active.table {
+	border-color: var(--ck-color-suggestion-marker-insertion-border-active);
+
+	& > figcaption {
+		background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+	}
+
+	& > table {
+		& > tbody > tr > th {
+			background-color: var(--ck-color-suggestion-widget-th-insertion-background-active);
+			border-color: var(--ck-color-suggestion-marker-insertion-border-active);
+		}
+
+		& > thead > tr > th {
+			background-color: var(--ck-color-suggestion-widget-th-insertion-background-active);
+			border-color: var(--ck-color-suggestion-marker-insertion-border-active);
+		}
+
+		& > tbody > tr > td {
+			background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+			border-color: var(--ck-color-suggestion-marker-insertion-border-active);
+		}
+	}
+}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.table  {
+	border-color: var(--ck-color-suggestion-marker-deletion-border);
+
+	& > figcaption {
+		background-color: var(--ck-color-suggestion-widget-deletion-background);
+	}
+
+	& > table {
+		& > tbody > tr > th {
+			background-color: var(--ck-color-suggestion-widget-th-deletion-background);
+			border-color: var(--ck-color-suggestion-marker-deletion-border);
+			text-decoration: none;
+		}
+
+		& > thead > tr > th {
+			background-color: var(--ck-color-suggestion-widget-th-deletion-background);
+			border-color: var(--ck-color-suggestion-marker-deletion-border);
+			text-decoration: none;
+		}
+
+		& > tbody > tr > td {
+			background-color: var(--ck-color-suggestion-widget-deletion-background);
+			border-color: var(--ck-color-suggestion-marker-deletion-border);
+			text-decoration: none;
+		}
+	}
+}
+
+.ck-content .ck-suggestion-marker-deletion.ck-suggestion-marker--active.table {
+	border-color: var(--ck-color-suggestion-marker-deletion-border-active);
+
+	& > figcaption {
+		background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+	}
+
+	& > table {
+		& > tbody > tr > th {
+			background-color: var(--ck-color-suggestion-widget-th-deletion-background-active);
+			border-color: var(--ck-color-suggestion-marker-deletion-border-active);
+		}
+
+		& > thead > tr > th {
+			background-color: var(--ck-color-suggestion-widget-th-deletion-background-active);
+			border-color: var(--ck-color-suggestion-marker-deletion-border-active);
+		}
+
+		& > tbody > tr > td {
+			background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+			border-color: var(--ck-color-suggestion-marker-deletion-border-active);
+		}
+	}
+}
+
+/*
+ * We need here at least 022 CSS Specificity because of table styles like `.ck-content .table table th { background: ... }
+ * See: https://github.com/ckeditor/ckeditor5-table/blob/master/theme/table.css#L29
+ */
+.ck-content .table {
+	& th.ck-suggestion-marker-insertion {
+		background-color: var(--ck-color-suggestion-widget-th-insertion-background);
+
+		&.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-th-insertion-background-active);
+		}
+	}
+
+	& th.ck-suggestion-marker-deletion {
+		background-color: var(--ck-color-suggestion-widget-th-deletion-background);
+		text-decoration: none;
+
+		&.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-th-deletion-background-active);
+		}
+	}
+
+	& td.ck-suggestion-marker-insertion {
+		background-color: var(--ck-color-suggestion-widget-insertion-background);
+
+		&.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+		}
+	}
+
+	& td.ck-suggestion-marker-deletion {
+		background-color: var(--ck-color-suggestion-widget-deletion-background);
+		text-decoration: none;
+
+		&.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+		}
+	}
+
+	& th.ck-suggestion-marker-formatInline,
+	& td.ck-suggestion-marker-formatInline,
+	& th.ck-suggestion-marker-formatBlock,
+	& td.ck-suggestion-marker-formatBlock {
+		background-color: var(--ck-color-suggestion-widget-format-background);
+		box-shadow: none;
+
+		&.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-format-background-active);
+			box-shadow: none;
+		}
+	}
+}

@@ -1,0 +1,1 @@
+!function(e){const o=e.pt=e.pt||{};o.dictionary=Object.assign(o.dictionary||{},{"Enter fullscreen mode":"Entrar em modo de ecrã inteiro","Fullscreen mode":"Modo de ecrã inteiro","Leave fullscreen mode":"Sair de modo de ecrã inteiro","Toggle fullscreen mode":"Alternar modo de ecrã inteiro"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

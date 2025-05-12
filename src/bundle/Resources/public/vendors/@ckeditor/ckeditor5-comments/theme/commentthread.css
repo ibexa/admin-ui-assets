@@ -1,0 +1,292 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+@import "@ckeditor/ckeditor5-theme-lark/theme/mixins/_focus.css";
+@import "@ckeditor/ckeditor5-theme-lark/theme/mixins/_shadow.css";
+@import "@ckeditor/ckeditor5-theme-lark/theme/mixins/_rounded.css";
+
+:root {
+	--ck-color-thread-remove-background: var(--ck-color-comment-remove-background);
+	--ck-color-comment-count: hsl(210, 52%, 57%);
+
+	--ck-color-thread-header-background: hsl(54, 88%, 93%);
+	--ck-color-thread-header-active-background: hsl(52, 100%, 83%);
+
+	--ck-color-unlinked-background: hsl(0, 0%, 96%);
+	--ck-color-unlinked-active-background: hsl(0, 0%, 92%);
+}
+
+.ck .ck-thread {
+	@mixin ck-rounded-corners;
+
+	width: 100%;
+	color: var(--ck-color-base-text);
+	outline: 0;
+	background-color: var(--ck-color-base-background);
+	overflow: hidden;
+
+	/*
+	 * Beware: Using "transition: all" breaks focus management (unable to obtain focus on show)
+	 * because the view is displayed in a dialog that gets toggled via "visibility" property.
+	 */
+	transition-property: color, background-color, width, outline;
+	transition-duration: 300ms;
+	transition-timing-function: ease;
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+	}
+
+	&:focus {
+		/*
+		 * We cannot use the ck-focus-ring mixin here because it adds a border that would need to stay transparent
+		 * in non-focused state and create an odd space inside the surrounding annotation container.
+		 */
+		outline: var(--ck-focus-ring);
+
+		/*
+		 * We cannot use the ck-box-shadow mixin because we're using outline instead of border (see the comment above).
+		 * And the shadow size has to be custom because outline is rendered on top of the shadow.
+		 */
+		box-shadow: 0 0 0 4px var(--ck-color-focus-outer-shadow);
+	}
+}
+
+/*
+ * In case of inline annotations, their focus styles get hoisted to the balloon panel to work around overflow that would
+ * otherwise get them cropped..
+ */
+.ck-balloon-panel:has( .ck-thread:focus ) {
+	@mixin ck-focus-ring;
+	@mixin ck-box-shadow var(--ck-drop-shadow), var(--ck-focus-outer-shadow);
+}
+
+.ck .ck-thread__header {
+	display: flex;
+	justify-content: space-between;
+	line-height: 1.57;
+	padding: var(--ck-spacing-standard);
+	background-color: var(--ck-color-thread-header-background);
+	font-size: var(--ck-font-size-base);
+
+	& .ck-button {
+		font-size: var(--ck-annotation-button-size);
+	}
+
+	& .ck-context-wrapper {
+		display: inline-flex;
+		width: 100%;
+		min-width: 0;
+		height: 25px;
+		position: relative;
+		padding-right: var(--ck-spacing-large);
+	}
+
+	& .ck-context {
+		display: flex;
+		white-space: nowrap;
+		overflow: hidden;
+		width: 100%;
+		padding: var(--ck-spacing-small) var(--ck-spacing-medium);
+
+		&.ck-context--quotes {
+			&::after, &::before {
+				display: inline-block;
+				content: '"';
+			}
+		}
+
+		& .ck-context__type {
+			font-weight: bold;
+			padding-right: var(--ck-spacing-standard);
+		}
+
+		& .ck-context__value {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			border: 1px solid transparent;
+
+			&:focus {
+				@mixin ck-focus-ring;
+				@mixin ck-box-shadow var(--ck-focus-outer-shadow);
+			}
+		}
+
+		&.overlay {
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			z-index: 2;
+
+			background: var(--ck-color-base-background);
+			box-shadow: 0 2px 3px hsla(0, 0%, 100%, 0.2);
+			border-radius: 2px;
+			white-space: normal;
+			box-sizing: border-box;
+		}
+	}
+}
+
+.ck .ck-thread__comment-count {
+	/* Make avatar size in the comment smaller than in presence list. */
+	--ck-user-avatar-size: 28px;
+
+	padding-left: calc( var(--ck-user-avatar-size) + var(--ck-spacing-standard) * 2 );
+
+	color: var(--ck-color-comment-count);
+	font-size: var(--ck-font-size-base);
+	font-weight: bold;
+	cursor: pointer;
+
+	/* Keep similar transition like `ck-annotation`. */
+	transition: background-color 300ms ease;
+
+	&::before {
+		content: '\25BC';
+		margin-right: var(--ck-spacing-small);
+	}
+}
+
+.ck .ck-thread--remove {
+	& .ck-comment {
+		background-color: var(--ck-color-comment-remove-background);
+	}
+
+	& .ck-thread__input--active {
+		background-color: var(--ck-color-base-background);
+
+		&.ck-thread__input {
+			background-color: var(--ck-color-comment-remove-background);
+		}
+	}
+
+	& .ck-thread__comment-count {
+		background-color: var(--ck-color-comment-remove-background);
+	}
+
+	/* Handle visibility of vertical line below avatars. */
+	& .ck-comment__wrapper {
+		& .ck-comment::after {
+			opacity: 0;
+		}
+	}
+}
+
+/* Handle visibility of vertical line below avatars. */
+.ck .ck-thread__comments .ck-comment__wrapper {
+	&:last-of-type {
+		& .ck-comment::after {
+			opacity: 0;
+		}
+	}
+}
+
+.ck .ck-thread__container {
+	transition: transform 300ms ease;
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+	}
+}
+
+.ck .ck-thread__comments {
+	position: relative;
+	z-index: var(--ck-z-default);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-radius: var(--ck-border-radius);
+}
+
+.ck .ck-thread__user {
+	font-size: 0.85em;
+}
+
+.ck .ck-thread__input {
+	/* #1829. Firefox is wrongly rendering flex container width 100% with overflowed (non-spaced) text. */
+	width: calc( 100% - var(--ck-user-avatar-size) );
+	white-space: normal;
+
+	transition: background-color 200ms ease-in-out;
+	border-radius: var(--ck-border-radius);
+
+	/*
+		This is equal to the height of the wrapper when the editor instance is loaded.
+		Editor instance is loaded _after_ the comment view is created,
+		so the min-height is set to avoid jitter.
+	*/
+	min-height: 38px;
+}
+
+.ck .ck-thread--active {
+	& .ck-comment__options.ck-dropdown {
+		display: block;
+	}
+
+	& .ck-thread__input {
+		display: block;
+		background-color: var(--ck-color-comment-background);
+	}
+
+	& .ck-thread__header {
+		background-color: var(--ck-color-thread-header-active-background);
+	}
+}
+
+.ck .ck-thread--unlinked {
+	--ck-color-comment-box-border: var(--ck-color-base-border);
+
+	--ck-color-thread-header-background: var(--ck-color-unlinked-background);
+	--ck-color-thread-header-active-background: var(--ck-color-unlinked-active-background);
+}
+
+.ck .ck-thread--remove-confirmation {
+	& .ck-thread__container {
+		transform: translate3d( -100%, 0, 0 );
+	}
+}
+
+/* We need specificity 020 to beat .ck.ck-button. */
+.ck.ck-button.ck-thread__remove-confirm-submit {
+	color: var(--ck-color-button-save);
+}
+
+.ck.ck-button.ck-thread__remove-confirm-cancel {
+	color: var(--ck-color-button-cancel);
+}
+
+.ck .ck-thread__remove-confirm {
+	font-size: var(--ck-font-size-base);
+	position: absolute;
+	display: flex;
+	justify-content: flex-start;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	height: 100%;
+	background-color: var(--ck-color-comment-remove-background);
+
+	& .ck-thread__remove-confirm-inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding-top: var(--ck-spacing-standard);
+		height: 100%;
+		width: 100%;
+
+		/* Maximum height of confirmation (in case with such long comment). */
+		max-height: 400px;
+	}
+
+	& p {
+		font-weight: bold;
+		margin: 0;
+	}
+}

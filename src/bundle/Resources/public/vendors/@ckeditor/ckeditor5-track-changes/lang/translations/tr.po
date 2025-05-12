@@ -1,0 +1,616 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "A suggestion for changing an item to the provided one."
+msgid "*Change to:* %0"
+msgstr "*Değiştir:* %0"
+
+msgctxt "A suggestion for changing a content of a widget."
+msgid "*Change %0 content*"
+msgstr "*%0 içeriği değiştir*"
+
+msgctxt "A suggestion for checking a to-do list item."
+msgid "*Check item*"
+msgstr "*Öğeyi kontrol et*"
+
+msgctxt "A suggestion for setting inline formatting."
+msgid "*Format:* %0"
+msgstr "*Biçim:* %0"
+
+msgctxt "A suggestion for indenting an item."
+msgid "*Indent:* %0"
+msgstr "*Girinti:* %0"
+
+msgctxt "A suggestion for inserting an item."
+msgid "*Insert:* %0"
+msgstr "*Ekle:* %0"
+
+msgctxt "A suggestion for changing table properties."
+msgid "*Format:* change table properties"
+msgstr "*Format:* tablo özelliklerini değiştir"
+
+msgctxt "A suggestion for changing table cell properties."
+msgid "*Format:* change table cell properties"
+msgstr "*Format:* tablo hücre özelliklerini değiştir"
+
+msgctxt "A suggestion for inserting an item into another item."
+msgid "*Format:* insert into %0"
+msgstr "*Biçim:* %0 içine ekle"
+
+msgctxt "A suggestion for removing item from another item."
+msgid "*Format:* remove from %0"
+msgstr "*Biçim:* %0 öğesinden kaldır"
+
+msgctxt "A suggestion for resizing a table."
+msgid "*Format:* resize table"
+msgstr "*Biçim:* tabloyu yeniden boyutlandır"
+
+msgctxt "A suggestion for changing the list order to reversed."
+msgid "*Format:* set order to reversed"
+msgstr "*Biçim:* sırayı ters olarak ayarla"
+
+msgctxt "A suggestion for changing the list order to regular."
+msgid "*Format:* set order to regular"
+msgstr "*Biçim:* sırayı normal olarak ayarla"
+
+msgctxt "A suggestion for changing the start index of the list."
+msgid "*Format:* set start index to %0"
+msgstr "*Biçim:* başlangıç dizinini %0 olarak ayarla"
+
+msgctxt "A suggestion for merging cells."
+msgid "*Merge cells*"
+msgstr "*Hücreleri birleştir*"
+
+msgctxt "A suggestion for merging items."
+msgid "*Merge:* %0"
+msgstr "*Birleştirme:* %0"
+
+msgctxt "A suggestion for outdenting an item."
+msgid "*Outdent:* %0"
+msgstr "*Çıkıntı:* %0"
+
+msgctxt "A suggestion for removing all formatting."
+msgid "*Remove all formatting*"
+msgstr "*Tüm biçimlendirmeyi kaldır*"
+
+msgctxt "A suggestion for removing an inline format."
+msgid "*Remove format:* %0"
+msgstr "*Biçimi kaldırılan:* %0"
+
+msgctxt "A suggestion for removing the highlight."
+msgid "*Remove highlight*"
+msgstr "*Vurguyu kaldır*"
+
+msgctxt "A suggestion for removing image text alternative."
+msgid "*Remove image text alternative*"
+msgstr "*Resimden alternatif metni kaldırın*"
+
+msgctxt "A suggestion for removing the link."
+msgid "*Remove link*"
+msgstr "*Bağlantıyı kaldır*"
+
+msgctxt "A suggestion for removing an item."
+msgid "*Remove:* %0"
+msgstr "*Kaldırılan:* %0"
+
+msgctxt "A suggestion for replacing table cells (table pasting)."
+msgid "*Replace table cells*"
+msgstr "*Tablo hücrelerini değiştir*"
+
+msgctxt "A suggestion for resetting the font background color."
+msgid "*Reset font background color*"
+msgstr "*Yazı tipi arka plan rengini sıfırla*"
+
+msgctxt "A suggestion for resetting the font color."
+msgid "*Reset font color*"
+msgstr "*Yazı tipi rengini sıfırla*"
+
+msgctxt "A suggestion for resetting the font family."
+msgid "*Reset font family*"
+msgstr "*Yazı tipini sıfırla*"
+
+msgctxt "A suggestion for resetting the font size."
+msgid "*Reset font size*"
+msgstr "*Yazı tipi boyutunu sıfırla*"
+
+msgctxt "A suggestion for resetting image width."
+msgid "*Reset image width*"
+msgstr "*Resim genişliğini sıfırla*"
+
+msgctxt "A suggestion for setting the font background color to %0."
+msgid "*Set font background color:* %0"
+msgstr "*Yazı tipi arka plan rengini ayarlaması:* %0"
+
+msgctxt "A suggestion for setting the font color to %0."
+msgid "*Set font color:* %0"
+msgstr "*Yazı tipi renginin ayarlanması:* %0"
+
+msgctxt "A suggestion for setting the font family to %0."
+msgid "*Set font family:* %0"
+msgstr "*Yazı tipinin ayarlanması:* %0"
+
+msgctxt "A suggestion for setting the font size to %0."
+msgid "*Set font size:* %0"
+msgstr "*Yazı boyutunun ayarlanması:* %0"
+
+msgctxt "A suggestion for setting one or more formatting changes to %0"
+msgid "*Set format:* %0"
+msgstr "*Biçimi ayarla:* %0"
+
+msgctxt "A suggestion for setting multiple inline formatting to %0"
+msgid "*Set format to:* %0"
+msgstr "*Biçimi şöyle ayarla:* %0"
+
+msgctxt "A suggestion for highlighting text."
+msgid "*Set highlight:* %0"
+msgstr "*Vurguyu ayarla:* %0"
+
+msgctxt "A suggestion for setting image text alternative to %0."
+msgid "*Set image text alternative:* %0"
+msgstr "*Resimin alternatif metnin ayarlanması:* %0"
+
+msgctxt "A suggestion for setting the image width to %0."
+msgid "*Set image width:* %0"
+msgstr "*Görüntü genişliğinin ayarlanması:* %0"
+
+msgctxt "A suggestion for setting the link URL."
+msgid "*Set link:* %0"
+msgstr "*Bağlantının ayarlanması:* %0"
+
+msgctxt "A suggestion for splitting cells horizontally."
+msgid "*Split cell:* horizontally"
+msgstr "*Hücreyi ayır:* yatay olarak"
+
+msgctxt "A suggestion for splitting cells vertically."
+msgid "*Split cell:* vertically"
+msgstr "*Hücreyi ayır:* dikey olarak"
+
+msgctxt "A suggestion for splitting the item."
+msgid "*Split:* %0"
+msgstr "*Ayırma:* %0"
+
+msgctxt "A suggestion for unchecking a to-do list item."
+msgid "*Uncheck item*"
+msgstr "*Öğenin işaretini kaldırın*"
+
+msgctxt "The label for the button which accepts all selected suggestions."
+msgid "Accept all selected suggestions"
+msgstr "Seçilen tüm önerileri kabul et"
+
+msgctxt "The label for the button which accepts all suggestions."
+msgid "Accept all suggestions"
+msgstr "Tüm önerileri kabul et"
+
+msgctxt "The label for the accept suggestion button."
+msgid "Accept suggestion"
+msgstr "Öneriyi kabul et"
+
+msgctxt "The label for the button which discards all selected suggestions."
+msgid "Discard all selected suggestions"
+msgstr "Seçilen tüm önerileri sil"
+
+msgctxt "The label for the button which discards all suggestions."
+msgid "Discard all suggestions"
+msgstr "Tüm önerilerden vazgeç"
+
+msgctxt "The label for the discard suggestion button."
+msgid "Discard suggestion"
+msgstr "Öneriden vazgeç"
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves an insertion suggestion."
+msgid "LEAVE_INSERTION_SUGGESTION_ANNOUNCEMENT"
+msgstr "Ekleme önerisi bırakılıyor."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters an insertion suggestion."
+msgid "ENTER_INSERTION_SUGGESTION_ANNOUNCEMENT"
+msgstr "Ek önerisi giriliyor. Tartışmaya gitmek için %0'a basın."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a deletion suggestion."
+msgid "LEAVE_DELETION_SUGGESTION_ANNOUNCEMENT"
+msgstr "Silme önerisi bırakılıyor."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters a deletion suggestion."
+msgid "ENTER_DELETION_SUGGESTION_ANNOUNCEMENT"
+msgstr "Silme önerisi giriliyor. Tartışmaya gitmek için %0'a basın."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a formatting suggestion."
+msgid "LEAVE_FORMATTING_SUGGESTION_ANNOUNCEMENT"
+msgstr "Biçimlendirme önerisi bırakılıyor."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters a formatting suggestion."
+msgid "ENTER_FORMATTING_SUGGESTION_ANNOUNCEMENT"
+msgstr "Biçimlendirme önerisi giriliyor. Tartışmaya gitmek için %0'a basın."
+
+msgctxt "A text label for assistive technologies describing the suggestion thread."
+msgid "SUGGESTION_THREAD_ARIA_LABEL"
+msgid_plural "Suggestion by %1. Created on %2. %0 replies. %3"
+msgstr[0] "Öneriyi yapan %1. %2 tarihinde oluşturuldu. %0 yanıt. %3"
+msgstr[1] "Öneriyi yapan %1. %2 tarihinde oluşturuldu. %0 yanıt. %3"
+
+msgctxt "A text label for assistive technologies providing additional information about navigation in the suggestion thread."
+msgid "SUGGESTION_THREAD_DESCRIPTION"
+msgstr "Daha fazla seçenek için Enter'a basın. Çıkmak için Escape'e basın."
+
+msgctxt "The block quote element name displayed in the suggestion."
+msgid "ELEMENT_BLOCK_QUOTE"
+msgstr "alıntı"
+
+msgctxt "The default styled list element name displayed in the suggestion."
+msgid "ELEMENT_DEFAULT_LIST_DEFAULT"
+msgstr "varsayılan liste stili"
+
+msgctxt "The bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST"
+msgstr "maddeli liste"
+
+msgctxt "The default styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_DEFAULT"
+msgstr "madde işaretli liste (varsayılan)"
+
+msgctxt "The circle styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_CIRCLE"
+msgstr "madde işaretli liste (daire)"
+
+msgctxt "The disc styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_DISC"
+msgstr "madde işaretli liste (disk)"
+
+msgctxt "The square styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_SQUARE"
+msgstr "madde işaretli liste (kare)"
+
+msgctxt "The caption element name displayed in the suggestion."
+msgid "ELEMENT_CAPTION"
+msgstr "açıklama"
+
+msgctxt "The code block element name displayed in the suggestion."
+msgid "ELEMENT_CODE_BLOCK"
+msgid_plural "%0 code blocks"
+msgstr[0] "kod bloğu"
+msgstr[1] "%0 kod bloğu"
+
+msgctxt "The heading element name displayed in the suggestion."
+msgid "ELEMENT_HEADING"
+msgid_plural "%0 headings (level %1)"
+msgstr[0] "başlık (seviye %1)"
+msgstr[1] "%0 başlık (seviye %1)"
+
+msgctxt "The heading element name displayed in the suggestion with a custom title."
+msgid "ELEMENT_HEADING_CUSTOM"
+msgid_plural "%0 headings (%1)"
+msgstr[0] "başlık (%1)"
+msgstr[1] "%0 başlık (%1)"
+
+msgctxt "The horizontal line element name displayed in the suggestion."
+msgid "ELEMENT_HORIZONTAL_LINE"
+msgid_plural "%0 horizontal lines"
+msgstr[0] "yatay çizgi"
+msgstr[1] "%0 yatay çizgi"
+
+msgctxt "The HTML embed element name displayed in the suggestion."
+msgid "ELEMENT_HTML_EMBED"
+msgid_plural "%0 HTML embeds"
+msgstr[0] "HTML yerleştirme"
+msgstr[1] "%0 HTML yerleştirme"
+
+msgctxt "The image element name displayed in the suggestion."
+msgid "ELEMENT_IMAGE"
+msgid_plural "%0 images"
+msgstr[0] "resim"
+msgstr[1] "%0 resimler"
+
+msgctxt "The inline image element name displayed in the suggestion."
+msgid "ELEMENT_INLINE_IMAGE"
+msgid_plural "%0 images"
+msgstr[0] "görüntü"
+msgstr[1] "%0 görüntü"
+
+msgctxt "The line break element name displayed in the suggestion."
+msgid "ELEMENT_LINE_BREAK"
+msgid_plural "%0 line breaks"
+msgstr[0] "satır sonu"
+msgstr[1] "%0 satır sonları"
+
+msgctxt "The list item element name displayed in the suggestion."
+msgid "ELEMENT_LIST_ITEM"
+msgid_plural "%0 list items"
+msgstr[0] "list öğesi"
+msgstr[1] "%0 liste öğeleri"
+
+msgctxt "The media element name displayed in the suggestion."
+msgid "ELEMENT_MEDIA"
+msgid_plural "%0 media items"
+msgstr[0] "medya öğesi"
+msgstr[1] "%0 medya öğeleri"
+
+msgctxt "The numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST"
+msgstr "numaralandırılmış liste"
+
+msgctxt "The default styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DEFAULT"
+msgstr "numaralı liste (varsayılan)"
+
+msgctxt "The decimal styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DECIMAL"
+msgstr "numaralı liste (ondalık)"
+
+msgctxt "The decimal styled (with leading zero) numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DECIMAL_LEADING_ZERO"
+msgstr "numaralı liste (başta sıfır olan ondalık)"
+
+msgctxt "The lower latin styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_LOWER_LATIN"
+msgstr "numaralı liste (altta-latin)"
+
+msgctxt "The lower roman styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_LOWER_ROMAN"
+msgstr "numaralı liste (altta-romen)"
+
+msgctxt "The upper latin styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_UPPER_LATIN"
+msgstr "numaralı liste (üstte-latin)"
+
+msgctxt "The upper roman styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_UPPER_ROMAN"
+msgstr "numaralı liste (üstte-romen)"
+
+msgctxt "The page break element name displayed in the suggestion."
+msgid "ELEMENT_PAGE_BREAK"
+msgid_plural "%0 page breaks"
+msgstr[0] "sayfa sonu"
+msgstr[1] "%0 sayfa sonları"
+
+msgctxt "The paragraph element name displayed in the suggestion."
+msgid "ELEMENT_PARAGRAPH"
+msgid_plural "%0 paragraphs"
+msgstr[0] "paragraf"
+msgstr[1] "%0 paragraflar"
+
+msgctxt "The space element name displayed in the suggestion."
+msgid "ELEMENT_SPACE"
+msgid_plural "%0 spaces"
+msgstr[0] "boşluk"
+msgstr[1] "%0 boşluklar"
+
+msgctxt "The table element name displayed in the suggestion."
+msgid "ELEMENT_TABLE"
+msgid_plural "%0 tables"
+msgstr[0] "tablo"
+msgstr[1] "%0 tablolar"
+
+msgctxt "The table column element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_COLUMN"
+msgid_plural "%0 table columns"
+msgstr[0] "tablo kolonu"
+msgstr[1] "%0 tablo kolonları"
+
+msgctxt "The table column with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_COLUMN_WITH_TEXT"
+msgid_plural "%0 table columns *with text* %1"
+msgstr[0] "tablo kolonu *metinle birlikte* %1"
+msgstr[1] "%0 tablo kolonları *metinle birlikte* %1"
+
+msgctxt "The table of contents element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_OF_CONTENTS"
+msgid_plural "%0 tables of contents"
+msgstr[0] "içindekiler"
+msgstr[1] "%0 içindekiler tablosu"
+
+msgctxt "The table row element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_ROW"
+msgid_plural "%0 table rows"
+msgstr[0] "tablo satırı"
+msgstr[1] "%0 tablo satırları"
+
+msgctxt "The table row with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_ROW_WITH_TEXT"
+msgid_plural "%0 table rows *with text* %1"
+msgstr[0] "tablo satırı *metinle birlikte* %1"
+msgstr[1] "%0 tablo satırları *metinle birlikte* %1"
+
+msgctxt "The table with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_WITH_TEXT"
+msgstr "tablo *metinle birlikte* %0"
+
+msgctxt "The title element name displayed in the suggestion."
+msgid "ELEMENT_TITLE"
+msgstr "başlık"
+
+msgctxt "The to-do list element name displayed in the suggestion."
+msgid "ELEMENT_TODO_LIST"
+msgstr "yapılacaklar listesi"
+
+msgctxt "The multi-level list element name displayed in the suggestion."
+msgid "ELEMENT_MULTI_LEVEL_LIST"
+msgstr "çok seviyeli liste"
+
+msgctxt "The merge field element name displayed in the suggestion."
+msgid "ELEMENT_MERGE_FIELD"
+msgid_plural "%0 merge fields"
+msgstr[0] "birleştirme alanı"
+msgstr[1] "birleştirme alanı"
+
+msgctxt "The alignment format name displayed in a format suggestion."
+msgid "FORMAT_ALIGNMENT"
+msgstr "hizalama"
+
+msgctxt "The align to center format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_CENTER"
+msgstr "ortaya hizala"
+
+msgctxt "The align to left format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_LEFT"
+msgstr "sola hizala"
+
+msgctxt "The align to right format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_RIGHT"
+msgstr "sağa hizala"
+
+msgctxt "The bold format name displayed in a format suggestion."
+msgid "FORMAT_BOLD"
+msgstr "kalın"
+
+msgctxt "The code format name displayed in a format suggestion."
+msgid "FORMAT_CODE"
+msgstr "kod"
+
+msgctxt "The header column format name displayed in a format suggestion."
+msgid "FORMAT_HEADER_COLUMN"
+msgstr "başlık kolonu"
+
+msgctxt "The header row format name displayed in a format suggestion."
+msgid "FORMAT_HEADER_ROW"
+msgstr "başlık satırı"
+
+msgctxt "The highlight format name displayed in a format suggestion."
+msgid "FORMAT_HIGHLIGHT"
+msgstr "vurgulu"
+
+msgctxt "The italic format name displayed in a format suggestion."
+msgid "FORMAT_ITALIC"
+msgstr "yatık"
+
+msgctxt "The justify text format name displayed in a format suggestion."
+msgid "FORMAT_JUSTIFY_TEXT"
+msgstr "yay"
+
+msgctxt "The regular column format name displayed in a format suggestion."
+msgid "FORMAT_REGULAR_COLUMN"
+msgstr "düzenli kolon"
+
+msgctxt "The regular row format name displayed in a format suggestion."
+msgid "FORMAT_REGULAR_ROW"
+msgstr "düzenli satır"
+
+msgctxt "The label for area disabled in restricted editing area in a format suggestion."
+msgid "FORMAT_RESTRICTED_DISABLED"
+msgstr "*Kısıtlı düzenleme modunda devre dışı bırak*"
+
+msgctxt "The label for area enabled in restricted editing area in a format suggestion."
+msgid "FORMAT_RESTRICTED_ENABLED"
+msgstr "*Kısıtlı düzenleme modunda etkinleştir*"
+
+msgctxt "The side image format name displayed in a format suggestion."
+msgid "FORMAT_SIDE_IMAGE"
+msgstr "yan resim"
+
+msgctxt "The strikethrough format name displayed in a format suggestion."
+msgid "FORMAT_STRIKETHROUGH"
+msgstr "çıkart"
+
+msgctxt "The subscript format name displayed in a format suggestion."
+msgid "FORMAT_SUBSCRIPT"
+msgstr "altindis"
+
+msgctxt "The superscript format name displayed in a format suggestion."
+msgid "FORMAT_SUPERSCRIPT"
+msgstr "üstindis"
+
+msgctxt "The underline format name displayed in a format suggestion."
+msgid "FORMAT_UNDERLINE"
+msgstr "alttan çizili"
+
+msgctxt "The list or block indent format name displayed in a format suggestion."
+msgid "FORMAT_INDENT"
+msgstr "satır başı"
+
+msgctxt "The list reversed format name displayed in a format suggestion."
+msgid "FORMAT_LIST_REVERSED"
+msgstr "liste tersine çevrildi"
+
+msgctxt "The list start format name displayed in a format suggestion."
+msgid "FORMAT_LIST_START"
+msgstr "liste başlangıcı"
+
+msgctxt "The font size format name displayed in a format suggestion."
+msgid "FORMAT_FONT_SIZE"
+msgstr "font boyutu"
+
+msgctxt "The font family format name displayed in a format suggestion."
+msgid "FORMAT_FONT_FAMILY"
+msgstr "font ailesi"
+
+msgctxt "The font color format name displayed in a format suggestion."
+msgid "FORMAT_FONT_COLOR"
+msgstr "font rengi"
+
+msgctxt "The font background color format name displayed in a format suggestion."
+msgid "FORMAT_FONT_BACKGROUND"
+msgstr "font arka plan rengi"
+
+msgctxt "The image size change format name displayed in a format suggestion."
+msgid "FORMAT_IMAGE_SIZE"
+msgstr "Görüntü boyutu"
+
+msgctxt "The style format name displayed in a format suggestion."
+msgid "FORMAT_STYLE"
+msgstr "stil"
+
+msgctxt "The label for the alert shown when closing the editor with an unsaved track changes change."
+msgid "PENDING_ACTION_SUGGESTION"
+msgstr "Öneride kaydedilmemiş değişiklik."
+
+msgctxt "A suggestion for replacing one text with another."
+msgid "REPLACE_TEXT"
+msgstr "*Değiştir:* %0 *ile* %1"
+
+msgctxt "The label for the dropdown containing some options related to track changes."
+msgid "Track changes"
+msgstr "Parça değişiklikleri"
+
+msgctxt "The additional information that suggestion comes from external source."
+msgid "EXTERNAL_SUGGESTION"
+msgstr "Bu öneri harici bir kaynaktan geliyor."
+
+msgctxt "The additional information that suggestion comes from imported word file."
+msgid "EXTERNAL_IMPORT_WORD_SUGGESTION"
+msgstr "Bu öneri, içe aktarılan bir Word dosyasından geliyor."
+
+msgctxt "A suggestion for setting the bookmark name."
+msgid "*Set bookmark:* %0"
+msgstr "*Yer imi ayarla:* %0"
+
+msgctxt "The bookmark element name displayed in the suggestion."
+msgid "ELEMENT_BOOKMARK"
+msgid_plural "%0 bookmarks"
+msgstr[0] "yer imi"
+msgstr[1] "yer imi"
+
+msgctxt "A suggestion for replacing an image."
+msgid "*Replace image*"
+msgstr "*Resmi değiştir*"
+
+msgctxt "The label for the button which shows the final content in the modal."
+msgid "Preview final content"
+msgstr "Son içeriği önizle"
+
+msgctxt "The label for the final content preview modal heading."
+msgid "Final content preview"
+msgstr "Son içerik önizlemesi"
+
+msgctxt "A suggestion for setting type %0 to the table."
+msgid "*Set table type:* %0"
+msgstr "*Tablo türünü ayarla:* %0"
+
+msgctxt "The content table element name displayed in the suggestion."
+msgid "ELEMENT_CONTENT_TABLE"
+msgid_plural "%0 content tables"
+msgstr[0] "içerik tablosu"
+msgstr[1] "içerik tablosu"
+
+msgctxt "The layout table element name displayed in the suggestion."
+msgid "ELEMENT_LAYOUT_TABLE"
+msgid_plural "%0 layout tables"
+msgstr[0] "düzen tablosu"
+msgstr[1] "düzen tablosu"

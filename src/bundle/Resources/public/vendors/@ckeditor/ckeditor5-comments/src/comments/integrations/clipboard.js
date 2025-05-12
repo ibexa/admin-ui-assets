@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+const _0x52edec=_0x1e66;(function(_0x2a44e2,_0x5ce352){const _0x534451=_0x1e66,_0x111419=_0x2a44e2();while(!![]){try{const _0x5d83c8=parseInt(_0x534451(0x166))/0x1+parseInt(_0x534451(0x155))/0x2*(parseInt(_0x534451(0x161))/0x3)+-parseInt(_0x534451(0x169))/0x4*(parseInt(_0x534451(0x15f))/0x5)+-parseInt(_0x534451(0x165))/0x6+-parseInt(_0x534451(0x14b))/0x7*(parseInt(_0x534451(0x144))/0x8)+parseInt(_0x534451(0x15b))/0x9*(parseInt(_0x534451(0x15c))/0xa)+-parseInt(_0x534451(0x143))/0xb;if(_0x5d83c8===_0x5ce352)break;else _0x111419['push'](_0x111419['shift']());}catch(_0x12e5e1){_0x111419['push'](_0x111419['shift']());}}}(_0x3377,0x937e8));import{Plugin as _0x288f54}from'ckeditor5/src/core.js';function _0x1e66(_0x30cfd7,_0x459f53){const _0x3377d1=_0x3377();return _0x1e66=function(_0x1e66f9,_0x569790){_0x1e66f9=_0x1e66f9-0x141;let _0x255e86=_0x3377d1[_0x1e66f9];return _0x255e86;},_0x1e66(_0x30cfd7,_0x459f53);}import{ClipboardPipeline as _0x59bc7e,ClipboardMarkersUtils as _0x4633e1}from'ckeditor5/src/clipboard.js';function _0x3377(){const _0x284fbd=['302916QuWVEi','default','highest','contentInsertion','2657178IjOEoF','666170WsIOWs','CommentsRepository','split','872hLMtGj','plugins','comments.copyMarkers','ClipboardMarkersUtils','_removeMarkersWithoutThreads','1913241OQPAIC','56536VfoqtB','always','delete','all','afterInit','ClipboardPipeline','keys','707UZbjMM','_mapCommentsCopyConfigToRegisterConfiguration','content','never','requires','hasCommentThread','dragstart','listenTo','cut','has','16MegWbE','_registerMarkerToCopy','markers','define','config','get','63sNIWYO','837910kKZznB','editor','_registerMarkerInClipboardPipeline','2885olmwBl','comment'];_0x3377=function(){return _0x284fbd;};return _0x3377();}export default class at extends _0x288f54{constructor(_0x567110){const _0x4e6bf9=_0x1e66;super(_0x567110),this[_0x4e6bf9(0x15d)][_0x4e6bf9(0x159)][_0x4e6bf9(0x158)](_0x4e6bf9(0x16b),_0x4e6bf9(0x162));}static get[_0x52edec(0x14f)](){return[_0x4633e1,_0x59bc7e];}[_0x52edec(0x148)](){const _0x509541=_0x52edec,_0x18ffe7=this[_0x509541(0x15d)][_0x509541(0x16a)][_0x509541(0x15a)](_0x509541(0x149));this[_0x509541(0x15e)](),this[_0x509541(0x152)](_0x18ffe7,_0x509541(0x164),(_0x24fa01,_0x1fea5e)=>this[_0x509541(0x142)](_0x1fea5e[_0x509541(0x14d)][_0x509541(0x157)]),{'priority':_0x509541(0x163)});}[_0x52edec(0x142)](_0xb82671){const _0x25094a=_0x52edec;if(!this[_0x25094a(0x15d)][_0x25094a(0x16a)][_0x25094a(0x154)](_0x25094a(0x167)))return _0xb82671;const _0x54be4f=this[_0x25094a(0x15d)][_0x25094a(0x16a)][_0x25094a(0x15a)](_0x25094a(0x167));for(const _0x5d2bd5 of _0xb82671[_0x25094a(0x14a)]()){const [_0x43ddd2,_0x341e0a]=_0x5d2bd5[_0x25094a(0x168)](':');_0x25094a(0x160)!=_0x43ddd2||_0x54be4f[_0x25094a(0x150)](_0x341e0a)||_0xb82671[_0x25094a(0x146)](_0x5d2bd5);}return _0xb82671;}[_0x52edec(0x15e)](){const _0x86c1fe=_0x52edec,_0x1f21da=this[_0x86c1fe(0x15d)][_0x86c1fe(0x16a)][_0x86c1fe(0x15a)](_0x86c1fe(0x141)),_0x559a79=this[_0x86c1fe(0x14c)](this[_0x86c1fe(0x15d)][_0x86c1fe(0x159)][_0x86c1fe(0x15a)](_0x86c1fe(0x16b)));_0x559a79&&_0x1f21da[_0x86c1fe(0x156)](_0x86c1fe(0x160),_0x559a79);}[_0x52edec(0x14c)](_0x4d0a68){const _0x59dfb0=_0x52edec;switch(_0x4d0a68){case _0x59dfb0(0x145):return{'allowedActions':_0x59dfb0(0x147),'copyPartiallySelected':!0x1,'duplicateOnPaste':!0x0};case _0x59dfb0(0x162):return{'allowedActions':[_0x59dfb0(0x153),_0x59dfb0(0x151)],'copyPartiallySelected':!0x1,'duplicateOnPaste':!0x1};case _0x59dfb0(0x14e):return null;default:return null;}}}

@@ -1,0 +1,178 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: uk\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for the comment editor."
+msgid "Comment editor"
+msgstr "Редактор коментарів"
+
+msgctxt "The label for the number of comments."
+msgid "NUMBER_OF_COMMENTS"
+msgid_plural "%0 Comments"
+msgstr[0] "%0 Коментар"
+msgstr[1] "%0 Коментаря"
+msgstr[2] "%0 Коментарів"
+
+msgctxt "The alert displayed for a comment that is too long."
+msgid "TOO_LONG_COMMENT_ALERT"
+msgstr "Коментар задовгий. Ваш коментар містить %0 знак із %1 допустимих."
+
+msgctxt "The placeholder for the reply field."
+msgid "Reply..."
+msgstr "Відповісти..."
+
+msgctxt "The placeholder for the reply field when the comment thread is resolved."
+msgid "Reply to reopen discussion..."
+msgstr "Відповісти, щоб відновити обговорення..."
+
+msgctxt "The placeholder for the new commend field."
+msgid "Write a comment..."
+msgstr "Написати коментар..."
+
+msgctxt "The information that comment was made on element and has no context"
+msgid "Comment was made on an element"
+msgstr "Було зроблено коментар до елемента"
+
+msgctxt "The label for the button that enables editing a comment."
+msgid "Edit"
+msgstr "Редагувати"
+
+msgctxt "The label for the button that resolves a comment thread."
+msgid "Resolve"
+msgstr "Вирішити"
+
+msgctxt "The label for the button that reopens a resolved comment thread."
+msgid "Reopen"
+msgstr "Відновити"
+
+msgctxt "The label for the button that deletes a comment."
+msgid "Remove"
+msgstr "Видалити"
+
+msgctxt "The label for for the button that adds a reply to a comment thread."
+msgid "Reply"
+msgstr "Відповісти"
+
+msgctxt "The confirmation message shown after pressing the delete comment button."
+msgid "Delete comment?"
+msgstr "Видалити коментар?"
+
+msgctxt "The confirmation message shown after pressing the delete comment thread button."
+msgid "Delete comment thread?"
+msgstr "Видати ланцюжок коментарів?"
+
+msgctxt "A message informing that the comment has been resolved"
+msgid "Marked as resolved"
+msgstr "Позначено як вирішене"
+
+msgctxt "The tooltip for the comment toolbar button and the button that submits a comment thread."
+msgid "Comment"
+msgstr "Коментар"
+
+msgctxt "The accessible label for the annotations sidebar."
+msgid "Annotations sidebar"
+msgstr "Бічна панель анотацій"
+
+msgctxt "The accessible label for the list annotations in the annotations sidebar."
+msgid "Annotations list"
+msgstr "Список анотацій"
+
+msgctxt "The accessible label for the list of thread comments in an annotation."
+msgid "Thread comments"
+msgstr "Коментарі до теми"
+
+msgctxt "The accessible label describing the context of the comment thread (e.g. editor content being discussed)."
+msgid "THREAD_CONTEXT_LABEL"
+msgstr "Контекст теми: %0"
+
+msgctxt "The accessible label describing the comment thread."
+msgid "COMMENT_THREAD_LABEL"
+msgid_plural "Comment thread by %1. %0 replies."
+msgstr[0] "Ланцюжок коментарів від %1. %1 відповідь."
+msgstr[1] "Ланцюжок коментарів від %1. %1 відповіді."
+msgstr[2] "Ланцюжок коментарів від %1. %1 відповідей."
+
+msgctxt "The accessible label providing extra information about navigation in the comment thread."
+msgid "COMMENT_THREAD_DESCRIPTION"
+msgstr "Натисніть \"Enter\", щоб переглянути більше варіантів. Натисніть \"Escape\", щоб вийти."
+
+msgctxt "The accessible label for a single comment."
+msgid "COMMENT_ARIA_LABEL"
+msgstr "Коментар від %0. Створено %1. %2. %3"
+
+msgctxt "The accessible label for the list of archived comments."
+msgid "COMMENTS_ARCHIVE_LIST_LABEL"
+msgstr "Список коментарів"
+
+msgctxt "The accessibility help dialog description of the group of keystrokes related to annotations."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_GROUP"
+msgstr "Натискання клавіш для взаємодії з ланцюжками анотацій (напр. коментарями, відстеженням пропозицій змін)"
+
+msgctxt "The accessibility help dialog keystroke description for moving from the edited content to the annotation."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO"
+msgstr "Перемістіть фокус на ланцюжок, коли виділення закріплене у його маркері"
+
+msgctxt "The accessibility help dialog keystroke description for moving away from an annotation."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_EXIT"
+msgstr "Вийдіть з анотації та перемістіть фокус назад на редагований вміст"
+
+msgctxt "The accessibility help dialog keystroke description for entering a thread."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_ENTER"
+msgstr "Переглядайте виділений ланцюжок анотації або коментар до теми"
+
+msgctxt "The accessibility help dialog keystroke description for moving across the internals of a thread."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS"
+msgstr "Переміщуйтесь між внутрішніми елементами ланцюжка анотацій"
+
+msgctxt "The accessibility help dialog keystroke description for submitting a comment."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT"
+msgstr "Надсилайте відповідь, пишучи коментар"
+
+msgctxt "The accessibility help dialog keystroke description for navigating between annotations (threads)."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS"
+msgstr "Переміщуйтесь до попереднього або наступного ланцюжка у бічній панелі анотацій або архіві коментарів"
+
+msgctxt "A message read out by assistive technologies the moment the user selection moves into a comment."
+msgid "ENTER_COMMENT_ANNOUNCEMENT"
+msgstr "Вхід до контенту з коментарями. Натисніть %0, щоб перейти до обговорення."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a comment."
+msgid "LEAVE_COMMENT_ANNOUNCEMENT"
+msgstr "Вихід з контенту з коментарями."
+
+msgctxt "The label for an alert shown when closing the editor with an unsaved comment change."
+msgid "PENDING_ACTION_COMMENT_THREAD"
+msgstr "Незбережена зміна ланцюжка коментарів."
+
+msgctxt "The additional information that comments comes from external source."
+msgid "EXTERNAL_COMMENT"
+msgstr "Цей коментар походить від зовнішнього джерела."
+
+msgctxt "The additional information that comments comes from imported Word file."
+msgid "EXTERNAL_IMPORT_WORD_COMMENT"
+msgstr "Цей коментар походить з імпортованого Word файлу."
+
+msgctxt "The additional information that displayed author name comes from an external source."
+msgid "EXTERNAL_AVATAR"
+msgstr "Показане ім'я автора походить із зовнішнього джерела (доданого %0)"
+
+msgctxt "The additional information that displayed author name comes from imported Word file."
+msgid "EXTERNAL_IMPORT_WORD_AVATAR"
+msgstr "Показане ім'я автора походить із документу Word імпортованого %0"
+
+msgctxt "The label for the comments archive dropdown UI."
+msgid "COMMENTS_ARCHIVE"
+msgstr "Архів коментарів"
+
+msgctxt "The information that comments archive is empty."
+msgid "EMPTY_COMMENTS_ARCHIVE"
+msgstr "Немає архівних гілок коментарів."

@@ -1,0 +1,45 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+:root {
+	--ck-color-comment-marker: hsl(55, 98%, 83%);
+	--ck-color-comment-marker-active: hsl(55, 98%, 68%);
+}
+
+.ck-content .ck-comment-marker {
+	background: var(--ck-color-comment-marker);
+
+	/* Match size with suggestion markers */
+	border-top: 3px solid transparent;
+	border-bottom: 3px solid transparent;
+
+	/* #152. In the image case, we change marker background to border. */
+	&.ck-widget {
+		background-color: transparent;
+		border: 3px solid var(--ck-color-comment-marker);
+	}
+}
+
+.ck-content .ck-comment-marker--active {
+	background: var(--ck-color-comment-marker-active);
+
+	/* See #2469. Inactive comment marker inside an active one should be highlighted too. */
+	& .ck-comment-marker {
+		background: var(--ck-color-comment-marker-active);
+	}
+
+	&.ck-widget {
+		border-color: var(--ck-color-comment-marker-active);
+
+		/* See #2469. Inactive comment in a widget inside an active comment should not be highlighted. */
+		& .ck-comment-marker {
+			background-color: var(--ck-color-comment-marker);
+		}
+	}
+}

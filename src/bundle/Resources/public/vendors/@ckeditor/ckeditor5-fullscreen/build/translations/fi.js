@@ -1,0 +1,1 @@
+!function(n){const o=n.fi=n.fi||{};o.dictionary=Object.assign(o.dictionary||{},{"Enter fullscreen mode":"Siirry koko näytön tilaan","Fullscreen mode":"Koko näytön tila","Leave fullscreen mode":"Poistu koko näytön tilasta","Toggle fullscreen mode":"Vaihda koko näytön tilaa"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

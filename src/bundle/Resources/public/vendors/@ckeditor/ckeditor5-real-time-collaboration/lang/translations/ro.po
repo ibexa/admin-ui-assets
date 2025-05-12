@@ -1,0 +1,55 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 ? 0 : (n == 0 || (n % 100 > 0 && n % 100 < 20)) ? 1 : 2);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for 1 or more connected users"
+msgid "CONNECTED_USERS"
+msgid_plural "%0 connected users"
+msgstr[0] "1 utilizator conectat (eu)"
+msgstr[1] "%0 utilizatori conectați"
+msgstr[2] "%0 utilizatori conectați"
+
+msgctxt "The label for an alert shown when closing th editor with data not send to the server "
+msgid "PENDING_ACTION_SENDING_DATA"
+msgstr "Trimitere de date spre server."
+
+msgctxt "The label for the synchronization issue message"
+msgid "Synchronization issue"
+msgstr "Problemă de sincronizare"
+
+msgctxt "The aria label for the connected users list dropdown menu"
+msgid "Connected users list dropdown menu"
+msgstr "Meniu derulant: Lista utilizatorilor conectați"
+
+msgctxt "The aria label for the connected users list"
+msgid "Connected users list"
+msgstr "Lista utilizatorilor conectați"
+
+msgctxt "The aria label for the collapsed connected users list"
+msgid "Collapsed connected users list (press ENTER to open it)"
+msgstr "Lista utilizatorilor conectați colapsată (apăsați ENTER pentru a o deschide)"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document cannot be connected back to the server. To not lose your content save it locally and refresh the editor."
+msgstr "Documentul nu poate fi reconectat la server. Pentru a nu vă pierde conținutul, salvați-l local și împrospătați programul de editare."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document details could not be taken during the reconnection. To not lose your content save it locally and refresh the editor."
+msgstr "Detaliile documentului nu au putut fi obținute în timpul reconectării. Pentru a nu vă pierde conținutul, salvați-l local și împrospătați programul de editare."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The last saved version of the document does not match the local version. To not lose your content save it locally and refresh the editor."
+msgstr "Ultima versiune salvată a documentului este diferită de versiunea locală. Pentru a nu vă pierde conținutul, salvați-l local și împrospătați programul de editare."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The local document and server document differ and merging them can cause unexpected behavior. To not lose your content save it locally and refresh the editor."
+msgstr "Documentul local este diferit de cel de pe server, iar îmbinarea lor poate duce la un comportament neașteptat. Pentru a nu vă pierde conținutul, salvați-l local și împrospătați programul de editare."

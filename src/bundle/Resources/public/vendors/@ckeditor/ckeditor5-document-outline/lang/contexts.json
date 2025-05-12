@@ -1,0 +1,6 @@
+{
+	"Empty heading": "A placeholder for the heading when it has no text content yet.",
+	"Editor headings will appear here as you type.": "Document outline placeholder to display when there are no headings in the document.",
+	"No headings were found in the document.": "A hint message explaining that table of contents widget is empty because there are no headings in the document.",
+	"Table of contents": "A label displayed inside the table of contents widget in order to distinguish it in the document content."
+}

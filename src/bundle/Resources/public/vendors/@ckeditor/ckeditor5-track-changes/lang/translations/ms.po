@@ -1,0 +1,592 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: ms\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "A suggestion for changing an item to the provided one."
+msgid "*Change to:* %0"
+msgstr "*Ubah kepada:* %0"
+
+msgctxt "A suggestion for changing a content of a widget."
+msgid "*Change %0 content*"
+msgstr "*Ubah %0 kandungan*"
+
+msgctxt "A suggestion for checking a to-do list item."
+msgid "*Check item*"
+msgstr "*Semak item*"
+
+msgctxt "A suggestion for setting inline formatting."
+msgid "*Format:* %0"
+msgstr "*Format:* %0"
+
+msgctxt "A suggestion for indenting an item."
+msgid "*Indent:* %0"
+msgstr "*Inden:* %0"
+
+msgctxt "A suggestion for inserting an item."
+msgid "*Insert:* %0"
+msgstr "*Masukkan:* %0"
+
+msgctxt "A suggestion for changing table properties."
+msgid "*Format:* change table properties"
+msgstr "*Format:* ubah sifat-sifat jadual"
+
+msgctxt "A suggestion for changing table cell properties."
+msgid "*Format:* change table cell properties"
+msgstr "*Format:* ubah sifat-sifat sel jadual"
+
+msgctxt "A suggestion for inserting an item into another item."
+msgid "*Format:* insert into %0"
+msgstr "*Format:* masukkan kedalam %0"
+
+msgctxt "A suggestion for removing item from another item."
+msgid "*Format:* remove from %0"
+msgstr "*Format:* dibuang daripada %0"
+
+msgctxt "A suggestion for resizing a table."
+msgid "*Format:* resize table"
+msgstr "*Format:* saizkan semula jadual"
+
+msgctxt "A suggestion for changing the list order to reversed."
+msgid "*Format:* set order to reversed"
+msgstr "*Format:* tetapkan susunan kepada terbalik"
+
+msgctxt "A suggestion for changing the list order to regular."
+msgid "*Format:* set order to regular"
+msgstr "*Format:* tetapkan susunan kepada biasa"
+
+msgctxt "A suggestion for changing the start index of the list."
+msgid "*Format:* set start index to %0"
+msgstr "*Format:*  tetapkan indeks mula kepada %0"
+
+msgctxt "A suggestion for merging cells."
+msgid "*Merge cells*"
+msgstr "*Cantum sel*"
+
+msgctxt "A suggestion for merging items."
+msgid "*Merge:* %0"
+msgstr "*Cantum:* %0"
+
+msgctxt "A suggestion for outdenting an item."
+msgid "*Outdent:* %0"
+msgstr "*Outden:* %0"
+
+msgctxt "A suggestion for removing all formatting."
+msgid "*Remove all formatting*"
+msgstr "*Buang semua pemformatan*"
+
+msgctxt "A suggestion for removing an inline format."
+msgid "*Remove format:* %0"
+msgstr "*Buang format:* %0"
+
+msgctxt "A suggestion for removing the highlight."
+msgid "*Remove highlight*"
+msgstr "*Buang sorotan*"
+
+msgctxt "A suggestion for removing image text alternative."
+msgid "*Remove image text alternative*"
+msgstr "*Buang alternatif teks imej*"
+
+msgctxt "A suggestion for removing the link."
+msgid "*Remove link*"
+msgstr "*Buang pautan*"
+
+msgctxt "A suggestion for removing an item."
+msgid "*Remove:* %0"
+msgstr "*Buang:* %0"
+
+msgctxt "A suggestion for replacing table cells (table pasting)."
+msgid "*Replace table cells*"
+msgstr "*Ganti sel jadual*"
+
+msgctxt "A suggestion for resetting the font background color."
+msgid "*Reset font background color*"
+msgstr "*Set semula warna latar belakang*"
+
+msgctxt "A suggestion for resetting the font color."
+msgid "*Reset font color*"
+msgstr "*Set semula warna fon*"
+
+msgctxt "A suggestion for resetting the font family."
+msgid "*Reset font family*"
+msgstr "*Set semula keluarga fon*"
+
+msgctxt "A suggestion for resetting the font size."
+msgid "*Reset font size*"
+msgstr "*Set semula saiz fon*"
+
+msgctxt "A suggestion for resetting image width."
+msgid "*Reset image width*"
+msgstr "*Set semula lebar imej*"
+
+msgctxt "A suggestion for setting the font background color to %0."
+msgid "*Set font background color:* %0"
+msgstr "*Tetapkan warna latar belakang fon:* %0"
+
+msgctxt "A suggestion for setting the font color to %0."
+msgid "*Set font color:* %0"
+msgstr "*Tetapkan warna fon:* %0"
+
+msgctxt "A suggestion for setting the font family to %0."
+msgid "*Set font family:* %0"
+msgstr "*Tetapkan keluarga fon:* %0"
+
+msgctxt "A suggestion for setting the font size to %0."
+msgid "*Set font size:* %0"
+msgstr "*Tetapkan saiz fon:* %0"
+
+msgctxt "A suggestion for setting one or more formatting changes to %0"
+msgid "*Set format:* %0"
+msgstr "*Tetapkan format:* %0"
+
+msgctxt "A suggestion for setting multiple inline formatting to %0"
+msgid "*Set format to:* %0"
+msgstr "*Tetapkan format menjadi:* %0"
+
+msgctxt "A suggestion for highlighting text."
+msgid "*Set highlight:* %0"
+msgstr "*Tetapkan sorotan:* %0"
+
+msgctxt "A suggestion for setting image text alternative to %0."
+msgid "*Set image text alternative:* %0"
+msgstr "*Tetapkan alternatif teks imej:* %0"
+
+msgctxt "A suggestion for setting the image width to %0."
+msgid "*Set image width:* %0"
+msgstr "*Tetapkan lebar imej:* %0"
+
+msgctxt "A suggestion for setting the link URL."
+msgid "*Set link:* %0"
+msgstr "*Tetapkan pautan:* %0"
+
+msgctxt "A suggestion for splitting cells horizontally."
+msgid "*Split cell:* horizontally"
+msgstr "*Leraikan sel:* secara melintang"
+
+msgctxt "A suggestion for splitting cells vertically."
+msgid "*Split cell:* vertically"
+msgstr "*Leraikan sel:* secara menegak"
+
+msgctxt "A suggestion for splitting the item."
+msgid "*Split:* %0"
+msgstr "*Leraikan:* %0"
+
+msgctxt "A suggestion for unchecking a to-do list item."
+msgid "*Uncheck item*"
+msgstr "*Buang tanda item*"
+
+msgctxt "The label for the button which accepts all selected suggestions."
+msgid "Accept all selected suggestions"
+msgstr "Terima semua cadangan yang dipilih"
+
+msgctxt "The label for the button which accepts all suggestions."
+msgid "Accept all suggestions"
+msgstr "Terima semua cadangan"
+
+msgctxt "The label for the accept suggestion button."
+msgid "Accept suggestion"
+msgstr "Terima cadangan"
+
+msgctxt "The label for the button which discards all selected suggestions."
+msgid "Discard all selected suggestions"
+msgstr "Buang semua cadangan yang dipilih"
+
+msgctxt "The label for the button which discards all suggestions."
+msgid "Discard all suggestions"
+msgstr "Buang semua cadangan"
+
+msgctxt "The label for the discard suggestion button."
+msgid "Discard suggestion"
+msgstr "Buang cadangan"
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves an insertion suggestion."
+msgid "LEAVE_INSERTION_SUGGESTION_ANNOUNCEMENT"
+msgstr "Meninggalkan cadangan pemasukan."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters an insertion suggestion."
+msgid "ENTER_INSERTION_SUGGESTION_ANNOUNCEMENT"
+msgstr "Memasukkan cadangan penyisipan. Tekan %0 untuk pergi ke perbincangan."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a deletion suggestion."
+msgid "LEAVE_DELETION_SUGGESTION_ANNOUNCEMENT"
+msgstr "Meninggalkan cadangan pemadaman."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters a deletion suggestion."
+msgid "ENTER_DELETION_SUGGESTION_ANNOUNCEMENT"
+msgstr "Memasukkan cadangan pemadaman. Tekan %0 untuk pergi ke perbincangan."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a formatting suggestion."
+msgid "LEAVE_FORMATTING_SUGGESTION_ANNOUNCEMENT"
+msgstr "Meninggalkan cadangan format."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters a formatting suggestion."
+msgid "ENTER_FORMATTING_SUGGESTION_ANNOUNCEMENT"
+msgstr "Memasukkan cadangan pemformatan. Tekan %0 untuk pergi ke perbincangan."
+
+msgctxt "A text label for assistive technologies describing the suggestion thread."
+msgid "SUGGESTION_THREAD_ARIA_LABEL"
+msgid_plural "Suggestion by %1. Created on %2. %0 replies. %3"
+msgstr[0] "Cadangan oleh %1. Dicipta pada %2. %0 jawapan. %3"
+
+msgctxt "A text label for assistive technologies providing additional information about navigation in the suggestion thread."
+msgid "SUGGESTION_THREAD_DESCRIPTION"
+msgstr "Tekan Enter untuk lebih banyak pilihan. Tekan Escape untuk keluar."
+
+msgctxt "The block quote element name displayed in the suggestion."
+msgid "ELEMENT_BLOCK_QUOTE"
+msgstr "petikan blok"
+
+msgctxt "The default styled list element name displayed in the suggestion."
+msgid "ELEMENT_DEFAULT_LIST_DEFAULT"
+msgstr "gaya senarai lalai"
+
+msgctxt "The bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST"
+msgstr "senarai bulet"
+
+msgctxt "The default styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_DEFAULT"
+msgstr "senarai bulet (lalai)"
+
+msgctxt "The circle styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_CIRCLE"
+msgstr "senarai bulet (bulat)"
+
+msgctxt "The disc styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_DISC"
+msgstr "senarai bulet (cakera)"
+
+msgctxt "The square styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_SQUARE"
+msgstr "senarai bulet (petak)"
+
+msgctxt "The caption element name displayed in the suggestion."
+msgid "ELEMENT_CAPTION"
+msgstr "kapsyen"
+
+msgctxt "The code block element name displayed in the suggestion."
+msgid "ELEMENT_CODE_BLOCK"
+msgid_plural "%0 code blocks"
+msgstr[0] "blok kod"
+
+msgctxt "The heading element name displayed in the suggestion."
+msgid "ELEMENT_HEADING"
+msgid_plural "%0 headings (level %1)"
+msgstr[0] "pengepala (tahap %1)"
+
+msgctxt "The heading element name displayed in the suggestion with a custom title."
+msgid "ELEMENT_HEADING_CUSTOM"
+msgid_plural "%0 headings (%1)"
+msgstr[0] "pengepala (%1)"
+
+msgctxt "The horizontal line element name displayed in the suggestion."
+msgid "ELEMENT_HORIZONTAL_LINE"
+msgid_plural "%0 horizontal lines"
+msgstr[0] "baris melintang"
+
+msgctxt "The HTML embed element name displayed in the suggestion."
+msgid "ELEMENT_HTML_EMBED"
+msgid_plural "%0 HTML embeds"
+msgstr[0] "benam HTML"
+
+msgctxt "The image element name displayed in the suggestion."
+msgid "ELEMENT_IMAGE"
+msgid_plural "%0 images"
+msgstr[0] "imej"
+
+msgctxt "The inline image element name displayed in the suggestion."
+msgid "ELEMENT_INLINE_IMAGE"
+msgid_plural "%0 images"
+msgstr[0] "imej"
+
+msgctxt "The line break element name displayed in the suggestion."
+msgid "ELEMENT_LINE_BREAK"
+msgid_plural "%0 line breaks"
+msgstr[0] "pemisah baris"
+
+msgctxt "The list item element name displayed in the suggestion."
+msgid "ELEMENT_LIST_ITEM"
+msgid_plural "%0 list items"
+msgstr[0] "item senarai"
+
+msgctxt "The media element name displayed in the suggestion."
+msgid "ELEMENT_MEDIA"
+msgid_plural "%0 media items"
+msgstr[0] "item media"
+
+msgctxt "The numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST"
+msgstr "senarai bernombor"
+
+msgctxt "The default styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DEFAULT"
+msgstr "senarai bernombor (lalai)"
+
+msgctxt "The decimal styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DECIMAL"
+msgstr "senarai bernombor (perpuluhan)"
+
+msgctxt "The decimal styled (with leading zero) numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DECIMAL_LEADING_ZERO"
+msgstr "senarai bernombor (perpuluhan bermula dengan kosong)"
+
+msgctxt "The lower latin styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_LOWER_LATIN"
+msgstr "senarai bernombor (latin kecil)"
+
+msgctxt "The lower roman styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_LOWER_ROMAN"
+msgstr "senarai bernombor (roman kecil)"
+
+msgctxt "The upper latin styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_UPPER_LATIN"
+msgstr "senarai bernombor (latin besar)"
+
+msgctxt "The upper roman styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_UPPER_ROMAN"
+msgstr "senarai bernombor (roman besar)"
+
+msgctxt "The page break element name displayed in the suggestion."
+msgid "ELEMENT_PAGE_BREAK"
+msgid_plural "%0 page breaks"
+msgstr[0] "pemisah helaian"
+
+msgctxt "The paragraph element name displayed in the suggestion."
+msgid "ELEMENT_PARAGRAPH"
+msgid_plural "%0 paragraphs"
+msgstr[0] "perenggan"
+
+msgctxt "The space element name displayed in the suggestion."
+msgid "ELEMENT_SPACE"
+msgid_plural "%0 spaces"
+msgstr[0] "ruang"
+
+msgctxt "The table element name displayed in the suggestion."
+msgid "ELEMENT_TABLE"
+msgid_plural "%0 tables"
+msgstr[0] "jadual"
+
+msgctxt "The table column element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_COLUMN"
+msgid_plural "%0 table columns"
+msgstr[0] "kolum jadual"
+
+msgctxt "The table column with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_COLUMN_WITH_TEXT"
+msgid_plural "%0 table columns *with text* %1"
+msgstr[0] "kolum jadual *dengan teks* %1"
+
+msgctxt "The table of contents element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_OF_CONTENTS"
+msgid_plural "%0 tables of contents"
+msgstr[0] "isi kandungan"
+
+msgctxt "The table row element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_ROW"
+msgid_plural "%0 table rows"
+msgstr[0] "baris jadual"
+
+msgctxt "The table row with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_ROW_WITH_TEXT"
+msgid_plural "%0 table rows *with text* %1"
+msgstr[0] "baris jadual *dengan teks %1"
+
+msgctxt "The table with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_WITH_TEXT"
+msgstr "jadual *dengan teks* %0"
+
+msgctxt "The title element name displayed in the suggestion."
+msgid "ELEMENT_TITLE"
+msgstr "tajuk"
+
+msgctxt "The to-do list element name displayed in the suggestion."
+msgid "ELEMENT_TODO_LIST"
+msgstr "senarai untuk dilakukan"
+
+msgctxt "The multi-level list element name displayed in the suggestion."
+msgid "ELEMENT_MULTI_LEVEL_LIST"
+msgstr "senarai pelbagai peringkat"
+
+msgctxt "The merge field element name displayed in the suggestion."
+msgid "ELEMENT_MERGE_FIELD"
+msgid_plural "%0 merge fields"
+msgstr[0] "medan gabungan"
+
+msgctxt "The alignment format name displayed in a format suggestion."
+msgid "FORMAT_ALIGNMENT"
+msgstr "penjajaran"
+
+msgctxt "The align to center format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_CENTER"
+msgstr "jajarkan ketengah"
+
+msgctxt "The align to left format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_LEFT"
+msgstr "jajarkan kekanan"
+
+msgctxt "The align to right format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_RIGHT"
+msgstr "jajarkan kekanan"
+
+msgctxt "The bold format name displayed in a format suggestion."
+msgid "FORMAT_BOLD"
+msgstr "tebal"
+
+msgctxt "The code format name displayed in a format suggestion."
+msgid "FORMAT_CODE"
+msgstr "kod"
+
+msgctxt "The header column format name displayed in a format suggestion."
+msgid "FORMAT_HEADER_COLUMN"
+msgstr "kolum pengepala"
+
+msgctxt "The header row format name displayed in a format suggestion."
+msgid "FORMAT_HEADER_ROW"
+msgstr "baris pengepala"
+
+msgctxt "The highlight format name displayed in a format suggestion."
+msgid "FORMAT_HIGHLIGHT"
+msgstr "sorotan"
+
+msgctxt "The italic format name displayed in a format suggestion."
+msgid "FORMAT_ITALIC"
+msgstr "italik"
+
+msgctxt "The justify text format name displayed in a format suggestion."
+msgid "FORMAT_JUSTIFY_TEXT"
+msgstr "imbang"
+
+msgctxt "The regular column format name displayed in a format suggestion."
+msgid "FORMAT_REGULAR_COLUMN"
+msgstr "kolum biasa"
+
+msgctxt "The regular row format name displayed in a format suggestion."
+msgid "FORMAT_REGULAR_ROW"
+msgstr "baris biasa"
+
+msgctxt "The label for area disabled in restricted editing area in a format suggestion."
+msgid "FORMAT_RESTRICTED_DISABLED"
+msgstr "*Dimatikan dalam mod suntingan terhad*"
+
+msgctxt "The label for area enabled in restricted editing area in a format suggestion."
+msgid "FORMAT_RESTRICTED_ENABLED"
+msgstr "*Dibuka dalam mod suntingan terhad*"
+
+msgctxt "The side image format name displayed in a format suggestion."
+msgid "FORMAT_SIDE_IMAGE"
+msgstr "imej sisi"
+
+msgctxt "The strikethrough format name displayed in a format suggestion."
+msgid "FORMAT_STRIKETHROUGH"
+msgstr "garis lorek"
+
+msgctxt "The subscript format name displayed in a format suggestion."
+msgid "FORMAT_SUBSCRIPT"
+msgstr "subskrip"
+
+msgctxt "The superscript format name displayed in a format suggestion."
+msgid "FORMAT_SUPERSCRIPT"
+msgstr "superskrip"
+
+msgctxt "The underline format name displayed in a format suggestion."
+msgid "FORMAT_UNDERLINE"
+msgstr "garis bawah"
+
+msgctxt "The list or block indent format name displayed in a format suggestion."
+msgid "FORMAT_INDENT"
+msgstr "inden"
+
+msgctxt "The list reversed format name displayed in a format suggestion."
+msgid "FORMAT_LIST_REVERSED"
+msgstr "senarai diterbalikkan"
+
+msgctxt "The list start format name displayed in a format suggestion."
+msgid "FORMAT_LIST_START"
+msgstr "senarai bermula"
+
+msgctxt "The font size format name displayed in a format suggestion."
+msgid "FORMAT_FONT_SIZE"
+msgstr "saiz fon"
+
+msgctxt "The font family format name displayed in a format suggestion."
+msgid "FORMAT_FONT_FAMILY"
+msgstr "keluarga fon"
+
+msgctxt "The font color format name displayed in a format suggestion."
+msgid "FORMAT_FONT_COLOR"
+msgstr "warna fon"
+
+msgctxt "The font background color format name displayed in a format suggestion."
+msgid "FORMAT_FONT_BACKGROUND"
+msgstr "warna latar belakang fon"
+
+msgctxt "The image size change format name displayed in a format suggestion."
+msgid "FORMAT_IMAGE_SIZE"
+msgstr "saiz imej"
+
+msgctxt "The style format name displayed in a format suggestion."
+msgid "FORMAT_STYLE"
+msgstr "gaya"
+
+msgctxt "The label for the alert shown when closing the editor with an unsaved track changes change."
+msgid "PENDING_ACTION_SUGGESTION"
+msgstr "Perubahan tidak disimpan dalam cadangan."
+
+msgctxt "A suggestion for replacing one text with another."
+msgid "REPLACE_TEXT"
+msgstr "*Ganti:* %0 *dengan* %1"
+
+msgctxt "The label for the dropdown containing some options related to track changes."
+msgid "Track changes"
+msgstr "Jejak perubahan"
+
+msgctxt "The additional information that suggestion comes from external source."
+msgid "EXTERNAL_SUGGESTION"
+msgstr "Cadangan ini berasal daripada sumber luaran."
+
+msgctxt "The additional information that suggestion comes from imported word file."
+msgid "EXTERNAL_IMPORT_WORD_SUGGESTION"
+msgstr "Cadangan ini datang daripada fail Word yang diimport."
+
+msgctxt "A suggestion for setting the bookmark name."
+msgid "*Set bookmark:* %0"
+msgstr "*Tetapkan penanda halaman:* %0"
+
+msgctxt "The bookmark element name displayed in the suggestion."
+msgid "ELEMENT_BOOKMARK"
+msgid_plural "%0 bookmarks"
+msgstr[0] "penanda halaman"
+
+msgctxt "A suggestion for replacing an image."
+msgid "*Replace image*"
+msgstr "*Gantikan imej*"
+
+msgctxt "The label for the button which shows the final content in the modal."
+msgid "Preview final content"
+msgstr "Pratonton kandungan akhir"
+
+msgctxt "The label for the final content preview modal heading."
+msgid "Final content preview"
+msgstr "Pratonton kandungan akhir"
+
+msgctxt "A suggestion for setting type %0 to the table."
+msgid "*Set table type:* %0"
+msgstr "*Tetapkan jenis jadual:* %0"
+
+msgctxt "The content table element name displayed in the suggestion."
+msgid "ELEMENT_CONTENT_TABLE"
+msgid_plural "%0 content tables"
+msgstr[0] "jadual kandungan"
+
+msgctxt "The layout table element name displayed in the suggestion."
+msgid "ELEMENT_LAYOUT_TABLE"
+msgid_plural "%0 layout tables"
+msgstr[0] "jadual tataletak"

@@ -1,0 +1,54 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: he\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for 1 or more connected users"
+msgid "CONNECTED_USERS"
+msgid_plural "%0 connected users"
+msgstr[0] "משתמש 1 מחובר (אני)"
+msgstr[1] "משתמש %0 מחובר"
+
+msgctxt "The label for an alert shown when closing th editor with data not send to the server "
+msgid "PENDING_ACTION_SENDING_DATA"
+msgstr "שולח נתונים לשרת."
+
+msgctxt "The label for the synchronization issue message"
+msgid "Synchronization issue"
+msgstr "בעיית סנכרון"
+
+msgctxt "The aria label for the connected users list dropdown menu"
+msgid "Connected users list dropdown menu"
+msgstr "תפריט נפתח של רשימת משתמשים מחוברים"
+
+msgctxt "The aria label for the connected users list"
+msgid "Connected users list"
+msgstr "רשימת משתמשים מחוברים"
+
+msgctxt "The aria label for the collapsed connected users list"
+msgid "Collapsed connected users list (press ENTER to open it)"
+msgstr "רשימת משתמשים מחוברים מכווצת (לחצו על ENTER כדי לפתוח אותה)"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document cannot be connected back to the server. To not lose your content save it locally and refresh the editor."
+msgstr "לא ניתן לחבר את המסמך בחזרה לשרת. כדי לא לאבד את התוכן שלכם שמרו אותו באופן מקומי ורעננו את העורך."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document details could not be taken during the reconnection. To not lose your content save it locally and refresh the editor."
+msgstr "לא ניתן היה לקבל את פרטי המסמך במהלך החיבור מחדש. כדי לא לאבד את התוכן שלכם שמרו אותו באופן מקומי ורעננו את העורך."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The last saved version of the document does not match the local version. To not lose your content save it locally and refresh the editor."
+msgstr "הגרסה האחרונה שנשמרה של המסמך אינה תואמת לגרסה המקומית. כדי לא לאבד את התוכן שלכם שמרו אותו באופן מקומי ורעננו את העורך."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The local document and server document differ and merging them can cause unexpected behavior. To not lose your content save it locally and refresh the editor."
+msgstr "המסמך המקומי והמסמך בשרת שונים ומיזוגם עלול לגרום להתנהגות בלתי צפויה. כדי לא לאבד את התוכן שלכם שמרו אותו באופן מקומי ורעננו את העורך."

@@ -1,0 +1,465 @@
+/**
+ * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck .ck-user__marker-dot {
+	/* If you are looking for handling dot color, see `usercolors.css` in the `ckeditor5-collaboration-core`. */
+	display: block;
+	position: absolute;
+	left: 50%;
+
+	/* #124 */
+	top: calc( ( var(--ck-user-dot-size) / 2 ) * -1 );
+
+	width: var(--ck-user-dot-size);
+	height: var(--ck-user-dot-size);
+	border-radius: 50%;
+	transform: translate( -50%, -50% );
+	cursor: default;
+}
+
+.ck .ck-user__marker-tooltip {
+	display: none;
+	position: absolute;
+
+	/* It should be one font in case of inheriting (example: headers sans-serif and content serif type). */
+	font-family: Georgia, sans-serif;
+
+	/* It should be px value in case of inheriting (like headers example). */
+	font-size: var(--ck-font-size-base);
+
+	/* In case of inheriting from various components. */
+	line-height: 1;
+	font-style: initial;
+	font-weight: initial;
+
+	left: 0;
+	opacity: 0;
+
+	/* Moving up this element with 100% of its height. */
+	top: -20px;
+
+	padding: var(--ck-spacing-small);
+	color: hsl(0, 0%, 100%);
+	white-space: nowrap;
+	transition: opacity 200ms linear, transform 300ms ease-in-out;
+	z-index: 99999;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+.ck .ck-user__marker-tooltip {
+		transition: none;
+}
+	}
+
+.ck .ck-user__marker-line {
+	/* If you are looking for handling line color, see `usercolors.css` in the `ckeditor5-collaboration-core`. */
+	position: absolute;
+	bottom: 0;
+	height: 100%;
+	width: 0;
+}
+
+.ck .ck-user__marker {
+	display: inline;
+	position: relative;
+	cursor: default;
+}
+
+.ck .ck-user__marker.ck-user__marker_hovered .ck-user__marker-dot {
+		width: 0;
+	}
+
+.ck .ck-user__marker.ck-user__marker_hovered .ck-user__marker-tooltip {
+		display: block;
+		opacity: 1;
+		animation: fadeInLeft 300ms ease-in-out;
+	}
+
+.ck .ck-placeholder .ck-user__marker {
+		display: none;
+	}
+
+@media (prefers-reduced-motion: reduce) {
+		.ck .ck-user__marker, .ck .ck-user__marker *, .ck .ck-user__marker::after {
+			animation: none !important;
+		}
+}
+
+@keyframes fadeInLeft {
+	from {
+		opacity: 0;
+		transform: translateX( -10px );
+	}
+	to {
+		opacity: 1;
+		transform: translateX( 0 );
+	}
+}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/**
+ * Makes element unselectable.
+ */
+
+.ck.ck-balloon-panel.ck-tooltip {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	z-index: calc( var(--ck-z-dialog) + 100 );
+}
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+/**
+ * A helper to combine multiple shadows.
+ */
+/**
+ * Gives an element a drop shadow so it looks like a floating panel.
+ */
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+/**
+ * A visual style of focused element's border.
+ */
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+/**
+ * Implements rounded corner interface for .ck-rounded-corners class.
+ *
+ * @see $ck-border-radius
+ */
+
+:root {
+	--ck-color-presence-list-dropdown-background: hsl(0, 0%, 100%);
+	--ck-color-presence-list-dropdown-arrow-border: hsl(0, 0%, 92%);
+
+	--ck-presence-list-dropdown-list-max-width: 250px;
+	--ck-presence-list-dropdown-list-min-width: 180px;
+
+	--ck-presence-list-users-tooltip-max-width: 120px;
+	--ck-presence-list-users-tooltip-min-width: 25px;
+}
+
+.ck.ck-presence-list {
+	display: inline-flex;
+	align-items: center;
+	margin-right: var(--ck-spacing-standard);
+	transition: margin-right 200ms ease-in-out;
+	font-size: var(--ck-font-size-base);
+}
+
+.ck.ck-presence-list * {
+		box-sizing: border-box;
+	}
+
+.ck.ck-presence-list__list {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+
+	/* Taking care about margin animation in collapsed mode. */
+	justify-content: flex-end;
+}
+
+.ck.ck-presence-list__list::after {
+		content: "";
+		position: absolute;
+		bottom: -15px;
+		left: 0;
+		width: 100%;
+		height: 15px;
+		background: transparent;
+	}
+
+.ck.ck-presence-list__counter--hidden {
+	display: none;
+}
+
+.ck.ck-presence-list__list-item {
+	/**
+	 * Reset default CK5 button styles - `.ck-reset__all *`.
+	 * Reset default user agent button stylesheet too.
+	 */
+	font: inherit;
+	color: inherit;
+	border: 1px solid transparent;
+	outline: none;
+	background: none;
+	padding: 0;
+
+	position: relative;
+	margin-left: var(--ck-spacing-medium);
+}
+
+.ck.ck-presence-list__list-item:focus {
+		border-radius: 0;
+		/* Disable native outline. */
+		outline: none;
+		border: var(--ck-focus-ring);
+		box-shadow: var(--ck-focus-outer-shadow), 0 0;
+	}
+
+.ck-rounded-corners .ck.ck-presence-list__list-item:focus,
+	.ck.ck-presence-list__list-item.ck-rounded-corners:focus {
+		border-radius: var(--ck-border-radius);
+	}
+
+.ck.ck-presence-list__list-item .ck-label {
+		/*
+		 * Forces screen reader to read label despite the fact that it is hidden.
+		 * Placing `display: none` on the element will prevent screen reader from reading it.
+		 */
+		overflow: hidden;
+		height: 0px;
+		width: 0px;
+	}
+
+.ck.ck-presence-list__list-item:first-child {
+		margin-left: 0;
+	}
+
+.ck.ck-tooltip.ck-presence-list__list-item__tooltip > .ck-tooltip__text {
+		display: inline-block;
+		max-width: var(--ck-presence-list-users-tooltip-max-width);
+		overflow: hidden;
+		text-align: center;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+.ck.ck-presence-list__marker {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 3px;
+	margin-top: 5px;
+}
+
+/**
+ * Add better UX behavior of button to the `clickable` elements.
+ * We need to create stronger specificity than `.ck.ck-reset__all *`.
+ */
+.ck-presence-list__list button.ck-presence-list__list-item *,
+.ck-presence-list__balloon button.ck-presence-list__dropdown-list-item * {
+	cursor: pointer;
+}
+
+.ck.ck-presence-list--collapsed .ck-presence-list__list {
+		border: 1px solid transparent;
+		padding-left: 1px;
+
+		/* Because of moving avatars to the right with margin-left we need to set min-width of container. */
+		min-width: calc( var(--ck-user-avatar-size) * 2 );
+	}
+
+.ck.ck-presence-list--collapsed .ck-presence-list__list * {
+			cursor: pointer;
+			transition: all 400ms ease-in-out;
+		}
+
+.ck.ck-presence-list--collapsed .ck-presence-list__list:focus {
+			border-radius: 0;
+			/* Disable native outline. */
+			outline: none;
+			border: var(--ck-focus-ring);
+			box-shadow: var(--ck-focus-outer-shadow), 0 0;
+		}
+
+.ck-rounded-corners .ck.ck-presence-list--collapsed .ck-presence-list__list:focus,
+	.ck.ck-presence-list--collapsed .ck-presence-list__list.ck-rounded-corners:focus {
+		border-radius: var(--ck-border-radius);
+	}
+
+.ck.ck-presence-list--collapsed .ck.ck-presence-list__list-item {
+		/* Adding negative margin (35% of avatar) to create collapsed effect. */
+		margin-left: calc( var(--ck-user-avatar-size) * -0.35);
+
+		/* Reset focus borders */
+		border: 0;
+		padding: 0;
+	}
+
+.ck.ck-presence-list--collapsed .ck.ck-presence-list__list-item:first-child {
+			margin-left: 0;
+		}
+
+.ck.ck-presence-list--collapsed .ck.ck-presence-list__list-item:last-child {
+			order: unset;
+		}
+
+.ck.ck-presence-list--collapsed .ck.ck-presence-list__list-item .ck-user {
+			--ck-presence-list-avatar-border-color: var(--ck-color-base-foreground);
+			border: 2px solid var(--ck-presence-list-avatar-border-color);
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+.ck.ck-presence-list--collapsed .ck.ck-presence-list__list-item.ck-presence-list__users-counter {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+.ck.ck-presence-list__balloon {
+	/* Overwrite arrows background of balloon */
+	--ck-color-panel-border: var(--ck-color-presence-list-dropdown-arrow-border);
+	--ck-color-panel-background: var(--ck-color-presence-list-dropdown-background);
+
+	background-color: var(--ck-color-presence-list-dropdown-background);
+	border: 0;
+	opacity: 1;
+	animation: 300ms fadeIn ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+.ck.ck-presence-list__balloon {
+		animation: none;
+}
+	}
+
+.ck.ck-presence-list__balloon ul {
+		background-color: var(--ck-color-presence-list-dropdown-background);
+	}
+
+.ck.ck-presence-list__balloon .ck.ck-presence-list__dropdown-list-wrapper {
+		min-width: var(--ck-presence-list-dropdown-list-min-width);
+		max-width: var(--ck-presence-list-dropdown-list-max-width);
+		border-radius: var(--ck-border-radius);
+
+		/*
+		 * Make it scrollable to prevent truncate of focus ring and shadow.
+		 * It's temporary fix, we should rethink max-height of dropdown
+		 */
+	}
+
+.ck.ck-presence-list__balloon .ck.ck-presence-list__dropdown-list-wrapper.ck-presence-list__dropdown-list-wrapper_scrollable {
+			max-height: 80vh;
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+
+.ck.ck-presence-list__balloon .ck.ck-presence-list__dropdown-list-item {
+		/**
+		 * Reset default CK5 button styles - `.ck-reset__all *`.
+		 * Reset default user agent button stylesheet too.
+		 */
+		font: inherit;
+		color: inherit;
+		outline: none;
+		border: 0;
+		background: none;
+
+		display: flex;
+		align-items: center;
+		position: relative;
+		padding: var(--ck-spacing-standard);
+	}
+
+.ck.ck-presence-list__balloon .ck.ck-presence-list__dropdown-list-item:focus {
+			position: relative;
+			z-index: 1;
+			outline: var(--ck-focus-ring);
+			outline-offset: -1px;
+
+			box-shadow: var(--ck-focus-outer-shadow), 0 0;
+		}
+
+.ck.ck-presence-list__balloon .ck.ck-presence-list__dropdown-list-item:first-of-type .ck-presence-list__marker {
+				border-top-left-radius: var(--ck-border-radius);
+			}
+
+.ck.ck-presence-list__balloon .ck.ck-presence-list__dropdown-list-item:last-of-type .ck-presence-list__marker {
+				border-bottom-left-radius: var(--ck-border-radius);
+			}
+
+.ck.ck-presence-list__balloon .ck.ck-presence-list__dropdown-list .ck-user__full-name {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			color: var(--ck-color-base-text);
+			margin-left: var(--ck-spacing-standard);
+		}
+
+.ck.ck-presence-list__balloon .ck.ck-presence-list__dropdown-list .ck.ck-presence-list__marker {
+			position: absolute;
+			left: 0;
+			margin: 0;
+			height: 100%;
+			width: 3px;
+		}
+
+.ck.ck-presence-list__users-counter {
+	--ck-presence-list-counter-border-color: var(--ck-user-avatar-background);
+	--ck-presence-list-counter-background-color: var(--ck-user-avatar-color);
+
+	border: 2px solid var(--ck-presence-list-counter-border-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	border-radius: 50%;
+	background-color: var(--ck-presence-list-counter-background-color);
+	box-sizing: border-box;
+	height: calc(var(--ck-user-avatar-size) - 4px);
+	width: calc(var(--ck-user-avatar-size) - 4px);
+	line-height: 100%;
+	margin: 2px;
+	margin-top: 4px;
+}
+
+.ck.ck-presence-list__users-counter__text {
+	--ck-presence-list-counter-text-color: var(--ck-user-avatar-background);
+
+	color: var(--ck-presence-list-counter-text-color);
+	cursor: default;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}

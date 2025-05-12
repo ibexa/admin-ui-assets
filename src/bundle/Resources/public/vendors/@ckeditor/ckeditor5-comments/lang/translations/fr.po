@@ -1,0 +1,176 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n <= -2 || n >= 2);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for the comment editor."
+msgid "Comment editor"
+msgstr "Éditeur de commentaire"
+
+msgctxt "The label for the number of comments."
+msgid "NUMBER_OF_COMMENTS"
+msgid_plural "%0 Comments"
+msgstr[0] "%0 commentaire"
+msgstr[1] "%0 commentaires"
+
+msgctxt "The alert displayed for a comment that is too long."
+msgid "TOO_LONG_COMMENT_ALERT"
+msgstr "Le contenu du commentaire est trop long. Votre commentaire contient %0 caractères alors que la limite est de %1 caractères."
+
+msgctxt "The placeholder for the reply field."
+msgid "Reply..."
+msgstr "Répondre..."
+
+msgctxt "The placeholder for the reply field when the comment thread is resolved."
+msgid "Reply to reopen discussion..."
+msgstr "Répondre pour rouvrir la discussion..."
+
+msgctxt "The placeholder for the new commend field."
+msgid "Write a comment..."
+msgstr "Écrire un commentaire..."
+
+msgctxt "The information that comment was made on element and has no context"
+msgid "Comment was made on an element"
+msgstr "Un commentaire a été ajouté sur un élément"
+
+msgctxt "The label for the button that enables editing a comment."
+msgid "Edit"
+msgstr "Éditer"
+
+msgctxt "The label for the button that resolves a comment thread."
+msgid "Resolve"
+msgstr "Résoudre"
+
+msgctxt "The label for the button that reopens a resolved comment thread."
+msgid "Reopen"
+msgstr "Rouvrir"
+
+msgctxt "The label for the button that deletes a comment."
+msgid "Remove"
+msgstr "Supprimer"
+
+msgctxt "The label for for the button that adds a reply to a comment thread."
+msgid "Reply"
+msgstr "Répondre"
+
+msgctxt "The confirmation message shown after pressing the delete comment button."
+msgid "Delete comment?"
+msgstr "Supprimer le commentaire ?"
+
+msgctxt "The confirmation message shown after pressing the delete comment thread button."
+msgid "Delete comment thread?"
+msgstr "Supprimer le fil des commentaires ? "
+
+msgctxt "A message informing that the comment has been resolved"
+msgid "Marked as resolved"
+msgstr "Marqué comme résolu"
+
+msgctxt "The tooltip for the comment toolbar button and the button that submits a comment thread."
+msgid "Comment"
+msgstr "Commenter"
+
+msgctxt "The accessible label for the annotations sidebar."
+msgid "Annotations sidebar"
+msgstr "Barre latérale des annotations"
+
+msgctxt "The accessible label for the list annotations in the annotations sidebar."
+msgid "Annotations list"
+msgstr "Liste des annotations"
+
+msgctxt "The accessible label for the list of thread comments in an annotation."
+msgid "Thread comments"
+msgstr "Commentaires sur le fil de discussion"
+
+msgctxt "The accessible label describing the context of the comment thread (e.g. editor content being discussed)."
+msgid "THREAD_CONTEXT_LABEL"
+msgstr "Contexte du fil de discussion : %0"
+
+msgctxt "The accessible label describing the comment thread."
+msgid "COMMENT_THREAD_LABEL"
+msgid_plural "Comment thread by %1. %0 replies."
+msgstr[0] "Commentaire du fil de discussion de %1. %1 réponse."
+msgstr[1] "Fil de discussion de %1. %1 réponse."
+
+msgctxt "The accessible label providing extra information about navigation in the comment thread."
+msgid "COMMENT_THREAD_DESCRIPTION"
+msgstr "Appuyez sur « Entrée » pour accéder à plus d'options. Appuyez sur « Échap » pour quitter."
+
+msgctxt "The accessible label for a single comment."
+msgid "COMMENT_ARIA_LABEL"
+msgstr "Commentaire de %0. Créé le %1. %2. %3"
+
+msgctxt "The accessible label for the list of archived comments."
+msgid "COMMENTS_ARCHIVE_LIST_LABEL"
+msgstr "Liste des commentaires"
+
+msgctxt "The accessibility help dialog description of the group of keystrokes related to annotations."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_GROUP"
+msgstr "Touches permettant d'interagir avec les fils d'annotation (par exemple, commentaires, suggestions de suivi des modifications)"
+
+msgctxt "The accessibility help dialog keystroke description for moving from the edited content to the annotation."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO"
+msgstr "Déplacer le focus sur le fil de discussion lorsque la sélection est ancrée dans son marqueur"
+
+msgctxt "The accessibility help dialog keystroke description for moving away from an annotation."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_EXIT"
+msgstr "Quitter l'annotation et remettre le focus sur le contenu modifié"
+
+msgctxt "The accessibility help dialog keystroke description for entering a thread."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_ENTER"
+msgstr "Parcourir le fil d'annotation ou le commentaire du fil de discussion ciblé"
+
+msgctxt "The accessibility help dialog keystroke description for moving across the internals of a thread."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS"
+msgstr "Se déplacer à travers les éléments internes du fil d'annotation"
+
+msgctxt "The accessibility help dialog keystroke description for submitting a comment."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT"
+msgstr "Soumettre la réponse en écrivant un commentaire"
+
+msgctxt "The accessibility help dialog keystroke description for navigating between annotations (threads)."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS"
+msgstr "Passer au fil de discussion précédent ou suivant dans la barre latérale des annotations ou dans l'archive des commentaires"
+
+msgctxt "A message read out by assistive technologies the moment the user selection moves into a comment."
+msgid "ENTER_COMMENT_ANNOUNCEMENT"
+msgstr "Saisir un contenu avec des commentaires. Appuyez sur %0 pour accéder à la discussion."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a comment."
+msgid "LEAVE_COMMENT_ANNOUNCEMENT"
+msgstr "Laisser un contenu avec des commentaires."
+
+msgctxt "The label for an alert shown when closing the editor with an unsaved comment change."
+msgid "PENDING_ACTION_COMMENT_THREAD"
+msgstr "Changement non enregistré dans le fil des commentaires."
+
+msgctxt "The additional information that comments comes from external source."
+msgid "EXTERNAL_COMMENT"
+msgstr "Ce commentaire provient d'une source externe."
+
+msgctxt "The additional information that comments comes from imported Word file."
+msgid "EXTERNAL_IMPORT_WORD_COMMENT"
+msgstr "Ce commentaire provient d'un fichier Word importé."
+
+msgctxt "The additional information that displayed author name comes from an external source."
+msgid "EXTERNAL_AVATAR"
+msgstr "Le nom de l'auteur affiché provient d'une source externe (ajouté par %0)"
+
+msgctxt "The additional information that displayed author name comes from imported Word file."
+msgid "EXTERNAL_IMPORT_WORD_AVATAR"
+msgstr "Le nom d'auteur affiché provient d'un document Word importé par %0"
+
+msgctxt "The label for the comments archive dropdown UI."
+msgid "COMMENTS_ARCHIVE"
+msgstr "Archive des commentaires"
+
+msgctxt "The information that comments archive is empty."
+msgid "EMPTY_COMMENTS_ARCHIVE"
+msgstr "Il n'y a pas de fils de commentaires archivés."

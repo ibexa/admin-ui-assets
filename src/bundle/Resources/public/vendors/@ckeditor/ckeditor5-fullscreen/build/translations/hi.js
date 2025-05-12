@@ -1,0 +1,1 @@
+!function(e){const n=e.hi=e.hi||{};n.dictionary=Object.assign(n.dictionary||{},{"Enter fullscreen mode":"फ़ुलस्क्रीन मोड में प्रवेश करें","Fullscreen mode":"फ़ुलस्क्रीन मोड","Leave fullscreen mode":"फ़ुलस्क्रीन मोड छोड़ें","Toggle fullscreen mode":"फ़ुलस्क्रीन मोड स्विच करें"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

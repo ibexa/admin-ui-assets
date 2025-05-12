@@ -1,0 +1,63 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck.ck-revision-history-sidebar__revision-name {
+	display: block;
+	font-size: 1.2em;
+	font-weight: bold;
+	position: relative;
+	left: calc(-1 * var(--ck-spacing-small));
+	margin-right: 30px;
+
+	& > .ck-labeled-field-view__input-wrapper {
+		& > .ck-label {
+			display: none;
+		}
+
+		& > .ck-input {
+			padding: var(--ck-spacing-tiny) var(--ck-spacing-small);
+			min-height: auto;
+			color: inherit;
+			font-family: inherit;
+			font-weight: bold;
+			font-size: var(--ck-font-size-normal);
+			min-width: auto;
+			width: 100%;
+			border-radius: var(--ck-border-radius);
+			transition: var(--ck-revision-history-revision-transitions);
+			background: transparent;
+			text-overflow: ellipsis;
+
+			@media (prefers-reduced-motion: reduce) {
+				transition: none;
+			}
+
+			&, &:focus, &[readonly] {
+				background: transparent;
+			}
+
+			&:not(.ck-input_focused) {
+				/* Only when the input is focused, it should look like an input. By default, it should not be obvious
+				that revision names are inputs. */
+				border-color: transparent;
+			}
+
+			&::placeholder {
+				/* The placeholder should be transparent to the users. When there is no name (whis is not mandatory),
+				the date is displayed instead of a name and it should look like this is normal. */
+				color: inherit;
+			}
+
+			/* Don't put the selection in the revision name when clicking an unselected revision. This is annoying. */
+			&[readonly] {
+				pointer-events: none;
+			}
+		}
+	}
+}

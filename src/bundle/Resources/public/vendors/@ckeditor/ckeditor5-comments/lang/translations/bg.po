@@ -1,0 +1,176 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: bg\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for the comment editor."
+msgid "Comment editor"
+msgstr "Редакция на коментар"
+
+msgctxt "The label for the number of comments."
+msgid "NUMBER_OF_COMMENTS"
+msgid_plural "%0 Comments"
+msgstr[0] "%0 Коментар"
+msgstr[1] "%0 Коментар"
+
+msgctxt "The alert displayed for a comment that is too long."
+msgid "TOO_LONG_COMMENT_ALERT"
+msgstr "Съдържанието на коментара е твърде дълго. Вашият коментар има %0 знака, но лимитът е %1 знака."
+
+msgctxt "The placeholder for the reply field."
+msgid "Reply..."
+msgstr "Отговори..."
+
+msgctxt "The placeholder for the reply field when the comment thread is resolved."
+msgid "Reply to reopen discussion..."
+msgstr "Отговорете за повторно отваряне на дискусията..."
+
+msgctxt "The placeholder for the new commend field."
+msgid "Write a comment..."
+msgstr "Напиши коментар..."
+
+msgctxt "The information that comment was made on element and has no context"
+msgid "Comment was made on an element"
+msgstr "Беше направен коментар към елемент"
+
+msgctxt "The label for the button that enables editing a comment."
+msgid "Edit"
+msgstr "Редактирай"
+
+msgctxt "The label for the button that resolves a comment thread."
+msgid "Resolve"
+msgstr "Разрешаване на коментар"
+
+msgctxt "The label for the button that reopens a resolved comment thread."
+msgid "Reopen"
+msgstr "Повторно отваряне"
+
+msgctxt "The label for the button that deletes a comment."
+msgid "Remove"
+msgstr "Премахни"
+
+msgctxt "The label for for the button that adds a reply to a comment thread."
+msgid "Reply"
+msgstr "Отговори"
+
+msgctxt "The confirmation message shown after pressing the delete comment button."
+msgid "Delete comment?"
+msgstr "Изтрий коментар?"
+
+msgctxt "The confirmation message shown after pressing the delete comment thread button."
+msgid "Delete comment thread?"
+msgstr "Изтрий серия от коментари?"
+
+msgctxt "A message informing that the comment has been resolved"
+msgid "Marked as resolved"
+msgstr "Отбелязано като разрешен коментар"
+
+msgctxt "The tooltip for the comment toolbar button and the button that submits a comment thread."
+msgid "Comment"
+msgstr "Коментирай"
+
+msgctxt "The accessible label for the annotations sidebar."
+msgid "Annotations sidebar"
+msgstr "Странична лента с анотации"
+
+msgctxt "The accessible label for the list annotations in the annotations sidebar."
+msgid "Annotations list"
+msgstr "Списък с анотации"
+
+msgctxt "The accessible label for the list of thread comments in an annotation."
+msgid "Thread comments"
+msgstr "Свързани коментари"
+
+msgctxt "The accessible label describing the context of the comment thread (e.g. editor content being discussed)."
+msgid "THREAD_CONTEXT_LABEL"
+msgstr "Контекст на свързан текст: %0"
+
+msgctxt "The accessible label describing the comment thread."
+msgid "COMMENT_THREAD_LABEL"
+msgid_plural "Comment thread by %1. %0 replies."
+msgstr[0] "Свързан коментар от %1. %1 отговор."
+msgstr[1] "Свързан коментар от %1. %1 отговор."
+
+msgctxt "The accessible label providing extra information about navigation in the comment thread."
+msgid "COMMENT_THREAD_DESCRIPTION"
+msgstr "Натиснете Въведи за повече опции. Натиснете Изход за излизане."
+
+msgctxt "The accessible label for a single comment."
+msgid "COMMENT_ARIA_LABEL"
+msgstr "Коментар от %0. Създаден на %1. %2. %3"
+
+msgctxt "The accessible label for the list of archived comments."
+msgid "COMMENTS_ARCHIVE_LIST_LABEL"
+msgstr "Списък с коментари."
+
+msgctxt "The accessibility help dialog description of the group of keystrokes related to annotations."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_GROUP"
+msgstr "Клавишни комбинации за взаимодействие със свързаните анотаци (напр. коментари, предложения за промени)"
+
+msgctxt "The accessibility help dialog keystroke description for moving from the edited content to the annotation."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO"
+msgstr "Преместване на фокуса върху свързания текст, когато селекцията е свързана с маркера си"
+
+msgctxt "The accessibility help dialog keystroke description for moving away from an annotation."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_EXIT"
+msgstr "Изход от анотацията и преместване на фокуса обратно върху редактираното съдържание"
+
+msgctxt "The accessibility help dialog keystroke description for entering a thread."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_ENTER"
+msgstr "Преглед на фокусната свързана анотация или свързан коментар"
+
+msgctxt "The accessibility help dialog keystroke description for moving across the internals of a thread."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS"
+msgstr "Преместване през вътрешната информация на свързаната анотация"
+
+msgctxt "The accessibility help dialog keystroke description for submitting a comment."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT"
+msgstr "Въведете отговор докато пишете коментар"
+
+msgctxt "The accessibility help dialog keystroke description for navigating between annotations (threads)."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS"
+msgstr "Преместване към предишно или следващо свързано съдържание в страничната лента с анотациите или архива на коментарите"
+
+msgctxt "A message read out by assistive technologies the moment the user selection moves into a comment."
+msgid "ENTER_COMMENT_ANNOUNCEMENT"
+msgstr "Въвеждане на съдържание с коментари. Натиснете %0, за да влезете в дискусията."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a comment."
+msgid "LEAVE_COMMENT_ANNOUNCEMENT"
+msgstr "Оставяне на съдържание с коментари."
+
+msgctxt "The label for an alert shown when closing the editor with an unsaved comment change."
+msgid "PENDING_ACTION_COMMENT_THREAD"
+msgstr "Незапазена промяна в серия от коментари."
+
+msgctxt "The additional information that comments comes from external source."
+msgid "EXTERNAL_COMMENT"
+msgstr "Този коментар идва от външен източник."
+
+msgctxt "The additional information that comments comes from imported Word file."
+msgid "EXTERNAL_IMPORT_WORD_COMMENT"
+msgstr "Този коментар е взет от импортиран Word файл"
+
+msgctxt "The additional information that displayed author name comes from an external source."
+msgid "EXTERNAL_AVATAR"
+msgstr "Показаното име на автора е взето от външен източник (добавен от %0)"
+
+msgctxt "The additional information that displayed author name comes from imported Word file."
+msgid "EXTERNAL_IMPORT_WORD_AVATAR"
+msgstr "Показаното име на автора е взето от Word документ, импортиран от %0"
+
+msgctxt "The label for the comments archive dropdown UI."
+msgid "COMMENTS_ARCHIVE"
+msgstr "Архив на коментарите"
+
+msgctxt "The information that comments archive is empty."
+msgid "EMPTY_COMMENTS_ARCHIVE"
+msgstr "Няма архивирани нишки с коментари."

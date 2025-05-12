@@ -1,0 +1,1 @@
+!function(e){const l=e.sv=e.sv||{};l.dictionary=Object.assign(l.dictionary||{},{"Enter fullscreen mode":"Gå in i helskärmsläge","Fullscreen mode":"Helskärmsläge","Leave fullscreen mode":"Lämna helskärmsläget","Toggle fullscreen mode":"Skifta helskärmsläge"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

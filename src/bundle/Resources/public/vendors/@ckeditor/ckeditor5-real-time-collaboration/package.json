@@ -1,0 +1,89 @@
+{
+  "name": "@ckeditor/ckeditor5-real-time-collaboration",
+  "version": "45.0.0",
+  "description": "A set of CKEditor 5 features enabling real-time collaboration within the editor using CKEditor Cloud Services.",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "CKSource (http://cksource.com/)",
+  "bugs": {
+    "url": "https://support.ckeditor.com/hc/en-us/requests/new"
+  },
+  "homepage": "https://ckeditor.com/collaboration/real-time/",
+  "keywords": [
+    "CKEditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "WYSIWYG",
+    "WYSIWYW",
+    "text",
+    "rich-text",
+    "richtext",
+    "editor",
+    "editing",
+    "html",
+    "operational transformation",
+    "ot",
+    "collaboration",
+    "collaborative",
+    "real-time",
+    "realtime",
+    "framework"
+  ],
+  "sideEffects": [
+    "*.css",
+    "build/**/*.js",
+    "dist/translations/*.umd.js"
+  ],
+  "type": "module",
+  "main": "src/index.js",
+  "files": [
+    "build",
+    "dist",
+    "lang",
+    "src/**/*.js",
+    "src/**/*.d.ts",
+    "theme",
+    "ckeditor5-metadata.json",
+    "CHANGELOG.md"
+  ],
+  "dependencies": {
+    "@ckeditor/ckeditor-cloud-services-collaboration": "52.7.0",
+    "@ckeditor/ckeditor5-cloud-services": "45.0.0",
+    "@ckeditor/ckeditor5-comments": "45.0.0",
+    "@ckeditor/ckeditor5-core": "45.0.0",
+    "@ckeditor/ckeditor5-editor-multi-root": "45.0.0",
+    "@ckeditor/ckeditor5-engine": "45.0.0",
+    "@ckeditor/ckeditor5-operations-compressor": "45.0.0",
+    "@ckeditor/ckeditor5-revision-history": "45.0.0",
+    "@ckeditor/ckeditor5-theme-lark": "45.0.0",
+    "@ckeditor/ckeditor5-track-changes": "45.0.0",
+    "@ckeditor/ckeditor5-ui": "45.0.0",
+    "@ckeditor/ckeditor5-utils": "45.0.0",
+    "ckeditor5": "45.0.0",
+    "ckeditor5-collaboration": "45.0.0",
+    "es-toolkit": "1.32.0"
+  },
+  "types": "src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    },
+    "./dist/*": {
+      "types": "./src/index.d.ts",
+      "import": "./dist/*",
+      "default": "./dist/*"
+    },
+    "./src/*": {
+      "types": "./src/*.d.ts",
+      "import": "./src/*",
+      "default": "./src/*"
+    },
+    "./build/*": "./build/*",
+    "./lang/*": "./lang/*",
+    "./theme/*": "./theme/*",
+    "./ckeditor5-metadata.json": "./ckeditor5-metadata.json",
+    "./package.json": "./package.json"
+  },
+  "obfuscated": true
+}

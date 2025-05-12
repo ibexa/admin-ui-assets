@@ -1,0 +1,616 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: pt\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "A suggestion for changing an item to the provided one."
+msgid "*Change to:* %0"
+msgstr "*Alteração a:* %0"
+
+msgctxt "A suggestion for changing a content of a widget."
+msgid "*Change %0 content*"
+msgstr "*Alterar conteúdo de %0*"
+
+msgctxt "A suggestion for checking a to-do list item."
+msgid "*Check item*"
+msgstr "*Verificar item*"
+
+msgctxt "A suggestion for setting inline formatting."
+msgid "*Format:* %0"
+msgstr "*Formato:* %0"
+
+msgctxt "A suggestion for indenting an item."
+msgid "*Indent:* %0"
+msgstr "*Indentação:* %0"
+
+msgctxt "A suggestion for inserting an item."
+msgid "*Insert:* %0"
+msgstr "*Inserir:* %0"
+
+msgctxt "A suggestion for changing table properties."
+msgid "*Format:* change table properties"
+msgstr "*Formatar:* alterar propriedades de tabela"
+
+msgctxt "A suggestion for changing table cell properties."
+msgid "*Format:* change table cell properties"
+msgstr "*Formatar:* alterar propriedades de células da tabela"
+
+msgctxt "A suggestion for inserting an item into another item."
+msgid "*Format:* insert into %0"
+msgstr "*Formato:* inserir em %0"
+
+msgctxt "A suggestion for removing item from another item."
+msgid "*Format:* remove from %0"
+msgstr "*Formato:* remover de %0"
+
+msgctxt "A suggestion for resizing a table."
+msgid "*Format:* resize table"
+msgstr "*Formato:* redimensionar tabela"
+
+msgctxt "A suggestion for changing the list order to reversed."
+msgid "*Format:* set order to reversed"
+msgstr "*Formato:* definir ordem como inversa"
+
+msgctxt "A suggestion for changing the list order to regular."
+msgid "*Format:* set order to regular"
+msgstr "*Formato:* definir ordem como normal"
+
+msgctxt "A suggestion for changing the start index of the list."
+msgid "*Format:* set start index to %0"
+msgstr "*Formato:* definir índice inicial como %0"
+
+msgctxt "A suggestion for merging cells."
+msgid "*Merge cells*"
+msgstr "*Unir células*"
+
+msgctxt "A suggestion for merging items."
+msgid "*Merge:* %0"
+msgstr "*Unir:* %0"
+
+msgctxt "A suggestion for outdenting an item."
+msgid "*Outdent:* %0"
+msgstr "*Desindentação:* %0"
+
+msgctxt "A suggestion for removing all formatting."
+msgid "*Remove all formatting*"
+msgstr "*Remover toda a formatação*"
+
+msgctxt "A suggestion for removing an inline format."
+msgid "*Remove format:* %0"
+msgstr "*Remover formato:* %0"
+
+msgctxt "A suggestion for removing the highlight."
+msgid "*Remove highlight*"
+msgstr "*Remover sublinhado*"
+
+msgctxt "A suggestion for removing image text alternative."
+msgid "*Remove image text alternative*"
+msgstr "*Remover texto alternativo da imagem*"
+
+msgctxt "A suggestion for removing the link."
+msgid "*Remove link*"
+msgstr "*Remover link*"
+
+msgctxt "A suggestion for removing an item."
+msgid "*Remove:* %0"
+msgstr "*Remover:* %0"
+
+msgctxt "A suggestion for replacing table cells (table pasting)."
+msgid "*Replace table cells*"
+msgstr "*Substituir células da tabela*"
+
+msgctxt "A suggestion for resetting the font background color."
+msgid "*Reset font background color*"
+msgstr "*Reiniciar cor de fundo da fonte*"
+
+msgctxt "A suggestion for resetting the font color."
+msgid "*Reset font color*"
+msgstr "*Reiniciar cor da fonte*"
+
+msgctxt "A suggestion for resetting the font family."
+msgid "*Reset font family*"
+msgstr "*Reiniciar família de fontes*"
+
+msgctxt "A suggestion for resetting the font size."
+msgid "*Reset font size*"
+msgstr "*Reiniciar tamanho da fonte*"
+
+msgctxt "A suggestion for resetting image width."
+msgid "*Reset image width*"
+msgstr "*Reiniciar a largura da imagem*"
+
+msgctxt "A suggestion for setting the font background color to %0."
+msgid "*Set font background color:* %0"
+msgstr "*Definir cor de fundo da fonte:* %0"
+
+msgctxt "A suggestion for setting the font color to %0."
+msgid "*Set font color:* %0"
+msgstr "*Definir cor da fonte:* %0"
+
+msgctxt "A suggestion for setting the font family to %0."
+msgid "*Set font family:* %0"
+msgstr "*Definir família de fontes:* %0"
+
+msgctxt "A suggestion for setting the font size to %0."
+msgid "*Set font size:* %0"
+msgstr "*Definir tamanho da fonte:* %0"
+
+msgctxt "A suggestion for setting one or more formatting changes to %0"
+msgid "*Set format:* %0"
+msgstr "*Definir formato:* %0"
+
+msgctxt "A suggestion for setting multiple inline formatting to %0"
+msgid "*Set format to:* %0"
+msgstr "*Definir formatação para:* %0"
+
+msgctxt "A suggestion for highlighting text."
+msgid "*Set highlight:* %0"
+msgstr "*Definir destaque:* %0"
+
+msgctxt "A suggestion for setting image text alternative to %0."
+msgid "*Set image text alternative:* %0"
+msgstr "*Definir texto alternativo da imagem:* %0"
+
+msgctxt "A suggestion for setting the image width to %0."
+msgid "*Set image width:* %0"
+msgstr "*Definir largura da imagem:* %0"
+
+msgctxt "A suggestion for setting the link URL."
+msgid "*Set link:* %0"
+msgstr "*Definir link:* %0"
+
+msgctxt "A suggestion for splitting cells horizontally."
+msgid "*Split cell:* horizontally"
+msgstr "*Dividir célula:* horizontalmente"
+
+msgctxt "A suggestion for splitting cells vertically."
+msgid "*Split cell:* vertically"
+msgstr "*Dividir célula:* verticalmente"
+
+msgctxt "A suggestion for splitting the item."
+msgid "*Split:* %0"
+msgstr "*Dividir:* %0"
+
+msgctxt "A suggestion for unchecking a to-do list item."
+msgid "*Uncheck item*"
+msgstr "*Desselecionar item*"
+
+msgctxt "The label for the button which accepts all selected suggestions."
+msgid "Accept all selected suggestions"
+msgstr "Aceitar todas as sugestões selecionadas"
+
+msgctxt "The label for the button which accepts all suggestions."
+msgid "Accept all suggestions"
+msgstr "Aceitar todas as sugestões"
+
+msgctxt "The label for the accept suggestion button."
+msgid "Accept suggestion"
+msgstr "Aceitar sugestão"
+
+msgctxt "The label for the button which discards all selected suggestions."
+msgid "Discard all selected suggestions"
+msgstr "Descartar todas as sugestões selecionadas"
+
+msgctxt "The label for the button which discards all suggestions."
+msgid "Discard all suggestions"
+msgstr "Descartar todas as sugestões"
+
+msgctxt "The label for the discard suggestion button."
+msgid "Discard suggestion"
+msgstr "Descartar sugestão"
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves an insertion suggestion."
+msgid "LEAVE_INSERTION_SUGGESTION_ANNOUNCEMENT"
+msgstr "Deixar sugestão de inserção."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters an insertion suggestion."
+msgid "ENTER_INSERTION_SUGGESTION_ANNOUNCEMENT"
+msgstr "A introduzir a sugestão de inserção. Prima [%0 para ir para a discussão."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a deletion suggestion."
+msgid "LEAVE_DELETION_SUGGESTION_ANNOUNCEMENT"
+msgstr "Deixar sugestão de eliminação."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters a deletion suggestion."
+msgid "ENTER_DELETION_SUGGESTION_ANNOUNCEMENT"
+msgstr "A introduzir a sugestão de eliminação. Prima %0 para ir para a discussão."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a formatting suggestion."
+msgid "LEAVE_FORMATTING_SUGGESTION_ANNOUNCEMENT"
+msgstr "Deixar sugestão de formatação."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters a formatting suggestion."
+msgid "ENTER_FORMATTING_SUGGESTION_ANNOUNCEMENT"
+msgstr "A introduzir a sugestão de formatação. Prima %0 para ir para a discussão."
+
+msgctxt "A text label for assistive technologies describing the suggestion thread."
+msgid "SUGGESTION_THREAD_ARIA_LABEL"
+msgid_plural "Suggestion by %1. Created on %2. %0 replies. %3"
+msgstr[0] "Sugestão de %1. Criada em %2. %0 resposta. %3"
+msgstr[1] "Sugestão de %1. Criada em %2. %0 resposta. %3"
+
+msgctxt "A text label for assistive technologies providing additional information about navigation in the suggestion thread."
+msgid "SUGGESTION_THREAD_DESCRIPTION"
+msgstr "Prima Enter para mais opções. Prima Escape para sair."
+
+msgctxt "The block quote element name displayed in the suggestion."
+msgid "ELEMENT_BLOCK_QUOTE"
+msgstr "bloco de citação"
+
+msgctxt "The default styled list element name displayed in the suggestion."
+msgid "ELEMENT_DEFAULT_LIST_DEFAULT"
+msgstr "estilo de lista predefinido"
+
+msgctxt "The bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST"
+msgstr "lista não ordenada de itens"
+
+msgctxt "The default styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_DEFAULT"
+msgstr "lista com marcas (padrão)"
+
+msgctxt "The circle styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_CIRCLE"
+msgstr "lista com marcas (círculo)"
+
+msgctxt "The disc styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_DISC"
+msgstr "lista com marcas (disco)"
+
+msgctxt "The square styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_SQUARE"
+msgstr "lista com marcas (quadrado)"
+
+msgctxt "The caption element name displayed in the suggestion."
+msgid "ELEMENT_CAPTION"
+msgstr "legenda"
+
+msgctxt "The code block element name displayed in the suggestion."
+msgid "ELEMENT_CODE_BLOCK"
+msgid_plural "%0 code blocks"
+msgstr[0] "bloco de código"
+msgstr[1] "%0 bloco de código"
+
+msgctxt "The heading element name displayed in the suggestion."
+msgid "ELEMENT_HEADING"
+msgid_plural "%0 headings (level %1)"
+msgstr[0] "cabeçalho (nível %1)"
+msgstr[1] "%0 cabeçalho (nível %1)"
+
+msgctxt "The heading element name displayed in the suggestion with a custom title."
+msgid "ELEMENT_HEADING_CUSTOM"
+msgid_plural "%0 headings (%1)"
+msgstr[0] "cabeçalho (%1)"
+msgstr[1] "%0 cabeçalho (%1)"
+
+msgctxt "The horizontal line element name displayed in the suggestion."
+msgid "ELEMENT_HORIZONTAL_LINE"
+msgid_plural "%0 horizontal lines"
+msgstr[0] "linha horizontal"
+msgstr[1] "%0 linha horizontal"
+
+msgctxt "The HTML embed element name displayed in the suggestion."
+msgid "ELEMENT_HTML_EMBED"
+msgid_plural "%0 HTML embeds"
+msgstr[0] "Incorporar HTML"
+msgstr[1] "%0 incorporar HTML"
+
+msgctxt "The image element name displayed in the suggestion."
+msgid "ELEMENT_IMAGE"
+msgid_plural "%0 images"
+msgstr[0] "imagem"
+msgstr[1] "%0 imagem"
+
+msgctxt "The inline image element name displayed in the suggestion."
+msgid "ELEMENT_INLINE_IMAGE"
+msgid_plural "%0 images"
+msgstr[0] "imagem"
+msgstr[1] "%0 imagem"
+
+msgctxt "The line break element name displayed in the suggestion."
+msgid "ELEMENT_LINE_BREAK"
+msgid_plural "%0 line breaks"
+msgstr[0] "quebra de linha"
+msgstr[1] "%0 quebra de linha"
+
+msgctxt "The list item element name displayed in the suggestion."
+msgid "ELEMENT_LIST_ITEM"
+msgid_plural "%0 list items"
+msgstr[0] "item de lista"
+msgstr[1] "%0 item de lista"
+
+msgctxt "The media element name displayed in the suggestion."
+msgid "ELEMENT_MEDIA"
+msgid_plural "%0 media items"
+msgstr[0] "item de média"
+msgstr[1] "item de média"
+
+msgctxt "The numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST"
+msgstr "lista numerada"
+
+msgctxt "The default styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DEFAULT"
+msgstr "lista numerada (padrão)"
+
+msgctxt "The decimal styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DECIMAL"
+msgstr "lista numerada (decimal)"
+
+msgctxt "The decimal styled (with leading zero) numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DECIMAL_LEADING_ZERO"
+msgstr "lista numerada (decimal a começar em 0)"
+
+msgctxt "The lower latin styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_LOWER_LATIN"
+msgstr "lista numerada (numeração latina minúscula)"
+
+msgctxt "The lower roman styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_LOWER_ROMAN"
+msgstr "lista numerada (numeração romana minúscula)"
+
+msgctxt "The upper latin styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_UPPER_LATIN"
+msgstr "lista numerada (numeração latina maiúscula)"
+
+msgctxt "The upper roman styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_UPPER_ROMAN"
+msgstr "lista numerada (numeração romana maiúscula)"
+
+msgctxt "The page break element name displayed in the suggestion."
+msgid "ELEMENT_PAGE_BREAK"
+msgid_plural "%0 page breaks"
+msgstr[0] "quebra de página"
+msgstr[1] "%0 quebra de página"
+
+msgctxt "The paragraph element name displayed in the suggestion."
+msgid "ELEMENT_PARAGRAPH"
+msgid_plural "%0 paragraphs"
+msgstr[0] "parágrafo"
+msgstr[1] "%0 parágrafos"
+
+msgctxt "The space element name displayed in the suggestion."
+msgid "ELEMENT_SPACE"
+msgid_plural "%0 spaces"
+msgstr[0] "espaço"
+msgstr[1] "%0 espaços"
+
+msgctxt "The table element name displayed in the suggestion."
+msgid "ELEMENT_TABLE"
+msgid_plural "%0 tables"
+msgstr[0] "tabela"
+msgstr[1] "%0 tabelas"
+
+msgctxt "The table column element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_COLUMN"
+msgid_plural "%0 table columns"
+msgstr[0] "coluna de tabela"
+msgstr[1] "%0 colunas de tabela"
+
+msgctxt "The table column with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_COLUMN_WITH_TEXT"
+msgid_plural "%0 table columns *with text* %1"
+msgstr[0] "coluna de tabela *com texto* %1"
+msgstr[1] "%0 coluna de tabela *com texto* %1"
+
+msgctxt "The table of contents element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_OF_CONTENTS"
+msgid_plural "%0 tables of contents"
+msgstr[0] "índice"
+msgstr[1] "%0 índices"
+
+msgctxt "The table row element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_ROW"
+msgid_plural "%0 table rows"
+msgstr[0] "linha de tabela"
+msgstr[1] "%0 linhas de tabela"
+
+msgctxt "The table row with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_ROW_WITH_TEXT"
+msgid_plural "%0 table rows *with text* %1"
+msgstr[0] "linha de tabela *com texto* %1"
+msgstr[1] "%0 linhas de tabela *com texto* %1"
+
+msgctxt "The table with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_WITH_TEXT"
+msgstr "tabela *com texto* %0"
+
+msgctxt "The title element name displayed in the suggestion."
+msgid "ELEMENT_TITLE"
+msgstr "título"
+
+msgctxt "The to-do list element name displayed in the suggestion."
+msgid "ELEMENT_TODO_LIST"
+msgstr "lista de tarefas"
+
+msgctxt "The multi-level list element name displayed in the suggestion."
+msgid "ELEMENT_MULTI_LEVEL_LIST"
+msgstr "lista multinível"
+
+msgctxt "The merge field element name displayed in the suggestion."
+msgid "ELEMENT_MERGE_FIELD"
+msgid_plural "%0 merge fields"
+msgstr[0] "campo de fusão"
+msgstr[1] "campo de fusão"
+
+msgctxt "The alignment format name displayed in a format suggestion."
+msgid "FORMAT_ALIGNMENT"
+msgstr "alinhamento"
+
+msgctxt "The align to center format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_CENTER"
+msgstr "alinhar ao centro"
+
+msgctxt "The align to left format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_LEFT"
+msgstr "alinhar à esquerda"
+
+msgctxt "The align to right format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_RIGHT"
+msgstr "alinhar à direita"
+
+msgctxt "The bold format name displayed in a format suggestion."
+msgid "FORMAT_BOLD"
+msgstr "negrito"
+
+msgctxt "The code format name displayed in a format suggestion."
+msgid "FORMAT_CODE"
+msgstr "código"
+
+msgctxt "The header column format name displayed in a format suggestion."
+msgid "FORMAT_HEADER_COLUMN"
+msgstr "coluna de cabeçalho"
+
+msgctxt "The header row format name displayed in a format suggestion."
+msgid "FORMAT_HEADER_ROW"
+msgstr "linha de cabeçalho"
+
+msgctxt "The highlight format name displayed in a format suggestion."
+msgid "FORMAT_HIGHLIGHT"
+msgstr "destaque"
+
+msgctxt "The italic format name displayed in a format suggestion."
+msgid "FORMAT_ITALIC"
+msgstr "itálico"
+
+msgctxt "The justify text format name displayed in a format suggestion."
+msgid "FORMAT_JUSTIFY_TEXT"
+msgstr "justificar"
+
+msgctxt "The regular column format name displayed in a format suggestion."
+msgid "FORMAT_REGULAR_COLUMN"
+msgstr "coluna regular"
+
+msgctxt "The regular row format name displayed in a format suggestion."
+msgid "FORMAT_REGULAR_ROW"
+msgstr "linha normal"
+
+msgctxt "The label for area disabled in restricted editing area in a format suggestion."
+msgid "FORMAT_RESTRICTED_DISABLED"
+msgstr "*Desativar no modo de edição restrita*"
+
+msgctxt "The label for area enabled in restricted editing area in a format suggestion."
+msgid "FORMAT_RESTRICTED_ENABLED"
+msgstr "*Ativar no modo de edição restrita*"
+
+msgctxt "The side image format name displayed in a format suggestion."
+msgid "FORMAT_SIDE_IMAGE"
+msgstr "imagem lateral"
+
+msgctxt "The strikethrough format name displayed in a format suggestion."
+msgid "FORMAT_STRIKETHROUGH"
+msgstr "rasurar"
+
+msgctxt "The subscript format name displayed in a format suggestion."
+msgid "FORMAT_SUBSCRIPT"
+msgstr "subscrito"
+
+msgctxt "The superscript format name displayed in a format suggestion."
+msgid "FORMAT_SUPERSCRIPT"
+msgstr "sobrescrito"
+
+msgctxt "The underline format name displayed in a format suggestion."
+msgid "FORMAT_UNDERLINE"
+msgstr "sublinhar"
+
+msgctxt "The list or block indent format name displayed in a format suggestion."
+msgid "FORMAT_INDENT"
+msgstr "indentar"
+
+msgctxt "The list reversed format name displayed in a format suggestion."
+msgid "FORMAT_LIST_REVERSED"
+msgstr "lista inversa"
+
+msgctxt "The list start format name displayed in a format suggestion."
+msgid "FORMAT_LIST_START"
+msgstr "início da lista"
+
+msgctxt "The font size format name displayed in a format suggestion."
+msgid "FORMAT_FONT_SIZE"
+msgstr "tamanho do tipo de letra"
+
+msgctxt "The font family format name displayed in a format suggestion."
+msgid "FORMAT_FONT_FAMILY"
+msgstr "família do tipo de letra"
+
+msgctxt "The font color format name displayed in a format suggestion."
+msgid "FORMAT_FONT_COLOR"
+msgstr "cor do tipo de letra"
+
+msgctxt "The font background color format name displayed in a format suggestion."
+msgid "FORMAT_FONT_BACKGROUND"
+msgstr "cor de fundo do tipo de letra"
+
+msgctxt "The image size change format name displayed in a format suggestion."
+msgid "FORMAT_IMAGE_SIZE"
+msgstr "tamanho da imagem"
+
+msgctxt "The style format name displayed in a format suggestion."
+msgid "FORMAT_STYLE"
+msgstr "estilo"
+
+msgctxt "The label for the alert shown when closing the editor with an unsaved track changes change."
+msgid "PENDING_ACTION_SUGGESTION"
+msgstr "Alteração não guardada na sugestão."
+
+msgctxt "A suggestion for replacing one text with another."
+msgid "REPLACE_TEXT"
+msgstr "*Substituir:* %0 *por* %1"
+
+msgctxt "The label for the dropdown containing some options related to track changes."
+msgid "Track changes"
+msgstr "Monitorizar alterações"
+
+msgctxt "The additional information that suggestion comes from external source."
+msgid "EXTERNAL_SUGGESTION"
+msgstr "Esta sugestão provém de uma fonte externa."
+
+msgctxt "The additional information that suggestion comes from imported word file."
+msgid "EXTERNAL_IMPORT_WORD_SUGGESTION"
+msgstr "Esta sugestão provém de um ficheiro Word importado."
+
+msgctxt "A suggestion for setting the bookmark name."
+msgid "*Set bookmark:* %0"
+msgstr "*Definir marcador:* %0"
+
+msgctxt "The bookmark element name displayed in the suggestion."
+msgid "ELEMENT_BOOKMARK"
+msgid_plural "%0 bookmarks"
+msgstr[0] "marcador"
+msgstr[1] "marcador"
+
+msgctxt "A suggestion for replacing an image."
+msgid "*Replace image*"
+msgstr "*Substituir imagem*"
+
+msgctxt "The label for the button which shows the final content in the modal."
+msgid "Preview final content"
+msgstr "Pré-visualizar conteúdo final"
+
+msgctxt "The label for the final content preview modal heading."
+msgid "Final content preview"
+msgstr "Pré-visualização do conteúdo final"
+
+msgctxt "A suggestion for setting type %0 to the table."
+msgid "*Set table type:* %0"
+msgstr "*Definir tipo de tabela:* %0"
+
+msgctxt "The content table element name displayed in the suggestion."
+msgid "ELEMENT_CONTENT_TABLE"
+msgid_plural "%0 content tables"
+msgstr[0] "tabela de conteúdo"
+msgstr[1] "tabela de conteúdo"
+
+msgctxt "The layout table element name displayed in the suggestion."
+msgid "ELEMENT_LAYOUT_TABLE"
+msgid_plural "%0 layout tables"
+msgstr[0] "tabela de esquemas"
+msgstr[1] "tabela de esquemas"

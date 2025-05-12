@@ -1,0 +1,176 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: no\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for the comment editor."
+msgid "Comment editor"
+msgstr "Redigeringsverktøy for kommentarer"
+
+msgctxt "The label for the number of comments."
+msgid "NUMBER_OF_COMMENTS"
+msgid_plural "%0 Comments"
+msgstr[0] "%0 kommentar"
+msgstr[1] "%0 kommentarer"
+
+msgctxt "The alert displayed for a comment that is too long."
+msgid "TOO_LONG_COMMENT_ALERT"
+msgstr "Kommentarinnhold er for langt. Kommentaren din har %0 tegn, men grensen er %1 tegn."
+
+msgctxt "The placeholder for the reply field."
+msgid "Reply..."
+msgstr "Svar..."
+
+msgctxt "The placeholder for the reply field when the comment thread is resolved."
+msgid "Reply to reopen discussion..."
+msgstr "Svar for å gjenåpne diskusjonen ..."
+
+msgctxt "The placeholder for the new commend field."
+msgid "Write a comment..."
+msgstr "Skriv en kommentar..."
+
+msgctxt "The information that comment was made on element and has no context"
+msgid "Comment was made on an element"
+msgstr "Et element ble kommentert"
+
+msgctxt "The label for the button that enables editing a comment."
+msgid "Edit"
+msgstr "Rediger"
+
+msgctxt "The label for the button that resolves a comment thread."
+msgid "Resolve"
+msgstr "Løs"
+
+msgctxt "The label for the button that reopens a resolved comment thread."
+msgid "Reopen"
+msgstr "Åpne igjen"
+
+msgctxt "The label for the button that deletes a comment."
+msgid "Remove"
+msgstr "Fjern"
+
+msgctxt "The label for for the button that adds a reply to a comment thread."
+msgid "Reply"
+msgstr "Svar"
+
+msgctxt "The confirmation message shown after pressing the delete comment button."
+msgid "Delete comment?"
+msgstr "Slett kommentar?"
+
+msgctxt "The confirmation message shown after pressing the delete comment thread button."
+msgid "Delete comment thread?"
+msgstr "Slett kommentartråd?"
+
+msgctxt "A message informing that the comment has been resolved"
+msgid "Marked as resolved"
+msgstr "Merket som løst"
+
+msgctxt "The tooltip for the comment toolbar button and the button that submits a comment thread."
+msgid "Comment"
+msgstr "Kommenter"
+
+msgctxt "The accessible label for the annotations sidebar."
+msgid "Annotations sidebar"
+msgstr "Sidefelt for kommentarer"
+
+msgctxt "The accessible label for the list annotations in the annotations sidebar."
+msgid "Annotations list"
+msgstr "Kommentarliste"
+
+msgctxt "The accessible label for the list of thread comments in an annotation."
+msgid "Thread comments"
+msgstr "Trådkommentarer"
+
+msgctxt "The accessible label describing the context of the comment thread (e.g. editor content being discussed)."
+msgid "THREAD_CONTEXT_LABEL"
+msgstr "Trådkontekst: %0"
+
+msgctxt "The accessible label describing the comment thread."
+msgid "COMMENT_THREAD_LABEL"
+msgid_plural "Comment thread by %1. %0 replies."
+msgstr[0] "Kommentartråd av %1. %1 svar."
+msgstr[1] "Kommentartråd av %1. %1 svar."
+
+msgctxt "The accessible label providing extra information about navigation in the comment thread."
+msgid "COMMENT_THREAD_DESCRIPTION"
+msgstr "Trykk Enter for flere alternativer. Trykk Escape for å avslutte."
+
+msgctxt "The accessible label for a single comment."
+msgid "COMMENT_ARIA_LABEL"
+msgstr "Kommentar av %0. Opprettet %1. %2. %3"
+
+msgctxt "The accessible label for the list of archived comments."
+msgid "COMMENTS_ARCHIVE_LIST_LABEL"
+msgstr "Liste over kommentarer"
+
+msgctxt "The accessibility help dialog description of the group of keystrokes related to annotations."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_GROUP"
+msgstr "Tastetrykk for å samhandle med kommentartråder (f.eks. kommentarer, forslag til sporing av endringer)"
+
+msgctxt "The accessibility help dialog keystroke description for moving from the edited content to the annotation."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO"
+msgstr "Flytt fokus til tråden når utvalget er forankret i markøren"
+
+msgctxt "The accessibility help dialog keystroke description for moving away from an annotation."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_EXIT"
+msgstr "Gå ut av kommentaren, og flytt fokus tilbake til det redigerte innholdet"
+
+msgctxt "The accessibility help dialog keystroke description for entering a thread."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_ENTER"
+msgstr "Bla gjennom kommentartråden i fokus eller trådkommentaren"
+
+msgctxt "The accessibility help dialog keystroke description for moving across the internals of a thread."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS"
+msgstr "Flytt over innsiden av kommentartråden"
+
+msgctxt "The accessibility help dialog keystroke description for submitting a comment."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT"
+msgstr "Send inn svaret mens du skriver en kommentar"
+
+msgctxt "The accessibility help dialog keystroke description for navigating between annotations (threads)."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS"
+msgstr "Flytt til forrige eller neste tråd i sidefeltet for kommentarer eller kommentararkivet"
+
+msgctxt "A message read out by assistive technologies the moment the user selection moves into a comment."
+msgid "ENTER_COMMENT_ANNOUNCEMENT"
+msgstr "Legger inn et innhold med kommentarer. Trykk %0 for å gå til diskusjonen."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a comment."
+msgid "LEAVE_COMMENT_ANNOUNCEMENT"
+msgstr "Etterlater et innhold med kommentarer."
+
+msgctxt "The label for an alert shown when closing the editor with an unsaved comment change."
+msgid "PENDING_ACTION_COMMENT_THREAD"
+msgstr "Ulagrede endringer i kommentartråden."
+
+msgctxt "The additional information that comments comes from external source."
+msgid "EXTERNAL_COMMENT"
+msgstr "Denne kommentaren kommer fra en ekstern kilde."
+
+msgctxt "The additional information that comments comes from imported Word file."
+msgid "EXTERNAL_IMPORT_WORD_COMMENT"
+msgstr "Denne kommentaren kommer fra en importert Word-fil."
+
+msgctxt "The additional information that displayed author name comes from an external source."
+msgid "EXTERNAL_AVATAR"
+msgstr "Vist forfatternavn kommer fra ekstern kilde (lagt til av %0)"
+
+msgctxt "The additional information that displayed author name comes from imported Word file."
+msgid "EXTERNAL_IMPORT_WORD_AVATAR"
+msgstr "Vist forfatternavn kommer fra et Word-dokument importert av %0"
+
+msgctxt "The label for the comments archive dropdown UI."
+msgid "COMMENTS_ARCHIVE"
+msgstr "Kommentararkiv"
+
+msgctxt "The information that comments archive is empty."
+msgid "EMPTY_COMMENTS_ARCHIVE"
+msgstr "Det er ingen arkiverte kommentartråder."

@@ -1,0 +1,616 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: bg\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "A suggestion for changing an item to the provided one."
+msgid "*Change to:* %0"
+msgstr "*Промени на:* %0"
+
+msgctxt "A suggestion for changing a content of a widget."
+msgid "*Change %0 content*"
+msgstr "*Промени %0 съдържание*"
+
+msgctxt "A suggestion for checking a to-do list item."
+msgid "*Check item*"
+msgstr "*Провери единица*"
+
+msgctxt "A suggestion for setting inline formatting."
+msgid "*Format:* %0"
+msgstr "*Формат:* %0"
+
+msgctxt "A suggestion for indenting an item."
+msgid "*Indent:* %0"
+msgstr "*Отстояние:* %0"
+
+msgctxt "A suggestion for inserting an item."
+msgid "*Insert:* %0"
+msgstr "*Въведи:* %0"
+
+msgctxt "A suggestion for changing table properties."
+msgid "*Format:* change table properties"
+msgstr "*Формат:* промяна на свойствата на таблицата"
+
+msgctxt "A suggestion for changing table cell properties."
+msgid "*Format:* change table cell properties"
+msgstr "*Формат:* промяна на свойствата на клетките на таблицата"
+
+msgctxt "A suggestion for inserting an item into another item."
+msgid "*Format:* insert into %0"
+msgstr "*Форматиране:* вмъкване в %0"
+
+msgctxt "A suggestion for removing item from another item."
+msgid "*Format:* remove from %0"
+msgstr "*Форматиране:* премахване от %0"
+
+msgctxt "A suggestion for resizing a table."
+msgid "*Format:* resize table"
+msgstr "*Форматиране:* преоразмеряване на таблица"
+
+msgctxt "A suggestion for changing the list order to reversed."
+msgid "*Format:* set order to reversed"
+msgstr "*Форматиране:* задаване на последователност в обратен ред"
+
+msgctxt "A suggestion for changing the list order to regular."
+msgid "*Format:* set order to regular"
+msgstr "*Форматиране:* задаване на последователност в нормален ред"
+
+msgctxt "A suggestion for changing the start index of the list."
+msgid "*Format:* set start index to %0"
+msgstr "*Форматиране:* задаване на стартов индекс на %0"
+
+msgctxt "A suggestion for merging cells."
+msgid "*Merge cells*"
+msgstr "*Сливане на клетки*"
+
+msgctxt "A suggestion for merging items."
+msgid "*Merge:* %0"
+msgstr "*Сливане:* %0"
+
+msgctxt "A suggestion for outdenting an item."
+msgid "*Outdent:* %0"
+msgstr "*Изпъкни:* %0"
+
+msgctxt "A suggestion for removing all formatting."
+msgid "*Remove all formatting*"
+msgstr "*Премахни цялото форматиране*"
+
+msgctxt "A suggestion for removing an inline format."
+msgid "*Remove format:* %0"
+msgstr "*Премахни формат:* %0"
+
+msgctxt "A suggestion for removing the highlight."
+msgid "*Remove highlight*"
+msgstr "*Премахни подчертаване*"
+
+msgctxt "A suggestion for removing image text alternative."
+msgid "*Remove image text alternative*"
+msgstr "*Премахни изображението в текстова алтернатива*"
+
+msgctxt "A suggestion for removing the link."
+msgid "*Remove link*"
+msgstr "*Премахни връзка*"
+
+msgctxt "A suggestion for removing an item."
+msgid "*Remove:* %0"
+msgstr "*Премахни:* %0"
+
+msgctxt "A suggestion for replacing table cells (table pasting)."
+msgid "*Replace table cells*"
+msgstr "*Замени клетки в таблицата*"
+
+msgctxt "A suggestion for resetting the font background color."
+msgid "*Reset font background color*"
+msgstr "*Задай отново цвят на фона на шрифта*"
+
+msgctxt "A suggestion for resetting the font color."
+msgid "*Reset font color*"
+msgstr "*Задай отново цвят на шрифта*"
+
+msgctxt "A suggestion for resetting the font family."
+msgid "*Reset font family*"
+msgstr "*Задай отново семейство шрифтове*"
+
+msgctxt "A suggestion for resetting the font size."
+msgid "*Reset font size*"
+msgstr "*Задай отново размер на шрифта*"
+
+msgctxt "A suggestion for resetting image width."
+msgid "*Reset image width*"
+msgstr "*Задай отново ширина на изображението*"
+
+msgctxt "A suggestion for setting the font background color to %0."
+msgid "*Set font background color:* %0"
+msgstr "*Задай цвят на фона на шрифта:* %0"
+
+msgctxt "A suggestion for setting the font color to %0."
+msgid "*Set font color:* %0"
+msgstr "*Задай цвят на шрифта:* %0"
+
+msgctxt "A suggestion for setting the font family to %0."
+msgid "*Set font family:* %0"
+msgstr "*Задай семейство на шрифта:* %0"
+
+msgctxt "A suggestion for setting the font size to %0."
+msgid "*Set font size:* %0"
+msgstr "*Задай размер на шрифта:* %0"
+
+msgctxt "A suggestion for setting one or more formatting changes to %0"
+msgid "*Set format:* %0"
+msgstr "*Задаване на формат на:* %0"
+
+msgctxt "A suggestion for setting multiple inline formatting to %0"
+msgid "*Set format to:* %0"
+msgstr "*Задаване на формат на:* %0"
+
+msgctxt "A suggestion for highlighting text."
+msgid "*Set highlight:* %0"
+msgstr "*Задай подчертаване:* %0"
+
+msgctxt "A suggestion for setting image text alternative to %0."
+msgid "*Set image text alternative:* %0"
+msgstr "*Задай алтернатива на текст в изображение:* %0"
+
+msgctxt "A suggestion for setting the image width to %0."
+msgid "*Set image width:* %0"
+msgstr "*Задай ширина на изображението:* %0"
+
+msgctxt "A suggestion for setting the link URL."
+msgid "*Set link:* %0"
+msgstr "*Задай връзка:* %0"
+
+msgctxt "A suggestion for splitting cells horizontally."
+msgid "*Split cell:* horizontally"
+msgstr "*Раздели клетка:* хоризонтално"
+
+msgctxt "A suggestion for splitting cells vertically."
+msgid "*Split cell:* vertically"
+msgstr "*Раздели клетка:* вертикално"
+
+msgctxt "A suggestion for splitting the item."
+msgid "*Split:* %0"
+msgstr "*Разделяне:* %0"
+
+msgctxt "A suggestion for unchecking a to-do list item."
+msgid "*Uncheck item*"
+msgstr "*Непроверена единица*"
+
+msgctxt "The label for the button which accepts all selected suggestions."
+msgid "Accept all selected suggestions"
+msgstr "Приеми всички избрани предложения"
+
+msgctxt "The label for the button which accepts all suggestions."
+msgid "Accept all suggestions"
+msgstr "Приеми всички предложения"
+
+msgctxt "The label for the accept suggestion button."
+msgid "Accept suggestion"
+msgstr "Приеми предложение"
+
+msgctxt "The label for the button which discards all selected suggestions."
+msgid "Discard all selected suggestions"
+msgstr "Изтрий всички избрани предложения"
+
+msgctxt "The label for the button which discards all suggestions."
+msgid "Discard all suggestions"
+msgstr "Изтрий всички предложения"
+
+msgctxt "The label for the discard suggestion button."
+msgid "Discard suggestion"
+msgstr "Изтрий предложение"
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves an insertion suggestion."
+msgid "LEAVE_INSERTION_SUGGESTION_ANNOUNCEMENT"
+msgstr "Оставяне на предложението за вмъкване."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters an insertion suggestion."
+msgid "ENTER_INSERTION_SUGGESTION_ANNOUNCEMENT"
+msgstr "Въвеждане на предложение за вмъкнат текст. Натиснете %0, за да влезете в дискусията."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a deletion suggestion."
+msgid "LEAVE_DELETION_SUGGESTION_ANNOUNCEMENT"
+msgstr "Оставяне на предложението за изтриване."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters a deletion suggestion."
+msgid "ENTER_DELETION_SUGGESTION_ANNOUNCEMENT"
+msgstr "Въвеждане на предложение за изтриване. Натиснете %0, за да влезете в дискусията."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a formatting suggestion."
+msgid "LEAVE_FORMATTING_SUGGESTION_ANNOUNCEMENT"
+msgstr "Оставяне на предложеното форматиране."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters a formatting suggestion."
+msgid "ENTER_FORMATTING_SUGGESTION_ANNOUNCEMENT"
+msgstr "Въвеждане на предложение за форматиране. Натиснете %0, за да влезете в дискусията."
+
+msgctxt "A text label for assistive technologies describing the suggestion thread."
+msgid "SUGGESTION_THREAD_ARIA_LABEL"
+msgid_plural "Suggestion by %1. Created on %2. %0 replies. %3"
+msgstr[0] "Предложение от %1. Създадено на %2. %0 отговор. %3"
+msgstr[1] "Предложение от %1. Създадено на %2. %0 отговор. %3"
+
+msgctxt "A text label for assistive technologies providing additional information about navigation in the suggestion thread."
+msgid "SUGGESTION_THREAD_DESCRIPTION"
+msgstr "Натиснете Въведи за повече опции. Натиснете Изход за излизане."
+
+msgctxt "The block quote element name displayed in the suggestion."
+msgid "ELEMENT_BLOCK_QUOTE"
+msgstr "блок-цитат"
+
+msgctxt "The default styled list element name displayed in the suggestion."
+msgid "ELEMENT_DEFAULT_LIST_DEFAULT"
+msgstr "стил на списъка по подразбиране"
+
+msgctxt "The bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST"
+msgstr "списък с подточки"
+
+msgctxt "The default styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_DEFAULT"
+msgstr "списък с водещи символи (по подразбиране)"
+
+msgctxt "The circle styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_CIRCLE"
+msgstr "списък с водещи символи (незапълнен кръг)"
+
+msgctxt "The disc styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_DISC"
+msgstr "списък с водещи символи (запълнен кръг)"
+
+msgctxt "The square styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_SQUARE"
+msgstr "списък с водещи символи (запълнен квадрат)"
+
+msgctxt "The caption element name displayed in the suggestion."
+msgid "ELEMENT_CAPTION"
+msgstr "надпис"
+
+msgctxt "The code block element name displayed in the suggestion."
+msgid "ELEMENT_CODE_BLOCK"
+msgid_plural "%0 code blocks"
+msgstr[0] "код блок"
+msgstr[1] "%0 код блок"
+
+msgctxt "The heading element name displayed in the suggestion."
+msgid "ELEMENT_HEADING"
+msgid_plural "%0 headings (level %1)"
+msgstr[0] "заглавие (ниво %1)"
+msgstr[1] "%0 заглавие (ниво %1)"
+
+msgctxt "The heading element name displayed in the suggestion with a custom title."
+msgid "ELEMENT_HEADING_CUSTOM"
+msgid_plural "%0 headings (%1)"
+msgstr[0] "заглавие (%1)"
+msgstr[1] "%0 заглавие (%1)"
+
+msgctxt "The horizontal line element name displayed in the suggestion."
+msgid "ELEMENT_HORIZONTAL_LINE"
+msgid_plural "%0 horizontal lines"
+msgstr[0] "хоризонтална линия"
+msgstr[1] "хоризонтална линия"
+
+msgctxt "The HTML embed element name displayed in the suggestion."
+msgid "ELEMENT_HTML_EMBED"
+msgid_plural "%0 HTML embeds"
+msgstr[0] "HTML вграждане"
+msgstr[1] "%0 HTML вграждане"
+
+msgctxt "The image element name displayed in the suggestion."
+msgid "ELEMENT_IMAGE"
+msgid_plural "%0 images"
+msgstr[0] "изображение"
+msgstr[1] "%0 изображение"
+
+msgctxt "The inline image element name displayed in the suggestion."
+msgid "ELEMENT_INLINE_IMAGE"
+msgid_plural "%0 images"
+msgstr[0] "изображение"
+msgstr[1] "%0 изображение"
+
+msgctxt "The line break element name displayed in the suggestion."
+msgid "ELEMENT_LINE_BREAK"
+msgid_plural "%0 line breaks"
+msgstr[0] "край на линия"
+msgstr[1] "%0 край на линия"
+
+msgctxt "The list item element name displayed in the suggestion."
+msgid "ELEMENT_LIST_ITEM"
+msgid_plural "%0 list items"
+msgstr[0] "единица от списък"
+msgstr[1] "%0 единица от списък"
+
+msgctxt "The media element name displayed in the suggestion."
+msgid "ELEMENT_MEDIA"
+msgid_plural "%0 media items"
+msgstr[0] "медийна единица"
+msgstr[1] "%0 медийна единица"
+
+msgctxt "The numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST"
+msgstr "номериран списък"
+
+msgctxt "The default styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DEFAULT"
+msgstr "номериран списък (по подразбиране)"
+
+msgctxt "The decimal styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DECIMAL"
+msgstr "номериран списък (десетично число)"
+
+msgctxt "The decimal styled (with leading zero) numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DECIMAL_LEADING_ZERO"
+msgstr "номериран списък (десетично число, започващо с нула)"
+
+msgctxt "The lower latin styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_LOWER_LATIN"
+msgstr "номериран списък (малки латински букви)"
+
+msgctxt "The lower roman styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_LOWER_ROMAN"
+msgstr "номериран списък (малки римски цифри)"
+
+msgctxt "The upper latin styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_UPPER_LATIN"
+msgstr "номериран списък (главни латински букви)"
+
+msgctxt "The upper roman styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_UPPER_ROMAN"
+msgstr "номериран списък (големи римски цифри)"
+
+msgctxt "The page break element name displayed in the suggestion."
+msgid "ELEMENT_PAGE_BREAK"
+msgid_plural "%0 page breaks"
+msgstr[0] "край на страница"
+msgstr[1] "%0 край на страница"
+
+msgctxt "The paragraph element name displayed in the suggestion."
+msgid "ELEMENT_PARAGRAPH"
+msgid_plural "%0 paragraphs"
+msgstr[0] "параграф"
+msgstr[1] "%0 параграф"
+
+msgctxt "The space element name displayed in the suggestion."
+msgid "ELEMENT_SPACE"
+msgid_plural "%0 spaces"
+msgstr[0] "интервал"
+msgstr[1] "%0 интервал"
+
+msgctxt "The table element name displayed in the suggestion."
+msgid "ELEMENT_TABLE"
+msgid_plural "%0 tables"
+msgstr[0] "таблица"
+msgstr[1] "%0 таблица"
+
+msgctxt "The table column element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_COLUMN"
+msgid_plural "%0 table columns"
+msgstr[0] "колона на таблица"
+msgstr[1] "%0 колона на таблица"
+
+msgctxt "The table column with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_COLUMN_WITH_TEXT"
+msgid_plural "%0 table columns *with text* %1"
+msgstr[0] "колона на таблица *с текст* %1"
+msgstr[1] "%0 колона на таблица *с текст* %1"
+
+msgctxt "The table of contents element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_OF_CONTENTS"
+msgid_plural "%0 tables of contents"
+msgstr[0] "съдържание"
+msgstr[1] "съдържание"
+
+msgctxt "The table row element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_ROW"
+msgid_plural "%0 table rows"
+msgstr[0] "ред на таблица"
+msgstr[1] "%0 ред на таблица"
+
+msgctxt "The table row with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_ROW_WITH_TEXT"
+msgid_plural "%0 table rows *with text* %1"
+msgstr[0] "ред на таблица *с текст* %1"
+msgstr[1] "%0 ред на таблица *с текст* %1"
+
+msgctxt "The table with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_WITH_TEXT"
+msgstr "таблица *с текст* %0"
+
+msgctxt "The title element name displayed in the suggestion."
+msgid "ELEMENT_TITLE"
+msgstr "заглавие"
+
+msgctxt "The to-do list element name displayed in the suggestion."
+msgid "ELEMENT_TODO_LIST"
+msgstr "списък със задачи"
+
+msgctxt "The multi-level list element name displayed in the suggestion."
+msgid "ELEMENT_MULTI_LEVEL_LIST"
+msgstr "многостепенен списък"
+
+msgctxt "The merge field element name displayed in the suggestion."
+msgid "ELEMENT_MERGE_FIELD"
+msgid_plural "%0 merge fields"
+msgstr[0] "сливане на полето"
+msgstr[1] "сливане на полето"
+
+msgctxt "The alignment format name displayed in a format suggestion."
+msgid "FORMAT_ALIGNMENT"
+msgstr "подравняване"
+
+msgctxt "The align to center format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_CENTER"
+msgstr "подравни централно"
+
+msgctxt "The align to left format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_LEFT"
+msgstr "подравни наляво"
+
+msgctxt "The align to right format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_RIGHT"
+msgstr "подравни надясно"
+
+msgctxt "The bold format name displayed in a format suggestion."
+msgid "FORMAT_BOLD"
+msgstr "потъмни"
+
+msgctxt "The code format name displayed in a format suggestion."
+msgid "FORMAT_CODE"
+msgstr "код"
+
+msgctxt "The header column format name displayed in a format suggestion."
+msgid "FORMAT_HEADER_COLUMN"
+msgstr "колона в заглавна част"
+
+msgctxt "The header row format name displayed in a format suggestion."
+msgid "FORMAT_HEADER_ROW"
+msgstr "ред в заглавна част"
+
+msgctxt "The highlight format name displayed in a format suggestion."
+msgid "FORMAT_HIGHLIGHT"
+msgstr "подчертаване"
+
+msgctxt "The italic format name displayed in a format suggestion."
+msgid "FORMAT_ITALIC"
+msgstr "наклонен"
+
+msgctxt "The justify text format name displayed in a format suggestion."
+msgid "FORMAT_JUSTIFY_TEXT"
+msgstr "подравнен от двете страни"
+
+msgctxt "The regular column format name displayed in a format suggestion."
+msgid "FORMAT_REGULAR_COLUMN"
+msgstr "обикновена колона"
+
+msgctxt "The regular row format name displayed in a format suggestion."
+msgid "FORMAT_REGULAR_ROW"
+msgstr "обикновен ред"
+
+msgctxt "The label for area disabled in restricted editing area in a format suggestion."
+msgid "FORMAT_RESTRICTED_DISABLED"
+msgstr "*Изключено при режим за ограничена редакция*"
+
+msgctxt "The label for area enabled in restricted editing area in a format suggestion."
+msgid "FORMAT_RESTRICTED_ENABLED"
+msgstr "*Включено при режим на ограничена редакция*"
+
+msgctxt "The side image format name displayed in a format suggestion."
+msgid "FORMAT_SIDE_IMAGE"
+msgstr "странично изображение"
+
+msgctxt "The strikethrough format name displayed in a format suggestion."
+msgid "FORMAT_STRIKETHROUGH"
+msgstr "зачертаване"
+
+msgctxt "The subscript format name displayed in a format suggestion."
+msgid "FORMAT_SUBSCRIPT"
+msgstr "долен индекс"
+
+msgctxt "The superscript format name displayed in a format suggestion."
+msgid "FORMAT_SUPERSCRIPT"
+msgstr "горен индекс"
+
+msgctxt "The underline format name displayed in a format suggestion."
+msgid "FORMAT_UNDERLINE"
+msgstr "подчертаване"
+
+msgctxt "The list or block indent format name displayed in a format suggestion."
+msgid "FORMAT_INDENT"
+msgstr "отстъп"
+
+msgctxt "The list reversed format name displayed in a format suggestion."
+msgid "FORMAT_LIST_REVERSED"
+msgstr "списък с обратно броене"
+
+msgctxt "The list start format name displayed in a format suggestion."
+msgid "FORMAT_LIST_START"
+msgstr "начало на списъка"
+
+msgctxt "The font size format name displayed in a format suggestion."
+msgid "FORMAT_FONT_SIZE"
+msgstr "размер на шрифта"
+
+msgctxt "The font family format name displayed in a format suggestion."
+msgid "FORMAT_FONT_FAMILY"
+msgstr "шрифтово семейство"
+
+msgctxt "The font color format name displayed in a format suggestion."
+msgid "FORMAT_FONT_COLOR"
+msgstr "цвят на шрифта"
+
+msgctxt "The font background color format name displayed in a format suggestion."
+msgid "FORMAT_FONT_BACKGROUND"
+msgstr "цвят на запълване"
+
+msgctxt "The image size change format name displayed in a format suggestion."
+msgid "FORMAT_IMAGE_SIZE"
+msgstr "размер на изображението"
+
+msgctxt "The style format name displayed in a format suggestion."
+msgid "FORMAT_STYLE"
+msgstr "стил"
+
+msgctxt "The label for the alert shown when closing the editor with an unsaved track changes change."
+msgid "PENDING_ACTION_SUGGESTION"
+msgstr "Незапазена промяна в предложение."
+
+msgctxt "A suggestion for replacing one text with another."
+msgid "REPLACE_TEXT"
+msgstr "*Замени:* %0 *с* %1"
+
+msgctxt "The label for the dropdown containing some options related to track changes."
+msgid "Track changes"
+msgstr "Проследяване на промените"
+
+msgctxt "The additional information that suggestion comes from external source."
+msgid "EXTERNAL_SUGGESTION"
+msgstr "Това предложение идва от външен източник."
+
+msgctxt "The additional information that suggestion comes from imported word file."
+msgid "EXTERNAL_IMPORT_WORD_SUGGESTION"
+msgstr "Това предложение в взето от импортиран Word файл."
+
+msgctxt "A suggestion for setting the bookmark name."
+msgid "*Set bookmark:* %0"
+msgstr "*Задайте отметка:* %0"
+
+msgctxt "The bookmark element name displayed in the suggestion."
+msgid "ELEMENT_BOOKMARK"
+msgid_plural "%0 bookmarks"
+msgstr[0] "отметка"
+msgstr[1] "отметка"
+
+msgctxt "A suggestion for replacing an image."
+msgid "*Replace image*"
+msgstr "*Замени изображението*"
+
+msgctxt "The label for the button which shows the final content in the modal."
+msgid "Preview final content"
+msgstr "Прегледай съдържанието в окончателен вид"
+
+msgctxt "The label for the final content preview modal heading."
+msgid "Final content preview"
+msgstr "Преглед на съдържанието в окончателен вид"
+
+msgctxt "A suggestion for setting type %0 to the table."
+msgid "*Set table type:* %0"
+msgstr "*Задаване на тип таблица:* %0"
+
+msgctxt "The content table element name displayed in the suggestion."
+msgid "ELEMENT_CONTENT_TABLE"
+msgid_plural "%0 content tables"
+msgstr[0] "таблица със съдържание"
+msgstr[1] "таблица със съдържание"
+
+msgctxt "The layout table element name displayed in the suggestion."
+msgid "ELEMENT_LAYOUT_TABLE"
+msgid_plural "%0 layout tables"
+msgstr[0] "таблица за оформление"
+msgstr[1] "таблица за оформление"

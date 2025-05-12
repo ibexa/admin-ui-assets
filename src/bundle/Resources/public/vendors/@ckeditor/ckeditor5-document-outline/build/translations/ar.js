@@ -1,0 +1,1 @@
+!function(n){const e=n.ar=n.ar||{};e.dictionary=Object.assign(e.dictionary||{},{"Editor headings will appear here as you type.":"تظهر رؤوس المحرر هنا أثناء الكتابة.","Empty heading":"رأس فارغ","No headings were found in the document.":"لم نعثر على رؤوس في المستند.","Table of contents":"جدول المحتويات"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

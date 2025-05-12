@@ -1,0 +1,36 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: bn\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "A toolbar button tooltip for a pagination feature."
+msgid "Go to next page"
+msgstr "পরবর্তী পৃষ্ঠায় যান"
+
+msgctxt "A toolbar button tooltip for a pagination feature."
+msgid "Go to previous page"
+msgstr "পূর্ববর্তী পৃষ্ঠায় যান"
+
+msgctxt "Assistive technologies label for the page number input in the pagination feature's toolbar UI. Example: 'Current page number (from 1 to 10)'."
+msgid "Current page number (from 1 to %0)"
+msgstr "বর্তমান পৃষ্ঠা নম্বর (1 থেকে %0)"
+
+msgctxt "Accessibility help dialog section title for pagination plugin keystrokes."
+msgid "Keystrokes for navigating through documents"
+msgstr "ডকুমেন্টের মধ্যে নেভিগেট করার জন্য কীস্ট্রোক"
+
+msgctxt "Accessibility help dialog entry explaining the meaning of the keystroke that allows users for navigating to the previous page in the document."
+msgid "Go to the previous page (also move selection)"
+msgstr "পূর্ববর্তী পৃষ্ঠায় যান (এছাড়াও নির্বাচন সরিয়ে নিন)"
+
+msgctxt "Accessibility help dialog entry explaining the meaning of the keystroke that allows users for navigating to the next page in the document."
+msgid "Go to the next page (also move selection)"
+msgstr "পরবর্তী পৃষ্ঠায় যান (এছাড়াও নির্বাচন সরিয়ে নিন)"

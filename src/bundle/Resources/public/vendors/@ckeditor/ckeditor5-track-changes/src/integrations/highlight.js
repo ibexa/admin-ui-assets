@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+function _0x4814(){const _0x36766e=['color','FORMAT_HIGHLIGHT','16fTlOGo','40FDqtId','7948764duqAwd','*Remove\x20highlight*','enableDefaultAttributesIntegration','toLowerCase','title','28660ybZUjj','1774374Mfasgt','find','plugins','1563387bIBcGn','config','HighlightEditing','TrackChangesEditing','*Set\x20highlight:*\x20%0','formatInline','56302CQAaHZ','registerDescriptionCallback','afterInit','highlight.options','model','_registerLegacyDescription','commandParams','registerAttributeLabel','descriptionFactory','format','type','get','12069592SVOkbF','value','locale','highlight','editor','100568pETxWv','commandName','registerInlineAttribute','has','6wPOMyi'];_0x4814=function(){return _0x36766e;};return _0x4814();}const _0x1a9f07=_0x6a92;function _0x6a92(_0x4b5041,_0x8dd1e4){const _0x48145e=_0x4814();return _0x6a92=function(_0x6a9267,_0x5d313e){_0x6a9267=_0x6a9267-0x125;let _0xbf9087=_0x48145e[_0x6a9267];return _0xbf9087;},_0x6a92(_0x4b5041,_0x8dd1e4);}(function(_0x265fd3,_0x4007ed){const _0x5e11d3=_0x6a92,_0x3c1a1c=_0x265fd3();while(!![]){try{const _0x5ab53b=-parseInt(_0x5e11d3(0x134))/0x1*(-parseInt(_0x5e11d3(0x14c))/0x2)+parseInt(_0x5e11d3(0x12e))/0x3+-parseInt(_0x5e11d3(0x145))/0x4*(-parseInt(_0x5e11d3(0x14d))/0x5)+-parseInt(_0x5e11d3(0x149))/0x6*(-parseInt(_0x5e11d3(0x12b))/0x7)+-parseInt(_0x5e11d3(0x140))/0x8+parseInt(_0x5e11d3(0x125))/0x9+-parseInt(_0x5e11d3(0x12a))/0xa;if(_0x5ab53b===_0x4007ed)break;else _0x3c1a1c['push'](_0x3c1a1c['shift']());}catch(_0x1b1058){_0x3c1a1c['push'](_0x3c1a1c['shift']());}}}(_0x4814,0xc2c62));import{Plugin as _0x38a8cc}from'ckeditor5/src/core.js';import{getTranslation as _0x54b0b4}from'../utils/common-translations.js';export default class it extends _0x38a8cc{[_0x1a9f07(0x136)](){const _0x256e08=_0x1a9f07,_0x11b6ea=this[_0x256e08(0x144)];if(!_0x11b6ea[_0x256e08(0x12d)][_0x256e08(0x148)](_0x256e08(0x130)))return;const _0x477c7b=_0x11b6ea[_0x256e08(0x12d)][_0x256e08(0x13f)](_0x256e08(0x131)),_0x2ba52d=_0x11b6ea[_0x256e08(0x142)];_0x477c7b[_0x256e08(0x127)](_0x256e08(0x143)),_0x477c7b[_0x256e08(0x147)](_0x256e08(0x143)),_0x477c7b[_0x256e08(0x13c)][_0x256e08(0x13b)](_0x256e08(0x143),_0x54b0b4(_0x2ba52d,_0x256e08(0x14b))),this[_0x256e08(0x139)]();}[_0x1a9f07(0x139)](){const _0x7bdc4=_0x1a9f07,_0x12c0a0=this[_0x7bdc4(0x144)],_0x37703d=_0x12c0a0[_0x7bdc4(0x142)];_0x12c0a0[_0x7bdc4(0x12d)][_0x7bdc4(0x13f)](_0x7bdc4(0x131))[_0x7bdc4(0x13c)][_0x7bdc4(0x135)](_0x2071d6=>{const _0x48a5f4=_0x7bdc4;if(_0x48a5f4(0x133)!=_0x2071d6[_0x48a5f4(0x13e)])return;const {data:_0x9ac4fe}=_0x2071d6;if(_0x9ac4fe&&_0x48a5f4(0x143)==_0x9ac4fe[_0x48a5f4(0x146)]){const _0x50c86f=_0x37703d['t'],_0x4c626d=_0x9ac4fe[_0x48a5f4(0x13a)][0x0][_0x48a5f4(0x141)];if(_0x4c626d){const _0x49f1e3=_0x12c0a0[_0x48a5f4(0x12f)][_0x48a5f4(0x13f)](_0x48a5f4(0x137))[_0x48a5f4(0x12c)](_0x1eda2d=>_0x1eda2d[_0x48a5f4(0x138)]==_0x4c626d),_0x2e1c1f=_0x50c86f(_0x49f1e3[_0x48a5f4(0x129)])[_0x48a5f4(0x128)]();return{'type':_0x48a5f4(0x13d),'content':_0x54b0b4(_0x37703d,_0x48a5f4(0x132),_0x2e1c1f),'color':{'value':_0x49f1e3[_0x48a5f4(0x14a)],'title':_0x49f1e3[_0x48a5f4(0x129)]}};}return{'type':_0x48a5f4(0x13d),'content':_0x54b0b4(_0x37703d,_0x48a5f4(0x126),_0x54b0b4(_0x37703d,_0x48a5f4(0x14b)))};}});}}

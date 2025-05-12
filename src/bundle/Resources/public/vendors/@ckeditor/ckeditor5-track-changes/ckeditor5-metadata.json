@@ -1,0 +1,38 @@
+{
+  "plugins": [
+    {
+      "name": "Track changes",
+      "className": "TrackChanges",
+      "description": "Non-realtime (standalone) equivalent of Real-time collaborative track changes. Enables the track changes mode (aka “suggestion mode”). In this mode, changes are marked in the content and shown in the sidebar as suggestions that can be accepted or discarded by the users.",
+      "docs": "features/collaboration/track-changes/track-changes.html",
+      "path": "src/trackchanges.js",
+      "uiComponents": [
+        {
+          "type": "Button",
+          "name": "trackChanges",
+          "iconPath": "@ckeditor/ckeditor5-icons/theme/icons/track-changes.svg"
+        }
+      ],
+      "requires": [
+        "Comments"
+      ]
+    },
+    {
+      "name": "Track changes data",
+      "className": "TrackChangesData",
+      "description": "This plugin returns the editor data with accepted or discarded suggestions without modifying the editor content.",
+      "docs": "features/collaboration/track-changes/track-changes-data.html",
+      "path": "src/trackchangesdata.js",
+      "requires": [
+        "TrackChanges"
+      ]
+    },
+    {
+      "name": "Track changes preview",
+      "className": "TrackChangesPreview",
+      "description": "This plugin allows displaying the editor data with all the suggestions accepted in a modal.",
+      "docs": "features/collaboration/track-changes/track-changes-preview.html",
+      "path": "src/trackchangespreview.js"
+    }
+  ]
+}

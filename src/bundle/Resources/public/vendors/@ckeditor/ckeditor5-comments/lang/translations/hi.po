@@ -1,0 +1,176 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: hi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for the comment editor."
+msgid "Comment editor"
+msgstr "Comment editor"
+
+msgctxt "The label for the number of comments."
+msgid "NUMBER_OF_COMMENTS"
+msgid_plural "%0 Comments"
+msgstr[0] "%0 Comment"
+msgstr[1] "%0 Comments"
+
+msgctxt "The alert displayed for a comment that is too long."
+msgid "TOO_LONG_COMMENT_ALERT"
+msgstr "Comment content is too long. Your comment has %0 characters but the limit is %1 characters."
+
+msgctxt "The placeholder for the reply field."
+msgid "Reply..."
+msgstr "Reply..."
+
+msgctxt "The placeholder for the reply field when the comment thread is resolved."
+msgid "Reply to reopen discussion..."
+msgstr "डिस्कशन को दोबारा शुरू करने के लिए जवाब दें......"
+
+msgctxt "The placeholder for the new commend field."
+msgid "Write a comment..."
+msgstr "Write a comment..."
+
+msgctxt "The information that comment was made on element and has no context"
+msgid "Comment was made on an element"
+msgstr "एक एलिमेंट पर कमेंट किया गया था"
+
+msgctxt "The label for the button that enables editing a comment."
+msgid "Edit"
+msgstr "Edit"
+
+msgctxt "The label for the button that resolves a comment thread."
+msgid "Resolve"
+msgstr "रिजॉल्व करें"
+
+msgctxt "The label for the button that reopens a resolved comment thread."
+msgid "Reopen"
+msgstr "दोबारा खोलें"
+
+msgctxt "The label for the button that deletes a comment."
+msgid "Remove"
+msgstr "Remove"
+
+msgctxt "The label for for the button that adds a reply to a comment thread."
+msgid "Reply"
+msgstr "जवाब दें"
+
+msgctxt "The confirmation message shown after pressing the delete comment button."
+msgid "Delete comment?"
+msgstr "Delete comment?"
+
+msgctxt "The confirmation message shown after pressing the delete comment thread button."
+msgid "Delete comment thread?"
+msgstr "Delete comment thread?"
+
+msgctxt "A message informing that the comment has been resolved"
+msgid "Marked as resolved"
+msgstr "रिजॉल्व्ड मार्क कर दिया गया है"
+
+msgctxt "The tooltip for the comment toolbar button and the button that submits a comment thread."
+msgid "Comment"
+msgstr "Comment"
+
+msgctxt "The accessible label for the annotations sidebar."
+msgid "Annotations sidebar"
+msgstr "एनोटेशन साइडबार"
+
+msgctxt "The accessible label for the list annotations in the annotations sidebar."
+msgid "Annotations list"
+msgstr "एनोटेशन लिस्ट"
+
+msgctxt "The accessible label for the list of thread comments in an annotation."
+msgid "Thread comments"
+msgstr "थ्रेड कमेंट्स"
+
+msgctxt "The accessible label describing the context of the comment thread (e.g. editor content being discussed)."
+msgid "THREAD_CONTEXT_LABEL"
+msgstr "थ्रेड का संदर्भ: %0"
+
+msgctxt "The accessible label describing the comment thread."
+msgid "COMMENT_THREAD_LABEL"
+msgid_plural "Comment thread by %1. %0 replies."
+msgstr[0] "%1 द्वारा कमेंट थ्रेड. %1 उत्तर."
+msgstr[1] "%1 द्वारा कमेंट थ्रेड. %1 उत्तर."
+
+msgctxt "The accessible label providing extra information about navigation in the comment thread."
+msgid "COMMENT_THREAD_DESCRIPTION"
+msgstr "अधिक विकल्पों के लिए Enter दबाएँ. बाहर निकलने के लिए Escape दबाएँ."
+
+msgctxt "The accessible label for a single comment."
+msgid "COMMENT_ARIA_LABEL"
+msgstr "%0 द्वारा कमेंट. %1 को बनाया गया. %2. %3"
+
+msgctxt "The accessible label for the list of archived comments."
+msgid "COMMENTS_ARCHIVE_LIST_LABEL"
+msgstr "कमेंट्स की लिस्ट"
+
+msgctxt "The accessibility help dialog description of the group of keystrokes related to annotations."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_GROUP"
+msgstr "एनोटेशन थ्रेड्स के साथ इंटरैक्ट करने के लिए कीस्ट्रोक्स (जैसे कमेंट्स, ट्रैक परिवर्तन सुझाव)"
+
+msgctxt "The accessibility help dialog keystroke description for moving from the edited content to the annotation."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO"
+msgstr "जब सिलेक्शन अपने मार्कर पर स्थिर हो जाए तो फ़ोकस को थ्रेड पर ले जाएँ"
+
+msgctxt "The accessibility help dialog keystroke description for moving away from an annotation."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_EXIT"
+msgstr "एनोटेशन से बाहर निकलें और फ़ोकस को एडिट किए गए कंटेंट पर वापस ले जाएं"
+
+msgctxt "The accessibility help dialog keystroke description for entering a thread."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_ENTER"
+msgstr "फ़ोकस किए गए एनोटेशन थ्रेड या थ्रेड कमेंट को ब्राउज़ करें"
+
+msgctxt "The accessibility help dialog keystroke description for moving across the internals of a thread."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS"
+msgstr "एनोटेशन थ्रेड के आंतरिक भाग में मूव करें"
+
+msgctxt "The accessibility help dialog keystroke description for submitting a comment."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT"
+msgstr "कमेंट लिखते समय उत्तर सबमिट करें"
+
+msgctxt "The accessibility help dialog keystroke description for navigating between annotations (threads)."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS"
+msgstr "एनोटेशन साइडबार या कमेंट्स संग्रह में पिछले या अगले थ्रेड पर जाएं"
+
+msgctxt "A message read out by assistive technologies the moment the user selection moves into a comment."
+msgid "ENTER_COMMENT_ANNOUNCEMENT"
+msgstr "कमेंट्स के साथ वाले एक कंटेंट में प्रवेश किया जा रहा है. चर्चा में जाने के लिए %0 दबाएँ."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a comment."
+msgid "LEAVE_COMMENT_ANNOUNCEMENT"
+msgstr "कमेंट्स के साथ वाले एक कंटेंट को छोड़ा जा रहा है."
+
+msgctxt "The label for an alert shown when closing the editor with an unsaved comment change."
+msgid "PENDING_ACTION_COMMENT_THREAD"
+msgstr "Unsaved change in comment thread."
+
+msgctxt "The additional information that comments comes from external source."
+msgid "EXTERNAL_COMMENT"
+msgstr "यह कमेंट एक एक्सटर्नल सोर्स से आता है ।"
+
+msgctxt "The additional information that comments comes from imported Word file."
+msgid "EXTERNAL_IMPORT_WORD_COMMENT"
+msgstr "यह कॉमेंट एक इंपोर्ट की गई वर्ड फाइल से आया है"
+
+msgctxt "The additional information that displayed author name comes from an external source."
+msgid "EXTERNAL_AVATAR"
+msgstr "डिस्प्ले किया गया ऑथर का नाम एक्सटर्नल सोर्स से आया है (%0 द्वारा ऐड किया गया)"
+
+msgctxt "The additional information that displayed author name comes from imported Word file."
+msgid "EXTERNAL_IMPORT_WORD_AVATAR"
+msgstr "डिस्प्ले किया गया ऑथर का नाम %0 द्वारा इंपोर्ट किए गए वर्ड डॉक्यूमेंट से आया है"
+
+msgctxt "The label for the comments archive dropdown UI."
+msgid "COMMENTS_ARCHIVE"
+msgstr "कमेन्ट आर्काइव"
+
+msgctxt "The information that comments archive is empty."
+msgid "EMPTY_COMMENTS_ARCHIVE"
+msgstr "यहां कोई भी कमेंट थ्रेड आर्काइव नहीं किए गए हैं।"

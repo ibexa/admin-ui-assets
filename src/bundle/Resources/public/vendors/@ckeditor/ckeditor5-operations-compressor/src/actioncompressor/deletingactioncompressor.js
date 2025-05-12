@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+const _0x4ee4b8=_0x447d;(function(_0x5243b2,_0x37bc50){const _0x583e9e=_0x447d,_0x4fd52d=_0x5243b2();while(!![]){try{const _0x20bdfe=parseInt(_0x583e9e(0x173))/0x1+-parseInt(_0x583e9e(0x16d))/0x2*(-parseInt(_0x583e9e(0x169))/0x3)+parseInt(_0x583e9e(0x15e))/0x4+parseInt(_0x583e9e(0x176))/0x5+-parseInt(_0x583e9e(0x170))/0x6*(-parseInt(_0x583e9e(0x172))/0x7)+parseInt(_0x583e9e(0x16b))/0x8*(parseInt(_0x583e9e(0x167))/0x9)+-parseInt(_0x583e9e(0x16f))/0xa*(parseInt(_0x583e9e(0x168))/0xb);if(_0x20bdfe===_0x37bc50)break;else _0x4fd52d['push'](_0x4fd52d['shift']());}catch(_0x41e043){_0x4fd52d['push'](_0x4fd52d['shift']());}}}(_0x4aec,0xd1db0));function _0x447d(_0x12a22d,_0x2623aa){const _0x4aecb8=_0x4aec();return _0x447d=function(_0x447d31,_0x4ae6f8){_0x447d31=_0x447d31-0x159;let _0x5e2af9=_0x4aecb8[_0x447d31];return _0x5e2af9;},_0x447d(_0x12a22d,_0x2623aa);}import _0x436069 from'./actioncompressor.js';function _0x4aec(){const _0x571bb3=['_context','_getCompressorByName','_decompressSingleOperation','_checkOperation','targetPosition','__className','howMany','26568YFRqUY','2272303PUGblx','267YethJQ','wasUndone','2208NMZmIM','compress','10082zgdTAG','_compressSingleOperation','190ENcPmC','3598158qNVjvD','_compareOperations','7JbtQPb','991468AEdUpr','MoveOperation','$graveyard','3699970GeypMY','sourcePosition','root','_splitCurrent','_combineNext','decompress','4759596mHrXpG','buffers'];_0x4aec=function(){return _0x571bb3;};return _0x4aec();}import{arePositionsEqual as _0x152d33,getPositionShiftedBy as _0x42dc25}from'../utils.js';import{cloneDeep as _0x1bd877}from'es-toolkit/compat';export default class c extends _0x436069{[_0x4ee4b8(0x15c)](_0x4df4b4,_0x2a2a4b){const _0x441705=_0x4ee4b8;return _0x2a2a4b[_0x441705(0x166)]++,_0x2a2a4b[_0x441705(0x159)]=_0x1bd877(_0x4df4b4[_0x441705(0x159)]),_0x2a2a4b;}[_0x4ee4b8(0x15b)](_0x5a77cd){const _0x44353c=_0x4ee4b8,_0x373be8=_0x1bd877(_0x5a77cd);return _0x5a77cd[_0x44353c(0x166)]--,_0x373be8[_0x44353c(0x166)]=0x1,_0x373be8[_0x44353c(0x159)]=_0x42dc25(_0x373be8[_0x44353c(0x159)],_0x5a77cd[_0x44353c(0x166)]),_0x373be8;}[_0x4ee4b8(0x171)](_0xb50332,_0x385f87){const _0x2eac1b=_0x4ee4b8;return!(!this[_0x2eac1b(0x163)](_0xb50332)||!this[_0x2eac1b(0x163)](_0x385f87))&&(_0x152d33(_0x42dc25(_0xb50332[_0x2eac1b(0x159)],-0x1),_0x385f87[_0x2eac1b(0x159)])&&_0x152d33(_0xb50332[_0x2eac1b(0x164)],_0x385f87[_0x2eac1b(0x164)]));}[_0x4ee4b8(0x16e)](_0x15924a){const _0x20c7d3=_0x4ee4b8,_0x4cde87={'types':[],'buffers':[],'baseVersion':0x0};return this[_0x20c7d3(0x160)][_0x20c7d3(0x161)](_0x20c7d3(0x174))[_0x20c7d3(0x16c)](_0x4cde87,[_0x15924a]),_0x4cde87[_0x20c7d3(0x15f)][0x0];}[_0x4ee4b8(0x162)](_0x19a9a2){const _0x5a818c=_0x4ee4b8,_0x13e742=[];return this[_0x5a818c(0x160)][_0x5a818c(0x161)](_0x5a818c(0x174))[_0x5a818c(0x15d)](_0x13e742,_0x19a9a2),_0x13e742[0x0];}[_0x4ee4b8(0x163)](_0x1ae9be){const _0x467626=_0x4ee4b8;return _0x467626(0x174)==_0x1ae9be[_0x467626(0x165)]&&_0x467626(0x175)==_0x1ae9be[_0x467626(0x164)][_0x467626(0x15a)]&&0x1==_0x1ae9be[_0x467626(0x166)]&&!_0x1ae9be[_0x467626(0x16a)];}}

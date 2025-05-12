@@ -1,0 +1,50 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/* Common styles for inline comment and inline suggestion. */
+
+:root {
+	--ck-inline-annotation-container-width: 300px;
+	--ck-inline-annotation-container-max-height: 400px;
+}
+
+.ck.ck-balloon-panel .ck-annotation-wrapper {
+	/* Override default `position: absolute`. */
+	position: static;
+
+	width: var(--ck-inline-annotation-container-width);
+	max-height: var(--ck-inline-annotation-container-max-height);
+
+	overflow-y: auto;
+
+	/* Get rid of scroll chaining. */
+	overscroll-behavior-y: contain;
+
+	/* We need to hide overflow in x-axis to prevent container stretching because of buttons tooltip. */
+	overflow-x: hidden;
+}
+
+.ck.ck-balloon-panel .ck-annotation {
+	/* We don't need fadeInLeft animation for inline annotations. */
+	animation: none;
+}
+
+.ck.ck-balloon-panel .ck-annotation-wrapper * {
+	/* Default `.ck.ck-reset_all *` has `white-space: nowrap` and display content in one line. */
+	white-space: normal;
+}
+
+/* Because `.ck.ck-reset_all *` is overriding default font property. */
+.ck.ck-balloon-panel .ck-annotation-wrapper strong {
+	font-weight: bold;
+}
+
+.ck.ck-balloon-panel .ck-annotation-wrapper i {
+	font-style: italic;
+}

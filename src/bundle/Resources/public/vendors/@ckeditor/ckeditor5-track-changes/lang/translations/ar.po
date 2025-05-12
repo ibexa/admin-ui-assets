@@ -1,0 +1,712 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=(n == 0 ? 0 : n == 1 ? 1 : n == 2 ? 2 : n % 100 >= 3 && n % 100 <= 10 ? 3 : n % 100 >= 11 ? 4 : 5);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "A suggestion for changing an item to the provided one."
+msgid "*Change to:* %0"
+msgstr "*تغيير إلى:* %0"
+
+msgctxt "A suggestion for changing a content of a widget."
+msgid "*Change %0 content*"
+msgstr "*تغيير محتوى %0*"
+
+msgctxt "A suggestion for checking a to-do list item."
+msgid "*Check item*"
+msgstr "*التحقق من البند*"
+
+msgctxt "A suggestion for setting inline formatting."
+msgid "*Format:* %0"
+msgstr "*التنسيق:* %0"
+
+msgctxt "A suggestion for indenting an item."
+msgid "*Indent:* %0"
+msgstr "*المسافة البادئة:* %0"
+
+msgctxt "A suggestion for inserting an item."
+msgid "*Insert:* %0"
+msgstr "*إدراج:* %0"
+
+msgctxt "A suggestion for changing table properties."
+msgid "*Format:* change table properties"
+msgstr "*تنسيق:* غيّر خصائص الجدول"
+
+msgctxt "A suggestion for changing table cell properties."
+msgid "*Format:* change table cell properties"
+msgstr "*تنسيق:* غيّر خصائص خلايا الجدول"
+
+msgctxt "A suggestion for inserting an item into another item."
+msgid "*Format:* insert into %0"
+msgstr "*التنسيق:* إدراج في %0"
+
+msgctxt "A suggestion for removing item from another item."
+msgid "*Format:* remove from %0"
+msgstr "*التنسيق:* إزالة من %0"
+
+msgctxt "A suggestion for resizing a table."
+msgid "*Format:* resize table"
+msgstr "*التنسيق:* جدول تغيير الحجم"
+
+msgctxt "A suggestion for changing the list order to reversed."
+msgid "*Format:* set order to reversed"
+msgstr "*التنسيق:* ضبط النظام على الوضع المعكوس"
+
+msgctxt "A suggestion for changing the list order to regular."
+msgid "*Format:* set order to regular"
+msgstr "*التنسيق:* ضبط النظام على الوضع العادي"
+
+msgctxt "A suggestion for changing the start index of the list."
+msgid "*Format:* set start index to %0"
+msgstr "*التنسيق:* اضبط فهرس البداية على %0"
+
+msgctxt "A suggestion for merging cells."
+msgid "*Merge cells*"
+msgstr "*دمج الخلايا*"
+
+msgctxt "A suggestion for merging items."
+msgid "*Merge:* %0"
+msgstr "*دمج:* %0"
+
+msgctxt "A suggestion for outdenting an item."
+msgid "*Outdent:* %0"
+msgstr "*إزاحة لأعلى:* %0"
+
+msgctxt "A suggestion for removing all formatting."
+msgid "*Remove all formatting*"
+msgstr "*إزالة التنسيق بالكامل*"
+
+msgctxt "A suggestion for removing an inline format."
+msgid "*Remove format:* %0"
+msgstr "*إزالة التنسيق:* %0"
+
+msgctxt "A suggestion for removing the highlight."
+msgid "*Remove highlight*"
+msgstr "*إزالة التمييز*"
+
+msgctxt "A suggestion for removing image text alternative."
+msgid "*Remove image text alternative*"
+msgstr "*إزالة النص البديل للصورة*"
+
+msgctxt "A suggestion for removing the link."
+msgid "*Remove link*"
+msgstr "*إزالة الرابط*"
+
+msgctxt "A suggestion for removing an item."
+msgid "*Remove:* %0"
+msgstr "*إزالة:* %0"
+
+msgctxt "A suggestion for replacing table cells (table pasting)."
+msgid "*Replace table cells*"
+msgstr "*استبدال خلايا الجدول*"
+
+msgctxt "A suggestion for resetting the font background color."
+msgid "*Reset font background color*"
+msgstr "*إعادة تعيين لون خلفية الخط*"
+
+msgctxt "A suggestion for resetting the font color."
+msgid "*Reset font color*"
+msgstr "*إعادة تعيين لون الخط*"
+
+msgctxt "A suggestion for resetting the font family."
+msgid "*Reset font family*"
+msgstr "*إعادة تعيين عائلة الخطوط*"
+
+msgctxt "A suggestion for resetting the font size."
+msgid "*Reset font size*"
+msgstr "*إعادة تعيين حجم الخط*"
+
+msgctxt "A suggestion for resetting image width."
+msgid "*Reset image width*"
+msgstr "*إعادة تعيين عرض الصورة*"
+
+msgctxt "A suggestion for setting the font background color to %0."
+msgid "*Set font background color:* %0"
+msgstr "*تعيين لون خلفية الخط:* %0"
+
+msgctxt "A suggestion for setting the font color to %0."
+msgid "*Set font color:* %0"
+msgstr "*تعيين لون الخط:* %0"
+
+msgctxt "A suggestion for setting the font family to %0."
+msgid "*Set font family:* %0"
+msgstr "*تعيين عائلة الخط:* %0"
+
+msgctxt "A suggestion for setting the font size to %0."
+msgid "*Set font size:* %0"
+msgstr "*تعيين حجم الخط:* %0"
+
+msgctxt "A suggestion for setting one or more formatting changes to %0"
+msgid "*Set format:* %0"
+msgstr "*ضبط التنسيق:* %0"
+
+msgctxt "A suggestion for setting multiple inline formatting to %0"
+msgid "*Set format to:* %0"
+msgstr "*ضبط التنسيق على:* %0"
+
+msgctxt "A suggestion for highlighting text."
+msgid "*Set highlight:* %0"
+msgstr "*تعيين التمييز:* %0"
+
+msgctxt "A suggestion for setting image text alternative to %0."
+msgid "*Set image text alternative:* %0"
+msgstr "*تعيين النص البديل للصورة:* %0"
+
+msgctxt "A suggestion for setting the image width to %0."
+msgid "*Set image width:* %0"
+msgstr "*تعيين عرض الصورة:* %0"
+
+msgctxt "A suggestion for setting the link URL."
+msgid "*Set link:* %0"
+msgstr "*تعيين الرابط:* %0"
+
+msgctxt "A suggestion for splitting cells horizontally."
+msgid "*Split cell:* horizontally"
+msgstr "*تقسيم الخلية:* أفقياً"
+
+msgctxt "A suggestion for splitting cells vertically."
+msgid "*Split cell:* vertically"
+msgstr "*تقسيم الخلية:* رأسياً"
+
+msgctxt "A suggestion for splitting the item."
+msgid "*Split:* %0"
+msgstr "*تقسيم:* %0"
+
+msgctxt "A suggestion for unchecking a to-do list item."
+msgid "*Uncheck item*"
+msgstr "*إلغاء تحديد العنصر*"
+
+msgctxt "The label for the button which accepts all selected suggestions."
+msgid "Accept all selected suggestions"
+msgstr "قبول جميع المقترحات المحددة"
+
+msgctxt "The label for the button which accepts all suggestions."
+msgid "Accept all suggestions"
+msgstr "قبول جميع المقترحات"
+
+msgctxt "The label for the accept suggestion button."
+msgid "Accept suggestion"
+msgstr "قبول المقترح"
+
+msgctxt "The label for the button which discards all selected suggestions."
+msgid "Discard all selected suggestions"
+msgstr "تجاهل جميع المقترحات المحددة"
+
+msgctxt "The label for the button which discards all suggestions."
+msgid "Discard all suggestions"
+msgstr "تجاهل جميع المقترحات"
+
+msgctxt "The label for the discard suggestion button."
+msgid "Discard suggestion"
+msgstr "تجاهل المقترح"
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves an insertion suggestion."
+msgid "LEAVE_INSERTION_SUGGESTION_ANNOUNCEMENT"
+msgstr "مغادرة اقتراح الإدراج."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters an insertion suggestion."
+msgid "ENTER_INSERTION_SUGGESTION_ANNOUNCEMENT"
+msgstr "إدخال اقتراح الإدراج. اضغط على %0 للانتقال إلى المناقشة."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a deletion suggestion."
+msgid "LEAVE_DELETION_SUGGESTION_ANNOUNCEMENT"
+msgstr "مغادرة اقتراح الحذف."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters a deletion suggestion."
+msgid "ENTER_DELETION_SUGGESTION_ANNOUNCEMENT"
+msgstr "إدخال اقتراح الحذف. اضغط على %0 للانتقال إلى المناقشة."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a formatting suggestion."
+msgid "LEAVE_FORMATTING_SUGGESTION_ANNOUNCEMENT"
+msgstr "مغادرة اقتراح التنسيق."
+
+msgctxt "A message read out by assistive technologies the moment the user selection enters a formatting suggestion."
+msgid "ENTER_FORMATTING_SUGGESTION_ANNOUNCEMENT"
+msgstr "إدخال اقتراح التنسيق. اضغط على %0 للانتقال إلى المناقشة."
+
+msgctxt "A text label for assistive technologies describing the suggestion thread."
+msgid "SUGGESTION_THREAD_ARIA_LABEL"
+msgid_plural "Suggestion by %1. Created on %2. %0 replies. %3"
+msgstr[0] "اقتراح قدّمه %1. أُنشئ في يوم %2. %0 رد. %3"
+msgstr[1] "اقتراح قدّمه %1. أُنشئ في يوم %2. %0 رد. %3"
+msgstr[2] "اقتراح قدّمه %1. أُنشئ في يوم %2. %0 رد. %3"
+msgstr[3] "اقتراح قدّمه %1. أُنشئ في يوم %2. %0 رد. %3"
+msgstr[4] "اقتراح قدّمه %1. أُنشئ في يوم %2. %0 رد. %3"
+msgstr[5] "اقتراح قدّمه %1. أُنشئ في يوم %2. %0 رد. %3"
+
+msgctxt "A text label for assistive technologies providing additional information about navigation in the suggestion thread."
+msgid "SUGGESTION_THREAD_DESCRIPTION"
+msgstr "اضغط على Enter للحصول على المزيد من الخيارات. اضغط على Escape للخروج."
+
+msgctxt "The block quote element name displayed in the suggestion."
+msgid "ELEMENT_BLOCK_QUOTE"
+msgstr "كتلة نصية مقتبسة"
+
+msgctxt "The default styled list element name displayed in the suggestion."
+msgid "ELEMENT_DEFAULT_LIST_DEFAULT"
+msgstr "نمط القائمة الافتراضي"
+
+msgctxt "The bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST"
+msgstr "قائمة تعداد نقطي"
+
+msgctxt "The default styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_DEFAULT"
+msgstr "قائمة ذات تعداد نقطي (افتراضية)"
+
+msgctxt "The circle styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_CIRCLE"
+msgstr "قائمة ذات تعداد نقطي (circle)"
+
+msgctxt "The disc styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_DISC"
+msgstr "قائمة ذات تعداد نقطي (disc)"
+
+msgctxt "The square styled bulleted list element name displayed in the suggestion."
+msgid "ELEMENT_BULLETED_LIST_SQUARE"
+msgstr "قائمة ذات تعداد نقطي  (square)"
+
+msgctxt "The caption element name displayed in the suggestion."
+msgid "ELEMENT_CAPTION"
+msgstr "التسمية التوضيحية"
+
+msgctxt "The code block element name displayed in the suggestion."
+msgid "ELEMENT_CODE_BLOCK"
+msgid_plural "%0 code blocks"
+msgstr[0] "كتلة تعليمات برمجية"
+msgstr[1] "%0 كتلة تعليمات برمجية"
+msgstr[2] "%0 كتلة تعليمات برمجية"
+msgstr[3] "%0 كتلات تعليمات برمجية"
+msgstr[4] "%0 كتلةَ تعليمات برمجية"
+msgstr[5] "%0 كتلةِ تعليمات برمجية"
+
+msgctxt "The heading element name displayed in the suggestion."
+msgid "ELEMENT_HEADING"
+msgid_plural "%0 headings (level %1)"
+msgstr[0] "عنوان (المستوى 1%)"
+msgstr[1] "%0 عنوان (المستوى 1%)"
+msgstr[2] "%0 عنوان (المستوى 1%)"
+msgstr[3] "%0 عناوين (المستوى 1%)"
+msgstr[4] "%0 عنواناً (المستوى 1%)"
+msgstr[5] "%0 عنوانٍ (المستوى 1%)"
+
+msgctxt "The heading element name displayed in the suggestion with a custom title."
+msgid "ELEMENT_HEADING_CUSTOM"
+msgid_plural "%0 headings (%1)"
+msgstr[0] "عنوان (1%)"
+msgstr[1] "%0 عنوان (1%)"
+msgstr[2] "%0 عنوان (1%)"
+msgstr[3] "%0 عناوين (1%)"
+msgstr[4] "%0 عنواناً (1%)"
+msgstr[5] "%0 عنوانٍ (1%)"
+
+msgctxt "The horizontal line element name displayed in the suggestion."
+msgid "ELEMENT_HORIZONTAL_LINE"
+msgid_plural "%0 horizontal lines"
+msgstr[0] "خط أفقي"
+msgstr[1] "%0 خط أفقي"
+msgstr[2] "%0 خط أفقي"
+msgstr[3] "%0 خطوط أفقية"
+msgstr[4] "%0 خطاً أفقياً"
+msgstr[5] "%0 خطٍ أفقي"
+
+msgctxt "The HTML embed element name displayed in the suggestion."
+msgid "ELEMENT_HTML_EMBED"
+msgid_plural "%0 HTML embeds"
+msgstr[0] "تعليمة HTML مضمنة"
+msgstr[1] "%0 تعليمة HTML مضمنة"
+msgstr[2] "%0 تعليمة HTML مضمنة"
+msgstr[3] "%0 تعليمات HTML مضمنة"
+msgstr[4] "%0 تعليمة HTML مضمنة"
+msgstr[5] "%0 تعليمة HTML مضمنة"
+
+msgctxt "The image element name displayed in the suggestion."
+msgid "ELEMENT_IMAGE"
+msgid_plural "%0 images"
+msgstr[0] "صورة"
+msgstr[1] "%0 صورة"
+msgstr[2] "%0 صور"
+msgstr[3] "%0 صور"
+msgstr[4] "%0 صورةً"
+msgstr[5] "%0 صورةٍ"
+
+msgctxt "The inline image element name displayed in the suggestion."
+msgid "ELEMENT_INLINE_IMAGE"
+msgid_plural "%0 images"
+msgstr[0] "صورة"
+msgstr[1] "%0 صورة"
+msgstr[2] "%0 صورة"
+msgstr[3] "%0 صور"
+msgstr[4] "%0 صورةً"
+msgstr[5] "%0 صورةٍ"
+
+msgctxt "The line break element name displayed in the suggestion."
+msgid "ELEMENT_LINE_BREAK"
+msgid_plural "%0 line breaks"
+msgstr[0] "فاصل أسطر"
+msgstr[1] "%0 فاصل أسطر"
+msgstr[2] "%0 فاصل أسطر"
+msgstr[3] "%0 فواصل أسطر"
+msgstr[4] "%0 فاصل أسطر"
+msgstr[5] "%0 فاصل أسطر"
+
+msgctxt "The list item element name displayed in the suggestion."
+msgid "ELEMENT_LIST_ITEM"
+msgid_plural "%0 list items"
+msgstr[0] "عنصر قائمة"
+msgstr[1] "%0 عنصر قائمة"
+msgstr[2] "%0 عنصر قائمة"
+msgstr[3] "%0 عناصر قائمة"
+msgstr[4] "%0 عنصر قائمة"
+msgstr[5] "%0 عنصر قائمة"
+
+msgctxt "The media element name displayed in the suggestion."
+msgid "ELEMENT_MEDIA"
+msgid_plural "%0 media items"
+msgstr[0] "عنصر وسائط"
+msgstr[1] "%0 عنصر وسائط"
+msgstr[2] "%0 عنصر وسائط"
+msgstr[3] "%0 عناصر وسائط"
+msgstr[4] "%0 عنصر وسائط"
+msgstr[5] "%0 عنصر وسائط"
+
+msgctxt "The numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST"
+msgstr "قائمة مرقمة"
+
+msgctxt "The default styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DEFAULT"
+msgstr "قائمة ذات تعداد رقمي (افتراضية)"
+
+msgctxt "The decimal styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DECIMAL"
+msgstr "قائمة مرقمة(decimal)"
+
+msgctxt "The decimal styled (with leading zero) numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_DECIMAL_LEADING_ZERO"
+msgstr "قائمة مرقمة(decimal with leading zero)"
+
+msgctxt "The lower latin styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_LOWER_LATIN"
+msgstr "قائمة مرقمة(lower-latin)"
+
+msgctxt "The lower roman styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_LOWER_ROMAN"
+msgstr "قائمة مرقمة(lower-roman)"
+
+msgctxt "The upper latin styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_UPPER_LATIN"
+msgstr "قائمة مرقمة(upper-latin)"
+
+msgctxt "The upper roman styled numbered list element name displayed in the suggestion."
+msgid "ELEMENT_NUMBERED_LIST_UPPER_ROMAN"
+msgstr "قائمة مرقمة(upper-roman)"
+
+msgctxt "The page break element name displayed in the suggestion."
+msgid "ELEMENT_PAGE_BREAK"
+msgid_plural "%0 page breaks"
+msgstr[0] "فاصل صفحات"
+msgstr[1] "%0 فاصل صفحات"
+msgstr[2] "%0 فاصل صفحات"
+msgstr[3] "%0 فواصل صفحات"
+msgstr[4] "%0 فاصل صفحات"
+msgstr[5] "%0 فاصل صفحات"
+
+msgctxt "The paragraph element name displayed in the suggestion."
+msgid "ELEMENT_PARAGRAPH"
+msgid_plural "%0 paragraphs"
+msgstr[0] "فقرة"
+msgstr[1] "%0 فقرة"
+msgstr[2] "%0 فقرة"
+msgstr[3] "%0 فقرات"
+msgstr[4] "%0 فقرةً"
+msgstr[5] "%0 فقرةٍ"
+
+msgctxt "The space element name displayed in the suggestion."
+msgid "ELEMENT_SPACE"
+msgid_plural "%0 spaces"
+msgstr[0] "مسافة"
+msgstr[1] "%0 مسافة"
+msgstr[2] "%0 مسافة"
+msgstr[3] "%0 مسافات"
+msgstr[4] "%0 مسافةً"
+msgstr[5] "%0 مسافةٍ"
+
+msgctxt "The table element name displayed in the suggestion."
+msgid "ELEMENT_TABLE"
+msgid_plural "%0 tables"
+msgstr[0] "جدول"
+msgstr[1] "%0 جدول"
+msgstr[2] "%0 جدول"
+msgstr[3] "%0 جداول"
+msgstr[4] "%0 جدولاً"
+msgstr[5] "%0 جدولٍ"
+
+msgctxt "The table column element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_COLUMN"
+msgid_plural "%0 table columns"
+msgstr[0] "عمود جدول"
+msgstr[1] "%0 عمود جدول"
+msgstr[2] "%0 عمود جدول"
+msgstr[3] "%0 أعمدة جدول"
+msgstr[4] "%0 عمودَ جدول"
+msgstr[5] "%0 عمودِ جدول"
+
+msgctxt "The table column with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_COLUMN_WITH_TEXT"
+msgid_plural "%0 table columns *with text* %1"
+msgstr[0] "عمود جدول *به نص* 1%"
+msgstr[1] "%0 عمود جدول *به نص* 1%"
+msgstr[2] "%0 عمود جدول *بهما نصوص* 1%"
+msgstr[3] "%0 أعمدة جدول *بها نصوص* 1%"
+msgstr[4] "%0 عمود جدول *بها نصوص* 1%"
+msgstr[5] "%0 عمود جدول *بها نصوص* 1%"
+
+msgctxt "The table of contents element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_OF_CONTENTS"
+msgid_plural "%0 tables of contents"
+msgstr[0] "جدول محتويات"
+msgstr[1] "جدول محتويات"
+msgstr[2] "جدولا محتويات"
+msgstr[3] "جداول محتويات"
+msgstr[4] "جدول محتويات"
+msgstr[5] "جدول محتويات"
+
+msgctxt "The table row element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_ROW"
+msgid_plural "%0 table rows"
+msgstr[0] "صف جدول"
+msgstr[1] "%0 صف جدول"
+msgstr[2] "%0 صف جدول"
+msgstr[3] "%0 صفوف جدول"
+msgstr[4] "%0 صف جدول"
+msgstr[5] "%0 صف جدول"
+
+msgctxt "The table row with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_ROW_WITH_TEXT"
+msgid_plural "%0 table rows *with text* %1"
+msgstr[0] "صف جدول *به نص* %1"
+msgstr[1] "%0 صف جدول *به نص* 1%"
+msgstr[2] "%0 صف جدول *بهما نصوص* 1%"
+msgstr[3] "%0 صفوف جدول *بها نصوص* 1%"
+msgstr[4] "%0 صفَ جدول *بها نصوص* 1%"
+msgstr[5] "%0 صفِ جدول *بها نصوص* 1%"
+
+msgctxt "The table with text element name displayed in the suggestion."
+msgid "ELEMENT_TABLE_WITH_TEXT"
+msgstr "جدول *به نص* %0"
+
+msgctxt "The title element name displayed in the suggestion."
+msgid "ELEMENT_TITLE"
+msgstr "العنوان"
+
+msgctxt "The to-do list element name displayed in the suggestion."
+msgid "ELEMENT_TODO_LIST"
+msgstr "قائمة المهام"
+
+msgctxt "The multi-level list element name displayed in the suggestion."
+msgid "ELEMENT_MULTI_LEVEL_LIST"
+msgstr "قائمة متعددة المستويات"
+
+msgctxt "The merge field element name displayed in the suggestion."
+msgid "ELEMENT_MERGE_FIELD"
+msgid_plural "%0 merge fields"
+msgstr[0] "دمج الحقل"
+msgstr[1] "دمج الحقل"
+msgstr[2] "دمج الحقل"
+msgstr[3] "دمج الحقل"
+msgstr[4] "دمج الحقل"
+msgstr[5] "دمج الحقل"
+
+msgctxt "The alignment format name displayed in a format suggestion."
+msgid "FORMAT_ALIGNMENT"
+msgstr "محاذاة"
+
+msgctxt "The align to center format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_CENTER"
+msgstr "محاذاة في المنتصف"
+
+msgctxt "The align to left format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_LEFT"
+msgstr "محاذاة جهة اليسار"
+
+msgctxt "The align to right format name displayed in a format suggestion."
+msgid "FORMAT_ALIGN_TO_RIGHT"
+msgstr "محاذاة جهة اليمين"
+
+msgctxt "The bold format name displayed in a format suggestion."
+msgid "FORMAT_BOLD"
+msgstr "سميك"
+
+msgctxt "The code format name displayed in a format suggestion."
+msgid "FORMAT_CODE"
+msgstr "الرمز"
+
+msgctxt "The header column format name displayed in a format suggestion."
+msgid "FORMAT_HEADER_COLUMN"
+msgstr "عمود عناوين"
+
+msgctxt "The header row format name displayed in a format suggestion."
+msgid "FORMAT_HEADER_ROW"
+msgstr "صف عناوين"
+
+msgctxt "The highlight format name displayed in a format suggestion."
+msgid "FORMAT_HIGHLIGHT"
+msgstr "تمييز"
+
+msgctxt "The italic format name displayed in a format suggestion."
+msgid "FORMAT_ITALIC"
+msgstr "مائل"
+
+msgctxt "The justify text format name displayed in a format suggestion."
+msgid "FORMAT_JUSTIFY_TEXT"
+msgstr "توسيط"
+
+msgctxt "The regular column format name displayed in a format suggestion."
+msgid "FORMAT_REGULAR_COLUMN"
+msgstr "عمود عادي"
+
+msgctxt "The regular row format name displayed in a format suggestion."
+msgid "FORMAT_REGULAR_ROW"
+msgstr "صف عادي"
+
+msgctxt "The label for area disabled in restricted editing area in a format suggestion."
+msgid "FORMAT_RESTRICTED_DISABLED"
+msgstr "*تعطيل في وضع التحرير المُقيَّد*"
+
+msgctxt "The label for area enabled in restricted editing area in a format suggestion."
+msgid "FORMAT_RESTRICTED_ENABLED"
+msgstr "*تمكين في وضع التحرير المُقيَّد*"
+
+msgctxt "The side image format name displayed in a format suggestion."
+msgid "FORMAT_SIDE_IMAGE"
+msgstr "صورة جانبية"
+
+msgctxt "The strikethrough format name displayed in a format suggestion."
+msgid "FORMAT_STRIKETHROUGH"
+msgstr "شطب النص بخط"
+
+msgctxt "The subscript format name displayed in a format suggestion."
+msgid "FORMAT_SUBSCRIPT"
+msgstr "حرف منخفض"
+
+msgctxt "The superscript format name displayed in a format suggestion."
+msgid "FORMAT_SUPERSCRIPT"
+msgstr "حرف مرتفع"
+
+msgctxt "The underline format name displayed in a format suggestion."
+msgid "FORMAT_UNDERLINE"
+msgstr "خط تحت النص"
+
+msgctxt "The list or block indent format name displayed in a format suggestion."
+msgid "FORMAT_INDENT"
+msgstr "مسافة بادئة"
+
+msgctxt "The list reversed format name displayed in a format suggestion."
+msgid "FORMAT_LIST_REVERSED"
+msgstr "القائمة معكوسة"
+
+msgctxt "The list start format name displayed in a format suggestion."
+msgid "FORMAT_LIST_START"
+msgstr "بدء القائمة"
+
+msgctxt "The font size format name displayed in a format suggestion."
+msgid "FORMAT_FONT_SIZE"
+msgstr "حجم الخط"
+
+msgctxt "The font family format name displayed in a format suggestion."
+msgid "FORMAT_FONT_FAMILY"
+msgstr "عائلة الخطوط"
+
+msgctxt "The font color format name displayed in a format suggestion."
+msgid "FORMAT_FONT_COLOR"
+msgstr "لون الخط"
+
+msgctxt "The font background color format name displayed in a format suggestion."
+msgid "FORMAT_FONT_BACKGROUND"
+msgstr "لون خلفي للخط"
+
+msgctxt "The image size change format name displayed in a format suggestion."
+msgid "FORMAT_IMAGE_SIZE"
+msgstr "حجم الصورة"
+
+msgctxt "The style format name displayed in a format suggestion."
+msgid "FORMAT_STYLE"
+msgstr "أسلوب"
+
+msgctxt "The label for the alert shown when closing the editor with an unsaved track changes change."
+msgid "PENDING_ACTION_SUGGESTION"
+msgstr "توجد تغييرات غير محفوظة في المقترح."
+
+msgctxt "A suggestion for replacing one text with another."
+msgid "REPLACE_TEXT"
+msgstr "*تغير:* 0% *ووضع* 1%"
+
+msgctxt "The label for the dropdown containing some options related to track changes."
+msgid "Track changes"
+msgstr "تتبع التغييرات"
+
+msgctxt "The additional information that suggestion comes from external source."
+msgid "EXTERNAL_SUGGESTION"
+msgstr "مصدر هذا الاقتراح خارجي."
+
+msgctxt "The additional information that suggestion comes from imported word file."
+msgid "EXTERNAL_IMPORT_WORD_SUGGESTION"
+msgstr "يأتي هذا الاقتراح من ملف Word مستورد."
+
+msgctxt "A suggestion for setting the bookmark name."
+msgid "*Set bookmark:* %0"
+msgstr "*ضبط الإشارة المرجعية:* %0"
+
+msgctxt "The bookmark element name displayed in the suggestion."
+msgid "ELEMENT_BOOKMARK"
+msgid_plural "%0 bookmarks"
+msgstr[0] "إشارة مرجعية"
+msgstr[1] "إشارة مرجعية"
+msgstr[2] "إشارتان مرجعيتان"
+msgstr[3] "إشارات مرجعية"
+msgstr[4] "إشارة مرجعية"
+msgstr[5] "إشارة مرجعية"
+
+msgctxt "A suggestion for replacing an image."
+msgid "*Replace image*"
+msgstr "*استبدال الصورة*"
+
+msgctxt "The label for the button which shows the final content in the modal."
+msgid "Preview final content"
+msgstr "معاينة المحتوى النهائي"
+
+msgctxt "The label for the final content preview modal heading."
+msgid "Final content preview"
+msgstr "معاينة المحتوى النهائي"
+
+msgctxt "A suggestion for setting type %0 to the table."
+msgid "*Set table type:* %0"
+msgstr "*تعيين نوع الجدول:* %0"
+
+msgctxt "The content table element name displayed in the suggestion."
+msgid "ELEMENT_CONTENT_TABLE"
+msgid_plural "%0 content tables"
+msgstr[0] "جدول المحتويات"
+msgstr[1] "جدول المحتويات"
+msgstr[2] "جدول المحتويات"
+msgstr[3] "جدول المحتويات"
+msgstr[4] "جدول المحتويات"
+msgstr[5] "جدول المحتويات"
+
+msgctxt "The layout table element name displayed in the suggestion."
+msgid "ELEMENT_LAYOUT_TABLE"
+msgid_plural "%0 layout tables"
+msgstr[0] "جدول التخطيط"
+msgstr[1] "جدول التخطيط"
+msgstr[2] "جدول التخطيط"
+msgstr[3] "جدول التخطيط"
+msgstr[4] "جدول التخطيط"
+msgstr[5] "جدول التخطيط"

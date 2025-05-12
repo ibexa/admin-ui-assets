@@ -1,0 +1,1080 @@
+/**
+ * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+:root {
+	--ck-user-colors--0: hsla(235, 73%, 67%, 1);
+	--ck-user-colors--0-alpha: hsla(235, 73%, 67%, 0.15);
+
+	--ck-user-colors--1: hsla(173, 100%, 24%, 1);
+	--ck-user-colors--1-alpha: hsla(173, 100%, 24%, 0.15);
+
+	--ck-user-colors--2: hsla(0, 46%, 50%, 1);
+	--ck-user-colors--2-alpha: hsla(0, 46%, 50%, 0.15);
+
+	--ck-user-colors--3: hsla(256, 54%, 45%, 1);
+	--ck-user-colors--3-alpha: hsla(256, 54%, 45%, 0.15);
+
+	--ck-user-colors--4: hsla(95, 50%, 36%, 1);
+	--ck-user-colors--4-alpha: hsla(95, 50%, 36%, 0.15);
+
+	--ck-user-colors--5: hsla(336, 78%, 43%, 1);
+	--ck-user-colors--5-alpha: hsla(336, 78%, 43%, 0.15);
+
+	--ck-user-colors--6: hsla(0, 80%, 59%, 1);
+	--ck-user-colors--6-alpha: hsla(0, 80%, 59%, 0.15);
+
+	--ck-user-colors--7: hsla(184, 90%, 43%, 1);
+	--ck-user-colors--7-alpha: hsla(184, 90%, 43%, 0.15);
+
+	--ck-user-dot-size: 6px;
+}
+
+/* We are using mixins here because of lack of PostCSS loop plugin. */
+
+.ck .ck-user__color--0 {
+		color: var(--ck-user-colors--0);
+	}
+
+.ck .ck-user__bg-color--0 {
+		background-color: var(--ck-user-colors--0);
+	}
+
+.ck .ck-user__selection--0 {
+		background-color: var(--ck-user-colors--0-alpha);
+	}
+
+.ck .ck-user__selection--0.ck-widget {
+			background-color: transparent;
+			border: 3px solid var(--ck-user-colors--0);
+		}
+
+.ck .ck-user__marker--0, .ck .ck-user__marker--0 .ck-user__marker-tooltip, .ck .ck-user__marker--0 .ck-user__marker-dot, .ck .ck-user__marker--0::selection, .ck .ck-user__marker--0 .ck-user__marker-tooltip::selection, .ck .ck-user__marker--0 .ck-user__marker-dot::selection {
+				background-color: var(--ck-user-colors--0);
+			}
+
+.ck .ck-user__marker--0 .ck-user__marker-line {
+			border: 1px solid var(--ck-user-colors--0);
+		}
+.ck .ck-user__color--1 {
+		color: var(--ck-user-colors--1);
+	}
+.ck .ck-user__bg-color--1 {
+		background-color: var(--ck-user-colors--1);
+	}
+.ck .ck-user__selection--1 {
+		background-color: var(--ck-user-colors--1-alpha);
+	}
+.ck .ck-user__selection--1.ck-widget {
+			background-color: transparent;
+			border: 3px solid var(--ck-user-colors--1);
+		}
+.ck .ck-user__marker--1, .ck .ck-user__marker--1 .ck-user__marker-tooltip, .ck .ck-user__marker--1 .ck-user__marker-dot, .ck .ck-user__marker--1::selection, .ck .ck-user__marker--1 .ck-user__marker-tooltip::selection, .ck .ck-user__marker--1 .ck-user__marker-dot::selection {
+				background-color: var(--ck-user-colors--1);
+			}
+.ck .ck-user__marker--1 .ck-user__marker-line {
+			border: 1px solid var(--ck-user-colors--1);
+		}
+.ck .ck-user__color--2 {
+		color: var(--ck-user-colors--2);
+	}
+.ck .ck-user__bg-color--2 {
+		background-color: var(--ck-user-colors--2);
+	}
+.ck .ck-user__selection--2 {
+		background-color: var(--ck-user-colors--2-alpha);
+	}
+.ck .ck-user__selection--2.ck-widget {
+			background-color: transparent;
+			border: 3px solid var(--ck-user-colors--2);
+		}
+.ck .ck-user__marker--2, .ck .ck-user__marker--2 .ck-user__marker-tooltip, .ck .ck-user__marker--2 .ck-user__marker-dot, .ck .ck-user__marker--2::selection, .ck .ck-user__marker--2 .ck-user__marker-tooltip::selection, .ck .ck-user__marker--2 .ck-user__marker-dot::selection {
+				background-color: var(--ck-user-colors--2);
+			}
+.ck .ck-user__marker--2 .ck-user__marker-line {
+			border: 1px solid var(--ck-user-colors--2);
+		}
+.ck .ck-user__color--3 {
+		color: var(--ck-user-colors--3);
+	}
+.ck .ck-user__bg-color--3 {
+		background-color: var(--ck-user-colors--3);
+	}
+.ck .ck-user__selection--3 {
+		background-color: var(--ck-user-colors--3-alpha);
+	}
+.ck .ck-user__selection--3.ck-widget {
+			background-color: transparent;
+			border: 3px solid var(--ck-user-colors--3);
+		}
+.ck .ck-user__marker--3, .ck .ck-user__marker--3 .ck-user__marker-tooltip, .ck .ck-user__marker--3 .ck-user__marker-dot, .ck .ck-user__marker--3::selection, .ck .ck-user__marker--3 .ck-user__marker-tooltip::selection, .ck .ck-user__marker--3 .ck-user__marker-dot::selection {
+				background-color: var(--ck-user-colors--3);
+			}
+.ck .ck-user__marker--3 .ck-user__marker-line {
+			border: 1px solid var(--ck-user-colors--3);
+		}
+.ck .ck-user__color--4 {
+		color: var(--ck-user-colors--4);
+	}
+.ck .ck-user__bg-color--4 {
+		background-color: var(--ck-user-colors--4);
+	}
+.ck .ck-user__selection--4 {
+		background-color: var(--ck-user-colors--4-alpha);
+	}
+.ck .ck-user__selection--4.ck-widget {
+			background-color: transparent;
+			border: 3px solid var(--ck-user-colors--4);
+		}
+.ck .ck-user__marker--4, .ck .ck-user__marker--4 .ck-user__marker-tooltip, .ck .ck-user__marker--4 .ck-user__marker-dot, .ck .ck-user__marker--4::selection, .ck .ck-user__marker--4 .ck-user__marker-tooltip::selection, .ck .ck-user__marker--4 .ck-user__marker-dot::selection {
+				background-color: var(--ck-user-colors--4);
+			}
+.ck .ck-user__marker--4 .ck-user__marker-line {
+			border: 1px solid var(--ck-user-colors--4);
+		}
+.ck .ck-user__color--5 {
+		color: var(--ck-user-colors--5);
+	}
+.ck .ck-user__bg-color--5 {
+		background-color: var(--ck-user-colors--5);
+	}
+.ck .ck-user__selection--5 {
+		background-color: var(--ck-user-colors--5-alpha);
+	}
+.ck .ck-user__selection--5.ck-widget {
+			background-color: transparent;
+			border: 3px solid var(--ck-user-colors--5);
+		}
+.ck .ck-user__marker--5, .ck .ck-user__marker--5 .ck-user__marker-tooltip, .ck .ck-user__marker--5 .ck-user__marker-dot, .ck .ck-user__marker--5::selection, .ck .ck-user__marker--5 .ck-user__marker-tooltip::selection, .ck .ck-user__marker--5 .ck-user__marker-dot::selection {
+				background-color: var(--ck-user-colors--5);
+			}
+.ck .ck-user__marker--5 .ck-user__marker-line {
+			border: 1px solid var(--ck-user-colors--5);
+		}
+.ck .ck-user__color--6 {
+		color: var(--ck-user-colors--6);
+	}
+.ck .ck-user__bg-color--6 {
+		background-color: var(--ck-user-colors--6);
+	}
+.ck .ck-user__selection--6 {
+		background-color: var(--ck-user-colors--6-alpha);
+	}
+.ck .ck-user__selection--6.ck-widget {
+			background-color: transparent;
+			border: 3px solid var(--ck-user-colors--6);
+		}
+.ck .ck-user__marker--6, .ck .ck-user__marker--6 .ck-user__marker-tooltip, .ck .ck-user__marker--6 .ck-user__marker-dot, .ck .ck-user__marker--6::selection, .ck .ck-user__marker--6 .ck-user__marker-tooltip::selection, .ck .ck-user__marker--6 .ck-user__marker-dot::selection {
+				background-color: var(--ck-user-colors--6);
+			}
+.ck .ck-user__marker--6 .ck-user__marker-line {
+			border: 1px solid var(--ck-user-colors--6);
+		}
+.ck .ck-user__color--7 {
+		color: var(--ck-user-colors--7);
+	}
+.ck .ck-user__bg-color--7 {
+		background-color: var(--ck-user-colors--7);
+	}
+.ck .ck-user__selection--7 {
+		background-color: var(--ck-user-colors--7-alpha);
+	}
+.ck .ck-user__selection--7.ck-widget {
+			background-color: transparent;
+			border: 3px solid var(--ck-user-colors--7);
+		}
+.ck .ck-user__marker--7, .ck .ck-user__marker--7 .ck-user__marker-tooltip, .ck .ck-user__marker--7 .ck-user__marker-dot, .ck .ck-user__marker--7::selection, .ck .ck-user__marker--7 .ck-user__marker-tooltip::selection, .ck .ck-user__marker--7 .ck-user__marker-dot::selection {
+				background-color: var(--ck-user-colors--7);
+			}
+.ck .ck-user__marker--7 .ck-user__marker-line {
+			border: 1px solid var(--ck-user-colors--7);
+		}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/**
+ * Makes element unselectable.
+ */
+
+:root {
+	--ck-user-avatar-size: 40px;
+	--ck-user-avatar-background: hsl(210, 52%, 44%);
+	--ck-user-avatar-color: hsl(0, 0%, 100%);
+	--ck-user-me-border-color: hsl(0, 0%, 100%);
+}
+
+.ck.ck-user {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	border-radius: 50%;
+	background-color: var(--ck-user-avatar-background);
+	box-sizing: border-box;
+	height: var(--ck-user-avatar-size);
+	width: var(--ck-user-avatar-size);
+	min-width: var(--ck-user-avatar-size);
+	min-height: var(--ck-user-avatar-size);
+	line-height: 100%;
+	margin: 2px;
+}
+
+.ck.ck-user.ck-user_me {
+		border: 2px solid var(--ck-user-me-border-color);
+		outline: 2px solid var(--ck-user-avatar-background);
+	}
+
+.ck.ck-user__name {
+	color: var(--ck-user-avatar-color);
+	cursor: default;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.ck.ck-user__name.ck-user__name--hidden {
+		display: none;
+	}
+
+.ck.ck-user__img {
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: var(--ck-user-avatar-background);
+	border-radius: 50%;
+	border: none;
+}
+
+.ck.ck-user__img.ck-user__anonymous {
+		display: block;
+		background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFF%22%20fill-rule%3D%22nonzero%22%20d%3D%22M9.8%2020H2c0-5.7%205-5.7%206-7l.2-.8c-1.6-.8-2.7-2.7-2.7-5%200-2.8%202-5.2%204.3-5.2S14%204.4%2014%207.3c0%202.2-1%204-2.6%205l.2.6c1.2%201.3%206%201.4%206%207H9.8z%22%2F%3E%0A%3C%2Fsvg%3E);
+
+		/* Do not display initials when user is anonymous. */
+	}
+
+.ck.ck-user__img.ck-user__anonymous + .ck-user__name {
+			display: none;
+		}
+
+.ck.ck-user__img.ck-user__avatar {
+		display: block;
+
+		/* In case if avatar is transparent make background white. */
+		background-color: hsl(0, 0%, 100%);
+	}
+
+.ck.ck-user__img.ck-user__img--hidden {
+		display: none;
+	}
+
+.ck.ck-user__notification {
+	display: flex;
+	width: 15px;
+	height: 15px;
+	justify-content: center;
+	align-items: center;
+	background: var(--ck-color-base-background);
+	border: 2px solid var(--ck-color-base-background);
+	border-radius: 50%;
+	box-sizing: content-box;
+
+	position: absolute;
+	top: -8px;
+	right: -7px;
+	overflow: hidden;
+	transform: translateZ(0);
+}
+
+.ck.ck-user__notification .ck-user__icon {
+		color: var(--ck-color-annotation-info);
+		background: var(--ck-color-base-background);
+		width: 19px;
+		height: 19px;
+		max-width: 19px;
+		max-height: 19px;
+		min-width: 19px;
+		min-height: 19px;
+	}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/**
+ * A visual style of focused element's border.
+ */
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+/**
+ * A helper to combine multiple shadows.
+ */
+/**
+ * Gives an element a drop shadow so it looks like a floating panel.
+ */
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+/**
+ * Implements rounded corner interface for .ck-rounded-corners class.
+ *
+ * @see $ck-border-radius
+ */
+
+:root {
+	--ck-color-comment-box-border: hsl(55, 98%, 48%);
+	--ck-color-suggestion-box-deletion-border: hsl(345, 62%, 60%);
+	--ck-color-suggestion-box-insertion-border: hsl(128, 62%, 60%);
+	--ck-color-suggestion-box-format-border: hsl(191, 62%, 60%);
+}
+
+.ck .ck-suggestion {
+	border-top-left-radius: var(--ck-border-radius);
+}
+
+.ck .ck-suggestion:focus {
+		background: var(--ck-color-button-default-hover-background);
+		outline: none;
+	}
+
+.ck .ck-annotation {
+	border-left: 3px solid transparent;
+}
+
+
+/* See: #3683.
+ * Inline Suggestion annotations that can't be commented on contains a scrollbar by default */
+.ck .ck-suggestion--disabled-comments .ck-annotation {
+	min-height: 80px;
+}
+
+/* See: #2459.
+With track-changes feature enabled, we need to distinguish various types of annotations (comments and suggestions). */
+.ck .ck-comment,
+.ck .ck-thread__comment-count,
+.ck .ck-comment__input-container,
+.ck .ck-thread__header {
+	border-left: 3px solid var(--ck-color-comment-box-border);
+}
+
+.ck .ck-suggestion-insertion .ck-suggestion {
+	border-left-color: var(--ck-color-suggestion-box-insertion-border);
+}
+
+.ck .ck-suggestion-deletion .ck-suggestion {
+	border-left-color: var(--ck-color-suggestion-box-deletion-border);
+}
+
+.ck .ck-suggestion-replace .ck-suggestion {
+	border-left-color: var(--ck-color-suggestion-box-insertion-border);
+}
+
+.ck .ck-suggestion-format .ck-suggestion {
+	border-left-color: var(--ck-color-suggestion-box-format-border);
+}
+
+.ck .ck-suggestion-wrapper {
+	border-radius: 0;
+
+	overflow: hidden;
+}
+
+.ck-rounded-corners .ck .ck-suggestion-wrapper,
+	.ck .ck-suggestion-wrapper.ck-rounded-corners {
+		border-radius: var(--ck-border-radius);
+	}
+
+.ck .ck-suggestion-wrapper:focus {
+		/*
+		 * We cannot use the ck-focus-ring mixin here because it adds a border that would need to stay transparent
+		 * in non-focused state and create an odd space inside the surrounding annotation container.
+		 */
+		outline: var(--ck-focus-ring);
+
+		/*
+		 * We cannot use the ck-box-shadow mixin because we're using outline instead of border (see the comment above).
+		 * And the shadow size has to be custom because outline is rendered on top of the shadow.
+		 */
+		box-shadow: 0 0 0 4px var(--ck-color-focus-outer-shadow);
+	}
+
+/*
+ * In case of inline annotations, their focus styles get hoisted to the balloon panel to work around overflow that would
+ * otherwise get them cropped..
+ */
+.ck-balloon-panel:has( .ck-suggestion-wrapper:focus ) {
+	/* Disable native outline. */
+	outline: none;
+	border: var(--ck-focus-ring);
+	box-shadow: var(--ck-drop-shadow), var(--ck-focus-outer-shadow);
+}
+
+.ck .ck-suggestion-type {
+	font-weight: bold;
+}
+
+.ck .ck-suggestion-color {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	border-radius: 14px;
+	vertical-align: text-bottom;
+	margin: 0 5px;
+	box-shadow: 0 0 0 1px hsl(0, 0%, 27%);
+}
+
+/* Comments inside suggestion. */
+
+/* Handle comments inside suggestion keep same border-color. */
+.ck .ck-suggestion-insertion .ck-comment,
+.ck .ck-suggestion-insertion .ck-thread__comment-count,
+.ck .ck-suggestion-insertion .ck-comment__input-container,
+.ck .ck-suggestion-replace .ck-comment,
+.ck .ck-suggestion-replace .ck-thread__comment-count,
+.ck .ck-suggestion-replace .ck-comment__input-container {
+	border-left-color: var(--ck-color-suggestion-box-insertion-border);
+}
+
+.ck .ck-suggestion-deletion .ck-comment,
+.ck .ck-suggestion-deletion .ck-thread__comment-count,
+.ck .ck-suggestion-deletion .ck-comment__input-container {
+	border-left-color: var(--ck-color-suggestion-box-deletion-border);
+}
+
+.ck .ck-suggestion-format .ck-comment,
+.ck .ck-suggestion-format .ck-thread__comment-count,
+.ck .ck-suggestion-format .ck-comment__input-container {
+	border-left-color: var(--ck-color-suggestion-box-format-border);
+}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+:root {
+	--ck-color-suggestion-marker-insertion-border: hsla(128, 71%, 40%, .35);
+	--ck-color-suggestion-marker-insertion-border-active: hsla(128, 71%, 25%, .5);
+	--ck-color-suggestion-marker-insertion-background: hsla(128, 71%, 65%, .35);
+	--ck-color-suggestion-marker-insertion-background-active: hsla(128, 71%, 50%, .5);
+
+	--ck-color-suggestion-marker-deletion-border: hsla(345, 71%, 40%, .35);
+	--ck-color-suggestion-marker-deletion-border-active: hsla(345, 71%, 25%, .5);
+	--ck-color-suggestion-marker-deletion-background: hsla(345, 71%, 65%, .35);
+	--ck-color-suggestion-marker-deletion-background-active: hsla(345, 71%, 50%, .5);
+	--ck-color-suggestion-marker-deletion-stroke: hsla(345, 71%, 20%, .5);
+
+	--ck-color-suggestion-marker-format-border: hsla(191, 60%, 75%, 1);
+	--ck-color-suggestion-marker-format-border-active: hsla(191, 60%, 60%, 1);
+
+	--ck-color-suggestion-widget-insertion-background: hsla(128, 71%, 65%, .05);
+	--ck-color-suggestion-widget-insertion-background-active: hsla(128, 71%, 50%, .07);
+
+	--ck-color-suggestion-widget-deletion-background: hsla(345, 71%, 65%, .05);
+	--ck-color-suggestion-widget-deletion-background-active: hsla(345, 71%, 45%, .07);
+
+	--ck-color-suggestion-widget-format-background: hsla(191, 90%, 40%, .09);
+	--ck-color-suggestion-widget-format-background-active: hsla(191, 90%, 40%, .16);
+}
+
+.ck-content .ck-suggestion-marker-insertion {
+	border-top: 3px solid var(--ck-color-suggestion-marker-insertion-border);
+	border-bottom: 3px solid var(--ck-color-suggestion-marker-insertion-border);
+	background: var(--ck-color-suggestion-marker-insertion-background);
+}
+
+.ck-content .ck-suggestion-marker-insertion.ck-suggestion-marker--active {
+		border-color: var(--ck-color-suggestion-marker-insertion-border-active);
+		background: var(--ck-color-suggestion-marker-insertion-background-active);
+	}
+
+/* Disable background of marker inside widget. */
+
+.ck-content .ck-suggestion-marker-insertion.ck-widget {
+		background: none;
+		text-decoration: none;
+		border: 3px solid var(--ck-color-suggestion-marker-insertion-border);
+	}
+
+.ck-content .ck-suggestion-marker-insertion.ck-widget.ck-suggestion-marker--active {
+			border-color: var(--ck-color-suggestion-marker-insertion-border-active);
+		}
+
+.ck-content .ck-suggestion-marker-deletion {
+	border-top: 3px solid var(--ck-color-suggestion-marker-deletion-border);
+	border-bottom: 3px solid var(--ck-color-suggestion-marker-deletion-border);
+
+	/* #2810. Safari doesn't support combined text-decoration values. */
+	text-decoration: line-through;
+	text-decoration-color: var(--ck-color-suggestion-marker-deletion-stroke);
+	text-decoration-thickness: 3px;
+
+	background: var(--ck-color-suggestion-marker-deletion-background);
+}
+
+.ck-content .ck-suggestion-marker-deletion.ck-suggestion-marker--active {
+		border-color: var(--ck-color-suggestion-marker-deletion-border-active);
+		background: var(--ck-color-suggestion-marker-deletion-background-active);
+	}
+
+/* Disable background of marker inside widget. */
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget {
+		background: none;
+		text-decoration: none;
+		border: 3px solid var(--ck-color-suggestion-marker-deletion-border);
+	}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.ck-suggestion-marker--active {
+			border-color: var(--ck-color-suggestion-marker-deletion-border-active);
+		}
+
+.ck-content .ck-suggestion-marker-merge::after {
+		border-top: 3px solid var(--ck-color-suggestion-marker-deletion-border);
+		border-bottom: 3px solid var(--ck-color-suggestion-marker-deletion-border);
+
+		/* #2810. Safari doesn't support combined text-decoration values. */
+		text-decoration: line-through;
+		text-decoration-color: var(--ck-color-suggestion-marker-deletion-stroke);
+
+		background: var(--ck-color-suggestion-marker-deletion-background);
+		color: var(--ck-color-suggestion-marker-deletion-stroke);
+		content: '¶';
+	}
+
+.ck-content .ck-suggestion-marker-merge.ck-suggestion-marker--active::after {
+		border-color: var(--ck-color-suggestion-marker-deletion-border-active);
+		background: var(--ck-color-suggestion-marker-deletion-background-active);
+	}
+
+.ck-content .ck-suggestion-marker-split::after {
+		border-top: 3px solid var(--ck-color-suggestion-marker-insertion-border);
+		border-bottom: 3px solid var(--ck-color-suggestion-marker-insertion-border);
+		background: var(--ck-color-suggestion-marker-insertion-background);
+		color: var(--ck-color-suggestion-marker-insertion-border);
+		content: '¶';
+	}
+
+.ck-content .ck-suggestion-marker-split.ck-suggestion-marker--active::after {
+		border-color: var(--ck-color-suggestion-marker-insertion-border-active);
+		background: var(--ck-color-suggestion-marker-insertion-background-active);
+	}
+
+.ck-content .ck-suggestion-marker-formatInline {
+	border-top: 3px solid var(--ck-color-suggestion-marker-format-border);
+	border-bottom: 3px solid var(--ck-color-suggestion-marker-format-border);
+}
+
+.ck-content .ck-suggestion-marker-formatInline.ck-suggestion-marker--active {
+		border-color: var(--ck-color-suggestion-marker-format-border-active);
+	}
+
+.ck-content .ck-suggestion-marker-formatInline.ck-widget {
+		background: none;
+		border: 3px solid var(--ck-color-suggestion-marker-format-border);
+	}
+
+.ck-content .ck-suggestion-marker-formatInline.ck-widget.ck-suggestion-marker--active {
+			border-color: var(--ck-color-suggestion-marker-format-border-active);
+		}
+
+/* This is a tricky case.
+ * We can't use `border-left` because sticky marker to the element looks kinda ugly.
+ * We can't use `::before` pseudoelement because it requires `position: relative` of parent, which breaks side-image.
+ * We can't use `outline` because it's impossible to display only left side of outline.
+ * So... we need to use power of CSS hacks <3 and use doubled box-shadow.
+ */
+
+.ck-content .ck-suggestion-marker-formatBlock {
+	border: 0;
+	background: none;
+	box-shadow: -7px 0 0 0 var(--ck-color-base-background), -10px 0 0 0 var(--ck-color-suggestion-marker-format-border);
+}
+
+.ck-content .ck-suggestion-marker-formatBlock.ck-suggestion-marker--active {
+		box-shadow: -5px 0 0 0 var(--ck-color-base-background), -8px 0 0 0 var(--ck-color-suggestion-marker-format-border-active);
+	}
+
+.ck-content ul .ck-suggestion-marker-formatBlock,
+.ck-content ol .ck-suggestion-marker-formatBlock {
+	box-shadow: -2px 0 0 0 var(--ck-color-base-background), -5px 0 0 0 var(--ck-color-suggestion-marker-format-border);
+}
+
+.ck-content ul .ck-suggestion-marker-formatBlock.ck-suggestion-marker--active, .ck-content ol .ck-suggestion-marker-formatBlock.ck-suggestion-marker--active {
+		box-shadow: -2px 0 0 0 var(--ck-color-base-background), -5px 0 0 0 var(--ck-color-suggestion-marker-format-border-active);
+	}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck.ck-aria-description {
+	display: none;
+}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck-content .ck-widget.image > figcaption.ck-suggestion-marker-deletion {
+		background-color: var(--ck-color-suggestion-widget-deletion-background);
+		border: none;
+	}
+
+.ck-content .ck-widget.image > figcaption.ck-suggestion-marker-deletion.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+		}
+
+.ck-content .ck-widget.image > figcaption.ck-suggestion-marker-insertion {
+		background-color: var(--ck-color-suggestion-widget-insertion-background);
+		border: none;
+	}
+
+.ck-content .ck-widget.image > figcaption.ck-suggestion-marker-insertion.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+		}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.image {
+	background-color: var(--ck-color-suggestion-widget-deletion-background);
+}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.image img {
+		opacity: 0.6;
+	}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.image figcaption {
+		background-color: var(--ck-color-suggestion-widget-deletion-background);
+	}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.image.ck-suggestion-marker--active {
+		background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+	}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.image.ck-suggestion-marker--active figcaption {
+			background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+		}
+
+.ck-content .ck-suggestion-marker-insertion.ck-widget.image {
+	background-color: var(--ck-color-suggestion-widget-insertion-background);
+
+	/* stylelint-disable no-descending-specificity */
+}
+
+.ck-content .ck-suggestion-marker-insertion.ck-widget.image figcaption {
+		background-color: var(--ck-color-suggestion-widget-insertion-background);
+	}
+
+/* stylelint-enable no-descending-specificity */
+
+.ck-content .ck-suggestion-marker-insertion.ck-widget.image.ck-suggestion-marker--active {
+		background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+	}
+
+.ck-content .ck-suggestion-marker-insertion.ck-widget.image.ck-suggestion-marker--active figcaption {
+			background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+		}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.ck-horizontal-line {
+	background-color: var(--ck-color-suggestion-widget-deletion-background);
+}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.ck-horizontal-line.ck-suggestion-marker--active {
+		background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+	}
+
+.ck-content .ck-suggestion-marker-insertion.ck-widget.ck-horizontal-line {
+	background-color: var(--ck-color-suggestion-widget-insertion-background);
+}
+
+.ck-content .ck-suggestion-marker-insertion.ck-widget.ck-horizontal-line.ck-suggestion-marker--active {
+		background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+	}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.media {
+	background-color: var(--ck-color-suggestion-widget-deletion-background);
+}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.media .ck-media__wrapper {
+		opacity: 0.6;
+	}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.media.ck-suggestion-marker--active {
+		background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+	}
+
+.ck-content .ck-suggestion-marker-insertion.ck-widget.media {
+	background-color: var(--ck-color-suggestion-widget-insertion-background);
+}
+
+.ck-content .ck-suggestion-marker-insertion.ck-widget.media.ck-suggestion-marker--active {
+		background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+	}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck-content .ck-suggestion-marker.ck-widget.ck-merge-field,
+.ck-content .ck-comment-marker.ck-widget.ck-merge-field {
+	/* Note that comments markers have transparent border to be better aligned with suggestions markers. */
+	border-width: 2px;
+	border-left: none;
+	border-right: none;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.ck-merge-field {
+	border-top-color: var(--ck-color-suggestion-marker-deletion-border);
+	border-bottom-color: var(--ck-color-suggestion-marker-deletion-border);
+
+	background: var(--ck-color-suggestion-marker-deletion-background);
+}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.ck-merge-field :not(.ck-merge-field__affix),
+	.ck-content .ck-suggestion-marker-deletion.ck-widget.ck-merge-field.ck-merge-field_with-value,
+	.ck-content .ck-suggestion-marker-deletion.ck-widget.ck-merge-field.ck-merge-field_with-warning {
+		text-decoration: line-through;
+		text-decoration-color: var(--ck-color-suggestion-marker-deletion-stroke);
+		text-decoration-thickness: 3px;
+	}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.ck-merge-field.ck-suggestion-marker--active {
+		background-color: var(--ck-color-suggestion-marker-deletion-background-active);
+	}
+
+.ck-content .ck-suggestion-marker-insertion.ck-widget.ck-merge-field {
+	background-color: var(--ck-color-suggestion-marker-insertion-background);
+}
+
+.ck-content .ck-suggestion-marker-insertion.ck-widget.ck-merge-field.ck-suggestion-marker--active {
+		background-color: var(--ck-color-suggestion-marker-insertion-background-active);
+	}
+
+.ck-content .ck-comment-marker.ck-widget.ck-merge-field {
+	background: var(--ck-color-comment-marker);
+}
+
+.ck-content .ck-comment-marker.ck-widget.ck-merge-field.ck-comment-marker--active {
+		background: var(--ck-color-comment-marker-active);
+	}
+
+/*
+	This is a hack for a specific situation. The selector targets all regular markers made on text that are just before
+	a merge field (also in marker). This is a common situation. For example, if you have some text and a merge field
+	just after and all that is in a suggestion. Without this hack, there is a 1px spacing between the span and the merge
+	field, because the merge field has margin. The margin is needed because otherwise caret does not display. To
+	"remove" the spacing, we extend the span before the merge field by 1px using padding, but we need to compensate
+	by using negative margin, so that the whole content does not change its position.
+ */
+.ck-content span.ck-comment-marker:has(+.ck-comment-marker.ck-widget.ck-merge-field),
+.ck-content span.ck-suggestion-marker:has(+.ck-suggestion-marker.ck-widget.ck-merge-field) {
+	padding-right: 1px;
+	margin-right: -1px;
+}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.page-break {
+	background-color: var(--ck-color-suggestion-widget-deletion-background);
+}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.page-break.ck-suggestion-marker--active {
+		background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+	}
+
+.ck-content .ck-suggestion-marker-insertion.ck-widget.page-break {
+	background-color: var(--ck-color-suggestion-widget-insertion-background);
+}
+
+.ck-content .ck-suggestion-marker-insertion.ck-widget.page-break.ck-suggestion-marker--active {
+		background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+	}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+:root {
+	--ck-color-suggestion-widget-th-insertion-background: hsla(128, 71%, 65%, .12);
+	--ck-color-suggestion-widget-th-insertion-background-active: hsla(128, 71%, 50%, .14);
+
+	--ck-color-suggestion-widget-th-deletion-background: hsla(345, 71%, 65%, .14);
+	--ck-color-suggestion-widget-th-deletion-background-active: hsla(345, 71%, 45%, .16);
+}
+
+.ck-content figure.table .ck-suggestion-marker-formatBlock {
+	box-shadow: -3px 0 0 0 var(--ck-color-suggestion-marker-format-border);
+}
+
+.ck-content figure.table .ck-suggestion-marker-formatBlock.ck-suggestion-marker--active {
+		box-shadow: -3px 0 0 0 var(--ck-color-suggestion-marker-format-border-active);
+	}
+
+.ck-content .ck-widget.table > figcaption.ck-suggestion-marker-deletion {
+		background-color: var(--ck-color-suggestion-widget-deletion-background);
+		border: none;
+	}
+
+.ck-content .ck-widget.table > figcaption.ck-suggestion-marker-deletion.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+		}
+
+.ck-content .ck-widget.table > figcaption.ck-suggestion-marker-insertion {
+		background-color: var(--ck-color-suggestion-widget-insertion-background);
+		border: none;
+	}
+
+.ck-content .ck-widget.table > figcaption.ck-suggestion-marker-insertion.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+		}
+
+.ck-content .ck-suggestion-marker-insertion.table {
+	border-color: var(--ck-color-suggestion-marker-insertion-border);
+}
+
+.ck-content .ck-suggestion-marker-insertion.table > figcaption {
+		background-color: var(--ck-color-suggestion-widget-insertion-background);
+	}
+
+.ck-content .ck-suggestion-marker-insertion.table > table > tbody > tr > th {
+			background-color: var(--ck-color-suggestion-widget-th-insertion-background);
+			border-color: var(--ck-color-suggestion-marker-insertion-border);
+		}
+
+.ck-content .ck-suggestion-marker-insertion.table > table > thead > tr > th {
+			background-color: var(--ck-color-suggestion-widget-th-insertion-background);
+			border-color: var(--ck-color-suggestion-marker-insertion-border);
+		}
+
+.ck-content .ck-suggestion-marker-insertion.table > table > tbody > tr > td {
+			background-color: var(--ck-color-suggestion-widget-insertion-background);
+			border-color: var(--ck-color-suggestion-marker-insertion-border);
+		}
+
+.ck-content .ck-suggestion-marker-insertion.ck-suggestion-marker--active.table {
+	border-color: var(--ck-color-suggestion-marker-insertion-border-active);
+}
+
+.ck-content .ck-suggestion-marker-insertion.ck-suggestion-marker--active.table > figcaption {
+		background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+	}
+
+.ck-content .ck-suggestion-marker-insertion.ck-suggestion-marker--active.table > table > tbody > tr > th {
+			background-color: var(--ck-color-suggestion-widget-th-insertion-background-active);
+			border-color: var(--ck-color-suggestion-marker-insertion-border-active);
+		}
+
+.ck-content .ck-suggestion-marker-insertion.ck-suggestion-marker--active.table > table > thead > tr > th {
+			background-color: var(--ck-color-suggestion-widget-th-insertion-background-active);
+			border-color: var(--ck-color-suggestion-marker-insertion-border-active);
+		}
+
+.ck-content .ck-suggestion-marker-insertion.ck-suggestion-marker--active.table > table > tbody > tr > td {
+			background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+			border-color: var(--ck-color-suggestion-marker-insertion-border-active);
+		}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.table  {
+	border-color: var(--ck-color-suggestion-marker-deletion-border);
+}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.table > figcaption {
+		background-color: var(--ck-color-suggestion-widget-deletion-background);
+	}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.table > table > tbody > tr > th {
+			background-color: var(--ck-color-suggestion-widget-th-deletion-background);
+			border-color: var(--ck-color-suggestion-marker-deletion-border);
+			text-decoration: none;
+		}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.table > table > thead > tr > th {
+			background-color: var(--ck-color-suggestion-widget-th-deletion-background);
+			border-color: var(--ck-color-suggestion-marker-deletion-border);
+			text-decoration: none;
+		}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.table > table > tbody > tr > td {
+			background-color: var(--ck-color-suggestion-widget-deletion-background);
+			border-color: var(--ck-color-suggestion-marker-deletion-border);
+			text-decoration: none;
+		}
+
+.ck-content .ck-suggestion-marker-deletion.ck-suggestion-marker--active.table {
+	border-color: var(--ck-color-suggestion-marker-deletion-border-active);
+}
+
+.ck-content .ck-suggestion-marker-deletion.ck-suggestion-marker--active.table > figcaption {
+		background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+	}
+
+.ck-content .ck-suggestion-marker-deletion.ck-suggestion-marker--active.table > table > tbody > tr > th {
+			background-color: var(--ck-color-suggestion-widget-th-deletion-background-active);
+			border-color: var(--ck-color-suggestion-marker-deletion-border-active);
+		}
+
+.ck-content .ck-suggestion-marker-deletion.ck-suggestion-marker--active.table > table > thead > tr > th {
+			background-color: var(--ck-color-suggestion-widget-th-deletion-background-active);
+			border-color: var(--ck-color-suggestion-marker-deletion-border-active);
+		}
+
+.ck-content .ck-suggestion-marker-deletion.ck-suggestion-marker--active.table > table > tbody > tr > td {
+			background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+			border-color: var(--ck-color-suggestion-marker-deletion-border-active);
+		}
+
+/*
+ * We need here at least 022 CSS Specificity because of table styles like `.ck-content .table table th { background: ... }
+ * See: https://github.com/ckeditor/ckeditor5-table/blob/master/theme/table.css#L29
+ */
+.ck-content .table th.ck-suggestion-marker-insertion {
+		background-color: var(--ck-color-suggestion-widget-th-insertion-background);
+	}
+.ck-content .table th.ck-suggestion-marker-insertion.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-th-insertion-background-active);
+		}
+.ck-content .table th.ck-suggestion-marker-deletion {
+		background-color: var(--ck-color-suggestion-widget-th-deletion-background);
+		text-decoration: none;
+	}
+.ck-content .table th.ck-suggestion-marker-deletion.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-th-deletion-background-active);
+		}
+.ck-content .table td.ck-suggestion-marker-insertion {
+		background-color: var(--ck-color-suggestion-widget-insertion-background);
+	}
+.ck-content .table td.ck-suggestion-marker-insertion.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+		}
+.ck-content .table td.ck-suggestion-marker-deletion {
+		background-color: var(--ck-color-suggestion-widget-deletion-background);
+		text-decoration: none;
+	}
+.ck-content .table td.ck-suggestion-marker-deletion.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+		}
+.ck-content .table th.ck-suggestion-marker-formatInline,
+	.ck-content .table td.ck-suggestion-marker-formatInline,
+	.ck-content .table th.ck-suggestion-marker-formatBlock,
+	.ck-content .table td.ck-suggestion-marker-formatBlock {
+		background-color: var(--ck-color-suggestion-widget-format-background);
+		box-shadow: none;
+	}
+.ck-content .table th.ck-suggestion-marker-formatInline.ck-suggestion-marker--active, .ck-content .table td.ck-suggestion-marker-formatInline.ck-suggestion-marker--active, .ck-content .table th.ck-suggestion-marker-formatBlock.ck-suggestion-marker--active, .ck-content .table td.ck-suggestion-marker-formatBlock.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-format-background-active);
+			box-shadow: none;
+		}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck-content pre > code.ck-suggestion-marker-formatBlock {
+	display: block;
+	box-shadow: -7px 0 0 0 hsl(0deg 0% 93%), -10px 0 0 0 var(--ck-color-suggestion-marker-format-border);
+}
+
+.ck-content pre > code.ck-suggestion-marker-formatBlock.ck-suggestion-marker--active {
+		box-shadow: -5px 0 0 0 hsl(0deg 0% 93%), -8px 0 0 0 var(--ck-color-suggestion-marker-format-border-active);
+	}

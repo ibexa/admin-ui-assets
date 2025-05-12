@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+export default{'vi':{'dictionary':{'Comment\x20editor':'Trình\x20chỉnh\x20sửa\x20bình\x20luận','NUMBER_OF_COMMENTS':'%0\x20Bình\x20luận','TOO_LONG_COMMENT_ALERT':'Nội\x20dung\x20bình\x20luận\x20quá\x20dài.\x20Bình\x20luận\x20của\x20bạn\x20có\x20%0\x20ký\x20tự,\x20tuy\x20nhiên\x20giới\x20hạn\x20ký\x20tự\x20là\x20%1.','Reply...':'Trả\x20lời...','Reply\x20to\x20reopen\x20discussion...':'Trả\x20lời\x20để\x20mở\x20lại\x20cuộc\x20thảo\x20luận...','Write\x20a\x20comment...':'Viết\x20bình\x20luận...','Comment\x20was\x20made\x20on\x20an\x20element':'Bình\x20luận\x20được\x20tạo\x20trên\x20một\x20yếu\x20tố','Edit':'Chỉnh\x20sửa','Resolve':'Xử\x20lí','Reopen':'Mở\x20lại','Remove':'Xóa','Reply':'Trả\x20lời','Delete\x20comment?':'Xóa\x20bình\x20luận?','Delete\x20comment\x20thread?':'Xóa\x20chuỗi\x20bình\x20luận?','Marked\x20as\x20resolved':'Đánh\x20dấu\x20là\x20đã\x20xử\x20lí','Comment':'Bình\x20luận','Annotations\x20sidebar':'Thanh\x20bên\x20chú\x20thích','Annotations\x20list':'Danh\x20sách\x20chú\x20thích','Thread\x20comments':'Bình\x20luận\x20chủ\x20đề','THREAD_CONTEXT_LABEL':'Bối\x20cảnh\x20chủ\x20đề:\x20%0','COMMENT_THREAD_LABEL':'Chủ\x20đề\x20bình\x20luận\x20của\x20%1.\x20%1\x20trả\x20lời.','COMMENT_THREAD_DESCRIPTION':'Nhấn\x20Enter\x20để\x20có\x20thêm\x20tùy\x20chọn.\x20Nhấn\x20Escape\x20để\x20thoát.','COMMENT_ARIA_LABEL':'Bình\x20luận\x20của\x20%0.\x20Được\x20tạo\x20vào\x20%1.\x20%2.\x20%3','COMMENTS_ARCHIVE_LIST_LABEL':'Danh\x20sách\x20bình\x20luận','ACCESSIBILITY_HELP_ANNOTATIONS_GROUP':'Các\x20phím\x20bấm\x20để\x20tương\x20tác\x20với\x20các\x20chủ\x20đề\x20chú\x20thích\x20(ví\x20dụ:\x20bình\x20luận,\x20theo\x20dõi\x20các\x20đề\x20xuất\x20thay\x20đổi)','ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO':'Di\x20chuyển\x20tiêu\x20điểm\x20đến\x20chủ\x20đề\x20khi\x20vùng\x20chọn\x20được\x20neo\x20trong\x20điểm\x20đánh\x20dấu\x20của\x20nó','ACCESSIBILITY_HELP_ANNOTATIONS_EXIT':'Thoát\x20khỏi\x20chú\x20thích\x20và\x20di\x20chuyển\x20tiêu\x20điểm\x20trở\x20lại\x20nội\x20dung\x20đã\x20chỉnh\x20sửa','ACCESSIBILITY_HELP_ANNOTATIONS_ENTER':'Duyệt\x20qua\x20chủ\x20đề\x20chú\x20thích\x20tập\x20trung\x20hoặc\x20bình\x20luận\x20chủ\x20đề','ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS':'Di\x20chuyển\x20qua\x20các\x20phần\x20bên\x20trong\x20của\x20chủ\x20đề\x20chú\x20thích','ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT':'Gửi\x20trả\x20lời\x20trong\x20khi\x20viết\x20bình\x20luận','ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS':'Di\x20chuyển\x20đến\x20chủ\x20đề\x20trước\x20hoặc\x20chủ\x20đề\x20tiếp\x20theo\x20trong\x20thanh\x20bên\x20chú\x20thích\x20hoặc\x20kho\x20lưu\x20trữ\x20bình\x20luận','ENTER_COMMENT_ANNOUNCEMENT':'Nhập\x20nội\x20dung\x20có\x20bình\x20luận.\x20Nhấn\x20%0\x20để\x20đi\x20đến\x20phần\x20thảo\x20luận.','LEAVE_COMMENT_ANNOUNCEMENT':'Để\x20lại\x20nội\x20dung\x20có\x20bình\x20luận.','PENDING_ACTION_COMMENT_THREAD':'Nội\x20dung\x20thay\x20đổi\x20chưa\x20lưu\x20trong\x20chuỗi\x20bình\x20luận.','EXTERNAL_COMMENT':'Nhận\x20xét\x20này\x20đến\x20từ\x20một\x20nguồn\x20bên\x20ngoài.','EXTERNAL_IMPORT_WORD_COMMENT':'Bình\x20luận\x20này\x20đến\x20từ\x20một\x20tệp\x20Word\x20được\x20nhập.','EXTERNAL_AVATAR':'Tên\x20tác\x20giả\x20được\x20hiển\x20thị\x20đến\x20từ\x20nguồn\x20bên\x20ngoài\x20\x20(do\x20%0\x20thêm\x20vào)','EXTERNAL_IMPORT_WORD_AVATAR':'Tên\x20tác\x20giả\x20được\x20hiển\x20thị\x20đến\x20từ\x20một\x20tài\x20liệu\x20Word\x20do\x20%0\x20nhập','COMMENTS_ARCHIVE':'Kho\x20lưu\x20trữ\x20bình\x20luận','EMPTY_COMMENTS_ARCHIVE':'Không\x20có\x20chủ\x20đề\x20bình\x20luận\x20nào\x20được\x20lưu\x20trữ.'},'getPluralForm':_0x10466a=>0x0}};

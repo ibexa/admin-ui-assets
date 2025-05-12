@@ -1,0 +1,28 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "A placeholder for the heading when it has no text content yet."
+msgid "Empty heading"
+msgstr "空标题"
+
+msgctxt "Document outline placeholder to display when there are no headings in the document."
+msgid "Editor headings will appear here as you type."
+msgstr "当你输入时，编辑的标题会出现在这里。"
+
+msgctxt "A hint message explaining that table of contents widget is empty because there are no headings in the document."
+msgid "No headings were found in the document."
+msgstr "文件中未发现标题。"
+
+msgctxt "A label displayed inside the table of contents widget in order to distinguish it in the document content."
+msgid "Table of contents"
+msgstr "目录"

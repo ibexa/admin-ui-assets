@@ -1,0 +1,35 @@
+/**
+ * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+:root{
+	--ck-color-comment-marker:hsl(55, 98%, 83%);
+	--ck-color-comment-marker-active:hsl(55, 98%, 68%);
+}
+
+.ck-content .ck-comment-marker{
+	background:var(--ck-color-comment-marker);
+	border-top:3px solid transparent;
+	border-bottom:3px solid transparent;
+}
+
+.ck-content .ck-comment-marker.ck-widget{
+		background-color:transparent;
+		border:3px solid var(--ck-color-comment-marker);
+	}
+
+.ck-content .ck-comment-marker--active{
+	background:var(--ck-color-comment-marker-active);
+}
+
+.ck-content .ck-comment-marker--active .ck-comment-marker{
+		background:var(--ck-color-comment-marker-active);
+	}
+
+.ck-content .ck-comment-marker--active.ck-widget{
+		border-color:var(--ck-color-comment-marker-active);
+	}
+
+.ck-content .ck-comment-marker--active.ck-widget .ck-comment-marker{
+			background-color:var(--ck-color-comment-marker);
+		}

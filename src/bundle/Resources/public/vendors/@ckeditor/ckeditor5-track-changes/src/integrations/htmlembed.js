@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+const _0x564eec=_0x4bc9;function _0x4bc9(_0x5dadc8,_0x2ddcab){const _0x402d03=_0x402d();return _0x4bc9=function(_0x4bc983,_0x8d2714){_0x4bc983=_0x4bc983-0xeb;let _0x260b07=_0x402d03[_0x4bc983];return _0x260b07;},_0x4bc9(_0x5dadc8,_0x2ddcab);}function _0x402d(){const _0x1cbc1d=['key','format','start','htmlEmbed','editor','afterInit','registerElementLabel','element','registerDescriptionCallback','enableDefaultAttributesIntegration','descriptionFactory','203jxrkEz','1321298RIgyja','*Change\x20%0\x20content*','registerBlockAttribute','HtmlEmbed','type','60KAvBzr','rawHtml','85832TmyOJq','get','788895etFKmz','has','formatBlock','plugins','1638180IuxnDt','ELEMENT_HTML_EMBED','TrackChangesEditing','3Hdunxx','1241910bbGQyw','2878036FqjVBu','20LpFRgO','nodeAfter','locale','_registerLegacyDescription','getFirstRange','attribute','commandName','997416gGZGLp','value'];_0x402d=function(){return _0x1cbc1d;};return _0x402d();}(function(_0x356160,_0x29cfd7){const _0x13c6ef=_0x4bc9,_0x22fad9=_0x356160();while(!![]){try{const _0x322777=parseInt(_0x13c6ef(0x10a))/0x1+parseInt(_0x13c6ef(0x10e))/0x2+parseInt(_0x13c6ef(0x111))/0x3*(-parseInt(_0x13c6ef(0xeb))/0x4)+-parseInt(_0x13c6ef(0xec))/0x5*(parseInt(_0x13c6ef(0xf3))/0x6)+-parseInt(_0x13c6ef(0x100))/0x7*(parseInt(_0x13c6ef(0x108))/0x8)+-parseInt(_0x13c6ef(0x112))/0x9+-parseInt(_0x13c6ef(0x106))/0xa*(-parseInt(_0x13c6ef(0x101))/0xb);if(_0x322777===_0x29cfd7)break;else _0x22fad9['push'](_0x22fad9['shift']());}catch(_0x4ccafa){_0x22fad9['push'](_0x22fad9['shift']());}}}(_0x402d,0x78e05));import{Plugin as _0x1574fd}from'ckeditor5/src/core.js';import{getTranslation as _0x5c6f86}from'../utils/common-translations.js';export default class ot extends _0x1574fd{[_0x564eec(0xfa)](){const _0x2b0b10=_0x564eec,_0x2ea499=this[_0x2b0b10(0xf9)];if(!_0x2ea499[_0x2b0b10(0x10d)][_0x2b0b10(0x10b)](_0x2b0b10(0x104)))return;const _0x3eff5e=_0x2ea499[_0x2b0b10(0x10d)][_0x2b0b10(0x109)](_0x2b0b10(0x110)),_0x484f4d=_0x2ea499[_0x2b0b10(0xee)];_0x3eff5e[_0x2b0b10(0xff)][_0x2b0b10(0xfb)](_0x2b0b10(0x107),_0x273b2b=>_0x5c6f86(_0x484f4d,_0x2b0b10(0x10f),_0x273b2b)),_0x3eff5e[_0x2b0b10(0xfe)](_0x2b0b10(0xf8)),_0x3eff5e[_0x2b0b10(0x103)](_0x2b0b10(0xf4)),_0x3eff5e[_0x2b0b10(0xff)][_0x2b0b10(0xfd)](_0x433521=>{const _0xd64e85=_0x2b0b10;if(_0xd64e85(0xf1)!=_0x433521[_0xd64e85(0x105)])return;const {data:_0x4e6ed3}=_0x433521;if(_0x4e6ed3&&_0xd64e85(0xf4)==_0x4e6ed3[_0xd64e85(0xf5)]&&_0x433521[_0xd64e85(0xf0)]()[_0xd64e85(0xf7)][_0xd64e85(0xed)]['is'](_0xd64e85(0xfc),_0xd64e85(0x107))){const _0x423fa5=_0x5c6f86(_0x484f4d,_0xd64e85(0x10f));return{'type':_0xd64e85(0xf6),'content':_0x5c6f86(_0x484f4d,_0xd64e85(0x102),_0x423fa5)};}}),this[_0x2b0b10(0xef)]();}[_0x564eec(0xef)](){const _0x42b194=_0x564eec,_0x2d65ad=this[_0x42b194(0xf9)],_0x3fe51f=_0x2d65ad[_0x42b194(0xee)];_0x2d65ad[_0x42b194(0x10d)][_0x42b194(0x109)](_0x42b194(0x110))[_0x42b194(0xff)][_0x42b194(0xfd)](_0x690f46=>{const _0xdd6a8e=_0x42b194;if(_0xdd6a8e(0x10c)!=_0x690f46[_0xdd6a8e(0x105)])return;const {data:_0x253d77}=_0x690f46;if(_0x253d77&&_0xdd6a8e(0xf8)==_0x253d77[_0xdd6a8e(0xf2)]){const _0x5dc484=_0x5c6f86(_0x3fe51f,_0xdd6a8e(0x10f));return{'type':_0xdd6a8e(0xf6),'content':_0x5c6f86(_0x3fe51f,_0xdd6a8e(0x102),_0x5dc484)};}});}}

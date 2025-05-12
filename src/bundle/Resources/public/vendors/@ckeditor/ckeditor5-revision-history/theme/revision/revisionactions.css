@@ -1,0 +1,75 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck {
+	&.ck-revision-history-sidebar__revision {
+		& .ck-revision-history-sidebar__revision__actions {
+			display: none;
+			position: absolute;
+			top: var(--ck-spacing-small);
+			right: var(--ck-spacing-small);
+
+			& .ck-dropdown__button {
+				min-width: unset;
+				min-height: unset;
+
+				& .ck-button__icon {
+					transform: scale( .7 );
+				}
+			}
+
+			& .ck-dropdown__arrow {
+				display: none;
+			}
+
+			& .ck-list__item__danger {
+				color: var(--ck-color-button-cancel);
+			}
+		}
+
+		&.ck-revision-history-sidebar__revision_selected {
+			& .ck-revision-history-sidebar__revision__actions {
+				& .ck-dropdown__button {
+					color: var(--ck-color-base-background);
+
+					&:hover,
+					&.ck-on {
+						background: var(--ck-color-base-active-focus);
+
+						&:hover {
+							filter: brightness(95%);
+						}
+					}
+				}
+			}
+		}
+
+		/* stylelint-disable no-descending-specificity */
+		&.ck-revision-history-sidebar__revision_highlighted {
+			& .ck-revision-history-sidebar__revision__actions {
+				& .ck-dropdown__button {
+					&:hover,
+					&.ck-on {
+						background: var(--ck-revision-history-revision-highlighted-background-color-hover);
+
+						&:hover {
+							filter: brightness(95%);
+						}
+					}
+				}
+			}
+		}
+		/* stylelint-enable no-descending-specificity */
+
+		&:hover:not(.ck-disabled) .ck-revision-history-sidebar__revision__actions,
+		&:not(.ck-disabled) .ck-revision-history-sidebar__revision__actions.ck-on {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,1 @@
+!function(n){const o=n.ko=n.ko||{};o.dictionary=Object.assign(o.dictionary||{},{"Editor headings will appear here as you type.":"입력 시 편집기 표제가 여기에 표시됩니다.","Empty heading":"빈 표제","No headings were found in the document.":"문서에서 표제를 찾지 못했습니다.","Table of contents":"목차"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

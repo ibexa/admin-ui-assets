@@ -1,0 +1,96 @@
+{
+  "name": "@ckeditor/ckeditor5-track-changes",
+  "version": "45.0.0",
+  "description": "CKEditor 5 track changes plugin.",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "CKSource (http://cksource.com/)",
+  "bugs": {
+    "url": "https://support.ckeditor.com/hc/en-us/requests/new"
+  },
+  "homepage": "https://ckeditor.com/collaboration/track-changes/",
+  "keywords": [
+    "CKEditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "WYSIWYG",
+    "WYSIWYW",
+    "text",
+    "rich-text",
+    "richtext",
+    "editor",
+    "editing",
+    "html",
+    "operational transformation",
+    "ot",
+    "collaboration",
+    "collaborative",
+    "real-time",
+    "realtime",
+    "framework"
+  ],
+  "type": "module",
+  "main": "src/index.js",
+  "files": [
+    "build",
+    "dist",
+    "lang",
+    "src/**/*.js",
+    "src/**/*.d.ts",
+    "theme",
+    "ckeditor5-metadata.json",
+    "CHANGELOG.md"
+  ],
+  "dependencies": {
+    "@ckeditor/ckeditor5-clipboard": "45.0.0",
+    "@ckeditor/ckeditor5-code-block": "45.0.0",
+    "@ckeditor/ckeditor5-comments": "45.0.0",
+    "@ckeditor/ckeditor5-core": "45.0.0",
+    "@ckeditor/ckeditor5-editor-multi-root": "45.0.0",
+    "@ckeditor/ckeditor5-engine": "45.0.0",
+    "@ckeditor/ckeditor5-enter": "45.0.0",
+    "@ckeditor/ckeditor5-find-and-replace": "45.0.0",
+    "@ckeditor/ckeditor5-font": "45.0.0",
+    "@ckeditor/ckeditor5-heading": "45.0.0",
+    "@ckeditor/ckeditor5-highlight": "45.0.0",
+    "@ckeditor/ckeditor5-icons": "45.0.0",
+    "@ckeditor/ckeditor5-image": "45.0.0",
+    "@ckeditor/ckeditor5-link": "45.0.0",
+    "@ckeditor/ckeditor5-list": "45.0.0",
+    "@ckeditor/ckeditor5-media-embed": "45.0.0",
+    "@ckeditor/ckeditor5-merge-fields": "45.0.0",
+    "@ckeditor/ckeditor5-restricted-editing": "45.0.0",
+    "@ckeditor/ckeditor5-style": "45.0.0",
+    "@ckeditor/ckeditor5-table": "45.0.0",
+    "@ckeditor/ckeditor5-typing": "45.0.0",
+    "@ckeditor/ckeditor5-ui": "45.0.0",
+    "@ckeditor/ckeditor5-utils": "45.0.0",
+    "@ckeditor/ckeditor5-widget": "45.0.0",
+    "ckeditor5": "45.0.0",
+    "ckeditor5-collaboration": "45.0.0",
+    "es-toolkit": "1.32.0"
+  },
+  "types": "src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    },
+    "./dist/*": {
+      "types": "./src/index.d.ts",
+      "import": "./dist/*",
+      "default": "./dist/*"
+    },
+    "./src/*": {
+      "types": "./src/*.d.ts",
+      "import": "./src/*",
+      "default": "./src/*"
+    },
+    "./build/*": "./build/*",
+    "./lang/*": "./lang/*",
+    "./theme/*": "./theme/*",
+    "./ckeditor5-metadata.json": "./ckeditor5-metadata.json",
+    "./package.json": "./package.json"
+  },
+  "obfuscated": true
+}

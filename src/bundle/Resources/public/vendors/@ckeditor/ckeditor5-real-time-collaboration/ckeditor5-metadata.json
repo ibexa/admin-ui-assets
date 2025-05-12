@@ -1,0 +1,87 @@
+{
+  "plugins": [
+    {
+      "name": "Presence list",
+      "className": "PresenceList",
+      "description": "Provides a UI which displays all users that are currently connected to the document edited in real-time collaboration. The users are displayed as a row of avatars.",
+      "docs": "features/collaboration/real-time-collaboration/users-in-real-time-collaboration.html#users-presence-list",
+      "path": "src/presencelist.js",
+      "requires": [
+        "RealTimeCollaborativeEditing"
+      ]
+    },
+    {
+      "name": "Real-time collaborative comments",
+      "className": "RealTimeCollaborativeComments",
+      "description": "Enables commenting on the content, replying to the comments, and creating discussion threads with multiple users in real-time collaboration.",
+      "docs": "features/collaboration/comments/comments.html",
+      "path": "src/realtimecollaborativecomments.js",
+      "requires": [
+        "RealTimeCollaborativeEditing"
+      ],
+      "uiComponents": [
+        {
+          "type": "Button",
+          "name": "comment",
+          "iconPath": "@ckeditor/ckeditor5-icons/theme/icons/add-comment.svg",
+          "toolbars": [
+            "main",
+            "image.toolbar",
+            "table.tableToolbar",
+            "media.toolbar"
+          ]
+        },
+        {
+          "type": "Button",
+          "name": "commentsArchive",
+          "iconPath": "@ckeditor/ckeditor5-icons/theme/icons/comments-archive.svg"
+        }
+      ]
+    },
+    {
+      "name": "Real-time collaborative editing",
+      "className": "RealTimeCollaborativeEditing",
+      "description": "The base of real-time collaboration in CKEditor 5. It allows for editing the same document by multiple users at the same time. It also shows the selection of other users in real time and automatically solves all conflicts.",
+      "docs": "features/collaboration/real-time-collaboration/real-time-collaboration.html",
+      "path": "src/realtimecollaborativeediting.js",
+      "requires": [
+        "CloudServices"
+      ]
+    },
+    {
+      "name": "Real-time collaborative track changes",
+      "className": "RealTimeCollaborativeTrackChanges",
+      "description": "Enables making suggestions on the content with multiple users in real-time collaboration.",
+      "docs": "features/collaboration/track-changes/track-changes.html",
+      "path": "src/realtimecollaborativetrackchanges.js",
+      "uiComponents": [
+        {
+          "type": "Button",
+          "name": "trackChanges",
+          "iconPath": "@ckeditor/ckeditor5-icons/theme/icons/track-changes.svg"
+        }
+      ],
+      "requires": [
+        "RealTimeCollaborativeEditing",
+        "RealTimeCollaborativeComments"
+      ]
+    },
+    {
+      "name": "Real-time collaborative revision history",
+      "className": "RealTimeCollaborativeRevisionHistory",
+      "description": "Allows users to create and view the chronological revision history of their content with the possibility to compare any given revisions of the document in real-time collaboration.",
+      "docs": "features/collaboration/real-time-collaboration/real-time-collaboration.html",
+      "path": "src/realtimecollaborativerevisionhistory.js",
+      "uiComponents": [
+        {
+          "type": "SplitButton",
+          "name": "revisionHistory",
+          "iconPath": "@ckeditor/ckeditor5-icons/theme/icons/history.svg"
+        }
+      ],
+      "requires": [
+        "RealTimeCollaborativeEditing"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck-content .ck-widget.image > figcaption {
+	&.ck-suggestion-marker-deletion {
+		background-color: var(--ck-color-suggestion-widget-deletion-background);
+		border: none;
+
+		&.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+		}
+	}
+
+	&.ck-suggestion-marker-insertion {
+		background-color: var(--ck-color-suggestion-widget-insertion-background);
+		border: none;
+
+		&.ck-suggestion-marker--active {
+			background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+		}
+	}
+}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.image {
+	background-color: var(--ck-color-suggestion-widget-deletion-background);
+
+	& img {
+		opacity: 0.6;
+	}
+
+	& figcaption {
+		background-color: var(--ck-color-suggestion-widget-deletion-background);
+	}
+
+	&.ck-suggestion-marker--active {
+		background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+
+		& figcaption {
+			background-color: var(--ck-color-suggestion-widget-deletion-background-active);
+		}
+	}
+}
+
+.ck-content .ck-suggestion-marker-insertion.ck-widget.image {
+	background-color: var(--ck-color-suggestion-widget-insertion-background);
+
+	/* stylelint-disable no-descending-specificity */
+	& figcaption {
+		background-color: var(--ck-color-suggestion-widget-insertion-background);
+	}
+	/* stylelint-enable no-descending-specificity */
+
+	&.ck-suggestion-marker--active {
+		background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+
+		& figcaption {
+			background-color: var(--ck-color-suggestion-widget-insertion-background-active);
+		}
+	}
+}

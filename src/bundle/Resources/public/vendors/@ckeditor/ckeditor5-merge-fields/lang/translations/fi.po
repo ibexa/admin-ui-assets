@@ -1,0 +1,56 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "A toolbar button tooltip for the merge fields feature."
+msgid "Insert merge field"
+msgstr "Lisää yhdistämiskenttä"
+
+msgctxt "A menu bar button label in the 'Insert' menu for inserting the merge field."
+msgid "Merge field"
+msgstr "Yhdistämiskenttä"
+
+msgctxt "The placeholder for the search input to filter the merge fields."
+msgid "Search merge field"
+msgstr "Hae yhdistämiskenttää"
+
+msgctxt "The message displayed when the merge field search input does not match any merge fields."
+msgid "No merge fields found"
+msgstr "Yhdistämiskenttiä ei löytynyt"
+
+msgctxt "The message displayed when there are no merge fields available in the insert merge field dropdown."
+msgid "No merge fields available"
+msgstr "Yhdistämiskenttiä ei käytettävissä"
+
+msgctxt "The title of the panel containing the available merge fields preview modes."
+msgid "Merge fields preview"
+msgstr "Yhdistämiskenttien esikatselu"
+
+msgctxt "A name for the merge fields preview option showing the merge fields labels."
+msgid "Labels"
+msgstr "Selitteet"
+
+msgctxt "A name for the merge fields preview option showing the merge fields default values."
+msgid "Default values"
+msgstr "Oletusarvot"
+
+msgctxt "A warning message displayed when the merge field data is missing."
+msgid "WARNING_MISSING_DATA"
+msgstr "Arvo ei saatavilla."
+
+msgctxt "A warning message displayed when the default value for a merge field is missing."
+msgid "WARNING_MISSING_DEFAULT_VALUE"
+msgstr "Oletusarvo ei saatavilla."
+
+msgctxt "A warning message displayed when the merge field data is missing and the default value is used."
+msgid "WARNING_MISSING_DATA_USED_DEFAULT_VALUE"
+msgstr "Oletusarvo käytössä."

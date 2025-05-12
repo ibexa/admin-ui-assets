@@ -1,0 +1,426 @@
+/**
+ * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+:root{
+	--ck-user-colors--0:hsla(235, 73%, 67%, 1);
+	--ck-user-colors--0-alpha:hsla(235, 73%, 67%, 0.15);
+
+	--ck-user-colors--1:hsla(173, 100%, 24%, 1);
+	--ck-user-colors--1-alpha:hsla(173, 100%, 24%, 0.15);
+
+	--ck-user-colors--2:hsla(0, 46%, 50%, 1);
+	--ck-user-colors--2-alpha:hsla(0, 46%, 50%, 0.15);
+
+	--ck-user-colors--3:hsla(256, 54%, 45%, 1);
+	--ck-user-colors--3-alpha:hsla(256, 54%, 45%, 0.15);
+
+	--ck-user-colors--4:hsla(95, 50%, 36%, 1);
+	--ck-user-colors--4-alpha:hsla(95, 50%, 36%, 0.15);
+
+	--ck-user-colors--5:hsla(336, 78%, 43%, 1);
+	--ck-user-colors--5-alpha:hsla(336, 78%, 43%, 0.15);
+
+	--ck-user-colors--6:hsla(0, 80%, 59%, 1);
+	--ck-user-colors--6-alpha:hsla(0, 80%, 59%, 0.15);
+
+	--ck-user-colors--7:hsla(184, 90%, 43%, 1);
+	--ck-user-colors--7-alpha:hsla(184, 90%, 43%, 0.15);
+
+	--ck-user-dot-size:6px;
+}
+
+.ck .ck-user__color--0{
+		color:var(--ck-user-colors--0);
+	}
+
+.ck .ck-user__bg-color--0{
+		background-color:var(--ck-user-colors--0);
+	}
+
+.ck .ck-user__selection--0{
+		background-color:var(--ck-user-colors--0-alpha);
+	}
+
+.ck .ck-user__selection--0.ck-widget{
+			background-color:transparent;
+			border:3px solid var(--ck-user-colors--0);
+		}
+
+.ck .ck-user__marker--0, .ck .ck-user__marker--0 .ck-user__marker-tooltip, .ck .ck-user__marker--0 .ck-user__marker-dot, .ck .ck-user__marker--0::selection, .ck .ck-user__marker--0 .ck-user__marker-tooltip::selection, .ck .ck-user__marker--0 .ck-user__marker-dot::selection{
+				background-color:var(--ck-user-colors--0);
+			}
+
+.ck .ck-user__marker--0 .ck-user__marker-line{
+			border:1px solid var(--ck-user-colors--0);
+		}
+.ck .ck-user__color--1{
+		color:var(--ck-user-colors--1);
+	}
+.ck .ck-user__bg-color--1{
+		background-color:var(--ck-user-colors--1);
+	}
+.ck .ck-user__selection--1{
+		background-color:var(--ck-user-colors--1-alpha);
+	}
+.ck .ck-user__selection--1.ck-widget{
+			background-color:transparent;
+			border:3px solid var(--ck-user-colors--1);
+		}
+.ck .ck-user__marker--1, .ck .ck-user__marker--1 .ck-user__marker-tooltip, .ck .ck-user__marker--1 .ck-user__marker-dot, .ck .ck-user__marker--1::selection, .ck .ck-user__marker--1 .ck-user__marker-tooltip::selection, .ck .ck-user__marker--1 .ck-user__marker-dot::selection{
+				background-color:var(--ck-user-colors--1);
+			}
+.ck .ck-user__marker--1 .ck-user__marker-line{
+			border:1px solid var(--ck-user-colors--1);
+		}
+.ck .ck-user__color--2{
+		color:var(--ck-user-colors--2);
+	}
+.ck .ck-user__bg-color--2{
+		background-color:var(--ck-user-colors--2);
+	}
+.ck .ck-user__selection--2{
+		background-color:var(--ck-user-colors--2-alpha);
+	}
+.ck .ck-user__selection--2.ck-widget{
+			background-color:transparent;
+			border:3px solid var(--ck-user-colors--2);
+		}
+.ck .ck-user__marker--2, .ck .ck-user__marker--2 .ck-user__marker-tooltip, .ck .ck-user__marker--2 .ck-user__marker-dot, .ck .ck-user__marker--2::selection, .ck .ck-user__marker--2 .ck-user__marker-tooltip::selection, .ck .ck-user__marker--2 .ck-user__marker-dot::selection{
+				background-color:var(--ck-user-colors--2);
+			}
+.ck .ck-user__marker--2 .ck-user__marker-line{
+			border:1px solid var(--ck-user-colors--2);
+		}
+.ck .ck-user__color--3{
+		color:var(--ck-user-colors--3);
+	}
+.ck .ck-user__bg-color--3{
+		background-color:var(--ck-user-colors--3);
+	}
+.ck .ck-user__selection--3{
+		background-color:var(--ck-user-colors--3-alpha);
+	}
+.ck .ck-user__selection--3.ck-widget{
+			background-color:transparent;
+			border:3px solid var(--ck-user-colors--3);
+		}
+.ck .ck-user__marker--3, .ck .ck-user__marker--3 .ck-user__marker-tooltip, .ck .ck-user__marker--3 .ck-user__marker-dot, .ck .ck-user__marker--3::selection, .ck .ck-user__marker--3 .ck-user__marker-tooltip::selection, .ck .ck-user__marker--3 .ck-user__marker-dot::selection{
+				background-color:var(--ck-user-colors--3);
+			}
+.ck .ck-user__marker--3 .ck-user__marker-line{
+			border:1px solid var(--ck-user-colors--3);
+		}
+.ck .ck-user__color--4{
+		color:var(--ck-user-colors--4);
+	}
+.ck .ck-user__bg-color--4{
+		background-color:var(--ck-user-colors--4);
+	}
+.ck .ck-user__selection--4{
+		background-color:var(--ck-user-colors--4-alpha);
+	}
+.ck .ck-user__selection--4.ck-widget{
+			background-color:transparent;
+			border:3px solid var(--ck-user-colors--4);
+		}
+.ck .ck-user__marker--4, .ck .ck-user__marker--4 .ck-user__marker-tooltip, .ck .ck-user__marker--4 .ck-user__marker-dot, .ck .ck-user__marker--4::selection, .ck .ck-user__marker--4 .ck-user__marker-tooltip::selection, .ck .ck-user__marker--4 .ck-user__marker-dot::selection{
+				background-color:var(--ck-user-colors--4);
+			}
+.ck .ck-user__marker--4 .ck-user__marker-line{
+			border:1px solid var(--ck-user-colors--4);
+		}
+.ck .ck-user__color--5{
+		color:var(--ck-user-colors--5);
+	}
+.ck .ck-user__bg-color--5{
+		background-color:var(--ck-user-colors--5);
+	}
+.ck .ck-user__selection--5{
+		background-color:var(--ck-user-colors--5-alpha);
+	}
+.ck .ck-user__selection--5.ck-widget{
+			background-color:transparent;
+			border:3px solid var(--ck-user-colors--5);
+		}
+.ck .ck-user__marker--5, .ck .ck-user__marker--5 .ck-user__marker-tooltip, .ck .ck-user__marker--5 .ck-user__marker-dot, .ck .ck-user__marker--5::selection, .ck .ck-user__marker--5 .ck-user__marker-tooltip::selection, .ck .ck-user__marker--5 .ck-user__marker-dot::selection{
+				background-color:var(--ck-user-colors--5);
+			}
+.ck .ck-user__marker--5 .ck-user__marker-line{
+			border:1px solid var(--ck-user-colors--5);
+		}
+.ck .ck-user__color--6{
+		color:var(--ck-user-colors--6);
+	}
+.ck .ck-user__bg-color--6{
+		background-color:var(--ck-user-colors--6);
+	}
+.ck .ck-user__selection--6{
+		background-color:var(--ck-user-colors--6-alpha);
+	}
+.ck .ck-user__selection--6.ck-widget{
+			background-color:transparent;
+			border:3px solid var(--ck-user-colors--6);
+		}
+.ck .ck-user__marker--6, .ck .ck-user__marker--6 .ck-user__marker-tooltip, .ck .ck-user__marker--6 .ck-user__marker-dot, .ck .ck-user__marker--6::selection, .ck .ck-user__marker--6 .ck-user__marker-tooltip::selection, .ck .ck-user__marker--6 .ck-user__marker-dot::selection{
+				background-color:var(--ck-user-colors--6);
+			}
+.ck .ck-user__marker--6 .ck-user__marker-line{
+			border:1px solid var(--ck-user-colors--6);
+		}
+.ck .ck-user__color--7{
+		color:var(--ck-user-colors--7);
+	}
+.ck .ck-user__bg-color--7{
+		background-color:var(--ck-user-colors--7);
+	}
+.ck .ck-user__selection--7{
+		background-color:var(--ck-user-colors--7-alpha);
+	}
+.ck .ck-user__selection--7.ck-widget{
+			background-color:transparent;
+			border:3px solid var(--ck-user-colors--7);
+		}
+.ck .ck-user__marker--7, .ck .ck-user__marker--7 .ck-user__marker-tooltip, .ck .ck-user__marker--7 .ck-user__marker-dot, .ck .ck-user__marker--7::selection, .ck .ck-user__marker--7 .ck-user__marker-tooltip::selection, .ck .ck-user__marker--7 .ck-user__marker-dot::selection{
+				background-color:var(--ck-user-colors--7);
+			}
+.ck .ck-user__marker--7 .ck-user__marker-line{
+			border:1px solid var(--ck-user-colors--7);
+		}
+
+:root{
+	--ck-user-avatar-size:40px;
+	--ck-user-avatar-background:hsl(210, 52%, 44%);
+	--ck-user-avatar-color:hsl(0, 0%, 100%);
+	--ck-user-me-border-color:hsl(0, 0%, 100%);
+}
+
+.ck.ck-user{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	position:relative;
+	border-radius:50%;
+	background-color:var(--ck-user-avatar-background);
+	box-sizing:border-box;
+	height:var(--ck-user-avatar-size);
+	width:var(--ck-user-avatar-size);
+	min-width:var(--ck-user-avatar-size);
+	min-height:var(--ck-user-avatar-size);
+	line-height:100%;
+	margin:2px;
+}
+
+.ck.ck-user.ck-user_me{
+		border:2px solid var(--ck-user-me-border-color);
+		outline:2px solid var(--ck-user-avatar-background);
+	}
+
+.ck.ck-user__name{
+	color:var(--ck-user-avatar-color);
+	cursor:default;
+	-moz-user-select:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+.ck.ck-user__name.ck-user__name--hidden{
+		display:none;
+	}
+
+.ck.ck-user__img{
+	display:none;
+	width:100%;
+	height:100%;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-color:var(--ck-user-avatar-background);
+	border-radius:50%;
+	border:none;
+}
+
+.ck.ck-user__img.ck-user__anonymous{
+		display:block;
+		background-image:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFF%22%20fill-rule%3D%22nonzero%22%20d%3D%22M9.8%2020H2c0-5.7%205-5.7%206-7l.2-.8c-1.6-.8-2.7-2.7-2.7-5%200-2.8%202-5.2%204.3-5.2S14%204.4%2014%207.3c0%202.2-1%204-2.6%205l.2.6c1.2%201.3%206%201.4%206%207H9.8z%22%2F%3E%0A%3C%2Fsvg%3E);
+	}
+
+.ck.ck-user__img.ck-user__anonymous + .ck-user__name{
+			display:none;
+		}
+
+.ck.ck-user__img.ck-user__avatar{
+		display:block;
+		background-color:hsl(0, 0%, 100%);
+	}
+
+.ck.ck-user__img.ck-user__img--hidden{
+		display:none;
+	}
+
+.ck.ck-user__notification{
+	display:flex;
+	width:15px;
+	height:15px;
+	justify-content:center;
+	align-items:center;
+	background:var(--ck-color-base-background);
+	border:2px solid var(--ck-color-base-background);
+	border-radius:50%;
+	box-sizing:content-box;
+
+	position:absolute;
+	top:-8px;
+	right:-7px;
+	overflow:hidden;
+	transform:translateZ(0);
+}
+
+.ck.ck-user__notification .ck-user__icon{
+		color:var(--ck-color-annotation-info);
+		background:var(--ck-color-base-background);
+		width:19px;
+		height:19px;
+		max-width:19px;
+		max-height:19px;
+		min-width:19px;
+		min-height:19px;
+	}
+
+:root{
+	--ck-color-comment-box-border:hsl(55, 98%, 48%);
+	--ck-color-suggestion-box-deletion-border:hsl(345, 62%, 60%);
+	--ck-color-suggestion-box-insertion-border:hsl(128, 62%, 60%);
+	--ck-color-suggestion-box-format-border:hsl(191, 62%, 60%);
+}
+
+.ck .ck-suggestion{
+	border-top-left-radius:var(--ck-border-radius);
+}
+
+.ck .ck-suggestion:focus{
+		background:var(--ck-color-button-default-hover-background);
+		outline:none;
+	}
+
+.ck .ck-annotation{
+	border-left:3px solid transparent;
+}
+.ck .ck-suggestion--disabled-comments .ck-annotation{
+	min-height:80px;
+}
+.ck .ck-comment,
+.ck .ck-thread__comment-count,
+.ck .ck-comment__input-container,
+.ck .ck-thread__header{
+	border-left:3px solid var(--ck-color-comment-box-border);
+}
+
+.ck .ck-suggestion-insertion .ck-suggestion{
+	border-left-color:var(--ck-color-suggestion-box-insertion-border);
+}
+
+.ck .ck-suggestion-deletion .ck-suggestion{
+	border-left-color:var(--ck-color-suggestion-box-deletion-border);
+}
+
+.ck .ck-suggestion-replace .ck-suggestion{
+	border-left-color:var(--ck-color-suggestion-box-insertion-border);
+}
+
+.ck .ck-suggestion-format .ck-suggestion{
+	border-left-color:var(--ck-color-suggestion-box-format-border);
+}
+
+.ck .ck-suggestion-wrapper{
+	border-radius:0;
+
+	overflow:hidden;
+}
+
+.ck-rounded-corners .ck .ck-suggestion-wrapper,
+	.ck .ck-suggestion-wrapper.ck-rounded-corners{
+		border-radius:var(--ck-border-radius);
+	}
+
+.ck .ck-suggestion-wrapper:focus{
+		outline:var(--ck-focus-ring);
+		box-shadow:0 0 0 4px var(--ck-color-focus-outer-shadow);
+	}
+.ck-balloon-panel:has( .ck-suggestion-wrapper:focus){
+	outline:none;
+	border:var(--ck-focus-ring);
+	box-shadow:var(--ck-drop-shadow), var(--ck-focus-outer-shadow);
+}
+
+.ck .ck-suggestion-type{
+	font-weight:bold;
+}
+
+.ck .ck-suggestion-color{
+	display:inline-block;
+	width:14px;
+	height:14px;
+	border-radius:14px;
+	vertical-align:text-bottom;
+	margin:0 5px;
+	box-shadow:0 0 0 1px hsl(0, 0%, 27%);
+}
+.ck .ck-suggestion-insertion .ck-comment,
+.ck .ck-suggestion-insertion .ck-thread__comment-count,
+.ck .ck-suggestion-insertion .ck-comment__input-container,
+.ck .ck-suggestion-replace .ck-comment,
+.ck .ck-suggestion-replace .ck-thread__comment-count,
+.ck .ck-suggestion-replace .ck-comment__input-container{
+	border-left-color:var(--ck-color-suggestion-box-insertion-border);
+}
+
+.ck .ck-suggestion-deletion .ck-comment,
+.ck .ck-suggestion-deletion .ck-thread__comment-count,
+.ck .ck-suggestion-deletion .ck-comment__input-container{
+	border-left-color:var(--ck-color-suggestion-box-deletion-border);
+}
+
+.ck .ck-suggestion-format .ck-comment,
+.ck .ck-suggestion-format .ck-thread__comment-count,
+.ck .ck-suggestion-format .ck-comment__input-container{
+	border-left-color:var(--ck-color-suggestion-box-format-border);
+}
+
+:root{
+	--ck-color-suggestion-marker-insertion-border:hsla(128, 71%, 40%, .35);
+	--ck-color-suggestion-marker-insertion-border-active:hsla(128, 71%, 25%, .5);
+	--ck-color-suggestion-marker-insertion-background:hsla(128, 71%, 65%, .35);
+	--ck-color-suggestion-marker-insertion-background-active:hsla(128, 71%, 50%, .5);
+
+	--ck-color-suggestion-marker-deletion-border:hsla(345, 71%, 40%, .35);
+	--ck-color-suggestion-marker-deletion-border-active:hsla(345, 71%, 25%, .5);
+	--ck-color-suggestion-marker-deletion-background:hsla(345, 71%, 65%, .35);
+	--ck-color-suggestion-marker-deletion-background-active:hsla(345, 71%, 50%, .5);
+	--ck-color-suggestion-marker-deletion-stroke:hsla(345, 71%, 20%, .5);
+
+	--ck-color-suggestion-marker-format-border:hsla(191, 60%, 75%, 1);
+	--ck-color-suggestion-marker-format-border-active:hsla(191, 60%, 60%, 1);
+
+	--ck-color-suggestion-widget-insertion-background:hsla(128, 71%, 65%, .05);
+	--ck-color-suggestion-widget-insertion-background-active:hsla(128, 71%, 50%, .07);
+
+	--ck-color-suggestion-widget-deletion-background:hsla(345, 71%, 65%, .05);
+	--ck-color-suggestion-widget-deletion-background-active:hsla(345, 71%, 45%, .07);
+
+	--ck-color-suggestion-widget-format-background:hsla(191, 90%, 40%, .09);
+	--ck-color-suggestion-widget-format-background-active:hsla(191, 90%, 40%, .16);
+}
+
+.ck.ck-aria-description{
+	display:none;
+}
+
+:root{
+	--ck-color-suggestion-widget-th-insertion-background:hsla(128, 71%, 65%, .12);
+	--ck-color-suggestion-widget-th-insertion-background-active:hsla(128, 71%, 50%, .14);
+
+	--ck-color-suggestion-widget-th-deletion-background:hsla(345, 71%, 65%, .14);
+	--ck-color-suggestion-widget-th-deletion-background-active:hsla(345, 71%, 45%, .16);
+}

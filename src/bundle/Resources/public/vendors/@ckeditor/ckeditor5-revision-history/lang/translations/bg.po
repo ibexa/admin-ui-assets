@@ -1,0 +1,130 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: bg\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The prefix for a name of a revision created by restoring other revision."
+msgid "Restored"
+msgstr "Възстановен"
+
+msgctxt "The name for an initial revision that is empty."
+msgid "Empty document"
+msgstr "Празен документ"
+
+msgctxt "The name for an initial revision (if it was not empty)."
+msgid "Initial revision"
+msgstr "Първоначална ревизия"
+
+msgctxt "The label for a dropdown item to compare given revision with already selected revision."
+msgid "Compare against selected"
+msgstr "Сравни с избрания"
+
+msgctxt "The label for a dropdown item to rename given revision."
+msgid "Name this revision"
+msgstr "Наименувай тази ревизия"
+
+msgctxt "The label for the user who saved the revision."
+msgid "Revision creator"
+msgstr "Създател на ревизията"
+
+msgctxt "The label for users who introduced changes in the revision."
+msgid "Revision author"
+msgstr "Автор на ревизията"
+
+msgctxt "The label for the revision name."
+msgid "Revision name"
+msgstr "Име на ревизията"
+
+msgctxt "The label for a toolbar form field where a name for a new revision should be provided."
+msgid "Name of the revision"
+msgstr "Име на редакцията"
+
+msgctxt "The part of a toolbar form field label that indicates the field is optional."
+msgid "optional"
+msgstr "по желание"
+
+msgctxt "The label for a dropdown item that saves current revision."
+msgid "Save current revision"
+msgstr "Запази текущата ревизия"
+
+msgctxt "The label for a dropdown item to open the revision history view (revision viewer)."
+msgid "Open revision history"
+msgstr "Отвори история на ревизиите"
+
+msgctxt "The label for the sidebar in revision viewer."
+msgid "Revision history"
+msgstr "История на ревизиите"
+
+msgctxt "The label for a change tooltip for a suggestion change, shown in revision viewer."
+msgid "Suggested by"
+msgstr "Предложен от"
+
+msgctxt "The label for a change tooltip for an insertion change, shown in revision viewer."
+msgid "Added by"
+msgstr "Добавено от"
+
+msgctxt "The label for a change tooltip for a remove change, shown in revision viewer."
+msgid "Removed by"
+msgstr "Премахнат от"
+
+msgctxt "Displayed in the revision viewer toolbar when loading a revision."
+msgid "Loading..."
+msgstr "Зарежда..."
+
+msgctxt "Displayed in the revision viewer toolbar when the compared revisions have no changes."
+msgid "No changes"
+msgstr "Няма промени"
+
+msgctxt "Displayed in the revision viewer toolbar when the compared revisions have changes."
+msgid "NUMBER_OF_CHANGES"
+msgid_plural "%0 changes"
+msgstr[0] "%0 промяна"
+msgstr[1] "%0 промяна"
+
+msgctxt "Edit: (2 of 5)"
+msgid "X_OF_Y_CHANGES"
+msgstr "%0 от %1"
+
+msgctxt "The label for a button that highlights previous change in revision viewer."
+msgid "Show previous change"
+msgstr "Покажи предишна промяна"
+
+msgctxt "The label for a button that highlights next change in revision viewer."
+msgid "Show next change"
+msgstr "Покажи следваща промяна"
+
+msgctxt "(Total): 5 changes"
+msgid "Total"
+msgstr "Общо"
+
+msgctxt "(Edit): 2 of 5"
+msgid "EDIT_X_OF_Y_REVISIONS"
+msgstr "Редактирай"
+
+msgctxt "The label for a button that closes revision viewer and shows editor."
+msgid "Back to editing"
+msgstr "Обратно към редактиране"
+
+msgctxt "The label for a button that restores given revision."
+msgid "Restore this revision"
+msgstr "Възстанови тази ревизия"
+
+msgctxt "The label for the alert shown when closing the editor with an unsaved revision history change."
+msgid "PENDING_ACTION_REVISION_HISTORY"
+msgstr "Незапазена промяна в историята на ревизиите."
+
+msgctxt "The placeholder for a form input field where a name for a new revision should be provided."
+msgid "Enter the revision name"
+msgstr "Въвеждане на име на редакцията"
+
+msgctxt "An error text displayed when user attempted to save a revision without providing its name."
+msgid "The revision name cannot be empty."
+msgstr "Името на редакцията не може да бъде празно"

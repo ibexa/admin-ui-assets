@@ -1,0 +1,176 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: el\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for the comment editor."
+msgid "Comment editor"
+msgstr "Επεξεργαστής σχολίου"
+
+msgctxt "The label for the number of comments."
+msgid "NUMBER_OF_COMMENTS"
+msgid_plural "%0 Comments"
+msgstr[0] "%0 Σχόλια"
+msgstr[1] "%0 Σχόλια"
+
+msgctxt "The alert displayed for a comment that is too long."
+msgid "TOO_LONG_COMMENT_ALERT"
+msgstr "Το περιεχόμενο του σχολείου είναι μεγάλο. Το σχόλιό σας έχει %0 χαρακτήρες και το όριο είναι %1 χαρακτήρες."
+
+msgctxt "The placeholder for the reply field."
+msgid "Reply..."
+msgstr "Απάντηση..."
+
+msgctxt "The placeholder for the reply field when the comment thread is resolved."
+msgid "Reply to reopen discussion..."
+msgstr "Απάντηση για να ανοίξει ξανά η συζήτηση..."
+
+msgctxt "The placeholder for the new commend field."
+msgid "Write a comment..."
+msgstr "Γράψτε ένα σχόλιο..."
+
+msgctxt "The information that comment was made on element and has no context"
+msgid "Comment was made on an element"
+msgstr "Έγινε σχόλιο σε ένα στοιχείο"
+
+msgctxt "The label for the button that enables editing a comment."
+msgid "Edit"
+msgstr "Επεξεργασία"
+
+msgctxt "The label for the button that resolves a comment thread."
+msgid "Resolve"
+msgstr "Επίλυση"
+
+msgctxt "The label for the button that reopens a resolved comment thread."
+msgid "Reopen"
+msgstr "Άνοιγμα ξανά"
+
+msgctxt "The label for the button that deletes a comment."
+msgid "Remove"
+msgstr "Απομάκρυνση"
+
+msgctxt "The label for for the button that adds a reply to a comment thread."
+msgid "Reply"
+msgstr "Απάντηση"
+
+msgctxt "The confirmation message shown after pressing the delete comment button."
+msgid "Delete comment?"
+msgstr "Διαγραφή σχολίου;"
+
+msgctxt "The confirmation message shown after pressing the delete comment thread button."
+msgid "Delete comment thread?"
+msgstr "Διαγραφή νήματος σχολίους"
+
+msgctxt "A message informing that the comment has been resolved"
+msgid "Marked as resolved"
+msgstr "Επισημάνθηκε ως επιλυμένο"
+
+msgctxt "The tooltip for the comment toolbar button and the button that submits a comment thread."
+msgid "Comment"
+msgstr "Σχόλιο"
+
+msgctxt "The accessible label for the annotations sidebar."
+msgid "Annotations sidebar"
+msgstr "Πλευρική μπάρα σχολιασμών"
+
+msgctxt "The accessible label for the list annotations in the annotations sidebar."
+msgid "Annotations list"
+msgstr "Λίστα σχολιασμών"
+
+msgctxt "The accessible label for the list of thread comments in an annotation."
+msgid "Thread comments"
+msgstr "Σχόλια του thread"
+
+msgctxt "The accessible label describing the context of the comment thread (e.g. editor content being discussed)."
+msgid "THREAD_CONTEXT_LABEL"
+msgstr "Περιεχόμενο του thread (νήματος): %0"
+
+msgctxt "The accessible label describing the comment thread."
+msgid "COMMENT_THREAD_LABEL"
+msgid_plural "Comment thread by %1. %0 replies."
+msgstr[0] "Thread σχολίων από %1. %1 απάντηση."
+msgstr[1] "Thread σχολίων από %1. %1 απάντηση."
+
+msgctxt "The accessible label providing extra information about navigation in the comment thread."
+msgid "COMMENT_THREAD_DESCRIPTION"
+msgstr "Πατήστε \"Είσοδος\" για περισσότερες επιλογές. Πατήστε \"Έξοδος\" για έξοδο."
+
+msgctxt "The accessible label for a single comment."
+msgid "COMMENT_ARIA_LABEL"
+msgstr "Σχόλιο από %0. Δημιουργήθηκε στις %1. %2. %3"
+
+msgctxt "The accessible label for the list of archived comments."
+msgid "COMMENTS_ARCHIVE_LIST_LABEL"
+msgstr "Λίστα σχολίων"
+
+msgctxt "The accessibility help dialog description of the group of keystrokes related to annotations."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_GROUP"
+msgstr "Πληκτρολογήσεις για αλληλεπίδραση με thread σχολιασμού (π.χ. σχόλια, προτάσεις αλλαγών κομματιού)"
+
+msgctxt "The accessibility help dialog keystroke description for moving from the edited content to the annotation."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO"
+msgstr "Μετακινήστε την εστίαση στο thread όταν η επιλογή είναι στερεωμένη στον δείκτη του"
+
+msgctxt "The accessibility help dialog keystroke description for moving away from an annotation."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_EXIT"
+msgstr "Βγείτε από τον σχολιασμό και μετακινήστε την εστίαση πίσω στο επεξεργασμένο περιεχόμενο"
+
+msgctxt "The accessibility help dialog keystroke description for entering a thread."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_ENTER"
+msgstr "Περιηγηθείτε στο  εστιασμένο thread σχολιασμών ή στο σχόλιο του thread"
+
+msgctxt "The accessibility help dialog keystroke description for moving across the internals of a thread."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS"
+msgstr "Μετακινηθείτε στα εσωτερικά στοιχεία των σχολιασμών του thread"
+
+msgctxt "The accessibility help dialog keystroke description for submitting a comment."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT"
+msgstr "Υποβάλετε την απάντηση γράφοντας ένα σχόλιο"
+
+msgctxt "The accessibility help dialog keystroke description for navigating between annotations (threads)."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS"
+msgstr "Μεταβείτε στο προηγούμενο ή επόμενο thread στην πλευρική μπάρα σχολιασμών ή στο αρχείο σχολίων"
+
+msgctxt "A message read out by assistive technologies the moment the user selection moves into a comment."
+msgid "ENTER_COMMENT_ANNOUNCEMENT"
+msgstr "Εισαγωγή περιεχομένου με σχόλια. Πατήστε %0 για να μεταβείτε στη συζήτηση."
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a comment."
+msgid "LEAVE_COMMENT_ANNOUNCEMENT"
+msgstr "Αφήνοντας  ένα περιεχόμενο με σχόλια."
+
+msgctxt "The label for an alert shown when closing the editor with an unsaved comment change."
+msgid "PENDING_ACTION_COMMENT_THREAD"
+msgstr "Μη αποθηκευμένη αλλαγή σε νήμα σχολίου."
+
+msgctxt "The additional information that comments comes from external source."
+msgid "EXTERNAL_COMMENT"
+msgstr "Αυτό το σχόλιο προέρχεται από εξωτερική πηγή."
+
+msgctxt "The additional information that comments comes from imported Word file."
+msgid "EXTERNAL_IMPORT_WORD_COMMENT"
+msgstr "Αυτό το σχόλιο προέρχεται από ένα εισαγόμενο αρχείο Word."
+
+msgctxt "The additional information that displayed author name comes from an external source."
+msgid "EXTERNAL_AVATAR"
+msgstr "Το εμφανιζόμενο όνομα συντάκτη προέρχεται από εξωτερική πηγή (προστέθηκε από %0)"
+
+msgctxt "The additional information that displayed author name comes from imported Word file."
+msgid "EXTERNAL_IMPORT_WORD_AVATAR"
+msgstr "Το εμφανιζόμενο όνομα συντάκτη προέρχεται από ένα έγγραφο του Word που έχει εισαχθεί από %0"
+
+msgctxt "The label for the comments archive dropdown UI."
+msgid "COMMENTS_ARCHIVE"
+msgstr "Αρχείο σχολίων"
+
+msgctxt "The information that comments archive is empty."
+msgid "EMPTY_COMMENTS_ARCHIVE"
+msgstr "Δεν υπάρχουν αρχειοθετημένα νήματα σχολίων."

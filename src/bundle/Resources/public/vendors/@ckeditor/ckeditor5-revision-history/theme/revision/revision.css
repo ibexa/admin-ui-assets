@@ -1,0 +1,175 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck {
+	--ck-revision-history-revision-background-color: var(--ck-color-base-background);
+	--ck-revision-history-revision-border-color: hsl(213deg 20% 35%);
+	--ck-revision-history-revision-box-shadow: 0 1px 1px 1px hsl(0deg 0% 90%);
+	--ck-revision-history-revision-author-icon-offset: 20px;
+	--ck-revision-history-revision-transitions: background 100ms ease-in, border 100ms ease-in;
+	--ck-revision-history-revision-selected-text-color: var(--ck-color-base-background);
+	--ck-revision-history-revision-selected-input-text-color-empty: var(--ck-color-base-background);
+	--ck-revision-history-revision-selected-background-color: var(--ck-color-base-active);
+	--ck-revision-history-revision-highlighted-background-color: hsl(208deg 100% 94%);
+	--ck-revision-history-revision-highlighted-background-color-hover: hsl(208deg 100% 90%);
+	--ck-revision-history-revision-delete-confirmation-background: hsl(0deg 100% 90%);
+	--ck-revision-history-revision-delete-confirmation-active-button-background: hsl(0deg 100% 85%);
+}
+
+.ck.ck-revision-history-sidebar__revision-wrapper {
+	& .ck-revision-history-sidebar__revision {
+		position: relative;
+		display: block;
+		background: var(--ck-revision-history-revision-background-color);
+
+		padding: var(--ck-spacing-large) calc(2 * var(--ck-spacing-standard));
+		border-radius: var(--ck-border-radius);
+		border-left: 3px solid var(--ck-revision-history-revision-border-color);
+		box-shadow: var(--ck-revision-history-revision-box-shadow);
+		width: 100%;
+		/*transition: var(--ck-revision-history-revision-transitions), transform .3s ease-in-out;*/
+		transition: transform .3s ease;
+
+		@media (prefers-reduced-motion: reduce) {
+			transition: none;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		& .ck-revision-history-sidebar__revision__date {
+			display: block;
+			font-size: var(--ck-font-size-small);
+			font-weight: bold;
+			opacity: .8;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			width: 100%;
+			white-space: nowrap;
+			/*transition: var(--ck-revision-history-revision-transitions);*/
+		}
+
+		& .ck-revision-history-sidebar__revision__controls-wrapper {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			margin: var(--ck-spacing-standard) 0 0;
+		}
+
+		& .ck-revision-history-sidebar__revision-authors {
+			padding: 0;
+			margin: 0 0 0 var(--ck-revision-history-revision-author-icon-offset);
+			flex: 0 1 auto;
+			min-width: 0;
+		}
+
+		&.ck-revision-history-sidebar__revision_selected,
+		&.ck-revision-history-sidebar__revision_highlighted {
+			border-left-color: transparent;
+			transform: translateX(calc(-1 * var(--ck-revision-history-sidebar-timeline-padding)));
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		&.ck-revision-history-sidebar__revision_selected {
+			background: var(--ck-revision-history-revision-selected-background-color);
+			color: var(--ck-revision-history-revision-selected-text-color);
+
+			& .ck-revision-history-sidebar__revision-name .ck-input {
+				color: var(--ck-revision-history-revision-selected-text-color);
+
+				/* The placeholder displays the date but without a different opacity it would not be unclear
+				whether this is an actual input value or not */
+				&.ck-input-text_empty::placeholder {
+					opacity: .7;
+				}
+			}
+		}
+
+		&.ck-revision-history-sidebar__revision_highlighted {
+			background: var(--ck-revision-history-revision-highlighted-background-color);
+		}
+
+		&.ck-revision-history-sidebar__actions_dropdown_open {
+			z-index: var(--ck-z-default);
+		}
+	}
+
+	/* Slide the revision to the left when the delete confirmation prompt shows up. */
+	&.ck-revision-history-sidebar__revision-wrapper_confirmation_visible {
+		& .ck-revision-history-sidebar__revision {
+			box-shadow: none;
+			position: relative;
+			transform: translate3d( -100%, 0, 0 );
+
+			&, & * {
+				--ck-revision-history-revision-background-color: transparent;
+				--ck-revision-history-revision-selected-background-color: transparent;
+				--ck-revision-history-revision-highlighted-background-color: transparent;
+			}
+		}
+	}
+
+	/* A confirmation that shows up when attempting to delete a revision */
+	& .ck-thread__remove-confirm {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+
+		position: absolute;
+		top: 0;
+		left: 100%;
+		width: 100%;
+		height: 100%;
+
+		border-radius: var(--ck-border-radius);
+		box-shadow: var(--ck-revision-history-revision-box-shadow);
+		background: var(--ck-revision-history-revision-delete-confirmation-background);
+		user-select: none;
+
+		& .ck-thread__remove-confirm-inner {
+			text-align: center;
+			margin-top: var(--ck-spacing-small);
+
+			/* Confirmation message */
+			& p {
+				margin: 0;
+				font-weight: bold;
+				color: var(--ck-color-text);
+			}
+
+			/* Confirmation buttons */
+			& .ck-thread__remove-confirm-actions {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-evenly;
+
+				& .ck.ck-button {
+					&:hover, &:focus, &:active {
+						background: var(--ck-revision-history-revision-delete-confirmation-active-button-background);
+					}
+
+					&.ck-thread__remove-confirm-submit {
+						color: var(--ck-color-button-save);
+					}
+
+					&.ck-thread__remove-confirm-cancel {
+						color: var(--ck-color-button-cancel);
+					}
+				}
+			}
+		}
+	}
+
+	& .ck-revision-history-sidebar__subrevisions {
+		margin-left: var(--ck-spacing-large);
+	}
+}

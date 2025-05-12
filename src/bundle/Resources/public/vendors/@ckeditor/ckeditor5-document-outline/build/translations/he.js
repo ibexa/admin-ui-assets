@@ -1,0 +1,1 @@
+!function(e){const n=e.he=e.he||{};n.dictionary=Object.assign(n.dictionary||{},{"Editor headings will appear here as you type.":"כותרות העורך יופיעו כאן תוך כדי הקלדה.","Empty heading":"כותרת ריקה","No headings were found in the document.":"לא נמצאו כותרות במסמך.","Table of contents":"תוכן העניינים"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

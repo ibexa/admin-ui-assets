@@ -1,0 +1,49 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+@import "./usercolormixin.css";
+
+:root {
+	--ck-user-colors--0: hsla(235, 73%, 67%, 1);
+	--ck-user-colors--0-alpha: hsla(235, 73%, 67%, 0.15);
+
+	--ck-user-colors--1: hsla(173, 100%, 24%, 1);
+	--ck-user-colors--1-alpha: hsla(173, 100%, 24%, 0.15);
+
+	--ck-user-colors--2: hsla(0, 46%, 50%, 1);
+	--ck-user-colors--2-alpha: hsla(0, 46%, 50%, 0.15);
+
+	--ck-user-colors--3: hsla(256, 54%, 45%, 1);
+	--ck-user-colors--3-alpha: hsla(256, 54%, 45%, 0.15);
+
+	--ck-user-colors--4: hsla(95, 50%, 36%, 1);
+	--ck-user-colors--4-alpha: hsla(95, 50%, 36%, 0.15);
+
+	--ck-user-colors--5: hsla(336, 78%, 43%, 1);
+	--ck-user-colors--5-alpha: hsla(336, 78%, 43%, 0.15);
+
+	--ck-user-colors--6: hsla(0, 80%, 59%, 1);
+	--ck-user-colors--6-alpha: hsla(0, 80%, 59%, 0.15);
+
+	--ck-user-colors--7: hsla(184, 90%, 43%, 1);
+	--ck-user-colors--7-alpha: hsla(184, 90%, 43%, 0.15);
+
+	--ck-user-dot-size: 6px;
+}
+
+/* We are using mixins here because of lack of PostCSS loop plugin. */
+
+@mixin userColor var(--ck-user-colors--0), var(--ck-user-colors--0-alpha), 0;
+@mixin userColor var(--ck-user-colors--1), var(--ck-user-colors--1-alpha), 1;
+@mixin userColor var(--ck-user-colors--2), var(--ck-user-colors--2-alpha), 2;
+@mixin userColor var(--ck-user-colors--3), var(--ck-user-colors--3-alpha), 3;
+@mixin userColor var(--ck-user-colors--4), var(--ck-user-colors--4-alpha), 4;
+@mixin userColor var(--ck-user-colors--5), var(--ck-user-colors--5-alpha), 5;
+@mixin userColor var(--ck-user-colors--6), var(--ck-user-colors--6-alpha), 6;
+@mixin userColor var(--ck-user-colors--7), var(--ck-user-colors--7-alpha), 7;

@@ -1,0 +1,44 @@
+/**
+ * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+:root{
+	--ck-table-of-contents-padding:1em;
+	--ck-table-of-contents-line-height:1.5;
+	--ck-table-of-contents-items-start-padding:24px;
+}
+
+.ck-content .table-of-contents{
+		margin:0.9em auto;
+	}
+
+.ck-content .table-of-contents.table-of-contents_empty{
+			display:none;
+		}
+
+.ck-content .table-of-contents .table-of-contents__placeholder{
+			margin:0;
+			padding:var(--ck-table-of-contents-padding);
+			font-style:italic;
+		}
+
+.ck-content .table-of-contents > ol{
+			padding:var(--ck-table-of-contents-padding);
+		}
+
+.ck-content .table-of-contents ol{
+			margin:0;
+			line-height:var(--ck-table-of-contents-line-height);
+			list-style-type:none;
+		}
+
+.ck-content .table-of-contents ol ol{
+				padding-inline-start:var(--ck-table-of-contents-items-start-padding);
+			}
+
+.ck-content .table-of-contents ol li{
+				white-space:nowrap;
+				text-overflow:ellipsis;
+				overflow:hidden;
+				cursor:default;
+			}

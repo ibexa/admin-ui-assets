@@ -1,0 +1,55 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: sr\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for 1 or more connected users"
+msgid "CONNECTED_USERS"
+msgid_plural "%0 connected users"
+msgstr[0] "1 povezani korisnik (ja)"
+msgstr[1] "%0 povezana korisnika"
+msgstr[2] "%0 повезаних корисника"
+
+msgctxt "The label for an alert shown when closing th editor with data not send to the server "
+msgid "PENDING_ACTION_SENDING_DATA"
+msgstr "Пошалји податке серверу."
+
+msgctxt "The label for the synchronization issue message"
+msgid "Synchronization issue"
+msgstr "Проблем са синхронизацијом"
+
+msgctxt "The aria label for the connected users list dropdown menu"
+msgid "Connected users list dropdown menu"
+msgstr "Padajući meni liste povezanih korisnika"
+
+msgctxt "The aria label for the connected users list"
+msgid "Connected users list"
+msgstr "Lista povezanih korisnika"
+
+msgctxt "The aria label for the collapsed connected users list"
+msgid "Collapsed connected users list (press ENTER to open it)"
+msgstr "Lista povezanih korisnika se urušila (pritisnite ENTER da biste je otvorili)"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document cannot be connected back to the server. To not lose your content save it locally and refresh the editor."
+msgstr "Документ се не може поново повезати са сервером. Да не бисте изгубили садржај, сачувајте га локално и освежите уређивач. "
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document details could not be taken during the reconnection. To not lose your content save it locally and refresh the editor."
+msgstr "Детаљи документа нису могли бити узети током поновног повезивања. Да не бисте изгубили садржај, сачувајте га локално и освежите уређивач. "
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The last saved version of the document does not match the local version. To not lose your content save it locally and refresh the editor."
+msgstr "Последња сачувана верзија документа не одговара локалној верзији. Да не бисте изгубили садржај, сачувајте га локално и освежите уређивач. "
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The local document and server document differ and merging them can cause unexpected behavior. To not lose your content save it locally and refresh the editor."
+msgstr "Локални документ и документ сервера се разликују и њихово спајање може изазвати неочекивано понашање. Да не бисте изгубили садржај, сачувајте га локално и освежите уређивач. "

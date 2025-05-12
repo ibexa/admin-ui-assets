@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+export default{'gl':{'dictionary':{'Comment\x20editor':'Editor\x20de\x20comentarios','NUMBER_OF_COMMENTS':['%0\x20comentario','%0\x20comentarios'],'TOO_LONG_COMMENT_ALERT':'O\x20contido\x20dos\x20comentarios\x20é\x20demasiado\x20longo.\x20O\x20seu\x20comentario\x20ten\x20%0\x20caracteres\x20mais\x20o\x20límite\x20é\x20de\x20%1\x20caracteres.','Reply...':'Responder…','Reply\x20to\x20reopen\x20discussion...':'Responder\x20para\x20volver\x20abrir\x20a\x20discusión...','Write\x20a\x20comment...':'Escribir\x20un\x20comentario…','Comment\x20was\x20made\x20on\x20an\x20element':'Comentouse\x20un\x20elemento','Edit':'Editar','Resolve':'Solucionar','Reopen':'Volver\x20abrir','Remove':'Retirar','Reply':'Responder','Delete\x20comment?':'Eliminar\x20o\x20comentario?','Delete\x20comment\x20thread?':'Eliminar\x20o\x20fío\x20de\x20comentarios?','Marked\x20as\x20resolved':'Marcado\x20como\x20solucionado','Comment':'Comentario','Annotations\x20sidebar':'Barra\x20lateral\x20de\x20anotacións','Annotations\x20list':'Lista\x20de\x20anotacións','Thread\x20comments':'Fío\x20de\x20comentarios','THREAD_CONTEXT_LABEL':'Contexto\x20do\x20fío:\x20%0','COMMENT_THREAD_LABEL':['Fío\x20de\x20comentarios\x20de\x20%\x201.\x20%1\x20resposta.','Fío\x20de\x20comentarios\x20de\x20%1.\x20%0\x20respostas.'],'COMMENT_THREAD_DESCRIPTION':'Prema\x20Intro\x20para\x20obter\x20máis\x20opcións.\x20Prema\x20Escape\x20para\x20saír.','COMMENT_ARIA_LABEL':'Comentario\x20de\x20%0.\x20Creado\x20o\x20%1.\x20%2.\x20%3','COMMENTS_ARCHIVE_LIST_LABEL':'Lista\x20de\x20comentarios','ACCESSIBILITY_HELP_ANNOTATIONS_GROUP':'Teclas\x20de\x20atallo\x20para\x20interactuar\x20cos\x20fíos\x20de\x20anotación\x20(p.\x20ex.,\x20comentarios,\x20seguimento\x20de\x20propostas\x20de\x20cambios)','ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO':'Mover\x20o\x20foco\x20ao\x20fío\x20cando\x20a\x20selección\x20estea\x20ancorada\x20no\x20seu\x20marcador','ACCESSIBILITY_HELP_ANNOTATIONS_EXIT':'Sair\x20da\x20anotación\x20e\x20mover\x20o\x20foco\x20de\x20volta\x20ao\x20contido\x20editado','ACCESSIBILITY_HELP_ANNOTATIONS_ENTER':'Examinar\x20o\x20fío\x20de\x20anotación\x20enfocado\x20ou\x20o\x20comentario\x20do\x20fío','ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS':'Desprazarse\x20polos\x20elementos\x20internos\x20do\x20fío\x20de\x20anotación','ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT':'Enviar\x20a\x20resposta\x20mentres\x20escribe\x20un\x20comentario','ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS':'Mover\x20ao\x20fío\x20anterior\x20ou\x20seguinte\x20na\x20barra\x20lateral\x20de\x20anotacións\x20ou\x20no\x20arquivo\x20de\x20comentarios','ENTER_COMMENT_ANNOUNCEMENT':'Introducir\x20un\x20contido\x20con\x20comentarios.\x20Prema\x20%0\x20para\x20ir\x20á\x20discusión.','LEAVE_COMMENT_ANNOUNCEMENT':'Abandonando\x20un\x20contido\x20con\x20comentarios.','PENDING_ACTION_COMMENT_THREAD':'Cambio\x20sen\x20gardar\x20no\x20fío\x20de\x20comentarios.','EXTERNAL_COMMENT':'Este\x20comentario\x20procede\x20dunha\x20fonte\x20externa.','EXTERNAL_IMPORT_WORD_COMMENT':'Este\x20comentario\x20procede\x20dun\x20ficheiro\x20de\x20Word\x20importado.','EXTERNAL_AVATAR':'O\x20nome\x20do\x20autor\x20amosado\x20procede\x20dunha\x20fonte\x20externa\x20(engadido\x20por\x20%0)','EXTERNAL_IMPORT_WORD_AVATAR':'O\x20nome\x20do\x20autor\x20amosado\x20procede\x20dun\x20documento\x20de\x20Word\x20importado\x20por\x20%0','COMMENTS_ARCHIVE':'Arquivo\x20de\x20comentarios','EMPTY_COMMENTS_ARCHIVE':'Non\x20hai\x20fíos\x20de\x20comentarios\x20arquivados.'},'getPluralForm':_0x352874=>0x1!=_0x352874}};

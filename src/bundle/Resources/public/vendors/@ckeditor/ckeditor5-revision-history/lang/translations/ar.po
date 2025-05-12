@@ -1,0 +1,134 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=(n == 0 ? 0 : n == 1 ? 1 : n == 2 ? 2 : n % 100 >= 3 && n % 100 <= 10 ? 3 : n % 100 >= 11 ? 4 : 5);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The prefix for a name of a revision created by restoring other revision."
+msgid "Restored"
+msgstr "مستعاد"
+
+msgctxt "The name for an initial revision that is empty."
+msgid "Empty document"
+msgstr "مستند فارغ"
+
+msgctxt "The name for an initial revision (if it was not empty)."
+msgid "Initial revision"
+msgstr "المراجعة الأولية"
+
+msgctxt "The label for a dropdown item to compare given revision with already selected revision."
+msgid "Compare against selected"
+msgstr "مقارنة بناءً على العناصر المحددة"
+
+msgctxt "The label for a dropdown item to rename given revision."
+msgid "Name this revision"
+msgstr "أعط اسماً لهذه النسخة"
+
+msgctxt "The label for the user who saved the revision."
+msgid "Revision creator"
+msgstr "مُنشئ النسخة"
+
+msgctxt "The label for users who introduced changes in the revision."
+msgid "Revision author"
+msgstr "مؤلف النسخة"
+
+msgctxt "The label for the revision name."
+msgid "Revision name"
+msgstr "اسم النسخة"
+
+msgctxt "The label for a toolbar form field where a name for a new revision should be provided."
+msgid "Name of the revision"
+msgstr "اسم المراجعة"
+
+msgctxt "The part of a toolbar form field label that indicates the field is optional."
+msgid "optional"
+msgstr "اختياري"
+
+msgctxt "The label for a dropdown item that saves current revision."
+msgid "Save current revision"
+msgstr "حفظ النسخة الحالية"
+
+msgctxt "The label for a dropdown item to open the revision history view (revision viewer)."
+msgid "Open revision history"
+msgstr "فتح سجل النسخ"
+
+msgctxt "The label for the sidebar in revision viewer."
+msgid "Revision history"
+msgstr "سِجِل النسخ"
+
+msgctxt "The label for a change tooltip for a suggestion change, shown in revision viewer."
+msgid "Suggested by"
+msgstr "مقترح قدمه"
+
+msgctxt "The label for a change tooltip for an insertion change, shown in revision viewer."
+msgid "Added by"
+msgstr "أضيف بمعرفة"
+
+msgctxt "The label for a change tooltip for a remove change, shown in revision viewer."
+msgid "Removed by"
+msgstr "أُزيلَ بواسطة"
+
+msgctxt "Displayed in the revision viewer toolbar when loading a revision."
+msgid "Loading..."
+msgstr "التحميل..."
+
+msgctxt "Displayed in the revision viewer toolbar when the compared revisions have no changes."
+msgid "No changes"
+msgstr "لا توجد تغييرات"
+
+msgctxt "Displayed in the revision viewer toolbar when the compared revisions have changes."
+msgid "NUMBER_OF_CHANGES"
+msgid_plural "%0 changes"
+msgstr[0] "%0 تغيير"
+msgstr[1] "%0 تغيير"
+msgstr[2] "%0 تغيير"
+msgstr[3] "%0 تغييرات"
+msgstr[4] "%0 تغييراً"
+msgstr[5] "%0 تغييرٍ"
+
+msgctxt "Edit: (2 of 5)"
+msgid "X_OF_Y_CHANGES"
+msgstr "%0 من %1"
+
+msgctxt "The label for a button that highlights previous change in revision viewer."
+msgid "Show previous change"
+msgstr "عرض التغيير السابق"
+
+msgctxt "The label for a button that highlights next change in revision viewer."
+msgid "Show next change"
+msgstr "عرض التغيير التالي"
+
+msgctxt "(Total): 5 changes"
+msgid "Total"
+msgstr "الإجمالي"
+
+msgctxt "(Edit): 2 of 5"
+msgid "EDIT_X_OF_Y_REVISIONS"
+msgstr "تحرير"
+
+msgctxt "The label for a button that closes revision viewer and shows editor."
+msgid "Back to editing"
+msgstr "عودة إلى وضع التحرير"
+
+msgctxt "The label for a button that restores given revision."
+msgid "Restore this revision"
+msgstr "استعادة هذه النسخة"
+
+msgctxt "The label for the alert shown when closing the editor with an unsaved revision history change."
+msgid "PENDING_ACTION_REVISION_HISTORY"
+msgstr "توجد تغييرات لم تُحفظ في سِجِل النسخ."
+
+msgctxt "The placeholder for a form input field where a name for a new revision should be provided."
+msgid "Enter the revision name"
+msgstr "أدخلْ اسم المراجعة"
+
+msgctxt "An error text displayed when user attempted to save a revision without providing its name."
+msgid "The revision name cannot be empty."
+msgstr "اسم المراجعة لا يكون فارغاً."

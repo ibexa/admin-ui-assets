@@ -1,0 +1,1 @@
+!function(e){const l=e.no=e.no||{};l.dictionary=Object.assign(l.dictionary||{},{"Enter fullscreen mode":"Gå til fullskjermmodus","Fullscreen mode":"Fullskjermmodus","Leave fullscreen mode":"Forlat fullskjermmodus","Toggle fullscreen mode":"Bytt fullskjermmodus"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

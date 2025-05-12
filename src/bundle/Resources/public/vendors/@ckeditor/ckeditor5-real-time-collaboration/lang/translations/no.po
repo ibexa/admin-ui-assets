@@ -1,0 +1,54 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: no\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for 1 or more connected users"
+msgid "CONNECTED_USERS"
+msgid_plural "%0 connected users"
+msgstr[0] "1 bruker koblet til (meg)"
+msgstr[1] "%0 brukere koblet til"
+
+msgctxt "The label for an alert shown when closing th editor with data not send to the server "
+msgid "PENDING_ACTION_SENDING_DATA"
+msgstr "Sender data til serveren."
+
+msgctxt "The label for the synchronization issue message"
+msgid "Synchronization issue"
+msgstr "Synkroniseringsproblem"
+
+msgctxt "The aria label for the connected users list dropdown menu"
+msgid "Connected users list dropdown menu"
+msgstr "Rullegardinmeny for tilkoblede brukere"
+
+msgctxt "The aria label for the connected users list"
+msgid "Connected users list"
+msgstr "Liste over tilkoblede brukere"
+
+msgctxt "The aria label for the collapsed connected users list"
+msgid "Collapsed connected users list (press ENTER to open it)"
+msgstr "Skjult liste over tilkoblede brukere (trykk ENTER for å åpne den)"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document cannot be connected back to the server. To not lose your content save it locally and refresh the editor."
+msgstr "Dokumentet kunne ikke kobles tilbake til serveren. Lagre innholdet ditt lokalt og oppfrisk redigeringsverktøyet for å unngå å miste innholdet."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document details could not be taken during the reconnection. To not lose your content save it locally and refresh the editor."
+msgstr "Dokumentdetaljene ble ikke registrert under gjenoppkoblingen. Lagre innholdet ditt lokalt og oppfrisk redigeringsverktøyet for å unngå å miste innholdet."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The last saved version of the document does not match the local version. To not lose your content save it locally and refresh the editor."
+msgstr "Sist lagrede versjon av dokumentet matcher ikke den lokale versjonen. Lagre innholdet ditt lokalt og oppfrisk redigeringsverktøyet for å unngå å miste innholdet."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The local document and server document differ and merging them can cause unexpected behavior. To not lose your content save it locally and refresh the editor."
+msgstr "Det lokale dokumentet avviker fra serverdokumentet og fletting av dem kan få uante følger. Lagre innholdet ditt lokalt og oppfrisk redigeringsverktøyet for å unngå å miste innholdet."

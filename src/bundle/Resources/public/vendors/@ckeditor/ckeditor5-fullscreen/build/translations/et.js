@@ -1,0 +1,1 @@
+!function(e){const i=e.et=e.et||{};i.dictionary=Object.assign(i.dictionary||{},{"Enter fullscreen mode":"Sisene täisekraani režiimi","Fullscreen mode":"Täisekraani režiim","Leave fullscreen mode":"Välju täisekraani režiimist","Toggle fullscreen mode":"Lülita täisekraani režiim sisse-välja"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

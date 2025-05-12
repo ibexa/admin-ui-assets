@@ -1,0 +1,110 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+@import '@ckeditor/ckeditor5-ui/theme/mixins/_unselectable.css';
+
+:root {
+	--ck-user-avatar-size: 40px;
+	--ck-user-avatar-background: hsl(210, 52%, 44%);
+	--ck-user-avatar-color: hsl(0, 0%, 100%);
+	--ck-user-me-border-color: hsl(0, 0%, 100%);
+}
+
+.ck.ck-user {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	border-radius: 50%;
+	background-color: var(--ck-user-avatar-background);
+	box-sizing: border-box;
+	height: var(--ck-user-avatar-size);
+	width: var(--ck-user-avatar-size);
+	min-width: var(--ck-user-avatar-size);
+	min-height: var(--ck-user-avatar-size);
+	line-height: 100%;
+	margin: 2px;
+
+	&.ck-user_me {
+		border: 2px solid var(--ck-user-me-border-color);
+		outline: 2px solid var(--ck-user-avatar-background);
+	}
+}
+
+.ck.ck-user__name {
+	color: var(--ck-user-avatar-color);
+	cursor: default;
+	@mixin ck-unselectable;
+
+	&.ck-user__name--hidden {
+		display: none;
+	}
+}
+
+.ck.ck-user__img {
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: var(--ck-user-avatar-background);
+	border-radius: 50%;
+	border: none;
+
+	&.ck-user__anonymous {
+		display: block;
+		background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FFF%22%20fill-rule%3D%22nonzero%22%20d%3D%22M9.8%2020H2c0-5.7%205-5.7%206-7l.2-.8c-1.6-.8-2.7-2.7-2.7-5%200-2.8%202-5.2%204.3-5.2S14%204.4%2014%207.3c0%202.2-1%204-2.6%205l.2.6c1.2%201.3%206%201.4%206%207H9.8z%22%2F%3E%0A%3C%2Fsvg%3E);
+
+		/* Do not display initials when user is anonymous. */
+		& + .ck-user__name {
+			display: none;
+		}
+	}
+
+	&.ck-user__avatar {
+		display: block;
+
+		/* In case if avatar is transparent make background white. */
+		background-color: hsl(0, 0%, 100%);
+	}
+
+	&.ck-user__img--hidden {
+		display: none;
+	}
+}
+
+.ck.ck-user__notification {
+	display: flex;
+	width: 15px;
+	height: 15px;
+	justify-content: center;
+	align-items: center;
+	background: var(--ck-color-base-background);
+	border: 2px solid var(--ck-color-base-background);
+	border-radius: 50%;
+	box-sizing: content-box;
+
+	position: absolute;
+	top: -8px;
+	right: -7px;
+	overflow: hidden;
+	transform: translateZ(0);
+
+	& .ck-user__icon {
+		color: var(--ck-color-annotation-info);
+		background: var(--ck-color-base-background);
+		width: 19px;
+		height: 19px;
+		max-width: 19px;
+		max-height: 19px;
+		min-width: 19px;
+		min-height: 19px;
+	}
+}

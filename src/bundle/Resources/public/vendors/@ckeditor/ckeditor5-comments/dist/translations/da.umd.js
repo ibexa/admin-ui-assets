@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+(_0x19ed42=>{const {da:{dictionary:_0x22a86c,getPluralForm:_0x1ad959}}={'da':{'dictionary':{'Comment\x20editor':'Kommentarer','NUMBER_OF_COMMENTS':['%0\x20kommentar.','%0\x20kommentarer.'],'TOO_LONG_COMMENT_ALERT':'Kommentar\x20er\x20for\x20lang.\x20Din\x20kommentar\x20indeholder\x20%0\x20tegn,\x20men\x20grænsen\x20er\x20%1\x20tegn.','Reply...':'Besvar...','Reply\x20to\x20reopen\x20discussion...':'Svar\x20for\x20at\x20genåbne\x20diskussion...','Write\x20a\x20comment...':'Skriv\x20en\x20kommentar...','Comment\x20was\x20made\x20on\x20an\x20element':'Der\x20blev\x20kommenteret\x20på\x20et\x20element','Edit':'Rediger','Resolve':'Løs','Reopen':'Åbn\x20igen','Remove':'Slet','Reply':'Svar','Delete\x20comment?':'Slet\x20kommentar?','Delete\x20comment\x20thread?':'Slet\x20kommentartråd?','Marked\x20as\x20resolved':'Markeret\x20som\x20løst','Comment':'Kommentar','Annotations\x20sidebar':'Sidebjælke\x20med\x20annoteringer','Annotations\x20list':'Liste\x20over\x20annoteringer','Thread\x20comments':'Trådkommentarer','THREAD_CONTEXT_LABEL':'Trådkontekst:\x20%0','COMMENT_THREAD_LABEL':['Kommentartråd\x20af\x20%1.\x20%1\x20svar.','Kommentartråd\x20af\x20%1.\x20%1\x20svar.'],'COMMENT_THREAD_DESCRIPTION':'Tryk\x20Enter\x20for\x20at\x20få\x20flere\x20muligheder.\x20Tryk\x20på\x20Escape\x20for\x20at\x20afslutte.','COMMENT_ARIA_LABEL':'Kommentar\x20af\x20%0.\x20Oprettet\x20den\x20%1.\x20%2.\x20%3','COMMENTS_ARCHIVE_LIST_LABEL':'Kommentarliste','ACCESSIBILITY_HELP_ANNOTATIONS_GROUP':'Tastetryk\x20til\x20interagering\x20med\x20annoteringstråde\x20(f.eks.\x20kommentarer,\x20forslag\x20om\x20sporing\x20af\x20ændringer)','ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO':'Skift\x20fokus\x20til\x20tråden,\x20når\x20markeringen\x20er\x20forankret\x20i\x20sin\x20markør','ACCESSIBILITY_HELP_ANNOTATIONS_EXIT':'Afslut\x20annoteringen\x20og\x20skift\x20fokus\x20tilbage\x20til\x20det\x20redigerede\x20indhold','ACCESSIBILITY_HELP_ANNOTATIONS_ENTER':'Gennemse\x20den\x20fokuserede\x20annoteringstråd\x20eller\x20trådkommentar','ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS':'Flyt\x20på\x20tværs\x20af\x20interne\x20dele\x20i\x20annoteringstråden','ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT':'Indsend\x20svaret,\x20når\x20du\x20skriver\x20en\x20kommentar','ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS':'Flyt\x20til\x20den\x20forrige\x20eller\x20næste\x20tråd\x20i\x20annoteringssidebjælken\x20eller\x20kommentararkivet','ENTER_COMMENT_ANNOUNCEMENT':'Indsender\x20indhold\x20med\x20kommentarer.\x20Tryk\x20på\x20%0\x20for\x20at\x20gå\x20til\x20diskussionen.','LEAVE_COMMENT_ANNOUNCEMENT':'Efterlader\x20indhold\x20med\x20kommentarer.','PENDING_ACTION_COMMENT_THREAD':'Ikke\x20gemte\x20ændringer\x20i\x20kommentartråd.','EXTERNAL_COMMENT':'Denne\x20kommentar\x20kommer\x20fra\x20en\x20ekstern\x20kilde.','EXTERNAL_IMPORT_WORD_COMMENT':'Denne\x20kommentar\x20kommer\x20fra\x20en\x20importeret\x20Word-fil.','EXTERNAL_AVATAR':'Vist\x20forfatternavn\x20kommer\x20fra\x20en\x20ekstern\x20kilde\x20(tilføjet\x20af\x20%0)','EXTERNAL_IMPORT_WORD_AVATAR':'Vist\x20forfatternavn\x20kommer\x20fra\x20et\x20Word-dokument,\x20der\x20er\x20importeret\x20af\x20%0)','COMMENTS_ARCHIVE':'Kommentararkiv','EMPTY_COMMENTS_ARCHIVE':'Der\x20er\x20ingen\x20arkiverede\x20kommentartråde.'},'getPluralForm':_0x43fca0=>0x1!=_0x43fca0}};_0x19ed42['da']||={'dictionary':{},'getPluralForm':null},_0x19ed42['da']['dictionary']=Object['assign'](_0x19ed42['da']['dictionary'],_0x22a86c),_0x19ed42['da']['getPluralForm']=_0x1ad959;})(window['CKEDITOR_TRANSLATIONS']||={});

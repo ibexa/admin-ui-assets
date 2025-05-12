@@ -1,0 +1,1 @@
+!function(n){const e=n["zh-cn"]=n["zh-cn"]||{};e.dictionary=Object.assign(e.dictionary||{},{"Editor headings will appear here as you type.":"当你输入时，编辑的标题会出现在这里。","Empty heading":"空标题","No headings were found in the document.":"文件中未发现标题。","Table of contents":"目录"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

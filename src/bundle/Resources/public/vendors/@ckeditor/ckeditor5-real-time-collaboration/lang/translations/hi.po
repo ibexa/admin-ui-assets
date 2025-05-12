@@ -1,0 +1,54 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: hi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for 1 or more connected users"
+msgid "CONNECTED_USERS"
+msgid_plural "%0 connected users"
+msgstr[0] "1 connected user (me)"
+msgstr[1] "%0 connected users"
+
+msgctxt "The label for an alert shown when closing th editor with data not send to the server "
+msgid "PENDING_ACTION_SENDING_DATA"
+msgstr "Sending data to the server."
+
+msgctxt "The label for the synchronization issue message"
+msgid "Synchronization issue"
+msgstr "सिंक्रनाइज़ेशन समस्या"
+
+msgctxt "The aria label for the connected users list dropdown menu"
+msgid "Connected users list dropdown menu"
+msgstr "जुड़े हुए उपयोगकर्ताओं की लिस्ट का ड्रॉपडाउन मेनू"
+
+msgctxt "The aria label for the connected users list"
+msgid "Connected users list"
+msgstr "जुड़े हुए उपयोगकर्ताओं की लिस्ट"
+
+msgctxt "The aria label for the collapsed connected users list"
+msgid "Collapsed connected users list (press ENTER to open it)"
+msgstr "जुड़े हुए उपयोगकर्ताओं की बंद लिस्ट (इसे खोलने के लिए ENTER दबाएँ)"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document cannot be connected back to the server. To not lose your content save it locally and refresh the editor."
+msgstr "डॉक्यूमेंट को सर्वर से वापस कनेक्ट नहीं किया जा सकता है. अपनी कंटेंट को न खोने के लिए इसे लोकली सेव करें और एडिटर को रिफ्रेश करें."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document details could not be taken during the reconnection. To not lose your content save it locally and refresh the editor."
+msgstr "डॉक्यूमेंट डिटेल्स को रीकनेक्शन के दौरान नहीं लिया जा सका. अपनी कंटेंट को न खोने के लिए इसे लोकली सेव करें और एडिटर को रीफ्रेश करें."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The last saved version of the document does not match the local version. To not lose your content save it locally and refresh the editor."
+msgstr "डॉक्यूमेंट का लास्ट सेव्ड वर्शन लोकल वर्शन से अलग है. अपनी कंटेंट को न खोने के लिए इसे लोकली सेव करें और एडिटर को रीफ्रेश करें."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The local document and server document differ and merging them can cause unexpected behavior. To not lose your content save it locally and refresh the editor."
+msgstr "लोकल डॉक्यूमेंट और सर्वर डॉक्यूमेंट डिफर करे रहे हैं और उन्हें मर्ज करने से अप्रत्याशित व्यवहार हो सकता है. अपनी कंटेंट को न खोने के लिए इसे लोकली सेव करें और एडिटर को रीफ्रेश करें."

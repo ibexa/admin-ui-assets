@@ -1,0 +1,162 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+:root {
+	--ck-color-suggestion-marker-insertion-border: hsla(128, 71%, 40%, .35);
+	--ck-color-suggestion-marker-insertion-border-active: hsla(128, 71%, 25%, .5);
+	--ck-color-suggestion-marker-insertion-background: hsla(128, 71%, 65%, .35);
+	--ck-color-suggestion-marker-insertion-background-active: hsla(128, 71%, 50%, .5);
+
+	--ck-color-suggestion-marker-deletion-border: hsla(345, 71%, 40%, .35);
+	--ck-color-suggestion-marker-deletion-border-active: hsla(345, 71%, 25%, .5);
+	--ck-color-suggestion-marker-deletion-background: hsla(345, 71%, 65%, .35);
+	--ck-color-suggestion-marker-deletion-background-active: hsla(345, 71%, 50%, .5);
+	--ck-color-suggestion-marker-deletion-stroke: hsla(345, 71%, 20%, .5);
+
+	--ck-color-suggestion-marker-format-border: hsla(191, 60%, 75%, 1);
+	--ck-color-suggestion-marker-format-border-active: hsla(191, 60%, 60%, 1);
+
+	--ck-color-suggestion-widget-insertion-background: hsla(128, 71%, 65%, .05);
+	--ck-color-suggestion-widget-insertion-background-active: hsla(128, 71%, 50%, .07);
+
+	--ck-color-suggestion-widget-deletion-background: hsla(345, 71%, 65%, .05);
+	--ck-color-suggestion-widget-deletion-background-active: hsla(345, 71%, 45%, .07);
+
+	--ck-color-suggestion-widget-format-background: hsla(191, 90%, 40%, .09);
+	--ck-color-suggestion-widget-format-background-active: hsla(191, 90%, 40%, .16);
+}
+
+.ck-content .ck-suggestion-marker-insertion {
+	border-top: 3px solid var(--ck-color-suggestion-marker-insertion-border);
+	border-bottom: 3px solid var(--ck-color-suggestion-marker-insertion-border);
+	background: var(--ck-color-suggestion-marker-insertion-background);
+
+	&.ck-suggestion-marker--active {
+		border-color: var(--ck-color-suggestion-marker-insertion-border-active);
+		background: var(--ck-color-suggestion-marker-insertion-background-active);
+	}
+
+	/* Disable background of marker inside widget. */
+	&.ck-widget {
+		background: none;
+		text-decoration: none;
+		border: 3px solid var(--ck-color-suggestion-marker-insertion-border);
+
+		&.ck-suggestion-marker--active {
+			border-color: var(--ck-color-suggestion-marker-insertion-border-active);
+		}
+	}
+}
+
+.ck-content .ck-suggestion-marker-deletion {
+	border-top: 3px solid var(--ck-color-suggestion-marker-deletion-border);
+	border-bottom: 3px solid var(--ck-color-suggestion-marker-deletion-border);
+
+	/* #2810. Safari doesn't support combined text-decoration values. */
+	text-decoration: line-through;
+	text-decoration-color: var(--ck-color-suggestion-marker-deletion-stroke);
+	text-decoration-thickness: 3px;
+
+	background: var(--ck-color-suggestion-marker-deletion-background);
+
+	&.ck-suggestion-marker--active {
+		border-color: var(--ck-color-suggestion-marker-deletion-border-active);
+		background: var(--ck-color-suggestion-marker-deletion-background-active);
+	}
+
+	/* Disable background of marker inside widget. */
+	&.ck-widget {
+		background: none;
+		text-decoration: none;
+		border: 3px solid var(--ck-color-suggestion-marker-deletion-border);
+
+		&.ck-suggestion-marker--active {
+			border-color: var(--ck-color-suggestion-marker-deletion-border-active);
+		}
+	}
+}
+
+.ck-content .ck-suggestion-marker-merge {
+	&::after {
+		border-top: 3px solid var(--ck-color-suggestion-marker-deletion-border);
+		border-bottom: 3px solid var(--ck-color-suggestion-marker-deletion-border);
+
+		/* #2810. Safari doesn't support combined text-decoration values. */
+		text-decoration: line-through;
+		text-decoration-color: var(--ck-color-suggestion-marker-deletion-stroke);
+
+		background: var(--ck-color-suggestion-marker-deletion-background);
+		color: var(--ck-color-suggestion-marker-deletion-stroke);
+		content: '¶';
+	}
+
+	&.ck-suggestion-marker--active::after {
+		border-color: var(--ck-color-suggestion-marker-deletion-border-active);
+		background: var(--ck-color-suggestion-marker-deletion-background-active);
+	}
+}
+
+.ck-content .ck-suggestion-marker-split {
+	&::after {
+		border-top: 3px solid var(--ck-color-suggestion-marker-insertion-border);
+		border-bottom: 3px solid var(--ck-color-suggestion-marker-insertion-border);
+		background: var(--ck-color-suggestion-marker-insertion-background);
+		color: var(--ck-color-suggestion-marker-insertion-border);
+		content: '¶';
+	}
+
+	&.ck-suggestion-marker--active::after {
+		border-color: var(--ck-color-suggestion-marker-insertion-border-active);
+		background: var(--ck-color-suggestion-marker-insertion-background-active);
+	}
+}
+
+.ck-content .ck-suggestion-marker-formatInline {
+	border-top: 3px solid var(--ck-color-suggestion-marker-format-border);
+	border-bottom: 3px solid var(--ck-color-suggestion-marker-format-border);
+
+	&.ck-suggestion-marker--active {
+		border-color: var(--ck-color-suggestion-marker-format-border-active);
+	}
+
+	&.ck-widget {
+		background: none;
+		border: 3px solid var(--ck-color-suggestion-marker-format-border);
+
+		&.ck-suggestion-marker--active {
+			border-color: var(--ck-color-suggestion-marker-format-border-active);
+		}
+	}
+}
+
+/* This is a tricky case.
+ * We can't use `border-left` because sticky marker to the element looks kinda ugly.
+ * We can't use `::before` pseudoelement because it requires `position: relative` of parent, which breaks side-image.
+ * We can't use `outline` because it's impossible to display only left side of outline.
+ * So... we need to use power of CSS hacks <3 and use doubled box-shadow.
+ */
+
+.ck-content .ck-suggestion-marker-formatBlock {
+	border: 0;
+	background: none;
+	box-shadow: -7px 0 0 0 var(--ck-color-base-background), -10px 0 0 0 var(--ck-color-suggestion-marker-format-border);
+
+	&.ck-suggestion-marker--active {
+		box-shadow: -5px 0 0 0 var(--ck-color-base-background), -8px 0 0 0 var(--ck-color-suggestion-marker-format-border-active);
+	}
+}
+
+.ck-content ul .ck-suggestion-marker-formatBlock,
+.ck-content ol .ck-suggestion-marker-formatBlock {
+	box-shadow: -2px 0 0 0 var(--ck-color-base-background), -5px 0 0 0 var(--ck-color-suggestion-marker-format-border);
+
+	&.ck-suggestion-marker--active {
+		box-shadow: -2px 0 0 0 var(--ck-color-base-background), -5px 0 0 0 var(--ck-color-suggestion-marker-format-border-active);
+	}
+}

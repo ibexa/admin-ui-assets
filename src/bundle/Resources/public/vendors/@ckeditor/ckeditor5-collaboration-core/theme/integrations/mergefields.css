@@ -1,0 +1,67 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck-content .ck-suggestion-marker.ck-widget.ck-merge-field,
+.ck-content .ck-comment-marker.ck-widget.ck-merge-field {
+	/* Note that comments markers have transparent border to be better aligned with suggestions markers. */
+	border-width: 2px;
+	border-left: none;
+	border-right: none;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.ck-content .ck-suggestion-marker-deletion.ck-widget.ck-merge-field {
+	border-top-color: var(--ck-color-suggestion-marker-deletion-border);
+	border-bottom-color: var(--ck-color-suggestion-marker-deletion-border);
+
+	background: var(--ck-color-suggestion-marker-deletion-background);
+
+	& :not(.ck-merge-field__affix),
+	&.ck-merge-field_with-value,
+	&.ck-merge-field_with-warning {
+		text-decoration: line-through;
+		text-decoration-color: var(--ck-color-suggestion-marker-deletion-stroke);
+		text-decoration-thickness: 3px;
+	}
+
+	&.ck-suggestion-marker--active {
+		background-color: var(--ck-color-suggestion-marker-deletion-background-active);
+	}
+}
+
+.ck-content .ck-suggestion-marker-insertion.ck-widget.ck-merge-field {
+	background-color: var(--ck-color-suggestion-marker-insertion-background);
+
+	&.ck-suggestion-marker--active {
+		background-color: var(--ck-color-suggestion-marker-insertion-background-active);
+	}
+}
+
+.ck-content .ck-comment-marker.ck-widget.ck-merge-field {
+	background: var(--ck-color-comment-marker);
+
+	&.ck-comment-marker--active {
+		background: var(--ck-color-comment-marker-active);
+	}
+}
+
+/*
+	This is a hack for a specific situation. The selector targets all regular markers made on text that are just before
+	a merge field (also in marker). This is a common situation. For example, if you have some text and a merge field
+	just after and all that is in a suggestion. Without this hack, there is a 1px spacing between the span and the merge
+	field, because the merge field has margin. The margin is needed because otherwise caret does not display. To
+	"remove" the spacing, we extend the span before the merge field by 1px using padding, but we need to compensate
+	by using negative margin, so that the whole content does not change its position.
+ */
+.ck-content span.ck-comment-marker:has(+.ck-comment-marker.ck-widget.ck-merge-field),
+.ck-content span.ck-suggestion-marker:has(+.ck-suggestion-marker.ck-widget.ck-merge-field) {
+	padding-right: 1px;
+	margin-right: -1px;
+}

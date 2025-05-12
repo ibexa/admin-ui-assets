@@ -1,0 +1,1 @@
+!function(n){const e=n.kn=n.kn||{};e.dictionary=Object.assign(e.dictionary||{},{"Editor headings will appear here as you type.":"","Empty heading":"","No headings were found in the document.":"","Table of contents":""})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

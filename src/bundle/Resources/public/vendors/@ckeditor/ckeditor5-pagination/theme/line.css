@@ -1,0 +1,30 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck.ck-pagination-view-line {
+	position: absolute;
+	height: 0;
+	border-top: 1px dotted var(--ck-color-pagination-divider);
+	pointer-events: none;
+
+	&::after {
+		content: attr(data-page-number);
+		font-size: 10px;
+		background: hsl(0, 0%, 77%);
+		color: var(--ck-color-base-background);
+		display: inline-block;
+		position: absolute;
+		right: -1px;
+		transform: translateX(100%);
+		min-width: 18px;
+		text-align: center;
+		top: -1px;
+		padding: var(--ck-spacing-tiny) var(--ck-spacing-medium);
+	}
+}
