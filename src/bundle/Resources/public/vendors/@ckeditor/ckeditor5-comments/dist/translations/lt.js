@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+export default{'lt':{'dictionary':{'Comment\x20editor':'Komentaro\x20redaktorius','NUMBER_OF_COMMENTS':['%0\x20komentaras','%0\x20komentaras','%0\x20komentaras'],'TOO_LONG_COMMENT_ALERT':'Komentaro\x20turinys\x20per\x20ilgas.\x20Jūsų\x20komentaras\x20turi\x20%0\x20simbolių,\x20bet\x20limitas\x20yra\x20%1\x20simboliai.','Reply...':'Atsakyti...','Reply\x20to\x20reopen\x20discussion...':'Atsakyti,\x20kad\x20būtų\x20atnaujinta\x20diskusija...','Write\x20a\x20comment...':'Rašyti\x20komentarą...','Comment\x20was\x20made\x20on\x20an\x20element':'Buvo\x20pateikta\x20pastabų\x20dėl\x20elemento','Edit':'Redaguoti','Resolve':'Išspręsti','Reopen':'Atidaryti\x20iš\x20naujo','Remove':'Pašalinti','Reply':'Atsakyti','Delete\x20comment?':'Ištrinti\x20komentarą?','Delete\x20comment\x20thread?':'Ištrinti\x20komentarų\x20eilę?','Marked\x20as\x20resolved':'Pažymėta\x20kaip\x20išspręsta','Comment':'Komentuoti','Annotations\x20sidebar':'Anotacijų\x20šoninė\x20juosta','Annotations\x20list':'Anotacijų\x20sąrašas','Thread\x20comments':'Gijos\x20komentarai','THREAD_CONTEXT_LABEL':'Gijos\x20kontekstas:\x20%0','COMMENT_THREAD_LABEL':['%1\x20komentarų\x20gija.\x20%1\x20atsakymas.','%1\x20komentarų\x20gija.\x20%1\x20atsakymai.','%1\x20komentarų\x20gija.\x20%1\x20atsakymai.'],'COMMENT_THREAD_DESCRIPTION':'Paspauskite\x20Enter,\x20kad\x20gautumėte\x20daugiau\x20parinkčių.\x20Paspauskite\x20Escape,\x20kad\x20išeitumėte.','COMMENT_ARIA_LABEL':'%0\x20komentaras.\x20Sukurta\x20%1.\x20%2.\x20%3','COMMENTS_ARCHIVE_LIST_LABEL':'Komentarų\x20sąrašas','ACCESSIBILITY_HELP_ANNOTATIONS_GROUP':'Klavišų\x20paspaudimai,\x20skirti\x20sąveikai\x20su\x20anotacijų\x20gijomis\x20(pvz.,\x20komentarams,\x20pakeitimų\x20sekimo\x20pasiūlymams).','ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO':'Dėmesio\x20perkėlimas\x20į\x20giją,\x20kai\x20pasirinkimas\x20įtvirtintas\x20jos\x20žymeklyje','ACCESSIBILITY_HELP_ANNOTATIONS_EXIT':'Išeiti\x20iš\x20anotacijos\x20ir\x20vėl\x20sutelkite\x20dėmesį\x20į\x20redaguojamą\x20turinį','ACCESSIBILITY_HELP_ANNOTATIONS_ENTER':'Naršyti\x20sukoncentruotą\x20anotacijos\x20temą\x20arba\x20temos\x20komentarą','ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS':'Judėti\x20per\x20anotacijos\x20gijos\x20vidines\x20dalis','ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT':'Pateikti\x20atsakymą\x20rašant\x20komentarą','ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS':'Pereiti\x20į\x20ankstesnę\x20arba\x20kitą\x20giją\x20anotacijų\x20šoninėje\x20juostoje\x20arba\x20komentarų\x20archyve','ENTER_COMMENT_ANNOUNCEMENT':'Įvedamas\x20turinys\x20su\x20komentarais.\x20Paspauskite\x20%0,\x20kad\x20pereitumėte\x20į\x20diskusiją.','LEAVE_COMMENT_ANNOUNCEMENT':'Paliekamas\x20turinys\x20su\x20komentarais.','PENDING_ACTION_COMMENT_THREAD':'Pakeitimai\x20neišsaugoti\x20komentarų\x20eilėje','EXTERNAL_COMMENT':'Šis\x20komentaras\x20yra\x20iš\x20išorinio\x20šaltinio.','EXTERNAL_IMPORT_WORD_COMMENT':'Šis\x20komentaras\x20pateiktas\x20iš\x20importuoto\x20\x22Word\x22\x20failo.','EXTERNAL_AVATAR':'Rodomas\x20autoriaus\x20vardas\x20paimtas\x20iš\x20išorinio\x20šaltinio\x20(pridėjo\x20%0)','EXTERNAL_IMPORT_WORD_AVATAR':'Rodomas\x20autoriaus\x20vardas\x20paimtas\x20iš\x20\x22Word\x22\x20dokumento,\x20kurį\x20importavo\x20%0','COMMENTS_ARCHIVE':'Komentarų\x20archyvas','EMPTY_COMMENTS_ARCHIVE':'Nėra\x20jokių\x20archyvuotų\x20komentarų\x20gijų.'},'getPluralForm':_0x47838c=>_0x47838c%0xa==0x1&&_0x47838c%0x64!=0xb?0x0:_0x47838c%0xa>=0x2&&(_0x47838c%0x64<0xa||_0x47838c%0x64>=0x14)?0x1:0x2}};

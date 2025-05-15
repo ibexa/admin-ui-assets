@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+export default{'hi':{'dictionary':{'Comment\x20editor':'Comment\x20editor','NUMBER_OF_COMMENTS':['%0\x20Comment','%0\x20Comments'],'TOO_LONG_COMMENT_ALERT':'Comment\x20content\x20is\x20too\x20long.\x20Your\x20comment\x20has\x20%0\x20characters\x20but\x20the\x20limit\x20is\x20%1\x20characters.','Reply...':'Reply...','Reply\x20to\x20reopen\x20discussion...':'डिस्कशन\x20को\x20दोबारा\x20शुरू\x20करने\x20के\x20लिए\x20जवाब\x20दें......','Write\x20a\x20comment...':'Write\x20a\x20comment...','Comment\x20was\x20made\x20on\x20an\x20element':'एक\x20एलिमेंट\x20पर\x20कमेंट\x20किया\x20गया\x20था','Edit':'Edit','Resolve':'रिजॉल्व\x20करें','Reopen':'दोबारा\x20खोलें','Remove':'Remove','Reply':'जवाब\x20दें','Delete\x20comment?':'Delete\x20comment?','Delete\x20comment\x20thread?':'Delete\x20comment\x20thread?','Marked\x20as\x20resolved':'रिजॉल्व्ड\x20मार्क\x20कर\x20दिया\x20गया\x20है','Comment':'Comment','Annotations\x20sidebar':'एनोटेशन\x20साइडबार','Annotations\x20list':'एनोटेशन\x20लिस्ट','Thread\x20comments':'थ्रेड\x20कमेंट्स','THREAD_CONTEXT_LABEL':'थ्रेड\x20का\x20संदर्भ:\x20%0','COMMENT_THREAD_LABEL':['%1\x20द्वारा\x20कमेंट\x20थ्रेड.\x20%1\x20उत्तर.','%1\x20द्वारा\x20कमेंट\x20थ्रेड.\x20%1\x20उत्तर.'],'COMMENT_THREAD_DESCRIPTION':'अधिक\x20विकल्पों\x20के\x20लिए\x20Enter\x20दबाएँ.\x20बाहर\x20निकलने\x20के\x20लिए\x20Escape\x20दबाएँ.','COMMENT_ARIA_LABEL':'%0\x20द्वारा\x20कमेंट.\x20%1\x20को\x20बनाया\x20गया.\x20%2.\x20%3','COMMENTS_ARCHIVE_LIST_LABEL':'कमेंट्स\x20की\x20लिस्ट','ACCESSIBILITY_HELP_ANNOTATIONS_GROUP':'एनोटेशन\x20थ्रेड्स\x20के\x20साथ\x20इंटरैक्ट\x20करने\x20के\x20लिए\x20कीस्ट्रोक्स\x20(जैसे\x20कमेंट्स,\x20ट्रैक\x20परिवर्तन\x20सुझाव)','ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO':'जब\x20सिलेक्शन\x20अपने\x20मार्कर\x20पर\x20स्थिर\x20हो\x20जाए\x20तो\x20फ़ोकस\x20को\x20थ्रेड\x20पर\x20ले\x20जाएँ','ACCESSIBILITY_HELP_ANNOTATIONS_EXIT':'एनोटेशन\x20से\x20बाहर\x20निकलें\x20और\x20फ़ोकस\x20को\x20एडिट\x20किए\x20गए\x20कंटेंट\x20पर\x20वापस\x20ले\x20जाएं','ACCESSIBILITY_HELP_ANNOTATIONS_ENTER':'फ़ोकस\x20किए\x20गए\x20एनोटेशन\x20थ्रेड\x20या\x20थ्रेड\x20कमेंट\x20को\x20ब्राउज़\x20करें','ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS':'एनोटेशन\x20थ्रेड\x20के\x20आंतरिक\x20भाग\x20में\x20मूव\x20करें','ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT':'कमेंट\x20लिखते\x20समय\x20उत्तर\x20सबमिट\x20करें','ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS':'एनोटेशन\x20साइडबार\x20या\x20कमेंट्स\x20संग्रह\x20में\x20पिछले\x20या\x20अगले\x20थ्रेड\x20पर\x20जाएं','ENTER_COMMENT_ANNOUNCEMENT':'कमेंट्स\x20के\x20साथ\x20वाले\x20एक\x20कंटेंट\x20में\x20प्रवेश\x20किया\x20जा\x20रहा\x20है.\x20चर्चा\x20में\x20जाने\x20के\x20लिए\x20%0\x20दबाएँ.','LEAVE_COMMENT_ANNOUNCEMENT':'कमेंट्स\x20के\x20साथ\x20वाले\x20एक\x20कंटेंट\x20को\x20छोड़ा\x20जा\x20रहा\x20है.','PENDING_ACTION_COMMENT_THREAD':'Unsaved\x20change\x20in\x20comment\x20thread.','EXTERNAL_COMMENT':'यह\x20कमेंट\x20एक\x20एक्सटर्नल\x20सोर्स\x20से\x20आता\x20है\x20।','EXTERNAL_IMPORT_WORD_COMMENT':'यह\x20कॉमेंट\x20एक\x20इंपोर्ट\x20की\x20गई\x20वर्ड\x20फाइल\x20से\x20आया\x20है','EXTERNAL_AVATAR':'डिस्प्ले\x20किया\x20गया\x20ऑथर\x20का\x20नाम\x20एक्सटर्नल\x20सोर्स\x20से\x20आया\x20है\x20(%0\x20द्वारा\x20ऐड\x20किया\x20गया)','EXTERNAL_IMPORT_WORD_AVATAR':'डिस्प्ले\x20किया\x20गया\x20ऑथर\x20का\x20नाम\x20%0\x20द्वारा\x20इंपोर्ट\x20किए\x20गए\x20वर्ड\x20डॉक्यूमेंट\x20से\x20आया\x20है','COMMENTS_ARCHIVE':'कमेन्ट\x20आर्काइव','EMPTY_COMMENTS_ARCHIVE':'यहां\x20कोई\x20भी\x20कमेंट\x20थ्रेड\x20आर्काइव\x20नहीं\x20किए\x20गए\x20हैं।'},'getPluralForm':_0x343e2b=>0x1!=_0x343e2b}};

@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+export default{'sk':{'dictionary':{'Comment\x20editor':'Editor\x20komentárov','NUMBER_OF_COMMENTS':['%0\x20Komentár','%0\x20Komentáre','%0\x20Komentárov'],'TOO_LONG_COMMENT_ALERT':'Obsah\x20komentára\x20je\x20príliš\x20dlhý.\x20Komentár\x20ma\x20%0\x20znakov,\x20limit\x20je\x20%1\x20znakov.','Reply...':'Odpovedať...','Reply\x20to\x20reopen\x20discussion...':'Odpovedzte\x20na\x20opätovné\x20otvorenie\x20diskusie...','Write\x20a\x20comment...':'Vložiť\x20komentár...','Comment\x20was\x20made\x20on\x20an\x20element':'K\x20prvku\x20bol\x20pridaný\x20komentár','Edit':'Upraviť','Resolve':'Vyriešiť','Reopen':'Znovu\x20otvoriť','Remove':'Odstrániť','Reply':'Odpovedať','Delete\x20comment?':'Vymazať\x20komentár?','Delete\x20comment\x20thread?':'Vymazať\x20vlákno\x20komentáru?','Marked\x20as\x20resolved':'Označené\x20ako\x20vyriešené','Comment':'Komentár','Annotations\x20sidebar':'Bočný\x20panel\x20anotácií','Annotations\x20list':'Zoznam\x20anotácií','Thread\x20comments':'Komentáre\x20vlákna','THREAD_CONTEXT_LABEL':'Kontext\x20vlákna:\x20%0','COMMENT_THREAD_LABEL':['Vlákno\x20komentárov\x20od\x20%1.\x20%1\x20odpoveď.','Vlákno\x20komentárov\x20od\x20%1.\x20%1\x20odpoveď.','Vlákno\x20komentárov\x20od\x20%1.\x20%1\x20odpoveď.'],'COMMENT_THREAD_DESCRIPTION':'Stlačením\x20tlačidla\x20Enter\x20zobrazíte\x20ďalšie\x20možnosti.\x20Stlačením\x20tlačidla\x20Escape\x20opustíte\x20ponuku.','COMMENT_ARIA_LABEL':'Komentár\x20od\x20%0.\x20Vytvorené\x20dňa\x20%1.\x20%2.\x20%3','COMMENTS_ARCHIVE_LIST_LABEL':'Zoznam\x20komentárov','ACCESSIBILITY_HELP_ANNOTATIONS_GROUP':'Klávesové\x20skratky\x20na\x20interakciu\x20s\x20vláknami\x20anotácií\x20(napr.\x20komentáre,\x20návrhy\x20sledovania\x20zmien)','ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO':'Presuňte\x20zameranie\x20na\x20vlákno,\x20keď\x20je\x20výber\x20ukotvený\x20v\x20jeho\x20značke','ACCESSIBILITY_HELP_ANNOTATIONS_EXIT':'Ukončite\x20anotáciu\x20a\x20presuňte\x20zameranie\x20späť\x20na\x20upravený\x20obsah','ACCESSIBILITY_HELP_ANNOTATIONS_ENTER':'Prehliadajte\x20vlákno\x20zamerané\x20na\x20anotáciu\x20alebo\x20komentár\x20vlákna','ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS':'Presuňte\x20sa\x20cez\x20vnútorné\x20časti\x20vlákna\x20anotácií','ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT':'Odošlite\x20odpoveď\x20pri\x20písaní\x20komentára','ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS':'Prejdite\x20na\x20predchádzajúce\x20alebo\x20nasledujúce\x20vlákno\x20na\x20bočnom\x20paneli\x20anotácií\x20alebo\x20v\x20archíve\x20komentárov','ENTER_COMMENT_ANNOUNCEMENT':'Zadávanie\x20obsahu\x20s\x20komentármi.\x20Stlačením\x20%0\x20prejdete\x20do\x20diskusie.','LEAVE_COMMENT_ANNOUNCEMENT':'Zanechanie\x20obsahu\x20s\x20komentármi.','PENDING_ACTION_COMMENT_THREAD':'Vo\x20vlákne\x20komentáru\x20sú\x20neuložené\x20zmeny.','EXTERNAL_COMMENT':'Tento\x20komentár\x20pochádza\x20z\x20externého\x20zdroja.','EXTERNAL_IMPORT_WORD_COMMENT':'Tento\x20komentár\x20pochádza\x20z\x20importovaného\x20súboru\x20programu\x20Word.','EXTERNAL_AVATAR':'Zobrazené\x20meno\x20autora\x20pochádza\x20z\x20externého\x20zdroja\x20(pridal\x20%0)','EXTERNAL_IMPORT_WORD_AVATAR':'Zobrazené\x20meno\x20autora\x20pochádza\x20z\x20dokumentu\x20programu\x20Word,\x20ktorý\x20importoval\x20%0','COMMENTS_ARCHIVE':'Archív\x20komentárov','EMPTY_COMMENTS_ARCHIVE':'Neexistujú\x20žiadne\x20archivované\x20vlákna\x20komentárov.'},'getPluralForm':_0x5edad8=>0x1==_0x5edad8?0x0:_0x5edad8>=0x2&&_0x5edad8<=0x4?0x1:0x2}};

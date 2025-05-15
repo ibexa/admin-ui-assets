@@ -1,0 +1,36 @@
+{
+	"plugins": [
+		{
+			"name": "Pagination",
+			"className": "Pagination",
+			"description": "Allows you to see where the page breaks would be after the document is exported to a PDF or Word file. It also respects page breaks inserted by the user with the page break feature.",
+			"docs": "features/pagination/pagination.html",
+			"path": "src/pagination.js",
+			"uiComponents": [
+				{
+					"type": "Button",
+					"name": "previousPage",
+					"iconPath": "@ckeditor/ckeditor5-icons/theme/icons/arrow-up.svg"
+				},
+				{
+					"type": "Button",
+					"name": "nextPage",
+					"iconPath": "@ckeditor/ckeditor5-icons/theme/icons/arrow-down.svg"
+				},
+				{
+					"type": "Button",
+					"name": "pageNavigation",
+					"iconPath": "@ckeditor/ckeditor5-icons/theme/icons/pagination-example.svg"
+				}
+			],
+			"htmlOutput": [
+				{
+					"elements": "*",
+					"styles": "page-break-before",
+					"attributes": "data-pagination-page",
+					"_comment": "When using `editor.getData( { pagination: true } )`. Otherwise, no additional elements are generated."
+				}
+			]
+		}
+	]
+}

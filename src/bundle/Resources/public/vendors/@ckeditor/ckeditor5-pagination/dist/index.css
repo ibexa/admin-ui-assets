@@ -1,0 +1,207 @@
+/**
+ * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+:root {
+	--ck-color-pagination-divider: hsl(0, 0%, 67%);
+}
+
+/*
+ * Content styles.
+ */
+
+.ck.ck-pagination_enabled.ck-content .page-break::after {
+		display: none;
+	}
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view .ck-widget__type-around {
+			display: none;
+		}
+
+/*
+		 * From time to time placing page-break directly after a block element with margin causes appending a new blank page in pagination mode.
+		 * Removing margin-bottom from the block element fixes that issue and the margin is not being moved to the next blank page.
+		 *
+		 * Identical CSS rule is also present in the page break CSS files so keep them in sync to make sure that the issue is fixed both in the
+		 * editor preview and in the printed content (used by the export document plugins).
+		 *
+		 * See more: https://github.com/cksource/ckeditor5-commercial/issues/6289.
+		 */
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view *:has(+ .page-break) {
+			margin-bottom: 0;
+		}
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view .page-break {
+			padding: 0;
+			margin: 0;
+			break-after: column;
+			display: block;
+			height: 0;
+
+		}
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view .page-break .page-break__label {
+				display: none;
+			}
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view .page-break::after {
+				display: none;
+			}
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view .ck-table-column-resizer {
+			display: none;
+		}
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view .table table {
+
+			/*
+			 * Tables that have overflow set to hidden are incorrectly split between pages on the chrome. Reset the overflow to initial fixes this issue.
+			 *
+			 * See: https://github.com/ckeditor/ckeditor5/issues/14426.
+			 */
+			overflow: initial;
+		}
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view .ck-bookmark {
+			display: none;
+		}
+
+/*
+		 * Sometimes Chrome incorrectly calculates the height of the last table row and some
+		 * of the content overlaps the paragraph that is placed directly after the table. It affects
+		 * the column split mode pagination calculation which causes mismatch between the print mode and
+		 * the preview mode.
+		 *
+		 * This issue happens only if:
+		 *
+		 * 	* The table is inside a figure element.
+		 * 	* The table has `display: table` style set.
+		 * 	* The block element is placed directly after the table.
+		 *
+		 * The print mode is not affected, the issue happens only in the column split mode.
+		 *
+		 * See: https://github.com/cksource/ckeditor5-commercial/issues/6707
+		 */
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view figure.table:has(> table) {
+			display: block;
+		}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/**
+ * Implements rounded corner interface for .ck-rounded-corners class.
+ *
+ * @see $ck-border-radius
+ */
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+/**
+ * A visual style of focused element's border.
+ */
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+/**
+ * A helper to combine multiple shadows.
+ */
+/**
+ * Gives an element a drop shadow so it looks like a floating panel.
+ */
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+/**
+ * A class which indicates that an element holding it is disabled.
+ */
+
+.ck.ck-page-navigator {
+	padding: 0 var(--ck-spacing-standard);
+	line-height: 1;
+}
+
+.ck.ck-page-navigator > .ck-input-number {
+		width: var(--ck-ui-component-min-height);
+		min-width: var(--ck-ui-component-min-height);
+
+		background: transparent;
+		text-align: center;
+
+		/* Disable native increment/decrement buttons (FF). */
+		-moz-appearance: textfield;
+
+		/* Disable native increment/decrement buttons (Webkit). */
+	}
+
+.ck.ck-page-navigator > .ck-input-number::-webkit-inner-spin-button,
+		.ck.ck-page-navigator > .ck-input-number::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+.ck.ck-page-navigator > .ck-input-number:not(:focus) {
+			border: 1px solid transparent;
+			border-bottom: 1px solid var(--ck-color-base-border);
+		}
+
+.ck.ck-page-navigator > span::before {
+		content: '/';
+		margin: 0 var(--ck-spacing-standard);
+	}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck.ck-pagination-view-line {
+	position: absolute;
+	height: 0;
+	border-top: 1px dotted var(--ck-color-pagination-divider);
+	pointer-events: none;
+}
+
+.ck.ck-pagination-view-line::after {
+		content: attr(data-page-number);
+		font-size: 10px;
+		background: hsl(0, 0%, 77%);
+		color: var(--ck-color-base-background);
+		display: inline-block;
+		position: absolute;
+		right: -1px;
+		transform: translateX(100%);
+		min-width: 18px;
+		text-align: center;
+		top: -1px;
+		padding: var(--ck-spacing-tiny) var(--ck-spacing-medium);
+	}

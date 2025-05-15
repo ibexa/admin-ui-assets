@@ -1,0 +1,107 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck .ck-user__marker-dot {
+	/* If you are looking for handling dot color, see `usercolors.css` in the `ckeditor5-collaboration-core`. */
+	display: block;
+	position: absolute;
+	left: 50%;
+
+	/* #124 */
+	top: calc( ( var(--ck-user-dot-size) / 2 ) * -1 );
+
+	width: var(--ck-user-dot-size);
+	height: var(--ck-user-dot-size);
+	border-radius: 50%;
+	transform: translate( -50%, -50% );
+	cursor: default;
+}
+
+.ck .ck-user__marker-tooltip {
+	display: none;
+	position: absolute;
+
+	/* It should be one font in case of inheriting (example: headers sans-serif and content serif type). */
+	font-family: Georgia, sans-serif;
+
+	/* It should be px value in case of inheriting (like headers example). */
+	font-size: var(--ck-font-size-base);
+
+	/* In case of inheriting from various components. */
+	line-height: 1;
+	font-style: initial;
+	font-weight: initial;
+
+	left: 0;
+	opacity: 0;
+
+	/* Moving up this element with 100% of its height. */
+	top: -20px;
+
+	padding: var(--ck-spacing-small);
+	color: hsl(0, 0%, 100%);
+	white-space: nowrap;
+	transition: opacity 200ms linear, transform 300ms ease-in-out;
+	z-index: 99999;
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+	}
+}
+
+.ck .ck-user__marker-line {
+	/* If you are looking for handling line color, see `usercolors.css` in the `ckeditor5-collaboration-core`. */
+	position: absolute;
+	bottom: 0;
+	height: 100%;
+	width: 0;
+}
+
+.ck .ck-user__marker {
+	display: inline;
+	position: relative;
+	cursor: default;
+}
+
+.ck .ck-user__marker.ck-user__marker_hovered {
+	& .ck-user__marker-dot {
+		width: 0;
+	}
+
+	& .ck-user__marker-tooltip {
+		display: block;
+		opacity: 1;
+		animation: fadeInLeft 300ms ease-in-out;
+	}
+}
+
+.ck .ck-placeholder {
+	& .ck-user__marker {
+		display: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.ck .ck-user__marker {
+		&, & *, &::after {
+			animation: none !important;
+		}
+	}
+}
+
+@keyframes fadeInLeft {
+	from {
+		opacity: 0;
+		transform: translateX( -10px );
+	}
+	to {
+		opacity: 1;
+		transform: translateX( 0 );
+	}
+}

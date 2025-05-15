@@ -1,0 +1,55 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+@import "@ckeditor/ckeditor5-ui/theme/mixins/_dir.css";
+@import "@ckeditor/ckeditor5-ui/theme/mixins/_rwd.css";
+
+:root {
+	--ck-insert-merge-field-dropdown-view-width: 250px;
+	--ck-insert-merge-field-dropdown-view-list-max-height: 250px;
+}
+
+/* Remove the default margin for the icon. */
+.ck.ck-menu-bar__menu:not(.ck-menu-bar__menu_top-level) {
+	& .ck-menu-bar__merge-fields-submenu {
+		& .ck-menu-bar__menu__button:not(:has(.ck-button__icon)) {
+			& > .ck-button__label {
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+.ck.ck-merge-fields-search {
+	width: var(--ck-insert-merge-field-dropdown-view-width);
+
+	& > .ck-labeled-field-view {
+		padding: var(--ck-spacing-large);
+
+		& .ck-input {
+			min-width: unset;
+		}
+	}
+
+	& > .ck-search__results {
+		border-top: 1px solid var(--ck-color-base-border);
+
+		& > .ck-list {
+			max-height: var(--ck-insert-merge-field-dropdown-view-list-max-height);
+			overflow: auto;
+
+			/* stylelint-disable no-descending-specificity */
+			& .ck-button__label {
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			/* stylelint-enable no-descending-specificity */
+		}
+	}
+}

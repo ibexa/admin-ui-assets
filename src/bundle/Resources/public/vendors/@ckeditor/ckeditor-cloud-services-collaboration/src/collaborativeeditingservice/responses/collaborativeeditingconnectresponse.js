@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+import _0x168739 from'./../../message.js';import _0x6af632 from'./../helpers/operationmetadatahelpers.js';import _0x177be4 from'../descriptors/operationmetadatadescriptor.js';export default class CollaborativeEditingConnectResponse extends _0x168739{['channel'];['version'];['buffers'];['types'];['offset'];['metadata'];['initData'];['sessionId'];['lastOperationId'];['sessionCreatedAt'];static ['DESCRIPTOR_NAME']='CollaborativeEditingConnectResponse';static ['DESCRIPTOR']=((()=>({'fields':{'channel':{'type':'string','id':0x1},'offset':{'type':'uint32','id':0x2},'version':{'type':'uint32','id':0x3},'buffers':{'rule':'repeated','type':'bytes','id':0x4},'types':{'rule':'repeated','type':'uint32','id':0x5},'metadata':{'rule':'repeated','type':_0x177be4['DESCRIPTOR_NAME'],'id':0x7},'initData':{'type':'string','id':0x8},'isInitialized':{'type':'bool','id':0x9},'sessionId':{'type':'string','id':0xa},'lastOperationId':{'type':'string','id':0xb},'sessionCreatedAt':{'type':'string','id':0xc}}}))());constructor(_0x10a039,_0x32b74e,_0x257038=[],_0x54ac0c=[],_0x33844e=0x0,_0x3284aa=[],_0x150d39=null,_0x58e11c='',_0x1759c1='',_0x161cc5=null){super(),this['channel']=_0x10a039,this['version']=_0x32b74e,this['buffers']=_0x257038,this['types']=_0x54ac0c,this['offset']=_0x33844e,this['metadata']=_0x3284aa,this['initData']=_0x150d39,this['sessionId']=_0x58e11c,this['lastOperationId']=_0x1759c1,this['sessionCreatedAt']=_0x161cc5;}get['data'](){return{'buffers':this['buffers'],'types':this['types'],'baseVersion':this['version']-this['types']['length'],'lastOperationId':this['lastOperationId'],'sessionCreatedAt':this['sessionCreatedAt']};}get['wereChangesApplied'](){return!this['types']?.['length']&&null===this['initData'];}['toJSON'](){return{'channel':this['channel'],'version':this['version'],'sessionId':this['sessionId'],'buffers':this['buffers'],'types':this['types'],'offset':this['offset'],'metadata':_0x6af632['removeUnnecessaryMetadata'](this['types'],this['metadata'])['map'](_0x177be4['toJSON']),'initData':this['initData']??'','isInitialized':'string'==typeof this['initData'],'lastOperationId':this['lastOperationId'],'sessionCreatedAt':this['sessionCreatedAt']?this['sessionCreatedAt']['toISOString']():null};}static['create'](_0x4958ce){return new CollaborativeEditingConnectResponse(_0x4958ce['channel'],_0x4958ce['version'],_0x4958ce['buffers'],_0x4958ce['types'],_0x4958ce['offset'],_0x4958ce['metadata'],_0x4958ce['initData'],_0x4958ce['sessionId'],_0x4958ce['lastOperationId'],_0x4958ce['sessionCreatedAt']);}static['fromJSON'](_0x3ce9ce){let _0x480c7e=null;return!0x0===_0x3ce9ce['isInitialized']?_0x480c7e=_0x3ce9ce['initData']??'':'boolean'!=typeof _0x3ce9ce['isInitialized']&&_0x3ce9ce['initData']&&(_0x480c7e=_0x3ce9ce['initData']),CollaborativeEditingConnectResponse['create']({'channel':_0x3ce9ce['channel'],'version':_0x3ce9ce['version'],'buffers':_0x3ce9ce['buffers'],'types':_0x3ce9ce['types'],'offset':_0x3ce9ce['offset'],'metadata':_0x6af632['prepareMetadataForOperations'](_0x3ce9ce['types'],_0x3ce9ce['metadata'])['map'](_0x177be4['fromJSON']),'initData':_0x480c7e,'sessionId':_0x3ce9ce['sessionId'],'lastOperationId':_0x3ce9ce['lastOperationId'],'sessionCreatedAt':_0x3ce9ce['sessionCreatedAt']?new Date(_0x3ce9ce['sessionCreatedAt']):null});}}

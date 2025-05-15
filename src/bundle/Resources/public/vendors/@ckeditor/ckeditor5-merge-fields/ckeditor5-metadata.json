@@ -1,0 +1,26 @@
+{
+	"plugins": [
+		{
+			"name": "Merge fields",
+			"className": "MergeFields",
+			"description": "Allows you to insert distinctive in-content placeholder items to create document templates.",
+			"docs": "features/merge-fields.html",
+			"path": "src/mergefields.js",
+			"requires": [
+				"Mention", "ImageUtils", "ImageEditing"
+			],
+			"uiComponents": [
+				{
+					"type": "SplitButton",
+					"name": "insertMergeField",
+					"iconPath": "@ckeditor/ckeditor5-icons/theme/icons/insert-merge-field.svg"
+				},
+				{
+					"type": "SplitButton",
+					"name": "previewMergeFields",
+					"iconPath": "@ckeditor/ckeditor5-icons/theme/icons/preview-merge-fields.svg"
+				}
+			]
+		}
+	]
+}

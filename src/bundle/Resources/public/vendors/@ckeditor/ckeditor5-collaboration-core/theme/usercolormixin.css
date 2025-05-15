@@ -1,0 +1,41 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+@define-mixin userColor $color, $colorAlpha, $number  {
+	.ck .ck-user__color--$(number) {
+		color: $color;
+	}
+
+	.ck .ck-user__bg-color--$(number) {
+		background-color: $color;
+	}
+
+	.ck .ck-user__selection--$(number) {
+		background-color: $colorAlpha;
+
+		&.ck-widget {
+			background-color: transparent;
+			border: 3px solid $color;
+		}
+	}
+
+	.ck .ck-user__marker--$(number) {
+		&,
+		& .ck-user__marker-tooltip,
+		& .ck-user__marker-dot {
+			&, &::selection {
+				background-color: $color;
+			}
+		}
+
+		& .ck-user__marker-line {
+			border: 1px solid $color;
+		}
+	}
+}

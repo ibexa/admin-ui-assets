@@ -1,0 +1,1 @@
+!function(l){const d=l.da=l.da||{};d.dictionary=Object.assign(d.dictionary||{},{"Enter fullscreen mode":"Gå i fuldskærmstilstand","Fullscreen mode":"Fuldskærmstilstand","Leave fullscreen mode":"Forlad fuldskærmstilstand","Toggle fullscreen mode":"Slå fuldskærmstilstand til/fra"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

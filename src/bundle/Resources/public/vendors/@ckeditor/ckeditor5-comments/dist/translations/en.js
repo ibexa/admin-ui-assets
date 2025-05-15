@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+export default{'en':{'dictionary':{'Comment\x20editor':'Comment\x20editor','NUMBER_OF_COMMENTS':['%0\x20Comment','%0\x20Comments'],'TOO_LONG_COMMENT_ALERT':'Comment\x20content\x20is\x20too\x20long.\x20Your\x20comment\x20has\x20%0\x20characters\x20but\x20the\x20limit\x20is\x20%1\x20characters.','Reply...':'Reply...','Reply\x20to\x20reopen\x20discussion...':'Reply\x20to\x20reopen\x20discussion...','Write\x20a\x20comment...':'Write\x20a\x20comment...','Comment\x20was\x20made\x20on\x20an\x20element':'Comment\x20was\x20made\x20on\x20an\x20element','Edit':'Edit','Resolve':'Resolve','Reopen':'Reopen','Remove':'Remove','Reply':'Reply','Delete\x20comment?':'Delete\x20comment?','Delete\x20comment\x20thread?':'Delete\x20comment\x20thread?','Marked\x20as\x20resolved':'Marked\x20as\x20resolved','Comment':'Comment','Annotations\x20sidebar':'Annotations\x20sidebar','Annotations\x20list':'Annotations\x20list','Thread\x20comments':'Thread\x20comments','THREAD_CONTEXT_LABEL':'Thread\x20context:\x20%0','COMMENT_THREAD_LABEL':['Comment\x20thread\x20by\x20%1.\x20%1\x20reply.','Comment\x20thread\x20by\x20%1.\x20%0\x20replies.'],'COMMENT_THREAD_DESCRIPTION':'Press\x20Enter\x20for\x20more\x20options.\x20Press\x20Escape\x20to\x20exit.','COMMENT_ARIA_LABEL':'Comment\x20by\x20%0.\x20Created\x20on\x20%1.\x20%2.\x20%3','COMMENTS_ARCHIVE_LIST_LABEL':'List\x20of\x20comments','ACCESSIBILITY_HELP_ANNOTATIONS_GROUP':'Keystrokes\x20for\x20interacting\x20with\x20annotation\x20threads\x20(e.g.\x20comments,\x20track\x20changes\x20suggestions)','ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO':'Move\x20focus\x20to\x20the\x20thread\x20when\x20the\x20selection\x20is\x20anchored\x20in\x20its\x20marker','ACCESSIBILITY_HELP_ANNOTATIONS_EXIT':'Exit\x20the\x20annotation\x20and\x20move\x20focus\x20back\x20to\x20the\x20edited\x20content','ACCESSIBILITY_HELP_ANNOTATIONS_ENTER':'Browse\x20the\x20focused\x20annotation\x20thread\x20or\x20thread\x20comment','ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS':'Move\x20across\x20internals\x20of\x20the\x20annotation\x20thread','ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT':'Submit\x20the\x20reply\x20while\x20writing\x20a\x20comment','ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS':'Move\x20to\x20the\x20previous\x20or\x20next\x20thread\x20in\x20the\x20annotations\x20sidebar\x20or\x20comments\x20archive','ENTER_COMMENT_ANNOUNCEMENT':'Entering\x20a\x20content\x20with\x20comments.\x20Press\x20%0\x20to\x20go\x20to\x20the\x20discussion.','LEAVE_COMMENT_ANNOUNCEMENT':'Leaving\x20a\x20content\x20with\x20comments.','PENDING_ACTION_COMMENT_THREAD':'Unsaved\x20change\x20in\x20comment\x20thread.','EXTERNAL_COMMENT':'This\x20comment\x20comes\x20from\x20an\x20external\x20source.','EXTERNAL_IMPORT_WORD_COMMENT':'This\x20comment\x20comes\x20from\x20an\x20imported\x20Word\x20file.','EXTERNAL_AVATAR':'Displayed\x20author\x20name\x20comes\x20from\x20external\x20source\x20(added\x20by\x20%0)','EXTERNAL_IMPORT_WORD_AVATAR':'Displayed\x20author\x20name\x20comes\x20from\x20a\x20Word\x20document\x20imported\x20by\x20%0','COMMENTS_ARCHIVE':'Comments\x20archive','EMPTY_COMMENTS_ARCHIVE':'There\x20are\x20no\x20archived\x20comment\x20threads.'},'getPluralForm':_0x552573=>0x1!=_0x552573}};

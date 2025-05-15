@@ -1,0 +1,1 @@
+!function(e){const n=e.pl=e.pl||{};n.dictionary=Object.assign(n.dictionary||{},{"Enter fullscreen mode":"Włącz tryb pełnoekranowy","Fullscreen mode":"Tryb pełnoekranowy","Leave fullscreen mode":"Wyłącz tryb pełnoekranowy","Toggle fullscreen mode":"Przełącz tryb pełnoekranowy"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

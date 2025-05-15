@@ -1,0 +1,16 @@
+{
+	"Anonymous": "A label for the anonymous user icon",
+	"Yes": "The label for confirming an action.",
+	"No": "The label for rejecting an action.",
+	"Are you sure?": "The label for confirming a dangerous action.",
+	"Today": "Label for \"Today\". Used as a date label for comments and suggestions.",
+	"Yesterday": "Label for \"Yesterday\". Used as a date label for comments and suggestions.",
+	"Last": "Part of the date label used to describe the past days of the week (e.g., 'Last Monday'). Used for comments and suggestions.",
+	"Monday": "Name of \"Monday\" day of the week. Used as a part of the date label for days of the week (e.g., 'Last Monday') for comments and suggestions.",
+	"Tuesday": "Name of \"Tuesday\" day of the week. Used as a part of the date label for days of the week (e.g., 'Last Tuesday') for comments and suggestions.",
+	"Wednesday": "Name of \"Wednesday\" day of the week. Used as a part of the date label for days of the week (e.g., 'Last Wednesday') for comments and suggestions.",
+	"Thursday": "Name of \"Thursday\" day of the week. Used as a part of the date label for days of the week (e.g., 'Last Thursday') for comments and suggestions.",
+	"Friday": "Name of \"Friday\" day of the week. Used as a part of the date label for days of the week (e.g., 'Last Friday') for comments and suggestions.",
+	"Saturday": "Name of \"Saturday\" day of the week. Used as a part of the date label for days of the week (e.g., 'Last Saturday') for comments and suggestions.",
+	"Sunday": "Name of \"Sunday\" day of the week. Used as a part of the date label for days of the week (e.g., 'Last Sunday') for comments and suggestions."
+}

@@ -1,0 +1,48 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck {
+	--ck-revision-history-revision-subrevision-collapser-color: hsl(213deg 20% 35%);
+}
+
+.ck.ck-revision-history-sidebar__subrevision-collapser {
+	display: block;
+	padding: var(--ck-spacing-standard);
+	margin-top: calc(var(--ck-spacing-small) - var(--ck-spacing-standard));
+	margin-right: calc(var(--ck-spacing-standard) - var(--ck-spacing-standard));
+	margin-left: calc(-1 * var(--ck-spacing-standard));
+	opacity: .8;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	& .ck-revision-history-sidebar__subrevision-collapser__inner {
+		display: block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 5px 0 5px 8.7px;
+		border-color: transparent transparent transparent var(--ck-revision-history-revision-subrevision-collapser-color);
+		transform: rotate(90deg);
+		transition: transform 100ms ease-in-out;
+
+		@media (prefers-reduced-motion: reduce) {
+			transition: none;
+		}
+	}
+
+	&.ck-revision-history-sidebar__subrevision-collapser_collapsed .ck-revision-history-sidebar__subrevision-collapser__inner {
+		transform: rotate(0deg);
+	}
+}
+
+.ck.ck-revision-history-sidebar__revision_selected .ck-revision-history-sidebar__subrevision-collapser .ck-revision-history-sidebar__subrevision-collapser__inner {
+	--ck-revision-history-revision-subrevision-collapser-color: var(--ck-revision-history-revision-selected-text-color);
+}

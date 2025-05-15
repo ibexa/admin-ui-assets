@@ -1,0 +1,54 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: bn\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for 1 or more connected users"
+msgid "CONNECTED_USERS"
+msgid_plural "%0 connected users"
+msgstr[0] "1 সংযুক্ত ব্যবহারকারী (আমি)"
+msgstr[1] "%0 সংযুক্ত ব্যবহারকারী"
+
+msgctxt "The label for an alert shown when closing th editor with data not send to the server "
+msgid "PENDING_ACTION_SENDING_DATA"
+msgstr "সার্ভারে তথ্য পাঠানো হচ্ছে।"
+
+msgctxt "The label for the synchronization issue message"
+msgid "Synchronization issue"
+msgstr "সিনক্রোনাইজেশনে সমস্যা"
+
+msgctxt "The aria label for the connected users list dropdown menu"
+msgid "Connected users list dropdown menu"
+msgstr "সংযুক্ত ইউজারদের তালিকার ড্রপডাউন মেনু"
+
+msgctxt "The aria label for the connected users list"
+msgid "Connected users list"
+msgstr "সংযুক্ত ইউজারদের তালিকা"
+
+msgctxt "The aria label for the collapsed connected users list"
+msgid "Collapsed connected users list (press ENTER to open it)"
+msgstr "সঙ্কুচিত সংযুক্ত ইউজারদের তালিকা (এটি খুলতে ENTER-এ প্রেস করুন)"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document cannot be connected back to the server. To not lose your content save it locally and refresh the editor."
+msgstr "নথিটি সার্ভারের সাথে সংযুক্ত করা যাচ্ছে না। আপনার সামগ্রী না হারাতে স্থানীয়ভাবে সংরক্ষণ করুন এবং সম্পাদককে রিফ্রেশ করুন।"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document details could not be taken during the reconnection. To not lose your content save it locally and refresh the editor."
+msgstr "পুনঃসংযোগের সময় নথির বিশদ বিবরণ নেওয়া যায়নি। আপনার সামগ্রী না হারাতে স্থানীয়ভাবে সংরক্ষণ করুন এবং সম্পাদককে রিফ্রেশ করুন৷"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The last saved version of the document does not match the local version. To not lose your content save it locally and refresh the editor."
+msgstr "নথির শেষ সংরক্ষিত সংস্করণ স্থানীয় সংস্করণের সাথে মিলছে না। আপনার সামগ্রী না হারাতে স্থানীয়ভাবে সংরক্ষণ করুন এবং সম্পাদককে রিফ্রেশ করুন।"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The local document and server document differ and merging them can cause unexpected behavior. To not lose your content save it locally and refresh the editor."
+msgstr "স্থানীয় নথি এবং সার্ভার নথি আলাদা এবং তাদের একত্রিত করা অপ্রত্যাশিত আচরণের কারণ হতে পারে। আপনার সামগ্রী না হারাতে স্থানীয়ভাবে সংরক্ষণ করুন এবং সম্পাদককে রিফ্রেশ করুন৷ "

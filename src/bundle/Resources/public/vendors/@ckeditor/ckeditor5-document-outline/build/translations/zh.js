@@ -1,0 +1,1 @@
+!function(n){const e=n.zh=n.zh||{};e.dictionary=Object.assign(e.dictionary||{},{"Editor headings will appear here as you type.":"編輯器標題將在您輸入時出現在此處。","Empty heading":"空白標題","No headings were found in the document.":"無法在此文件中找到標題。","Table of contents":"內容目錄"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

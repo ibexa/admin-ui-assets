@@ -1,0 +1,104 @@
+/**
+ * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+:root{
+	--ck-color-pagination-divider:hsl(0, 0%, 67%);
+}
+
+.ck.ck-pagination_enabled.ck-content .page-break::after{
+		display:none;
+	}
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view .ck-widget__type-around{
+			display:none;
+		}
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view *:has(+ .page-break){
+			margin-bottom:0;
+		}
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view .page-break{
+			padding:0;
+			margin:0;
+			break-after:column;
+			display:block;
+			height:0;
+
+		}
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view .page-break .page-break__label{
+				display:none;
+			}
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view .page-break::after{
+				display:none;
+			}
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view .ck-table-column-resizer{
+			display:none;
+		}
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view .table table{
+			overflow:initial;
+		}
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view .ck-bookmark{
+			display:none;
+		}
+
+.ck.ck-pagination_enabled.ck-editor__editable.ck-pagination-view figure.table:has(> table){
+			display:block;
+		}
+
+.ck.ck-page-navigator{
+	padding:0 var(--ck-spacing-standard);
+	line-height:1;
+}
+
+.ck.ck-page-navigator > .ck-input-number{
+		width:var(--ck-ui-component-min-height);
+		min-width:var(--ck-ui-component-min-height);
+
+		background:transparent;
+		text-align:center;
+		-moz-appearance:textfield;
+	}
+
+.ck.ck-page-navigator > .ck-input-number::-webkit-inner-spin-button,
+		.ck.ck-page-navigator > .ck-input-number::-webkit-outer-spin-button{
+			-webkit-appearance:none;
+			margin:0;
+		}
+
+.ck.ck-page-navigator > .ck-input-number:not(:focus){
+			border:1px solid transparent;
+			border-bottom:1px solid var(--ck-color-base-border);
+		}
+
+.ck.ck-page-navigator > span::before{
+		content:'/';
+		margin:0 var(--ck-spacing-standard);
+	}
+
+.ck.ck-pagination-view-line{
+	position:absolute;
+	height:0;
+	border-top:1px dotted var(--ck-color-pagination-divider);
+	pointer-events:none;
+}
+
+.ck.ck-pagination-view-line::after{
+		content:attr(data-page-number);
+		font-size:10px;
+		background:hsl(0, 0%, 77%);
+		color:var(--ck-color-base-background);
+		display:inline-block;
+		position:absolute;
+		right:-1px;
+		transform:translateX(100%);
+		min-width:18px;
+		text-align:center;
+		top:-1px;
+		padding:var(--ck-spacing-tiny) var(--ck-spacing-medium);
+	}

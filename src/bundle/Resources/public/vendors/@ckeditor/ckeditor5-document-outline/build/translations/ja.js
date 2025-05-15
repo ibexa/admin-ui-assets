@@ -1,0 +1,1 @@
+!function(n){const e=n.ja=n.ja||{};e.dictionary=Object.assign(e.dictionary||{},{"Editor headings will appear here as you type.":"タイプ入力するごとにエディターの見出しがここに表示されます。","Empty heading":"空の見出し","No headings were found in the document.":"この文書には見出しが見つかりませんでした。","Table of contents":"目次"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

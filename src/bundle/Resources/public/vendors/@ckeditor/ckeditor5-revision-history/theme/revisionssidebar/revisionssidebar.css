@@ -1,0 +1,38 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck {
+	--ck-revision-history-sidebar-period-background: hsl(14deg 100% 57%);
+	--ck-revision-history-sidebar-timeline-padding: var(--ck-spacing-large);
+}
+
+.ck.ck-revision-history-sidebar {
+	display: flex;
+	flex-direction: column;
+
+	& .ck-revision-history-sidebar__timeline {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		padding: var(--ck-revision-history-sidebar-timeline-padding);
+		font-size: var(--ck-font-size-base);
+		overflow-y: auto;
+		height: 100%;
+
+		/*
+		 * Required for the revision delete confirmation slide-to-the-left effect.
+		 * Without it, a h-scroll shows up for a while
+		 */
+		overflow-x: hidden;
+
+		&.ck-disabled {
+			filter: grayscale(1) opacity(var(--ck-disabled-opacity));
+		}
+	}
+}

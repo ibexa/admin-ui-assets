@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+export default{'sr':{'dictionary':{'Comment\x20editor':'Уређивач\x20напомене\x20\x20','NUMBER_OF_COMMENTS':['%0\x20komentar','%0\x20komentara','%0\x20коментара'],'TOO_LONG_COMMENT_ALERT':'Напомена\x20је\x20дугачка.\x20Садржи\x20%0\x20карактера,\x20али\x20је\x20дозвољено\x20максимално\x20%1\x20карактера.','Reply...':'Одговори','Reply\x20to\x20reopen\x20discussion...':'Одговорите\x20да\x20поново\x20отворите\x20дискусију...','Write\x20a\x20comment...':'Напиши\x20напомену','Comment\x20was\x20made\x20on\x20an\x20element':'Коментар\x20је\x20дат\x20на\x20елемент','Edit':'Уреди','Resolve':'Решити','Reopen':'Поново\x20отвори','Remove':'Одстрани','Reply':'Odgovori','Delete\x20comment?':'Бришете\x20напомену?','Delete\x20comment\x20thread?':'Бришете\x20нит\x20напомене?','Marked\x20as\x20resolved':'Означено\x20као\x20решено','Comment':'Напомена','Annotations\x20sidebar':'Bočna\x20traka\x20sa\x20napomenama','Annotations\x20list':'Lista\x20napomena','Thread\x20comments':'Komentari\x20na\x20temu','THREAD_CONTEXT_LABEL':'Kontekst\x20teme:\x20%0','COMMENT_THREAD_LABEL':['Niz\x20komentara\x20od\x20%1.\x20%1\x20odgovor.','Niz\x20komentara\x20od\x20%1.\x20%1\x20odgovora.','Niz\x20komentara\x20od\x20%1.\x20%1\x20odgovora.'],'COMMENT_THREAD_DESCRIPTION':'Pritisnite\x20Enter\x20za\x20više\x20opcija.\x20Pritisnite\x20Escape\x20da\x20biste\x20izašli.','COMMENT_ARIA_LABEL':'Komentar\x20od\x20%0.\x20Kreiran\x20na\x20%1.\x20%2.\x20%3','COMMENTS_ARCHIVE_LIST_LABEL':'Lista\x20komentara','ACCESSIBILITY_HELP_ANNOTATIONS_GROUP':'Pritisci\x20na\x20tastere\x20za\x20interakciju\x20sa\x20nizom\x20napomena\x20(npr.\x20komentari,\x20predlozi\x20za\x20praćenje\x20promena)','ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO':'Pomerite\x20fokus\x20na\x20niz\x20kada\x20je\x20izbor\x20utemeljen\x20u\x20svom\x20obeleživaču','ACCESSIBILITY_HELP_ANNOTATIONS_EXIT':'Izađite\x20iz\x20napomene\x20i\x20vratite\x20fokus\x20na\x20uređeni\x20sadržaj','ACCESSIBILITY_HELP_ANNOTATIONS_ENTER':'Pregledajte\x20fokusiranu\x20niz\x20napomena\x20ili\x20niz\x20komentara','ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS':'Krećite\x20se\x20po\x20unutrašnjosti\x20niza\x20napomena','ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT':'Podnesite\x20odgovor\x20dok\x20pišete\x20komentar','ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS':'Pređite\x20na\x20prethodni\x20ili\x20sledeći\x20niz\x20na\x20bočnoj\x20traci\x20sa\x20napomenama\x20ili\x20u\x20arhivi\x20komentara','ENTER_COMMENT_ANNOUNCEMENT':'Ulazak\x20u\x20sadržaj\x20sa\x20komentarima.\x20Pritisnite\x20%0\x20da\x20pređete\x20na\x20diskusiju.','LEAVE_COMMENT_ANNOUNCEMENT':'Napuštanje\x20sadržaja\x20sa\x20komentarima.','PENDING_ACTION_COMMENT_THREAD':'Несачувана\x20измена\x20у\x20нити\x20напомена.','EXTERNAL_COMMENT':'Овај\x20коментар\x20долази\x20из\x20спољног\x20извора.','EXTERNAL_IMPORT_WORD_COMMENT':'Овај\x20коментар\x20долази\x20из\x20увезене\x20Ворд\x20датотеке.','EXTERNAL_AVATAR':'Приказано\x20име\x20аутора\x20потиче\x20из\x20спољног\x20извора\x20(додао\x20%0)','EXTERNAL_IMPORT_WORD_AVATAR':'Приказано\x20име\x20аутора\x20потиче\x20из\x20Ворд\x20документа\x20увезеног\x20од\x20стране\x20%0','COMMENTS_ARCHIVE':'Архива\x20коментара','EMPTY_COMMENTS_ARCHIVE':'Нема\x20архивираних\x20нити\x20коментара.'},'getPluralForm':_0x3e09e3=>_0x3e09e3%0xa==0x1&&_0x3e09e3%0x64!=0xb?0x0:_0x3e09e3%0xa>=0x2&&_0x3e09e3%0xa<=0x4&&(_0x3e09e3%0x64<0xa||_0x3e09e3%0x64>=0x14)?0x1:0x2}};

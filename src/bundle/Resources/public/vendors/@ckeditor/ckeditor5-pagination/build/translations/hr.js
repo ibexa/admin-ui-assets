@@ -1,0 +1,1 @@
+!function(o){const e=o.hr=o.hr||{};e.dictionary=Object.assign(e.dictionary||{},{"Current page number (from 1 to %0)":"","Go to next page":"","Go to previous page":"","Go to the next page (also move selection)":"","Go to the previous page (also move selection)":"","Keystrokes for navigating through documents":""})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

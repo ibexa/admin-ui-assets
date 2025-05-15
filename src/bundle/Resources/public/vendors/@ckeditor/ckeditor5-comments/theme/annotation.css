@@ -1,0 +1,151 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/* Common styles for single comment and single suggestion. */
+:root {
+	--ck-color-annotation-icon: hsl(0, 0%, 50%);
+	--ck-color-annotation-info: hsl(0, 0%, 46%);
+
+	--ck-annotation-button-size: 0.85em;
+}
+
+.ck .ck-annotation {
+	/* Make avatar size in the comment smaller than in presence list. */
+	--ck-user-avatar-size: 28px;
+
+	font-size: var(--ck-font-size-base);
+
+	display: flex;
+	position: relative;
+	animation: fadeInLeft 300ms;
+	transition: background-color 300ms ease;
+	padding: var(--ck-spacing-standard);
+	white-space: normal;
+
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+		transition: none;
+	}
+
+	& .ck-button {
+		/* Overwrite CK5 button default styles. */
+		background-color: transparent;
+		min-width: unset;
+		min-height: unset;
+		cursor: pointer;
+		color: var(--ck-color-annotation-icon);
+		border-radius: var(--ck-border-radius);
+		font-size: var(--ck-annotation-button-size);
+	}
+
+	& .ck-user {
+		font-size: 0.85em;
+	}
+}
+
+.ck .ck-annotation__main {
+	display: grid;
+	grid-template-areas:
+		"info actions"
+		"content content";
+	grid-template-columns: minmax(0, 1fr) auto;
+
+	/* #1829. Firefox is wrongly rendering flex container width 100% with overflowed (non-spaced) text. */
+	width: calc( 100% - var(--ck-user-avatar-size) );
+
+	transition: all 200ms ease;
+	border-radius: var(--ck-border-radius);
+	padding-left: var(--ck-spacing-standard);
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+	}
+}
+
+.ck .ck-annotation__main p {
+	margin: 0;
+
+	/* We need it to prevent `.ck.ck-reset` ovverride. */
+	white-space: normal;
+	font-size: var(--ck-font-size-base);
+
+	/* TODO: refactor this value later. */
+	line-height: 1.5em;
+}
+
+.ck .ck-annotation__user {
+	margin-top: var(--ck-spacing-small);
+}
+
+.ck .ck-annotation__info {
+	grid-area: info;
+
+	display: flex;
+	align-items: center;
+	color: var(--ck-color-annotation-info);
+
+	/* #156. Edit & remove icon are higher than plain text with the same font-size, so we need to take care if icons are hidden. */
+	min-height: 2.4em;
+}
+
+.ck .ck-annotation__info-name,
+.ck .ck-annotation__info-time {
+	font-weight: bold;
+	white-space: nowrap;
+	overflow: hidden;
+
+	/* We need it to prevent `.ck.ck-reset` ovverride. */
+	color: var(--ck-color-annotation-info);
+	font-size: var(--ck-font-size-small);
+}
+
+.ck .ck-annotation__info-name {
+	text-overflow: ellipsis;
+}
+
+.ck .ck-annotation__info-time {
+	flex: 0 0 auto;
+
+	margin: 0 var(--ck-spacing-large);
+}
+
+.ck.ck-balloon-panel .ck-annotation-wrapper .ck-annotation__info-name,
+.ck.ck-balloon-panel .ck-annotation-wrapper .ck-annotation__info-time {
+	white-space: nowrap;
+}
+
+.ck .ck-annotation__actions {
+	grid-area: actions;
+
+	transition: opacity 200ms ease;
+	opacity: 0.5;
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+	}
+}
+
+/* Because of display flex, we need to strech out annotation content to 100%. */
+.ck .ck-annotation__content-wrapper {
+	grid-area: content;
+
+	width: 100%;
+}
+
+@keyframes fadeInLeft {
+	from {
+		transform: translate3d( -5%, 0, 0 );
+		opacity: 0;
+	}
+
+	to {
+		transform: translate3d( 0, 0, 0 );
+		opacity: 1;
+	}
+}

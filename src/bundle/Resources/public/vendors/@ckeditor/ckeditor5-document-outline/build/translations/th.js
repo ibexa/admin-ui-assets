@@ -1,0 +1,1 @@
+!function(n){const e=n.th=n.th||{};e.dictionary=Object.assign(e.dictionary||{},{"Editor headings will appear here as you type.":"หัวเรื่องของโปรแกรมแก้ไขจะปรากฏที่นี่ขณะคุณพิมพ์","Empty heading":"หัวเรื่องว่างเปล่า","No headings were found in the document.":"ไม่พบหัวเรื่องในเอกสาร","Table of contents":"สารบัญ"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

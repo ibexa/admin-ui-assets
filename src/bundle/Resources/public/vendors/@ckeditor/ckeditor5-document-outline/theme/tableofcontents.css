@@ -1,0 +1,86 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+@import "@ckeditor/ckeditor5-ui/theme/mixins/_dir.css";
+
+:root {
+	--ck-table-of-contents-padding: 1em;
+	--ck-table-of-contents-line-height: 1.5;
+	--ck-table-of-contents-items-start-padding: 24px;
+	--ck-table-of-contents-border-color: var(--ck-color-base-border);
+	--ck-table-of-contents-label-background-color: hsl(0, 0%, 46%);
+	--ck-table-of-contents-background-color: var(--ck-color-base-foreground);
+}
+
+.ck-content {
+	& .table-of-contents {
+		margin: 0.9em auto;
+
+		&.table-of-contents_empty {
+			display: none;
+		}
+
+		& .table-of-contents__placeholder {
+			margin: 0;
+			padding: var(--ck-table-of-contents-padding);
+			font-style: italic;
+		}
+
+		& > ol {
+			padding: var(--ck-table-of-contents-padding);
+		}
+
+		& ol {
+			margin: 0;
+			line-height: var(--ck-table-of-contents-line-height);
+			list-style-type: none;
+
+			& ol {
+				padding-inline-start: var(--ck-table-of-contents-items-start-padding);
+			}
+
+			& li {
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				cursor: default;
+			}
+		}
+	}
+}
+
+.ck-editor__editable .ck-widget.table-of-contents {
+	position: relative;
+	background-color: var(--ck-table-of-contents-background-color);
+	border: 1px solid var(--ck-table-of-contents-border-color);
+	/* Necessary to render properly next to floated objects, e.g. side image case. */
+	display: flow-root;
+	min-width: 15em;
+
+	&[data-table-of-contents-label]::after {
+		content: attr(data-table-of-contents-label);
+
+		position: absolute;
+		top: -1px;
+		right: 10px;
+		padding: var(--ck-spacing-tiny) var(--ck-spacing-medium);
+		background-color: var(--ck-table-of-contents-label-background-color);
+
+		font-size: 10px;
+		font-family: var(--ck-font-face);
+		line-height: 16px;
+		color: hsl(0, 0%, 100%);
+		white-space: nowrap;
+
+		@mixin ck-dir rtl {
+			left: 10px;
+			right: auto;
+		}
+	}
+}

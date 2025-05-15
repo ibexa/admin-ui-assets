@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+export default{'sv':{'dictionary':{'Comment\x20editor':'Kommentarsredigerare','NUMBER_OF_COMMENTS':['%0\x20kommentar','%0\x20kommentarer'],'TOO_LONG_COMMENT_ALERT':'Kommentarsinnehållet\x20är\x20för\x20långt.\x20Din\x20kommentar\x20har\x20%0\x20tecken\x20men\x20gränsen\x20är\x20%1\x20tecken.','Reply...':'Svara\x20...','Reply\x20to\x20reopen\x20discussion...':'Svara\x20för\x20att\x20öppna\x20diskussionen\x20igen\x20...','Write\x20a\x20comment...':'Skriv\x20en\x20kommentar\x20...','Comment\x20was\x20made\x20on\x20an\x20element':'En\x20kommentar\x20har\x20gjorts\x20om\x20ett\x20element','Edit':'Ändra','Resolve':'Lös','Reopen':'Öppna\x20igen','Remove':'Ta\x20bort','Reply':'Svara','Delete\x20comment?':'Radera\x20kommentar?','Delete\x20comment\x20thread?':'Radera\x20kommentarstråd?','Marked\x20as\x20resolved':'Markerad\x20som\x20löst','Comment':'Kommentar','Annotations\x20sidebar':'Sidofält\x20för\x20anteckningar','Annotations\x20list':'Lista\x20över\x20anteckningar','Thread\x20comments':'Trådkommentarer','THREAD_CONTEXT_LABEL':'Trådkontext:\x20%0','COMMENT_THREAD_LABEL':['Kommentera\x20tråd\x20av\x20%1.\x20%1\x20svar.','Kommentera\x20tråd\x20av\x20%1.\x20%1\x20svar.'],'COMMENT_THREAD_DESCRIPTION':'Tryck\x20på\x20retur\x20för\x20fler\x20alternativ.\x20Tryck\x20på\x20escape\x20för\x20att\x20avsluta.','COMMENT_ARIA_LABEL':'Kommentar\x20av\x20%0.\x20Skapades\x20den\x20%1.\x20%2.\x20%3','COMMENTS_ARCHIVE_LIST_LABEL':'Lista\x20över\x20kommentarer','ACCESSIBILITY_HELP_ANNOTATIONS_GROUP':'Tangenttryckningar\x20för\x20att\x20interagera\x20med\x20anteckningstrådar\x20(t.ex.\x20kommentarer,\x20förslag\x20till\x20spårändringar)','ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO':'Flytta\x20fokus\x20till\x20tråden\x20när\x20urvalet\x20är\x20förankrat\x20i\x20sin\x20markör','ACCESSIBILITY_HELP_ANNOTATIONS_EXIT':'Avsluta\x20anteckningen\x20och\x20flytta\x20fokus\x20tillbaka\x20till\x20det\x20redigerade\x20innehållet','ACCESSIBILITY_HELP_ANNOTATIONS_ENTER':'Bläddra\x20igenom\x20den\x20fokuserade\x20anteckningstråden\x20eller\x20trådkommentaren','ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS':'Förflytta\x20dig\x20över\x20interndelar\x20i\x20anteckningstråden','ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT':'Skicka\x20in\x20svaret\x20medan\x20du\x20skriver\x20en\x20kommentar','ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS':'Gå\x20till\x20föregående\x20eller\x20nästa\x20tråd\x20i\x20sidofältet\x20för\x20anteckningar\x20eller\x20i\x20kommentarsarkivet','ENTER_COMMENT_ANNOUNCEMENT':'Anträder\x20ett\x20innehåll\x20med\x20kommentarer.\x20Tryck\x20på\x20%0\x20för\x20att\x20gå\x20till\x20diskussionen.','LEAVE_COMMENT_ANNOUNCEMENT':'Lämnar\x20ett\x20innehåll\x20med\x20kommentarer.','PENDING_ACTION_COMMENT_THREAD':'Osparad\x20ändring\x20i\x20kommentarstråden.','EXTERNAL_COMMENT':'Denna\x20kommentar\x20härrör\x20från\x20en\x20extern\x20källa.','EXTERNAL_IMPORT_WORD_COMMENT':'Denna\x20kommentar\x20kommer\x20från\x20en\x20importerad\x20Word-fil.','EXTERNAL_AVATAR':'Författarnamnet\x20som\x20visas\x20kommer\x20från\x20en\x20extern\x20källa\x20(tillagd\x20av\x20%0).','EXTERNAL_IMPORT_WORD_AVATAR':'Författarnamnet\x20som\x20visas\x20kommer\x20från\x20ett\x20Word-dokument\x20importerat\x20av\x20%0.','COMMENTS_ARCHIVE':'Kommentarsarkiv','EMPTY_COMMENTS_ARCHIVE':'Det\x20finns\x20inga\x20arkiverade\x20kommentarstrådar.'},'getPluralForm':_0x4be5a7=>0x1!=_0x4be5a7}};

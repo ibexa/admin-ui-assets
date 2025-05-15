@@ -1,0 +1,66 @@
+{
+  "name": "@ckeditor/ckeditor5-operations-compressor",
+  "version": "45.0.0",
+  "description": "CKEditor 5 operations compressor for real-time collaboration.",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "https://ckeditor.com/collaboration/real-time/",
+  "keywords": [
+    "CKEditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "WYSIWYG",
+    "WYSIWYW",
+    "text",
+    "rich-text",
+    "richtext",
+    "ckeditor",
+    "editor",
+    "editing",
+    "html",
+    "operational transformation",
+    "ot",
+    "collaboration",
+    "collaborative",
+    "real-time",
+    "realtime",
+    "framework"
+  ],
+  "author": "CKSource (http://cksource.com/)",
+  "bugs": {
+    "url": "https://support.ckeditor.com/hc/en-us/requests/new"
+  },
+  "type": "module",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "dependencies": {
+    "@ckeditor/ckeditor5-utils": "45.0.0",
+    "ckeditor5": "45.0.0",
+    "es-toolkit": "1.32.0",
+    "protobufjs": "7.4.0"
+  },
+  "files": [
+    "dist",
+    "src/**/*.js",
+    "src/**/*.d.ts",
+    "CHANGELOG.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    },
+    "./dist/*": {
+      "types": "./src/index.d.ts",
+      "import": "./dist/*",
+      "default": "./dist/*"
+    },
+    "./src/*": {
+      "types": "./src/*.d.ts",
+      "import": "./src/*",
+      "default": "./src/*"
+    },
+    "./package.json": "./package.json"
+  },
+  "obfuscated": true
+}

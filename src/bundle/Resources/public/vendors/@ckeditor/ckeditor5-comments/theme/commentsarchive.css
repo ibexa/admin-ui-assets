@@ -1,0 +1,49 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck .ck-comments-archive-dropdown {
+	&.ck-dropdown__panel {
+		z-index: var( --ck-z-panel );
+	}
+}
+
+.ck .ck-comments-archive {
+	width: 400px;
+	max-height: 450px;
+	box-sizing: content-box;
+
+	& .ck-annotation {
+		animation: none;
+	}
+
+	& .ck-comments-archive__header, & .ck-comments-archive__content {
+		overflow: auto;
+		max-height: 410px;
+		padding: var( --ck-spacing-large );
+	}
+
+	& .ck-comments-archive__header {
+		max-height: 40px;
+		line-height: var( --ck-font-size-base );
+		font-weight: bold;
+		border-bottom: 1px solid var( --ck-color-toolbar-border );
+	}
+
+	& .ck-comments-archive__content {
+		& .ck-annotation-wrapper:not(:last-child) {
+			margin-bottom: var( --ck-spacing-large );
+		}
+	}
+
+	& .ck-comments-archive__info {
+		text-align: center;
+		font-style: italic;
+		color: var( --ck-color-annotation-info );
+	}
+}

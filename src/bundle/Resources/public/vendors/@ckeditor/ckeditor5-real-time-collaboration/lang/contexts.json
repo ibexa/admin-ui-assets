@@ -1,0 +1,12 @@
+{
+  "CONNECTED_USERS": "The label for 1 or more connected users",
+  "PENDING_ACTION_SENDING_DATA": "The label for an alert shown when closing th editor with data not send to the server ",
+  "Synchronization issue": "The label for the synchronization issue message",
+  "Connected users list dropdown menu": "The aria label for the connected users list dropdown menu",
+  "Connected users list": "The aria label for the connected users list",
+  "Collapsed connected users list (press ENTER to open it)": "The aria label for the collapsed connected users list",
+  "The document cannot be connected back to the server. To not lose your content save it locally and refresh the editor.": "The message shown when the client cannot rejoin the collaboration session",
+  "The document details could not be taken during the reconnection. To not lose your content save it locally and refresh the editor.": "The message shown when the client cannot rejoin the collaboration session",
+  "The last saved version of the document does not match the local version. To not lose your content save it locally and refresh the editor.": "The message shown when the client cannot rejoin the collaboration session",
+  "The local document and server document differ and merging them can cause unexpected behavior. To not lose your content save it locally and refresh the editor.": "The message shown when the client cannot rejoin the collaboration session"
+}

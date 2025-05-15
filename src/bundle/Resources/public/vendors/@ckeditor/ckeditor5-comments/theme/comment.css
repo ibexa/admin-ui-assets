@@ -1,0 +1,179 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+@import "@ckeditor/ckeditor5-theme-lark/theme/mixins/_shadow.css";
+
+:root {
+	--ck-color-comment-background: hsl(210, 52%, 97%);
+	--ck-color-comment-separator: hsl(210, 52%, 87%);
+	--ck-color-comment-remove-background: var(--ck-color-light-red);
+	--ck-color-comment-input-background: var(--ck-color-comment-background);
+}
+
+.ck .ck-comment__wrapper {
+	font-size: var(--ck-font-size-base);
+	position: relative;
+	outline: 0;
+	transition: all 300ms linear;
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+	}
+
+	&.ck-comment--remove-confirmation {
+		transform: translate3d( -100%, 0, 0 );
+	}
+
+	&:first-of-type {
+		border-top-right-radius: var(--ck-border-radius);
+		border-top-left-radius: var(--ck-border-radius);
+	}
+
+	&:focus {
+		background: var(--ck-color-button-default-hover-background);
+	}
+}
+
+.ck .ck-comment {
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		opacity: 1;
+		top: calc( var(--ck-user-avatar-size) + var(--ck-spacing-small) );
+		left: calc(
+			var(--ck-spacing-standard) + ( var(--ck-user-avatar-size) / 2 )
+
+			/* Half width of line. */
+			- 2px
+		);
+		width: 4px;
+		height: 100%;
+		background-color: var(--ck-color-comment-separator);
+	}
+}
+
+.ck .ck-comment--remove {
+	background-color: var(--ck-color-comment-remove-background);
+
+	&::after {
+		opacity: 0;
+	}
+}
+
+.ck .ck-comment--edit {
+	background-color: var(--ck-color-comment-input-background);
+
+	&::after {
+		opacity: 0;
+	}
+
+	.ck-comment__input-actions {
+		margin-top: var(--ck-spacing-standard);
+	}
+}
+
+.ck .ck-comment__content {
+	word-break: break-word;
+}
+
+.ck .ck-comment--info {
+	& .ck-comment__content {
+		font-style: italic;
+	}
+}
+
+/* Common styles for typography inside comment element and editable input.
+We are styling resetting list-style because of parent <ul> element. */
+.ck .ck-comment,
+.ck .ck-comment__input {
+	& p {
+		margin: 0;
+	}
+
+	& ul,
+	& ol {
+		padding-left: 10px;
+		margin-left: 10px;
+	}
+
+	& ul {
+		list-style: disc;
+		margin-bottom: 5px;
+		margin-top: 0;
+
+		& ul {
+			list-style: circle;
+
+			& ul {
+				list-style: square;
+			}
+		}
+	}
+}
+
+.ck .ck-comment__main {
+	& .ck-comment__input-wrapper {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		transition: all 300ms linear;
+
+		& .ck-comment__input {
+			padding: 0;
+		}
+	}
+}
+
+.ck .ck-comment__user {
+	/* Display user above vertical line. */
+	z-index: var(--ck-z-default);
+}
+
+/* We need specificity 030 to beat styles in `commentinput.css`. */
+.ck-comment__input-actions .ck.ck-button.ck-comment__input-actions--submit {
+	background: var(--ck-color-base-action);
+	color: hsl(0, 0%, 100%);
+
+	&:hover {
+		background: var(--ck-color-button-save);
+	}
+}
+
+.ck-comment__input-actions .ck.ck-button.ck-comment__input-actions--cancel {
+	color: var(--ck-color-text);
+}
+
+.ck .ck-comment__external {
+	font-style: italic;
+	color: var(--ck-color-annotation-info);
+	font-size: var(--ck-font-size-tiny);
+	margin-top: var(--ck-spacing-standard);
+}
+
+.ck .ck-comment .ck-dropdown {
+	& .ck-dropdown__arrow {
+		display: none;
+	}
+
+	& .ck-list {
+		margin: 0;
+		padding: var(--ck-spacing-small) 0;
+
+		& .ck-list__item {
+			font-size: 1.2em;
+			color: var(--ck-color-base-text);
+			min-width: auto;
+
+			& .ck-button {
+				color: var(--ck-color-text);
+			}
+		}
+	}
+}

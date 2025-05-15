@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+(_0x455f68=>{const {bs:{dictionary:_0x2bb926,getPluralForm:_0x45c30e}}={'bs':{'dictionary':{'Comment\x20editor':'','NUMBER_OF_COMMENTS':['%0\x20komentar','%0\x20komentara','%0\x20komentara'],'TOO_LONG_COMMENT_ALERT':'Sadržaj\x20komentara\x20je\x20predug.\x20Vaš\x20komentar\x20ima\x20%0\x20znakova,\x20a\x20limit\x20za\x20unos\x20je\x20%1\x20znakova.','Reply...':'Odgovori...','Reply\x20to\x20reopen\x20discussion...':'','Write\x20a\x20comment...':'Napiši\x20komentar...','Comment\x20was\x20made\x20on\x20an\x20element':'','Edit':'Uredi','Resolve':'','Reopen':'','Remove':'Ukloni','Reply':'','Delete\x20comment?':'Obriši\x20komentar?','Delete\x20comment\x20thread?':'Obriši\x20niz\x20komentara?','Marked\x20as\x20resolved':'','Comment':'Komentar','Annotations\x20sidebar':'','Annotations\x20list':'','Thread\x20comments':'','THREAD_CONTEXT_LABEL':'','COMMENT_THREAD_LABEL':['','',''],'COMMENT_THREAD_DESCRIPTION':'','COMMENT_ARIA_LABEL':'','COMMENTS_ARCHIVE_LIST_LABEL':'','ACCESSIBILITY_HELP_ANNOTATIONS_GROUP':'','ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO':'','ACCESSIBILITY_HELP_ANNOTATIONS_EXIT':'','ACCESSIBILITY_HELP_ANNOTATIONS_ENTER':'','ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS':'','ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT':'','ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS':'','ENTER_COMMENT_ANNOUNCEMENT':'','LEAVE_COMMENT_ANNOUNCEMENT':'','PENDING_ACTION_COMMENT_THREAD':'Imate\x20nesačuvane\x20izmjene.','EXTERNAL_COMMENT':'','EXTERNAL_IMPORT_WORD_COMMENT':'','EXTERNAL_AVATAR':'','EXTERNAL_IMPORT_WORD_AVATAR':'','COMMENTS_ARCHIVE':'','EMPTY_COMMENTS_ARCHIVE':''},'getPluralForm':_0x582656=>_0x582656%0xa==0x1&&_0x582656%0x64!=0xb?0x0:_0x582656%0xa>=0x2&&_0x582656%0xa<=0x4&&(_0x582656%0x64<0xa||_0x582656%0x64>=0x14)?0x1:0x2}};_0x455f68['bs']||={'dictionary':{},'getPluralForm':null},_0x455f68['bs']['dictionary']=Object['assign'](_0x455f68['bs']['dictionary'],_0x2bb926),_0x455f68['bs']['getPluralForm']=_0x45c30e;})(window['CKEDITOR_TRANSLATIONS']||={});

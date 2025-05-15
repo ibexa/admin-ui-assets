@@ -1,0 +1,1 @@
+!function(e){const l=e.nl=e.nl||{};l.dictionary=Object.assign(l.dictionary||{},{"Enter fullscreen mode":"Volledig scherm openen","Fullscreen mode":"Volledig scherm","Leave fullscreen mode":"Volledig scherm verlaten","Toggle fullscreen mode":"Volledig scherm inschakelen"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

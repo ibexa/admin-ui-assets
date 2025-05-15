@@ -1,0 +1,53 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for 1 or more connected users"
+msgid "CONNECTED_USERS"
+msgid_plural "%0 connected users"
+msgstr[0] "%0 位已連線使用者。"
+
+msgctxt "The label for an alert shown when closing th editor with data not send to the server "
+msgid "PENDING_ACTION_SENDING_DATA"
+msgstr "傳送資料到伺服器。"
+
+msgctxt "The label for the synchronization issue message"
+msgid "Synchronization issue"
+msgstr "同步處理問題"
+
+msgctxt "The aria label for the connected users list dropdown menu"
+msgid "Connected users list dropdown menu"
+msgstr "已連結使用者清單下拉式功能表"
+
+msgctxt "The aria label for the connected users list"
+msgid "Connected users list"
+msgstr "已連結使用者清單"
+
+msgctxt "The aria label for the collapsed connected users list"
+msgid "Collapsed connected users list (press ENTER to open it)"
+msgstr "摺疊的已連結使用者清單（按 Enter 即可將其開啟）"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document cannot be connected back to the server. To not lose your content save it locally and refresh the editor."
+msgstr "無法將文件連結回伺服器。為了不丟失內容，請將其儲存於本機並重新整理編輯器。"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document details could not be taken during the reconnection. To not lose your content save it locally and refresh the editor."
+msgstr "重新連結期間，無法獲取文件詳細資料。為了不丟失內容，請將其儲存於本機並重新整理編輯器。"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The last saved version of the document does not match the local version. To not lose your content save it locally and refresh the editor."
+msgstr "文件的最後儲存版本與本機版本不符。為了不丟失內容，請將其儲存於本機並重新整理編輯器。"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The local document and server document differ and merging them can cause unexpected behavior. To not lose your content save it locally and refresh the editor."
+msgstr "本機文件與伺服器文件不同，合併它們可能會導致意外情況。為了不丟失內容，請將其儲存於本機並重新整理編輯器。"

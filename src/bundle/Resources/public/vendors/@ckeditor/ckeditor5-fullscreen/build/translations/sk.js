@@ -1,0 +1,1 @@
+!function(e){const o=e.sk=e.sk||{};o.dictionary=Object.assign(o.dictionary||{},{"Enter fullscreen mode":"Otvoriť režim celej obrazovky","Fullscreen mode":"Režim celej obrazovky","Leave fullscreen mode":"Opustiť režim celej obrazovky","Toggle fullscreen mode":"Prepnúť režim celej obrazovky"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

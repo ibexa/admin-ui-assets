@@ -1,0 +1,103 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck .ck-revision-change {
+	padding: var(--ck-spacing-small) var(--ck-spacing-large);
+	border-top-left-radius: var(--ck-border-radius);
+	outline: 0;
+
+	& > * {
+		vertical-align: bottom;
+		font-size: var(--ck-font-size-standard);
+	}
+
+	&.ck-revision-change__add {
+		border-left-color: var(--ck-color-suggestion-box-insertion-border);
+	}
+
+	&.ck-revision-change__remove {
+		border-left-color: var(--ck-color-suggestion-box-deletion-border);
+	}
+
+	& .ck-revision-change__label {
+		font-weight: bold;
+		font-size: inherit;
+		vertical-align: inherit;
+	}
+}
+
+.ck.ck-button {
+	&.ck-revision-history-ui__back-to-editing {
+		background: var(--ck-color-base-active);
+		color: var(--ck-color-base-background);
+
+		&:hover:not(.ck-disabled) {
+			background: var(--ck-color-base-active-focus);
+		}
+	}
+}
+
+.ck-content {
+	& .ck-suggestion-preview-marker { opacity: 0.75; }
+	& .ck-suggestion-preview-marker-split { opacity: 0.75; }
+	& .ck-suggestion-preview-marker-split::after { content: '¶'; }
+	& .ck-suggestion-preview-marker-merge { opacity: 0.75; text-decoration: line-through; }
+	& .ck-suggestion-preview-marker-merge::after { content: '¶'; }
+	& .ck-suggestion-preview-marker-deletion { text-decoration: line-through; }
+
+	& .ck-suggestion-marker-deletion-new:not(.ck-widget),
+	& .ck-suggestion-marker-merge-new {
+		--ck-color-suggestion-marker-deletion-border: none;
+		--ck-color-suggestion-marker-deletion-border-active: none;
+		--ck-color-suggestion-marker-deletion-background: none;
+		--ck-color-suggestion-marker-deletion-background-active: none;
+		--ck-color-suggestion-marker-deletion-stroke: hsla(345, 60%, 30%, .8);
+
+		--ck-color-suggestion-widget-deletion-background: hsla(345, 71%, 65%, .03);
+		--ck-color-suggestion-widget-deletion-background-active: hsla(345, 71%, 45%, .05);
+	}
+
+	& .ck-suggestion-marker-merge-new::after {
+		color: inherit;
+	}
+
+	& .ck-suggestion-marker-insertion-new,
+	& .ck-suggestion-marker-split-new {
+		opacity: 0.75;
+	}
+
+	& .ck-suggestion-marker-deletion-new.ck-suggestion-marker--active:not(.table),
+	& .ck-suggestion-marker-merge-new.ck-suggestion-marker--active {
+		--ck-color-suggestion-marker-deletion-background-active: hsla(345, 71%, 50%, .08);
+		--ck-color-suggestion-marker-deletion-stroke: hsla(345, 60%, 30%, 1);
+
+		opacity: 1;
+	}
+
+	& .ck-suggestion-marker-insertion-new.ck-suggestion-marker--active,
+	& .ck-suggestion-marker-split-new.ck-suggestion-marker--active {
+		opacity: 1;
+	}
+}
+
+.ck.ck-editor__editable_inline.ck-revision-history-root-add {
+	border: 3px solid var(--ck-color-suggestion-marker-insertion-border);
+
+	&.ck-revision-history-root--active {
+		border-color: var(--ck-color-suggestion-marker-insertion-border-active);
+	}
+}
+
+.ck.ck-editor__editable_inline.ck-revision-history-root-remove {
+	border: 3px solid var(--ck-color-suggestion-marker-deletion-border);
+
+	&.ck-revision-history-root--active {
+		border-color: var(--ck-color-suggestion-marker-deletion-border-active);
+	}
+}

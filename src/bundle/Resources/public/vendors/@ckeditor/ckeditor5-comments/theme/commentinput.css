@@ -1,0 +1,96 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck .ck-comment__input-container {
+	/* Make avatar size in the comment smaller than in presence list. */
+	--ck-user-avatar-size: 28px;
+
+	font-size: var(--ck-font-size-base);
+
+	display: none;
+	padding: var(--ck-spacing-standard);
+	background: var(--ck-color-comment-background);
+}
+
+.ck .ck-comment__input-container--active {
+	display: flex;
+}
+
+.ck .ck-comment__input {
+	padding: var(--ck-spacing-standard);
+
+	/* To keep vertical align with avatar. */
+	padding-top: var(--ck-spacing-medium);
+
+	color: var(--ck-color-base-text);
+	border-width: 0;
+	resize: none;
+	background-color: transparent;
+	transition: color 300ms ease-in-out;
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	& .ck-editor__editable_inline {
+		/* Disable default outline and border in editable input. */
+		--ck-focus-ring: none;
+		--ck-inner-shadow: none;
+
+		padding: 0;
+		overflow: visible;
+		border: 0;
+		background-color: transparent;
+		word-break: break-word;
+	}
+}
+
+/* Overwrite default CKEditor 5 margin of editable children.
+See: ckeditor5-theme-lark/theme/ckeditor5-ui/components/editorui/editorui.css. */
+.ck-comment__input-wrapper .ck.ck-editor__editable_inline *:first-child {
+	margin-top: 0;
+}
+.ck-comment__input-wrapper .ck.ck-editor__editable_inline *:last-child {
+	margin-bottom: 0;
+}
+
+.ck .ck-comment__input-actions {
+	width: 100%;
+	text-align: right;
+	display: none;
+
+	&.ck-comment__input-actions--active {
+		display: block;
+	}
+
+	& .ck.ck-button {
+		/* Overwrite CK5 button default styles. */
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		min-height: var(--ck-ui-component-min-height);
+		min-width: 60px;
+		font-size: var(--ck-annotation-button-size);
+		margin-left: var(--ck-spacing-large);
+		padding: 0 var(--ck-spacing-medium);
+	}
+
+	& .ck-button.ck-disabled {
+		opacity: .3;
+	}
+}
+
+.ck .ck-comment__input-textarea {
+	display: block;
+}

@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+export default{'nl':{'dictionary':{'Comment\x20editor':'Opmerking\x20editor','NUMBER_OF_COMMENTS':['%0\x20opmerking','%0\x20opmerkingen'],'TOO_LONG_COMMENT_ALERT':'De\x20opmerking\x20is\x20te\x20lang.\x20De\x20opmerking\x20bevat\x20%0\x20tekens\x20terwijl\x20er\x20%1\x20tekens\x20toegestaan\x20zijn.','Reply...':'Beantwoorden...','Reply\x20to\x20reopen\x20discussion...':'Reageer\x20om\x20het\x20gesprek\x20te\x20heropenen...','Write\x20a\x20comment...':'Schrijf\x20een\x20opmerking...','Comment\x20was\x20made\x20on\x20an\x20element':'Er\x20is\x20een\x20reactie\x20gekomen\x20op\x20een\x20element','Edit':'Wijzigen','Resolve':'Oplossen','Reopen':'Heropenen','Remove':'Verwijderen','Reply':'Reageren','Delete\x20comment?':'Opmerking\x20verwijderen?','Delete\x20comment\x20thread?':'Discussie\x20verwijderen?','Marked\x20as\x20resolved':'Gemarkeerd\x20als\x20opgelost','Comment':'Opmerking','Annotations\x20sidebar':'Zijbalk\x20aantekeningen','Annotations\x20list':'Lijst\x20aantekeningen','Thread\x20comments':'Opmerkingen\x20threads','THREAD_CONTEXT_LABEL':'Context\x20thread:\x20%0','COMMENT_THREAD_LABEL':['Opmerking\x20thread\x20door\x20%1.\x20%1\x20antwoord.','Opmerking\x20thread\x20door\x20%1.\x20%1\x20antwoord.'],'COMMENT_THREAD_DESCRIPTION':'Druk\x20op\x20Enter\x20voor\x20meer\x20opties.\x20Druk\x20op\x20Escape\x20om\x20af\x20te\x20sluiten.','COMMENT_ARIA_LABEL':'Opmerking\x20door\x20%0.\x20Gemaakt\x20op\x20%1.\x20%2.\x20%3','COMMENTS_ARCHIVE_LIST_LABEL':'Lijst\x20met\x20opmerkingen','ACCESSIBILITY_HELP_ANNOTATIONS_GROUP':'Toetsaanslagen\x20voor\x20interactie\x20met\x20aantekeningenthreads\x20(bijv.\x20opmerkingen,\x20suggesties\x20voor\x20het\x20bijhouden\x20van\x20wijzigingen)','ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO':'Verplaats\x20de\x20focus\x20naar\x20de\x20thread\x20wanneer\x20de\x20selectie\x20in\x20zijn\x20marker\x20verankerd\x20is','ACCESSIBILITY_HELP_ANNOTATIONS_EXIT':'Verlaat\x20de\x20aantekening\x20en\x20verplaats\x20de\x20focus\x20terug\x20naar\x20de\x20bewerkte\x20inhoud','ACCESSIBILITY_HELP_ANNOTATIONS_ENTER':'Blader\x20door\x20de\x20gefocuste\x20\x20aantekeningenthread\x20of\x20opmerking\x20op\x20de\x20thread','ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS':'Beweeg\x20over\x20de\x20interne\x20onderdelen\x20van\x20de\x20aantekeningenthread','ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT':'Dien\x20het\x20antwoord\x20in\x20terwijl\x20u\x20een\x20opmerking\x20schrijft','ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS':'Ga\x20naar\x20de\x20vorige\x20of\x20volgende\x20thread\x20in\x20de\x20zijbalk\x20met\x20aantekeningen\x20of\x20het\x20opmerkingenarchief','ENTER_COMMENT_ANNOUNCEMENT':'Content\x20met\x20opmerkingen\x20invoeren.\x20Druk\x20op\x20%0\x20om\x20naar\x20het\x20gesprek\x20te\x20gaan.','LEAVE_COMMENT_ANNOUNCEMENT':'Content\x20met\x20opmerkingen\x20achterlaten.','PENDING_ACTION_COMMENT_THREAD':'De\x20discussie\x20bevat\x20openstaande\x20wijzigingen.','EXTERNAL_COMMENT':'Deze\x20opmerking\x20is\x20afkomstig\x20van\x20een\x20externe\x20bron.','EXTERNAL_IMPORT_WORD_COMMENT':'Deze\x20opmerking\x20komt\x20uit\x20een\x20geïmporteerd\x20Word-bestand.','EXTERNAL_AVATAR':'Weergegeven\x20auteursnaam\x20komt\x20van\x20een\x20externe\x20bron\x20(toegevoegd\x20door\x20%0)','EXTERNAL_IMPORT_WORD_AVATAR':'De\x20weergegeven\x20auteursnaam\x20is\x20afkomstig\x20van\x20een\x20Word-document\x20dat\x20geïmporteerd\x20is\x20door\x20%0','COMMENTS_ARCHIVE':'Reactie-archief','EMPTY_COMMENTS_ARCHIVE':'Er\x20zijn\x20geen\x20gearchiveerde\x20reactiethreads.'},'getPluralForm':_0x103f2d=>0x1!=_0x103f2d}};

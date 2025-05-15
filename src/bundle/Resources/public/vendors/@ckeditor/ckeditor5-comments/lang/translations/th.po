@@ -1,0 +1,174 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: th\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for the comment editor."
+msgid "Comment editor"
+msgstr "เครื่องมือแก้ไขข้อคิดเห็น"
+
+msgctxt "The label for the number of comments."
+msgid "NUMBER_OF_COMMENTS"
+msgid_plural "%0 Comments"
+msgstr[0] "%0 ข้อคิดเห็น"
+
+msgctxt "The alert displayed for a comment that is too long."
+msgid "TOO_LONG_COMMENT_ALERT"
+msgstr "เนื้อหาข้อคิดเห็นยาวเกินไป ข้อคิดเห็นของคุณมี %0 แต่เรามีขีดจำกัดอยู่ที่ %1 อักขระ"
+
+msgctxt "The placeholder for the reply field."
+msgid "Reply..."
+msgstr "ตอบ..."
+
+msgctxt "The placeholder for the reply field when the comment thread is resolved."
+msgid "Reply to reopen discussion..."
+msgstr "ตอบกลับเพื่อเปิดการสนทนาขึ้นมาใหม่..."
+
+msgctxt "The placeholder for the new commend field."
+msgid "Write a comment..."
+msgstr "เขียนข้อคิดเห็น..."
+
+msgctxt "The information that comment was made on element and has no context"
+msgid "Comment was made on an element"
+msgstr "ความคิดเห็นถูกสร้างบนส่วนประกอบ"
+
+msgctxt "The label for the button that enables editing a comment."
+msgid "Edit"
+msgstr "แก้ไข"
+
+msgctxt "The label for the button that resolves a comment thread."
+msgid "Resolve"
+msgstr "แก้ไข"
+
+msgctxt "The label for the button that reopens a resolved comment thread."
+msgid "Reopen"
+msgstr "เปิดใหม่"
+
+msgctxt "The label for the button that deletes a comment."
+msgid "Remove"
+msgstr "ลบ"
+
+msgctxt "The label for for the button that adds a reply to a comment thread."
+msgid "Reply"
+msgstr "ตอบ"
+
+msgctxt "The confirmation message shown after pressing the delete comment button."
+msgid "Delete comment?"
+msgstr "ลบข้อคิดเห็นหรือไม่"
+
+msgctxt "The confirmation message shown after pressing the delete comment thread button."
+msgid "Delete comment thread?"
+msgstr "ลบชุดข้อคิดเห็นหรือไม่"
+
+msgctxt "A message informing that the comment has been resolved"
+msgid "Marked as resolved"
+msgstr "ทำเครื่องหมายว่าแก้ไขแล้ว"
+
+msgctxt "The tooltip for the comment toolbar button and the button that submits a comment thread."
+msgid "Comment"
+msgstr "ข้อคิดเห็น"
+
+msgctxt "The accessible label for the annotations sidebar."
+msgid "Annotations sidebar"
+msgstr "แถบด้านข้างคำอธิบายประกอบ"
+
+msgctxt "The accessible label for the list annotations in the annotations sidebar."
+msgid "Annotations list"
+msgstr "รายการคำอธิบายประกอบ"
+
+msgctxt "The accessible label for the list of thread comments in an annotation."
+msgid "Thread comments"
+msgstr "ความคิดเห็นกระทู้"
+
+msgctxt "The accessible label describing the context of the comment thread (e.g. editor content being discussed)."
+msgid "THREAD_CONTEXT_LABEL"
+msgstr "บริบทกระทู้: %0"
+
+msgctxt "The accessible label describing the comment thread."
+msgid "COMMENT_THREAD_LABEL"
+msgid_plural "Comment thread by %1. %0 replies."
+msgstr[0] "กระทู้ความคิดเห็นโดย %1. %1 การตอบกลับ"
+
+msgctxt "The accessible label providing extra information about navigation in the comment thread."
+msgid "COMMENT_THREAD_DESCRIPTION"
+msgstr "กด Enter สำหรับตัวเลือกเพิ่มเติม กด Escape เพื่อออก"
+
+msgctxt "The accessible label for a single comment."
+msgid "COMMENT_ARIA_LABEL"
+msgstr "ความคิดเห็นโดย %0 สร้างเมื่อ %1. %2. %3"
+
+msgctxt "The accessible label for the list of archived comments."
+msgid "COMMENTS_ARCHIVE_LIST_LABEL"
+msgstr "รายการความคิดเห็น"
+
+msgctxt "The accessibility help dialog description of the group of keystrokes related to annotations."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_GROUP"
+msgstr "การกดแป้นพิมพ์เพื่อโต้ตอบกับกระทู้คำอธิบายประกอบ (เช่น ความคิดเห็น ข้อเสนอแนะการเปลี่ยนแปลงที่ติดตาม)"
+
+msgctxt "The accessibility help dialog keystroke description for moving from the edited content to the annotation."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO"
+msgstr "ย้ายโฟกัสไปยังกระทู้เมื่อการเลือกถูกยึดในตัวบ่งชี้แล้ว"
+
+msgctxt "The accessibility help dialog keystroke description for moving away from an annotation."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_EXIT"
+msgstr "ออกจากคำอธิบายประกอบและย้ายโฟกัสกลับไปยังเนื้อหาที่แก้ไข"
+
+msgctxt "The accessibility help dialog keystroke description for entering a thread."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_ENTER"
+msgstr "เรียกดูกระทู้คำอธิบายประกอบหรือความคิดเห็นกระทู้ที่โฟกัส"
+
+msgctxt "The accessibility help dialog keystroke description for moving across the internals of a thread."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS"
+msgstr "เคลื่อนย้ายภายในกระทู้คำอธิบายประกอบ"
+
+msgctxt "The accessibility help dialog keystroke description for submitting a comment."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT"
+msgstr "ส่งการตอบกลับในขณะที่เขียนความคิดเห็น"
+
+msgctxt "The accessibility help dialog keystroke description for navigating between annotations (threads)."
+msgid "ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS"
+msgstr "ย้ายไปยังกระทู้ก่อนหน้าหรือกระทู้ถัดไปในแถบด้านข้างคำอธิบายประกอบหรือคลังความคิดเห็น"
+
+msgctxt "A message read out by assistive technologies the moment the user selection moves into a comment."
+msgid "ENTER_COMMENT_ANNOUNCEMENT"
+msgstr "กำลังเข้าสู่เนื้อหาที่มีความคิดเห็น กด %0 เพื่อไปยังการสนทนา"
+
+msgctxt "A message read out by assistive technologies the moment the user selection leaves a comment."
+msgid "LEAVE_COMMENT_ANNOUNCEMENT"
+msgstr "แสดงความคิดเห็นในเนื้อหา"
+
+msgctxt "The label for an alert shown when closing the editor with an unsaved comment change."
+msgid "PENDING_ACTION_COMMENT_THREAD"
+msgstr "การเปลี่ยนแปลงที่ยังไม่ได้บันทึกในชุดข้อคิดเห็น"
+
+msgctxt "The additional information that comments comes from external source."
+msgid "EXTERNAL_COMMENT"
+msgstr "ความคิดเห็นนี้มาจากแหล่งภายนอก"
+
+msgctxt "The additional information that comments comes from imported Word file."
+msgid "EXTERNAL_IMPORT_WORD_COMMENT"
+msgstr "ความคิดเห็นนี้มาจากไฟล์ Word ที่นําเข้า"
+
+msgctxt "The additional information that displayed author name comes from an external source."
+msgid "EXTERNAL_AVATAR"
+msgstr "ชื่อผู้เขียนที่แสดงมาจากแหล่งข้อมูลภายนอก (เพิ่มโดย %0)"
+
+msgctxt "The additional information that displayed author name comes from imported Word file."
+msgid "EXTERNAL_IMPORT_WORD_AVATAR"
+msgstr "ชื่อผู้เขียนที่แสดงมาจากเอกสาร Word ที่นําเข้าโดย %0"
+
+msgctxt "The label for the comments archive dropdown UI."
+msgid "COMMENTS_ARCHIVE"
+msgstr "คลังความคิดเห็น"
+
+msgctxt "The information that comments archive is empty."
+msgid "EMPTY_COMMENTS_ARCHIVE"
+msgstr "ไม่มีกลุ่มความคิดเห็นที่ถูกจัดเก็บ"

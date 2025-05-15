@@ -1,0 +1,54 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for 1 or more connected users"
+msgid "CONNECTED_USERS"
+msgid_plural "%0 connected users"
+msgstr[0] "1 verbundener Benutzer (ich)"
+msgstr[1] "%0 verbundene Benutzer"
+
+msgctxt "The label for an alert shown when closing th editor with data not send to the server "
+msgid "PENDING_ACTION_SENDING_DATA"
+msgstr "Daten werden an den Server gesendet."
+
+msgctxt "The label for the synchronization issue message"
+msgid "Synchronization issue"
+msgstr "Probleme bei der Synchronisation"
+
+msgctxt "The aria label for the connected users list dropdown menu"
+msgid "Connected users list dropdown menu"
+msgstr "Dropdown-Menü Liste verbundener Benutzer"
+
+msgctxt "The aria label for the connected users list"
+msgid "Connected users list"
+msgstr "Liste der verbundenen Benutzer"
+
+msgctxt "The aria label for the collapsed connected users list"
+msgid "Collapsed connected users list (press ENTER to open it)"
+msgstr "Zusammengeklappte Liste der verbundenen Benutzer (drücken Sie ENTER, um sie zu öffnen)"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document cannot be connected back to the server. To not lose your content save it locally and refresh the editor."
+msgstr "Verbindung mit dem Server fehlgeschlagen. Bitte speichern sie ihre Änderungen lokal und laden sie den Editor neu."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document details could not be taken during the reconnection. To not lose your content save it locally and refresh the editor."
+msgstr "Wiederherstellung der Serververbindung fehlgeschlagen. Bitte speichern sie ihre Änderungen lokal und laden sie den Editor neu."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The last saved version of the document does not match the local version. To not lose your content save it locally and refresh the editor."
+msgstr "Die zuletzt gespeicherte Version des Dokuments unterscheidet sich von der lokalen Version. Bitte speichern sie ihre Änderungen lokal und laden sie den Editor neu."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The local document and server document differ and merging them can cause unexpected behavior. To not lose your content save it locally and refresh the editor."
+msgstr "Das lokale Dokument und das Dokument auf dem Server unterscheiden sich. Das Mergen der Dokumente kann zu unerwarteten Verhalten führen. Bitte speichern sie ihre Änderungen lokal und laden sie den Editor neu."

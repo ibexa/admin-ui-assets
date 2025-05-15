@@ -1,0 +1,58 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=(n == 0 ? 0 : n == 1 ? 1 : n == 2 ? 2 : n % 100 >= 3 && n % 100 <= 10 ? 3 : n % 100 >= 11 ? 4 : 5);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for 1 or more connected users"
+msgid "CONNECTED_USERS"
+msgid_plural "%0 connected users"
+msgstr[0] "1 مستخدم متصل (أنا)"
+msgstr[1] "%0 مستخدم متصل"
+msgstr[2] "%0 مستخدم متصل"
+msgstr[3] "%0 مستخدمين متصلين"
+msgstr[4] "%0 مستخدماً متصلاً"
+msgstr[5] "%0 مستخدمٍ متصلٍ"
+
+msgctxt "The label for an alert shown when closing th editor with data not send to the server "
+msgid "PENDING_ACTION_SENDING_DATA"
+msgstr "إرسال البيانات إلى الخادم"
+
+msgctxt "The label for the synchronization issue message"
+msgid "Synchronization issue"
+msgstr "مشكلة في المزامنة"
+
+msgctxt "The aria label for the connected users list dropdown menu"
+msgid "Connected users list dropdown menu"
+msgstr "القائمة المنسدلة لقائمة المستخدمين المتصلين"
+
+msgctxt "The aria label for the connected users list"
+msgid "Connected users list"
+msgstr "قائمة المستخدمين المتصلين"
+
+msgctxt "The aria label for the collapsed connected users list"
+msgid "Collapsed connected users list (press ENTER to open it)"
+msgstr "قائمة مطوية للمستخدمين المتصلين (اضغط على ENTER لفتحها)"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document cannot be connected back to the server. To not lose your content save it locally and refresh the editor."
+msgstr "لا يمكن إعادة ربط المستند بالخادم مرة أخرى. كي لا تفقد المحتوى، احفظ المستند محلياً وأجر عملية إنعاش للمحرر لديك."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document details could not be taken during the reconnection. To not lose your content save it locally and refresh the editor."
+msgstr "تعذرت عملية قراءة بيانات المستند أثناء عملية إعادة الاتصال. كي لا تفقد المحتوى، احفظ المستند محلياً وأجر عملية إنعاش للمحرر لديك."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The last saved version of the document does not match the local version. To not lose your content save it locally and refresh the editor."
+msgstr "الإصدار الأخير المحفوظ من هذا المستند لا يطابق الإصدار المحلي. كي لا تفقد المحتوى، احفظ المستند محلياً وأجر عملية إنعاش للمحرر لديك."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The local document and server document differ and merging them can cause unexpected behavior. To not lose your content save it locally and refresh the editor."
+msgstr "يوجد اختلاف بين المستند المحلي والمستند الموجود على الخادم، ودمجهما قد يتسبب في نتائج غير متوقعة. كي لا تفقد المحتوى، احفظ المستند محلياً وأجر عملية إنعاش للمحرر لديك."

@@ -1,0 +1,55 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: sk\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 ? 0 : (n >= 2 && n <= 4) ? 1 : 2);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for 1 or more connected users"
+msgid "CONNECTED_USERS"
+msgid_plural "%0 connected users"
+msgstr[0] "1 pripojený užívateľ (ja)"
+msgstr[1] "%0 pripojení užívatelia"
+msgstr[2] "%0 pripojení užívatelia"
+
+msgctxt "The label for an alert shown when closing th editor with data not send to the server "
+msgid "PENDING_ACTION_SENDING_DATA"
+msgstr "Odosielam dáta na server."
+
+msgctxt "The label for the synchronization issue message"
+msgid "Synchronization issue"
+msgstr "Problém so synchronizáciou"
+
+msgctxt "The aria label for the connected users list dropdown menu"
+msgid "Connected users list dropdown menu"
+msgstr "Rozbaľovacia ponuka zoznamu pripojených používateľov"
+
+msgctxt "The aria label for the connected users list"
+msgid "Connected users list"
+msgstr "Zoznam priipojených používateľov"
+
+msgctxt "The aria label for the collapsed connected users list"
+msgid "Collapsed connected users list (press ENTER to open it)"
+msgstr "Zbalený zoznam pripojených používateľov (stlačením tlačidla ENTER ho otvoríte)"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document cannot be connected back to the server. To not lose your content save it locally and refresh the editor."
+msgstr "Dokument nie je možné pripojiť späť k serveru. Aby ste svoj obsah nestratili, uložte si ho lokálne a obnovte editor."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document details could not be taken during the reconnection. To not lose your content save it locally and refresh the editor."
+msgstr "Podrobnosti dokumentu nebolo možné získať počas opätovného pripojenia. Aby ste svoj obsah nestratili, uložte si ho lokálne a obnovte editor."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The last saved version of the document does not match the local version. To not lose your content save it locally and refresh the editor."
+msgstr "Posledná uložená verzia dokumentu sa nezhoduje s lokálnou verziou. Aby ste svoj obsah nestratili, uložte si ho lokálne a obnovte editor."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The local document and server document differ and merging them can cause unexpected behavior. To not lose your content save it locally and refresh the editor."
+msgstr "Lokálny dokument a dokument servera sa líšia a ich zlúčenie môže spôsobiť neočakávané správanie. Aby ste svoj obsah nestratili, uložte si ho lokálne a obnovte editor."

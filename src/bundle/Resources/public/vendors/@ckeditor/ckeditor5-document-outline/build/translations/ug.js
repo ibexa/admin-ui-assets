@@ -1,0 +1,1 @@
+!function(n){const e=n.ug=n.ug||{};e.dictionary=Object.assign(e.dictionary||{},{"Editor headings will appear here as you type.":"خەت كىرگۈزگەندە تەھرىرنىڭ ماۋزۇسى كۆرۈنىدۇ.","Empty heading":"بوش ماۋزۇ","No headings were found in the document.":"پۈتۈكتە ماۋزۇ بايقالمىدى.","Table of contents":"مەزمۇن جەدۋىلى"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

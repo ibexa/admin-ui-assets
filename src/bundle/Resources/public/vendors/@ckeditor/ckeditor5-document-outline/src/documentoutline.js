@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+const _0x314f79=_0x50d2;(function(_0x5e091e,_0x41c8eb){const _0x101387=_0x50d2,_0x46897b=_0x5e091e();while(!![]){try{const _0x3bc63b=-parseInt(_0x101387(0x155))/0x1*(-parseInt(_0x101387(0x141))/0x2)+-parseInt(_0x101387(0x156))/0x3+parseInt(_0x101387(0x15e))/0x4*(-parseInt(_0x101387(0x14b))/0x5)+parseInt(_0x101387(0x15c))/0x6+parseInt(_0x101387(0x15f))/0x7*(parseInt(_0x101387(0x157))/0x8)+-parseInt(_0x101387(0x14a))/0x9+parseInt(_0x101387(0x146))/0xa;if(_0x3bc63b===_0x41c8eb)break;else _0x46897b['push'](_0x46897b['shift']());}catch(_0x1478d3){_0x46897b['push'](_0x46897b['shift']());}}}(_0x58ef,0x2f2de));import{Plugin as _0x5dc89d}from'ckeditor5/src/core.js';import _0x227e1c from'./documentoutline/documentoutlineutils.js';function _0x58ef(){const _0x3a29fd=['documentOutlineLicenseKeyUsageLimit','2280516ghYOzP','usageLimit','1948ftUXaV','672119iYIJxF','documentOutlineLicenseKeyNotAllowed','DocumentOutline','domainLimit','invalid','isPremiumPlugin','documentOutlineLicenseKeyInvalid','destroy','174iXrLYn','requires','trialLimit','init','config','607320oIZbqD','editor','documentOutlineLicenseKeyValid','_showLicenseError','3050577EyQwoI','1585fmqcHz','expired','documentOutlineLicenseKeyDomainLimit','_licenseKeyCheckInterval','evaluationLimit','licenseKey','documentOutlineLicenseKeyEvaluationLimit','documentOutlineLicenseKeyTrialLimit','get','isOfficialPlugin','1879mvLuUJ','617292ykOkem','24dVFkap','pluginName','featureNotAllowed','documentOutlineLicenseKeyExpired'];_0x58ef=function(){return _0x3a29fd;};return _0x58ef();}import _0x240f1c from'./documentoutline/documentoutlineui.js';function _0x50d2(_0x52e034,_0x2d91b0){const _0x58ef89=_0x58ef();return _0x50d2=function(_0x50d2d1,_0x6b4d0b){_0x50d2d1=_0x50d2d1-0x13f;let _0x1e6bc9=_0x58ef89[_0x50d2d1];return _0x1e6bc9;},_0x50d2(_0x52e034,_0x2d91b0);}export default class u extends _0x5dc89d{[_0x314f79(0x150)];[_0x314f79(0x14e)];static get[_0x314f79(0x142)](){return[_0x227e1c,_0x240f1c];}static get[_0x314f79(0x158)](){const _0x27d76e=_0x314f79;return _0x27d76e(0x161);}static get[_0x314f79(0x154)](){return!0x0;}static get[_0x314f79(0x164)](){return!0x0;}[_0x314f79(0x144)](){const _0x4726ff=_0x314f79;this[_0x4726ff(0x150)]=this[_0x4726ff(0x147)][_0x4726ff(0x145)][_0x4726ff(0x153)](_0x4726ff(0x150));const _0x29916a=this[_0x4726ff(0x147)];this[_0x4726ff(0x14e)]=setInterval(()=>{const _0x56ce37=_0x4726ff;let _0x22cfe6;for(const _0x447f00 in _0x29916a){const _0x436dc1=_0x447f00,_0x2366af=_0x29916a[_0x436dc1];if(_0x56ce37(0x148)==_0x2366af||_0x56ce37(0x13f)==_0x2366af||_0x56ce37(0x15a)==_0x2366af||_0x56ce37(0x14d)==_0x2366af||_0x56ce37(0x160)==_0x2366af||_0x56ce37(0x151)==_0x2366af||_0x56ce37(0x152)==_0x2366af||_0x56ce37(0x15b)==_0x2366af){delete _0x29916a[_0x436dc1],_0x22cfe6=_0x2366af,clearInterval(this[_0x56ce37(0x14e)]),this[_0x56ce37(0x14e)]=void 0x0;break;}}_0x56ce37(0x13f)==_0x22cfe6&&_0x29916a[_0x56ce37(0x149)](_0x56ce37(0x163)),_0x56ce37(0x15a)==_0x22cfe6&&_0x29916a[_0x56ce37(0x149)](_0x56ce37(0x14c)),_0x56ce37(0x14d)==_0x22cfe6&&_0x29916a[_0x56ce37(0x149)](_0x56ce37(0x162)),_0x56ce37(0x160)==_0x22cfe6&&_0x29916a[_0x56ce37(0x149)](_0x56ce37(0x159),_0x56ce37(0x161)),_0x56ce37(0x151)==_0x22cfe6&&_0x29916a[_0x56ce37(0x149)](_0x56ce37(0x14f)),_0x56ce37(0x152)==_0x22cfe6&&_0x29916a[_0x56ce37(0x149)](_0x56ce37(0x143)),_0x56ce37(0x15b)==_0x22cfe6&&_0x29916a[_0x56ce37(0x149)](_0x56ce37(0x15d));},0x3e8);}[_0x314f79(0x140)](){const _0x1338bc=_0x314f79;super[_0x1338bc(0x140)](),this[_0x1338bc(0x14e)]&&clearInterval(this[_0x1338bc(0x14e)]);}}

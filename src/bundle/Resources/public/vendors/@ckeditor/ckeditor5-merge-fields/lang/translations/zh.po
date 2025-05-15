@@ -1,0 +1,56 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "A toolbar button tooltip for the merge fields feature."
+msgid "Insert merge field"
+msgstr "插入合併欄位"
+
+msgctxt "A menu bar button label in the 'Insert' menu for inserting the merge field."
+msgid "Merge field"
+msgstr "合併欄位"
+
+msgctxt "The placeholder for the search input to filter the merge fields."
+msgid "Search merge field"
+msgstr "搜尋合併欄位"
+
+msgctxt "The message displayed when the merge field search input does not match any merge fields."
+msgid "No merge fields found"
+msgstr "找不到合併欄位"
+
+msgctxt "The message displayed when there are no merge fields available in the insert merge field dropdown."
+msgid "No merge fields available"
+msgstr "沒有合併欄位可供使用"
+
+msgctxt "The title of the panel containing the available merge fields preview modes."
+msgid "Merge fields preview"
+msgstr "合併欄位預覽"
+
+msgctxt "A name for the merge fields preview option showing the merge fields labels."
+msgid "Labels"
+msgstr "標籤"
+
+msgctxt "A name for the merge fields preview option showing the merge fields default values."
+msgid "Default values"
+msgstr "預設值"
+
+msgctxt "A warning message displayed when the merge field data is missing."
+msgid "WARNING_MISSING_DATA"
+msgstr "無法取得數值。"
+
+msgctxt "A warning message displayed when the default value for a merge field is missing."
+msgid "WARNING_MISSING_DEFAULT_VALUE"
+msgstr "無法取得預設值。"
+
+msgctxt "A warning message displayed when the merge field data is missing and the default value is used."
+msgid "WARNING_MISSING_DATA_USED_DEFAULT_VALUE"
+msgstr "預設值已使用。"

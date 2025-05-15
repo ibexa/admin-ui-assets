@@ -1,0 +1,1 @@
+!function(e){const o=e["pt-br"]=e["pt-br"]||{};o.dictionary=Object.assign(o.dictionary||{},{"Enter fullscreen mode":"Entrar no modo tela cheia","Fullscreen mode":"Modo tela cheia","Leave fullscreen mode":"Sair do modo tela cheia","Toggle fullscreen mode":"Alternar modo tela cheia"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

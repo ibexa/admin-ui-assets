@@ -1,0 +1,1 @@
+!function(e){const n=e.ko=e.ko||{};n.dictionary=Object.assign(n.dictionary||{},{"Enter fullscreen mode":"전체 화면으로 보기","Fullscreen mode":"전체 화면 모드","Leave fullscreen mode":"전체 화면 나가기","Toggle fullscreen mode":"전체 화면 모드 전환"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

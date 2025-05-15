@@ -1,0 +1,18 @@
+{
+  "plugins": [
+    {
+      "name": "Revision History",
+      "className": "RevisionHistory",
+      "docs": "features/collaboration/revision-history/revision-history.html",
+      "description": "Allows users to create and view the chronological revision history of their content with the possibility to compare any given revisions of the document.",
+      "path": "src/revisionhistory.js",
+      "uiComponents": [
+        {
+          "type": "SplitButton",
+          "name": "revisionHistory",
+          "iconPath": "@ckeditor/ckeditor5-icons/theme/icons/history.svg"
+        }
+      ]
+    }
+  ]
+}

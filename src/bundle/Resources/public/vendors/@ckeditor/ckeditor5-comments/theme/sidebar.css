@@ -1,0 +1,72 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+:root {
+	--ck-color-annotation-wrapper-background: hsl(0, 0%, 100%);
+	--ck-color-annotation-wrapper-drop-shadow: 0 1px 1px 1px hsl(0, 0%, 90%);
+}
+
+.ck.ck-sidebar {
+	position: relative;
+	transition: min-height 250ms ease;
+	outline: 0;
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+	}
+}
+
+.ck-sidebar-item {
+	position: absolute;
+	width: 100%;
+	transition: top 300ms ease, box-shadow 300ms ease;
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+	}
+}
+
+.ck-sidebar-item--no-animation {
+	transition: top 0s ease !important;
+}
+
+.ck.ck-annotation-wrapper {
+	outline: 0;
+	border-radius: var(--ck-border-radius);
+	background: var(--ck-color-annotation-wrapper-background);
+	box-shadow: var(--ck-color-annotation-wrapper-drop-shadow);
+}
+
+.ck.ck-annotation-wrapper--active,
+.ck.ck-annotation-wrapper:hover{
+	& .ck-annotation__actions {
+		opacity: 1;
+
+		& .ck-comment--resolve {
+			color: var(--ck-color-button-save);
+		}
+	}
+
+	& .ck-suggestion--accept {
+		color: var(--ck-color-button-save)
+	}
+
+	& .ck-suggestion--discard {
+		color: var(--ck-color-button-cancel)
+	}
+}
+
+/* Handle case where annotation is inactive and users hover them. */
+.ck.ck-annotation-wrapper:not(.ck-annotation-wrapper--active):hover {
+	box-shadow: var(--ck-drop-shadow);
+}
+
+.ck.ck-annotation-wrapper--active {
+	box-shadow: var(--ck-drop-shadow-active);
+}

@@ -1,0 +1,131 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: cs\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 ? 0 : (n >= 2 && n <= 4) ? 1 : 2);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The prefix for a name of a revision created by restoring other revision."
+msgid "Restored"
+msgstr "Obnoveno"
+
+msgctxt "The name for an initial revision that is empty."
+msgid "Empty document"
+msgstr "Prázdný dokument"
+
+msgctxt "The name for an initial revision (if it was not empty)."
+msgid "Initial revision"
+msgstr "Počáteční revize"
+
+msgctxt "The label for a dropdown item to compare given revision with already selected revision."
+msgid "Compare against selected"
+msgstr "Porovnat proti vybrané"
+
+msgctxt "The label for a dropdown item to rename given revision."
+msgid "Name this revision"
+msgstr "Pojmenuj tuto revizi"
+
+msgctxt "The label for the user who saved the revision."
+msgid "Revision creator"
+msgstr "Revizi vytvořil"
+
+msgctxt "The label for users who introduced changes in the revision."
+msgid "Revision author"
+msgstr "Autor revize"
+
+msgctxt "The label for the revision name."
+msgid "Revision name"
+msgstr "Název revize"
+
+msgctxt "The label for a toolbar form field where a name for a new revision should be provided."
+msgid "Name of the revision"
+msgstr "Název revize"
+
+msgctxt "The part of a toolbar form field label that indicates the field is optional."
+msgid "optional"
+msgstr "volitelné"
+
+msgctxt "The label for a dropdown item that saves current revision."
+msgid "Save current revision"
+msgstr "Uložit současnou revizi"
+
+msgctxt "The label for a dropdown item to open the revision history view (revision viewer)."
+msgid "Open revision history"
+msgstr "Otevřít historii revize"
+
+msgctxt "The label for the sidebar in revision viewer."
+msgid "Revision history"
+msgstr "Historie revize"
+
+msgctxt "The label for a change tooltip for a suggestion change, shown in revision viewer."
+msgid "Suggested by"
+msgstr "Navrhl"
+
+msgctxt "The label for a change tooltip for an insertion change, shown in revision viewer."
+msgid "Added by"
+msgstr "Přidal"
+
+msgctxt "The label for a change tooltip for a remove change, shown in revision viewer."
+msgid "Removed by"
+msgstr "Odstranil"
+
+msgctxt "Displayed in the revision viewer toolbar when loading a revision."
+msgid "Loading..."
+msgstr "Načítání..."
+
+msgctxt "Displayed in the revision viewer toolbar when the compared revisions have no changes."
+msgid "No changes"
+msgstr "Žádné změny"
+
+msgctxt "Displayed in the revision viewer toolbar when the compared revisions have changes."
+msgid "NUMBER_OF_CHANGES"
+msgid_plural "%0 changes"
+msgstr[0] "0% změna"
+msgstr[1] "0% změny"
+msgstr[2] "%0 změn"
+
+msgctxt "Edit: (2 of 5)"
+msgid "X_OF_Y_CHANGES"
+msgstr "%0 z %1"
+
+msgctxt "The label for a button that highlights previous change in revision viewer."
+msgid "Show previous change"
+msgstr "Zobrazit předchozí změnu"
+
+msgctxt "The label for a button that highlights next change in revision viewer."
+msgid "Show next change"
+msgstr "Zobrazit další změnu"
+
+msgctxt "(Total): 5 changes"
+msgid "Total"
+msgstr "Celkem"
+
+msgctxt "(Edit): 2 of 5"
+msgid "EDIT_X_OF_Y_REVISIONS"
+msgstr "Upravit"
+
+msgctxt "The label for a button that closes revision viewer and shows editor."
+msgid "Back to editing"
+msgstr "Zpátky k úpravám"
+
+msgctxt "The label for a button that restores given revision."
+msgid "Restore this revision"
+msgstr "Obnovit tuto revizi"
+
+msgctxt "The label for the alert shown when closing the editor with an unsaved revision history change."
+msgid "PENDING_ACTION_REVISION_HISTORY"
+msgstr "Neuložené změny v historii revize."
+
+msgctxt "The placeholder for a form input field where a name for a new revision should be provided."
+msgid "Enter the revision name"
+msgstr "Zadejte název revize"
+
+msgctxt "An error text displayed when user attempted to save a revision without providing its name."
+msgid "The revision name cannot be empty."
+msgstr "Název revize nemůže zůstat prázdný"

@@ -1,0 +1,59 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck.ck-revision-history-sidebar__header {
+	/* 
+		The height of the sidebar header is calculated to match the height of the editor toolbar.
+		The total editor toolbar height is set to `auto`, so we need to calculate its size based on the elements inside.
+
+		The editor toolbar height is affected by 2 main variables and takes the height of whichever is bigger:
+		- Toolbar button height, which is a combination of `--ck-ui-component-min-height`, `--ck-icon-size` and `--ck-spacing-small`.
+		- Toolbar separator height, which is a combination of `--ck-icon-size` and `--ck-spacing-small`.
+
+		The toolbar button height is calculated as below:
+		- `var(--ck-ui-component-min-height)` <- The minimum height of the toolbar button.
+		- `2 * var(--ck-spacing-small)` <- Additional margin for all elements inside the toolbar.
+		- `1px` <- Top border.
+
+		The toolbar separator height is calculated as below:
+		- `var(--ck-icon-size) + 2 * var(--ck-spacing-small)` <- The line separator height.
+		- `2 * var(--ck-spacing-small)` <- Additional margin for all elements inside the toolbar.
+		- `1px` <- Top border.
+
+		See https://github.com/cksource/ckeditor5-commercial/issues/6929.
+	*/
+	--header-height: max(
+		calc(var(--ck-ui-component-min-height) + 2 * var(--ck-spacing-small) + 1px),
+		calc(var(--ck-icon-size) + 2 * var(--ck-spacing-small) + 2 * var(--ck-spacing-small) + 1px)
+	);
+
+	height: var(--header-height);
+	min-height: var(--header-height);
+	line-height: var(--header-height);
+	border-bottom: 1px solid var(--ck-color-toolbar-border);
+	overflow: hidden;
+	font-family: inherit;
+	font-weight: bold;
+	color: inherit;
+	padding: 0 var(--ck-revision-history-sidebar-timeline-padding);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	& .ck-revision-history-sidebar__header__label {
+		font-family: inherit;
+		font-weight: bold;
+		color: inherit;
+		font-size: 1.2em;
+	}
+
+	& .ck-icon {
+		margin-right: var(--ck-spacing-large);
+	}
+}

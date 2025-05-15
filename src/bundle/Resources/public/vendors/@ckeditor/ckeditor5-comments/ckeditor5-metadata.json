@@ -1,0 +1,55 @@
+{
+  "plugins": [
+    {
+      "name": "Comments",
+      "className": "Comments",
+      "description": "Non-realtime (standalone) equivalent of Real-time collaborative comments. Allows for adding comments to any part of the rich-text content in CKEditor 5, including text and block elements such as embedded media or images. You can edit or delete comments and reply to them, creating discussion threads.",
+      "docs": "features/collaboration/comments/comments.html",
+      "path": "src/comments.js",
+      "uiComponents": [
+        {
+          "type": "Button",
+          "name": "comment",
+          "iconPath": "@ckeditor/ckeditor5-icons/theme/icons/add-comment.svg",
+          "toolbars": [
+            "main",
+            "image.toolbar",
+            "table.tableToolbar",
+            "media.toolbar"
+          ]
+        },
+        {
+          "type": "Button",
+          "name": "commentsArchive",
+          "iconPath": "@ckeditor/ckeditor5-icons/theme/icons/comments-archive.svg"
+        }
+      ],
+      "htmlOutput": [
+        {
+            "elements": "comment",
+            "attributes": [
+                "id",
+                "type"
+            ]
+        },
+        {
+            "elements": [
+                "comment-end",
+                "comment-start"
+            ],
+            "attributes": [
+                "name"
+            ]
+        },
+        {
+            "elements": "*",
+            "attributes": [
+                "data-comment-end-after",
+                "data-comment-start-before"
+            ],
+            "_comment": "The plugin adds the `data-comment-end-after` and `data-comment-start-before` attributes to other elements on which the comment starts or ends."
+        }
+      ]
+    }
+  ]
+}

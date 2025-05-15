@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+export default{'id':{'dictionary':{'Comment\x20editor':'Editor\x20komentar','NUMBER_OF_COMMENTS':'%0\x20Komentar','TOO_LONG_COMMENT_ALERT':'Komentar\x20terlalu\x20panjang.\x20Komentar\x20Anda\x20berisi\x20%0\x20karakter\x20tapi\x20batas\x20maksimalnya\x20adalah\x20%1\x20karakter.','Reply...':'Balas...','Reply\x20to\x20reopen\x20discussion...':'Jawab\x20diskusi\x20yang\x20dibuka\x20ulang...','Write\x20a\x20comment...':'Tulis\x20sebuah\x20komentar...','Comment\x20was\x20made\x20on\x20an\x20element':'Komentar\x20dibuat\x20pada\x20sebuah\x20elemen','Edit':'Ubah','Resolve':'Selesaikan','Reopen':'Buka\x20ulang','Remove':'Hapus','Reply':'Balas','Delete\x20comment?':'Hapus\x20komentar?','Delete\x20comment\x20thread?':'Hapus\x20utas\x20komentar?','Marked\x20as\x20resolved':'Tandai\x20telah\x20terselesaikan','Comment':'Komentar','Annotations\x20sidebar':'Bilah\x20samping\x20anotasi','Annotations\x20list':'Daftar\x20anotasi','Thread\x20comments':'Komentar\x20utas','THREAD_CONTEXT_LABEL':'Konteks\x20utas:\x20%0','COMMENT_THREAD_LABEL':'Utas\x20komentar\x20oleh\x20%1.\x20%1\x20balasan.','COMMENT_THREAD_DESCRIPTION':'Tekan\x20Enter\x20untuk\x20opsi\x20lainnya.\x20Tekan\x20Escape\x20untuk\x20keluar.','COMMENT_ARIA_LABEL':'Komentar\x20oleh\x20%0.\x20Dibuat\x20pada\x20%1.\x20%2.\x20%3','COMMENTS_ARCHIVE_LIST_LABEL':'Daftar\x20komentar','ACCESSIBILITY_HELP_ANNOTATIONS_GROUP':'Ketukan\x20tombol\x20untuk\x20berinteraksi\x20dengan\x20utas\x20anotasi\x20(cth:\x20komentar,\x20saran\x20perubahan\x20trek)','ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO':'Pindahkan\x20fokus\x20ke\x20utas\x20saat\x20seleksi\x20ditautkan\x20pada\x20penandanya','ACCESSIBILITY_HELP_ANNOTATIONS_EXIT':'Tinggalkan\x20anotasi\x20dan\x20pindahkan\x20fokus\x20kembali\x20ke\x20konten\x20editan','ACCESSIBILITY_HELP_ANNOTATIONS_ENTER':'Telusuri\x20utas\x20anotasi\x20terfokus\x20atau\x20komentar\x20utas','ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS':'Pindahkan\x20ke\x20seluruh\x20internal\x20utas\x20anotasi','ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT':'Kirim\x20balasan\x20sambil\x20menulis\x20komentar','ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS':'Pindahkan\x20ke\x20utas\x20sebelumnya\x20atau\x20berikutnya\x20pada\x20bilah\x20samping\x20anotasi\x20atau\x20arsip\x20komentar','ENTER_COMMENT_ANNOUNCEMENT':'Memasukkan\x20konten\x20dengan\x20komentar.\x20Tekan\x20%0\x20untuk\x20pergi\x20ke\x20diskusi.','LEAVE_COMMENT_ANNOUNCEMENT':'Meninggalkan\x20konten\x20dengan\x20komentar.','PENDING_ACTION_COMMENT_THREAD':'Perubahan\x20tidak\x20tersimpar\x20di\x20utas\x20komentar','EXTERNAL_COMMENT':'Komentar\x20ini\x20berasal\x20dari\x20sumber\x20eksternal.','EXTERNAL_IMPORT_WORD_COMMENT':'Komentar\x20ini\x20berasal\x20dari\x20sebuah\x20berkas\x20Word\x20impor.','EXTERNAL_AVATAR':'Nama\x20penulis\x20yang\x20ditampilkan\x20berasal\x20dari\x20sumber\x20luar\x20(ditambahkan\x20oleh\x20%0)','EXTERNAL_IMPORT_WORD_AVATAR':'Nama\x20penulis\x20yang\x20ditampilkan\x20berasal\x20dari\x20sebuah\x20dokumen\x20Word\x20yang\x20diimpor\x20oleh\x20%0','COMMENTS_ARCHIVE':'Arsip\x20komentar','EMPTY_COMMENTS_ARCHIVE':'Tidak\x20ada\x20utas\x20komentar\x20yang\x20diarsipkan.'},'getPluralForm':_0xe1bff9=>0x0}};

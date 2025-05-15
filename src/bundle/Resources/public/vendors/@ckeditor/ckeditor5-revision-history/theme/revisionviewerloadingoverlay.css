@@ -1,0 +1,84 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck {
+	--ck-revision-history-loading-overlay-transition-duration: .2s;
+	--ck-revision-history-loading-overlay-transition-delay: 0s;
+	--ck-revision-history-loading-overlay-spinner-rotation-duration: 1s;
+	--ck-revision-history-loading-overlay-spinner-size: 60px;
+	--ck-revision-history-loading-overlay-visible-background: hsla(0, 0%, 100%, 1);
+}
+
+.ck.ck-editor__editable {
+	&::before, &::after {
+		visibility: hidden;
+		transition: opacity var(--ck-revision-history-loading-overlay-transition-duration) ease;
+		opacity: 0;
+		content: '';
+		position: absolute;
+		transition-delay: 0;
+
+		@media (prefers-reduced-motion: reduce) {
+			transition: none;
+		}
+	}
+
+	&::before {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: var(--ck-revision-history-loading-overlay-visible-background);
+		z-index: var(--ck-z-default);
+	}
+
+	&::after {
+		box-sizing: border-box;
+		top: 50%;
+		left: 50%;
+		width: var(--ck-revision-history-loading-overlay-spinner-size);
+		height: var(--ck-revision-history-loading-overlay-spinner-size);
+		transform: translate(-50%, -50%);
+		border-radius: 50%;
+		border-top: 3px solid var(--ck-color-base-text);
+		border-right: 3px solid transparent;
+		animation: ck-revision-history-spinner-animation var(--ck-revision-history-loading-overlay-spinner-rotation-duration) linear infinite;
+		z-index: var(--ck-z-default);
+	}
+
+	&.ck-editor__editable__loading-overlay, &.ck-editor__editable__overlay {
+		position: relative;
+		min-height: calc(var(--ck-revision-history-loading-overlay-spinner-size) + 2 * var(--ck-spacing-large));
+
+		&::before, &::after {
+			visibility: visible;
+			/* Some widgets (e.g. Image) has z-index set to 1. Overlay needs a higher value to cover them correctly. */
+			z-index: 2;
+			opacity: .8;
+			transition-delay: var(--ck-revision-history-loading-overlay-transition-delay);
+		}
+	}
+
+	&.ck-editor__editable__overlay {
+		&::after {
+			visibility: hidden;
+		}
+	}
+}
+
+@keyframes ck-revision-history-spinner-animation {
+	/* Safari needs this 0deg step. */
+	from {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	to {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}

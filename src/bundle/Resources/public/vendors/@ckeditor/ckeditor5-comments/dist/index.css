@@ -1,0 +1,1077 @@
+/**
+ * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+:root {
+	--ck-color-comment-marker: hsl(55, 98%, 83%);
+	--ck-color-comment-marker-active: hsl(55, 98%, 68%);
+}
+
+.ck-content .ck-comment-marker {
+	background: var(--ck-color-comment-marker);
+
+	/* Match size with suggestion markers */
+	border-top: 3px solid transparent;
+	border-bottom: 3px solid transparent;
+
+	/* #152. In the image case, we change marker background to border. */
+}
+
+.ck-content .ck-comment-marker.ck-widget {
+		background-color: transparent;
+		border: 3px solid var(--ck-color-comment-marker);
+	}
+
+.ck-content .ck-comment-marker--active {
+	background: var(--ck-color-comment-marker-active);
+
+	/* See #2469. Inactive comment marker inside an active one should be highlighted too. */
+}
+
+.ck-content .ck-comment-marker--active .ck-comment-marker {
+		background: var(--ck-color-comment-marker-active);
+	}
+
+.ck-content .ck-comment-marker--active.ck-widget {
+		border-color: var(--ck-color-comment-marker-active);
+
+		/* See #2469. Inactive comment in a widget inside an active comment should not be highlighted. */
+	}
+
+.ck-content .ck-comment-marker--active.ck-widget .ck-comment-marker {
+			background-color: var(--ck-color-comment-marker);
+		}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/**
+ * A helper to combine multiple shadows.
+ */
+
+/**
+ * Gives an element a drop shadow so it looks like a floating panel.
+ */
+
+:root {
+	--ck-color-comment-background: hsl(210, 52%, 97%);
+	--ck-color-comment-separator: hsl(210, 52%, 87%);
+	--ck-color-comment-remove-background: var(--ck-color-light-red);
+	--ck-color-comment-input-background: var(--ck-color-comment-background);
+}
+
+.ck .ck-comment__wrapper {
+	font-size: var(--ck-font-size-base);
+	position: relative;
+	outline: 0;
+	transition: all 300ms linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+.ck .ck-comment__wrapper {
+		transition: none;
+}
+	}
+
+.ck .ck-comment__wrapper.ck-comment--remove-confirmation {
+		transform: translate3d( -100%, 0, 0 );
+	}
+
+.ck .ck-comment__wrapper:first-of-type {
+		border-top-right-radius: var(--ck-border-radius);
+		border-top-left-radius: var(--ck-border-radius);
+	}
+
+.ck .ck-comment__wrapper:focus {
+		background: var(--ck-color-button-default-hover-background);
+	}
+
+.ck .ck-comment::after {
+		content: '';
+		display: block;
+		position: absolute;
+		opacity: 1;
+		top: calc( var(--ck-user-avatar-size) + var(--ck-spacing-small) );
+		left: calc(
+			var(--ck-spacing-standard) + ( var(--ck-user-avatar-size) / 2 )
+
+			/* Half width of line. */
+			- 2px
+		);
+		width: 4px;
+		height: 100%;
+		background-color: var(--ck-color-comment-separator);
+	}
+
+.ck .ck-comment--remove {
+	background-color: var(--ck-color-comment-remove-background);
+}
+
+.ck .ck-comment--remove::after {
+		opacity: 0;
+	}
+
+.ck .ck-comment--edit {
+	background-color: var(--ck-color-comment-input-background);
+}
+
+.ck .ck-comment--edit::after {
+		opacity: 0;
+	}
+
+.ck .ck-comment--edit .ck-comment__input-actions {
+		margin-top: var(--ck-spacing-standard);
+	}
+
+.ck .ck-comment__content {
+	word-break: break-word;
+}
+
+.ck .ck-comment--info .ck-comment__content {
+		font-style: italic;
+	}
+
+/* Common styles for typography inside comment element and editable input.
+We are styling resetting list-style because of parent <ul> element. */
+.ck .ck-comment p, .ck .ck-comment__input p {
+		margin: 0;
+	}
+.ck .ck-comment ul,
+	.ck .ck-comment__input ul,
+	.ck .ck-comment ol,
+	.ck .ck-comment__input ol {
+		padding-left: 10px;
+		margin-left: 10px;
+	}
+.ck .ck-comment ul, .ck .ck-comment__input ul {
+		list-style: disc;
+		margin-bottom: 5px;
+		margin-top: 0;
+	}
+.ck .ck-comment ul ul, .ck .ck-comment__input ul ul {
+			list-style: circle;
+		}
+.ck .ck-comment ul ul ul, .ck .ck-comment__input ul ul ul {
+				list-style: square;
+			}
+
+.ck .ck-comment__main .ck-comment__input-wrapper {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		transition: all 300ms linear;
+	}
+
+.ck .ck-comment__main .ck-comment__input-wrapper .ck-comment__input {
+			padding: 0;
+		}
+
+.ck .ck-comment__user {
+	/* Display user above vertical line. */
+	z-index: var(--ck-z-default);
+}
+
+/* We need specificity 030 to beat styles in `commentinput.css`. */
+.ck-comment__input-actions .ck.ck-button.ck-comment__input-actions--submit {
+	background: var(--ck-color-base-action);
+	color: hsl(0, 0%, 100%);
+}
+.ck-comment__input-actions .ck.ck-button.ck-comment__input-actions--submit:hover {
+		background: var(--ck-color-button-save);
+	}
+
+.ck-comment__input-actions .ck.ck-button.ck-comment__input-actions--cancel {
+	color: var(--ck-color-text);
+}
+
+.ck .ck-comment__external {
+	font-style: italic;
+	color: var(--ck-color-annotation-info);
+	font-size: var(--ck-font-size-tiny);
+	margin-top: var(--ck-spacing-standard);
+}
+
+.ck .ck-comment .ck-dropdown .ck-dropdown__arrow {
+		display: none;
+	}
+
+.ck .ck-comment .ck-dropdown .ck-list {
+		margin: 0;
+		padding: var(--ck-spacing-small) 0;
+	}
+
+.ck .ck-comment .ck-dropdown .ck-list .ck-list__item {
+			font-size: 1.2em;
+			color: var(--ck-color-base-text);
+			min-width: auto;
+		}
+
+.ck .ck-comment .ck-dropdown .ck-list .ck-list__item .ck-button {
+				color: var(--ck-color-text);
+			}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/**
+ * A visual style of focused element's border.
+ */
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+/**
+ * A helper to combine multiple shadows.
+ */
+/**
+ * Gives an element a drop shadow so it looks like a floating panel.
+ */
+/*
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+/**
+ * Implements rounded corner interface for .ck-rounded-corners class.
+ *
+ * @see $ck-border-radius
+ */
+
+:root {
+	--ck-color-thread-remove-background: var(--ck-color-comment-remove-background);
+	--ck-color-comment-count: hsl(210, 52%, 57%);
+
+	--ck-color-thread-header-background: hsl(54, 88%, 93%);
+	--ck-color-thread-header-active-background: hsl(52, 100%, 83%);
+
+	--ck-color-unlinked-background: hsl(0, 0%, 96%);
+	--ck-color-unlinked-active-background: hsl(0, 0%, 92%);
+}
+
+.ck .ck-thread {
+	border-radius: 0;
+
+	width: 100%;
+	color: var(--ck-color-base-text);
+	outline: 0;
+	background-color: var(--ck-color-base-background);
+	overflow: hidden;
+
+	/*
+	 * Beware: Using "transition: all" breaks focus management (unable to obtain focus on show)
+	 * because the view is displayed in a dialog that gets toggled via "visibility" property.
+	 */
+	transition-property: color, background-color, width, outline;
+	transition-duration: 300ms;
+	transition-timing-function: ease;
+}
+
+.ck-rounded-corners .ck .ck-thread,
+	.ck .ck-thread.ck-rounded-corners {
+		border-radius: var(--ck-border-radius);
+	}
+
+@media (prefers-reduced-motion: reduce) {
+
+.ck .ck-thread {
+		transition: none;
+}
+	}
+
+.ck .ck-thread:focus {
+		/*
+		 * We cannot use the ck-focus-ring mixin here because it adds a border that would need to stay transparent
+		 * in non-focused state and create an odd space inside the surrounding annotation container.
+		 */
+		outline: var(--ck-focus-ring);
+
+		/*
+		 * We cannot use the ck-box-shadow mixin because we're using outline instead of border (see the comment above).
+		 * And the shadow size has to be custom because outline is rendered on top of the shadow.
+		 */
+		box-shadow: 0 0 0 4px var(--ck-color-focus-outer-shadow);
+	}
+
+/*
+ * In case of inline annotations, their focus styles get hoisted to the balloon panel to work around overflow that would
+ * otherwise get them cropped..
+ */
+.ck-balloon-panel:has( .ck-thread:focus ) {
+	/* Disable native outline. */
+	outline: none;
+	border: var(--ck-focus-ring);
+	box-shadow: var(--ck-drop-shadow), var(--ck-focus-outer-shadow);
+}
+
+.ck .ck-thread__header {
+	display: flex;
+	justify-content: space-between;
+	line-height: 1.57;
+	padding: var(--ck-spacing-standard);
+	background-color: var(--ck-color-thread-header-background);
+	font-size: var(--ck-font-size-base);
+}
+
+.ck .ck-thread__header .ck-button {
+		font-size: var(--ck-annotation-button-size);
+	}
+
+.ck .ck-thread__header .ck-context-wrapper {
+		display: inline-flex;
+		width: 100%;
+		min-width: 0;
+		height: 25px;
+		position: relative;
+		padding-right: var(--ck-spacing-large);
+	}
+
+.ck .ck-thread__header .ck-context {
+		display: flex;
+		white-space: nowrap;
+		overflow: hidden;
+		width: 100%;
+		padding: var(--ck-spacing-small) var(--ck-spacing-medium);
+	}
+
+.ck .ck-thread__header .ck-context.ck-context--quotes::after, .ck .ck-thread__header .ck-context.ck-context--quotes::before {
+				display: inline-block;
+				content: '"';
+			}
+
+.ck .ck-thread__header .ck-context .ck-context__type {
+			font-weight: bold;
+			padding-right: var(--ck-spacing-standard);
+		}
+
+.ck .ck-thread__header .ck-context .ck-context__value {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			border: 1px solid transparent;
+		}
+
+.ck .ck-thread__header .ck-context .ck-context__value:focus {
+				/* Disable native outline. */
+				outline: none;
+				border: var(--ck-focus-ring);
+				box-shadow: var(--ck-focus-outer-shadow), 0 0;
+			}
+
+.ck .ck-thread__header .ck-context.overlay {
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			z-index: 2;
+
+			background: var(--ck-color-base-background);
+			box-shadow: 0 2px 3px hsla(0, 0%, 100%, 0.2);
+			border-radius: 2px;
+			white-space: normal;
+			box-sizing: border-box;
+		}
+
+.ck .ck-thread__comment-count {
+	/* Make avatar size in the comment smaller than in presence list. */
+	--ck-user-avatar-size: 28px;
+
+	padding-left: calc( var(--ck-user-avatar-size) + var(--ck-spacing-standard) * 2 );
+
+	color: var(--ck-color-comment-count);
+	font-size: var(--ck-font-size-base);
+	font-weight: bold;
+	cursor: pointer;
+
+	/* Keep similar transition like `ck-annotation`. */
+	transition: background-color 300ms ease;
+}
+
+.ck .ck-thread__comment-count::before {
+		content: '\25BC';
+		margin-right: var(--ck-spacing-small);
+	}
+
+.ck .ck-thread--remove .ck-comment {
+		background-color: var(--ck-color-comment-remove-background);
+	}
+
+.ck .ck-thread--remove .ck-thread__input--active {
+		background-color: var(--ck-color-base-background);
+	}
+
+.ck .ck-thread--remove .ck-thread__input--active.ck-thread__input {
+			background-color: var(--ck-color-comment-remove-background);
+		}
+
+.ck .ck-thread--remove .ck-thread__comment-count {
+		background-color: var(--ck-color-comment-remove-background);
+	}
+
+/* Handle visibility of vertical line below avatars. */
+
+.ck .ck-thread--remove .ck-comment__wrapper .ck-comment::after {
+			opacity: 0;
+		}
+
+/* Handle visibility of vertical line below avatars. */
+.ck .ck-thread__comments .ck-comment__wrapper:last-of-type .ck-comment::after {
+			opacity: 0;
+		}
+
+.ck .ck-thread__container {
+	transition: transform 300ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+.ck .ck-thread__container {
+		transition: none;
+}
+	}
+
+.ck .ck-thread__comments {
+	position: relative;
+	z-index: var(--ck-z-default);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-radius: var(--ck-border-radius);
+}
+
+.ck .ck-thread__user {
+	font-size: 0.85em;
+}
+
+.ck .ck-thread__input {
+	/* #1829. Firefox is wrongly rendering flex container width 100% with overflowed (non-spaced) text. */
+	width: calc( 100% - var(--ck-user-avatar-size) );
+	white-space: normal;
+
+	transition: background-color 200ms ease-in-out;
+	border-radius: var(--ck-border-radius);
+
+	/*
+		This is equal to the height of the wrapper when the editor instance is loaded.
+		Editor instance is loaded _after_ the comment view is created,
+		so the min-height is set to avoid jitter.
+	*/
+	min-height: 38px;
+}
+
+.ck .ck-thread--active .ck-comment__options.ck-dropdown {
+		display: block;
+	}
+
+.ck .ck-thread--active .ck-thread__input {
+		display: block;
+		background-color: var(--ck-color-comment-background);
+	}
+
+.ck .ck-thread--active .ck-thread__header {
+		background-color: var(--ck-color-thread-header-active-background);
+	}
+
+.ck .ck-thread--unlinked {
+	--ck-color-comment-box-border: var(--ck-color-base-border);
+
+	--ck-color-thread-header-background: var(--ck-color-unlinked-background);
+	--ck-color-thread-header-active-background: var(--ck-color-unlinked-active-background);
+}
+
+.ck .ck-thread--remove-confirmation .ck-thread__container {
+		transform: translate3d( -100%, 0, 0 );
+	}
+
+/* We need specificity 020 to beat .ck.ck-button. */
+.ck.ck-button.ck-thread__remove-confirm-submit {
+	color: var(--ck-color-button-save);
+}
+
+.ck.ck-button.ck-thread__remove-confirm-cancel {
+	color: var(--ck-color-button-cancel);
+}
+
+.ck .ck-thread__remove-confirm {
+	font-size: var(--ck-font-size-base);
+	position: absolute;
+	display: flex;
+	justify-content: flex-start;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	height: 100%;
+	background-color: var(--ck-color-comment-remove-background);
+}
+
+.ck .ck-thread__remove-confirm .ck-thread__remove-confirm-inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding-top: var(--ck-spacing-standard);
+		height: 100%;
+		width: 100%;
+
+		/* Maximum height of confirmation (in case with such long comment). */
+		max-height: 400px;
+	}
+
+.ck .ck-thread__remove-confirm p {
+		font-weight: bold;
+		margin: 0;
+	}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck .ck-comment__input-container {
+	/* Make avatar size in the comment smaller than in presence list. */
+	--ck-user-avatar-size: 28px;
+
+	font-size: var(--ck-font-size-base);
+
+	display: none;
+	padding: var(--ck-spacing-standard);
+	background: var(--ck-color-comment-background);
+}
+
+.ck .ck-comment__input-container--active {
+	display: flex;
+}
+
+.ck .ck-comment__input {
+	padding: var(--ck-spacing-standard);
+
+	/* To keep vertical align with avatar. */
+	padding-top: var(--ck-spacing-medium);
+
+	color: var(--ck-color-base-text);
+	border-width: 0;
+	resize: none;
+	background-color: transparent;
+	transition: color 300ms ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+.ck .ck-comment__input {
+		transition: none;
+}
+	}
+
+.ck .ck-comment__input:focus {
+		outline: none;
+	}
+
+.ck .ck-comment__input .ck-editor__editable_inline {
+		/* Disable default outline and border in editable input. */
+		--ck-focus-ring: none;
+		--ck-inner-shadow: none;
+
+		padding: 0;
+		overflow: visible;
+		border: 0;
+		background-color: transparent;
+		word-break: break-word;
+	}
+
+/* Overwrite default CKEditor 5 margin of editable children.
+See: ckeditor5-theme-lark/theme/ckeditor5-ui/components/editorui/editorui.css. */
+.ck-comment__input-wrapper .ck.ck-editor__editable_inline *:first-child {
+	margin-top: 0;
+}
+.ck-comment__input-wrapper .ck.ck-editor__editable_inline *:last-child {
+	margin-bottom: 0;
+}
+
+.ck .ck-comment__input-actions {
+	width: 100%;
+	text-align: right;
+	display: none;
+}
+
+.ck .ck-comment__input-actions.ck-comment__input-actions--active {
+		display: block;
+	}
+
+.ck .ck-comment__input-actions .ck.ck-button {
+		/* Overwrite CK5 button default styles. */
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		min-height: var(--ck-ui-component-min-height);
+		min-width: 60px;
+		font-size: var(--ck-annotation-button-size);
+		margin-left: var(--ck-spacing-large);
+		padding: 0 var(--ck-spacing-medium);
+	}
+
+.ck .ck-comment__input-actions .ck-button.ck-disabled {
+		opacity: .3;
+	}
+
+.ck .ck-comment__input-textarea {
+	display: block;
+}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/* Common styles for inline comment and inline suggestion. */
+
+:root {
+	--ck-inline-annotation-container-width: 300px;
+	--ck-inline-annotation-container-max-height: 400px;
+}
+
+.ck.ck-balloon-panel .ck-annotation-wrapper {
+	/* Override default `position: absolute`. */
+	position: static;
+
+	width: var(--ck-inline-annotation-container-width);
+	max-height: var(--ck-inline-annotation-container-max-height);
+
+	overflow-y: auto;
+
+	/* Get rid of scroll chaining. */
+	overscroll-behavior-y: contain;
+
+	/* We need to hide overflow in x-axis to prevent container stretching because of buttons tooltip. */
+	overflow-x: hidden;
+}
+
+.ck.ck-balloon-panel .ck-annotation {
+	/* We don't need fadeInLeft animation for inline annotations. */
+	animation: none;
+}
+
+.ck.ck-balloon-panel .ck-annotation-wrapper * {
+	/* Default `.ck.ck-reset_all *` has `white-space: nowrap` and display content in one line. */
+	white-space: normal;
+}
+
+/* Because `.ck.ck-reset_all *` is overriding default font property. */
+.ck.ck-balloon-panel .ck-annotation-wrapper strong {
+	font-weight: bold;
+}
+
+.ck.ck-balloon-panel .ck-annotation-wrapper i {
+	font-style: italic;
+}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+:root {
+	--ck-color-annotation-wrapper-background: hsl(0, 0%, 100%);
+	--ck-color-annotation-wrapper-drop-shadow: 0 1px 1px 1px hsl(0, 0%, 90%);
+}
+
+.ck.ck-sidebar {
+	position: relative;
+	transition: min-height 250ms ease;
+	outline: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+.ck.ck-sidebar {
+		transition: none;
+}
+	}
+
+.ck-sidebar-item {
+	position: absolute;
+	width: 100%;
+	transition: top 300ms ease, box-shadow 300ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+.ck-sidebar-item {
+		transition: none;
+}
+	}
+
+.ck-sidebar-item--no-animation {
+	transition: top 0s ease !important;
+}
+
+.ck.ck-annotation-wrapper {
+	outline: 0;
+	border-radius: var(--ck-border-radius);
+	background: var(--ck-color-annotation-wrapper-background);
+	box-shadow: var(--ck-color-annotation-wrapper-drop-shadow);
+}
+
+.ck.ck-annotation-wrapper--active .ck-annotation__actions, .ck.ck-annotation-wrapper:hover .ck-annotation__actions {
+		opacity: 1;
+	}
+
+.ck.ck-annotation-wrapper--active .ck-annotation__actions .ck-comment--resolve, .ck.ck-annotation-wrapper:hover .ck-annotation__actions .ck-comment--resolve {
+			color: var(--ck-color-button-save);
+		}
+
+.ck.ck-annotation-wrapper--active .ck-suggestion--accept, .ck.ck-annotation-wrapper:hover .ck-suggestion--accept {
+		color: var(--ck-color-button-save)
+	}
+
+.ck.ck-annotation-wrapper--active .ck-suggestion--discard, .ck.ck-annotation-wrapper:hover .ck-suggestion--discard {
+		color: var(--ck-color-button-cancel)
+	}
+
+/* Handle case where annotation is inactive and users hover them. */
+.ck.ck-annotation-wrapper:not(.ck-annotation-wrapper--active):hover {
+	box-shadow: var(--ck-drop-shadow);
+}
+
+.ck.ck-annotation-wrapper--active {
+	box-shadow: var(--ck-drop-shadow-active);
+}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+:root {
+	--ck-annotation-counter-icon-size: 16px;
+	--ck-annotation-counter-number-size: 10px;
+	--ck-color-annotation-counter-comment: hsl(55, 98%, 48%);
+	--ck-color-annotation-counter-suggestion-insertion: hsl(128, 62%, 60%);
+	--ck-color-annotation-counter-suggestion-deletion: hsl(345, 62%, 60%);
+	--ck-color-annotation-counter-suggestion-format: hsl(191, 62%, 60%);
+}
+
+/* Center a annotation counter icon no matter of parent container width. */
+.ck.ck-sidebar--narrow .ck-sidebar-item {
+	display: flex;
+	justify-content: center;
+}
+
+.ck.ck-sidebar--narrow .ck-annotation-counter {
+	/* Let's reduce icon size a bit. */
+	font-size: var(--ck-annotation-counter-icon-size);
+
+	/* Reduce default `.ck-button` min-height which is 2.3em, bigger than current icon. */
+	min-height: unset;
+	padding: 0;
+
+	cursor: pointer;
+	color: hsl(0, 0%, 50%);
+}
+
+.ck.ck-sidebar--narrow .ck-annotation-counter:hover,
+.ck.ck-sidebar--narrow .ck-annotation-counter:focus {
+	background: transparent;
+	box-shadow: none;
+	color: hsl(0, 0%, 30%);
+}
+
+.ck.ck-sidebar--narrow .ck-annotation-counter__badge {
+	border-radius: 50%;
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	background: hsl(0, 0%, 20%);
+	font-weight: bold;
+	color: hsl(0, 0%, 100%);
+	font-size: var(--ck-annotation-counter-number-size);
+	font-family: var(--ck-font-face);
+	right: 0;
+	top: -6px;
+
+	/* Improve visibility of counter number. */
+	text-shadow: -1px 0 2px hsl(0, 0%, 27%), 1px 0 2px hsl(0, 0%, 27%);
+
+	/* Display number perfectly center of circle. */
+	display: flex;
+	justify-content: center;
+
+	/* We can't use here `align-items: center` because we need to edit `line-height` for edit mode case. */
+	line-height: 16px;
+
+	/* To display above comment icon. */
+	z-index: 1;
+}
+
+/* When annotation is in edit mode, center `...` differently. */
+.ck.ck-sidebar--narrow .ck-annotation-counter__badge--edit-mode {
+	line-height: 1;
+}
+
+.ck.ck-sidebar--narrow .ck-annotation-counter__badge--suggestion-insertion,
+.ck.ck-sidebar--narrow .ck-annotation-counter__badge--suggestion-replace {
+	background: var(--ck-color-annotation-counter-suggestion-insertion);
+}
+
+.ck.ck-sidebar--narrow .ck-annotation-counter__badge--suggestion-deletion {
+	background: var(--ck-color-annotation-counter-suggestion-deletion);
+}
+
+.ck.ck-sidebar--narrow .ck-annotation-counter__badge--suggestion-format {
+	background: var(--ck-color-annotation-counter-suggestion-format);
+}
+
+.ck.ck-sidebar--narrow .ck-annotation-counter__badge--comment {
+	background: var(--ck-color-annotation-counter-comment);
+}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+/* Common styles for single comment and single suggestion. */
+:root {
+	--ck-color-annotation-icon: hsl(0, 0%, 50%);
+	--ck-color-annotation-info: hsl(0, 0%, 46%);
+
+	--ck-annotation-button-size: 0.85em;
+}
+
+.ck .ck-annotation {
+	/* Make avatar size in the comment smaller than in presence list. */
+	--ck-user-avatar-size: 28px;
+
+	font-size: var(--ck-font-size-base);
+
+	display: flex;
+	position: relative;
+	animation: fadeInLeft 300ms;
+	transition: background-color 300ms ease;
+	padding: var(--ck-spacing-standard);
+	white-space: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+.ck .ck-annotation {
+		animation: none;
+		transition: none;
+}
+	}
+
+.ck .ck-annotation .ck-button {
+		/* Overwrite CK5 button default styles. */
+		background-color: transparent;
+		min-width: unset;
+		min-height: unset;
+		cursor: pointer;
+		color: var(--ck-color-annotation-icon);
+		border-radius: var(--ck-border-radius);
+		font-size: var(--ck-annotation-button-size);
+	}
+
+.ck .ck-annotation .ck-user {
+		font-size: 0.85em;
+	}
+
+.ck .ck-annotation__main {
+	display: grid;
+	grid-template-areas:
+		"info actions"
+		"content content";
+	grid-template-columns: minmax(0, 1fr) auto;
+
+	/* #1829. Firefox is wrongly rendering flex container width 100% with overflowed (non-spaced) text. */
+	width: calc( 100% - var(--ck-user-avatar-size) );
+
+	transition: all 200ms ease;
+	border-radius: var(--ck-border-radius);
+	padding-left: var(--ck-spacing-standard);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+.ck .ck-annotation__main {
+		transition: none;
+}
+	}
+
+.ck .ck-annotation__main p {
+	margin: 0;
+
+	/* We need it to prevent `.ck.ck-reset` ovverride. */
+	white-space: normal;
+	font-size: var(--ck-font-size-base);
+
+	/* TODO: refactor this value later. */
+	line-height: 1.5em;
+}
+
+.ck .ck-annotation__user {
+	margin-top: var(--ck-spacing-small);
+}
+
+.ck .ck-annotation__info {
+	grid-area: info;
+
+	display: flex;
+	align-items: center;
+	color: var(--ck-color-annotation-info);
+
+	/* #156. Edit & remove icon are higher than plain text with the same font-size, so we need to take care if icons are hidden. */
+	min-height: 2.4em;
+}
+
+.ck .ck-annotation__info-name,
+.ck .ck-annotation__info-time {
+	font-weight: bold;
+	white-space: nowrap;
+	overflow: hidden;
+
+	/* We need it to prevent `.ck.ck-reset` ovverride. */
+	color: var(--ck-color-annotation-info);
+	font-size: var(--ck-font-size-small);
+}
+
+.ck .ck-annotation__info-name {
+	text-overflow: ellipsis;
+}
+
+.ck .ck-annotation__info-time {
+	flex: 0 0 auto;
+
+	margin: 0 var(--ck-spacing-large);
+}
+
+.ck.ck-balloon-panel .ck-annotation-wrapper .ck-annotation__info-name,
+.ck.ck-balloon-panel .ck-annotation-wrapper .ck-annotation__info-time {
+	white-space: nowrap;
+}
+
+.ck .ck-annotation__actions {
+	grid-area: actions;
+
+	transition: opacity 200ms ease;
+	opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+.ck .ck-annotation__actions {
+		transition: none;
+}
+	}
+
+/* Because of display flex, we need to strech out annotation content to 100%. */
+.ck .ck-annotation__content-wrapper {
+	grid-area: content;
+
+	width: 100%;
+}
+
+@keyframes fadeInLeft {
+	from {
+		transform: translate3d( -5%, 0, 0 );
+		opacity: 0;
+	}
+
+	to {
+		transform: translate3d( 0, 0, 0 );
+		opacity: 1;
+	}
+}
+
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck .ck-comments-archive-dropdown.ck-dropdown__panel {
+		z-index: var( --ck-z-panel );
+	}
+
+.ck .ck-comments-archive {
+	width: 400px;
+	max-height: 450px;
+	box-sizing: content-box;
+}
+
+.ck .ck-comments-archive .ck-annotation {
+		animation: none;
+	}
+
+.ck .ck-comments-archive .ck-comments-archive__header, .ck .ck-comments-archive .ck-comments-archive__content {
+		overflow: auto;
+		max-height: 410px;
+		padding: var( --ck-spacing-large );
+	}
+
+.ck .ck-comments-archive .ck-comments-archive__header {
+		max-height: 40px;
+		line-height: var( --ck-font-size-base );
+		font-weight: bold;
+		border-bottom: 1px solid var( --ck-color-toolbar-border );
+	}
+
+.ck .ck-comments-archive .ck-comments-archive__content .ck-annotation-wrapper:not(:last-child) {
+			margin-bottom: var( --ck-spacing-large );
+		}
+
+.ck .ck-comments-archive .ck-comments-archive__info {
+		text-align: center;
+		font-style: italic;
+		color: var( --ck-color-annotation-info );
+	}

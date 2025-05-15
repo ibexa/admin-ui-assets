@@ -1,0 +1,15 @@
+/**
+ * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+.ck.ck-track-changes-preview{
+	max-height:80vh;
+	max-width:80vw;
+	overflow-x:hidden;
+	user-select:text;
+}
+
+.ck.ck-content.ck-track-changes-preview__root-container[data-ck-root-name]{
+	margin:0;
+	border:none;
+}

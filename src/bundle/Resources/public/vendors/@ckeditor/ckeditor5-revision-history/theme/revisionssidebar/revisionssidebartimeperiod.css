@@ -1,0 +1,43 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+.ck {
+	--ck-revision-history-sidebar-revision-vertical-spacing: calc(2 * var(--ck-spacing-standard));
+}
+
+.ck.ck-revision-history-sidebar__time-period {
+	width: 100%;
+
+	& .ck-revision-history-sidebar__time-period__label {
+		background: var(--ck-revision-history-sidebar-period-background);
+		font-size: 9px;
+		font-weight: bold;
+		padding: var(--ck-spacing-tiny) var(--ck-spacing-standard);
+		border-radius: var(--ck-border-radius);
+		color: var(--ck-color-base-background);
+		text-transform: uppercase;
+
+		&:first-child {
+			margin-top: var(--ck-spacing-standard);
+		}
+	}
+
+	& .ck-revision-history-sidebar__time-period__revisions {
+		display: flex;
+		flex-direction: column;
+
+		& .ck-revision-history-sidebar__revision-wrapper {
+			margin-top: var(--ck-revision-history-sidebar-revision-vertical-spacing);
+		}
+	}
+
+	&:not(.ck-hidden) + .ck-revision-history-sidebar__time-period {
+		margin-top: var(--ck-revision-history-sidebar-revision-vertical-spacing);
+	}
+}

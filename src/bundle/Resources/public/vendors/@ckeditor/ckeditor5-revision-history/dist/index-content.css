@@ -1,0 +1,35 @@
+/**
+ * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+.ck-content .ck-suggestion-preview-marker{ opacity:0.75; }
+
+.ck-content .ck-suggestion-preview-marker-split{ opacity:0.75; }
+
+.ck-content .ck-suggestion-preview-marker-split::after{ content:'¶'; }
+
+.ck-content .ck-suggestion-preview-marker-merge{ opacity:0.75; text-decoration:line-through; }
+
+.ck-content .ck-suggestion-preview-marker-merge::after{ content:'¶'; }
+
+.ck-content .ck-suggestion-preview-marker-deletion{ text-decoration:line-through; }
+
+.ck-content .ck-suggestion-marker-merge-new::after{
+		color:inherit;
+	}
+
+.ck-content .ck-suggestion-marker-insertion-new,
+	.ck-content .ck-suggestion-marker-split-new{
+		opacity:0.75;
+	}
+
+.ck-content .ck-suggestion-marker-deletion-new.ck-suggestion-marker--active:not(.table),
+	.ck-content .ck-suggestion-marker-merge-new.ck-suggestion-marker--active{
+
+		opacity:1;
+	}
+
+.ck-content .ck-suggestion-marker-insertion-new.ck-suggestion-marker--active,
+	.ck-content .ck-suggestion-marker-split-new.ck-suggestion-marker--active{
+		opacity:1;
+	}

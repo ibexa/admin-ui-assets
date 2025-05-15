@@ -1,0 +1,91 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+:root {
+	--ck-annotation-counter-icon-size: 16px;
+	--ck-annotation-counter-number-size: 10px;
+	--ck-color-annotation-counter-comment: hsl(55, 98%, 48%);
+	--ck-color-annotation-counter-suggestion-insertion: hsl(128, 62%, 60%);
+	--ck-color-annotation-counter-suggestion-deletion: hsl(345, 62%, 60%);
+	--ck-color-annotation-counter-suggestion-format: hsl(191, 62%, 60%);
+}
+
+/* Center a annotation counter icon no matter of parent container width. */
+.ck.ck-sidebar--narrow .ck-sidebar-item {
+	display: flex;
+	justify-content: center;
+}
+
+.ck.ck-sidebar--narrow .ck-annotation-counter {
+	/* Let's reduce icon size a bit. */
+	font-size: var(--ck-annotation-counter-icon-size);
+
+	/* Reduce default `.ck-button` min-height which is 2.3em, bigger than current icon. */
+	min-height: unset;
+	padding: 0;
+
+	cursor: pointer;
+	color: hsl(0, 0%, 50%);
+}
+
+.ck.ck-sidebar--narrow .ck-annotation-counter:hover,
+.ck.ck-sidebar--narrow .ck-annotation-counter:focus {
+	background: transparent;
+	box-shadow: none;
+	color: hsl(0, 0%, 30%);
+}
+
+.ck.ck-sidebar--narrow .ck-annotation-counter__badge {
+	border-radius: 50%;
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	background: hsl(0, 0%, 20%);
+	font-weight: bold;
+	color: hsl(0, 0%, 100%);
+	font-size: var(--ck-annotation-counter-number-size);
+	font-family: var(--ck-font-face);
+	right: 0;
+	top: -6px;
+
+	/* Improve visibility of counter number. */
+	text-shadow: -1px 0 2px hsl(0, 0%, 27%), 1px 0 2px hsl(0, 0%, 27%);
+
+	/* Display number perfectly center of circle. */
+	display: flex;
+	justify-content: center;
+
+	/* We can't use here `align-items: center` because we need to edit `line-height` for edit mode case. */
+	line-height: 16px;
+
+	/* To display above comment icon. */
+	z-index: 1;
+}
+
+/* When annotation is in edit mode, center `...` differently. */
+.ck.ck-sidebar--narrow .ck-annotation-counter__badge--edit-mode {
+	line-height: 1;
+}
+
+.ck.ck-sidebar--narrow .ck-annotation-counter__badge--suggestion-insertion,
+.ck.ck-sidebar--narrow .ck-annotation-counter__badge--suggestion-replace {
+	background: var(--ck-color-annotation-counter-suggestion-insertion);
+}
+
+.ck.ck-sidebar--narrow .ck-annotation-counter__badge--suggestion-deletion {
+	background: var(--ck-color-annotation-counter-suggestion-deletion);
+}
+
+.ck.ck-sidebar--narrow .ck-annotation-counter__badge--suggestion-format {
+	background: var(--ck-color-annotation-counter-suggestion-format);
+}
+
+.ck.ck-sidebar--narrow .ck-annotation-counter__badge--comment {
+	background: var(--ck-color-annotation-counter-comment);
+}

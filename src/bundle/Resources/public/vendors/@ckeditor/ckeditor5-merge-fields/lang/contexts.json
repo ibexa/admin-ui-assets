@@ -1,0 +1,13 @@
+{
+  "Insert merge field": "A toolbar button tooltip for the merge fields feature.",
+  "Merge field": "A menu bar button label in the 'Insert' menu for inserting the merge field.",
+  "Search merge field": "The placeholder for the search input to filter the merge fields.",
+  "No merge fields found": "The message displayed when the merge field search input does not match any merge fields.",
+  "No merge fields available": "The message displayed when there are no merge fields available in the insert merge field dropdown.",
+  "Merge fields preview": "The title of the panel containing the available merge fields preview modes.",
+  "Labels": "A name for the merge fields preview option showing the merge fields labels.",
+  "Default values": "A name for the merge fields preview option showing the merge fields default values.",
+  "WARNING_MISSING_DATA": "A warning message displayed when the merge field data is missing.",
+  "WARNING_MISSING_DEFAULT_VALUE": "A warning message displayed when the default value for a merge field is missing.",
+  "WARNING_MISSING_DATA_USED_DEFAULT_VALUE": "A warning message displayed when the merge field data is missing and the default value is used."
+}

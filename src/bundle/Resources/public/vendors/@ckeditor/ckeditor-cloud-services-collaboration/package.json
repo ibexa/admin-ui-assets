@@ -1,0 +1,42 @@
+{
+  "name": "@ckeditor/ckeditor-cloud-services-collaboration",
+  "version": "52.7.0",
+  "description": "CKEditor Cloud Services Collaboration low-level API is required by CKEditor 5 Collaboration features to enable real-time collaborative editing in CKEditor 5.",
+  "main": "src/index.js",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "keywords": [
+    "CKEditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "WYSIWYG",
+    "WYSIWYW",
+    "text",
+    "rich-text",
+    "richtext",
+    "editor",
+    "editing",
+    "html",
+    "operational transformation",
+    "ot",
+    "collaboration",
+    "collaborative",
+    "real-time",
+    "realtime",
+    "framework"
+  ],
+  "author": "CKSource Holding sp. z o.o. (http://cksource.com/)",
+  "homepage": "https://ckeditor.com/ckeditor-cloud-services/",
+  "dependencies": {
+    "protobufjs": "7.4.0",
+    "socket.io-client": "4.7.0",
+    "socket.io-parser": "~4.2.3",
+    "url-parse": "1.5.10",
+    "uuid": "^9.0.1"
+  },
+  "peerDependencies": {
+    "ckeditor5": ">= 37.0",
+    "@ckeditor/ckeditor5-utils": ">= 37.0"
+  },
+  "type": "module",
+  "obfuscated": true
+}

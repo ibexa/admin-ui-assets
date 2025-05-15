@@ -1,0 +1,1 @@
+!function(e){const n=e.bn=e.bn||{};n.dictionary=Object.assign(n.dictionary||{},{"Enter fullscreen mode":"ফুলস্ক্রীন মোডে প্রবেশ করুন","Fullscreen mode":"ফুলস্ক্রিন মোড","Leave fullscreen mode":"ফুলস্ক্রিন মোড ছেড়ে যান","Toggle fullscreen mode":"ফুলস্ক্রিন মোড টগল করুন"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

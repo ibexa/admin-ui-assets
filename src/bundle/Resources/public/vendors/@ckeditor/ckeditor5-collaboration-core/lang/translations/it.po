@@ -1,0 +1,68 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "A label for the anonymous user icon"
+msgid "Anonymous"
+msgstr "Anonimo"
+
+msgctxt "The label for confirming an action."
+msgid "Yes"
+msgstr "Sì"
+
+msgctxt "The label for rejecting an action."
+msgid "No"
+msgstr "No"
+
+msgctxt "The label for confirming a dangerous action."
+msgid "Are you sure?"
+msgstr "Procedere?"
+
+msgctxt "Label for \"Today\". Used as a date label for comments and suggestions."
+msgid "Today"
+msgstr "Oggi"
+
+msgctxt "Label for \"Yesterday\". Used as a date label for comments and suggestions."
+msgid "Yesterday"
+msgstr "Ieri"
+
+msgctxt "Part of the date label used to describe the past days of the week (e.g., 'Last Monday'). Used for comments and suggestions."
+msgid "Last"
+msgstr "Scorso/a"
+
+msgctxt "Name of \"Monday\" day of the week. Used as a part of the date label for days of the week (e.g., 'Last Monday') for comments and suggestions."
+msgid "Monday"
+msgstr "Lunedì"
+
+msgctxt "Name of \"Tuesday\" day of the week. Used as a part of the date label for days of the week (e.g., 'Last Tuesday') for comments and suggestions."
+msgid "Tuesday"
+msgstr "Martedì"
+
+msgctxt "Name of \"Wednesday\" day of the week. Used as a part of the date label for days of the week (e.g., 'Last Wednesday') for comments and suggestions."
+msgid "Wednesday"
+msgstr "Mercoledì"
+
+msgctxt "Name of \"Thursday\" day of the week. Used as a part of the date label for days of the week (e.g., 'Last Thursday') for comments and suggestions."
+msgid "Thursday"
+msgstr "Giovedì"
+
+msgctxt "Name of \"Friday\" day of the week. Used as a part of the date label for days of the week (e.g., 'Last Friday') for comments and suggestions."
+msgid "Friday"
+msgstr "Venerdì"
+
+msgctxt "Name of \"Saturday\" day of the week. Used as a part of the date label for days of the week (e.g., 'Last Saturday') for comments and suggestions."
+msgid "Saturday"
+msgstr "Sabato"
+
+msgctxt "Name of \"Sunday\" day of the week. Used as a part of the date label for days of the week (e.g., 'Last Sunday') for comments and suggestions."
+msgid "Sunday"
+msgstr "Domenica"

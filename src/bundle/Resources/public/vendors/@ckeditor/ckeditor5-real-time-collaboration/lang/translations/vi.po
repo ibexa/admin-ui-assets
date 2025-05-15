@@ -1,0 +1,53 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for 1 or more connected users"
+msgid "CONNECTED_USERS"
+msgid_plural "%0 connected users"
+msgstr[0] "1 người dùng được kết nối (tôi)"
+
+msgctxt "The label for an alert shown when closing th editor with data not send to the server "
+msgid "PENDING_ACTION_SENDING_DATA"
+msgstr "Đang gửi dữ liệu đến máy chủ."
+
+msgctxt "The label for the synchronization issue message"
+msgid "Synchronization issue"
+msgstr "Vấn đề đồng bộ hóa"
+
+msgctxt "The aria label for the connected users list dropdown menu"
+msgid "Connected users list dropdown menu"
+msgstr "Menu thả xuống danh sách người dùng đã kết nối"
+
+msgctxt "The aria label for the connected users list"
+msgid "Connected users list"
+msgstr "Danh sách người dùng đã kết nối"
+
+msgctxt "The aria label for the collapsed connected users list"
+msgid "Collapsed connected users list (press ENTER to open it)"
+msgstr "Danh sách người dùng đã kết nối thu gọn (nhấn ENTER để mở)"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document cannot be connected back to the server. To not lose your content save it locally and refresh the editor."
+msgstr "Tài liệu không thể kết nối lại với máy chủ. Để không làm mất nội dung, bạn hãy lưu nội dung trên thiết bị rồi tải lại trình chỉnh sửa."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document details could not be taken during the reconnection. To not lose your content save it locally and refresh the editor."
+msgstr "Không lấy được nội dung chi tiết của tài liệu trong quá trình kết nối lại. Để không làm mất nội dung, hãy lưu nội dung trên thiết bị rồi tải lại trình chỉnh sửa."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The last saved version of the document does not match the local version. To not lose your content save it locally and refresh the editor."
+msgstr "Phiên bản được lưu gần đây nhất của tài liệu không khớp với phiên bản trên thiết bị. Để không làm mất nội dung, hãy lưu nội dung trên thiết bị rồi tải lại trình chỉnh sửa."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The local document and server document differ and merging them can cause unexpected behavior. To not lose your content save it locally and refresh the editor."
+msgstr "Tài liệu trên thiết bị và tài liệu trên máy chủ khác nhau. Việc hợp nhất hai phiên bản này có thể gây ra hành vi không mong muốn. Để không làm mất nội dung, hãy lưu nội dung trên thiết bị rồi tải lại trình chỉnh sửa."

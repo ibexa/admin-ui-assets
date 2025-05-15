@@ -1,0 +1,8 @@
+{
+  "Go to next page": "A toolbar button tooltip for a pagination feature.",
+  "Go to previous page": "A toolbar button tooltip for a pagination feature.",
+  "Current page number (from 1 to %0)": "Assistive technologies label for the page number input in the pagination feature's toolbar UI. Example: 'Current page number (from 1 to 10)'.",
+  "Keystrokes for navigating through documents": "Accessibility help dialog section title for pagination plugin keystrokes.",
+	"Go to the previous page (also move selection)": "Accessibility help dialog entry explaining the meaning of the keystroke that allows users for navigating to the previous page in the document.",
+	"Go to the next page (also move selection)": "Accessibility help dialog entry explaining the meaning of the keystroke that allows users for navigating to the next page in the document."
+}

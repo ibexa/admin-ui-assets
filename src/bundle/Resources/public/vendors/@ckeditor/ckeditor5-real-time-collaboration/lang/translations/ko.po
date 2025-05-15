@@ -1,0 +1,53 @@
+# Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+#
+# Want to contribute to this file? Submit your changes via a GitHub Pull Request.
+#
+# Check out the official contributor's guide:
+# https://ckeditor.com/docs/ckeditor5/latest/framework/guides/contributing/contributing.html
+#
+msgid ""
+msgstr ""
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgctxt "The label for 1 or more connected users"
+msgid "CONNECTED_USERS"
+msgid_plural "%0 connected users"
+msgstr[0] "%0명의 연결된 사용자"
+
+msgctxt "The label for an alert shown when closing th editor with data not send to the server "
+msgid "PENDING_ACTION_SENDING_DATA"
+msgstr "서버로 데이터를 보내고 있습니다."
+
+msgctxt "The label for the synchronization issue message"
+msgid "Synchronization issue"
+msgstr "동기화 문제"
+
+msgctxt "The aria label for the connected users list dropdown menu"
+msgid "Connected users list dropdown menu"
+msgstr "연결된 사용자 목록 드롭다운 메뉴"
+
+msgctxt "The aria label for the connected users list"
+msgid "Connected users list"
+msgstr "연결된 사용자 목록"
+
+msgctxt "The aria label for the collapsed connected users list"
+msgid "Collapsed connected users list (press ENTER to open it)"
+msgstr "접힌 연결된 사용자 목록 (열려면 ENTER 키를 누르세요.)"
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document cannot be connected back to the server. To not lose your content save it locally and refresh the editor."
+msgstr "문서를 서버에 다시 연결할 수 없습니다. 작성한 내용을 잃어버리지 않도록 문서를 로컬에 저장하고 편집기를 새로 고침하세요."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The document details could not be taken during the reconnection. To not lose your content save it locally and refresh the editor."
+msgstr "다시 연결하는 동안 문서 세부 정보를 가져올 수 없습니다. 작성한 내용을 잃어버리지 않도록 문서를 로컬에 저장하고 편집기를 새로 고침하세요."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The last saved version of the document does not match the local version. To not lose your content save it locally and refresh the editor."
+msgstr "문서의 마지막으로 저장된 버전이 로컬 버전과 일치하지 않습니다. 작성한 내용을 잃어버리지 않도록 문서를 로컬에 저장하고 편집기를 새로 고침하세요."
+
+msgctxt "The message shown when the client cannot rejoin the collaboration session"
+msgid "The local document and server document differ and merging them can cause unexpected behavior. To not lose your content save it locally and refresh the editor."
+msgstr "로컬 문서와 서버 문서가 달라 병합하면 예기치 않은 동작이 발생할 수 있습니다. 작성한 내용을 잃어버리지 않도록 문서를 로컬에 저장하고 편집기를 새로 고침하세요."

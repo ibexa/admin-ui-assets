@@ -1,0 +1,131 @@
+/*
+ * What you're currently looking at is the source code of a legally protected, proprietary software.
+ * CKEditor 5 Collaboration is licensed under a commercial license and protected by copyright law. Where not otherwise indicated,
+ * all CKEditor 5 Collaboration content is authored by CKSource engineers and consists of CKSource-owned intellectual property.
+ *
+ * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+@import "@ckeditor/ckeditor5-theme-lark/theme/mixins/_focus.css";
+@import "@ckeditor/ckeditor5-theme-lark/theme/mixins/_shadow.css";
+@import "@ckeditor/ckeditor5-theme-lark/theme/mixins/_rounded.css";
+
+:root {
+	--ck-color-comment-box-border: hsl(55, 98%, 48%);
+	--ck-color-suggestion-box-deletion-border: hsl(345, 62%, 60%);
+	--ck-color-suggestion-box-insertion-border: hsl(128, 62%, 60%);
+	--ck-color-suggestion-box-format-border: hsl(191, 62%, 60%);
+}
+
+.ck .ck-suggestion {
+	border-top-left-radius: var(--ck-border-radius);
+
+	&:focus {
+		background: var(--ck-color-button-default-hover-background);
+		outline: none;
+	}
+}
+
+.ck .ck-annotation {
+	border-left: 3px solid transparent;
+}
+
+
+/* See: #3683.
+ * Inline Suggestion annotations that can't be commented on contains a scrollbar by default */
+.ck .ck-suggestion--disabled-comments .ck-annotation {
+	min-height: 80px;
+}
+
+/* See: #2459.
+With track-changes feature enabled, we need to distinguish various types of annotations (comments and suggestions). */
+.ck .ck-comment,
+.ck .ck-thread__comment-count,
+.ck .ck-comment__input-container,
+.ck .ck-thread__header {
+	border-left: 3px solid var(--ck-color-comment-box-border);
+}
+
+.ck .ck-suggestion-insertion .ck-suggestion {
+	border-left-color: var(--ck-color-suggestion-box-insertion-border);
+}
+
+.ck .ck-suggestion-deletion .ck-suggestion {
+	border-left-color: var(--ck-color-suggestion-box-deletion-border);
+}
+
+.ck .ck-suggestion-replace .ck-suggestion {
+	border-left-color: var(--ck-color-suggestion-box-insertion-border);
+}
+
+.ck .ck-suggestion-format .ck-suggestion {
+	border-left-color: var(--ck-color-suggestion-box-format-border);
+}
+
+.ck .ck-suggestion-wrapper {
+	@mixin ck-rounded-corners;
+
+	overflow: hidden;
+
+	&:focus {
+		/*
+		 * We cannot use the ck-focus-ring mixin here because it adds a border that would need to stay transparent
+		 * in non-focused state and create an odd space inside the surrounding annotation container.
+		 */
+		outline: var(--ck-focus-ring);
+
+		/*
+		 * We cannot use the ck-box-shadow mixin because we're using outline instead of border (see the comment above).
+		 * And the shadow size has to be custom because outline is rendered on top of the shadow.
+		 */
+		box-shadow: 0 0 0 4px var(--ck-color-focus-outer-shadow);
+	}
+}
+
+/*
+ * In case of inline annotations, their focus styles get hoisted to the balloon panel to work around overflow that would
+ * otherwise get them cropped..
+ */
+.ck-balloon-panel:has( .ck-suggestion-wrapper:focus ) {
+	@mixin ck-focus-ring;
+	@mixin ck-box-shadow var(--ck-drop-shadow), var(--ck-focus-outer-shadow);
+}
+
+.ck .ck-suggestion-type {
+	font-weight: bold;
+}
+
+.ck .ck-suggestion-color {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	border-radius: 14px;
+	vertical-align: text-bottom;
+	margin: 0 5px;
+	box-shadow: 0 0 0 1px hsl(0, 0%, 27%);
+}
+
+/* Comments inside suggestion. */
+
+/* Handle comments inside suggestion keep same border-color. */
+.ck .ck-suggestion-insertion .ck-comment,
+.ck .ck-suggestion-insertion .ck-thread__comment-count,
+.ck .ck-suggestion-insertion .ck-comment__input-container,
+.ck .ck-suggestion-replace .ck-comment,
+.ck .ck-suggestion-replace .ck-thread__comment-count,
+.ck .ck-suggestion-replace .ck-comment__input-container {
+	border-left-color: var(--ck-color-suggestion-box-insertion-border);
+}
+
+.ck .ck-suggestion-deletion .ck-comment,
+.ck .ck-suggestion-deletion .ck-thread__comment-count,
+.ck .ck-suggestion-deletion .ck-comment__input-container {
+	border-left-color: var(--ck-color-suggestion-box-deletion-border);
+}
+
+.ck .ck-suggestion-format .ck-comment,
+.ck .ck-suggestion-format .ck-thread__comment-count,
+.ck .ck-suggestion-format .ck-comment__input-container {
+	border-left-color: var(--ck-color-suggestion-box-format-border);
+}

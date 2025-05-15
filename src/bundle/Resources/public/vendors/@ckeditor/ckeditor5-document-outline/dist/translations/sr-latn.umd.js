@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+(_0x22146e=>{const {'sr-latn':{dictionary:_0x529fd3,getPluralForm:_0x1a8063}}={'sr-latn':{'dictionary':{'Empty\x20heading':'Prazan\x20naslov','Editor\x20headings\x20will\x20appear\x20here\x20as\x20you\x20type.':'Naslovi\x20uređivača\x20će\x20se\x20pojaviti\x20ovde\x20dok\x20kucate.','No\x20headings\x20were\x20found\x20in\x20the\x20document.':'U\x20dokumentu\x20nije\x20pronađen\x20nijedan\x20naslov.','Table\x20of\x20contents':'Sadržaj'},'getPluralForm':_0x2a665f=>_0x2a665f%0xa==0x1&&_0x2a665f%0x64!=0xb?0x0:_0x2a665f%0xa>=0x2&&_0x2a665f%0xa<=0x4&&(_0x2a665f%0x64<0xa||_0x2a665f%0x64>=0x14)?0x1:0x2}};_0x22146e['sr-latn']||={'dictionary':{},'getPluralForm':null},_0x22146e['sr-latn']['dictionary']=Object['assign'](_0x22146e['sr-latn']['dictionary'],_0x529fd3),_0x22146e['sr-latn']['getPluralForm']=_0x1a8063;})(window['CKEDITOR_TRANSLATIONS']||={});

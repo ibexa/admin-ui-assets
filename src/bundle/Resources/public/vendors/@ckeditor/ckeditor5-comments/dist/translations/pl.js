@@ -1,0 +1,23 @@
+/*
+ *             Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ *
+ *
+ *
+ *
+ *          +---------------------------------------------------------------------------------+
+ *          |                                                                                 |
+ *          |                                 Hello stranger!                                 |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          |   What you're currently looking at is the source code of a legally protected,   |
+ *          |    proprietary software. Any attempts to deobfuscate / disassemble this code    |
+ *          |               are forbidden and will result in legal consequences.              |
+ *          |                                                                                 |
+ *          |                                                                                 |
+ *          +---------------------------------------------------------------------------------+
+ *
+ *
+ *
+ *
+ */
+export default{'pl':{'dictionary':{'Comment\x20editor':'Edytor\x20komentarza','NUMBER_OF_COMMENTS':['%0\x20Komentarz','%0\x20Komentarze','%0\x20Komentarzy'],'TOO_LONG_COMMENT_ALERT':'Komentarz\x20jest\x20zbyt\x20długi.\x20Twój\x20komentarz\x20ma\x20%0\x20znaków.\x20Dopuszczalny\x20limit\x20to\x20%1\x20znaków.\x22','Reply...':'Odpowiedz...','Reply\x20to\x20reopen\x20discussion...':'Odpowiedz,\x20aby\x20ponownie\x20otworzyć\x20dyskusję...','Write\x20a\x20comment...':'Napisz\x20komentarz...','Comment\x20was\x20made\x20on\x20an\x20element':'Element\x20został\x20skomentowany','Edit':'Edytuj','Resolve':'Rozwiąż','Reopen':'Otwórz\x20ponownie','Remove':'Usuń','Reply':'Odpowiedz','Delete\x20comment?':'Usunąć\x20komentarz?','Delete\x20comment\x20thread?':'Usunąć\x20wątek\x20komentarzy?','Marked\x20as\x20resolved':'Oznacz\x20jako\x20rozwiązane','Comment':'Skomentuj','Annotations\x20sidebar':'Pasek\x20boczny\x20z\x20adnotacjami','Annotations\x20list':'Lista\x20adnotacji','Thread\x20comments':'Komentarze\x20wątku','THREAD_CONTEXT_LABEL':'Kontekst\x20wątku:\x20%0','COMMENT_THREAD_LABEL':['Wątek\x20komentarzy:\x20%1.\x20%1\x20odpowiedź.','Wątek\x20komentarzy:\x20%1.\x20%1\x20odpowiedzi.','Wątek\x20komentarzy:\x20%1.\x20%1\x20odpowiedzi.'],'COMMENT_THREAD_DESCRIPTION':'Naciśnij\x20Enter,\x20aby\x20uzyskać\x20więcej\x20możliwości.\x20Naciśnij\x20Esc,\x20aby\x20wyjść.','COMMENT_ARIA_LABEL':'Komentarz\x20%0.\x20Utworzono\x20%1.\x20%2.\x20%3','COMMENTS_ARCHIVE_LIST_LABEL':'Lista\x20komentarzy','ACCESSIBILITY_HELP_ANNOTATIONS_GROUP':'Naciśnięcia\x20klawiszy\x20do\x20interakcji\x20z\x20wątkiem\x20adnotacji\x20(np.\x20komentarze,\x20sugestie\x20śledzenia\x20zmian)','ACCESSIBILITY_HELP_ANNOTATIONS_MOVE_TO':'Przenieś\x20uwagę\x20na\x20wątek,\x20gdy\x20wybór\x20jest\x20zakotwiczony\x20w\x20jego\x20znaczniku','ACCESSIBILITY_HELP_ANNOTATIONS_EXIT':'Wyjdź\x20z\x20adnotacji\x20i\x20przenieś\x20uwagę\x20z\x20powrotem\x20na\x20edytowaną\x20zawartość','ACCESSIBILITY_HELP_ANNOTATIONS_ENTER':'Przeglądaj\x20wątek\x20adnotacji\x20lub\x20komentarz\x20wątku,\x20na\x20których\x20skupiona\x20jest\x20uwaga','ACCESSIBILITY_HELP_ANNOTATIONS_BROWSE_GROUPS':'Przenieś\x20między\x20wewnętrznymi\x20wątku\x20adnotacji','ACCESSIBILITY_HELP_ANNOTATIONS_SUBMIT_COMMENT':'Prześlij\x20odpowiedź\x20podczas\x20pisania\x20komentarza','ACCESSIBILITY_HELP_ANNOTATIONS_NAVIGATE_THREADS':'Przenieś\x20do\x20poprzedniego\x20lub\x20następnego\x20wątku\x20na\x20pasku\x20bocznym\x20adnotacji\x20lub\x20archiwum\x20komentarzy','ENTER_COMMENT_ANNOUNCEMENT':'Wprowadzanie\x20zawartości\x20z\x20komentarzami.\x20Naciśnij\x20%0,\x20aby\x20przejść\x20do\x20dyskusji.','LEAVE_COMMENT_ANNOUNCEMENT':'Pozostawienie\x20zawartości\x20z\x20komentarzami.','PENDING_ACTION_COMMENT_THREAD':'Niezapisana\x20zmiana\x20w\x20wątku\x20komentarzy.','EXTERNAL_COMMENT':'Ten\x20komentarz\x20jest\x20z\x20zewnęrznego\x20źródła.','EXTERNAL_IMPORT_WORD_COMMENT':'Ten\x20komentarz\x20pochodzi\x20z\x20zewnętrznego\x20źródła.','EXTERNAL_AVATAR':'Nazwa\x20autora\x20pochodzi\x20z\x20zewnętrznego\x20źródła\x20(dodany\x20przez\x20%0)','EXTERNAL_IMPORT_WORD_AVATAR':'Nazwa\x20autora\x20pochodzi\x20z\x20dokumentu\x20Word\x20zaimportowanego\x20przez\x20%0','COMMENTS_ARCHIVE':'Archiwum\x20komentarzy','EMPTY_COMMENTS_ARCHIVE':'Nie\x20ma\x20zarchiwizowanych\x20wątków\x20komentarzy.'},'getPluralForm':_0x43647a=>0x1==_0x43647a?0x0:_0x43647a%0xa>=0x2&&_0x43647a%0xa<=0x4&&(_0x43647a%0x64<0xa||_0x43647a%0x64>=0x14)?0x1:0x2}};
