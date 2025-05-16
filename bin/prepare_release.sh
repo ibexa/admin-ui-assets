@@ -42,7 +42,7 @@ check_process()
 }
 
 check_command "git"
-check_command "npm"
+check_command "yarn"
 
 VENDOR_DIR="src/bundle/Resources/public/vendors/"
 BOOTSTRAP_DIR="$VENDOR_DIR/bootstrap"
@@ -93,8 +93,8 @@ echo "# Removing package-lock.json"
 rm -rf "package-lock.json"
 
 echo "# Installing dependendencies"
-npm install
-npm run prepare-release
+yarn install
+yarn run prepare-release
 
 echo "# Removing unused files from Bootstrap"
 rm -rf "$BOOTSTRAP_DIR/build" "$BOOTSTRAP_DIR/dist/css" "$BOOTSTRAP_DIR/js" $BOOTSTRAP_DIR/dist/js/bootstrap.js $BOOTSTRAP_DIR/dist/js/bootstrap.js.map $BOOTSTRAP_DIR/dist/js/bootstrap.bundle.js $BOOTSTRAP_DIR/dist/js/bootstrap.bundle.js.map $BOOTSTRAP_DIR/dist/js/bootstrap.bundle.min.js $BOOTSTRAP_DIR/dist/js/bootstrap.bundle.min.js.map $BOOTSTRAP_DIR/.eslintignore $BOOTSTRAP_DIR/Gemfile

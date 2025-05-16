@@ -41,7 +41,7 @@
         "@ckeditor/ckeditor5-dev-utils": "^39.0.0",
         "@ckeditor/ckeditor5-theme-lark": "^40.1.0",
         "@ckeditor/ckeditor5-widget": "^40.1.0",
-        "@ibexa/design-system": "https://github.com/ibexa/design-system#^v1.0.0",
+        "@ibexa/design-system": "https://github.com/ibexa/design-system#~v1.0.0-alpha1",
         "@popperjs/core": "^2.10.2",
         "bootstrap": "^5.3.2",
         "chart.js": "^4.4.0",
