@@ -1,0 +1,40 @@
+@use 'sass:list';
+@use '../functions' as *;
+
+@mixin button-state($variables, $prefix) {
+    @if list.length($variables) >= 1 {
+        --ids-#{$prefix}-text-color: #{list.nth($variables, 1)};
+    }
+
+    @if list.length($variables) >= 2 {
+        --ids-#{$prefix}-bg-color: #{list.nth($variables, 2)};
+    }
+
+    @if list.length($variables) >= 3 {
+        --ids-#{$prefix}-border-color: #{list.nth($variables, 3)};
+    }
+
+    @if list.length($variables) >= 4 {
+        --ids-#{$prefix}-box-shadow: #{list.nth($variables, 4)};
+    }
+}
+
+@mixin button-variant($default, $hover: false, $active: false, $focus: false, $disabled: false) {
+    @include button-state($default, 'default');
+
+    @if $hover {
+        @include button-state($hover, 'hover');
+    }
+
+    @if $active {
+        @include button-state($active, 'active');
+    }
+
+    @if $disabled {
+        @include button-state($disabled, 'disabled');
+    }
+
+    @if $focus {
+        @include button-state($focus, 'focus');
+    }
+}
