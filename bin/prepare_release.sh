@@ -89,8 +89,8 @@ echo "# Removing the assets"
 [ -d "$VENDOR_DIR" ] && rm -rf $VENDOR_DIR/*
 check_process "clean the vendor dir $VENDOR_DIR"
 
-echo "# Removing package-lock.json"
-rm "package-lock.json"
+echo "# Removing yarn.lock"
+rm "yarn.lock"
 
 echo "# Installing dependendencies"
 yarn install
