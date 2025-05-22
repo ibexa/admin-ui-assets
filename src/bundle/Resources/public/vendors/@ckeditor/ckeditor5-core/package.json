@@ -1,0 +1,69 @@
+{
+  "name": "@ckeditor/ckeditor5-core",
+  "version": "45.1.0",
+  "description": "The core architecture of CKEditor 5 – the best browser-based rich text editor.",
+  "keywords": [
+    "wysiwyg",
+    "rich text",
+    "editor",
+    "html",
+    "contentEditable",
+    "editing",
+    "operational transformation",
+    "ot",
+    "collaboration",
+    "collaborative",
+    "real-time",
+    "framework",
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-lib",
+    "ckeditor5-dll"
+  ],
+  "type": "module",
+  "main": "src/index.js",
+  "dependencies": {
+    "@ckeditor/ckeditor5-engine": "45.1.0",
+    "@ckeditor/ckeditor5-ui": "45.1.0",
+    "@ckeditor/ckeditor5-utils": "45.1.0",
+    "@ckeditor/ckeditor5-watchdog": "45.1.0",
+    "es-toolkit": "1.32.0"
+  },
+  "author": "CKSource (http://cksource.com/)",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "bugs": "https://github.com/ckeditor/ckeditor5/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-core"
+  },
+  "files": [
+    "dist",
+    "lang",
+    "src/**/*.js",
+    "src/**/*.d.ts",
+    "CHANGELOG.md"
+  ],
+  "types": "src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    },
+    "./dist/*": {
+      "types": "./src/index.d.ts",
+      "import": "./dist/*",
+      "default": "./dist/*"
+    },
+    "./src/*": {
+      "types": "./src/*.d.ts",
+      "import": "./src/*",
+      "default": "./src/*"
+    },
+    "./lang/*": "./lang/*",
+    "./package.json": "./package.json"
+  }
+}
