@@ -126,14 +126,11 @@ check_process "clean popperjs"
 echo "This is a customized Popperjs version." > $POPPER_NOTICE
 echo "To decrease the size of the bundle, it includes production-only files" >> $POPPER_NOTICE
 
-echo "# Removing unused files from react"
-rm -r "$REACT_DIR/node_modules"
-check_process "clean React"
 echo "This is a customized React version." > $REACT_NOTICE
 echo "To decrease the size of the bundle, it includes production-only files" >> $REACT_NOTICE
 
 echo "# Removing unused files from react-dom"
-rm -r "$REACT_DOM_DIR/node_modules" $REACT_DOM_DIR/index.js $REACT_DOM_DIR/server.js $REACT_DOM_DIR/test-utils.js
+rm -r $REACT_DOM_DIR/index.js $REACT_DOM_DIR/server.js $REACT_DOM_DIR/test-utils.js
 check_process "clean ReactDOM"
 echo "This is a customized ReactDOM version." > $REACT_DOM_NOTICE
 echo "To decrease the size of the bundle, it includes production-only files" >> $REACT_DOM_NOTICE
