@@ -1,0 +1,9 @@
+@forward 'variables/colors';
+@forward 'variables/shadows';
+@forward 'variables/typography';
+
+// Ibexa transition function
+$admin-transition: cubic-bezier(0.25, 0.8, 0.25, 1) !default;
+$admin-transition-duration: 0.4s !default;
+
+$assets-base-path: '/' !default;
