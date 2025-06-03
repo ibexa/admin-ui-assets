@@ -47,6 +47,6 @@
         "prop-types": "^15.7.2",
         "react": "^16.14.0",
         "react-dom": "^16.14.0",
-        "taggify": "^1.2.1"
+        "taggify": "git+ssh://git@github.com/ibexa/taggify.git#v1.2.2"
     }
 }
