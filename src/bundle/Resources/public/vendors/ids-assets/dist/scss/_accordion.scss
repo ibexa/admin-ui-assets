@@ -1,0 +1,37 @@
+@use 'functions' as *;
+@use 'variables' as *;
+
+.ids-accordion {
+    $self: &;
+
+    &__header {
+        border-bottom: calculateRem(1px) solid $color-neutral-70;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__header-content {
+        padding: calculateRem(12px) calculateRem(8px);
+    }
+
+    &__content {
+        transition: height $admin-transition-duration $admin-transition;
+        overflow: hidden;
+        height: 0;
+        display: none;
+    }
+
+    &--is-expanded {
+        #{$self}__content {
+            height: auto;
+            display: block;
+        }
+    }
+
+    &--is-animating {
+        #{$self}__content {
+            display: block;
+        }
+    }
+}

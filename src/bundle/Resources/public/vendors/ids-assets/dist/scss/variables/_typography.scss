@@ -1,0 +1,27 @@
+@use '../functions/calculate.rem' as *;
+
+$text-font-size-3xl: calculateRem(24px) !default;
+$text-font-size-2xl: calculateRem(20px) !default;
+$text-font-size-xl: calculateRem(18px) !default;
+$text-font-size-l: calculateRem(16px) !default;
+$text-font-size-m: calculateRem(14px) !default;
+$text-font-size-s: calculateRem(12px) !default;
+$text-font-size-xs: calculateRem(10px) !default;
+
+$h1-font-size: $text-font-size-3xl !default;
+$h2-font-size: $text-font-size-2xl !default;
+$h3-font-size: $text-font-size-xl !default;
+$h4-font-size: $text-font-size-l !default;
+$h5-font-size: $text-font-size-m !default;
+$h6-font-size: $text-font-size-s !default;
+
+$font-family:
+    'Noto Sans',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif !default;
+$font-family-headings: 'Work Sans', sans-serif !default;
