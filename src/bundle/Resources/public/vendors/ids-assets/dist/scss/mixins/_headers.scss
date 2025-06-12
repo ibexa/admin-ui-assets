@@ -1,0 +1,36 @@
+@use 'variables';
+
+%heading {
+    font-family: variables.$font-family-headings;
+    font-weight: 600;
+}
+
+@mixin h1 {
+    @extend %heading;
+    font-size: variables.$h1-font-size;
+}
+
+@mixin h2 {
+    @extend %heading;
+    font-size: variables.$h2-font-size;
+}
+
+@mixin h3 {
+    @extend %heading;
+    font-size: variables.$h3-font-size;
+}
+
+@mixin h4 {
+    @extend %heading;
+    font-size: variables.$h4-font-size;
+}
+
+@mixin h5 {
+    @extend %heading;
+    font-size: variables.$h5-font-size;
+}
+
+@mixin h6 {
+    @extend %heading;
+    font-size: variables.$h6-font-size;
+}
