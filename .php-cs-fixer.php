@@ -6,10 +6,8 @@
  */
 declare(strict_types=1);
 
-namespace Ibexa\Bundle\AdminUiAssets;
-
-use Symfony\Component\HttpKernel\Bundle\Bundle;
-
-class IbexaAdminUiAssetsBundle extends Bundle
-{
-}
+return \Ibexa\CodeStyle\PhpCsFixer\InternalConfigFactory::build()->setFinder(
+    PhpCsFixer\Finder::create()
+        ->in(__DIR__ . '/src')
+        ->files()->name('*.php')
+);
