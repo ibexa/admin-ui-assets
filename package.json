@@ -7,7 +7,6 @@
         "move-leaflet": "cp -r node_modules/leaflet src/bundle/Resources/public/vendors/leaflet",
         "move-react": "cp -r node_modules/react src/bundle/Resources/public/vendors/react",
         "move-react-dom": "cp -r node_modules/react-dom src/bundle/Resources/public/vendors/react-dom",
-        "move-taggify": "cp -r node_modules/taggify src/bundle/Resources/public/vendors/taggify",
         "move-popperjs": "cp -r node_modules/@popperjs src/bundle/Resources/public/vendors/@popperjs",
         "move-flatpickr": "cp -r node_modules/flatpickr src/bundle/Resources/public/vendors/flatpickr",
         "move-create-react-class": "cp -r node_modules/create-react-class src/bundle/Resources/public/vendors/create-react-class",
@@ -23,7 +22,7 @@
         "move-ckeditor5-core": "cp -r node_modules/ckeditor5 src/bundle/Resources/public/vendors/ckeditor5",
         "move-ids-assets": "mkdir src/bundle/Resources/public/vendors/ids-assets && cp -r node_modules/@ibexa/design-system/packages/assets/dist src/bundle/Resources/public/vendors/ids-assets/dist",
         "move-ids-components": "mkdir src/bundle/Resources/public/vendors/ids-components && cp -r node_modules/@ibexa/design-system/packages/components/dist src/bundle/Resources/public/vendors/ids-components/dist",
-        "prepare-release": "yarn run create-folder; yarn run move-bootstrap; yarn run move-jquery; yarn run move-leaflet; yarn run move-react; yarn run move-react-dom; yarn run move-taggify; yarn run move-popperjs; yarn run move-flatpickr; yarn run move-create-react-class; yarn run move-prop-types; yarn run move-moment; yarn run move-moment-timezone; yarn run move-d3; yarn run move-dagre-d3; yarn run move-chart-js; yarn run move-js-md5; yarn run move-ckeditor5; yarn run move-ckeditor5-core; yarn run move-chartjs-plugin-datalabels; yarn run move-ids-assets; yarn run move-ids-components"
+        "prepare-release": "yarn run create-folder; yarn run move-bootstrap; yarn run move-jquery; yarn run move-leaflet; yarn run move-react; yarn run move-react-dom; yarn run move-popperjs; yarn run move-flatpickr; yarn run move-create-react-class; yarn run move-prop-types; yarn run move-moment; yarn run move-moment-timezone; yarn run move-d3; yarn run move-dagre-d3; yarn run move-chart-js; yarn run move-js-md5; yarn run move-ckeditor5; yarn run move-ckeditor5-core; yarn run move-chartjs-plugin-datalabels; yarn run move-ids-assets; yarn run move-ids-components"
     },
     "repository": {
         "type": "git",
@@ -53,8 +52,7 @@
         "@popperjs/core": "^2.11.8",
         "prop-types": "^15.8.1",
         "react": "^19.1.0",
-        "react-dom": "^19.1.0",
-        "taggify": "git+ssh://git@github.com/ibexa/taggify.git#v1.2.2"
+        "react-dom": "^19.1.0"
     },
     "packageManager": "yarn@1.22.22"
 }

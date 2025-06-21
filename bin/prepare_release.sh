@@ -59,8 +59,6 @@ REACT_DIR="$VENDOR_DIR/react"
 REACT_NOTICE="$REACT_DIR/REACT_IN_ADMINUIASSETS.txt"
 REACT_DOM_DIR="$VENDOR_DIR/react-dom"
 REACT_DOM_NOTICE="$REACT_DOM_DIR/REACT_DOM_IN_ADMINUIASSETS.txt"
-TAGGIFY_DIR="$VENDOR_DIR/taggify"
-TAGGIFY_NOTICE="$TAGGIFY_DIR/TAGGIFY_IN_ADMINUIASSETS.txt"
 MOMENT_DIR="$VENDOR_DIR/moment"
 MOMENT_NOTICE="$MOMENT_DIR/MOMENT_IN_ADMINUIASSETS.txt"
 MOMENT_TIMEZONE_DIR="$VENDOR_DIR/moment-timezone"
@@ -134,12 +132,6 @@ rm -r $REACT_DOM_DIR/server.js $REACT_DOM_DIR/test-utils.js
 check_process "clean ReactDOM"
 echo "This is a customized ReactDOM version." > $REACT_DOM_NOTICE
 echo "To decrease the size of the bundle, it includes production-only files" >> $REACT_DOM_NOTICE
-
-echo "# Removing unused files from taggify"
-rm -r "$TAGGIFY_DIR/test" "$TAGGIFY_DIR/src/css" $TAGGIFY_DIR/src/js/taggify-script.js $TAGGIFY_DIR/src/js/taggify.es6.js $TAGGIFY_DIR/src/js/taggify.min.js.gz $TAGGIFY_DIR/.travis.yml $TAGGIFY_DIR/db.json $TAGGIFY_DIR/gulpfile.js $TAGGIFY_DIR/index.html $TAGGIFY_DIR/karma.conf.js $TAGGIFY_DIR/module-generator.js $TAGGIFY_DIR/taggify-comment.js $TAGGIFY_DIR/template.common.js $TAGGIFY_DIR/template.es6.js
-check_process "clean Taggify"
-echo "This is a customized Taggify version." > $TAGGIFY_NOTICE
-echo "To decrease the size of the bundle, it includes production-only files" >> $TAGGIFY_NOTICE
 
 echo "# Removing unused files from moment"
 rm -r "$MOMENT_DIR/src"
