@@ -39,6 +39,7 @@
         "@ckeditor/ckeditor5-widget": "^40.1.0",
         "@ckeditor/ckeditor5-theme-lark": "^40.1.0",
         "@ckeditor/ckeditor5-code-block": "^40.1.0",
+        "@ckeditor/ckeditor5-special-characters": "^40.1.0",
         "bootstrap": "^5.3.2",
         "chart.js": "^4.4.0",
         "chartjs-plugin-datalabels": "^2.2.0",
