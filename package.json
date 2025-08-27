@@ -35,7 +35,7 @@
     "dependencies": {
         "@ckeditor/ckeditor5-alignment": "^40.1.0",
         "@ckeditor/ckeditor5-build-inline": "^40.1.0",
-        "@ckeditor/ckeditor5-dev-utils": "^39.0.0",
+        "@ckeditor/ckeditor5-dev-utils": "^40.1.0",
         "@ckeditor/ckeditor5-widget": "^40.1.0",
         "@ckeditor/ckeditor5-theme-lark": "^40.1.0",
         "@ckeditor/ckeditor5-code-block": "^40.1.0",
