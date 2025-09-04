@@ -1,0 +1,33 @@
+@use 'sass:map';
+@use 'functions' as *;
+@use 'variables' as *;
+
+$helper-text-types: (
+    'default': $color-neutral-160,
+    'error': $color-error-80,
+);
+
+.ids-helper-text {
+    $self: &;
+
+    font-size: $text-font-size-m;
+    color: #{map.get($helper-text-types, 'default')};
+    display: flex;
+
+    &__icon-wrapper {
+        display: flex;
+        align-items: center;
+        height: $text-font-size-m * $base-line-height;
+        padding-right: calculateRem(4px);
+    }
+
+    @each $name, $color in $helper-text-types {
+        &--#{$name} {
+            color: $color;
+
+            #{$self}__icon {
+                fill: $color;
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+@use 'sass:map';
+@use 'functions' as *;
+@use 'variables' as *;
+@use 'mixins/icons' as mixins;
+
+$input-sizes: (
+    'small': (
+        'font-size': $text-font-size-s,
+        'padding': calculateRem(7px) calculateRem(16px) calculateRem(7px),
+    ),
+    'medium': (
+        'font-size': $text-font-size-m,
+        'padding': calculateRem(9px) calculateRem(16px) calculateRem(10px),
+    ),
+);
+
+.ids-input {
+    border-radius: $border-radius-medium;
+    background: var(--ids-input-default-bg-color, #{$color-neutral-10});
+    border: calculateRem(1px) solid var(--ids-input-default-border-color, #{$color-neutral-80});
+    color: var(--ids-input-default-text-color, #{$color-neutral-240});
+    outline: 0;
+
+    @each $name, $properties in $input-sizes {
+        &--#{$name} {
+            font-size: map.get($properties, 'font-size');
+            padding: map.get($properties, 'padding');
+        }
+    }
+
+    &.ids-input--error {
+        background: var(--ids-input-error-bg-color, #{$color-error-20});
+        border-color: var(--ids-input-error-border-color, #{$color-error-80});
+        color: var(--ids-input-error-text-color, #{$color-error-90});
+    }
+
+    &.ids-input--disabled,
+    &.disabled,
+    &[disabled],
+    &:disabled {
+        color: var(--ids-input-disabled-text-color, #{$color-neutral-150});
+        background: var(--ids-input-disabled-bg-color, #{$color-neutral-40});
+        border-color: var(--ids-input-disabled-border-color, #{$color-neutral-80});
+        pointer-events: none;
+    }
+
+    &:hover {
+        border-color: var(--ids-input-hover-border-color, #{$color-primary-80});
+    }
+
+    &:active {
+        border-color: var(--ids-input-active-border-color, #{$color-primary-90});
+    }
+
+    &:focus {
+        border-color: var(--ids-input-focus-border-color, #{$color-primary-80});
+        box-shadow: var(--ids-input-focus-box-shadow, #{$box-shadow-focus-primary});
+    }
+}
