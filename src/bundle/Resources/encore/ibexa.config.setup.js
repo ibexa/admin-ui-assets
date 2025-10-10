@@ -5,5 +5,6 @@ module.exports = (Encore) => {
         '@ibexa-admin-ui-assets': path.resolve('./vendor/ibexa/admin-ui-assets'),
         '@ids-assets': path.resolve('./vendor/ibexa/admin-ui-assets/src/bundle/Resources/public/vendors/ids-assets/dist'),
         '@ids-components': path.resolve('./vendor/ibexa/admin-ui-assets/src/bundle/Resources/public/vendors/ids-components/dist'),
+        '@ids-core': path.resolve('./vendor/ibexa/admin-ui-assets/src/bundle/Resources/public/vendors/ids-core/dist'),
     });
 };
