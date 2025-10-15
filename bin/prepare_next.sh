@@ -51,7 +51,9 @@ echo "# Switching to $BRANCH and updating"
 git checkout -q $BRANCH > /dev/null && git pull > /dev/null
 check_process "switch to $BRANCH"
 
-idsDir=src ./bin/prepare_release_files.sh
+jq --indent 4 '.scripts["postinstall"] = "(cd node_modules/@ibexa/design-system && yarn install &&yarn packages:build)"' package.json > package.json.tmp && mv package.json.tmp package.json
+./bin/prepare_release_files.sh
+git checkout HEAD -- package.json
 check_process "prepare the release files"
 
 echo "# Creating next branch: $NEXT_BRANCH"
