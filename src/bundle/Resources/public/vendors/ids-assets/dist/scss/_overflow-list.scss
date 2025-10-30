@@ -1,0 +1,9 @@
+.ids-overflow-list {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+
+    & > * {
+        flex-shrink: 0;
+    }
+}
