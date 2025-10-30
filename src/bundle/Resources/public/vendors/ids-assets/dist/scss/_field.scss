@@ -1,0 +1,11 @@
+@use 'functions' as *;
+
+.ids-field {
+    &__label-wrapper {
+        margin-bottom: calculateRem(8px);
+    }
+
+    &__helper-text-wrapper {
+        margin-top: calculateRem(8px);
+    }
+}

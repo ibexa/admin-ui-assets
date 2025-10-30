@@ -1,0 +1,13 @@
+@use 'colors' as *;
+@use '../functions/calculate.rem' as *;
+
+$box-shadow-large: calculateRem(4px) calculateRem(22px) calculateRem(47px) 0 rgba($color-primary_alt-80, 0.15);
+$box-shadow-medium: calculateRem(4px) calculateRem(22px) calculateRem(47px) 0 rgba($color-primary_alt-80, 0.1);
+$box-shadow-small: calculateRem(4px) calculateRem(22px) calculateRem(47px) 0 rgba($color-primary_alt-80, 0.05);
+$box-shadow-extra-small: 0 0 calculateRem(12px) 0 rgba($color-neutral-240, 0.08);
+
+$box-shadow-focus-primary: 0 0 0 calculateRem(4px) rgba($color-primary-80, 0.25);
+$box-shadow-focus-primary_alt: 0 0 0 calculateRem(4px) rgba($color-primary_alt-80, 0.25);
+$box-shadow-focus-dark_surface: 0 0 0 calculateRem(4px) rgba($color-neutral-10, 0.2);
+
+$box-shadow-tooltip: 0 calculateRem(2px) calculateRem(8px) 0 rgba($color-neutral-240, 0.1);
