@@ -1,0 +1,262 @@
+@use 'sass:map';
+@use 'sass:list';
+@use 'functions' as *;
+@use 'variables' as *;
+@use 'mixins/buttons' as mixins;
+
+$btn-focus-bs-color: rgba($color-primary-80, 0.25);
+$btn-focus-bs-lengths: 0 0 0 calculateRem(4px);
+// Browsers can't handle transitioning between gradients and single colors (it flickers), therefore fake gradient is needed
+$fake-bg-gradient: linear-gradient(0, $color-primary-80 100%, $color-primary-80 100%);
+
+$btns-types: (
+    'primary': (
+        'default': (
+            'text': $color-neutral-10,
+            'bg': $gradient-primary-1,
+            'border': transparent,
+        ),
+        'hover': (
+            'text': $color-neutral-10,
+            'bg': $gradient-primary-2,
+            'border': transparent,
+        ),
+        'active': (
+            'text': $color-neutral-10,
+            'bg': $fake-bg-gradient,
+            'border': transparent,
+        ),
+        'focus': (
+            'text': $color-neutral-10,
+            'bg': $gradient-primary-2,
+            'border': transparent,
+            'box-shadow': $box-shadow-focus-primary,
+        ),
+        'disabled': (
+            'text': $color-neutral-120,
+            'bg': $color-neutral-40,
+            'border': transparent,
+        ),
+    ),
+    'secondary': (
+        'default': (
+            'text': $color-primary-80,
+            'bg': transparent,
+            'border': $color-primary-80,
+        ),
+        'hover': (
+            'text': $color-primary-90,
+            'bg': rgba($color-primary-30, 0.25),
+            'border': $color-primary-90,
+        ),
+        'active': (
+            'text': $color-primary-90,
+            'bg': transparent,
+            'border': $color-primary-90,
+        ),
+        'focus': (
+            'text': $color-primary-80,
+            'bg': transparent,
+            'border': $color-primary-80,
+            'box-shadow': $box-shadow-focus-primary,
+        ),
+        'disabled': (
+            'text': $color-neutral-120,
+            'bg': $color-neutral-10,
+            'border': $color-neutral-60,
+        ),
+    ),
+    'tertiary': (
+        'default': (
+            'text': $color-primary-80,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'hover': (
+            'text': $color-primary-90,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'active': (
+            'text': $color-primary-100,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'focus': (
+            'text': $color-primary-80,
+            'bg': transparent,
+            'border': transparent,
+            'box-shadow': $box-shadow-focus-primary,
+        ),
+        'disabled': (
+            'text': $color-neutral-120,
+            'bg': transparent,
+            'border': transparent,
+        ),
+    ),
+    'secondary-alt': (
+        'default': (
+            'text': $color-neutral-240,
+            'bg': transparent,
+            'border': $color-neutral-70,
+        ),
+        'hover': (
+            'text': $color-primary-80,
+            'bg': transparent,
+            'border': $color-neutral-70,
+        ),
+        'active': (
+            'text': $color-primary-90,
+            'bg': transparent,
+            'border': $color-neutral-70,
+        ),
+        'focus': (
+            'text': $color-primary-80,
+            'bg': transparent,
+            'border': $color-primary-80,
+            'box-shadow': $box-shadow-focus-primary,
+        ),
+        'disabled': (
+            'text': $color-neutral-120,
+            'bg': transparent,
+            'border': $color-neutral-60,
+        ),
+    ),
+    'tertiary-alt': (
+        'default': (
+            'text': $color-neutral-240,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'hover': (
+            'text': $color-primary-80,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'active': (
+            'text': $color-primary-90,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'focus': (
+            'text': $color-neutral-240,
+            'bg': transparent,
+            'border': transparent,
+            'box-shadow': $box-shadow-focus-primary,
+        ),
+        'disabled': (
+            'text': $color-neutral-120,
+            'bg': transparent,
+            'border': transparent,
+        ),
+    ),
+);
+
+$btns-sizes: (
+    'medium': (
+        'height': calculateRem(40px),
+        'padding-x': calculateRem(16px),
+        'icon-padding': calculateRem(8px),
+    ),
+    'small': (
+        'height': calculateRem(32px),
+        'padding-x': calculateRem(12px),
+        'icon-padding': calculateRem(4px),
+    ),
+);
+
+.ids-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    outline: none;
+    border-radius: $border-radius-medium;
+    text-decoration: none;
+    font-size: $text-font-size-m;
+    cursor: pointer;
+    color: var(--ids-default-text-color);
+    fill: var(--ids-default-text-color);
+    background: var(--ids-default-bg-color);
+    border: calculateRem(1px) solid var(--ids-default-border-color);
+    transition: all 1s $transition-timing-function;
+
+    &:focus {
+        color: var(--ids-focus-text-color);
+        fill: var(--ids-focus-text-color);
+        background: var(--ids-focus-bg-color);
+        border-color: var(--ids-focus-border-color);
+        box-shadow: var(--ids-focus-box-shadow);
+    }
+
+    &:hover {
+        color: var(--ids-hover-text-color);
+        fill: var(--ids-hover-text-color);
+        background: var(--ids-hover-bg-color);
+        border-color: var(--ids-hover-border-color);
+    }
+
+    &:active {
+        color: var(--ids-active-text-color);
+        fill: var(--ids-active-text-color);
+        background: var(--ids-active-bg-color);
+        border-color: var(--ids-active-border-color);
+    }
+
+    &.ids-btn--disabled,
+    &.disabled,
+    &[disabled],
+    &:disabled {
+        color: var(--ids-disabled-text-color);
+        fill: var(--ids-disabled-text-color);
+        background: var(--ids-disabled-bg-color);
+        border-color: var(--ids-disabled-border-color);
+        box-shadow: none;
+        pointer-events: none;
+    }
+
+    &__icon {
+        line-height: 0;
+    }
+
+    &__label {
+        line-height: $base-line-height;
+    }
+
+    @each $name, $states in $btns-types {
+        &--#{$name} {
+            @include mixins.button-variant(
+                map.get($states, 'default'),
+                map.get($states, 'hover'),
+                map.get($states, 'active'),
+                map.get($states, 'focus'),
+                map.get($states, 'disabled')
+            );
+        }
+    }
+
+    @each $name, $values in $btns-sizes {
+        &--#{$name} {
+            height: map.get($values, 'height');
+            padding: 0 map.get($values, 'padding-x');
+
+            &.ids-btn--icon-only {
+                width: map.get($values, 'height');
+                padding: 0;
+            }
+
+            .ids-btn__icon + .ids-btn__label {
+                padding-left: map.get($values, 'icon-padding');
+            }
+
+            &.ids-btn--tertiary,
+            &.ids-btn--tertiary-alt {
+                padding: 0;
+            }
+        }
+    }
+
+    &--primary {
+        border: 0;
+    }
+}
