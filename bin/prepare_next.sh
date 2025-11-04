@@ -56,9 +56,9 @@ jq --indent 4 '.scripts["postinstall"] = "(cd node_modules/@ibexa/design-system 
 git checkout HEAD -- package.json
 check_process "prepare the release files"
 
-echo "# Creating next branch: $NEXT_BRANCH"
-git checkout -q -B "$NEXT_BRANCH" > /dev/null
-check_process "create the branch '$NEXT_BRANCH'"
+echo "# Checkout to branch: $NEXT_BRANCH"
+git checkout -q "$NEXT_BRANCH" > /dev/null
+check_process "checkout to branch '$NEXT_BRANCH'"
 
 echo "# Commiting"
 git add src/bundle/Resources > /dev/null
@@ -66,6 +66,6 @@ git commit -q -m "Version $VERSION"
 check_process "commit the assets"
 
 echo ""
-echo "The branch '$NEXT_BRANCH' has been created, please check that everything is correct"
+echo "The branch '$NEXT_BRANCH' has been updated, please check that everything is correct"
 echo "then you can run:"
 echo "  git push origin $NEXT_BRANCH"
