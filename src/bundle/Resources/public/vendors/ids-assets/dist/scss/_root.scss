@@ -10,3 +10,7 @@ html {
 body {
     font-family: $font-family;
 }
+
+*[hidden] {
+    display: none !important;
+}
