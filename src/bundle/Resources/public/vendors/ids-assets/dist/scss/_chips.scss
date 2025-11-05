@@ -1,0 +1,91 @@
+@use 'sass:map';
+@use 'functions' as *;
+@use 'variables' as *;
+@use 'tags';
+
+.ids-chip {
+    @extend .ids-tag;
+
+    background: $color-neutral-20;
+    border: calculateRem(1px) solid $color-neutral-70;
+    outline: none;
+    opacity: 1;
+    visibility: visible;
+
+    &:hover {
+        border-color: $color-primary-80;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: $color-primary-80;
+        box-shadow: $box-shadow-focus-primary;
+    }
+
+    &:focus:not(:focus-visible) {
+        border-color: $color-neutral-70;
+        box-shadow: none;
+    }
+
+    &--disabled {
+        background: $color-neutral-20;
+        border-color: $color-neutral-70;
+        color: $color-neutral-130;
+
+        &:hover {
+            border-color: $color-neutral-70;
+        }
+
+        .ids-chip__delete {
+            fill: $color-neutral-130;
+        }
+    }
+
+    &__delete {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: calculateRem(20px);
+        height: calculateRem(20px);
+        padding: 0;
+        margin-left: calculateRem(4px);
+        border: none;
+        background: none;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: background-color 0.2s ease;
+
+        &.ids-btn--icon-only {
+            width: calculateRem(20px);
+            height: calculateRem(20px);
+        }
+
+        &:focus {
+            outline: none;
+            border: calculateRem(1px) solid $color-primary-80;
+            box-shadow: $box-shadow-focus-primary;
+        }
+
+        &:hover {
+            border: calculateRem(1px) solid $color-primary-80;
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+            background-color: transparent;
+            pointer-events: none;
+        }
+    }
+
+    &--error {
+        border-color: $color-error-80;
+        background-color: $color-error-20;
+        color: $color-error-90;
+        fill: $color-error-90;
+
+        .ids-chip__delete.ids-btn--icon-only {
+            fill: $color-error-90;
+        }
+    }
+}

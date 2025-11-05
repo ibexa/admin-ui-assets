@@ -1,0 +1,7 @@
+@use 'variables' as *;
+
+.ids-link {
+    font-family: $font-family-alt;
+    text-decoration: underline;
+    color: $color-neutral-240;
+}

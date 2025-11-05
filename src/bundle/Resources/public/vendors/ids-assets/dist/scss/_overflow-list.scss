@@ -1,0 +1,13 @@
+.ids-overflow-list {
+    overflow: hidden;
+
+    &__items {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: nowrap;
+
+        & > * {
+            flex-shrink: 0;
+        }
+    }
+}
