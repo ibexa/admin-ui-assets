@@ -5,13 +5,13 @@
 
 print_usage()
 {
-    echo "Create a new version of admin-ui-assets bundle by creating [version]-next"
+    echo "Create a new version of admin-ui-assets bundle by creating new commit at [version]-next"
     echo "This script MUST be run from the bundle root directory. It will create"
-    echo "a branch but this branch will NOT be pushed"
+    echo "a new commit at branch but this branch will NOT be pushed"
     echo ""
     echo "Usage: $1 -v <version> -b <branch>"
     echo "-v : where version will be used to create next branch"
-    echo "-b : branch which will be used to create next branch"
+    echo "-b : branch which will be merged into the next branch"
 }
 
 VERSION=""
@@ -27,8 +27,8 @@ while getopts ":h:v:b:" opt ; do
     esac
 done
 
-[ -z "$BRANCH" ] && print_usage "$0" && exit 2
 [ -z "$VERSION" ] && print_usage "$0" && exit 2
+[ -z "$BRANCH" ] && print_usage "$0" && exit 2
 
 check_command()
 {
@@ -44,21 +44,21 @@ check_process()
 check_command "git"
 check_command "yarn"
 
-CURRENT_BRANCH=`git branch | grep '*' | cut -d ' ' -f 2`
 NEXT_BRANCH="$VERSION-next"
 
-echo "# Switching to $BRANCH and updating"
+echo "# Updating $BRANCH"
 git checkout -q $BRANCH > /dev/null && git pull > /dev/null
-check_process "switch to $BRANCH"
+check_process "update '$BRANCH'"
+
+echo "# Merging $BRANCH to $NEXT_BRANCH"
+git checkout -q $NEXT_BRANCH > /dev/null && git pull > /dev/null
+git merge -q $BRANCH > /dev/null
+check_process "merge $BRANCH to $NEXT_BRANCH"
 
 jq --indent 4 '.scripts["postinstall"] = "(cd node_modules/@ibexa/design-system && yarn install &&yarn packages:build)"' package.json > package.json.tmp && mv package.json.tmp package.json
 ./bin/prepare_release_files.sh
 git checkout HEAD -- package.json
 check_process "prepare the release files"
-
-echo "# Creating next branch: $NEXT_BRANCH"
-git checkout -q -B "$NEXT_BRANCH" > /dev/null
-check_process "create the branch '$NEXT_BRANCH'"
 
 echo "# Commiting"
 git add src/bundle/Resources > /dev/null
@@ -66,6 +66,6 @@ git commit -q -m "Version $VERSION"
 check_process "commit the assets"
 
 echo ""
-echo "The branch '$NEXT_BRANCH' has been created, please check that everything is correct"
+echo "The branch '$NEXT_BRANCH' has been updated, please check that everything is correct"
 echo "then you can run:"
 echo "  git push origin $NEXT_BRANCH"
