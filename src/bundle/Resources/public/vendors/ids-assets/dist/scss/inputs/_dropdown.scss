@@ -26,6 +26,7 @@
     }
 
     &__selection-info {
+        flex-grow: 1;
         user-select: none;
     }
 
@@ -104,6 +105,10 @@
 
     &--multi {
         #{$self} {
+            &__widget.ids-input:hover:has(.ids-chip__delete:hover) {
+                border-color: var(--ids-input-default-border-color, #{$color-neutral-80});
+            }
+
             &__item {
                 display: flex;
                 align-items: center;
@@ -120,6 +125,16 @@
 
                 &:focus-within {
                     color: $color-primary-80;
+                }
+            }
+
+            &__selection-info {
+                .ids-overflow-list {
+                    margin: calculateRem(-4px);
+
+                    .ids-chip {
+                        margin: calculateRem(4px);
+                    }
                 }
             }
         }

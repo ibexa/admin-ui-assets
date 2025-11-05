@@ -9,6 +9,8 @@ var _react = _interopRequireDefault(require("react"));
 var _focus = require("../utils/focus");
 var _BaseDropdown = require("../../../partials/BaseDropdown");
 var _Checkbox = require("../../Checkbox");
+var _Chip = require("../../Chip");
+var _OverflowList = require("../../OverflowList");
 var _idsCore = require("@ids-core");
 var _withStateValue = require("../../../hoc/withStateValue");
 var _DropdownMultiInput = require("./DropdownMultiInput.types");
@@ -74,11 +76,23 @@ var DropdownMultiInput = exports.DropdownMultiInput = function DropdownMultiInpu
     return value.includes(item.id);
   }) : [];
   var renderSelectedItems = function renderSelectedItems() {
-    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, selectedItems.map(function (item) {
-      return item.label;
-    }).join(', '))
-    // TODO: replace with chips when done
-    ;
+    return /*#__PURE__*/_react["default"].createElement(_OverflowList.OverflowList, {
+      items: selectedItems,
+      renderItem: function renderItem(item) {
+        return /*#__PURE__*/_react["default"].createElement(_Chip.Chip, {
+          key: item.id,
+          onDelete: function onDelete() {
+            changeValue(item.id);
+          }
+        }, item.label);
+      },
+      renderMore: function renderMore(_ref3) {
+        var hiddenCount = _ref3.hiddenCount;
+        return /*#__PURE__*/_react["default"].createElement(_Chip.Chip, {
+          isDeletable: false
+        }, "+", hiddenCount);
+      }
+    });
   };
   var renderSource = function renderSource() {
     return /*#__PURE__*/_react["default"].createElement("select", {
@@ -93,9 +107,9 @@ var DropdownMultiInput = exports.DropdownMultiInput = function DropdownMultiInpu
       }, item.label);
     }));
   };
-  var getFocusableElements = function getFocusableElements(_ref3) {
-    var itemsList = _ref3.itemsList,
-      search = _ref3.search;
+  var getFocusableElements = function getFocusableElements(_ref4) {
+    var itemsList = _ref4.itemsList,
+      search = _ref4.search;
     var focusableElements = [].concat(_toConsumableArray(search instanceof HTMLElement ? [search] : []), _toConsumableArray(Array.from(itemsList.children).reduce(function (acc, child) {
       if (child instanceof HTMLElement) {
         var checkbox = child.querySelector('.ids-input--checkbox');
