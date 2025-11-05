@@ -2,8 +2,16 @@
 @use '../functions' as *;
 
 @mixin button-state($variables, $prefix) {
-    @each $key, $value in $variables {
-        --ids-#{$prefix}-#{$key}-color: #{$value};
+    @if map.has-key($variables, 'text') {
+        --ids-#{$prefix}-text-color: #{map.get($variables, 'text')};
+    }
+
+    @if map.has-key($variables, 'bg') {
+        --ids-#{$prefix}-bg-color: #{map.get($variables, 'bg')};
+    }
+
+    @if map.has-key($variables, 'border') {
+        --ids-#{$prefix}-border-color: #{map.get($variables, 'border')};
     }
 
     @if map.has-key($variables, 'box-shadow') {

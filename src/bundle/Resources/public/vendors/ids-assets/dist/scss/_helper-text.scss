@@ -10,14 +10,14 @@ $helper-text-types: (
 .ids-helper-text {
     $self: &;
 
-    font-size: $text-font-size-s;
+    font-size: $text-font-size-m;
     color: #{map.get($helper-text-types, 'default')};
     display: flex;
 
     &__icon-wrapper {
         display: flex;
         align-items: center;
-        height: $text-font-size-s * $base-line-height;
+        height: $text-font-size-m * $base-line-height;
         padding-right: calculateRem(4px);
     }
 

@@ -6,10 +6,6 @@
     align-items: center;
     height: calculateRem(34px);
 
-    .ids-btn__label {
-        display: flex;
-    }
-
     &--has-label {
         .ids-icon {
             margin-left: calculateRem(8px);
