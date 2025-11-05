@@ -8,6 +8,7 @@ var _react = _interopRequireDefault(require("react"));
 var _BaseField = require("../../../partials/BaseField");
 var _HelperText = require("../../HelperText");
 var _ToggleButtonInput = require("../ToggleButtonInput");
+var _idsCore = require("@ids-core");
 var _withStateChecked = require("../../../hoc/withStateChecked");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -19,6 +20,8 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 var ToggleButtonField = exports.ToggleButtonField = function ToggleButtonField(_ref) {
   var _ref$checked = _ref.checked,
     checked = _ref$checked === void 0 ? false : _ref$checked,
+    _ref$className = _ref.className,
+    className = _ref$className === void 0 ? '' : _ref$className,
     helperText = _ref.helperText,
     _ref$helperTextExtra = _ref.helperTextExtra,
     helperTextExtra = _ref$helperTextExtra === void 0 ? {} : _ref$helperTextExtra,
@@ -35,6 +38,9 @@ var ToggleButtonField = exports.ToggleButtonField = function ToggleButtonField(_
     } : _ref$onChange,
     _ref$required = _ref.required,
     required = _ref$required === void 0 ? false : _ref$required;
+  var toggleClassName = (0, _idsCore.createCssClassNames)(_defineProperty({
+    'ids-toggle-field': true
+  }, className, !!className));
   var helperTextProps = _objectSpread({
     children: helperText,
     type: _HelperText.HelperTextType.Default
@@ -50,6 +56,7 @@ var ToggleButtonField = exports.ToggleButtonField = function ToggleButtonField(_
     onChange: onChange
   });
   return /*#__PURE__*/_react["default"].createElement(_BaseField.BaseField, {
+    className: toggleClassName,
     helperText: helperTextProps,
     label: labelProps,
     type: "toggle"

@@ -7,6 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.OverflowList = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _cssClassNames = require("@ids-core/helpers/cssClassNames");
+var _useDebounce = require("../../hooks/useDebounce");
 var _OverflowList = require("./OverflowList.types");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != _typeof(e) && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
@@ -18,6 +19,7 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+var RESIZE_TIMEOUT = 200;
 var OverflowList = exports.OverflowList = function OverflowList(_ref) {
   var _ref$className = _ref.className,
     className = _ref$className === void 0 ? '' : _ref$className,
@@ -26,24 +28,30 @@ var OverflowList = exports.OverflowList = function OverflowList(_ref) {
     renderItem = _ref.renderItem,
     renderMore = _ref.renderMore;
   var listRef = (0, _react.useRef)(null);
-  var _useState = (0, _react.useState)(_OverflowList.OverflowListCalculateAction.None),
+  var itemsRef = (0, _react.useRef)(null);
+  var _useState = (0, _react.useState)(0),
     _useState2 = _slicedToArray(_useState, 2),
-    currentAction = _useState2[0],
-    setCurrentAction = _useState2[1];
-  var _useState3 = (0, _react.useState)(items.length),
+    itemsWidth = _useState2[0],
+    setItemsWidth = _useState2[1];
+  var _useState3 = (0, _react.useState)(_OverflowList.OverflowListCalculateAction.None),
     _useState4 = _slicedToArray(_useState3, 2),
-    numberOfVisibleItems = _useState4[0],
-    setNumberOfVisibleItems = _useState4[1];
+    currentAction = _useState4[0],
+    setCurrentAction = _useState4[1];
+  var _useState5 = (0, _react.useState)(items.length),
+    _useState6 = _slicedToArray(_useState5, 2),
+    numberOfVisibleItems = _useState6[0],
+    setNumberOfVisibleItems = _useState6[1];
+  var debounce = (0, _useDebounce.useDebounce)(RESIZE_TIMEOUT);
   var componentClassName = (0, _cssClassNames.createCssClassNames)(_defineProperty({
     'ids-overflow-list': true
   }, className, !!className));
   var recalculateVisibleItems = function recalculateVisibleItems() {
-    if (!listRef.current) {
+    if (!itemsRef.current) {
       return;
     }
-    var itemsNodes = Array.from(listRef.current.children);
-    var _listRef$current$getB = listRef.current.getBoundingClientRect(),
-      listRightPosition = _listRef$current$getB.right;
+    var itemsNodes = Array.from(itemsRef.current.children);
+    var _itemsRef$current$get = itemsRef.current.getBoundingClientRect(),
+      listRightPosition = _itemsRef$current$get.right;
     var newNumberOfVisibleItems = itemsNodes.findIndex(function (itemNode) {
       var _itemNode$getBounding = itemNode.getBoundingClientRect(),
         itemRightPosition = _itemNode$getBounding.right;
@@ -61,10 +69,14 @@ var OverflowList = exports.OverflowList = function OverflowList(_ref) {
   };
   var listResizeObserver = (0, _react.useMemo)(function () {
     return new ResizeObserver(function () {
-      setNumberOfVisibleItems(items.length);
-      setCurrentAction(_OverflowList.OverflowListCalculateAction.CalculateItems);
+      debounce(function () {
+        var _listRef$current$offs, _listRef$current;
+        setItemsWidth((_listRef$current$offs = (_listRef$current = listRef.current) === null || _listRef$current === void 0 ? void 0 : _listRef$current.offsetWidth) !== null && _listRef$current$offs !== void 0 ? _listRef$current$offs : 0);
+        setNumberOfVisibleItems(items.length);
+        setCurrentAction(_OverflowList.OverflowListCalculateAction.CalculateItems);
+      });
     });
-  }, [items.length]);
+  }, [items.length, debounce]);
   var renderItems = function renderItems() {
     return items.slice(0, numberOfVisibleItems).map(function (item) {
       return renderItem(item);
@@ -86,6 +98,11 @@ var OverflowList = exports.OverflowList = function OverflowList(_ref) {
       }
     }
   }, [currentAction, numberOfVisibleItems]);
+  (0, _react.useLayoutEffect)(function () {
+    if (listRef.current) {
+      setItemsWidth(listRef.current.offsetWidth);
+    }
+  }, []);
   (0, _react.useEffect)(function () {
     if (currentAction === _OverflowList.OverflowListCalculateAction.None) {
       setNumberOfVisibleItems(items.length);
@@ -103,5 +120,11 @@ var OverflowList = exports.OverflowList = function OverflowList(_ref) {
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: componentClassName,
     ref: listRef
-  }, renderItems(), renderOverflow());
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "ids-overflow-list__items",
+    ref: itemsRef,
+    style: {
+      width: "".concat(itemsWidth, "px")
+    }
+  }, renderItems(), renderOverflow()));
 };

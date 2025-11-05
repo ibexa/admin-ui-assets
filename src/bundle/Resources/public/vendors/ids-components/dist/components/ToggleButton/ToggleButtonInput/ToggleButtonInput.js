@@ -13,7 +13,7 @@ var _idsCore = require("@ids-core");
 var _generators = require("../../../hooks/generators");
 var _withStateChecked = require("../../../hoc/withStateChecked");
 var _ToggleButtonInput = require("./ToggleButtonInput.types");
-var _excluded = ["className", "disabledLabel", "enabledLabel", "size", "title"];
+var _excluded = ["className", "offLabel", "onLabel", "size", "title"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != _typeof(e) && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
@@ -30,8 +30,8 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 var ToggleButtonInput = exports.ToggleButtonInput = function ToggleButtonInput(_ref) {
   var _ref$className = _ref.className,
     className = _ref$className === void 0 ? '' : _ref$className,
-    disabledLabel = _ref.disabledLabel,
-    enabledLabel = _ref.enabledLabel,
+    offLabel = _ref.offLabel,
+    onLabel = _ref.onLabel,
     _ref$size = _ref.size,
     size = _ref$size === void 0 ? _ToggleButtonInput.ToggleButtonInputSize.Medium : _ref$size,
     _ref$title = _ref.title,
@@ -83,12 +83,12 @@ var ToggleButtonInput = exports.ToggleButtonInput = function ToggleButtonInput(_
     onBlur(event);
   };
   var getLabel = function getLabel() {
-    var defaultEnabledLabel = Translator.trans(/*@Desc("On")*/'ids.toggle.label.enabled');
-    var defaultDisabledLabel = Translator.trans(/*@Desc("Off")*/'ids.toggle.label.disabled');
+    var defaultOnLabel = Translator.trans(/*@Desc("On")*/'ids.toggle.label.on');
+    var defaultOffLabel = Translator.trans(/*@Desc("Off")*/'ids.toggle.label.off');
     if (checked) {
-      return enabledLabel !== null && enabledLabel !== void 0 ? enabledLabel : defaultEnabledLabel;
+      return onLabel !== null && onLabel !== void 0 ? onLabel : defaultOnLabel;
     }
-    return disabledLabel !== null && disabledLabel !== void 0 ? disabledLabel : defaultDisabledLabel;
+    return offLabel !== null && offLabel !== void 0 ? offLabel : defaultOffLabel;
   };
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: toggleClassName,
