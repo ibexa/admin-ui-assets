@@ -1,0 +1,24 @@
+@use '../functions' as *;
+@use '../variables' as *;
+@use '../mixins/choice-inputs' as *;
+
+.ids-radio-button {
+    .ids-input--radio {
+        @include choice-input-base;
+
+        border-radius: 50%;
+
+        &:checked {
+            border: calculateRem(5px) solid $color-primary-80;
+
+            &:disabled {
+                border-color: $color-primary-60;
+            }
+
+            &.ids-input--error {
+                background-color: $color-error-20;
+                border-color: $color-error-80;
+            }
+        }
+    }
+}

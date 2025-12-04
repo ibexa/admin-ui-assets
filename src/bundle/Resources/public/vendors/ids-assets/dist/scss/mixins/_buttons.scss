@@ -1,0 +1,32 @@
+@use 'sass:map';
+@use '../functions' as *;
+
+@mixin button-state($variables, $prefix) {
+    @each $key, $value in $variables {
+        --ids-#{$prefix}-#{$key}-color: #{$value};
+    }
+
+    @if map.has-key($variables, 'box-shadow') {
+        --ids-#{$prefix}-box-shadow: #{map.get($variables, 'box-shadow')};
+    }
+}
+
+@mixin button-variant($default, $hover: false, $active: false, $focus: false, $disabled: false) {
+    @include button-state($default, 'default');
+
+    @if $hover {
+        @include button-state($hover, 'hover');
+    }
+
+    @if $active {
+        @include button-state($active, 'active');
+    }
+
+    @if $disabled {
+        @include button-state($disabled, 'disabled');
+    }
+
+    @if $focus {
+        @include button-state($focus, 'focus');
+    }
+}
