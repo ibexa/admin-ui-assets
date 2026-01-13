@@ -1,0 +1,43 @@
+@use '../functions' as *;
+@use '../variables' as *;
+
+@mixin input-focus {
+    border-color: var(--ids-input-focus-border-color, #{$color-primary-80});
+    box-shadow: var(--ids-input-focus-box-shadow, #{$box-shadow-focus-primary});
+}
+
+@mixin input-base {
+    border-radius: $border-radius-medium;
+    background: var(--ids-input-default-bg-color, #{$color-neutral-10});
+    border: calculateRem(1px) solid var(--ids-input-default-border-color, #{$color-neutral-80});
+    color: var(--ids-input-default-text-color, #{$color-neutral-240});
+    outline: 0;
+
+    &--error {
+        background: var(--ids-input-error-bg-color, #{$color-error-20});
+        border-color: var(--ids-input-error-border-color, #{$color-error-80});
+        color: var(--ids-input-error-text-color, #{$color-error-90});
+    }
+
+    &--disabled,
+    &.disabled,
+    &[disabled],
+    &:disabled {
+        color: var(--ids-input-disabled-text-color, #{$color-neutral-150});
+        background: var(--ids-input-disabled-bg-color, #{$color-neutral-40});
+        border-color: var(--ids-input-disabled-border-color, #{$color-neutral-80});
+        pointer-events: none;
+    }
+
+    &:hover {
+        border-color: var(--ids-input-hover-border-color, #{$color-primary-80});
+    }
+
+    &:active {
+        border-color: var(--ids-input-active-border-color, #{$color-primary-90});
+    }
+
+    &:focus {
+        @include input-focus;
+    }
+}

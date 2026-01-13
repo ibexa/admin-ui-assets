@@ -1,0 +1,226 @@
+@use 'sass:map';
+@use 'functions' as *;
+@use 'variables' as *;
+@use 'mixins/tags' as mixins;
+
+$tags-types: (
+    'primary': (
+        'default': (
+            'text': $color-primary-80,
+            'bg': $color-primary-10,
+            'border': $color-primary-60,
+        ),
+        'dark': (
+            'text': $color-primary-60,
+            'bg': transparent,
+            'border': $color-primary-80,
+        ),
+    ),
+    'primary-alt': (
+        'default': (
+            'text': $color-primary_alt-90,
+            'bg': $color-primary_alt-20,
+            'border': $color-primary_alt-60,
+        ),
+        'dark': (
+            'text': $color-primary_alt-60,
+            'bg': transparent,
+            'border': $color-primary_alt-90,
+        ),
+    ),
+    'success': (
+        'default': (
+            'text': $color-success-90,
+            'bg': $color-success-10,
+            'border': $color-success-60,
+        ),
+        'dark': (
+            'text': $color-success-70,
+            'bg': transparent,
+            'border': $color-success-80,
+        ),
+    ),
+    'info': (
+        'default': (
+            'text': $color-info-100,
+            'bg': $color-info-10,
+            'border': $color-info-60,
+        ),
+        'dark': (
+            'text': $color-info-70,
+            'bg': transparent,
+            'border': $color-info-80,
+        ),
+    ),
+    'warning': (
+        'default': (
+            'text': $color-warning-100,
+            'bg': $color-warning-10,
+            'border': $color-warning-70,
+        ),
+        'dark': (
+            'text': $color-warning-70,
+            'bg': transparent,
+            'border': $color-warning-90,
+        ),
+    ),
+    'neutral': (
+        'default': (
+            'text': $color-neutral-190,
+            'bg': $color-neutral-20,
+            'border': $color-neutral-170,
+        ),
+        'dark': (
+            'text': $color-neutral-110,
+            'bg': transparent,
+            'border': $color-neutral-140,
+        ),
+    ),
+    'error': (
+        'default': (
+            'text': $color-error-90,
+            'bg': $color-error-10,
+            'border': $color-error-90,
+        ),
+        'dark': (
+            'text': $color-error-70,
+            'bg': transparent,
+            'border': $color-error-80,
+        ),
+    ),
+    'icon-tag': (
+        'default': (
+            'text': $color-neutral-210,
+            'bg': $color-neutral-20,
+            'border': $color-neutral-110,
+        ),
+        'dark': (
+            'text': $color-neutral-90,
+            'bg': transparent,
+            'border': $color-neutral-180,
+        ),
+    ),
+    'success-ghost': (
+        'default': (
+            'text': $color-neutral-240,
+            'bg': transparent,
+            'border': transparent,
+            'dot': $color-success-90,
+        ),
+        'dark': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': transparent,
+            'dot': $color-success-70,
+        ),
+    ),
+    'neutral-ghost': (
+        'default': (
+            'text': $color-neutral-240,
+            'bg': transparent,
+            'border': transparent,
+            'dot': $color-neutral-120,
+        ),
+        'dark': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': transparent,
+            'dot': $color-neutral-120,
+        ),
+    ),
+    'error-ghost': (
+        'default': (
+            'text': $color-neutral-240,
+            'bg': transparent,
+            'border': transparent,
+            'dot': $color-error-90,
+        ),
+        'dark': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': transparent,
+            'dot': $color-error-70,
+        ),
+    ),
+);
+
+$tags-sizes: (
+    'medium': (
+        'text': $text-font-size-s,
+        'padding-x': calculateRem(8px),
+        'padding-y': calculateRem(3px),
+        'dot': calculateRem(6px),
+    ),
+    'small': (
+        'text': $text-font-size-xs,
+        'padding-x': calculateRem(4px),
+        'padding-y': 0,
+        'dot': calculateRem(4px),
+    ),
+);
+
+.ids-tag {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    border: calculateRem(1px) solid var(--ids-default-border-color);
+    border-radius: calculateRem(16px);
+    padding: calculateRem(3px) calculateRem(8px);
+    font-size: $text-font-size-s;
+    color: var(--ids-default-text-color);
+    fill: var(--ids-default-text-color);
+    background: var(--ids-default-bg-color);
+    transition: all 1s $transition-timing-function;
+
+    @each $name, $theme in $tags-types {
+        &--#{$name} {
+            @include mixins.tag-variant(map.get($theme, 'default'));
+        }
+
+        //TODO: decide way of implementing variant on dark background
+        &--#{$name}.ids-tag--dark {
+            @include mixins.tag-variant(map.get($theme, 'dark'));
+
+            &.ids-tag::before {
+                content: '';
+                position: absolute;
+                top: calculateRem(-30px);
+                left: calculateRem(-60px);
+                right: calculateRem(-60px);
+                bottom: calculateRem(-30px);
+                background: $color-neutral-240;
+                z-index: -1;
+            }
+        }
+    }
+
+    @each $name, $values in $tags-sizes {
+        &--#{$name} {
+            font-size: map.get($values, 'text');
+            padding: map.get($values, 'padding-y') map.get($values, 'padding-x');
+        }
+    }
+
+    &__content {
+        line-height: $base-line-height;
+    }
+
+    &__ghost-dot {
+        margin: 0 calculateRem(6px) calculateRem(2px) 0;
+        border-radius: 50%;
+        background: var(--ids-default-dot-color);
+        @each $size, $values in $tags-sizes {
+            .ids-tag--#{$size} & {
+                width: map.get($values, 'dot');
+                height: map.get($values, 'dot');
+            }
+        }
+    }
+
+    &__icon {
+        line-height: 0;
+        margin-right: calculateRem(4px);
+    }
+}

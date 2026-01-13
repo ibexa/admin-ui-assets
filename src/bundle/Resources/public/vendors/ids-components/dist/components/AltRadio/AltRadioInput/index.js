@@ -1,0 +1,27 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var _AltRadioInput = require("./AltRadioInput");
+Object.keys(_AltRadioInput).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _AltRadioInput[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _AltRadioInput[key];
+    }
+  });
+});
+var _AltRadioInput2 = require("./AltRadioInput.types");
+Object.keys(_AltRadioInput2).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _AltRadioInput2[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _AltRadioInput2[key];
+    }
+  });
+});
