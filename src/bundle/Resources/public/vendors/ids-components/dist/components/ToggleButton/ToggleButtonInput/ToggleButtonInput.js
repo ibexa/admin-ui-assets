@@ -72,7 +72,6 @@ var ToggleButtonInput = exports.ToggleButtonInput = function ToggleButtonInput(_
     var _inputRef$current;
     (_inputRef$current = inputRef.current) === null || _inputRef$current === void 0 || _inputRef$current.focus();
     onChange(!checked);
-    onInput(!checked);
   };
   var onInputFocus = function onInputFocus(event) {
     setIsFocused(true);

@@ -24,7 +24,7 @@ var Accordion = exports.Accordion = function Accordion(_ref) {
     initiallyExpanded = _ref$initiallyExpande === void 0 ? false : _ref$initiallyExpande,
     _ref$onHandleExpand = _ref.onHandleExpand,
     onHandleExpand = _ref$onHandleExpand === void 0 ? function () {
-      return null;
+      return void 0;
     } : _ref$onHandleExpand;
   var Translator = (0, _react.useContext)(_Translator.TranslatorContext);
   var accordionContentRef = (0, _react.useRef)(null);

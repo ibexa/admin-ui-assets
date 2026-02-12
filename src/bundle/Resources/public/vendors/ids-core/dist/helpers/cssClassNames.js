@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.createCssClassNames = void 0;
-const createCssClassNames = (classes) => {
+export const createCssClassNames = (classes) => {
     if (Object.prototype.toString.call(classes) !== '[object Object]') {
         return '';
     }
@@ -14,4 +11,3 @@ const createCssClassNames = (classes) => {
     }, '')
         .trim();
 };
-exports.createCssClassNames = createCssClassNames;

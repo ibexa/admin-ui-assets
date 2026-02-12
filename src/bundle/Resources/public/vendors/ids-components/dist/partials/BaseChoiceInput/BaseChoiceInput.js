@@ -43,13 +43,10 @@ var BaseChoiceInput = exports.BaseChoiceInput = function BaseChoiceInput(_ref) {
     error = _ref$error === void 0 ? false : _ref$error,
     _ref$extraAria = _ref.extraAria,
     extraAria = _ref$extraAria === void 0 ? {} : _ref$extraAria,
-    _ref$id = _ref.id,
-    id = _ref$id === void 0 ? undefined : _ref$id,
+    id = _ref.id,
     _ref$inputClassName = _ref.inputClassName,
     inputClassName = _ref$inputClassName === void 0 ? '' : _ref$inputClassName,
     ref = _ref.ref,
-    _ref$required = _ref.required,
-    required = _ref$required === void 0 ? false : _ref$required,
     _ref$title = _ref.title,
     title = _ref$title === void 0 ? '' : _ref$title,
     _ref$value = _ref.value,
@@ -67,7 +64,7 @@ var BaseChoiceInput = exports.BaseChoiceInput = function BaseChoiceInput(_ref) {
     onFocus(event);
   };
   var componentOnInput = function componentOnInput(event) {
-    onInput(event.target.checked, event);
+    onInput(event);
   };
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: componentClassName
@@ -85,7 +82,6 @@ var BaseChoiceInput = exports.BaseChoiceInput = function BaseChoiceInput(_ref) {
     id: id,
     name: name,
     ref: ref,
-    required: required,
     title: title,
     type: type,
     value: value

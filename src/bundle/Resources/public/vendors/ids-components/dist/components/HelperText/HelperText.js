@@ -39,7 +39,7 @@ var HelperText = exports.HelperText = function HelperText(_ref) {
   }, /*#__PURE__*/_react["default"].createElement(_Icon.Icon, {
     className: "ids-helper-text__icon",
     name: ICONS_TYPE_MAP[type],
-    size: _Icon.IconSize.Small
+    size: _Icon.IconSize.TinySmall
   })), /*#__PURE__*/_react["default"].createElement("div", {
     className: "ids-helper-text__content-wrapper"
   }, children));
