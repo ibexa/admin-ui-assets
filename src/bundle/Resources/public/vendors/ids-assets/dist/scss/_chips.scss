@@ -41,6 +41,13 @@
         }
     }
 
+    &__content {
+        max-width: calculateRem(280px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
     &__delete {
         display: flex;
         align-items: center;

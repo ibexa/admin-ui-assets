@@ -72,6 +72,18 @@
         outline: none;
     }
 
+    &--error {
+        #{$self}__placeholder {
+            color: $color-error-90;
+        }
+
+        .ids-expander--has-icon {
+            .ids-icon {
+                fill: $color-error-90;
+            }
+        }
+    }
+
     &--single {
         #{$self} {
             &__item {

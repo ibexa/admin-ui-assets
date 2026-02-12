@@ -14,11 +14,10 @@ function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r
 var Autosave = exports.Autosave = function Autosave(_ref) {
   var _ref$isDarkMode = _ref.isDarkMode,
     isDarkMode = _ref$isDarkMode === void 0 ? false : _ref$isDarkMode,
-    _ref$isEnabled = _ref.isEnabled,
-    isEnabled = _ref$isEnabled === void 0 ? true : _ref$isEnabled,
+    isEnabled = _ref.isEnabled,
+    lastSavedTime = _ref.lastSavedTime,
     _ref$status = _ref.status,
-    status = _ref$status === void 0 ? _Autosave.AutosaveStatus.On : _ref$status,
-    lastSavedTime = _ref.lastSavedTime;
+    status = _ref$status === void 0 ? _Autosave.AutosaveStatus.On : _ref$status;
   var Translator = (0, _react.useContext)(_Translator.TranslatorContext);
   var classes = (0, _idsCore.createCssClassNames)({
     'ids-autosave': true,

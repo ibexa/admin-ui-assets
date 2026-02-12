@@ -14,18 +14,27 @@ function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" 
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 var MAX_BADGE_VALUE = 99;
 var THRESHOLD = _defineProperty(_defineProperty({}, _Badge.BadgeSize.Medium, 100), _Badge.BadgeSize.Small, 10);
+var STRING_THRESHOLD = _defineProperty(_defineProperty({}, _Badge.BadgeSize.Medium, 3), _Badge.BadgeSize.Small, 2);
 var Badge = exports.Badge = function Badge(_ref) {
   var _ref$className = _ref.className,
     className = _ref$className === void 0 ? '' : _ref$className,
+    _ref$maxValue = _ref.maxValue,
+    maxValue = _ref$maxValue === void 0 ? MAX_BADGE_VALUE : _ref$maxValue,
     _ref$size = _ref.size,
     size = _ref$size === void 0 ? _Badge.BadgeSize.Medium : _ref$size,
-    value = _ref.value;
-  var isStretched = value >= THRESHOLD[size];
+    value = _ref.value,
+    _ref$variant = _ref.variant,
+    variant = _ref$variant === void 0 ? _Badge.BadgeVariant.String : _ref$variant;
+  var isStretched = variant === _Badge.BadgeVariant.Number ? parseInt(value, 10) >= THRESHOLD[size] : value.length >= STRING_THRESHOLD[size];
   var componentClassName = (0, _idsCore.createCssClassNames)(_defineProperty(_defineProperty(_defineProperty({
     'ids-badge': true
   }, "ids-badge--".concat(size), true), 'ids-badge--stretched', isStretched), className, !!className));
   var formatBadgeValue = function formatBadgeValue(badgeValue) {
-    return badgeValue > MAX_BADGE_VALUE ? "".concat(MAX_BADGE_VALUE, "+") : badgeValue.toString();
+    if (variant === _Badge.BadgeVariant.String) {
+      return badgeValue;
+    }
+    var numericValue = parseInt(badgeValue, 10);
+    return numericValue > maxValue ? "".concat(maxValue, "+") : numericValue.toString();
   };
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: componentClassName

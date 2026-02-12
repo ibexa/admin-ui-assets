@@ -16,6 +16,10 @@ var BaseChoiceInputField = exports.BaseChoiceInputField = function BaseChoiceInp
   var children = _ref.children,
     _ref$className = _ref.className,
     className = _ref$className === void 0 ? '' : _ref$className,
+    _ref$disabled = _ref.disabled,
+    disabled = _ref$disabled === void 0 ? false : _ref$disabled,
+    _ref$error = _ref.error,
+    error = _ref$error === void 0 ? false : _ref$error,
     id = _ref.id,
     _ref$inputWrapperClas = _ref.inputWrapperClassName,
     inputWrapperClassName = _ref$inputWrapperClas === void 0 ? '' : _ref$inputWrapperClas,
@@ -23,7 +27,9 @@ var BaseChoiceInputField = exports.BaseChoiceInputField = function BaseChoiceInp
     labelClassName = _ref$labelClassName === void 0 ? '' : _ref$labelClassName,
     renderInput = _ref.renderInput;
   var componentClassName = (0, _idsCore.createCssClassNames)(_defineProperty({
-    'ids-choice-input-field': true
+    'ids-choice-input-field': true,
+    'ids-choice-input-field--disabled': disabled,
+    'ids-choice-input-field--error': error
   }, className, true));
   var componentInputWrapperClassName = (0, _idsCore.createCssClassNames)(_defineProperty({
     'ids-choice-input-field__input-wrapper': true
