@@ -29,7 +29,7 @@
         pointer-events: none;
     }
 
-    &:hover {
+    &:hover:not(&--disabled) {
         border-color: var(--ids-input-hover-border-color, #{$color-primary-80});
     }
 

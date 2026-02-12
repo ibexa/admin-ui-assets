@@ -10,7 +10,7 @@ var _BaseChoiceInputField = require("../../../partials/BaseChoiceInputField");
 var _RadioButtonInput = require("../RadioButtonInput");
 var _idsCore = require("@ids-core");
 var _withStateChecked = require("../../../hoc/withStateChecked");
-var _excluded = ["className", "label", "inputWrapperClassName", "labelClassName"];
+var _excluded = ["className", "inputWrapperClassName", "label", "labelClassName"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != _typeof(e) && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
@@ -20,9 +20,9 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 var RadioButtonField = exports.RadioButtonField = function RadioButtonField(_ref) {
   var _ref$className = _ref.className,
     className = _ref$className === void 0 ? '' : _ref$className,
-    label = _ref.label,
     _ref$inputWrapperClas = _ref.inputWrapperClassName,
     inputWrapperClassName = _ref$inputWrapperClas === void 0 ? '' : _ref$inputWrapperClas,
+    label = _ref.label,
     _ref$labelClassName = _ref.labelClassName,
     labelClassName = _ref$labelClassName === void 0 ? '' : _ref$labelClassName,
     inputProps = _objectWithoutProperties(_ref, _excluded);
@@ -34,6 +34,8 @@ var RadioButtonField = exports.RadioButtonField = function RadioButtonField(_ref
   }, [inputProps]);
   return /*#__PURE__*/_react["default"].createElement(_BaseChoiceInputField.BaseChoiceInputField, {
     className: fieldClassName,
+    disabled: inputProps.disabled,
+    error: inputProps.error,
     id: inputProps.id,
     inputWrapperClassName: inputWrapperClassName,
     labelClassName: labelClassName,
