@@ -91,7 +91,7 @@
             }
         }
 
-        #{$self}--checked {
+        &#{$self}--checked {
             #{$self} {
                 &__indicator {
                     transform: translateX(calculateRem(19px));

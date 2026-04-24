@@ -34,7 +34,9 @@ var Button = exports.Button = function Button(_ref) {
     _ref$title = _ref.title,
     title = _ref$title === void 0 ? '' : _ref$title,
     _ref$type = _ref.type,
-    type = _ref$type === void 0 ? _Button.ButtonType.Primary : _ref$type;
+    type = _ref$type === void 0 ? _Button.ButtonType.Primary : _ref$type,
+    _ref$iconPosition = _ref.iconPosition,
+    iconPosition = _ref$iconPosition === void 0 ? _Button.IconPosition.Start : _ref$iconPosition;
   var iconOnly = !!icon && !children;
   var componentClassName = (0, _idsCore.createCssClassNames)(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty({
     'ids-btn': true
@@ -67,6 +69,7 @@ var Button = exports.Button = function Button(_ref) {
     }
     return null;
   };
+  var isIconEnd = iconPosition === _Button.IconPosition.End;
   return /*#__PURE__*/_react["default"].createElement("button", _extends({
     "aria-disabled": disabled,
     "aria-label": getBtnAriaLabel(),
@@ -77,5 +80,5 @@ var Button = exports.Button = function Button(_ref) {
     tabIndex: isFocusable && !disabled ? 0 : -1,
     title: title,
     type: "button"
-  }, extraAria), renderIcon(), renderLabel());
+  }, extraAria), !isIconEnd && renderIcon(), renderLabel(), isIconEnd && renderIcon());
 };
