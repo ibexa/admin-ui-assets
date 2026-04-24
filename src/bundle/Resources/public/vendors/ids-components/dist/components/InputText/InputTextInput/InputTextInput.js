@@ -49,8 +49,7 @@ var InputTextInput = exports.InputTextInput = function InputTextInput(_ref) {
     extraAria = _ref$extraAria === void 0 ? {} : _ref$extraAria,
     _ref$className = _ref.className,
     className = _ref$className === void 0 ? '' : _ref$className,
-    _ref$id = _ref.id,
-    id = _ref$id === void 0 ? undefined : _ref$id,
+    id = _ref.id,
     _ref$placeholder = _ref.placeholder,
     placeholder = _ref$placeholder === void 0 ? '' : _ref$placeholder,
     _ref$processActions = _ref.processActions,
@@ -89,7 +88,7 @@ var InputTextInput = exports.InputTextInput = function InputTextInput(_ref) {
     onFocus(event);
   };
   var componentOnInput = function componentOnInput(event) {
-    onInput(event.target.value, event);
+    onInput(event);
   };
   var actions = (0, _react.useMemo)(function () {
     var baseActions = [];

@@ -26,10 +26,7 @@ var BaseDropdown = exports.BaseDropdown = function BaseDropdown(_ref) {
   var children = _ref.children,
     _ref$isEmpty = _ref.isEmpty,
     isEmpty = _ref$isEmpty === void 0 ? true : _ref$isEmpty,
-    _ref$isItemSelected = _ref.isItemSelected,
-    isItemSelected = _ref$isItemSelected === void 0 ? function () {
-      return false;
-    } : _ref$isItemSelected,
+    isItemSelected = _ref.isItemSelected,
     items = _ref.items,
     _ref$disabled = _ref.disabled,
     disabled = _ref$disabled === void 0 ? false : _ref$disabled,
@@ -49,10 +46,7 @@ var BaseDropdown = exports.BaseDropdown = function BaseDropdown(_ref) {
     } : _ref$getNextFocusable,
     _ref$maxVisibleItems = _ref.maxVisibleItems,
     maxVisibleItems = _ref$maxVisibleItems === void 0 ? MAX_VISIBLE_ITEMS : _ref$maxVisibleItems,
-    _ref$onDropdownItemCl = _ref.onDropdownItemClick,
-    onDropdownItemClick = _ref$onDropdownItemCl === void 0 ? function () {
-      return undefined;
-    } : _ref$onDropdownItemCl,
+    onDropdownItemClick = _ref.onDropdownItemClick,
     renderEmptySelectionInfo = _ref.renderEmptySelectionInfo,
     _ref$renderItem = _ref.renderItem,
     renderItem = _ref$renderItem === void 0 ? function (item) {

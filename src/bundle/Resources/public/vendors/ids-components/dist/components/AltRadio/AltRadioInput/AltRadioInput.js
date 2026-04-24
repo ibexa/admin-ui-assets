@@ -40,8 +40,7 @@ var AltRadioInput = exports.AltRadioInput = function AltRadioInput(_ref) {
     error = _inputProps$error === void 0 ? false : _inputProps$error,
     onBlur = inputProps.onBlur,
     onChange = inputProps.onChange,
-    onFocus = inputProps.onFocus,
-    onInput = inputProps.onInput;
+    onFocus = inputProps.onFocus;
   var inputRef = (0, _react.useRef)(null);
   var _useState = (0, _react.useState)(false),
     _useState2 = _slicedToArray(_useState, 2),
@@ -62,7 +61,6 @@ var AltRadioInput = exports.AltRadioInput = function AltRadioInput(_ref) {
     (_inputRef$current = inputRef.current) === null || _inputRef$current === void 0 || _inputRef$current.focus();
     if (!checked) {
       onChange === null || onChange === void 0 || onChange(true);
-      onInput === null || onInput === void 0 || onInput(true);
     }
   };
   var onInputFocus = function onInputFocus(event) {

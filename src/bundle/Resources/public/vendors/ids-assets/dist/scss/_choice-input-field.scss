@@ -1,7 +1,30 @@
 @use 'functions' as *;
+@use 'variables' as *;
 
 .ids-choice-input-field {
+    --ids-input-hover-border-color: var(--ids-input-hover-color, #{$color-primary-80});
+    --ids-input-hover-text-color: var(--ids-input-hover-color, #{$color-primary-80});
+
     display: flex;
     align-items: center;
     gap: calculateRem(8px);
+
+    &--disabled {
+        .ids-choice-input-label {
+            color: var(--ids-input-disabled-text-color, #{$color-neutral-150});
+            pointer-events: none;
+        }
+    }
+
+    &--error {
+        .ids-choice-input-label {
+            color: var(--ids-input-error-text-color, #{$color-error-80});
+        }
+    }
+
+    &:hover:not(&--disabled) {
+        .ids-choice-input-label {
+            color: var(--ids-input-hover-text-color);
+        }
+    }
 }

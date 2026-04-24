@@ -36,6 +36,9 @@ var withStateChecked = exports.withStateChecked = function withStateChecked(Wrap
         onChange.apply(void 0, arguments);
       }
     };
+    (0, _react.useEffect)(function () {
+      setComponentChecked(checked);
+    }, [checked]);
     return /*#__PURE__*/_react["default"].createElement(WrappedComponent, _extends({}, restProps, {
       checked: componentChecked,
       onChange: handleChange

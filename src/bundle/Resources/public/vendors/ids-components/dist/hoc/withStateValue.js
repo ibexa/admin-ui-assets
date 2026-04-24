@@ -36,6 +36,9 @@ var withStateValue = exports.withStateValue = function withStateValue(WrappedCom
         onChange.apply(void 0, arguments);
       }
     };
+    (0, _react.useEffect)(function () {
+      setComponentValue(value);
+    }, [value]);
     return /*#__PURE__*/_react["default"].createElement(WrappedComponent, _extends({}, restProps, {
       onChange: handleChange,
       value: componentValue
