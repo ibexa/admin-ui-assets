@@ -1,2 +1,0 @@
-This is a customized dagre-d3 version.
-To decrease the size of the bundle, it includes production-only files
