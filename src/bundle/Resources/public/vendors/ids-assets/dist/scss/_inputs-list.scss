@@ -1,0 +1,36 @@
+@use 'functions' as *;
+
+.ids-choice-inputs-list {
+    $self: &;
+
+    .ids-field {
+        &__label-wrapper {
+            margin-bottom: calculateRem(4px);
+        }
+
+        &__helper-text-wrapper {
+            margin-top: calculateRem(4px);
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+
+        & > * {
+            padding: calculateRem(4px) calculateRem(8px);
+        }
+    }
+
+    &--horizontal {
+        #{$self}__items {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: calculateRem(12px);
+
+            & > * {
+                padding: calculateRem(4px) 0;
+            }
+        }
+    }
+}
