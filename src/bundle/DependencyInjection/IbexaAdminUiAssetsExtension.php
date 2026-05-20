@@ -18,6 +18,7 @@ final class IbexaAdminUiAssetsExtension extends Extension implements PrependExte
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
+        // Intentionally left empty: this bundle only prepends Bazinga JS translation config.
     }
 
     public function prepend(ContainerBuilder $container): void
