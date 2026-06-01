@@ -1,10 +1,11 @@
+@use 'sass:color';
 @use 'sass:map';
 @use 'sass:list';
 @use 'functions' as *;
 @use 'variables' as *;
 @use 'mixins/buttons' as mixins;
 
-$btn-focus-bs-color: rgba($color-primary-80, 0.25);
+$btn-focus-bs-color: color.change($color-primary-80, $alpha: 0.25);
 $btn-focus-bs-lengths: 0 0 0 calculateRem(4px);
 // Browsers can't handle transitioning between gradients and single colors (it flickers), therefore fake gradient is needed
 $fake-bg-gradient: linear-gradient(0, $color-primary-80 100%, $color-primary-80 100%);
@@ -46,7 +47,7 @@ $btns-types: (
         ),
         'hover': (
             'text': $color-primary-90,
-            'bg': rgba($color-primary-30, 0.25),
+            'bg': color.change($color-primary-30, $alpha: 0.25),
             'border': $color-primary-90,
         ),
         'active': (
