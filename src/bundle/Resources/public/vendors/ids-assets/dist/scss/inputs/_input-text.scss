@@ -1,0 +1,32 @@
+@use '../functions' as *;
+
+.ids-input-text {
+    position: relative;
+
+    .ids-input {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    &__actions {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        padding-right: calculateRem(16px);
+        display: flex;
+        align-items: center;
+    }
+
+    &__source:has(.ids-input[hidden]) + &__actions {
+        display: none;
+    }
+
+    &__action {
+        line-height: 0;
+
+        &--hidden {
+            display: none;
+        }
+    }
+}

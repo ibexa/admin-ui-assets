@@ -1,0 +1,14 @@
+@use 'sass:color';
+@use 'colors' as *;
+@use '../functions/calculate.rem' as *;
+
+$box-shadow-large: calculateRem(4px) calculateRem(22px) calculateRem(47px) 0 color.change($color-primary_alt-80, $alpha: 0.15);
+$box-shadow-medium: calculateRem(4px) calculateRem(22px) calculateRem(47px) 0 color.change($color-primary_alt-80, $alpha: 0.1);
+$box-shadow-small: calculateRem(4px) calculateRem(22px) calculateRem(47px) 0 color.change($color-primary_alt-80, $alpha: 0.05);
+$box-shadow-extra-small: 0 0 calculateRem(12px) 0 color.change($color-neutral-240, $alpha: 0.08);
+
+$box-shadow-focus-primary: 0 0 0 calculateRem(4px) color.change($color-primary-80, $alpha: 0.25);
+$box-shadow-focus-primary_alt: 0 0 0 calculateRem(4px) color.change($color-primary_alt-80, $alpha: 0.25);
+$box-shadow-focus-dark_surface: 0 0 0 calculateRem(4px) color.change($color-neutral-10, $alpha: 0.2);
+
+$box-shadow-tooltip: 0 calculateRem(2px) calculateRem(8px) 0 color.change($color-neutral-240, $alpha: 0.1);
