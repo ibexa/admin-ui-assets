@@ -1,0 +1,8 @@
+{
+    "name": "@types/chart.js",
+    "version": "4.5.1",
+    "description": "TypeScript definitions for chart.js",
+    "license": "MIT",
+    "main": "",
+    "types": "index.d.ts"
+}
