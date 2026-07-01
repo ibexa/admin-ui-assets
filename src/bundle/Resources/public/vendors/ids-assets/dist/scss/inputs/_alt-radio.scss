@@ -1,0 +1,27 @@
+@use '../functions' as *;
+@use '../variables' as *;
+@use '../mixins/inputs' as inputs-mixins;
+@use '../mixins/utils' as utils-mixins;
+
+.ids-alt-radio {
+    &__source {
+        @include utils-mixins.hidden;
+    }
+
+    &__tile {
+        @include inputs-mixins.input-base;
+
+        & {
+            cursor: pointer;
+            padding: calculateRem(8px) calculateRem(16px);
+        }
+
+        &--checked {
+            background-color: var(--ids-input-checked-bg-color, #{$color-neutral-50});
+        }
+
+        &--focused {
+            @include inputs-mixins.input-focus;
+        }
+    }
+}

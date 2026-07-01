@@ -1,0 +1,66 @@
+<xliff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd" xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="ibexa_design_system" datatype="plaintext" source-language="en" target-language="en">
+    <body>
+      <trans-unit id="ids.clear_btn.label" resname="ids.clear_btn.label">
+        <source>Clear</source>
+        <target>Clear</target>
+      </trans-unit>
+      <trans-unit id="ids.dropdown.placeholder" resname="ids.dropdown.placeholder">
+        <source>Select an item</source>
+        <target>Select an item</target>
+      </trans-unit>
+      <trans-unit id="ids.dropdown.search.placeholder" resname="ids.dropdown.search.placeholder">
+        <source>Search...</source>
+        <target>Search...</target>
+      </trans-unit>
+      <trans-unit id="ids.toggle.label.on" resname="ids.toggle.label.on">
+        <source>On</source>
+        <target>On</target>
+      </trans-unit>
+      <trans-unit id="ids.toggle.label.off" resname="ids.toggle.label.off">
+        <source>Off</source>
+        <target>Off</target>
+      </trans-unit>
+      <trans-unit id="ids.search-button.label" resname="ids.search-button.label">
+        <source>Search</source>
+        <target>Search</target>
+      </trans-unit>
+      <trans-unit id="ids.show-password.label" resname="ids.show-password.label">
+        <source>Toggle password visibility</source>
+        <target>Toggle password visibility</target>
+      </trans-unit>
+      <trans-unit id="ibexa.chip.delete-btn.label" resname="ibexa.chip.delete-btn.label">
+        <source>Delete</source>
+        <target>Delete</target>
+      </trans-unit>
+      <trans-unit id="content_edit.autosave.status_off.message" resname="content_edit.autosave.status_off.message">
+        <source>Autosave is off, draft not created</source>
+        <target>Autosave is off, draft not created</target>
+      </trans-unit>
+      <trans-unit id="content_edit.autosave.status_on.message" resname="content_edit.autosave.status_on.message">
+        <source>Autosave is on, draft created</source>
+        <target>Autosave is on, draft created</target>
+      </trans-unit>
+      <trans-unit id="content_edit.autosave.status_saving.message" resname="content_edit.autosave.status_saving.message">
+        <source>Saving</source>
+        <target>Saving</target>
+      </trans-unit>
+      <trans-unit id="content_edit.autosave.status_saved.message.full" resname="content_edit.autosave.status_saved.message.full">
+        <source>Autosave is on, draft saved %time%</source>
+        <target>Autosave is on, draft saved %time%</target>
+      </trans-unit>
+      <trans-unit id="content_edit.autosave.status_error.message" resname="content_edit.autosave.status_error.message">
+        <source>Saving error</source>
+        <target>Saving error</target>
+      </trans-unit>
+      <trans-unit id="ibexa.expander.label.collapse" resname="ibexa.expander.label.collapse">
+        <source>Hide</source>
+        <target>Hide</target>
+      </trans-unit>
+      <trans-unit id="ibexa.expander.label.expand" resname="ibexa.expander.label.expand">
+        <source>Show</source>
+        <target>Show</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
