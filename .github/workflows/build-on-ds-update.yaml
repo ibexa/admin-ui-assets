@@ -6,6 +6,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: prepare-next-${{ github.ref_name }}
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -21,7 +25,7 @@ jobs:
           git config user.name "github-actions[bot]"
 
       - name: Run prepare_next.sh
-        run: bash bin/prepare_next.sh -v ${{ vars.NEXT_BRANCH_VERSION }} -b ${{ vars.NEXT_BRANCH_SOURCE }}
+        run: bash bin/prepare_next.sh -v ${{ github.ref_name }} -b ${{ github.ref_name }}
 
       - name: Push to next branch
-        run: git push origin HEAD:${{ vars.NEXT_BRANCH_VERSION }}-next
+        run: git push origin HEAD:${{ github.ref_name }}-next
