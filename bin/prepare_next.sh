@@ -60,12 +60,21 @@ jq --indent 4 '.scripts["postinstall"] = "(cd node_modules/@ibexa/design-system 
 git checkout HEAD -- package.json
 check_process "prepare the release files"
 
-echo "# Commiting"
-git add src/bundle/Resources > /dev/null
-git commit -q -m "Version $VERSION"
-check_process "commit the assets"
+if [ -n "$(git status --porcelain -- src/bundle/Resources)" ]; then
+    echo "# Commiting"
+    git add src/bundle/Resources > /dev/null
+    git commit -q -m "Version $VERSION"
+    check_process "commit the assets"
+else
+    echo "# Nothing to commit"
+fi
 
 echo ""
-echo "The branch '$NEXT_BRANCH' has been updated, please check that everything is correct"
-echo "then you can run:"
-echo "  git push origin $NEXT_BRANCH"
+
+if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/$NEXT_BRANCH)" ]; then
+    echo "The branch '$NEXT_BRANCH' has been updated, please check that everything is correct"
+    echo "then you can run:"
+    echo "  git push origin $NEXT_BRANCH"
+else
+    echo "The branch '$NEXT_BRANCH' is already up to date, nothing to push"
+fi

@@ -1,0 +1,31 @@
+name: Prepare next branch
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prepare-next-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+
+      - name: Run prepare_next.sh
+        run: bash bin/prepare_next.sh -v ${{ github.ref_name }} -b ${{ github.ref_name }}
+
+      - name: Push to next branch
+        run: git push origin HEAD:${{ github.ref_name }}-next
