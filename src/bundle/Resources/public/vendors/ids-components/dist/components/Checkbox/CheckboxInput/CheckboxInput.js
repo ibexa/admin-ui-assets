@@ -23,15 +23,9 @@ var CheckboxInput = exports.CheckboxInput = function CheckboxInput(_ref) {
     _ref$indeterminate = _ref.indeterminate,
     indeterminate = _ref$indeterminate === void 0 ? false : _ref$indeterminate,
     restProps = _objectWithoutProperties(_ref, _excluded);
-  var checkboxClassName = (0, _idsCore.createCssClassNames)(_defineProperty({
-    'ids-checkbox': true
-  }, className, true));
-  var inputClassName = (0, _idsCore.createCssClassNames)({
-    'ids-input--indeterminate': indeterminate
-  });
+  var checkboxClassName = (0, _idsCore.createCssClassNames)(_defineProperty(_defineProperty({}, className, !!className), 'ids-input--indeterminate', indeterminate));
   return /*#__PURE__*/_react["default"].createElement(_BaseChoiceInput.BaseChoiceInput, _extends({
     className: checkboxClassName,
-    inputClassName: inputClassName,
     ref: function ref(node) {
       if (node) {
         node.indeterminate = indeterminate; // eslint-disable-line no-param-reassign

@@ -18,6 +18,10 @@
         align-items: center;
     }
 
+    &__source:has(.ids-input[hidden]) + &__actions {
+        display: none;
+    }
+
     &__action {
         line-height: 0;
 

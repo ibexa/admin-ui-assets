@@ -169,6 +169,7 @@ $tags-sizes: (
     border-radius: calculateRem(16px);
     padding: calculateRem(3px) calculateRem(8px);
     font-size: $text-font-size-s;
+    font-weight: $text-font-weight-normal;
     color: var(--ids-default-text-color);
     fill: var(--ids-default-text-color);
     background: var(--ids-default-bg-color);

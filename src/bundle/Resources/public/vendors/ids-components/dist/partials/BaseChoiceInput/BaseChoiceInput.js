@@ -44,16 +44,12 @@ var BaseChoiceInput = exports.BaseChoiceInput = function BaseChoiceInput(_ref) {
     _ref$extraAria = _ref.extraAria,
     extraAria = _ref$extraAria === void 0 ? {} : _ref$extraAria,
     id = _ref.id,
-    _ref$inputClassName = _ref.inputClassName,
-    inputClassName = _ref$inputClassName === void 0 ? '' : _ref$inputClassName,
     ref = _ref.ref,
     _ref$title = _ref.title,
     title = _ref$title === void 0 ? '' : _ref$title,
     _ref$value = _ref.value,
     value = _ref$value === void 0 ? '' : _ref$value;
-  var componentClassName = (0, _idsCore.createCssClassNames)(_defineProperty({
-    'ids-choice-input': true
-  }, className, !!className));
+  var componentClassName = (0, _idsCore.createCssClassNames)(_defineProperty({}, className, !!className));
   var componentOnBlur = function componentOnBlur(event) {
     onBlur(event);
   };
@@ -66,10 +62,8 @@ var BaseChoiceInput = exports.BaseChoiceInput = function BaseChoiceInput(_ref) {
   var componentOnInput = function componentOnInput(event) {
     onInput(event);
   };
-  return /*#__PURE__*/_react["default"].createElement("div", {
-    className: componentClassName
-  }, /*#__PURE__*/_react["default"].createElement(_BaseInput.BaseInput, {
-    className: inputClassName,
+  return /*#__PURE__*/_react["default"].createElement(_BaseInput.BaseInput, {
+    className: componentClassName,
     disabled: disabled,
     error: error,
     extraInputAttrs: _objectSpread({
@@ -85,5 +79,5 @@ var BaseChoiceInput = exports.BaseChoiceInput = function BaseChoiceInput(_ref) {
     title: title,
     type: type,
     value: value
-  }));
+  });
 };
