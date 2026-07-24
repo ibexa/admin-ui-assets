@@ -156,12 +156,12 @@ $btns-types: (
 $btns-sizes: (
     'medium': (
         'height': calculateRem(40px),
-        'padding-x': calculateRem(16px),
+        'padding-x': calculateRem(12px),
         'icon-padding': calculateRem(8px),
     ),
     'small': (
         'height': calculateRem(32px),
-        'padding-x': calculateRem(12px),
+        'padding-x': calculateRem(8px),
         'icon-padding': calculateRem(4px),
     ),
 );
@@ -205,10 +205,9 @@ $btns-sizes: (
         border-color: var(--ids-active-border-color);
     }
 
-    &.ids-btn--disabled,
-    &.disabled,
     &[disabled],
-    &:disabled {
+    &:disabled,
+    &[aria-disabled='true'] {
         color: var(--ids-disabled-text-color);
         fill: var(--ids-disabled-text-color);
         background: var(--ids-disabled-bg-color);
@@ -249,11 +248,6 @@ $btns-sizes: (
 
             .ids-btn__icon + .ids-btn__label {
                 padding-left: map.get($values, 'icon-padding');
-            }
-
-            &.ids-btn--tertiary,
-            &.ids-btn--tertiary-alt {
-                padding: 0;
             }
         }
     }

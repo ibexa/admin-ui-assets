@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ButtonType = exports.ButtonSize = void 0;
+exports.IconPosition = exports.ButtonType = exports.ButtonSize = void 0;
 var ButtonSize = exports.ButtonSize = /*#__PURE__*/function (ButtonSize) {
   ButtonSize["Medium"] = "medium";
   ButtonSize["Small"] = "small";
@@ -16,4 +16,9 @@ var ButtonType = exports.ButtonType = /*#__PURE__*/function (ButtonType) {
   ButtonType["SecondaryAlt"] = "secondary-alt";
   ButtonType["TertiaryAlt"] = "tertiary-alt";
   return ButtonType;
+}({});
+var IconPosition = exports.IconPosition = /*#__PURE__*/function (IconPosition) {
+  IconPosition["Start"] = "start";
+  IconPosition["End"] = "end";
+  return IconPosition;
 }({});

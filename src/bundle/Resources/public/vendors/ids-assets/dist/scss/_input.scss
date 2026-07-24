@@ -23,4 +23,8 @@ $input-sizes: (
             padding: map.get($properties, 'padding');
         }
     }
+
+    &--text {
+        height: calculateRem(40px);
+    }
 }

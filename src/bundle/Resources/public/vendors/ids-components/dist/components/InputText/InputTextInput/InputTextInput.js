@@ -6,8 +6,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.InputTextInputStateful = exports.InputTextInput = void 0;
 var _react = _interopRequireWildcard(require("react"));
+var _Icon = require("../../Icon");
 var _BaseInput = require("../../../partials/BaseInput");
 var _ClearBtn = require("../../../ui/ClearBtn");
+var _Translator = require("../../../context/Translator");
 var _idsCore = require("@ids-core");
 var _withStateValue = require("../../../hoc/withStateValue");
 var _InputTextInput = require("./InputTextInput.types");
@@ -47,6 +49,8 @@ var InputTextInput = exports.InputTextInput = function InputTextInput(_ref) {
     error = _ref$error === void 0 ? false : _ref$error,
     _ref$extraAria = _ref.extraAria,
     extraAria = _ref$extraAria === void 0 ? {} : _ref$extraAria,
+    _ref$hasSearchAction = _ref.hasSearchAction,
+    hasSearchAction = _ref$hasSearchAction === void 0 ? false : _ref$hasSearchAction,
     _ref$className = _ref.className,
     className = _ref$className === void 0 ? '' : _ref$className,
     id = _ref.id,
@@ -62,6 +66,8 @@ var InputTextInput = exports.InputTextInput = function InputTextInput(_ref) {
     ref = _ref$ref === void 0 ? null : _ref$ref,
     _ref$required = _ref.required,
     required = _ref$required === void 0 ? false : _ref$required,
+    _ref$searchButtonType = _ref.searchButtonType,
+    searchButtonType = _ref$searchButtonType === void 0 ? 'submit' : _ref$searchButtonType,
     _ref$size = _ref.size,
     size = _ref$size === void 0 ? _InputTextInput.InputTextInputSize.Medium : _ref$size,
     _ref$title = _ref.title,
@@ -70,14 +76,23 @@ var InputTextInput = exports.InputTextInput = function InputTextInput(_ref) {
     type = _ref$type === void 0 ? 'text' : _ref$type,
     _ref$value = _ref.value,
     value = _ref$value === void 0 ? '' : _ref$value;
+  var Translator = (0, _react.useContext)(_Translator.TranslatorContext);
   var actionsRef = (0, _react.useRef)(null);
   var _useState = (0, _react.useState)(0),
     _useState2 = _slicedToArray(_useState, 2),
     sourcePadding = _useState2[0],
     setSourcePadding = _useState2[1];
+  var _useState3 = (0, _react.useState)(type),
+    _useState4 = _slicedToArray(_useState3, 2),
+    resolvedType = _useState4[0],
+    setResolvedType = _useState4[1];
   var inputTextClassName = (0, _idsCore.createCssClassNames)(_defineProperty({
     'ids-input-text': true
   }, className, true));
+  var showPasswordToggle = type === 'password' && !hasSearchAction;
+  var showSearchAction = hasSearchAction && type !== 'password';
+  var searchMsg = Translator.trans(/*@Desc("Search")*/'ids.search-button.label');
+  var passwordVisibilityMsg = Translator.trans(/*@Desc("Toggle password visibility")*/'ids.show-password.label');
   var componentOnBlur = function componentOnBlur(event) {
     onBlur(event);
   };
@@ -90,21 +105,84 @@ var InputTextInput = exports.InputTextInput = function InputTextInput(_ref) {
   var componentOnInput = function componentOnInput(event) {
     onInput(event);
   };
-  var actions = (0, _react.useMemo)(function () {
+  var handleClear = function handleClear() {
+    onChange('');
+  };
+  var handlePasswordToggle = function handlePasswordToggle() {
+    setResolvedType(function (currentType) {
+      return currentType === 'password' ? 'text' : 'password';
+    });
+  };
+  var renderPasswordToggle = function renderPasswordToggle(isPasswordVisible) {
+    return /*#__PURE__*/_react["default"].createElement("button", {
+      "aria-label": passwordVisibilityMsg,
+      className: "ids-btn ids-btn--tertiary-alt ids-btn--small ids-btn--icon-only ids-input-text__password-toggler",
+      disabled: disabled,
+      onClick: handlePasswordToggle,
+      title: passwordVisibilityMsg,
+      type: "button"
+    }, /*#__PURE__*/_react["default"].createElement("span", {
+      className: "ids-btn__icon"
+    }, /*#__PURE__*/_react["default"].createElement("span", {
+      className: (0, _idsCore.createCssClassNames)({
+        'ids-input-text__password-icon': true,
+        'ids-input-text__password-icon--show': true
+      }),
+      hidden: isPasswordVisible
+    }, /*#__PURE__*/_react["default"].createElement(_Icon.Icon, {
+      name: "visibility",
+      size: _Icon.IconSize.TinySmall
+    })), /*#__PURE__*/_react["default"].createElement("span", {
+      className: (0, _idsCore.createCssClassNames)({
+        'ids-input-text__password-icon': true,
+        'ids-input-text__password-icon--hide': true
+      }),
+      hidden: !isPasswordVisible
+    }, /*#__PURE__*/_react["default"].createElement(_Icon.Icon, {
+      name: "visibility-hidden",
+      size: _Icon.IconSize.TinySmall
+    }))));
+  };
+  var renderSearchAction = function renderSearchAction() {
+    return /*#__PURE__*/_react["default"].createElement("button", {
+      "aria-label": searchMsg,
+      className: "ids-btn ids-btn--tertiary-alt ids-btn--small ids-btn--icon-only ids-input-text__search-btn",
+      disabled: disabled,
+      title: searchMsg,
+      type: searchButtonType
+    }, /*#__PURE__*/_react["default"].createElement("span", {
+      className: "ids-btn__icon"
+    }, /*#__PURE__*/_react["default"].createElement(_Icon.Icon, {
+      name: "search",
+      size: _Icon.IconSize.TinySmall
+    })));
+  };
+  var actions = function () {
     var baseActions = [];
     if (value) {
       baseActions.push({
         component: /*#__PURE__*/_react["default"].createElement(_ClearBtn.ClearBtn, {
           disabled: disabled,
-          onClick: function onClick() {
-            onChange('');
-          }
+          onClick: handleClear
         }),
         id: 'clear'
       });
     }
+    if (showPasswordToggle) {
+      var isPasswordVisible = resolvedType !== 'password';
+      baseActions.push({
+        component: renderPasswordToggle(isPasswordVisible),
+        id: 'password-toggle'
+      });
+    }
+    if (showSearchAction) {
+      baseActions.push({
+        component: renderSearchAction(),
+        id: 'search'
+      });
+    }
     return processActions(baseActions);
-  }, [disabled, onChange, processActions, value]);
+  }();
   var renderActions = function renderActions() {
     if (actions.length === 0) {
       return null;
@@ -123,7 +201,10 @@ var InputTextInput = exports.InputTextInput = function InputTextInput(_ref) {
     var _actionsRef$current$o, _actionsRef$current;
     var actionsWidth = (_actionsRef$current$o = (_actionsRef$current = actionsRef.current) === null || _actionsRef$current === void 0 ? void 0 : _actionsRef$current.offsetWidth) !== null && _actionsRef$current$o !== void 0 ? _actionsRef$current$o : 0;
     setSourcePadding(actionsWidth);
-  }, [value]);
+  }, [actions, value]);
+  (0, _react.useEffect)(function () {
+    setResolvedType(type);
+  }, [type]);
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: inputTextClassName
   }, /*#__PURE__*/_react["default"].createElement("div", {
@@ -148,7 +229,7 @@ var InputTextInput = exports.InputTextInput = function InputTextInput(_ref) {
     required: required,
     size: size,
     title: title,
-    type: type,
+    type: resolvedType,
     value: value
   })), renderActions());
 };
