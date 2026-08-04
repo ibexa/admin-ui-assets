@@ -1,0 +1,47 @@
+{
+    "name": "@types/d3-interpolate",
+    "version": "1.4.5",
+    "description": "TypeScript definitions for d3-interpolate",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-interpolate",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Tom Wanzek",
+            "githubUsername": "tomwanzek",
+            "url": "https://github.com/tomwanzek"
+        },
+        {
+            "name": "Alex Ford",
+            "githubUsername": "gustavderdrache",
+            "url": "https://github.com/gustavderdrache"
+        },
+        {
+            "name": "Boris Yankov",
+            "githubUsername": "borisyankov",
+            "url": "https://github.com/borisyankov"
+        },
+        {
+            "name": "denisname",
+            "githubUsername": "denisname",
+            "url": "https://github.com/denisname"
+        },
+        {
+            "name": "Nathan Bierema",
+            "githubUsername": "Methuselah96",
+            "url": "https://github.com/Methuselah96"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/d3-interpolate"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/d3-color": "^1"
+    },
+    "typesPublisherContentHash": "81c5f5bc3c43b41d0ea45fc8d9e2f5249e82995b0adddee3ab44dce04a57bc07",
+    "typeScriptVersion": "4.5"
+}

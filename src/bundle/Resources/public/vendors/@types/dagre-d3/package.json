@@ -1,0 +1,34 @@
+{
+    "name": "@types/dagre-d3",
+    "version": "0.6.6",
+    "description": "TypeScript definitions for dagre-d3",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/dagre-d3",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Matthew Simmons",
+            "githubUsername": "simmonmt",
+            "url": "https://github.com/simmonmt"
+        },
+        {
+            "name": "Mark Wong Siang Kai",
+            "githubUsername": "markwongsk",
+            "url": "https://github.com/markwongsk"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/dagre-d3"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/d3": "^5",
+        "@types/dagre": "*",
+        "@types/graphlib": "*"
+    },
+    "typesPublisherContentHash": "4288d1b26e234716dd38d0cc98e8a93f2f7bdd60753241ae455247ad426b8f28",
+    "typeScriptVersion": "4.5"
+}

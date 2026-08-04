@@ -1,0 +1,38 @@
+{
+    "name": "@types/d3-contour",
+    "version": "1.3.6",
+    "description": "TypeScript definitions for d3-contour",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-contour",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Tom Wanzek",
+            "githubUsername": "tomwanzek",
+            "url": "https://github.com/tomwanzek"
+        },
+        {
+            "name": "Hugues Stefanski",
+            "githubUsername": "Ledragon",
+            "url": "https://github.com/Ledragon"
+        },
+        {
+            "name": "Nathan Bierema",
+            "githubUsername": "Methuselah96",
+            "url": "https://github.com/Methuselah96"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/d3-contour"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/d3-array": "^1",
+        "@types/geojson": "*"
+    },
+    "typesPublisherContentHash": "e70c99945701fa22d22c21f8f4b702e9d6c4e90b23896b93c542a2bd6e786aca",
+    "typeScriptVersion": "4.5"
+}

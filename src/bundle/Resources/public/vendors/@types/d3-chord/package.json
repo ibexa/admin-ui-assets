@@ -1,0 +1,40 @@
+{
+    "name": "@types/d3-chord",
+    "version": "1.0.14",
+    "description": "TypeScript definitions for d3-chord",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-chord",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Tom Wanzek",
+            "githubUsername": "tomwanzek",
+            "url": "https://github.com/tomwanzek"
+        },
+        {
+            "name": "Alex Ford",
+            "githubUsername": "gustavderdrache",
+            "url": "https://github.com/gustavderdrache"
+        },
+        {
+            "name": "Boris Yankov",
+            "githubUsername": "borisyankov",
+            "url": "https://github.com/borisyankov"
+        },
+        {
+            "name": "Nathan Bierema",
+            "githubUsername": "Methuselah96",
+            "url": "https://github.com/Methuselah96"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/d3-chord"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "15af34182a4965f973d6f777b41c1f385667f6f7f2937d2ffc25c00c609dad47",
+    "typeScriptVersion": "4.5"
+}

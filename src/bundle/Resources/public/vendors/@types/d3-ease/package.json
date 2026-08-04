@@ -1,0 +1,35 @@
+{
+    "name": "@types/d3-ease",
+    "version": "1.0.13",
+    "description": "TypeScript definitions for d3-ease",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-ease",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Tom Wanzek",
+            "githubUsername": "tomwanzek",
+            "url": "https://github.com/tomwanzek"
+        },
+        {
+            "name": "Alex Ford",
+            "githubUsername": "gustavderdrache",
+            "url": "https://github.com/gustavderdrache"
+        },
+        {
+            "name": "Boris Yankov",
+            "githubUsername": "borisyankov",
+            "url": "https://github.com/borisyankov"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/d3-ease"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "ee2ee1c10de567455048f4843608bb8129fd8c43c86e3946a0afc0deba67b8e4",
+    "typeScriptVersion": "4.5"
+}

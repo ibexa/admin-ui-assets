@@ -1,0 +1,45 @@
+{
+    "name": "@types/d3-scale-chromatic",
+    "version": "1.5.4",
+    "description": "TypeScript definitions for d3-scale-chromatic",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-scale-chromatic",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Hugues Stefanski",
+            "githubUsername": "Ledragon",
+            "url": "https://github.com/Ledragon"
+        },
+        {
+            "name": "Alex Ford",
+            "githubUsername": "gustavderdrache",
+            "url": "https://github.com/gustavderdrache"
+        },
+        {
+            "name": "Boris Yankov",
+            "githubUsername": "borisyankov",
+            "url": "https://github.com/borisyankov"
+        },
+        {
+            "name": "Henrique Machado",
+            "githubUsername": "henriquefm",
+            "url": "https://github.com/henriquefm"
+        },
+        {
+            "name": "Nathan Bierema",
+            "githubUsername": "Methuselah96",
+            "url": "https://github.com/Methuselah96"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/d3-scale-chromatic"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "d7a50257a81e2146b3294aa050068baf0af38af335f103db7a691b830c845fe8",
+    "typeScriptVersion": "4.5"
+}

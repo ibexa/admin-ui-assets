@@ -1,0 +1,28 @@
+{
+    "name": "@types/graphlib",
+    "version": "2.1.12",
+    "description": "TypeScript definitions for graphlib",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/graphlib",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Dan Vanderkam",
+            "url": "http://danvk.org/"
+        },
+        {
+            "name": "Dan Mironenko",
+            "url": "wolfson@bracketedrebels.com"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/graphlib"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "0d4ba77a87c0a51bb5233ee6555005bc72f9669dd2177656e010ec61a7fe07d1",
+    "typeScriptVersion": "4.5"
+}

@@ -1,0 +1,50 @@
+{
+    "name": "@types/d3-array",
+    "version": "1.2.12",
+    "description": "TypeScript definitions for d3-array",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-array",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Alex Ford",
+            "githubUsername": "gustavderdrache",
+            "url": "https://github.com/gustavderdrache"
+        },
+        {
+            "name": "Boris Yankov",
+            "githubUsername": "borisyankov",
+            "url": "https://github.com/borisyankov"
+        },
+        {
+            "name": "Tom Wanzek",
+            "githubUsername": "tomwanzek",
+            "url": "https://github.com/tomwanzek"
+        },
+        {
+            "name": "denisname",
+            "githubUsername": "denisname",
+            "url": "https://github.com/denisname"
+        },
+        {
+            "name": "Hugues Stefanski",
+            "githubUsername": "ledragon",
+            "url": "https://github.com/ledragon"
+        },
+        {
+            "name": "Nathan Bierema",
+            "githubUsername": "Methuselah96",
+            "url": "https://github.com/Methuselah96"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/d3-array"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "fdb2af678080c870053337240d5d6fcff42e49389775f9336b6dca072e28ebd8",
+    "typeScriptVersion": "4.5"
+}
