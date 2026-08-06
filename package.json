@@ -7,7 +7,10 @@
         "move-leaflet": "cp -r node_modules/leaflet src/bundle/Resources/public/vendors/leaflet",
         "move-react": "cp -r node_modules/react src/bundle/Resources/public/vendors/react",
         "move-react-dom": "cp -r node_modules/react-dom src/bundle/Resources/public/vendors/react-dom",
+        "move-react-popper": "cp -r node_modules/react-popper src/bundle/Resources/public/vendors/react-popper",
+        "move-react-fast-compare": "cp -r node_modules/react-fast-compare src/bundle/Resources/public/vendors/react-fast-compare",
         "move-popperjs": "cp -r node_modules/@popperjs src/bundle/Resources/public/vendors/@popperjs",
+        "move-warning": "cp -r node_modules/warning src/bundle/Resources/public/vendors/warning",
         "move-flatpickr": "cp -r node_modules/flatpickr src/bundle/Resources/public/vendors/flatpickr",
         "move-create-react-class": "cp -r node_modules/create-react-class src/bundle/Resources/public/vendors/create-react-class",
         "move-prop-types": "cp -r node_modules/prop-types src/bundle/Resources/public/vendors/prop-types",
@@ -26,7 +29,7 @@
         "move-ids-core": "mkdir src/bundle/Resources/public/vendors/ids-core && cp -r node_modules/@ibexa/design-system/packages/core/dist src/bundle/Resources/public/vendors/ids-core/dist",
         "move-types": "cp -r node_modules/@types src/bundle/Resources/public/vendors/@types",
         "move-custom-types": "mv src/bundle/Resources/public/custom-types/* src/bundle/Resources/public/vendors/@types; rm -rf src/bundle/Resources/public/custom-types",
-        "prepare-release": "yarn run create-folder; yarn run move-bootstrap; yarn run move-jquery; yarn run move-leaflet; yarn run move-react; yarn run move-react-dom; yarn run move-popperjs; yarn run move-flatpickr; yarn run move-create-react-class; yarn run move-prop-types; yarn run move-moment; yarn run move-moment-timezone; yarn run move-d3; yarn run move-dagre-d3; yarn run move-chart-js; yarn run move-js-md5; yarn run move-ckeditor5; yarn run move-ckeditor5-core; yarn run move-chartjs-plugin-datalabels; yarn run move-ids-assets; yarn run move-ids-components; yarn run move-ids-components-translations; yarn run move-ids-core; yarn run move-types; yarn run move-custom-types"
+        "prepare-release": "yarn run create-folder; yarn run move-bootstrap; yarn run move-jquery; yarn run move-leaflet; yarn run move-react; yarn run move-react-dom; yarn run move-react-popper; yarn run move-react-fast-compare; yarn run move-popperjs; yarn run move-warning; yarn run move-flatpickr; yarn run move-create-react-class; yarn run move-prop-types; yarn run move-moment; yarn run move-moment-timezone; yarn run move-d3; yarn run move-dagre-d3; yarn run move-chart-js; yarn run move-js-md5; yarn run move-ckeditor5; yarn run move-ckeditor5-core; yarn run move-chartjs-plugin-datalabels; yarn run move-ids-assets; yarn run move-ids-components; yarn run move-ids-components-translations; yarn run move-ids-core; yarn run move-types; yarn run move-custom-types"
     },
     "repository": {
         "type": "git",
@@ -62,7 +65,10 @@
         "@types/js-md5": "^0.7.2",
         "@types/leaflet": "^1.9.4",
         "@types/react": "^19.0.0",
-        "@types/react-dom": "^19.0.0"
+        "@types/react-dom": "^19.0.0",
+        "react-fast-compare": "^3.2.2",
+        "react-popper": "^2.3.0",
+        "warning": "^4.0.3"
     },
     "packageManager": "yarn@1.22.22"
 }
