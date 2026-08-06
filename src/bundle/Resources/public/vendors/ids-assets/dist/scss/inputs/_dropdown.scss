@@ -13,7 +13,7 @@
 
     &__widget {
         min-width: calculateRem(160px);
-        padding: calculateRem(12px) calculateRem(16px);
+        padding: calculateRem(8.5px) calculateRem(12px);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -27,7 +27,14 @@
 
     &__selection-info {
         flex-grow: 1;
+        min-width: 0;
         user-select: none;
+        height: calculateRem(21px);
+    }
+
+    &__selection-info-items {
+        min-width: 0;
+        font-size: $text-font-size-m;
     }
 
     &__placeholder {
@@ -40,6 +47,8 @@
         background-color: $color-neutral-10;
         margin: calculateRem(4px) 0;
         box-sizing: border-box;
+        overflow: hidden;
+        z-index: 1000;
     }
 
     &__search {
@@ -48,13 +57,14 @@
 
     &__search:not([hidden]) + .ids-dropdown__items {
         padding-top: 0;
+        max-height: calc(calculateRem(32px) * var(--max-visible-items, 10) + calculateRem(8px));
     }
 
     &__items {
         list-style: none;
         margin: 0;
         padding: calculateRem(8px);
-        max-height: calc(calculateRem(31px) * var(--max-visible-items, 10));
+        max-height: calc(calculateRem(32px) * var(--max-visible-items, 10) + calculateRem(16px));
         overflow-y: auto;
         box-sizing: border-box;
     }
@@ -63,6 +73,7 @@
         display: flex;
         align-items: center;
         padding: calculateRem(4px) calculateRem(8px) calculateRem(5px);
+        font-size: $text-font-size-m;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -142,10 +153,11 @@
 
             &__selection-info {
                 .ids-overflow-list {
+                    min-width: 0;
                     margin: calculateRem(-4px);
 
                     .ids-chip {
-                        margin: calculateRem(4px);
+                        margin: 0 calculateRem(4px) 0;
                     }
                 }
             }

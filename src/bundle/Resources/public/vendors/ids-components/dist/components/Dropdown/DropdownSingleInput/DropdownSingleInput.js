@@ -26,6 +26,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var DropdownSingleInput = exports.DropdownSingleInput = function DropdownSingleInput(_ref) {
+  var _items$find;
   var name = _ref.name,
     _ref$className = _ref.className,
     className = _ref$className === void 0 ? '' : _ref$className,
@@ -47,9 +48,9 @@ var DropdownSingleInput = exports.DropdownSingleInput = function DropdownSingleI
     onChange(id);
     closeDropdown();
   };
-  var selectedItem = value ? items.find(function (item) {
+  var selectedItem = (_items$find = items.find(function (item) {
     return item.id === value;
-  }) : null;
+  })) !== null && _items$find !== void 0 ? _items$find : null;
   var isItemSelected = function isItemSelected(item) {
     return item.id === value;
   };

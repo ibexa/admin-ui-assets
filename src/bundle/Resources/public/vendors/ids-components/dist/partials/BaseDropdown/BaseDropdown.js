@@ -47,6 +47,7 @@ var BaseDropdown = exports.BaseDropdown = function BaseDropdown(_ref) {
     _ref$maxVisibleItems = _ref.maxVisibleItems,
     maxVisibleItems = _ref$maxVisibleItems === void 0 ? MAX_VISIBLE_ITEMS : _ref$maxVisibleItems,
     onDropdownItemClick = _ref.onDropdownItemClick,
+    placeholder = _ref.placeholder,
     renderEmptySelectionInfo = _ref.renderEmptySelectionInfo,
     _ref$renderItem = _ref.renderItem,
     renderItem = _ref$renderItem === void 0 ? function (item) {
@@ -92,10 +93,10 @@ var BaseDropdown = exports.BaseDropdown = function BaseDropdown(_ref) {
       if (renderEmptySelectionInfo) {
         return renderEmptySelectionInfo();
       }
-      var placeholder = Translator.trans(/*@Desc("Select an item")*/'ids.dropdown.placeholder');
+      var placeholderText = placeholder === undefined ? Translator.trans(/*@Desc("Select an item")*/'ids.dropdown.placeholder') : placeholder.trim() || Translator.trans(/*@Desc("All")*/'ids.dropdown.placeholder.all');
       return /*#__PURE__*/_react["default"].createElement("div", {
         className: "ids-dropdown__placeholder"
-      }, placeholder);
+      }, placeholderText);
     }
     return /*#__PURE__*/_react["default"].createElement("div", {
       className: "ids-dropdown__selection-info-items"

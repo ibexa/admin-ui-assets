@@ -8,9 +8,11 @@
 
     background: $color-neutral-20;
     border: calculateRem(1px) solid $color-neutral-70;
+    height: calculateRem(28px);
     outline: none;
     opacity: 1;
     visibility: visible;
+    box-sizing: border-box;
 
     &:hover {
         border-color: $color-primary-80;
