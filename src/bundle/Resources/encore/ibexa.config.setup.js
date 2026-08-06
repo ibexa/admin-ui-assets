@@ -7,5 +7,8 @@ module.exports = (Encore) => {
         '@ids-components': path.resolve('./vendor/ibexa/admin-ui-assets/src/bundle/Resources/public/vendors/ids-components/dist'),
         '@ids-core': path.resolve('./vendor/ibexa/admin-ui-assets/src/bundle/Resources/public/vendors/ids-core/dist'),
         '@popperjs/core': path.resolve('./vendor/ibexa/admin-ui-assets/src/bundle/Resources/public/vendors/@popperjs/core/lib'),
+        'react-fast-compare': path.resolve('./vendor/ibexa/admin-ui-assets/src/bundle/Resources/public/vendors/react-fast-compare/index.js'),
+        'react-popper': path.resolve('./vendor/ibexa/admin-ui-assets/src/bundle/Resources/public/vendors/react-popper/lib/cjs'),
+        warning: path.resolve('./vendor/ibexa/admin-ui-assets/src/bundle/Resources/public/vendors/warning/warning.js'),
     });
 };
