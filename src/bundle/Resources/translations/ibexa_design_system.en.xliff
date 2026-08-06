@@ -9,6 +9,10 @@
         <source>Select an item</source>
         <target>Select an item</target>
       </trans-unit>
+      <trans-unit id="ids.dropdown.placeholder.all">
+        <source>All</source>
+        <target>All</target>
+      </trans-unit>
       <trans-unit id="ids.dropdown.search.placeholder" resname="ids.dropdown.search.placeholder">
         <source>Search...</source>
         <target>Search...</target>

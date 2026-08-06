@@ -39,7 +39,6 @@ var ItemsContainer = exports.ItemsContainer = function ItemsContainer(_ref) {
     renderItem = _ref.renderItem;
   var searchRef = (0, _react.useRef)(null);
   var itemsRef = (0, _react.useRef)(null);
-  var originalItemsMaxHeightRef = (0, _react.useRef)(0);
   var _useState = (0, _react.useState)(false),
     _useState2 = _slicedToArray(_useState, 2),
     isTopPlacementForced = _useState2[0],
@@ -93,6 +92,12 @@ var ItemsContainer = exports.ItemsContainer = function ItemsContainer(_ref) {
     return itemsStyles;
   };
   var popperPlacement = ((_attributes$popper = attributes.popper) === null || _attributes$popper === void 0 ? void 0 : _attributes$popper['data-popper-placement']) === 'top-start' ? 'top' : 'bottom';
+  var getNaturalItemsHeight = (0, _react.useCallback)(function () {
+    if (!itemsRef.current) {
+      return 0;
+    }
+    return itemsRef.current.scrollHeight;
+  }, []);
   var calculateMaxAvailableItemsHeight = (0, _react.useCallback)(function (availableHeight) {
     if (!isOpen || !popperElement || !itemsRef.current) {
       return 0;
@@ -144,9 +149,7 @@ var ItemsContainer = exports.ItemsContainer = function ItemsContainer(_ref) {
   }, [isOpen, popperElement, referenceElement]);
   (0, _react.useLayoutEffect)(function () {
     if (isOpen && referenceElement) {
-      var _itemsRef$current$off, _itemsRef$current;
       setItemsContainerWidth(referenceElement.offsetWidth);
-      originalItemsMaxHeightRef.current = (_itemsRef$current$off = (_itemsRef$current = itemsRef.current) === null || _itemsRef$current === void 0 ? void 0 : _itemsRef$current.offsetHeight) !== null && _itemsRef$current$off !== void 0 ? _itemsRef$current$off : 0;
     } else {
       setItemsMaxHeight(0);
     }
@@ -165,14 +168,15 @@ var ItemsContainer = exports.ItemsContainer = function ItemsContainer(_ref) {
       };
       var availableHeight = getAvailableHeight();
       var availableItemsHeight = calculateMaxAvailableItemsHeight(availableHeight);
-      var originalDropdownFitsInViewport = availableItemsHeight > originalItemsMaxHeightRef.current;
+      var naturalItemsHeight = getNaturalItemsHeight();
+      var originalDropdownFitsInViewport = availableItemsHeight > naturalItemsHeight;
       if (originalDropdownFitsInViewport) {
         setItemsMaxHeight(0);
       } else {
         setItemsMaxHeight(availableItemsHeight);
       }
     }
-  }, [styles.popper.transform, popperPlacement, referenceElement]);
+  }, [styles.popper.transform, popperPlacement, referenceElement, calculateMaxAvailableItemsHeight, filteredItems, getNaturalItemsHeight]);
   (0, _react.useLayoutEffect)(function () {
     if (isOpen && referenceElement) {
       var _referenceElement$get2 = referenceElement.getBoundingClientRect(),
@@ -186,12 +190,13 @@ var ItemsContainer = exports.ItemsContainer = function ItemsContainer(_ref) {
       }
       var availableSpaceAbove = referenceTop;
       var availableSpaceBelow = windowHeight - referenceBottom;
-      var originalDropdownFitsInViewport = availableSpaceBelow > originalItemsMaxHeightRef.current;
+      var naturalItemsHeight = getNaturalItemsHeight();
+      var originalDropdownFitsInViewport = availableSpaceBelow > naturalItemsHeight;
       var moreSpaceAbove = availableSpaceAbove > availableSpaceBelow;
       var showDropdownAbove = moreSpaceAbove && !originalDropdownFitsInViewport;
       setIsTopPlacementForced(showDropdownAbove);
     }
-  }, [isOpen, referenceElement, styles.popper.transform]);
+  }, [isOpen, referenceElement, styles.popper.transform, filteredItems, getNaturalItemsHeight]);
   (0, _useKeyEvent.useKeyDown)(['Enter', ' '], function (event) {
     var activeElement = window.document.activeElement;
     if (isOpen && activeElement !== null && activeElement !== void 0 && activeElement.classList.contains('ids-dropdown__item') && activeElement instanceof HTMLElement) {
