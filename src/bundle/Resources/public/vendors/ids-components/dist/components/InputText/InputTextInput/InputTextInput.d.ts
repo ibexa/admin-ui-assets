@@ -1,0 +1,7 @@
+import React from 'react';
+import { InputTextInputProps } from './InputTextInput.types';
+export declare const InputTextInput: ({ name, onBlur, onChange, onFocus, onInput, disabled, error, extraAria, hasSearchAction, className, id, placeholder, processActions, readOnly, ref, required, searchButtonType, size, title, type, value, }: InputTextInputProps) => React.JSX.Element;
+export declare const InputTextInputStateful: {
+    ({ value, onChange, ...restProps }: import("@ids-hoc/withStateValue").WIthStateValueWrappedComponentProps<InputTextInputProps, string | number>): React.JSX.Element;
+    displayName: string;
+};
