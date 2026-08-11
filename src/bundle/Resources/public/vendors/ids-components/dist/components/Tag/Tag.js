@@ -14,9 +14,11 @@ function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 var Tag = exports.Tag = function Tag(_ref) {
+  var _customColors$border;
   var children = _ref.children,
     _ref$className = _ref.className,
     className = _ref$className === void 0 ? '' : _ref$className,
+    customColors = _ref.customColors,
     _ref$isDark = _ref.isDark,
     isDark = _ref$isDark === void 0 ? false : _ref$isDark,
     icon = _ref.icon,
@@ -28,9 +30,14 @@ var Tag = exports.Tag = function Tag(_ref) {
     return Object.values(_Tag.TagGhostType).includes(tagType);
   };
   var isGhost = isGhostType(type);
-  var componentClassName = (0, _idsCore.createCssClassNames)(_defineProperty(_defineProperty(_defineProperty(_defineProperty({
+  var componentClassName = (0, _idsCore.createCssClassNames)(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty({
     'ids-tag': true
-  }, "ids-tag--".concat(type), true), "ids-tag--".concat(size), true), "ids-tag--dark", isDark), className, !!className));
+  }, "ids-tag--".concat(type), true), "ids-tag--".concat(size), true), "ids-tag--dark", isDark), 'ids-tag--custom-colors', !!customColors), className, !!className));
+  var customColorsStyle = customColors ? {
+    '--ids-tag-custom-bg-color': customColors.background,
+    '--ids-tag-custom-border-color': (_customColors$border = customColors.border) !== null && _customColors$border !== void 0 ? _customColors$border : customColors.text,
+    '--ids-tag-custom-text-color': customColors.text
+  } : undefined;
   var renderDot = function renderDot() {
     if (isGhost) {
       return /*#__PURE__*/_react["default"].createElement("div", {
@@ -51,7 +58,8 @@ var Tag = exports.Tag = function Tag(_ref) {
     return null;
   };
   return /*#__PURE__*/_react["default"].createElement("div", {
-    className: componentClassName
+    className: componentClassName,
+    style: customColorsStyle
   }, renderDot(), renderIcon(), /*#__PURE__*/_react["default"].createElement("div", {
     className: "ids-tag__content"
   }, children));

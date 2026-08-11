@@ -197,6 +197,12 @@ $tags-sizes: (
         }
     }
 
+    &--custom-colors {
+        --ids-default-text-color: var(--ids-tag-custom-text-color);
+        --ids-default-bg-color: var(--ids-tag-custom-bg-color);
+        --ids-default-border-color: var(--ids-tag-custom-border-color);
+    }
+
     @each $name, $values in $tags-sizes {
         &--#{$name} {
             font-size: map.get($values, 'text');
