@@ -181,13 +181,18 @@ $btns-sizes: (
     fill: var(--ids-default-text-color);
     background: var(--ids-default-bg-color);
     border: calculateRem(1px) solid var(--ids-default-border-color);
-    transition: all 1s $transition-timing-function;
+    transition: all $transition-duration $transition-timing-function;
 
     &:focus {
         color: var(--ids-focus-text-color);
         fill: var(--ids-focus-text-color);
         background: var(--ids-focus-bg-color);
         border-color: var(--ids-focus-border-color);
+        outline: none;
+        box-shadow: none;
+    }
+
+    &:focus-visible {
         box-shadow: var(--ids-focus-box-shadow);
     }
 
