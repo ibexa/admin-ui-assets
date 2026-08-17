@@ -1,0 +1,18 @@
+@forward 'variables/colors';
+@forward 'variables/shadows';
+@forward 'variables/typography';
+
+@use 'functions/calculate.rem' as *;
+
+// Ibexa transition function
+$transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1) !default;
+$transition-duration: 0.4s !default;
+
+// Root variables
+$base-line-height: 1.5 !default;
+
+// Various component variables
+$border-radius-medium: calculateRem(8px) !default;
+$border-radius-large: calculateRem(12px) !default;
+
+$assets-base-path: '/' !default;
