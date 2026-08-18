@@ -647,6 +647,57 @@
       </clipPath>
     </defs>
   </symbol>
+  <symbol
+    id="app-switcher"
+    viewBox="0 0 32 32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M4.5834 6.6667a2.0833 2.0833 0 1 0 4.1666 0 2.0833 2.0833 0 1 0-4.1666 0Zm1.5 0a.5833.5833 0 1 1 1.1666 0 .5833.5833 0 1 1-1.1666 0Z"
+    ></path>
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M13.9167 6.6667a2.0833 2.0833 0 1 0 4.1666 0 2.0833 2.0833 0 1 0-4.1666 0Zm1.5 0a.5833.5833 0 1 1 1.1666 0 .5833.5833 0 1 1-1.1666 0Z"
+    ></path>
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M23.25 6.6667a2.0833 2.0833 0 1 0 4.1666 0 2.0833 2.0833 0 1 0-4.1666 0Zm1.5 0a.5833.5833 0 1 1 1.1666 0 .5833.5833 0 1 1-1.1666 0Z"
+    ></path>
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M4.5834 16a2.0833 2.0833 0 1 0 4.1666 0 2.0833 2.0833 0 1 0-4.1666 0Zm1.5 0a.5833.5833 0 1 1 1.1666 0 .5833.5833 0 1 1-1.1666 0Z"
+    ></path>
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M13.9167 16a2.0833 2.0833 0 1 0 4.1666 0 2.0833 2.0833 0 1 0-4.1666 0Zm1.5 0a.5833.5833 0 1 1 1.1666 0 .5833.5833 0 1 1-1.1666 0Z"
+    ></path>
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M23.25 16a2.0833 2.0833 0 1 0 4.1666 0 2.0833 2.0833 0 1 0-4.1666 0Zm1.5 0a.5833.5833 0 1 1 1.1666 0 .5833.5833 0 1 1-1.1666 0Z"
+    ></path>
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M4.5834 25.3333a2.0833 2.0833 0 1 0 4.1666 0 2.0833 2.0833 0 1 0-4.1666 0Zm1.5 0a.5833.5833 0 1 1 1.1666 0 .5833.5833 0 1 1-1.1666 0Z"
+    ></path>
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M13.9167 25.3333a2.0833 2.0833 0 1 0 4.1666 0 2.0833 2.0833 0 1 0-4.1666 0Zm1.5 0a.5833.5833 0 1 1 1.1666 0 .5833.5833 0 1 1-1.1666 0Z"
+    ></path>
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M23.25 25.3333a2.0833 2.0833 0 1 0 4.1666 0 2.0833 2.0833 0 1 0-4.1666 0Zm1.5 0a.5833.5833 0 1 1 1.1666 0 .5833.5833 0 1 1-1.1666 0Z"
+    ></path>
+  </symbol>
   <symbol id="app-user" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0_6759_780)">
       <path
