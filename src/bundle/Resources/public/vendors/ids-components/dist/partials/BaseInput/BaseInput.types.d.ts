@@ -14,12 +14,12 @@ interface BaseInputPropsProps extends BaseComponentAttributes {
 interface BaseInputVisibleProps extends BaseInputPropsProps {
     required?: boolean;
     type?: Exclude<BaseInputType, 'hidden'>;
-    extraInputAttrs?: Omit<InputHTMLAttributes<HTMLInputElement>, keyof BaseInputVisibleProps>;
+    extraInputAttrs?: Omit<InputHTMLAttributes<HTMLInputElement>, keyof BaseInputVisibleProps> & Pick<InputHTMLAttributes<HTMLInputElement>, 'className'>;
 }
 interface BaseInputHiddenProps extends BaseInputPropsProps {
     type: 'hidden';
     required?: never;
-    extraInputAttrs?: Omit<InputHTMLAttributes<HTMLInputElement>, keyof BaseInputHiddenProps>;
+    extraInputAttrs?: Omit<InputHTMLAttributes<HTMLInputElement>, keyof BaseInputHiddenProps> & Pick<InputHTMLAttributes<HTMLInputElement>, 'className'>;
 }
 export type BaseInputProps = BaseInputVisibleProps | BaseInputHiddenProps;
 export {};
