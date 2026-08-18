@@ -2,7 +2,8 @@
 
 .ids-label {
     font-size: $text-font-size-s;
-    color: var(--ids-label-default-text-color, #{$color-neutral-160});
+    font-weight: $text-font-weight-semi;
+    color: var(--ids-label-default-text-color, #{$color-neutral-240});
 
     &--required {
         &::after {
