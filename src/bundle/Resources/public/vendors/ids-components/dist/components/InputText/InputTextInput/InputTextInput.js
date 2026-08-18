@@ -49,6 +49,8 @@ var InputTextInput = exports.InputTextInput = function InputTextInput(_ref) {
     error = _ref$error === void 0 ? false : _ref$error,
     _ref$extraAria = _ref.extraAria,
     extraAria = _ref$extraAria === void 0 ? {} : _ref$extraAria,
+    _ref$extraInputAttrs = _ref.extraInputAttrs,
+    extraInputAttrs = _ref$extraInputAttrs === void 0 ? {} : _ref$extraInputAttrs,
     _ref$hasSearchAction = _ref.hasSearchAction,
     hasSearchAction = _ref$hasSearchAction === void 0 ? false : _ref$hasSearchAction,
     _ref$className = _ref.className,
@@ -212,7 +214,7 @@ var InputTextInput = exports.InputTextInput = function InputTextInput(_ref) {
   }, /*#__PURE__*/_react["default"].createElement(_BaseInput.BaseInput, {
     disabled: disabled,
     error: error,
-    extraInputAttrs: _objectSpread({
+    extraInputAttrs: _objectSpread(_objectSpread({
       onBlur: componentOnBlur,
       onChange: componentOnChange,
       onFocus: componentOnFocus,
@@ -222,7 +224,7 @@ var InputTextInput = exports.InputTextInput = function InputTextInput(_ref) {
       style: {
         paddingRight: "".concat(sourcePadding, "px")
       }
-    }, extraAria),
+    }, extraAria), extraInputAttrs),
     id: id,
     name: name,
     ref: ref,
