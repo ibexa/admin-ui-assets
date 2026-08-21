@@ -4,6 +4,7 @@
 @use 'functions' as *;
 @use 'variables' as *;
 @use 'mixins/buttons' as mixins;
+@use 'mixins/theming';
 
 $btn-focus-bs-color: color.change($color-primary-80, $alpha: 0.25);
 $btn-focus-bs-lengths: 0 0 0 calculateRem(4px);
@@ -153,6 +154,94 @@ $btns-types: (
     ),
 );
 
+// TODO(IBX-12056): the design only covers `secondary` on a dark surface; the others mirror it for now.
+$btns-types-dark: (
+    'secondary': (
+        'default': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': $color-neutral-10,
+        ),
+        'hover': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': $color-neutral-10,
+        ),
+        'active': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': $color-neutral-10,
+        ),
+        'focus': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': $color-neutral-10,
+            'box-shadow': $box-shadow-focus-dark_surface,
+        ),
+        'disabled': (
+            'text': $color-neutral-160,
+            'bg': transparent,
+            'border': $color-neutral-160,
+        ),
+    ),
+    'secondary-alt': (
+        'default': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': $color-neutral-10,
+        ),
+        'hover': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': $color-neutral-10,
+        ),
+        'active': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': $color-neutral-10,
+        ),
+        'focus': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': $color-neutral-10,
+            'box-shadow': $box-shadow-focus-dark_surface,
+        ),
+        'disabled': (
+            'text': $color-neutral-160,
+            'bg': transparent,
+            'border': $color-neutral-160,
+        ),
+    ),
+    'tertiary-alt': (
+        'default': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'hover': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'active': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'focus': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': transparent,
+            'box-shadow': $box-shadow-focus-dark_surface,
+        ),
+        'disabled': (
+            'text': $color-neutral-160,
+            'bg': transparent,
+            'border': transparent,
+        ),
+    ),
+);
+
 $btns-sizes: (
     'medium': (
         'height': calculateRem(40px),
@@ -238,6 +327,20 @@ $btns-sizes: (
                 map.get($states, 'focus'),
                 map.get($states, 'disabled')
             );
+
+            $dark-states: map.get($btns-types-dark, $name);
+
+            @if $dark-states {
+                @include theming.on-dark {
+                    @include mixins.button-variant(
+                        map.get($dark-states, 'default'),
+                        map.get($dark-states, 'hover'),
+                        map.get($dark-states, 'active'),
+                        map.get($dark-states, 'focus'),
+                        map.get($dark-states, 'disabled')
+                    );
+                }
+            }
         }
     }
 
