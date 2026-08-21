@@ -14,3 +14,11 @@ body {
 *[hidden] {
     display: none !important;
 }
+
+.ids-mode-dark {
+    --ids-mode: dark;
+}
+
+.ids-mode-light {
+    --ids-mode: light;
+}
