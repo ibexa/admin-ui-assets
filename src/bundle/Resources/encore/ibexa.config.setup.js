@@ -6,6 +6,7 @@ module.exports = (Encore) => {
         '@ids-assets': path.resolve('./vendor/ibexa/admin-ui-assets/src/bundle/Resources/public/vendors/ids-assets/dist'),
         '@ids-components': path.resolve('./vendor/ibexa/admin-ui-assets/src/bundle/Resources/public/vendors/ids-components/dist'),
         '@ids-core': path.resolve('./vendor/ibexa/admin-ui-assets/src/bundle/Resources/public/vendors/ids-core/dist'),
+        '@ids-types': path.resolve('./vendor/ibexa/admin-ui-assets/src/bundle/Resources/public/vendors/ids-types'),
         '@popperjs/core': path.resolve('./vendor/ibexa/admin-ui-assets/src/bundle/Resources/public/vendors/@popperjs/core/lib'),
         'react-fast-compare': path.resolve('./vendor/ibexa/admin-ui-assets/src/bundle/Resources/public/vendors/react-fast-compare/index.js'),
         'react-popper': path.resolve('./vendor/ibexa/admin-ui-assets/src/bundle/Resources/public/vendors/react-popper/lib/cjs'),
