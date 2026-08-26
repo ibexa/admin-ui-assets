@@ -8,7 +8,7 @@ This package contains type definitions for react-dom (https://react.dev/).
 Files were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-dom.
 
 ### Additional Details
- * Last updated: Thu, 30 Jul 2026 21:50:54 GMT
+ * Last updated: Sun, 23 Aug 2026 21:04:18 GMT
  * Dependencies: none
  * Peer dependencies: [@types/react](https://npmjs.com/package/@types/react)
 
