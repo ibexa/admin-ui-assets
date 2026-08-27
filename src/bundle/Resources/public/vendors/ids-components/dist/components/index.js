@@ -14,6 +14,17 @@ Object.keys(_Accordion).forEach(function (key) {
     }
   });
 });
+var _Alert = require("./Alert");
+Object.keys(_Alert).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _Alert[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _Alert[key];
+    }
+  });
+});
 var _AltRadio = require("./AltRadio");
 Object.keys(_AltRadio).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;

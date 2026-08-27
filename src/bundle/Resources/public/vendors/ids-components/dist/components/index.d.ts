@@ -1,4 +1,5 @@
 export * from './Accordion';
+export * from './Alert';
 export * from './AltRadio';
 export * from './Autosave';
 export * from './Badge';

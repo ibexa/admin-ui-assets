@@ -1,0 +1,99 @@
+@use 'sass:map';
+@use 'functions' as *;
+@use 'variables' as *;
+
+$alert-types: (
+    'success': (
+        'bg': $color-success-5,
+        'border': $color-success-40,
+        'accent': $color-success-60,
+        'icon': $color-success-80,
+        'title': $color-success-80,
+    ),
+    'warning': (
+        'bg': $color-warning-5,
+        'border': $color-warning-40,
+        'accent': $color-warning-60,
+        'icon': $color-warning-80,
+        'title': $color-warning-100,
+    ),
+    'error': (
+        'bg': $color-error-5,
+        'border': $color-error-40,
+        'accent': $color-error-60,
+        'icon': $color-error-80,
+        'title': $color-error-80,
+    ),
+    'info': (
+        'bg': $color-info-5,
+        'border': $color-info-40,
+        'accent': $color-info-60,
+        'icon': $color-info-80,
+        'title': $color-info-80,
+    ),
+);
+$alert-line-height: calculateRem(21px);
+
+.ids-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: calculateRem(8px);
+    padding: calculateRem(11px);
+    border: calculateRem(1px) solid var(--ids-alert-border-color);
+    border-radius: $border-radius-medium;
+    font-size: $text-font-size-m;
+    line-height: $alert-line-height;
+    background: var(--ids-alert-bg-color);
+
+    @each $name, $colors in $alert-types {
+        &--#{$name} {
+            @each $key, $value in $colors {
+                --ids-alert-#{$key}-color: #{$value};
+            }
+        }
+    }
+
+    &--local {
+        padding-left: calculateRem(13px);
+        border-left-color: var(--ids-alert-accent-color);
+        border-radius: 0 $border-radius-medium $border-radius-medium 0;
+        box-shadow: inset calculateRem(1px) 0 0 var(--ids-alert-accent-color);
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        fill: var(--ids-alert-icon-color);
+    }
+
+    &__content {
+        display: flex;
+        flex: 1 1 0;
+        flex-direction: column;
+        gap: calculateRem(4px);
+        min-width: 0;
+    }
+
+    &__title {
+        font-weight: $text-font-weight-semi;
+        color: var(--ids-alert-title-color);
+        overflow-wrap: break-word;
+    }
+
+    &__description {
+        color: $color-neutral-200;
+        overflow-wrap: break-word;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: calculateRem(8px);
+    }
+
+    &__close-btn.ids-btn.ids-btn--icon-only {
+        width: calculateRem(20px);
+        height: $alert-line-height;
+        padding: 0;
+    }
+}
