@@ -1,10 +1,15 @@
 @use 'sass:map';
 @use 'functions' as *;
 @use 'variables' as *;
+@use 'mixins/theming';
 
 $helper-text-types: (
     'default': $color-neutral-160,
     'error': $color-error-80,
+);
+$helper-text-types-dark: (
+    'default': $color-neutral-140,
+    'error': $color-error-60,
 );
 
 .ids-helper-text {
@@ -13,6 +18,10 @@ $helper-text-types: (
     font-size: $text-font-size-s;
     color: #{map.get($helper-text-types, 'default')};
     display: flex;
+
+    @include theming.on-dark {
+        color: #{map.get($helper-text-types-dark, 'default')};
+    }
 
     &__icon-wrapper {
         display: flex;
@@ -27,6 +36,14 @@ $helper-text-types: (
 
             #{$self}__icon {
                 fill: $color;
+            }
+
+            @include theming.on-dark {
+                color: map.get($helper-text-types-dark, $name);
+
+                #{$self}__icon {
+                    fill: map.get($helper-text-types-dark, $name);
+                }
             }
         }
     }
