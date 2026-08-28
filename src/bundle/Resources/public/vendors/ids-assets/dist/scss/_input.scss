@@ -2,6 +2,7 @@
 @use 'functions' as *;
 @use 'variables' as *;
 @use 'mixins/inputs' as inputs-mixins;
+@use 'mixins/theming';
 
 $input-sizes: (
     'small': (
@@ -17,10 +18,38 @@ $input-sizes: (
 .ids-input {
     @include inputs-mixins.input-base;
 
+    @include theming.on-dark {
+        --ids-input-default-bg-color: #{$color-neutral-220};
+        --ids-input-default-border-color: #{$color-neutral-210};
+        --ids-input-default-text-color: #{$color-neutral-10};
+        --ids-input-hover-border-color: #{$color-neutral-170};
+        --ids-input-active-border-color: #{$color-neutral-170};
+        --ids-input-focus-border-color: #{$color-neutral-80};
+        --ids-input-focus-box-shadow: #{$box-shadow-focus-dark_surface};
+        --ids-input-disabled-text-color: #{$color-neutral-10};
+        --ids-input-disabled-bg-color: #{$color-neutral-220};
+        --ids-input-disabled-border-color: #{$color-neutral-210};
+        --ids-input-error-bg-color: #{$color-neutral-220};
+        --ids-input-error-border-color: #{$color-error-80};
+        --ids-input-error-text-color: #{$color-neutral-10};
+
+        &::placeholder {
+            color: $color-neutral-140;
+        }
+    }
+
     @each $name, $properties in $input-sizes {
         &--#{$name} {
             font-size: map.get($properties, 'font-size');
             padding: map.get($properties, 'padding');
+        }
+    }
+
+    &--error {
+        @include theming.on-dark {
+            &:hover:not(.ids-input--disabled) {
+                border-color: $color-error-60;
+            }
         }
     }
 

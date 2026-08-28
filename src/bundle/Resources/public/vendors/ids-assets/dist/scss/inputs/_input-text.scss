@@ -1,4 +1,6 @@
 @use '../functions' as *;
+@use '../variables' as *;
+@use '../mixins/theming';
 
 .ids-input-text {
     position: relative;
@@ -6,6 +8,12 @@
     .ids-input {
         box-sizing: border-box;
         width: 100%;
+    }
+
+    @include theming.on-dark {
+        .ids-btn {
+            --ids-default-text-color: #{$color-neutral-140};
+        }
     }
 
     &__actions {

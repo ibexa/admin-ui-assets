@@ -1,9 +1,15 @@
 @use 'variables' as *;
+@use 'mixins/theming';
 
 .ids-label {
     font-size: $text-font-size-s;
     font-weight: $text-font-weight-semi;
     color: var(--ids-label-default-text-color, #{$color-neutral-240});
+
+    @include theming.on-dark {
+        --ids-label-default-text-color: #{$color-neutral-10};
+        --ids-label-error-text-color: #{$color-neutral-10};
+    }
 
     &--required {
         &::after {
