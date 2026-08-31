@@ -8,12 +8,24 @@ $text-font-size-m: calculateRem(14px) !default;
 $text-font-size-s: calculateRem(12px) !default;
 $text-font-size-xs: calculateRem(10px) !default;
 
-$h1-font-size: $text-font-size-3xl !default;
-$h2-font-size: $text-font-size-2xl !default;
-$h3-font-size: $text-font-size-xl !default;
-$h4-font-size: $text-font-size-l !default;
-$h5-font-size: $text-font-size-m !default;
-$h6-font-size: $text-font-size-s !default;
+$text-highlighted-font-size-6xl: calculateRem(48px) !default;
+$text-highlighted-font-size-5xl: calculateRem(40px) !default;
+$text-highlighted-font-size-4xl: calculateRem(32px) !default;
+$text-highlighted-font-size-3xl: calculateRem(24px) !default;
+$text-highlighted-font-size-xl: calculateRem(16px) !default;
+$text-highlighted-font-size-l: calculateRem(15px) !default;
+$text-highlighted-font-size-m: calculateRem(14px) !default;
+$text-highlighted-font-size-s: calculateRem(12px) !default;
+
+$h1-font-size: calculateRem(24px) !default;
+$h2-font-size: calculateRem(18px) !default;
+$h3-font-size: calculateRem(16px) !default;
+$h4-font-size: calculateRem(15px) !default;
+$h5-font-size: calculateRem(14px) !default;
+$h6-font-size: calculateRem(12px) !default;
+
+$base-line-height: 1.5 !default;
+$heading-line-height: $base-line-height !default;
 
 $text-font-weight-normal: 400 !default;
 $text-font-weight-semi: 600 !default;
