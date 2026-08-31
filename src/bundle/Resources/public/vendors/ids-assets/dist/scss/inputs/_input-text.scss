@@ -33,6 +33,11 @@
     &__action {
         line-height: 0;
 
+        &:focus-within {
+            position: relative;
+            z-index: 1;
+        }
+
         &--hidden {
             display: none;
         }
