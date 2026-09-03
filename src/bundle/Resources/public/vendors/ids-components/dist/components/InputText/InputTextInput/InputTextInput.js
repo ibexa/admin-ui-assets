@@ -199,11 +199,30 @@ var InputTextInput = exports.InputTextInput = function InputTextInput(_ref) {
       }, action.component);
     }));
   };
-  (0, _react.useLayoutEffect)(function () {
+  var updateSourcePadding = function updateSourcePadding() {
     var _actionsRef$current$o, _actionsRef$current;
     var actionsWidth = (_actionsRef$current$o = (_actionsRef$current = actionsRef.current) === null || _actionsRef$current === void 0 ? void 0 : _actionsRef$current.offsetWidth) !== null && _actionsRef$current$o !== void 0 ? _actionsRef$current$o : 0;
+    if (actionsWidth === 0) {
+      return;
+    }
     setSourcePadding(actionsWidth);
+  };
+  var actionsResizeObserver = (0, _react.useMemo)(function () {
+    return new ResizeObserver(function () {
+      updateSourcePadding();
+    });
+  }, []);
+  (0, _react.useLayoutEffect)(function () {
+    updateSourcePadding();
   }, [actions, value]);
+  (0, _react.useEffect)(function () {
+    if (actionsRef.current) {
+      actionsResizeObserver.observe(actionsRef.current);
+    }
+    return function () {
+      actionsResizeObserver.disconnect();
+    };
+  }, []);
   (0, _react.useEffect)(function () {
     setResolvedType(type);
   }, [type]);
