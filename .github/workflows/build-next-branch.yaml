@@ -12,17 +12,36 @@ concurrency:
 
 jobs:
   sync:
-    runs-on: ubuntu-latest
+    runs-on: "ubuntu-26.04"
     steps:
+      - name: Generate GitHub App token
+        uses: actions/create-github-app-token@v3
+        id: generate_token
+        with:
+          client-id: ${{ secrets.AUTOMATION_CLIENT_ID }}
+          private-key: ${{ secrets.AUTOMATION_CLIENT_SECRET }}
+          owner: ${{ github.repository_owner }}
+
+      - name: Resolve GitHub App user ID
+        id: app_user
+        run: echo "user-id=$(gh api "/users/${APP_SLUG}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
+        env:
+          APP_SLUG: ${{ steps.generate_token.outputs.app-slug }}
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
+
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
+          token: ${{ steps.generate_token.outputs.token }}
 
       - name: Configure git
         run: |
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
+          git config user.email "${APP_USER_ID}+${APP_SLUG}[bot]@users.noreply.github.com"
+          git config user.name "${APP_SLUG}[bot]"
+        env:
+          APP_SLUG: ${{ steps.generate_token.outputs.app-slug }}
+          APP_USER_ID: ${{ steps.app_user.outputs.user-id }}
 
       - name: Run prepare_next.sh
         run: bash bin/prepare_next.sh -v ${{ github.ref_name }} -b ${{ github.ref_name }}
