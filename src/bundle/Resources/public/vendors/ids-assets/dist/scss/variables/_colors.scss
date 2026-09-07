@@ -125,7 +125,9 @@ $color-warning-10: oklch(0.9578 0.0265 74.76) !default;
 $color-warning-5: oklch(0.9736 0.0158 73.68) !default;
 $color-warning-0: oklch(0.9868 0.0079 73.75) !default;
 
-$gradient-primary-1: linear-gradient(90deg, $color-primary-80 40%, $color-primary_alt-40 100%) !default;
-$gradient-primary-2: linear-gradient(90deg, $color-primary_alt-40 0%, $color-primary-80 45%) !default;
+$color-focus: oklch(0.4779 0.2626 286.2) !default;
+
+$gradient-primary-1: linear-gradient(to top left, $color-primary-80 40%, $color-primary_alt-50 100%) !default;
+$gradient-primary-2: linear-gradient(to top left, $color-primary_alt-50 0%, $color-primary-80 45%) !default;
 $gradient-complementary-primary-1: linear-gradient(315.6deg, #275799 0%, #619cff 132.49%) !default;
 $gradient-complementary-primary-2: linear-gradient(316.62deg, #619eff -74.77%, #275799 100%) !default;
