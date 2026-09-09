@@ -20,6 +20,7 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 var RESIZE_TIMEOUT = 200;
+var MIN_VISIBLE_ITEMS = 1;
 var OverflowList = exports.OverflowList = function OverflowList(_ref) {
   var _ref$className = _ref.className,
     className = _ref$className === void 0 ? '' : _ref$className,
@@ -41,10 +42,18 @@ var OverflowList = exports.OverflowList = function OverflowList(_ref) {
     _useState6 = _slicedToArray(_useState5, 2),
     numberOfVisibleItems = _useState6[0],
     setNumberOfVisibleItems = _useState6[1];
+  var _useState7 = (0, _react.useState)(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    shouldShrinkFirstItem = _useState8[0],
+    setShouldShrinkFirstItem = _useState8[1];
   var debounce = (0, _useDebounce.useDebounce)(RESIZE_TIMEOUT);
   var componentClassName = (0, _cssClassNames.createCssClassNames)(_defineProperty({
     'ids-overflow-list': true
   }, className, !!className));
+  var itemsClassName = (0, _cssClassNames.createCssClassNames)({
+    'ids-overflow-list__items': true,
+    'ids-overflow-list__items--shrink-first': shouldShrinkFirstItem
+  });
   var recalculateVisibleItems = function recalculateVisibleItems() {
     if (!itemsRef.current) {
       return;
@@ -52,20 +61,19 @@ var OverflowList = exports.OverflowList = function OverflowList(_ref) {
     var itemsNodes = Array.from(itemsRef.current.children);
     var _itemsRef$current$get = itemsRef.current.getBoundingClientRect(),
       listRightPosition = _itemsRef$current$get.right;
-    var newNumberOfVisibleItems = itemsNodes.findIndex(function (itemNode) {
+    var firstOverflowingItemIndex = itemsNodes.findIndex(function (itemNode) {
       var _itemNode$getBounding = itemNode.getBoundingClientRect(),
         itemRightPosition = _itemNode$getBounding.right;
       return itemRightPosition > listRightPosition;
     });
-    if (newNumberOfVisibleItems === -1 || newNumberOfVisibleItems === items.length) {
+    if (firstOverflowingItemIndex === -1 || firstOverflowingItemIndex === items.length) {
+      setShouldShrinkFirstItem(false);
       return true;
     }
-    if (newNumberOfVisibleItems === numberOfVisibleItems) {
-      setNumberOfVisibleItems(newNumberOfVisibleItems - 1); // eslint-disable-line no-magic-numbers
-    } else {
-      setNumberOfVisibleItems(newNumberOfVisibleItems);
-    }
-    return false;
+    var newNumberOfVisibleItems = firstOverflowingItemIndex === numberOfVisibleItems ? firstOverflowingItemIndex - MIN_VISIBLE_ITEMS : firstOverflowingItemIndex;
+    setNumberOfVisibleItems(Math.max(newNumberOfVisibleItems, MIN_VISIBLE_ITEMS));
+    setShouldShrinkFirstItem(newNumberOfVisibleItems < MIN_VISIBLE_ITEMS);
+    return newNumberOfVisibleItems <= MIN_VISIBLE_ITEMS;
   };
   var listResizeObserver = (0, _react.useMemo)(function () {
     return new ResizeObserver(function () {
@@ -73,6 +81,7 @@ var OverflowList = exports.OverflowList = function OverflowList(_ref) {
         var _listRef$current$offs, _listRef$current;
         setItemsWidth((_listRef$current$offs = (_listRef$current = listRef.current) === null || _listRef$current === void 0 ? void 0 : _listRef$current.offsetWidth) !== null && _listRef$current$offs !== void 0 ? _listRef$current$offs : 0);
         setNumberOfVisibleItems(items.length);
+        setShouldShrinkFirstItem(false);
         setCurrentAction(_OverflowList.OverflowListCalculateAction.CalculateItems);
       });
     });
@@ -121,7 +130,7 @@ var OverflowList = exports.OverflowList = function OverflowList(_ref) {
     className: componentClassName,
     ref: listRef
   }, /*#__PURE__*/_react["default"].createElement("div", {
-    className: "ids-overflow-list__items",
+    className: itemsClassName,
     ref: itemsRef,
     style: {
       width: "".concat(itemsWidth, "px")

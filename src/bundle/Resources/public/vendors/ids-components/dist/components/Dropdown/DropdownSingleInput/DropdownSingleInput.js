@@ -55,7 +55,9 @@ var DropdownSingleInput = exports.DropdownSingleInput = function DropdownSingleI
     return item.id === value;
   };
   var renderItem = function renderItem(item) {
-    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, item.label, isItemSelected(item) && /*#__PURE__*/_react["default"].createElement(_Icon.Icon, {
+    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("span", {
+      className: "ids-dropdown__item-label"
+    }, item.label), isItemSelected(item) && /*#__PURE__*/_react["default"].createElement(_Icon.Icon, {
       name: "check-circle",
       size: _Icon.IconSize.TinySmall
     }));
