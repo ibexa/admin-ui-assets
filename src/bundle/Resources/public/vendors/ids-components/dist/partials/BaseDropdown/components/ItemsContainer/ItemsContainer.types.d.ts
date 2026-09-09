@@ -10,6 +10,9 @@ export type GetNextFocusableItemType = (element: HTMLElement, direction: ItemsCo
 export type ItemsContainerItemsStylesType = React.CSSProperties & {
     '--max-visible-items'?: number;
 };
+export type ItemsContainerStylesType = React.CSSProperties & {
+    '--ids-dropdown-available-width'?: string;
+};
 export interface ItemsContainerProps<T extends BaseDropdownItem> {
     closeDropdown: () => void;
     filterFunction: (item: T, searchTerm: string) => boolean;

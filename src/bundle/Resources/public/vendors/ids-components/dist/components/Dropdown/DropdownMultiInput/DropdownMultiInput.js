@@ -70,7 +70,9 @@ var DropdownMultiInput = exports.DropdownMultiInput = function DropdownMultiInpu
       checked: isItemSelected(item),
       name: "".concat(name, "-checkbox"),
       value: item.id
-    }), item.label);
+    }), /*#__PURE__*/_react["default"].createElement("span", {
+      className: "ids-dropdown__item-label"
+    }, item.label));
   };
   var selectedItems = value.length ? items.filter(function (item) {
     return value.includes(item.id);
