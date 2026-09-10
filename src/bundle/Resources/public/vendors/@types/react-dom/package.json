@@ -1,6 +1,6 @@
 {
     "name": "@types/react-dom",
-    "version": "19.2.7",
+    "version": "19.3.0",
     "description": "TypeScript definitions for react-dom",
     "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-dom",
     "license": "MIT",
@@ -121,8 +121,8 @@
     "scripts": {},
     "dependencies": {},
     "peerDependencies": {
-        "@types/react": "^19.2.0"
+        "@types/react": "^19.3.0"
     },
-    "typesPublisherContentHash": "a98500afa682f848998ff6e625f9efb4d5df0477f2255ba4ad8673005a9aba65",
+    "typesPublisherContentHash": "345e361651b67ba93e5757949902dbca94f299c8328b8d01937dc05b5e487d8f",
     "typeScriptVersion": "5.6"
 }

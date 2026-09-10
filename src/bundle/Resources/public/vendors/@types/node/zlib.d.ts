@@ -1,4 +1,97 @@
-declare module "node:zlib" {
+/**
+ * The `node:zlib` module provides compression functionality implemented using
+ * Gzip, Deflate/Inflate, and Brotli.
+ *
+ * To access it:
+ *
+ * ```js
+ * import zlib from 'node:zlib';
+ * ```
+ *
+ * Compression and decompression are built around the Node.js
+ * [Streams API](https://nodejs.org/docs/latest-v22.x/api/stream.html).
+ *
+ * Compressing or decompressing a stream (such as a file) can be accomplished by
+ * piping the source stream through a `zlib` `Transform` stream into a destination
+ * stream:
+ *
+ * ```js
+ * import { createGzip } from 'node:zlib';
+ * import { pipeline } from 'node:stream';
+ * import {
+ *   createReadStream,
+ *   createWriteStream,
+ * } from 'node:fs';
+ *
+ * const gzip = createGzip();
+ * const source = createReadStream('input.txt');
+ * const destination = createWriteStream('input.txt.gz');
+ *
+ * pipeline(source, gzip, destination, (err) => {
+ *   if (err) {
+ *     console.error('An error occurred:', err);
+ *     process.exitCode = 1;
+ *   }
+ * });
+ *
+ * // Or, Promisified
+ *
+ * import { promisify } from 'node:util';
+ * const pipe = promisify(pipeline);
+ *
+ * async function do_gzip(input, output) {
+ *   const gzip = createGzip();
+ *   const source = createReadStream(input);
+ *   const destination = createWriteStream(output);
+ *   await pipe(source, gzip, destination);
+ * }
+ *
+ * do_gzip('input.txt', 'input.txt.gz')
+ *   .catch((err) => {
+ *     console.error('An error occurred:', err);
+ *     process.exitCode = 1;
+ *   });
+ * ```
+ *
+ * It is also possible to compress or decompress data in a single step:
+ *
+ * ```js
+ * import { deflate, unzip } from 'node:zlib';
+ *
+ * const input = '.................................';
+ * deflate(input, (err, buffer) => {
+ *   if (err) {
+ *     console.error('An error occurred:', err);
+ *     process.exitCode = 1;
+ *   }
+ *   console.log(buffer.toString('base64'));
+ * });
+ *
+ * const buffer = Buffer.from('eJzT0yMAAGTvBe8=', 'base64');
+ * unzip(buffer, (err, buffer) => {
+ *   if (err) {
+ *     console.error('An error occurred:', err);
+ *     process.exitCode = 1;
+ *   }
+ *   console.log(buffer.toString());
+ * });
+ *
+ * // Or, Promisified
+ *
+ * import { promisify } from 'node:util';
+ * const do_unzip = promisify(unzip);
+ *
+ * do_unzip(buffer)
+ *   .then((buf) => console.log(buf.toString()))
+ *   .catch((err) => {
+ *     console.error('An error occurred:', err);
+ *     process.exitCode = 1;
+ *   });
+ * ```
+ * @since v0.5.8
+ * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/zlib.js)
+ */
+declare module "zlib" {
     import { NonSharedBuffer } from "node:buffer";
     import * as stream from "node:stream";
     interface ZlibOptions {
@@ -32,13 +125,6 @@ declare module "node:zlib" {
          * @default buffer.kMaxLength
          */
         maxOutputLength?: number | undefined;
-        /**
-         * If `true`, decompression fails when
-         * trailing input is detected after the end of the compressed stream. This
-         * includes unreadable bytes and, when decompressing gzip, additional gzip
-         * members following the first member. **Default:** `false`
-         */
-        rejectGarbageAfterEnd?: boolean | undefined;
     }
     interface BrotliOptions {
         /**
@@ -62,7 +148,7 @@ declare module "node:zlib" {
             }
             | undefined;
         /**
-         * Limits output size when using [convenience methods](https://nodejs.org/docs/latest-v26.x/api/zlib.html#convenience-methods).
+         * Limits output size when using [convenience methods](https://nodejs.org/docs/latest-v22.x/api/zlib.html#convenience-methods).
          * @default buffer.kMaxLength
          */
         maxOutputLength?: number | undefined;
@@ -70,11 +156,6 @@ declare module "node:zlib" {
          * If `true`, returns an object with `buffer` and `engine`.
          */
         info?: boolean | undefined;
-        /**
-         * If `true`, decompression fails when
-         * input remains after the first complete compressed stream. **Default:** `false`
-         */
-        rejectGarbageAfterEnd?: boolean | undefined;
     }
     interface ZstdOptions {
         /**
@@ -91,12 +172,12 @@ declare module "node:zlib" {
         chunkSize?: number | undefined;
         /**
          * Key-value object containing indexed
-         * [Zstd parameters](https://nodejs.org/docs/latest-v26.x/api/zlib.html#zstd-constants).
+         * [Zstd parameters](https://nodejs.org/docs/latest-v22.x/api/zlib.html#zstd-constants).
          */
         params?: { [key: number]: number | boolean } | undefined;
         /**
          * Limits output size when using
-         * [convenience methods](https://nodejs.org/docs/latest-v26.x/api/zlib.html#convenience-methods).
+         * [convenience methods](https://nodejs.org/docs/latest-v22.x/api/zlib.html#convenience-methods).
          * @default buffer.kMaxLength
          */
         maxOutputLength?: number | undefined;
@@ -107,16 +188,13 @@ declare module "node:zlib" {
         /**
          * Optional dictionary used to improve compression efficiency when compressing or decompressing data that
          * shares common patterns with the dictionary.
-         * @since v24.6.0
+         * @since v22.19.0
          */
         dictionary?: NodeJS.ArrayBufferView | undefined;
-        /**
-         * If `true`, decompression fails when
-         * input remains after the first complete compressed stream. **Default:** `false`
-         */
-        rejectGarbageAfterEnd?: boolean | undefined;
     }
     interface Zlib {
+        /** @deprecated Use bytesWritten instead. */
+        readonly bytesRead: number;
         readonly bytesWritten: number;
         shell?: boolean | string | undefined;
         close(callback?: () => void): void;
@@ -600,7 +678,70 @@ declare module "node:zlib" {
         const Z_SYNC_FLUSH: number;
         const Z_VERSION_ERROR: number;
     }
+    // Allowed flush values.
+    /** @deprecated Use `constants.Z_NO_FLUSH` */
+    const Z_NO_FLUSH: number;
+    /** @deprecated Use `constants.Z_PARTIAL_FLUSH` */
+    const Z_PARTIAL_FLUSH: number;
+    /** @deprecated Use `constants.Z_SYNC_FLUSH` */
+    const Z_SYNC_FLUSH: number;
+    /** @deprecated Use `constants.Z_FULL_FLUSH` */
+    const Z_FULL_FLUSH: number;
+    /** @deprecated Use `constants.Z_FINISH` */
+    const Z_FINISH: number;
+    /** @deprecated Use `constants.Z_BLOCK` */
+    const Z_BLOCK: number;
+    // Return codes for the compression/decompression functions.
+    // Negative values are errors, positive values are used for special but normal events.
+    /** @deprecated Use `constants.Z_OK` */
+    const Z_OK: number;
+    /** @deprecated Use `constants.Z_STREAM_END` */
+    const Z_STREAM_END: number;
+    /** @deprecated Use `constants.Z_NEED_DICT` */
+    const Z_NEED_DICT: number;
+    /** @deprecated Use `constants.Z_ERRNO` */
+    const Z_ERRNO: number;
+    /** @deprecated Use `constants.Z_STREAM_ERROR` */
+    const Z_STREAM_ERROR: number;
+    /** @deprecated Use `constants.Z_DATA_ERROR` */
+    const Z_DATA_ERROR: number;
+    /** @deprecated Use `constants.Z_MEM_ERROR` */
+    const Z_MEM_ERROR: number;
+    /** @deprecated Use `constants.Z_BUF_ERROR` */
+    const Z_BUF_ERROR: number;
+    /** @deprecated Use `constants.Z_VERSION_ERROR` */
+    const Z_VERSION_ERROR: number;
+    // Compression levels.
+    /** @deprecated Use `constants.Z_NO_COMPRESSION` */
+    const Z_NO_COMPRESSION: number;
+    /** @deprecated Use `constants.Z_BEST_SPEED` */
+    const Z_BEST_SPEED: number;
+    /** @deprecated Use `constants.Z_BEST_COMPRESSION` */
+    const Z_BEST_COMPRESSION: number;
+    /** @deprecated Use `constants.Z_DEFAULT_COMPRESSION` */
+    const Z_DEFAULT_COMPRESSION: number;
+    // Compression strategy.
+    /** @deprecated Use `constants.Z_FILTERED` */
+    const Z_FILTERED: number;
+    /** @deprecated Use `constants.Z_HUFFMAN_ONLY` */
+    const Z_HUFFMAN_ONLY: number;
+    /** @deprecated Use `constants.Z_RLE` */
+    const Z_RLE: number;
+    /** @deprecated Use `constants.Z_FIXED` */
+    const Z_FIXED: number;
+    /** @deprecated Use `constants.Z_DEFAULT_STRATEGY` */
+    const Z_DEFAULT_STRATEGY: number;
+    /** @deprecated */
+    const Z_BINARY: number;
+    /** @deprecated */
+    const Z_TEXT: number;
+    /** @deprecated */
+    const Z_ASCII: number;
+    /** @deprecated  */
+    const Z_UNKNOWN: number;
+    /** @deprecated */
+    const Z_DEFLATED: number;
 }
-declare module "zlib" {
-    export * from "node:zlib";
+declare module "node:zlib" {
+    export * from "zlib";
 }

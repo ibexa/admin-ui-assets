@@ -1,4 +1,7 @@
-declare module "node:readline/promises" {
+/**
+ * @since v17.0.0
+ */
+declare module "readline/promises" {
     import { Abortable } from "node:events";
     import {
         CompleterResult,
@@ -153,6 +156,6 @@ declare module "node:readline/promises" {
     ): Interface;
     function createInterface(options: ReadLineOptions): Interface;
 }
-declare module "readline/promises" {
-    export * from "node:readline/promises";
+declare module "node:readline/promises" {
+    export * from "readline/promises";
 }

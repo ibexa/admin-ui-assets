@@ -1,4 +1,19 @@
-declare module "node:timers/promises" {
+/**
+ * The `timers/promises` API provides an alternative set of timer functions
+ * that return `Promise` objects. The API is accessible via
+ * `require('node:timers/promises')`.
+ *
+ * ```js
+ * import {
+ *   setTimeout,
+ *   setImmediate,
+ *   setInterval,
+ * } from 'node:timers/promises';
+ * ```
+ * @since v15.0.0
+ * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/timers/promises.js)
+ */
+declare module "timers/promises" {
     import { TimerOptions } from "node:timers";
     /**
      * ```js
@@ -88,6 +103,6 @@ declare module "node:timers/promises" {
     }
     const scheduler: Scheduler;
 }
-declare module "timers/promises" {
-    export * from "node:timers/promises";
+declare module "node:timers/promises" {
+    export * from "timers/promises";
 }

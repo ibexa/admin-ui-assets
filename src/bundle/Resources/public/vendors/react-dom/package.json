@@ -1,6 +1,6 @@
 {
   "name": "react-dom",
-  "version": "19.2.8",
+  "version": "19.3.0",
   "description": "React package for working with the DOM.",
   "main": "index.js",
   "repository": {
@@ -17,10 +17,10 @@
   },
   "homepage": "https://react.dev/",
   "dependencies": {
-    "scheduler": "^0.27.0"
+    "scheduler": "^0.28.0"
   },
   "peerDependencies": {
-    "react": "^19.2.8"
+    "react": "^19.3.0"
   },
   "files": [
     "LICENSE",
@@ -58,7 +58,7 @@
       "react-server": "./server.react-server.js",
       "workerd": "./server.edge.js",
       "bun": "./server.bun.js",
-      "deno": "./server.browser.js",
+      "deno": "./server.node.js",
       "worker": "./server.browser.js",
       "node": "./server.node.js",
       "edge-light": "./server.edge.js",

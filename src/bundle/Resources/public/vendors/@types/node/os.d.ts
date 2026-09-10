@@ -1,4 +1,13 @@
-declare module "node:os" {
+/**
+ * The `node:os` module provides operating system-related utility methods and
+ * properties. It can be accessed using:
+ *
+ * ```js
+ * import os from 'node:os';
+ * ```
+ * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/os.js)
+ */
+declare module "os" {
     import { NonSharedBuffer } from "buffer";
     interface CpuInfo {
         model: string;
@@ -122,7 +131,7 @@ declare module "node:os" {
      *       irq: 20,
      *     },
      *   },
-     * ];
+     * ]
      * ```
      *
      * `nice` values are POSIX-only. On Windows, the `nice` values of all processors
@@ -167,44 +176,44 @@ declare module "node:os" {
      *
      * The properties available on the assigned network address object include:
      *
-     * ```json
+     * ```js
      * {
-     *   "lo": [
+     *   lo: [
      *     {
-     *       "address:": "127.0.0.1",
-     *       "netmask:": "255.0.0.0",
-     *       "family:": "IPv4",
-     *       "mac:": "00:00:00:00:00:00",
-     *       "internal:": true,
-     *       "cidr:": "127.0.0.1/8"
+     *       address: '127.0.0.1',
+     *       netmask: '255.0.0.0',
+     *       family: 'IPv4',
+     *       mac: '00:00:00:00:00:00',
+     *       internal: true,
+     *       cidr: '127.0.0.1/8'
      *     },
      *     {
-     *       "address:": "::1",
-     *       "netmask:": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
-     *       "family:": "IPv6",
-     *       "mac:": "00:00:00:00:00:00",
-     *       "scopeid:": 0,
-     *       "internal:": true,
-     *       "cidr:": "::1/128"
+     *       address: '::1',
+     *       netmask: 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff',
+     *       family: 'IPv6',
+     *       mac: '00:00:00:00:00:00',
+     *       scopeid: 0,
+     *       internal: true,
+     *       cidr: '::1/128'
      *     }
      *   ],
-     *   "eth0": [
+     *   eth0: [
      *     {
-     *       "address:": "192.168.1.108",
-     *       "netmask:": "255.255.255.0",
-     *       "family:": "IPv4",
-     *       "mac:": "01:02:03:0a:0b:0c",
-     *       "internal:": false,
-     *       "cidr:": "192.168.1.108/24"
+     *       address: '192.168.1.108',
+     *       netmask: '255.255.255.0',
+     *       family: 'IPv4',
+     *       mac: '01:02:03:0a:0b:0c',
+     *       internal: false,
+     *       cidr: '192.168.1.108/24'
      *     },
      *     {
-     *       "address:": "fe80::a00:27ff:fe4e:66a1",
-     *       "netmask:": "ffff:ffff:ffff:ffff::",
-     *       "family:": "IPv6",
-     *       "mac:": "01:02:03:0a:0b:0c",
-     *       "scopeid:": 1,
-     *       "internal:": false,
-     *       "cidr:": "fe80::a00:27ff:fe4e:66a1/64"
+     *       address: 'fe80::a00:27ff:fe4e:66a1',
+     *       netmask: 'ffff:ffff:ffff:ffff::',
+     *       family: 'IPv6',
+     *       mac: '01:02:03:0a:0b:0c',
+     *       scopeid: 1,
+     *       internal: false,
+     *       cidr: 'fe80::a00:27ff:fe4e:66a1/64'
      *     }
      *   ]
      * }
@@ -242,12 +251,12 @@ declare module "node:os" {
      * environment variables for the home directory before falling back to the
      * operating system response.
      *
-     * Throws a [`SystemError`](https://nodejs.org/docs/latest-v26.x/api/errors.html#class-systemerror) if a user has no `username` or `homedir`.
+     * Throws a [`SystemError`](https://nodejs.org/docs/latest-v22.x/api/errors.html#class-systemerror) if a user has no `username` or `homedir`.
      * @since v6.0.0
      */
     function userInfo(options?: UserInfoOptionsWithStringEncoding): UserInfo<string>;
     function userInfo(options: UserInfoOptionsWithBufferEncoding): UserInfo<NonSharedBuffer>;
-    function userInfo(options: UserInfoOptions): UserInfo<string | NonSharedBuffer>;
+    function userInfo(options: UserInfoOptions): UserInfo<string | Buffer>;
     type SignalConstants = {
         [key in NodeJS.Signals]: number;
     };
@@ -419,13 +428,13 @@ declare module "node:os" {
     const EOL: string;
     /**
      * Returns the operating system CPU architecture for which the Node.js binary was
-     * compiled. Possible values are `'arm'`, `'arm64'`, `'ia32'`, `'loong64'`,
-     * `'mips'`, `'mipsel'`, `'ppc64'`, `'riscv64'`, `'s390x'`, and `'x64'`.
+     * compiled. Possible values are `'arm'`, `'arm64'`, `'ia32'`, `'loong64'`, `'mips'`, `'mipsel'`, `'ppc'`, `'ppc64'`, `'riscv64'`, `'s390'`, `'s390x'`,
+     * and `'x64'`.
      *
-     * The return value is equivalent to [process.arch](https://nodejs.org/docs/latest-v26.x/api/process.html#processarch).
+     * The return value is equivalent to [process.arch](https://nodejs.org/docs/latest-v22.x/api/process.html#processarch).
      * @since v0.5.0
      */
-    function arch(): NodeJS.Architecture;
+    function arch(): string;
     /**
      * Returns a string identifying the kernel version.
      *
@@ -447,8 +456,7 @@ declare module "node:os" {
      */
     function platform(): NodeJS.Platform;
     /**
-     * Returns the machine type as a string, such as `arm`, `arm64`, `aarch64`,
-     * `mips`, `mips64`, `ppc64`, `ppc64le`, `s390x`, `i386`, `i686`, `x86_64`.
+     * Returns the machine type as a string, such as `arm`, `arm64`, `aarch64`, `mips`, `mips64`, `ppc64`, `ppc64le`, `s390`, `s390x`, `i386`, `i686`, `x86_64`.
      *
      * On POSIX systems, the machine type is determined by calling [`uname(3)`](https://linux.die.net/man/3/uname). On Windows, `RtlGetVersion()` is used, and if it is not
      * available, `GetVersionExW()` will be used. See [https://en.wikipedia.org/wiki/Uname#Examples](https://en.wikipedia.org/wiki/Uname#Examples) for more information.
@@ -493,6 +501,6 @@ declare module "node:os" {
     function setPriority(priority: number): void;
     function setPriority(pid: number, priority: number): void;
 }
-declare module "os" {
-    export * from "node:os";
+declare module "node:os" {
+    export * from "os";
 }
