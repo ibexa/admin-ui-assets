@@ -7,11 +7,11 @@
 $input-sizes: (
     'small': (
         'font-size': $text-font-size-s,
-        'padding': calculateRem(7px) calculateRem(16px) calculateRem(7px),
+        'padding': calculateRem(7px) calculateRem(4px) calculateRem(7px) calculateRem(8px),
     ),
     'medium': (
         'font-size': $text-font-size-m,
-        'padding': calculateRem(9px) calculateRem(16px) calculateRem(10px),
+        'padding': calculateRem(8px) calculateRem(8px) calculateRem(8px) calculateRem(12px),
     ),
 );
 
@@ -55,5 +55,9 @@ $input-sizes: (
 
     &--text {
         height: calculateRem(40px);
+
+        &.ids-input--small {
+            height: calculateRem(32px);
+        }
     }
 }
