@@ -2,6 +2,9 @@
 @use '../variables' as *;
 @use '../mixins/utils' as utils-mixins;
 
+$item-height: calculateRem(32px);
+$item-gap: calculateRem(4px);
+
 .ids-dropdown {
     $self: &;
 
@@ -13,7 +16,7 @@
 
     &__widget {
         min-width: calculateRem(160px);
-        padding: calculateRem(8.5px) calculateRem(12px);
+        padding: calculateRem(8px) calculateRem(12px);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -46,6 +49,7 @@
         border-radius: $border-radius-medium;
         border: calculateRem(1px) solid $color-neutral-80;
         background-color: $color-neutral-10;
+        box-shadow: $box-shadow-medium;
         margin: calculateRem(4px) 0;
         box-sizing: border-box;
         overflow: hidden;
@@ -56,24 +60,34 @@
         padding: calculateRem(8px);
     }
 
+    &__search:not([hidden]) {
+        padding-bottom: $item-gap;
+    }
+
     &__search:not([hidden]) + .ids-dropdown__items {
-        padding-top: 0;
-        max-height: calc(calculateRem(32px) * var(--max-visible-items, 10) + calculateRem(8px));
+        padding-top: $item-gap;
+        max-height: calc(($item-height + $item-gap) * var(--max-visible-items, 10) + calculateRem(8px));
     }
 
     &__items {
+        display: flex;
+        flex-direction: column;
+        gap: $item-gap;
         list-style: none;
         margin: 0;
         padding: calculateRem(8px);
-        max-height: calc(calculateRem(32px) * var(--max-visible-items, 10) + calculateRem(16px));
+        max-height: calc(($item-height + $item-gap) * var(--max-visible-items, 10) + calculateRem(12px));
         overflow-y: auto;
+        scroll-padding-block: calculateRem(8px);
         box-sizing: border-box;
     }
 
     &__item {
         display: flex;
         align-items: center;
-        padding: calculateRem(4px) calculateRem(8px) calculateRem(5px);
+        min-height: $item-height;
+        padding: calculateRem(4px) calculateRem(8px);
+        box-sizing: border-box;
         font-size: $text-font-size-m;
         white-space: nowrap;
         overflow: hidden;
@@ -88,6 +102,12 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+    }
+
+    &:has(> #{$self}__items-container:not([hidden])) {
+        #{$self}__widget {
+            border-color: $color-primary-80;
+        }
     }
 
     &--error {
@@ -126,7 +146,8 @@
                 }
 
                 &--selected {
-                    background-color: $color-neutral-40;
+                    background-color: $color-neutral-50;
+                    font-weight: $text-font-weight-semi;
                     z-index: 0;
                 }
             }
