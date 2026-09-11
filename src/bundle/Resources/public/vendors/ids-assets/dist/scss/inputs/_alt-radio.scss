@@ -12,6 +12,11 @@
         @include inputs-mixins.input-base;
 
         & {
+            --ids-input-hover-border-color: #{$color-primary-80};
+            --ids-input-disabled-bg-color: #{$color-neutral-40};
+            --ids-input-error-bg-color: #{$color-error-20};
+            --ids-input-error-text-color: #{$color-error-90};
+
             cursor: pointer;
             padding: calculateRem(8px) calculateRem(16px);
         }
