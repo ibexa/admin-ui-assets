@@ -1,10 +1,5 @@
-/**
- * The `node:inspector` module provides an API for interacting with the V8
- * inspector.
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/inspector.js)
- */
-declare module "inspector" {
-    import EventEmitter = require("node:events");
+declare module "node:inspector" {
+    import { EventEmitter } from "node:events";
     /**
      * The `inspector.Session` is used for dispatching messages to the V8 inspector
      * back-end and receiving message responses and notifications.
@@ -39,7 +34,7 @@ declare module "inspector" {
      * If wait is `true`, will block until a client has connected to the inspect port
      * and flow control has been passed to the debugger client.
      *
-     * See the [security warning](https://nodejs.org/docs/latest-v22.x/api/cli.html#warning-binding-inspector-to-a-public-ipport-combination-is-insecure)
+     * See the [security warning](https://nodejs.org/docs/latest-v26.x/api/cli.html#warning-binding-inspector-to-a-public-ipport-combination-is-insecure)
      * regarding the `host` parameter usage.
      * @param port Port to listen on for inspector connections. Defaults to what was specified on the CLI.
      * @param host Host to listen on for inspector connections. Defaults to what was specified on the CLI.
@@ -48,7 +43,8 @@ declare module "inspector" {
      */
     function open(port?: number, host?: string, wait?: boolean): Disposable;
     /**
-     * Deactivate the inspector. Blocks until there are no active connections.
+     * Deactivates the inspector. If there are active connections, they are forcibly
+     * terminated. Blocks until the inspector server has fully stopped.
      */
     function close(): void;
     /**
@@ -125,14 +121,14 @@ declare module "inspector" {
          * `Network.streamResourceContent` command was not invoked for the given request yet.
          *
          * Also enables `Network.getResponseBody` command to retrieve the response data.
-         * @since v22.17.0
+         * @since v24.2.0
          */
         function dataReceived(params: DataReceivedEventDataType): void;
         /**
          * This feature is only available with the `--experimental-network-inspection` flag enabled.
          *
          * Enables `Network.getRequestPostData` command to retrieve the request data.
-         * @since v22.18.0
+         * @since v24.3.0
          */
         function dataSent(params: unknown): void;
         /**
@@ -159,6 +155,30 @@ declare module "inspector" {
          * @since v22.7.0
          */
         function loadingFailed(params: LoadingFailedEventDataType): void;
+        /**
+         * This feature is only available with the `--experimental-network-inspection` flag enabled.
+         *
+         * Broadcasts the `Network.webSocketCreated` event to connected frontends. This event indicates that
+         * a WebSocket connection has been initiated.
+         * @since v24.7.0
+         */
+        function webSocketCreated(params: WebSocketCreatedEventDataType): void;
+        /**
+         * This feature is only available with the `--experimental-network-inspection` flag enabled.
+         *
+         * Broadcasts the `Network.webSocketHandshakeResponseReceived` event to connected frontends.
+         * This event indicates that the WebSocket handshake response has been received.
+         * @since v24.7.0
+         */
+        function webSocketHandshakeResponseReceived(params: WebSocketHandshakeResponseReceivedEventDataType): void;
+        /**
+         * This feature is only available with the `--experimental-network-inspection` flag enabled.
+         *
+         * Broadcasts the `Network.webSocketClosed` event to connected frontends.
+         * This event indicates that a WebSocket connection has been closed.
+         * @since v24.7.0
+         */
+        function webSocketClosed(params: WebSocketClosedEventDataType): void;
     }
     namespace NetworkResources {
         /**
@@ -189,65 +209,57 @@ declare module "inspector" {
          * ```
          *
          * For more details, see the official CDP documentation: [Network.loadNetworkResource](https://chromedevtools.github.io/devtools-protocol/tot/Network/#method-loadNetworkResource)
-         * @since v22.19.0
+         * @since v24.5.0
          * @experimental
          */
         function put(url: string, data: string): void;
     }
-}
+    namespace DOMStorage {
+        /**
+         * This feature is only available with the
+         * `--experimental-storage-inspection` flag enabled.
+         *
+         * Broadcasts the `DOMStorage.domStorageItemAdded` event to connected frontends.
+         * This event indicates that a new item has been added to the storage.
+         * @since v25.5.0
+         */
+        function domStorageItemAdded(params: DomStorageItemAddedEventDataType): void;
+        /**
+         * This feature is only available with the
+         * `--experimental-storage-inspection` flag enabled.
+         *
+         * Broadcasts the `DOMStorage.domStorageItemRemoved` event to connected frontends.
+         * This event indicates that an item has been removed from the storage.
+         * @since v25.5.0
+         */
+        function domStorageItemRemoved(params: DomStorageItemRemovedEventDataType): void;
+        /**
+         * This feature is only available with the
+         * `--experimental-storage-inspection` flag enabled.
 
-/**
- * The `node:inspector` module provides an API for interacting with the V8
- * inspector.
- */
-declare module "node:inspector" {
-    export * from "inspector";
-}
-
-/**
- * The `node:inspector/promises` module provides an API for interacting with the V8
- * inspector.
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/inspector/promises.js)
- * @since v19.0.0
- */
-declare module "inspector/promises" {
-    import EventEmitter = require("node:events");
-    export { close, console, NetworkResources, open, url, waitForDebugger } from "inspector";
-    /**
-     * The `inspector.Session` is used for dispatching messages to the V8 inspector
-     * back-end and receiving message responses and notifications.
-     * @since v19.0.0
-     */
-    export class Session extends EventEmitter {
-        /**
-         * Create a new instance of the inspector.Session class.
-         * The inspector session needs to be connected through `session.connect()` before the messages can be dispatched to the inspector backend.
+         * Broadcasts the `DOMStorage.domStorageItemUpdated` event to connected frontends.
+         * This event indicates that a storage item has been updated.
+         * @since v25.5.0
          */
-        constructor();
+        function domStorageItemUpdated(params: DomStorageItemUpdatedEventDataType): void;
         /**
-         * Connects a session to the inspector back-end.
+         * This feature is only available with the
+         * `--experimental-storage-inspection` flag enabled.
+         *
+         * Broadcasts the `DOMStorage.domStorageItemsCleared` event to connected
+         * frontends. This event indicates that all items have been cleared from the
+         * storage.
+         * @since v25.5.0
          */
-        connect(): void;
+        function domStorageItemsCleared(params: DomStorageItemsClearedEventDataType): void;
         /**
-         * Connects a session to the inspector back-end.
-         * An exception will be thrown if this API was not called on a Worker thread.
-         * @since v12.11.0
+         * This feature is only available with the
+         * `--experimental-storage-inspection` flag enabled.
+         * @since v25.5.0
          */
-        connectToMainThread(): void;
-        /**
-         * Immediately close the session. All pending message callbacks will be called with an error.
-         * `session.connect()` will need to be called to be able to send messages again.
-         * Reconnected session will lose all inspector state, such as enabled agents or configured breakpoints.
-         */
-        disconnect(): void;
+        function registerStorage(params: unknown): void;
     }
 }
-
-/**
- * The `node:inspector/promises` module provides an API for interacting with the V8
- * inspector.
- * @since v19.0.0
- */
-declare module "node:inspector/promises" {
-    export * from "inspector/promises";
+declare module "inspector" {
+    export * from "node:inspector";
 }

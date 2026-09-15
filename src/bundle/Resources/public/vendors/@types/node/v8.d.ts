@@ -1,12 +1,4 @@
-/**
- * The `node:v8` module exposes APIs that are specific to the version of [V8](https://developers.google.com/v8/) built into the Node.js binary. It can be accessed using:
- *
- * ```js
- * import v8 from 'node:v8';
- * ```
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/v8.js)
- */
-declare module "v8" {
+declare module "node:v8" {
     import { NonSharedBuffer } from "node:buffer";
     import { Readable } from "node:stream";
     interface HeapSpaceInfo {
@@ -33,6 +25,7 @@ declare module "v8" {
         total_global_handles_size: number;
         used_global_handles_size: number;
         external_memory: number;
+        total_allocated_bytes: number;
     }
     interface HeapCodeStatistics {
         code_and_metadata_size: number;
@@ -93,22 +86,25 @@ declare module "v8" {
      * `external_memory` The value of external\_memory is the memory size of array
      * buffers and external strings.
      *
-     * ```js
+     * `total_allocated_bytes` The value of total allocated bytes since the Isolate
+     * creation.
+     *
+     * ```json
      * {
-     *   total_heap_size: 7326976,
-     *   total_heap_size_executable: 4194304,
-     *   total_physical_size: 7326976,
-     *   total_available_size: 1152656,
-     *   used_heap_size: 3476208,
-     *   heap_size_limit: 1535115264,
-     *   malloced_memory: 16384,
-     *   peak_malloced_memory: 1127496,
-     *   does_zap_garbage: 0,
-     *   number_of_native_contexts: 1,
-     *   number_of_detached_contexts: 0,
-     *   total_global_handles_size: 8192,
-     *   used_global_handles_size: 3296,
-     *   external_memory: 318824
+     *   "total_heap_size": 7326976,
+     *   "total_heap_size_executable": 4194304,
+     *   "total_physical_size": 7326976,
+     *   "total_available_size": 1152656,
+     *   "used_heap_size": 3476208,
+     *   "heap_size_limit": 1535115264,
+     *   "malloced_memory": 16384,
+     *   "peak_malloced_memory": 1127496,
+     *   "does_zap_garbage": 0,
+     *   "number_of_native_contexts": 1,
+     *   "number_of_detached_contexts": 0,
+     *   "total_global_handles_size": 8192,
+     *   "used_global_handles_size": 3296,
+     *   "external_memory": 318824
      * }
      * ```
      * @since v1.0.0
@@ -304,7 +300,6 @@ declare module "v8" {
      * ```
      * @param ctor The constructor that can be used to search on the prototype chain in order to filter target objects in the heap.
      * @since v20.13.0
-     * @experimental
      */
     function queryObjects(ctor: Function): number | string[];
     function queryObjects(ctor: Function, options: { format: "count" }): number;
@@ -390,17 +385,158 @@ declare module "v8" {
      * V8 [`GetHeapCodeAndMetadataStatistics`](https://v8docs.nodesource.com/node-13.2/d5/dda/classv8_1_1_isolate.html#a6079122af17612ef54ef3348ce170866) API. Returns an object with the
      * following properties:
      *
-     * ```js
+     * ```json
      * {
-     *   code_and_metadata_size: 212208,
-     *   bytecode_and_metadata_size: 161368,
-     *   external_script_source_size: 1410794,
-     *   cpu_profiler_metadata_size: 0,
+     *   "code_and_metadata_size": 212208,
+     *   "bytecode_and_metadata_size": 161368,
+     *   "external_script_source_size": 1410794,
+     *   "cpu_profiler_metadata_size": 0
      * }
      * ```
      * @since v12.8.0
      */
     function getHeapCodeStatistics(): HeapCodeStatistics;
+    /**
+     * @since v25.0.0
+     */
+    interface SyncCPUProfileHandle {
+        /**
+         * Stopping collecting the profile and return the profile data.
+         * @since v25.0.0
+         */
+        stop(): string;
+        /**
+         * Stopping collecting the profile and the profile will be discarded.
+         * @since v25.0.0
+         */
+        [Symbol.dispose](): void;
+    }
+    /**
+     * @since v26.1.0
+     */
+    interface SyncHeapProfileHandle {
+        /**
+         * Stopping collecting the profile and return the profile data.
+         * @since v26.1.0
+         */
+        stop(): string;
+        /**
+         * Stopping collecting the profile and the profile will be discarded.
+         * @since v26.1.0
+         */
+        [Symbol.dispose](): void;
+    }
+    /**
+     * @since v24.8.0
+     */
+    interface CPUProfileHandle {
+        /**
+         * Stopping collecting the profile, then return a Promise that fulfills with an error or the
+         * profile data.
+         * @since v24.8.0
+         */
+        stop(): Promise<string>;
+        /**
+         * Stopping collecting the profile and the profile will be discarded.
+         * @since v24.8.0
+         */
+        [Symbol.asyncDispose](): Promise<void>;
+    }
+    /**
+     * @since v24.9.0
+     */
+    interface HeapProfileHandle {
+        /**
+         * Stopping collecting the profile, then return a Promise that fulfills with an error or the
+         * profile data.
+         * @since v24.9.0
+         */
+        stop(): Promise<string>;
+        /**
+         * Stopping collecting the profile and the profile will be discarded.
+         * @since v24.9.0
+         */
+        [Symbol.asyncDispose](): Promise<void>;
+    }
+    interface CPUProfileOptions {
+        /**
+         * Requested sampling interval in milliseconds. **Default:** `0`.
+         */
+        sampleInterval?: number | undefined;
+        /**
+         * Maximum number of samples to keep before older
+         * entries are discarded. **Default:** `4294967295`.
+         */
+        maxBufferSize?: number | undefined;
+    }
+    /**
+     * Starting a CPU profile then return a `SyncCPUProfileHandle` object.
+     * This API supports `using` syntax.
+     *
+     * ```js
+     * const handle = v8.startCpuProfile({ sampleInterval: 1, maxBufferSize: 10_000 });
+     * const profile = handle.stop();
+     * console.log(profile);
+     * ```
+     * @since v25.0.0
+     */
+    function startCpuProfile(options?: CPUProfileOptions): SyncCPUProfileHandle;
+    interface HeapProfileOptions {
+        /**
+         * The average sampling interval in bytes.
+         * **Default:** `524288` (512 KiB).
+         */
+        sampleInterval?: number | undefined;
+        /**
+         * The maximum stack depth for samples.
+         * **Default:** `16`.
+         */
+        stackDepth?: number | undefined;
+        /**
+         * Force garbage collection before taking the profile.
+         * **Default:** `false`.
+         */
+        forceGC?: boolean | undefined;
+        /**
+         * Include objects collected
+         * by major GC. **Default:** `false`.
+         */
+        includeObjectsCollectedByMajorGC?: boolean | undefined;
+        /**
+         * Include objects collected
+         * by minor GC. **Default:** `false`.
+         */
+        includeObjectsCollectedByMinorGC?: boolean | undefined;
+    }
+    /**
+     * Starting a heap profile then return a `SyncHeapProfileHandle` object.
+     * This API supports `using` syntax.
+     *
+     * ```js
+     * import v8 from 'node:v8';
+     *
+     * const handle = v8.startHeapProfile();
+     * const profile = handle.stop();
+     * console.log(profile);
+     * ```
+     *
+     * With custom parameters:
+     *
+     * ```js
+     * import v8 from 'node:v8';
+     *
+     * const handle = v8.startHeapProfile({
+     *   sampleInterval: 1024,
+     *   stackDepth: 8,
+     *   forceGC: true,
+     *   includeObjectsCollectedByMajorGC: true,
+     * });
+     * const profile = handle.stop();
+     * console.log(profile);
+     * ```
+     * @since v26.1.0
+     */
+    function startHeapProfile(options?: HeapProfileOptions): SyncHeapProfileHandle;
     /**
      * V8 only supports `Latin-1/ISO-8859-1` and `UTF16` as the underlying representation of a string.
      * If the `content` uses `Latin-1/ISO-8859-1` as the underlying representation, this function will return true;
@@ -431,7 +567,7 @@ declare module "v8" {
      * writeString('hello');
      * writeString('你好');
      * ```
-     * @since v22.15.0
+     * @since v23.10.0, v22.15.0
      */
     function isStringOneByteRepresentation(content: string): boolean;
     /**
@@ -581,7 +717,7 @@ declare module "v8" {
     function stopCoverage(): void;
     /**
      * The API is a no-op if `--heapsnapshot-near-heap-limit` is already set from the command line or the API is called more than once.
-     * `limit` must be a positive integer. See [`--heapsnapshot-near-heap-limit`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--heapsnapshot-near-heap-limitmax_count) for more information.
+     * `limit` must be a positive integer. See [`--heapsnapshot-near-heap-limit`](https://nodejs.org/docs/latest-v26.x/api/cli.html#--heapsnapshot-near-heap-limitmax_count) for more information.
      * @since v18.10.0, v16.18.0
      */
     function setHeapSnapshotNearHeapLimit(limit: number): void;
@@ -674,6 +810,11 @@ declare module "v8" {
          * @since v19.6.0, v18.15.0
          */
         stop(): GCProfilerResult;
+        /**
+         * Stop collecting GC data, and discard the profile.
+         * @since v25.5.0
+         */
+        [Symbol.dispose](): void;
     }
     interface GCProfilerResult {
         version: number;
@@ -821,8 +962,6 @@ declare module "v8" {
      * For example, if the `entry.js` contains the following script:
      *
      * ```js
-     * 'use strict';
-     *
      * import fs from 'node:fs';
      * import zlib from 'node:zlib';
      * import path from 'node:path';
@@ -915,6 +1054,6 @@ declare module "v8" {
         function isBuildingSnapshot(): boolean;
     }
 }
-declare module "node:v8" {
-    export * from "v8";
+declare module "v8" {
+    export * from "node:v8";
 }

@@ -1,86 +1,7 @@
-/**
- * The `node:test` module facilitates the creation of JavaScript tests.
- * To access it:
- *
- * ```js
- * import test from 'node:test';
- * ```
- *
- * This module is only available under the `node:` scheme. The following will not
- * work:
- *
- * ```js
- * import test from 'node:test';
- * ```
- *
- * Tests created via the `test` module consist of a single function that is
- * processed in one of three ways:
- *
- * 1. A synchronous function that is considered failing if it throws an exception,
- * and is considered passing otherwise.
- * 2. A function that returns a `Promise` that is considered failing if the `Promise` rejects, and is considered passing if the `Promise` fulfills.
- * 3. A function that receives a callback function. If the callback receives any
- * truthy value as its first argument, the test is considered failing. If a
- * falsy value is passed as the first argument to the callback, the test is
- * considered passing. If the test function receives a callback function and
- * also returns a `Promise`, the test will fail.
- *
- * The following example illustrates how tests are written using the `test` module.
- *
- * ```js
- * test('synchronous passing test', (t) => {
- *   // This test passes because it does not throw an exception.
- *   assert.strictEqual(1, 1);
- * });
- *
- * test('synchronous failing test', (t) => {
- *   // This test fails because it throws an exception.
- *   assert.strictEqual(1, 2);
- * });
- *
- * test('asynchronous passing test', async (t) => {
- *   // This test passes because the Promise returned by the async
- *   // function is settled and not rejected.
- *   assert.strictEqual(1, 1);
- * });
- *
- * test('asynchronous failing test', async (t) => {
- *   // This test fails because the Promise returned by the async
- *   // function is rejected.
- *   assert.strictEqual(1, 2);
- * });
- *
- * test('failing test using Promises', (t) => {
- *   // Promises can be used directly as well.
- *   return new Promise((resolve, reject) => {
- *     setImmediate(() => {
- *       reject(new Error('this will cause the test to fail'));
- *     });
- *   });
- * });
- *
- * test('callback passing test', (t, done) => {
- *   // done() is the callback function. When the setImmediate() runs, it invokes
- *   // done() with no arguments.
- *   setImmediate(done);
- * });
- *
- * test('callback failing test', (t, done) => {
- *   // When the setImmediate() runs, done() is invoked with an Error object and
- *   // the test fails.
- *   setImmediate(() => {
- *     done(new Error('callback failure'));
- *   });
- * });
- * ```
- *
- * If any tests fail, the process exit code is set to `1`.
- * @since v18.0.0, v16.17.0
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/test.js)
- */
 declare module "node:test" {
-    import { AssertMethodNames } from "node:assert";
-    import { Readable } from "node:stream";
+    import { AssertMethodNames, AssertPredicate } from "node:assert";
+    import { Readable, ReadableEventMap } from "node:stream";
+    import { TestEvent } from "node:test/reporters";
     import { URL } from "node:url";
     import TestFn = test.TestFn;
     import TestOptions = test.TestOptions;
@@ -190,6 +111,16 @@ declare module "node:test" {
             function only(name?: string, fn?: SuiteFn): Promise<void>;
             function only(options?: TestOptions, fn?: SuiteFn): Promise<void>;
             function only(fn?: SuiteFn): Promise<void>;
+            /**
+             * This flips the pass/fail reporting for a specific test or suite: a flagged test
+             * case must throw in order to pass, and a flagged test case that does not throw
+             * fails.
+             * @since v25.5.0
+             */
+            function expectFailure(name?: string, options?: TestOptions, fn?: SuiteFn): Promise<void>;
+            function expectFailure(name?: string, fn?: SuiteFn): Promise<void>;
+            function expectFailure(options?: TestOptions, fn?: SuiteFn): Promise<void>;
+            function expectFailure(fn?: SuiteFn): Promise<void>;
         }
         /**
          * Shorthand for skipping a test. This is the same as calling {@link test} with `options.skip` set to `true`.
@@ -215,6 +146,11 @@ declare module "node:test" {
         function only(name?: string, fn?: TestFn): Promise<void>;
         function only(options?: TestOptions, fn?: TestFn): Promise<void>;
         function only(fn?: TestFn): Promise<void>;
+        // added in v25.5.0, undocumented
+        function expectFailure(name?: string, options?: TestOptions, fn?: TestFn): Promise<void>;
+        function expectFailure(name?: string, fn?: TestFn): Promise<void>;
+        function expectFailure(options?: TestOptions, fn?: TestFn): Promise<void>;
+        function expectFailure(fn?: TestFn): Promise<void>;
         /**
          * The type of a function passed to {@link test}. The first argument to this function is a {@link TestContext} object.
          * If the test uses callbacks, the callback function is passed as the second argument.
@@ -236,14 +172,22 @@ declare module "node:test" {
         }
         interface RunOptions {
             /**
-             * If a number is provided, then that many test processes would run in parallel, where each process corresponds to one test file.
+             * If a number is provided, then that many tests would run asynchronously (they are still managed by the single-threaded event loop).
              * If `true`, it would run `os.availableParallelism() - 1` test files in parallel. If `false`, it would only run one test file at a time.
              * @default false
              */
             concurrency?: number | boolean | undefined;
             /**
-             * An array containing the list of files to run.
-             * **Default:** Same as [running tests from the command line](https://nodejs.org/docs/latest-v22.x/api/test.html#running-tests-from-the-command-line).
+             * Specifies the current working directory to be used by the test runner.
+             * Serves as the base path for resolving files according to the
+             * [test runner execution model](https://nodejs.org/docs/latest-v26.x/api/test.html#test-runner-execution-model).
+             * @since v23.0.0
+             * @default process.cwd()
+             */
+            cwd?: string | undefined;
+            /**
+             * An array containing the list of files to run. If omitted, files are run according to the
+             * [test runner execution model](https://nodejs.org/docs/latest-v26.x/api/test.html#test-runner-execution-model).
              */
             files?: readonly string[] | undefined;
             /**
@@ -255,8 +199,8 @@ declare module "node:test" {
             forceExit?: boolean | undefined;
             /**
              * An array containing the list of glob patterns to match test files.
-             * This option cannot be used together with `files`.
-             * **Default:** Same as [running tests from the command line](https://nodejs.org/docs/latest-v22.x/api/test.html#running-tests-from-the-command-line).
+             * This option cannot be used together with `files`. If omitted, files are run according to the
+             * [test runner execution model](https://nodejs.org/docs/latest-v26.x/api/test.html#test-runner-execution-model).
              * @since v22.6.0
              */
             globPatterns?: readonly string[] | undefined;
@@ -321,6 +265,15 @@ declare module "node:test" {
              */
             testSkipPatterns?: string | RegExp | ReadonlyArray<string | RegExp> | undefined;
             /**
+             * A tag name, or an array of tag names,
+             * used to filter tests by their declared tags. Tests must contain every
+             * listed tag to run. Equivalent to passing `--experimental-test-tag-filter`
+             * on the command line. See [Test tags](https://nodejs.org/docs/latest-v26.x/api/test.html#test-tags).
+             * @default undefined
+             * @since v26.2.0
+             */
+            testTagFilters?: string | readonly string[] | undefined;
+            /**
              * The number of milliseconds after which the test execution will fail.
              * If unspecified, subtests inherit this value from their parent.
              * @default Infinity
@@ -337,7 +290,28 @@ declare module "node:test" {
              */
             shard?: TestShard | undefined;
             /**
-             * enable [code coverage](https://nodejs.org/docs/latest-v22.x/api/test.html#collecting-code-coverage) collection.
+             * Randomize execution order for test files and queued tests.
+             * This option is not supported with `watch: true`.
+             * @since v26.1.0
+             * @default false
+             */
+            randomize?: boolean | undefined;
+            /**
+             * Seed used when randomizing execution order. If this
+             * option is set, runs can replay the same randomized order deterministically,
+             * and setting this option also enables randomization. The value must be an
+             * integer between `0` and `4294967295`.
+             */
+            randomSeed?: number | undefined;
+            /**
+             * A file path where the test runner will
+             * store the state of the tests to allow rerunning only the failed tests on a next run.
+             * @since v24.7.0
+             * @default undefined
+             */
+            rerunFailuresFilePath?: string | undefined;
+            /**
+             * enable [code coverage](https://nodejs.org/docs/latest-v26.x/api/test.html#collecting-code-coverage) collection.
              * @since v22.10.0
              * @default false
              */
@@ -383,6 +357,32 @@ declare module "node:test" {
              * @default 0
              */
             functionCoverage?: number | undefined;
+            /**
+             * Specify environment variables to be passed along to the test process.
+             * This option is not compatible with `isolation='none'`. These variables will override
+             * those from the main process, and are not merged with `process.env`.
+             * @since v25.6.0
+             * @default process.env
+             */
+            env?: NodeJS.ProcessEnv | undefined;
+        }
+        interface TestsStreamEventMap extends ReadableEventMap {
+            "data": [data: TestEvent];
+            "test:coverage": [data: EventData.TestCoverage];
+            "test:complete": [data: EventData.TestComplete];
+            "test:dequeue": [data: EventData.TestDequeue];
+            "test:diagnostic": [data: EventData.TestDiagnostic];
+            "test:enqueue": [data: EventData.TestEnqueue];
+            "test:fail": [data: EventData.TestFail];
+            "test:interrupted": [data: EventData.TestInterrupted];
+            "test:pass": [data: EventData.TestPass];
+            "test:plan": [data: EventData.TestPlan];
+            "test:start": [data: EventData.TestStart];
+            "test:stderr": [data: EventData.TestStderr];
+            "test:stdout": [data: EventData.TestStdout];
+            "test:summary": [data: EventData.TestSummary];
+            "test:watch:drained": [];
+            "test:watch:restarted": [];
         }
         /**
          * A successful call to `run()` will return a new `TestsStream` object, streaming a series of events representing the execution of the tests.
@@ -391,94 +391,63 @@ declare module "node:test" {
          * @since v18.9.0, v16.19.0
          */
         interface TestsStream extends Readable {
-            addListener(event: "test:coverage", listener: (data: EventData.TestCoverage) => void): this;
-            addListener(event: "test:complete", listener: (data: EventData.TestComplete) => void): this;
-            addListener(event: "test:dequeue", listener: (data: EventData.TestDequeue) => void): this;
-            addListener(event: "test:diagnostic", listener: (data: EventData.TestDiagnostic) => void): this;
-            addListener(event: "test:enqueue", listener: (data: EventData.TestEnqueue) => void): this;
-            addListener(event: "test:fail", listener: (data: EventData.TestFail) => void): this;
-            addListener(event: "test:pass", listener: (data: EventData.TestPass) => void): this;
-            addListener(event: "test:plan", listener: (data: EventData.TestPlan) => void): this;
-            addListener(event: "test:start", listener: (data: EventData.TestStart) => void): this;
-            addListener(event: "test:stderr", listener: (data: EventData.TestStderr) => void): this;
-            addListener(event: "test:stdout", listener: (data: EventData.TestStdout) => void): this;
-            addListener(event: "test:summary", listener: (data: EventData.TestSummary) => void): this;
-            addListener(event: "test:watch:drained", listener: () => void): this;
-            addListener(event: string, listener: (...args: any[]) => void): this;
-            emit(event: "test:coverage", data: EventData.TestCoverage): boolean;
-            emit(event: "test:complete", data: EventData.TestComplete): boolean;
-            emit(event: "test:dequeue", data: EventData.TestDequeue): boolean;
-            emit(event: "test:diagnostic", data: EventData.TestDiagnostic): boolean;
-            emit(event: "test:enqueue", data: EventData.TestEnqueue): boolean;
-            emit(event: "test:fail", data: EventData.TestFail): boolean;
-            emit(event: "test:pass", data: EventData.TestPass): boolean;
-            emit(event: "test:plan", data: EventData.TestPlan): boolean;
-            emit(event: "test:start", data: EventData.TestStart): boolean;
-            emit(event: "test:stderr", data: EventData.TestStderr): boolean;
-            emit(event: "test:stdout", data: EventData.TestStdout): boolean;
-            emit(event: "test:summary", data: EventData.TestSummary): boolean;
-            emit(event: "test:watch:drained"): boolean;
-            emit(event: string | symbol, ...args: any[]): boolean;
-            on(event: "test:coverage", listener: (data: EventData.TestCoverage) => void): this;
-            on(event: "test:complete", listener: (data: EventData.TestComplete) => void): this;
-            on(event: "test:dequeue", listener: (data: EventData.TestDequeue) => void): this;
-            on(event: "test:diagnostic", listener: (data: EventData.TestDiagnostic) => void): this;
-            on(event: "test:enqueue", listener: (data: EventData.TestEnqueue) => void): this;
-            on(event: "test:fail", listener: (data: EventData.TestFail) => void): this;
-            on(event: "test:pass", listener: (data: EventData.TestPass) => void): this;
-            on(event: "test:plan", listener: (data: EventData.TestPlan) => void): this;
-            on(event: "test:start", listener: (data: EventData.TestStart) => void): this;
-            on(event: "test:stderr", listener: (data: EventData.TestStderr) => void): this;
-            on(event: "test:stdout", listener: (data: EventData.TestStdout) => void): this;
-            on(event: "test:summary", listener: (data: EventData.TestSummary) => void): this;
-            on(event: "test:watch:drained", listener: () => void): this;
-            on(event: string, listener: (...args: any[]) => void): this;
-            once(event: "test:coverage", listener: (data: EventData.TestCoverage) => void): this;
-            once(event: "test:complete", listener: (data: EventData.TestComplete) => void): this;
-            once(event: "test:dequeue", listener: (data: EventData.TestDequeue) => void): this;
-            once(event: "test:diagnostic", listener: (data: EventData.TestDiagnostic) => void): this;
-            once(event: "test:enqueue", listener: (data: EventData.TestEnqueue) => void): this;
-            once(event: "test:fail", listener: (data: EventData.TestFail) => void): this;
-            once(event: "test:pass", listener: (data: EventData.TestPass) => void): this;
-            once(event: "test:plan", listener: (data: EventData.TestPlan) => void): this;
-            once(event: "test:start", listener: (data: EventData.TestStart) => void): this;
-            once(event: "test:stderr", listener: (data: EventData.TestStderr) => void): this;
-            once(event: "test:stdout", listener: (data: EventData.TestStdout) => void): this;
-            once(event: "test:summary", listener: (data: EventData.TestSummary) => void): this;
-            once(event: "test:watch:drained", listener: () => void): this;
-            once(event: string, listener: (...args: any[]) => void): this;
-            prependListener(event: "test:coverage", listener: (data: EventData.TestCoverage) => void): this;
-            prependListener(event: "test:complete", listener: (data: EventData.TestComplete) => void): this;
-            prependListener(event: "test:dequeue", listener: (data: EventData.TestDequeue) => void): this;
-            prependListener(event: "test:diagnostic", listener: (data: EventData.TestDiagnostic) => void): this;
-            prependListener(event: "test:enqueue", listener: (data: EventData.TestEnqueue) => void): this;
-            prependListener(event: "test:fail", listener: (data: EventData.TestFail) => void): this;
-            prependListener(event: "test:pass", listener: (data: EventData.TestPass) => void): this;
-            prependListener(event: "test:plan", listener: (data: EventData.TestPlan) => void): this;
-            prependListener(event: "test:start", listener: (data: EventData.TestStart) => void): this;
-            prependListener(event: "test:stderr", listener: (data: EventData.TestStderr) => void): this;
-            prependListener(event: "test:stdout", listener: (data: EventData.TestStdout) => void): this;
-            prependListener(event: "test:summary", listener: (data: EventData.TestSummary) => void): this;
-            prependListener(event: "test:watch:drained", listener: () => void): this;
-            prependListener(event: string, listener: (...args: any[]) => void): this;
-            prependOnceListener(event: "test:coverage", listener: (data: EventData.TestCoverage) => void): this;
-            prependOnceListener(event: "test:complete", listener: (data: EventData.TestComplete) => void): this;
-            prependOnceListener(event: "test:dequeue", listener: (data: EventData.TestDequeue) => void): this;
-            prependOnceListener(event: "test:diagnostic", listener: (data: EventData.TestDiagnostic) => void): this;
-            prependOnceListener(event: "test:enqueue", listener: (data: EventData.TestEnqueue) => void): this;
-            prependOnceListener(event: "test:fail", listener: (data: EventData.TestFail) => void): this;
-            prependOnceListener(event: "test:pass", listener: (data: EventData.TestPass) => void): this;
-            prependOnceListener(event: "test:plan", listener: (data: EventData.TestPlan) => void): this;
-            prependOnceListener(event: "test:start", listener: (data: EventData.TestStart) => void): this;
-            prependOnceListener(event: "test:stderr", listener: (data: EventData.TestStderr) => void): this;
-            prependOnceListener(event: "test:stdout", listener: (data: EventData.TestStdout) => void): this;
-            prependOnceListener(event: "test:summary", listener: (data: EventData.TestSummary) => void): this;
-            prependOnceListener(event: "test:watch:drained", listener: () => void): this;
-            prependOnceListener(event: string, listener: (...args: any[]) => void): this;
+            // #region InternalEventEmitter
+            addListener<E extends keyof TestsStreamEventMap>(
+                eventName: E,
+                listener: (...args: TestsStreamEventMap[E]) => void,
+            ): this;
+            addListener(eventName: string | symbol, listener: (...args: any[]) => void): this;
+            emit<E extends keyof TestsStreamEventMap>(eventName: E, ...args: TestsStreamEventMap[E]): boolean;
+            emit(eventName: string | symbol, ...args: any[]): boolean;
+            listenerCount<E extends keyof TestsStreamEventMap>(
+                eventName: E,
+                listener?: (...args: TestsStreamEventMap[E]) => void,
+            ): number;
+            listenerCount(eventName: string | symbol, listener?: (...args: any[]) => void): number;
+            listeners<E extends keyof TestsStreamEventMap>(eventName: E): ((...args: TestsStreamEventMap[E]) => void)[];
+            listeners(eventName: string | symbol): ((...args: any[]) => void)[];
+            off<E extends keyof TestsStreamEventMap>(
+                eventName: E,
+                listener: (...args: TestsStreamEventMap[E]) => void,
+            ): this;
+            off(eventName: string | symbol, listener: (...args: any[]) => void): this;
+            on<E extends keyof TestsStreamEventMap>(
+                eventName: E,
+                listener: (...args: TestsStreamEventMap[E]) => void,
+            ): this;
+            on(eventName: string | symbol, listener: (...args: any[]) => void): this;
+            once<E extends keyof TestsStreamEventMap>(
+                eventName: E,
+                listener: (...args: TestsStreamEventMap[E]) => void,
+            ): this;
+            once(eventName: string | symbol, listener: (...args: any[]) => void): this;
+            prependListener<E extends keyof TestsStreamEventMap>(
+                eventName: E,
+                listener: (...args: TestsStreamEventMap[E]) => void,
+            ): this;
+            prependListener(eventName: string | symbol, listener: (...args: any[]) => void): this;
+            prependOnceListener<E extends keyof TestsStreamEventMap>(
+                eventName: E,
+                listener: (...args: TestsStreamEventMap[E]) => void,
+            ): this;
+            prependOnceListener(eventName: string | symbol, listener: (...args: any[]) => void): this;
+            rawListeners<E extends keyof TestsStreamEventMap>(
+                eventName: E,
+            ): ((...args: TestsStreamEventMap[E]) => void)[];
+            rawListeners(eventName: string | symbol): ((...args: any[]) => void)[];
+            // eslint-disable-next-line @definitelytyped/no-unnecessary-generics
+            removeAllListeners<E extends keyof TestsStreamEventMap>(eventName?: E): this;
+            removeAllListeners(eventName?: string | symbol): this;
+            removeListener<E extends keyof TestsStreamEventMap>(
+                eventName: E,
+                listener: (...args: TestsStreamEventMap[E]) => void,
+            ): this;
+            removeListener(eventName: string | symbol, listener: (...args: any[]) => void): this;
+            // #endregion
         }
         namespace EventData {
             interface Error extends globalThis.Error {
-                cause: globalThis.Error;
+                cause: unknown;
             }
             interface LocationInfo {
                 /**
@@ -698,7 +667,7 @@ declare module "node:test" {
                     /**
                      * The type of the test, used to denote whether this is a suite.
                      */
-                    type?: "suite";
+                    type?: "suite" | "test";
                 };
                 /**
                  * The test name.
@@ -708,6 +677,24 @@ declare module "node:test" {
                  * The nesting level of the test.
                  */
                 nesting: number;
+                /**
+                 * The `testId` of the enclosing test, or
+                 * `undefined` for top-level tests. Lets custom reporters track lineage
+                 * when concurrent siblings at the same nesting level interleave.
+                 */
+                parentId: number | undefined;
+                /**
+                 * The flattened lowercased tags declared on the test
+                 * and its ancestor suites, in declaration order. Empty for untagged tests.
+                 * See [Test tags](https://nodejs.org/docs/latest-v26.x/api/test.html#test-tags).
+                 */
+                tags: string[];
+                /**
+                 * A numeric identifier for this test instance, unique
+                 * within the test file's process. Consistent across all events for the same
+                 * test instance, enabling reliable correlation in custom reporters.
+                 */
+                testId: number;
                 /**
                  * The ordinal number of the test.
                  */
@@ -731,6 +718,24 @@ declare module "node:test" {
                  */
                 nesting: number;
                 /**
+                 * The `testId` of the enclosing test, or
+                 * `undefined` for top-level tests. Lets custom reporters track lineage
+                 * when concurrent siblings at the same nesting level interleave.
+                 */
+                parentId: number | undefined;
+                /**
+                 * The flattened lowercased tags declared on the test
+                 * and its ancestor suites, in declaration order. Empty for untagged tests.
+                 * See [Test tags](https://nodejs.org/docs/latest-v26.x/api/test.html#test-tags).
+                 */
+                tags: string[];
+                /**
+                 * A numeric identifier for this test instance, unique
+                 * within the test file's process. Consistent across all events for the same
+                 * test instance, enabling reliable correlation in custom reporters.
+                 */
+                testId: number;
+                /**
                  * The test type. Either `'suite'` or `'test'`.
                  * @since v22.15.0
                  */
@@ -745,6 +750,24 @@ declare module "node:test" {
                  * The nesting level of the test.
                  */
                 nesting: number;
+                /**
+                 * The `testId` of the enclosing test, or
+                 * `undefined` for top-level tests. Lets custom reporters track lineage
+                 * when concurrent siblings at the same nesting level interleave.
+                 */
+                parentId: number | undefined;
+                /**
+                 * The flattened lowercased tags declared on the test
+                 * and its ancestor suites, in declaration order. Empty for untagged tests.
+                 * See [Test tags](https://nodejs.org/docs/latest-v26.x/api/test.html#test-tags).
+                 */
+                tags: string[];
+                /**
+                 * A numeric identifier for this test instance, unique
+                 * within the test file's process. Consistent across all events for the same
+                 * test instance, enabling reliable correlation in custom reporters.
+                 */
+                testId: number;
                 /**
                  * The test type. Either `'suite'` or `'test'`.
                  * @since v22.15.0
@@ -768,7 +791,13 @@ declare module "node:test" {
                      * The type of the test, used to denote whether this is a suite.
                      * @since v20.0.0, v19.9.0, v18.17.0
                      */
-                    type?: "suite";
+                    type?: "suite" | "test";
+                    /**
+                     * The attempt number of the test run,
+                     * present only when using the `--test-rerun-failures` flag.
+                     * @since v24.7.0
+                     */
+                    attempt?: number;
                 };
                 /**
                  * The test name.
@@ -778,6 +807,24 @@ declare module "node:test" {
                  * The nesting level of the test.
                  */
                 nesting: number;
+                /**
+                 * The `testId` of the enclosing test, or
+                 * `undefined` for top-level tests. Lets custom reporters track lineage
+                 * when concurrent siblings at the same nesting level interleave.
+                 */
+                parentId: number | undefined;
+                /**
+                 * The flattened lowercased tags declared on the test
+                 * and its ancestor suites, in declaration order. Empty for untagged tests.
+                 * See [Test tags](https://nodejs.org/docs/latest-v26.x/api/test.html#test-tags).
+                 */
+                tags: string[];
+                /**
+                 * A numeric identifier for this test instance, unique
+                 * within the test file's process. Consistent across all events for the same
+                 * test instance, enabling reliable correlation in custom reporters.
+                 */
+                testId: number;
                 /**
                  * The ordinal number of the test.
                  */
@@ -790,6 +837,13 @@ declare module "node:test" {
                  * Present if `context.skip` is called.
                  */
                 skip?: string | boolean;
+            }
+            interface TestInterrupted {
+                /**
+                 * An array of objects containing information about the
+                 * interrupted tests.
+                 */
+                tests: TestStart[];
             }
             interface TestPass extends LocationInfo {
                 /**
@@ -804,7 +858,19 @@ declare module "node:test" {
                      * The type of the test, used to denote whether this is a suite.
                      * @since 20.0.0, 19.9.0, 18.17.0
                      */
-                    type?: "suite";
+                    type?: "suite" | "test";
+                    /**
+                     * The attempt number of the test run,
+                     * present only when using the `--test-rerun-failures` flag.
+                     * @since v24.7.0
+                     */
+                    attempt?: number;
+                    /**
+                     * The attempt number the test passed on,
+                     * present only when using the `--test-rerun-failures` flag.
+                     * @since v24.7.0
+                     */
+                    passed_on_attempt?: number;
                 };
                 /**
                  * The test name.
@@ -814,6 +880,24 @@ declare module "node:test" {
                  * The nesting level of the test.
                  */
                 nesting: number;
+                /**
+                 * The `testId` of the enclosing test, or
+                 * `undefined` for top-level tests. Lets custom reporters track lineage
+                 * when concurrent siblings at the same nesting level interleave.
+                 */
+                parentId: number | undefined;
+                /**
+                 * The flattened lowercased tags declared on the test
+                 * and its ancestor suites, in declaration order. Empty for untagged tests.
+                 * See [Test tags](https://nodejs.org/docs/latest-v26.x/api/test.html#test-tags).
+                 */
+                tags: string[];
+                /**
+                 * A numeric identifier for this test instance, unique
+                 * within the test file's process. Consistent across all events for the same
+                 * test instance, enabling reliable correlation in custom reporters.
+                 */
+                testId: number;
                 /**
                  * The ordinal number of the test.
                  */
@@ -846,6 +930,24 @@ declare module "node:test" {
                  * The nesting level of the test.
                  */
                 nesting: number;
+                /**
+                 * The `testId` of the enclosing test, or
+                 * `undefined` for top-level tests. Lets custom reporters track lineage
+                 * when concurrent siblings at the same nesting level interleave.
+                 */
+                parentId: number | undefined;
+                /**
+                 * The flattened lowercased tags declared on the test
+                 * and its ancestor suites, in declaration order. Empty for untagged tests.
+                 * See [Test tags](https://nodejs.org/docs/latest-v26.x/api/test.html#test-tags).
+                 */
+                tags: string[];
+                /**
+                 * A numeric identifier for this test instance, unique
+                 * within the test file's process. Consistent across all events for the same
+                 * test instance, enabling reliable correlation in custom reporters.
+                 */
+                testId: number;
             }
             interface TestStderr {
                 /**
@@ -919,6 +1021,39 @@ declare module "node:test" {
                 success: boolean;
             }
         }
+        /**
+         * Returns the {@link TestContext} or {@link SuiteContext} object associated with the
+         * currently executing test or suite, or `undefined` if called outside of a test or
+         * suite. This function can be used to access context information from within the
+         * test or suite function or any async operations within them.
+
+         * ```js
+         * import { getTestContext } from 'node:test';
+         *
+         * test('example test', async () => {
+         *   const ctx = getTestContext();
+         *   console.log(`Running test: ${ctx.name}`);
+         * });
+         *
+         * describe('example suite', () => {
+         *   const ctx = getTestContext();
+         *   console.log(`Running suite: ${ctx.name}`);
+         * });
+         * ```
+         *
+         * When called from a test, returns a `TestContext`.
+         * When called from a suite, returns a `SuiteContext`.
+         *
+         * If called from outside a test or suite (e.g., at the top level of a module or in
+         * a setTimeout callback after execution has completed), this function returns
+         * `undefined`.
+         *
+         * When called from within a hook (before, beforeEach, after, afterEach), this
+         * function returns the context of the test or suite that the hook is associated
+         * with.
+         * @since v26.1.0
+         */
+        function getTestContext(): TestContext | SuiteContext | undefined;
         /**
          * An instance of `TestContext` is passed to each test function in order to
          * interact with the test runner. However, the `TestContext` constructor is not
@@ -1011,6 +1146,58 @@ declare module "node:test" {
              * @since v18.8.0, v16.18.0
              */
             readonly name: string;
+            /**
+             * Indicated whether the test succeeded.
+             * @since v21.7.0, v20.12.0
+             */
+            readonly passed: boolean;
+            /**
+             * The failure reason for the test/case; wrapped and available via `context.error.cause`.
+             * @since v21.7.0, v20.12.0
+             */
+            readonly error: EventData.Error | null;
+            /**
+             * The attempt number of the test. This value is zero-based, so the first attempt is `0`,
+             * the second attempt is `1`, and so on. This property is useful in conjunction with the
+             * `--test-rerun-failures` option to determine which attempt the test is currently running.
+             * @since v21.7.0, v20.12.0
+             */
+            readonly attempt: number;
+            /**
+             * A frozen array of the test's flattened lowercased tags, in declaration
+             * order, including any tags inherited from ancestor suites. Empty when the
+             * test has no tags. See [Test tags](https://nodejs.org/docs/latest-v26.x/api/test.html#test-tags).
+             * @since v26.2.0
+             */
+            readonly tags: readonly string[];
+            /**
+             * The unique identifier of the worker running the current test file. This value is
+             * derived from the `NODE_TEST_WORKER_ID` environment variable. When running tests
+             * with `--test-isolation=process` (the default), each test file runs in a separate
+             * child process and is assigned a worker ID from 1 to N, where N is the number of
+             * concurrent workers. When running with `--test-isolation=none`, all tests run in
+             * the same process and the worker ID is always 1. This value is `undefined` when
+             * not running in a test context.
+             *
+             * This property is useful for splitting resources (like database connections or
+             * server ports) across concurrent test files:
+             *
+             * ```js
+             * import { test } from 'node:test';
+             * import { process } from 'node:process';
+             *
+             * test('database operations', async (t) => {
+             *   // Worker ID is available via context
+             *   console.log(`Running in worker ${t.workerId}`);
+             *
+             *   // Or via environment variable (available at import time)
+             *   const workerId = process.env.NODE_TEST_WORKER_ID;
+             *   // Use workerId to allocate separate resources per worker
+             * });
+             * ```
+             * @since v25.8.0
+             */
+            readonly workerId: number | undefined;
             /**
              * This function is used to set the number of assertions and subtests that are expected to run
              * within the test. If the number of assertions and subtests that run does not match the
@@ -1179,7 +1366,7 @@ declare module "node:test" {
              * highlighting.
              * @since v22.14.0
              * @param value A value to serialize to a string. If Node.js was started with
-             * the [`--test-update-snapshots`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--test-update-snapshots)
+             * the [`--test-update-snapshots`](https://nodejs.org/docs/latest-v26.x/api/cli.html#--test-update-snapshots)
              * flag, the serialized value is written to
              * `path`. Otherwise, the serialized value is compared to the contents of the
              * existing snapshot file.
@@ -1202,7 +1389,7 @@ declare module "node:test" {
              * ```
              * @since v22.3.0
              * @param value A value to serialize to a string. If Node.js was started with
-             * the [`--test-update-snapshots`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--test-update-snapshots)
+             * the [`--test-update-snapshots`](https://nodejs.org/docs/latest-v26.x/api/cli.html#--test-update-snapshots)
              * flag, the serialized value is written to
              * the snapshot file. Otherwise, the serialized value is compared to the
              * corresponding value in the existing snapshot file.
@@ -1266,6 +1453,11 @@ declare module "node:test" {
              */
             readonly filePath: string | undefined;
             /**
+             * The name of the suite and each of its ancestors, separated by `>`.
+             * @since v22.3.0, v20.16.0
+             */
+            readonly fullName: string;
+            /**
              * The name of the suite.
              * @since v18.8.0, v16.18.0
              */
@@ -1275,6 +1467,31 @@ declare module "node:test" {
              * @since v18.7.0, v16.17.0
              */
             readonly signal: AbortSignal;
+            /**
+             * Indicates whether the suite and all of its subtests have passed.
+             * @since v26.1.0
+             */
+            readonly passed: boolean;
+            /**
+             * The attempt number of the suite. This value is zero-based, so the first attempt is `0`,
+             * the second attempt is `1`, and so on. This property is useful in conjunction with the
+             * `--test-rerun-failures` option to determine the attempt number of the current run.
+             * @since v26.1.0
+             */
+            readonly attempt: number;
+            /**
+             * Output a diagnostic message. This is typically used for logging information
+             * about the current suite or its tests.
+             *
+             * ```js
+             * test.describe('my suite', (suite) => {
+             *   suite.diagnostic('Suite diagnostic message');
+             * });
+             * ```
+             * @since v26.1.0
+             * @param message A diagnostic message to output.
+             */
+            diagnostic(message: string): void;
         }
         interface TestOptions {
             /**
@@ -1286,6 +1503,17 @@ declare module "node:test" {
              * @default false
              */
             concurrency?: number | boolean | undefined;
+            /**
+             * If truthy, the test is expected to fail. If a non-empty string is provided, that string is displayed
+             * in the test results as the reason why the test is expected to fail. If a
+             * `RegExp`, `Function`, `Object`, or `Error` is provided directly (without wrapping in `{ match: … }`), the test passes
+             * only if the thrown error matches, following the behavior of
+             * `assert.throws`. To provide both a reason and validation, pass an object
+             * with `label` (string) and `match` (RegExp, Function, Object, or Error).
+             * @since v25.5.0
+             * @default false
+             */
+            expectFailure?: boolean | string | AssertPredicate | undefined;
             /**
              * If truthy, and the test context is configured to run `only` tests, then this test will be
              * run. Otherwise, the test is skipped.
@@ -1303,6 +1531,15 @@ declare module "node:test" {
              * @default false
              */
             skip?: boolean | string | undefined;
+            /**
+             * An array of string labels associated with the test.
+             * Used together with `--experimental-test-tag-filter` to filter which
+             * tests run. Tags inherit from suites to nested tests by union. See
+             * [Test tags](https://nodejs.org/docs/latest-v26.x/api/test.html#test-tags).
+             * @default []
+             * @since v26.2.0
+             */
+            tags?: readonly string[] | undefined;
             /**
              * A number of milliseconds the test will fail after. If unspecified, subtests inherit this
              * value from their parent.
@@ -1332,7 +1569,7 @@ declare module "node:test" {
          * describe('tests', async () => {
          *   before(() => console.log('about to run some test'));
          *   it('is a subtest', () => {
-         *     assert.ok('some relevant assertion here');
+         *     // Some relevant assertion here
          *   });
          * });
          * ```
@@ -1348,7 +1585,7 @@ declare module "node:test" {
          * describe('tests', async () => {
          *   after(() => console.log('finished running tests'));
          *   it('is a subtest', () => {
-         *     assert.ok('some relevant assertion here');
+         *     // Some relevant assertion here
          *   });
          * });
          * ```
@@ -1364,7 +1601,7 @@ declare module "node:test" {
          * describe('tests', async () => {
          *   beforeEach(() => console.log('about to run a test'));
          *   it('is a subtest', () => {
-         *     assert.ok('some relevant assertion here');
+         *     // Some relevant assertion here
          *   });
          * });
          * ```
@@ -1381,7 +1618,7 @@ declare module "node:test" {
          * describe('tests', async () => {
          *   afterEach(() => console.log('finished running a test'));
          *   it('is a subtest', () => {
-         *     assert.ok('some relevant assertion here');
+         *     // Some relevant assertion here
          *   });
          * });
          * ```
@@ -1449,19 +1686,40 @@ declare module "node:test" {
              */
             cache?: boolean | undefined;
             /**
-             * The value to use as the mocked module's default export.
-             *
-             * If this value is not provided, ESM mocks do not include a default export.
-             * If the mock is a CommonJS or builtin module, this setting is used as the value of `module.exports`.
-             * If this value is not provided, CJS and builtin mocks use an empty object as the value of `module.exports`.
+             * Optional mocked exports. The `default` property, if
+             * provided, is used as the mocked module's default export. All other own
+             * enumerable properties are used as named exports.
+             * **This option cannot be used with `defaultExport` or `namedExports`.**
+             * * If the mock is a CommonJS or builtin module, `exports.default` is used as
+             *   the value of `module.exports`.
+             * * If `exports.default` is not provided for a CommonJS or builtin mock,
+             *   `module.exports` defaults to an empty object.
+             * * If named exports are provided with a non-object default export, the mock
+             *   throws an exception when used as a CommonJS or builtin module.
+             */
+            exports?: object | undefined;
+            /**
+             * An optional value used as the mocked module's default
+             * export. If this value is not provided, ESM mocks do not include a default
+             * export. If the mock is a CommonJS or builtin module, this setting is used as
+             * the value of `module.exports`. If this value is not provided, CJS and builtin
+             * mocks use an empty object as the value of `module.exports`.
+             * **This option cannot be used with `options.exports`.**
+             * This option is deprecated and will be removed in a later version.
+             * Prefer `options.exports.default`.
+             * @deprecated
              */
             defaultExport?: any;
             /**
-             * An object whose keys and values are used to create the named exports of the mock module.
-             *
-             * If the mock is a CommonJS or builtin module, these values are copied onto `module.exports`.
-             * Therefore, if a mock is created with both named exports and a non-object default export,
-             * the mock will throw an exception when used as a CJS or builtin module.
+             * An optional object whose keys and values are used to
+             * create the named exports of the mock module. If the mock is a CommonJS or
+             * builtin module, these values are copied onto `module.exports`. Therefore, if a
+             * mock is created with both named exports and a non-object default export, the
+             * mock will throw an exception when used as a CJS or builtin module.
+             * **This option cannot be used with `options.exports`.**
+             * This option is deprecated and will be removed in a later version.
+             * Prefer `options.exports`.
+             * @deprecated
              */
             namedExports?: object | undefined;
         }
@@ -1630,10 +1888,48 @@ declare module "node:test" {
                 options?: MockFunctionOptions,
             ): Mock<((value: MockedObject[MethodName]) => void) | Implementation>;
             /**
-             * This function is used to mock the exports of ECMAScript modules, CommonJS modules, and Node.js builtin modules.
-             * Any references to the original module prior to mocking are not impacted.
+             * This function is used to mock the exports of ECMAScript modules, CommonJS modules, JSON modules, and
+             * Node.js builtin modules. Any references to the original module prior to mocking are not impacted. In
+             * order to enable module mocking, Node.js must be started with the
+             * [`--experimental-test-module-mocks`](https://nodejs.org/docs/latest-v26.x/api/cli.html#--experimental-test-module-mocks)
+             * command-line flag.
              *
-             * Only available through the [--experimental-test-module-mocks](https://nodejs.org/api/cli.html#--experimental-test-module-mocks) flag.
+             * **Note**: [module customization hooks](https://nodejs.org/docs/latest-v26.x/api/module.html#customization-hooks) registered via the **synchronous** API effect resolution of
+             * the `specifier` provided to `mock.module`. Customization hooks registered via the **asynchronous**
+             * API are currently ignored (because the test runner's loader is synchronous, and node does not
+             * support multi-chain / cross-chain loading).
+             *
+             * The following example demonstrates how a mock is created for a module.
+             *
+             * ```js
+             * test('mocks a builtin module in both module systems', async (t) => {
+             *   // Create a mock of 'node:readline' with a named export named 'foo', which
+             *   // does not exist in the original 'node:readline' module.
+             *   const mock = t.mock.module('node:readline', {
+             *     exports: { foo: () => 42 },
+             *   });
+             *
+             *   let esmImpl = await import('node:readline');
+             *   let cjsImpl = require('node:readline');
+             *
+             *   // cursorTo() is an export of the original 'node:readline' module.
+             *   assert.strictEqual(esmImpl.cursorTo, undefined);
+             *   assert.strictEqual(cjsImpl.cursorTo, undefined);
+             *   assert.strictEqual(esmImpl.fn(), 42);
+             *   assert.strictEqual(cjsImpl.fn(), 42);
+             *
+             *   mock.restore();
+             *
+             *   // The mock is restored, so the original builtin module is returned.
+             *   esmImpl = await import('node:readline');
+             *   cjsImpl = require('node:readline');
+             *
+             *   assert.strictEqual(typeof esmImpl.cursorTo, 'function');
+             *   assert.strictEqual(typeof cjsImpl.cursorTo, 'function');
+             *   assert.strictEqual(esmImpl.fn, undefined);
+             *   assert.strictEqual(cjsImpl.fn, undefined);
+             * });
+             * ```
              * @since v22.3.0
              * @experimental
              * @param specifier A string identifying the module to mock.
@@ -1663,14 +1959,14 @@ declare module "node:test" {
              *   assert.strictEqual(obj.foo, 42);
              * });
              * ```
-             * @since v22.20.0
+             * @since v24.3.0
              * @param object The object whose value is being mocked.
              * @param propertyName The identifier of the property on `object` to mock.
              * @param value An optional value used as the mock value
              * for `object[propertyName]`. **Default:** The original property value.
              * @returns A proxy to the mocked object. The mocked object contains a
-             * special `mock` property, which is an instance of [`MockPropertyContext`](https://nodejs.org/docs/latest-v22.x/api/test.html#class-mockpropertycontext),
-             * and can be used for inspecting and changing the behavior of the mocked property.
+             * special `mock` property, which is an instance of [`MockPropertyContext`][], and
+             * can be used for inspecting and changing the behavior of the mocked property.
              */
             property<
                 MockedObject extends object,
@@ -1850,7 +2146,7 @@ declare module "node:test" {
             restore(): void;
         }
         /**
-         * @since v22.20.0
+         * @since v24.3.0
          */
         class MockPropertyContext<PropertyType = any> {
             /**
@@ -1887,6 +2183,8 @@ declare module "node:test" {
              * ```js
              * test('changes a mock behavior once', (t) => {
              *   const obj = { foo: 1 };
+             *
+             *   const prop = t.mock.property(obj, 'foo', 5);
              *
              *   assert.strictEqual(obj.foo, 5);
              *   prop.mock.mockImplementationOnce(25);
@@ -1926,7 +2224,6 @@ declare module "node:test" {
          * The `MockTracker` provides a top-level `timers` export
          * which is a `MockTimers` instance.
          * @since v20.4.0
-         * @experimental
          */
         interface MockTimers {
             /**
@@ -1979,24 +2276,28 @@ declare module "node:test" {
              */
             enable(options?: MockTimersOptions): void;
             /**
-             * You can use the `.setTime()` method to manually move the mocked date to another time. This method only accepts a positive integer.
-             * Note: This method will execute any mocked timers that are in the past from the new time.
-             * In the below example we are setting a new time for the mocked date.
+             * Sets the current Unix timestamp that will be used as reference for any mocked
+             * `Date` objects.
+             *
              * ```js
              * import assert from 'node:assert';
              * import { test } from 'node:test';
-             * test('sets the time of a date object', (context) => {
-             *   // Optionally choose what to mock
-             *   context.mock.timers.enable({ apis: ['Date'], now: 100 });
-             *   assert.strictEqual(Date.now(), 100);
-             *   // Advance in time will also advance the date
-             *   context.mock.timers.setTime(1000);
-             *   context.mock.timers.tick(200);
-             *   assert.strictEqual(Date.now(), 1200);
+             *
+             * test('runAll functions following the given order', (context) => {
+             *   const now = Date.now();
+             *   const setTime = 1000;
+             *   // Date.now is not mocked
+             *   assert.deepStrictEqual(Date.now(), now);
+             *
+             *   context.mock.timers.enable({ apis: ['Date'] });
+             *   context.mock.timers.setTime(setTime);
+             *   // Date.now is now 1000
+             *   assert.strictEqual(Date.now(), setTime);
              * });
              * ```
+             * @since v21.2.0, v20.11.0
              */
-            setTime(time: number): void;
+            setTime(milliseconds: number): void;
             /**
              * This function restores the default behavior of all mocks that were previously
              * created by this `MockTimers` instance and disassociates the mocks
@@ -2182,84 +2483,4 @@ declare module "node:test" {
         [K in keyof T]: T[K] extends Function ? K : never;
     }[keyof T];
     export = test;
-}
-
-/**
- * The `node:test/reporters` module exposes the builtin-reporters for `node:test`.
- * To access it:
- *
- * ```js
- * import test from 'node:test/reporters';
- * ```
- *
- * This module is only available under the `node:` scheme. The following will not
- * work:
- *
- * ```js
- * import test from 'node:test/reporters';
- * ```
- * @since v19.9.0
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/test/reporters.js)
- */
-declare module "node:test/reporters" {
-    import { Transform, TransformOptions } from "node:stream";
-    import { EventData } from "node:test";
-
-    type TestEvent =
-        | { type: "test:coverage"; data: EventData.TestCoverage }
-        | { type: "test:complete"; data: EventData.TestComplete }
-        | { type: "test:dequeue"; data: EventData.TestDequeue }
-        | { type: "test:diagnostic"; data: EventData.TestDiagnostic }
-        | { type: "test:enqueue"; data: EventData.TestEnqueue }
-        | { type: "test:fail"; data: EventData.TestFail }
-        | { type: "test:pass"; data: EventData.TestPass }
-        | { type: "test:plan"; data: EventData.TestPlan }
-        | { type: "test:start"; data: EventData.TestStart }
-        | { type: "test:stderr"; data: EventData.TestStderr }
-        | { type: "test:stdout"; data: EventData.TestStdout }
-        | { type: "test:summary"; data: EventData.TestSummary }
-        | { type: "test:watch:drained"; data: undefined };
-    type TestEventGenerator = AsyncGenerator<TestEvent, void>;
-
-    interface ReporterConstructorWrapper<T extends new(...args: any[]) => Transform> {
-        new(...args: ConstructorParameters<T>): InstanceType<T>;
-        (...args: ConstructorParameters<T>): InstanceType<T>;
-    }
-
-    /**
-     * The `dot` reporter outputs the test results in a compact format,
-     * where each passing test is represented by a `.`,
-     * and each failing test is represented by a `X`.
-     * @since v20.0.0
-     */
-    function dot(source: TestEventGenerator): AsyncGenerator<"\n" | "." | "X", void>;
-    /**
-     * The `tap` reporter outputs the test results in the [TAP](https://testanything.org/) format.
-     * @since v20.0.0
-     */
-    function tap(source: TestEventGenerator): AsyncGenerator<string, void>;
-    class SpecReporter extends Transform {
-        constructor();
-    }
-    /**
-     * The `spec` reporter outputs the test results in a human-readable format.
-     * @since v20.0.0
-     */
-    const spec: ReporterConstructorWrapper<typeof SpecReporter>;
-    /**
-     * The `junit` reporter outputs test results in a jUnit XML format.
-     * @since v21.0.0
-     */
-    function junit(source: TestEventGenerator): AsyncGenerator<string, void>;
-    class LcovReporter extends Transform {
-        constructor(opts?: Omit<TransformOptions, "writableObjectMode">);
-    }
-    /**
-     * The `lcov` reporter outputs test coverage when used with the
-     * [`--experimental-test-coverage`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--experimental-test-coverage) flag.
-     * @since v22.0.0
-     */
-    const lcov: LcovReporter;
-
-    export { dot, junit, lcov, spec, tap, TestEvent };
 }

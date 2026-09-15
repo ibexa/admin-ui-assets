@@ -1,35 +1,8 @@
-/**
- * The `node:dgram` module provides an implementation of UDP datagram sockets.
- *
- * ```js
- * import dgram from 'node:dgram';
- *
- * const server = dgram.createSocket('udp4');
- *
- * server.on('error', (err) => {
- *   console.error(`server error:\n${err.stack}`);
- *   server.close();
- * });
- *
- * server.on('message', (msg, rinfo) => {
- *   console.log(`server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
- * });
- *
- * server.on('listening', () => {
- *   const address = server.address();
- *   console.log(`server listening ${address.address}:${address.port}`);
- * });
- *
- * server.bind(41234);
- * // Prints: server listening 0.0.0.0:41234
- * ```
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/dgram.js)
- */
-declare module "dgram" {
+declare module "node:dgram" {
     import { NonSharedBuffer } from "node:buffer";
-    import { AddressInfo, BlockList } from "node:net";
     import * as dns from "node:dns";
-    import { Abortable, EventEmitter } from "node:events";
+    import { Abortable, EventEmitter, InternalEventEmitter } from "node:events";
+    import { AddressInfo, BlockList } from "node:net";
     interface RemoteInfo {
         address: string;
         family: "IPv4" | "IPv6";
@@ -41,6 +14,10 @@ declare module "dgram" {
         address?: string | undefined;
         exclusive?: boolean | undefined;
         fd?: number | undefined;
+    }
+    interface BindSyncOptions {
+        port?: number | undefined;
+        address?: string | undefined;
     }
     type SocketType = "udp4" | "udp6";
     interface SocketOptions extends Abortable {
@@ -88,6 +65,13 @@ declare module "dgram" {
      */
     function createSocket(type: SocketType, callback?: (msg: NonSharedBuffer, rinfo: RemoteInfo) => void): Socket;
     function createSocket(options: SocketOptions, callback?: (msg: NonSharedBuffer, rinfo: RemoteInfo) => void): Socket;
+    interface SocketEventMap {
+        "close": [];
+        "connect": [];
+        "error": [err: Error];
+        "listening": [];
+        "message": [msg: NonSharedBuffer, rinfo: RemoteInfo];
+    }
     /**
      * Encapsulates the datagram functionality.
      *
@@ -95,7 +79,7 @@ declare module "dgram" {
      * The `new` keyword is not to be used to create `dgram.Socket` instances.
      * @since v0.1.99
      */
-    class Socket extends EventEmitter {
+    class Socket implements EventEmitter {
         /**
          * Tells the kernel to join a multicast group at the given `multicastAddress` and `multicastInterface` using the `IP_ADD_MEMBERSHIP` socket option. If the `multicastInterface` argument is not
          * specified, the operating system will choose
@@ -137,10 +121,12 @@ declare module "dgram" {
          * messages on a named `port` and optional `address`. If `port` is not
          * specified or is `0`, the operating system will attempt to bind to a
          * random port. If `address` is not specified, the operating system will
-         * attempt to listen on all addresses. Once binding is complete, a `'listening'` event is emitted and the optional `callback` function is
+         * attempt to listen on all addresses. Once binding is complete, a
+         * `'listening'` event is emitted and the optional `callback` function is
          * called.
          *
-         * Specifying both a `'listening'` event listener and passing a `callback` to the `socket.bind()` method is not harmful but not very
+         * Specifying both a `'listening'` event listener and passing a
+         * `callback` to the `socket.bind()` method is not harmful but not very
          * useful.
          *
          * A bound datagram socket keeps the Node.js process running to receive
@@ -177,9 +163,82 @@ declare module "dgram" {
          * @param callback with no parameters. Called when binding is complete.
          */
         bind(port?: number, address?: string, callback?: () => void): this;
-        bind(port?: number, callback?: () => void): this;
-        bind(callback?: () => void): this;
+        bind(port: number, callback: () => void): this;
+        bind(callback: () => void): this;
+        /**
+         * For UDP sockets, causes the `dgram.Socket` to listen for datagram
+         * messages on a named `port` and optional `address` that are passed as
+         * properties of an `options` object passed as the first argument. If
+         * `port` is not specified or is `0`, the operating system will attempt
+         * to bind to a random port. If `address` is not specified, the operating
+         * system will attempt to listen on all addresses. Once binding is
+         * complete, a `'listening'` event is emitted and the optional `callback`
+         * function is called.
+         *
+         * The `options` object may contain a `fd` property. When a `fd` greater
+         * than `0` is set, it will wrap around an existing socket with the given
+         * file descriptor. In this case, the properties of `port` and `address`
+         * will be ignored.
+         *
+         * Specifying both a `'listening'` event listener and passing a
+         * `callback` to the `socket.bind()` method is not harmful but not very
+         * useful.
+         *
+         * The `options` object may contain an additional `exclusive` property that is
+         * used when using `dgram.Socket` objects with the [`cluster`](https://nodejs.org/docs/latest-v26.x/api/cluster.html) module. When
+         * `exclusive` is set to `false` (the default), cluster workers will use the same
+         * underlying socket handle allowing connection handling duties to be shared.
+         * When `exclusive` is `true`, however, the handle is not shared and attempted
+         * port sharing results in an error. Creating a `dgram.Socket` with the `reusePort`
+         * option set to `true` causes `exclusive` to always be `true` when `socket.bind()`
+         * is called.
+         *
+         * A bound datagram socket keeps the Node.js process running to receive
+         * datagram messages.
+         *
+         * If binding fails, an `'error'` event is generated. In rare case (e.g.
+         * attempting to bind with a closed socket), an `Error` may be thrown.
+         *
+         * An example socket listening on an exclusive port is shown below.
+         *
+         * ```js
+         * socket.bind({
+         *   address: 'localhost',
+         *   port: 8000,
+         *   exclusive: true,
+         * });
+         * ```
+         * @since v0.11.14
+         * @param options Required. Supports the following properties:
+         */
         bind(options: BindOptions, callback?: () => void): this;
+        /**
+         * The synchronous counterpart of `socket.bind()`. `bind(2)` is a local,
+         * non-blocking system call, so the bind is performed inline and the resolved
+         * address is returned immediately, including the operating-system-assigned
+         * ephemeral port when `port` is `0`:
+         *
+         * ```js
+         * const dgram = require('node:dgram');
+         *
+         * const socket = dgram.createSocket('udp4');
+         * const address = socket.bindSync({ address: '0.0.0.0', port: 0 });
+         * console.log(address); // e.g. { address: '0.0.0.0', family: 'IPv4', port: 53124 }
+         * ```
+         *
+         * A bind failure such as `EADDRINUSE` is thrown synchronously rather than emitted
+         * as an `'error'` event. After `bindSync()` returns, `socket.address()` is
+         * valid synchronously and the `'listening'` event is emitted on the next tick.
+         *
+         * `address` must be a numeric IP literal; `bindSync()` never performs DNS
+         * resolution (asynchronous name resolution being the only genuinely blocking part
+         * of binding). Incoming datagrams continue to be delivered asynchronously via the
+         * `'message'` event. `bindSync()` always binds the socket's own handle and
+         * does not participate in [`cluster`](https://nodejs.org/docs/latest-v26.x/api/cluster.html) handle sharing.
+         * @since v26.4.0
+         * @returns The bound address as returned by `socket.address()`.
+         */
+        bindSync(options?: BindSyncOptions): AddressInfo;
         /**
          * Close the underlying socket and stop listening for data on it. If a callback is
          * provided, it is added as a listener for the `'close'` event.
@@ -202,6 +261,42 @@ declare module "dgram" {
          */
         connect(port: number, address?: string, callback?: () => void): void;
         connect(port: number, callback: () => void): void;
+        /**
+         * The synchronous counterpart of `socket.connect()`. For a UDP socket
+         * `connect(2)` only records the default peer address and is a local, non-blocking
+         * system call, so the association is performed inline. Any error raised by the
+         * call itself (for example `EAFNOSUPPORT` for a mismatched address family) is
+         * thrown synchronously rather than reported via the `'error'` event. Because
+         * `connect(2)` does not probe reachability, errors such as `ECONNREFUSED` are
+         * still surfaced asynchronously on a later send or receive, exactly as for
+         * `socket.connect()`:
+         *
+         * ```js
+         * const dgram = require('node:dgram');
+         *
+         * const socket = dgram.createSocket('udp4');
+         * socket.connectSync(41234, '127.0.0.1');
+         * console.log(socket.remoteAddress()); // { address: '127.0.0.1', family: 'IPv4', port: 41234 }
+         * ```
+         *
+         * If the socket is still unbound it is bound synchronously first. After
+         * `connectSync()` returns, `socket.remoteAddress()` is valid synchronously
+         * and the `'connect'` event is emitted on the next tick. Trying to call
+         * `connectSync()` on an already connected socket throws an
+         * `ERR_SOCKET_DGRAM_IS_CONNECTED` exception, and calling it while an
+         * asynchronous [`socket.bind()`][] is still in progress throws an
+         * `ERR_SOCKET_ALREADY_BOUND` exception.
+         *
+         * `address` must be a numeric IP literal; `connectSync()` never performs DNS
+         * resolution (asynchronous name resolution being the only genuinely blocking part
+         * of connecting).
+         * @since v26.4.0
+         * @param address A numeric IP address to connect to. Unlike
+         * `socket.connect()`, no DNS resolution is performed, so a host name is not
+         * accepted. If omitted, `'127.0.0.1'` (for `udp4` sockets) or `'::1'` (for
+         * `udp6` sockets) is used.
+         */
+        connectSync(port: number, address?: string): void;
         /**
          * A synchronous function that disassociates a connected `dgram.Socket` from
          * its remote address. Trying to call `disconnect()` on an unbound or already
@@ -545,56 +640,13 @@ declare module "dgram" {
          */
         dropSourceSpecificMembership(sourceAddress: string, groupAddress: string, multicastInterface?: string): void;
         /**
-         * events.EventEmitter
-         * 1. close
-         * 2. connect
-         * 3. error
-         * 4. listening
-         * 5. message
-         */
-        addListener(event: string, listener: (...args: any[]) => void): this;
-        addListener(event: "close", listener: () => void): this;
-        addListener(event: "connect", listener: () => void): this;
-        addListener(event: "error", listener: (err: Error) => void): this;
-        addListener(event: "listening", listener: () => void): this;
-        addListener(event: "message", listener: (msg: NonSharedBuffer, rinfo: RemoteInfo) => void): this;
-        emit(event: string | symbol, ...args: any[]): boolean;
-        emit(event: "close"): boolean;
-        emit(event: "connect"): boolean;
-        emit(event: "error", err: Error): boolean;
-        emit(event: "listening"): boolean;
-        emit(event: "message", msg: NonSharedBuffer, rinfo: RemoteInfo): boolean;
-        on(event: string, listener: (...args: any[]) => void): this;
-        on(event: "close", listener: () => void): this;
-        on(event: "connect", listener: () => void): this;
-        on(event: "error", listener: (err: Error) => void): this;
-        on(event: "listening", listener: () => void): this;
-        on(event: "message", listener: (msg: NonSharedBuffer, rinfo: RemoteInfo) => void): this;
-        once(event: string, listener: (...args: any[]) => void): this;
-        once(event: "close", listener: () => void): this;
-        once(event: "connect", listener: () => void): this;
-        once(event: "error", listener: (err: Error) => void): this;
-        once(event: "listening", listener: () => void): this;
-        once(event: "message", listener: (msg: NonSharedBuffer, rinfo: RemoteInfo) => void): this;
-        prependListener(event: string, listener: (...args: any[]) => void): this;
-        prependListener(event: "close", listener: () => void): this;
-        prependListener(event: "connect", listener: () => void): this;
-        prependListener(event: "error", listener: (err: Error) => void): this;
-        prependListener(event: "listening", listener: () => void): this;
-        prependListener(event: "message", listener: (msg: NonSharedBuffer, rinfo: RemoteInfo) => void): this;
-        prependOnceListener(event: string, listener: (...args: any[]) => void): this;
-        prependOnceListener(event: "close", listener: () => void): this;
-        prependOnceListener(event: "connect", listener: () => void): this;
-        prependOnceListener(event: "error", listener: (err: Error) => void): this;
-        prependOnceListener(event: "listening", listener: () => void): this;
-        prependOnceListener(event: "message", listener: (msg: NonSharedBuffer, rinfo: RemoteInfo) => void): this;
-        /**
          * Calls `socket.close()` and returns a promise that fulfills when the socket has closed.
          * @since v20.5.0
          */
         [Symbol.asyncDispose](): Promise<void>;
     }
+    interface Socket extends InternalEventEmitter<SocketEventMap> {}
 }
-declare module "node:dgram" {
-    export * from "dgram";
+declare module "dgram" {
+    export * from "node:dgram";
 }

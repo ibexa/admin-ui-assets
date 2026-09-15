@@ -1,4 +1,4 @@
-declare module "buffer" {
+declare module "node:buffer" {
     type ImplicitArrayBuffer<T extends WithImplicitCoercion<ArrayBufferLike>> = T extends
         { valueOf(): infer V extends ArrayBufferLike } ? V : T;
     global {
@@ -174,7 +174,7 @@ declare module "buffer" {
              * If `totalLength` is not provided, it is calculated from the `Buffer` instances
              * in `list` by adding their lengths.
              *
-             * If `totalLength` is provided, it is coerced to an unsigned integer. If the
+             * If `totalLength` is provided, it must be an unsigned integer. If the
              * combined length of the `Buffer`s in `list` exceeds `totalLength`, the result is
              * truncated to `totalLength`. If the combined length of the `Buffer`s in `list` is
              * less than `totalLength`, the remaining space is filled with zeros.
@@ -316,11 +316,11 @@ declare module "buffer" {
              * such `Buffer` instances with zeroes.
              *
              * When using `Buffer.allocUnsafe()` to allocate new `Buffer` instances,
-             * allocations under 4 KiB are sliced from a single pre-allocated `Buffer`. This
-             * allows applications to avoid the garbage collection overhead of creating many
-             * individually allocated `Buffer` instances. This approach improves both
-             * performance and memory usage by eliminating the need to track and clean up as
-             * many individual `ArrayBuffer` objects.
+             * allocations less than `Buffer.poolSize >>> 1` (32KiB when default poolSize is used) are sliced
+             * from a single pre-allocated `Buffer`. This allows applications to avoid the
+             * garbage collection overhead of creating many individually allocated `Buffer`
+             * instances. This approach improves both performance and memory usage by
+             * eliminating the need to track and clean up as many individual `ArrayBuffer` objects.
              *
              * However, in the case where a developer may need to retain a small chunk of
              * memory from a pool for an indeterminate amount of time, it may be appropriate
@@ -463,10 +463,9 @@ declare module "buffer" {
          */
         type AllowSharedBuffer = Buffer<ArrayBufferLike>;
     }
-    /** @deprecated Use `Buffer.allocUnsafeSlow()` instead. */
-    var SlowBuffer: {
-        /** @deprecated Use `Buffer.allocUnsafeSlow()` instead. */
-        new(size: number): Buffer<ArrayBuffer>;
-        prototype: Buffer;
-    };
+    /**
+     * @deprecated This is intended for internal use, and will be removed once `@types/node` no longer supports
+     * TypeScript versions earlier than 5.7.
+     */
+    type BufferView<T extends NodeJS.ArrayBufferView> = T extends NodeJS.ArrayBufferView<infer B> ? Buffer<B> : never;
 }

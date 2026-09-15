@@ -1,22 +1,8 @@
-/**
- * > Stability: 2 - Stable
- *
- * The `node:net` module provides an asynchronous network API for creating stream-based
- * TCP or `IPC` servers ({@link createServer}) and clients
- * ({@link createConnection}).
- *
- * It can be accessed using:
- *
- * ```js
- * import net from 'node:net';
- * ```
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/net.js)
- */
-declare module "net" {
+declare module "node:net" {
     import { NonSharedBuffer } from "node:buffer";
-    import * as stream from "node:stream";
-    import { Abortable, EventEmitter } from "node:events";
     import * as dns from "node:dns";
+    import { Abortable, EventEmitter, InternalEventEmitter } from "node:events";
+    import * as stream from "node:stream";
     type LookupFunction = (
         hostname: string,
         options: dns.LookupOptions,
@@ -34,6 +20,12 @@ declare module "net" {
         readable?: boolean | undefined;
         writable?: boolean | undefined;
         signal?: AbortSignal | undefined;
+        noDelay?: boolean | undefined;
+        keepAlive?: boolean | undefined;
+        keepAliveInitialDelay?: number | undefined;
+        blockList?: BlockList | undefined;
+        typeOfService?: number | undefined;
+        handle?: BoundSocket | undefined;
     }
     interface OnReadOpts {
         buffer: Uint8Array | (() => Uint8Array);
@@ -44,9 +36,6 @@ declare module "net" {
          */
         callback(bytesWritten: number, buffer: Uint8Array): boolean;
     }
-    // TODO: remove empty ConnectOpts placeholder at next major @types/node version.
-    /** @deprecated */
-    interface ConnectOpts {}
     interface TcpSocketConnectOpts {
         port: number;
         host?: string | undefined;
@@ -55,9 +44,6 @@ declare module "net" {
         hints?: number | undefined;
         family?: number | undefined;
         lookup?: LookupFunction | undefined;
-        noDelay?: boolean | undefined;
-        keepAlive?: boolean | undefined;
-        keepAliveInitialDelay?: number | undefined;
         /**
          * @since v18.13.0
          */
@@ -66,13 +52,29 @@ declare module "net" {
          * @since v18.13.0
          */
         autoSelectFamilyAttemptTimeout?: number | undefined;
-        blockList?: BlockList | undefined;
     }
     interface IpcSocketConnectOpts {
         path: string;
     }
     type SocketConnectOpts = TcpSocketConnectOpts | IpcSocketConnectOpts;
     type SocketReadyState = "opening" | "open" | "readOnly" | "writeOnly" | "closed";
+    interface SetKeepAliveOptions {
+        enable?: boolean | undefined;
+        initialDelay?: number | undefined;
+        interval?: number | undefined;
+        count?: number | undefined;
+    }
+    interface SocketEventMap extends Omit<stream.DuplexEventMap, "close"> {
+        "close": [hadError: boolean];
+        "connect": [];
+        "connectionAttempt": [ip: string, port: number, family: number];
+        "connectionAttemptFailed": [ip: string, port: number, family: number, error: Error];
+        "connectionAttemptTimeout": [ip: string, port: number, family: number];
+        "data": [data: string | NonSharedBuffer];
+        "lookup": [err: Error | null, address: string, family: number | null, host: string];
+        "ready": [];
+        "timeout": [];
+    }
     /**
      * This class is an abstraction of a TCP socket or a streaming `IPC` endpoint
      * (uses named pipes on Windows, and Unix domain sockets otherwise). It is also
@@ -204,25 +206,58 @@ declare module "net" {
          */
         setNoDelay(noDelay?: boolean): this;
         /**
-         * Enable/disable keep-alive functionality, and optionally set the initial
-         * delay before the first keepalive probe is sent on an idle socket.
+         * Configure keep-alive using an options object. See `socket.setKeepAlive()`
+         * for a description of each property.
          *
-         * Set `initialDelay` (in milliseconds) to set the delay between the last
-         * data packet received and the first keepalive probe. Setting `0` for`initialDelay` will leave the value unchanged from the default
-         * (or previous) setting.
-         *
-         * Enabling the keep-alive functionality will set the following socket options:
-         *
-         * * `SO_KEEPALIVE=1`
-         * * `TCP_KEEPIDLE=initialDelay`
-         * * `TCP_KEEPCNT=10`
-         * * `TCP_KEEPINTVL=1`
-         * @since v0.1.92
-         * @param [enable=false]
-         * @param [initialDelay=0]
-         * @return The socket itself.
+         * ```js
+         * socket.setKeepAlive({ enable: true, initialDelay: 1000, interval: 1000, count: 10 });
+         * ```
+         * @since v26.4.0
+         * @returns The socket itself.
          */
-        setKeepAlive(enable?: boolean, initialDelay?: number): this;
+        setKeepAlive(options: SetKeepAliveOptions): this;
+        /**
+         * Configure keep-alive using positional arguments. See
+         * `socket.setKeepAlive()` for a description of each argument.
+         * @since v0.1.92
+         * @param enable **Default:** `false`
+         * @param initialDelay **Default:** `0`
+         * @param interval **Default:** `1000`
+         * @param count **Default:** `10`
+         * @returns The socket itself.
+         */
+        setKeepAlive(enable?: boolean, initialDelay?: number, interval?: number, count?: number): this;
+        /**
+         * Returns the current Type of Service (TOS) field for IPv4 packets or Traffic
+         * Class for IPv6 packets for this socket.
+         *
+         * `setTypeOfService()` may be called before the socket is connected; the value
+         * will be cached and applied when the socket establishes a connection.
+         * `getTypeOfService()` will return the currently set value even before connection.
+         *
+         * On some platforms (e.g., Linux), certain TOS/ECN bits may be masked or ignored,
+         * and behavior can differ between IPv4 and IPv6 or dual-stack sockets. Callers
+         * should verify platform-specific semantics.
+         * @since v25.6.0
+         * @returns The current TOS value.
+         */
+        getTypeOfService(): number;
+        /**
+         * Sets the Type of Service (TOS) field for IPv4 packets or Traffic Class for IPv6
+         * Packets sent from this socket. This can be used to prioritize network traffic.
+         *
+         * `setTypeOfService()` may be called before the socket is connected; the value
+         * will be cached and applied when the socket establishes a connection.
+         * `getTypeOfService()` will return the currently set value even before connection.
+         *
+         * On some platforms (e.g., Linux), certain TOS/ECN bits may be masked or ignored,
+         * and behavior can differ between IPv4 and IPv6 or dual-stack sockets. Callers
+         * should verify platform-specific semantics.
+         * @since v25.6.0
+         * @param tos The TOS value to set (0-255).
+         * @returns The socket itself.
+         */
+        setTypeOfService(tos: number): this;
         /**
          * Returns the bound `address`, the address `family` name and `port` of the
          * socket as reported by the operating system:`{ port: 12346, family: 'IPv4', address: '127.0.0.1' }`
@@ -376,145 +411,132 @@ declare module "net" {
          * @return The socket itself.
          */
         end(str: Uint8Array | string, encoding?: BufferEncoding, callback?: () => void): this;
+        // #region InternalEventEmitter
+        addListener<E extends keyof SocketEventMap>(eventName: E, listener: (...args: SocketEventMap[E]) => void): this;
+        addListener(eventName: string | symbol, listener: (...args: any[]) => void): this;
+        emit<E extends keyof SocketEventMap>(eventName: E, ...args: SocketEventMap[E]): boolean;
+        emit(eventName: string | symbol, ...args: any[]): boolean;
+        listenerCount<E extends keyof SocketEventMap>(
+            eventName: E,
+            listener?: (...args: SocketEventMap[E]) => void,
+        ): number;
+        listenerCount(eventName: string | symbol, listener?: (...args: any[]) => void): number;
+        listeners<E extends keyof SocketEventMap>(eventName: E): ((...args: SocketEventMap[E]) => void)[];
+        listeners(eventName: string | symbol): ((...args: any[]) => void)[];
+        off<E extends keyof SocketEventMap>(eventName: E, listener: (...args: SocketEventMap[E]) => void): this;
+        off(eventName: string | symbol, listener: (...args: any[]) => void): this;
+        on<E extends keyof SocketEventMap>(eventName: E, listener: (...args: SocketEventMap[E]) => void): this;
+        on(eventName: string | symbol, listener: (...args: any[]) => void): this;
+        once<E extends keyof SocketEventMap>(eventName: E, listener: (...args: SocketEventMap[E]) => void): this;
+        once(eventName: string | symbol, listener: (...args: any[]) => void): this;
+        prependListener<E extends keyof SocketEventMap>(
+            eventName: E,
+            listener: (...args: SocketEventMap[E]) => void,
+        ): this;
+        prependListener(eventName: string | symbol, listener: (...args: any[]) => void): this;
+        prependOnceListener<E extends keyof SocketEventMap>(
+            eventName: E,
+            listener: (...args: SocketEventMap[E]) => void,
+        ): this;
+        prependOnceListener(eventName: string | symbol, listener: (...args: any[]) => void): this;
+        rawListeners<E extends keyof SocketEventMap>(eventName: E): ((...args: SocketEventMap[E]) => void)[];
+        rawListeners(eventName: string | symbol): ((...args: any[]) => void)[];
+        // eslint-disable-next-line @definitelytyped/no-unnecessary-generics
+        removeAllListeners<E extends keyof SocketEventMap>(eventName?: E): this;
+        removeAllListeners(eventName?: string | symbol): this;
+        removeListener<E extends keyof SocketEventMap>(
+            eventName: E,
+            listener: (...args: SocketEventMap[E]) => void,
+        ): this;
+        removeListener(eventName: string | symbol, listener: (...args: any[]) => void): this;
+        // #endregion
+    }
+    interface BoundSocketOptions {
         /**
-         * events.EventEmitter
-         *   1. close
-         *   2. connect
-         *   3. connectionAttempt
-         *   4. connectionAttemptFailed
-         *   5. connectionAttemptTimeout
-         *   6. data
-         *   7. drain
-         *   8. end
-         *   9. error
-         *   10. lookup
-         *   11. ready
-         *   12. timeout
+         * Local address to bind. Must be a numeric IP literal; no DNS
+         * resolution is performed. **Default:** `'0.0.0.0'`, or `'::'` when
+         * `ipv6Only` is `true`.
          */
-        addListener(event: string, listener: (...args: any[]) => void): this;
-        addListener(event: "close", listener: (hadError: boolean) => void): this;
-        addListener(event: "connect", listener: () => void): this;
-        addListener(event: "connectionAttempt", listener: (ip: string, port: number, family: number) => void): this;
-        addListener(
-            event: "connectionAttemptFailed",
-            listener: (ip: string, port: number, family: number, error: Error) => void,
-        ): this;
-        addListener(
-            event: "connectionAttemptTimeout",
-            listener: (ip: string, port: number, family: number) => void,
-        ): this;
-        addListener(event: "data", listener: (data: NonSharedBuffer) => void): this;
-        addListener(event: "drain", listener: () => void): this;
-        addListener(event: "end", listener: () => void): this;
-        addListener(event: "error", listener: (err: Error) => void): this;
-        addListener(
-            event: "lookup",
-            listener: (err: Error, address: string, family: string | number, host: string) => void,
-        ): this;
-        addListener(event: "ready", listener: () => void): this;
-        addListener(event: "timeout", listener: () => void): this;
-        emit(event: string | symbol, ...args: any[]): boolean;
-        emit(event: "close", hadError: boolean): boolean;
-        emit(event: "connect"): boolean;
-        emit(event: "connectionAttempt", ip: string, port: number, family: number): boolean;
-        emit(event: "connectionAttemptFailed", ip: string, port: number, family: number, error: Error): boolean;
-        emit(event: "connectionAttemptTimeout", ip: string, port: number, family: number): boolean;
-        emit(event: "data", data: NonSharedBuffer): boolean;
-        emit(event: "drain"): boolean;
-        emit(event: "end"): boolean;
-        emit(event: "error", err: Error): boolean;
-        emit(event: "lookup", err: Error, address: string, family: string | number, host: string): boolean;
-        emit(event: "ready"): boolean;
-        emit(event: "timeout"): boolean;
-        on(event: string, listener: (...args: any[]) => void): this;
-        on(event: "close", listener: (hadError: boolean) => void): this;
-        on(event: "connect", listener: () => void): this;
-        on(event: "connectionAttempt", listener: (ip: string, port: number, family: number) => void): this;
-        on(
-            event: "connectionAttemptFailed",
-            listener: (ip: string, port: number, family: number, error: Error) => void,
-        ): this;
-        on(event: "connectionAttemptTimeout", listener: (ip: string, port: number, family: number) => void): this;
-        on(event: "data", listener: (data: NonSharedBuffer) => void): this;
-        on(event: "drain", listener: () => void): this;
-        on(event: "end", listener: () => void): this;
-        on(event: "error", listener: (err: Error) => void): this;
-        on(
-            event: "lookup",
-            listener: (err: Error, address: string, family: string | number, host: string) => void,
-        ): this;
-        on(event: "ready", listener: () => void): this;
-        on(event: "timeout", listener: () => void): this;
-        once(event: string, listener: (...args: any[]) => void): this;
-        once(event: "close", listener: (hadError: boolean) => void): this;
-        once(event: "connectionAttempt", listener: (ip: string, port: number, family: number) => void): this;
-        once(
-            event: "connectionAttemptFailed",
-            listener: (ip: string, port: number, family: number, error: Error) => void,
-        ): this;
-        once(event: "connectionAttemptTimeout", listener: (ip: string, port: number, family: number) => void): this;
-        once(event: "connect", listener: () => void): this;
-        once(event: "data", listener: (data: NonSharedBuffer) => void): this;
-        once(event: "drain", listener: () => void): this;
-        once(event: "end", listener: () => void): this;
-        once(event: "error", listener: (err: Error) => void): this;
-        once(
-            event: "lookup",
-            listener: (err: Error, address: string, family: string | number, host: string) => void,
-        ): this;
-        once(event: "ready", listener: () => void): this;
-        once(event: "timeout", listener: () => void): this;
-        prependListener(event: string, listener: (...args: any[]) => void): this;
-        prependListener(event: "close", listener: (hadError: boolean) => void): this;
-        prependListener(event: "connect", listener: () => void): this;
-        prependListener(event: "connectionAttempt", listener: (ip: string, port: number, family: number) => void): this;
-        prependListener(
-            event: "connectionAttemptFailed",
-            listener: (ip: string, port: number, family: number, error: Error) => void,
-        ): this;
-        prependListener(
-            event: "connectionAttemptTimeout",
-            listener: (ip: string, port: number, family: number) => void,
-        ): this;
-        prependListener(event: "data", listener: (data: NonSharedBuffer) => void): this;
-        prependListener(event: "drain", listener: () => void): this;
-        prependListener(event: "end", listener: () => void): this;
-        prependListener(event: "error", listener: (err: Error) => void): this;
-        prependListener(
-            event: "lookup",
-            listener: (err: Error, address: string, family: string | number, host: string) => void,
-        ): this;
-        prependListener(event: "ready", listener: () => void): this;
-        prependListener(event: "timeout", listener: () => void): this;
-        prependOnceListener(event: string, listener: (...args: any[]) => void): this;
-        prependOnceListener(event: "close", listener: (hadError: boolean) => void): this;
-        prependOnceListener(event: "connect", listener: () => void): this;
-        prependOnceListener(
-            event: "connectionAttempt",
-            listener: (ip: string, port: number, family: number) => void,
-        ): this;
-        prependOnceListener(
-            event: "connectionAttemptFailed",
-            listener: (ip: string, port: number, family: number, error: Error) => void,
-        ): this;
-        prependOnceListener(
-            event: "connectionAttemptTimeout",
-            listener: (ip: string, port: number, family: number) => void,
-        ): this;
-        prependOnceListener(event: "data", listener: (data: NonSharedBuffer) => void): this;
-        prependOnceListener(event: "drain", listener: () => void): this;
-        prependOnceListener(event: "end", listener: () => void): this;
-        prependOnceListener(event: "error", listener: (err: Error) => void): this;
-        prependOnceListener(
-            event: "lookup",
-            listener: (err: Error, address: string, family: string | number, host: string) => void,
-        ): this;
-        prependOnceListener(event: "ready", listener: () => void): this;
-        prependOnceListener(event: "timeout", listener: () => void): this;
+        host?: string | undefined;
+        /**
+         * Local port. `0` requests an OS-assigned ephemeral port.
+         * **Default:** `0`.
+         */
+        port?: number | undefined;
+        /**
+         * Sets `IPV6_V6ONLY`, disabling dual-stack support so the
+         * socket binds IPv6 only. Only meaningful for IPv6 binds. **Default:**
+         * `false`.
+         */
+        ipv6Only?: boolean | undefined;
+        /**
+         * Sets `SO_REUSEPORT`, allowing multiple sockets to bind
+         * the same address and port for kernel-level load balancing. Support is
+         * platform-dependent. **Default:** `false`.
+         */
+        reusePort?: boolean | undefined;
+    }
+    /**
+     * Allows for the synchronous creation of a pre-bound socket, that can be passed
+     * to `listen()` or `new net.Socket()` later on. For `listen()` this enables
+     * synchronous port reservation, while for `new net.Socket()`, it allows control
+     * over the local egress port/IP, via `bind(2)` semantics.
+     *
+     * Adoption transfers ownership of the socket; afterwards `address()` and `close()`
+     * throw `ERR_SOCKET_HANDLE_ADOPTED`. A handle that is never adopted must be
+     * closed to avoid leaking the socket.
+     *
+     * ```js
+     * import net from 'node:net';
+     *
+     * const bound = new net.BoundSocket();
+     * const { port } = bound.address();
+     * console.log(`Reserved port ${port} for server`);
+     *
+     * const server = net.createServer();
+     * server.listen(bound); // Adopt as a server, or pass to new net.Socket() instead.
+     * ```
+     * @since v26.4.0
+     */
+    class BoundSocket {
+        /**
+         * @since v26.4.0
+         */
+        constructor(options?: BoundSocketOptions);
+        /**
+         * Returns the bound local address. When bound with `port: 0`, `port` is the
+         * OS-assigned ephemeral port.
+         * @since v26.4.0
+         * @returns An object with `address`, `family`, and `port` properties,
+         * as `server.address()` returns.
+         */
+        address(): AddressInfo;
+        /**
+         * Returns the file descriptor of the bound socket. Ownership remains with the
+         * `BoundSocket`, so the descriptor must not be closed by the caller. The
+         * descriptor is only available before the handle is adopted; afterwards it belongs
+         * to the adopting `net.Server` or `net.Socket` and `fd()` throws
+         * `ERR_SOCKET_HANDLE_ADOPTED`.
+         * @since v26.4.0
+         * @returns The underlying OS file descriptor, or `-1` on platforms
+         * that do not expose one for sockets (such as Windows).
+         */
+        fd(): number;
+        /**
+         * Releases the bound socket. Only needed when the handle is never adopted.
+         * @since v26.4.0
+         */
+        close(): void;
+        /**
+         * Closes the handle if it has not been adopted or closed; otherwise a no-op.
+         * @since v26.4.0
+         */
+        [Symbol.dispose](): void;
     }
     interface ListenOptions extends Abortable {
         backlog?: number | undefined;
         exclusive?: boolean | undefined;
+        handle?: BoundSocket | undefined;
         host?: string | undefined;
         /**
          * @default false
@@ -558,7 +580,7 @@ declare module "net" {
         keepAliveInitialDelay?: number | undefined;
         /**
          * Optionally overrides all `net.Socket`s' `readableHighWaterMark` and `writableHighWaterMark`.
-         * @default See [stream.getDefaultHighWaterMark()](https://nodejs.org/docs/latest-v22.x/api/stream.html#streamgetdefaulthighwatermarkobjectmode).
+         * @default See [stream.getDefaultHighWaterMark()](https://nodejs.org/docs/latest-v26.x/api/stream.html#streamgetdefaulthighwatermarkobjectmode).
          * @since v18.17.0, v20.1.0
          */
         highWaterMark?: number | undefined;
@@ -580,11 +602,18 @@ declare module "net" {
         remotePort?: number;
         remoteFamily?: string;
     }
+    interface ServerEventMap {
+        "close": [];
+        "connection": [socket: Socket];
+        "error": [err: Error];
+        "listening": [];
+        "drop": [data?: DropArgument];
+    }
     /**
      * This class is used to create a TCP or `IPC` server.
      * @since v0.1.90
      */
-    class Server extends EventEmitter {
+    class Server implements EventEmitter {
         constructor(connectionListener?: (socket: Socket) => void);
         constructor(options?: ServerOpts, connectionListener?: (socket: Socket) => void);
         /**
@@ -711,55 +740,12 @@ declare module "net" {
          */
         readonly listening: boolean;
         /**
-         * events.EventEmitter
-         *   1. close
-         *   2. connection
-         *   3. error
-         *   4. listening
-         *   5. drop
-         */
-        addListener(event: string, listener: (...args: any[]) => void): this;
-        addListener(event: "close", listener: () => void): this;
-        addListener(event: "connection", listener: (socket: Socket) => void): this;
-        addListener(event: "error", listener: (err: Error) => void): this;
-        addListener(event: "listening", listener: () => void): this;
-        addListener(event: "drop", listener: (data?: DropArgument) => void): this;
-        emit(event: string | symbol, ...args: any[]): boolean;
-        emit(event: "close"): boolean;
-        emit(event: "connection", socket: Socket): boolean;
-        emit(event: "error", err: Error): boolean;
-        emit(event: "listening"): boolean;
-        emit(event: "drop", data?: DropArgument): boolean;
-        on(event: string, listener: (...args: any[]) => void): this;
-        on(event: "close", listener: () => void): this;
-        on(event: "connection", listener: (socket: Socket) => void): this;
-        on(event: "error", listener: (err: Error) => void): this;
-        on(event: "listening", listener: () => void): this;
-        on(event: "drop", listener: (data?: DropArgument) => void): this;
-        once(event: string, listener: (...args: any[]) => void): this;
-        once(event: "close", listener: () => void): this;
-        once(event: "connection", listener: (socket: Socket) => void): this;
-        once(event: "error", listener: (err: Error) => void): this;
-        once(event: "listening", listener: () => void): this;
-        once(event: "drop", listener: (data?: DropArgument) => void): this;
-        prependListener(event: string, listener: (...args: any[]) => void): this;
-        prependListener(event: "close", listener: () => void): this;
-        prependListener(event: "connection", listener: (socket: Socket) => void): this;
-        prependListener(event: "error", listener: (err: Error) => void): this;
-        prependListener(event: "listening", listener: () => void): this;
-        prependListener(event: "drop", listener: (data?: DropArgument) => void): this;
-        prependOnceListener(event: string, listener: (...args: any[]) => void): this;
-        prependOnceListener(event: "close", listener: () => void): this;
-        prependOnceListener(event: "connection", listener: (socket: Socket) => void): this;
-        prependOnceListener(event: "error", listener: (err: Error) => void): this;
-        prependOnceListener(event: "listening", listener: () => void): this;
-        prependOnceListener(event: "drop", listener: (data?: DropArgument) => void): this;
-        /**
          * Calls {@link Server.close()} and returns a promise that fulfills when the server has closed.
          * @since v20.5.0
          */
         [Symbol.asyncDispose](): Promise<void>;
     }
+    interface Server extends InternalEventEmitter<ServerEventMap> {}
     type IPVersion = "ipv4" | "ipv6";
     /**
      * The `BlockList` object can be used with some network APIs to specify rules for
@@ -840,12 +826,12 @@ declare module "net" {
          * blockList.fromJSON(data);
          * blockList.fromJSON(JSON.stringify(data));
          * ```
-         * @since v22.19.0
+         * @since v24.5.0
          * @experimental
          */
         fromJSON(data: string | readonly string[]): void;
         /**
-         * @since v22.19.0
+         * @since v24.5.0
          * @experimental
          */
         toJSON(): readonly string[];
@@ -968,7 +954,7 @@ declare module "net" {
     function setDefaultAutoSelectFamily(value: boolean): void;
     /**
      * Gets the current default value of the `autoSelectFamilyAttemptTimeout` option of `socket.connect(options)`.
-     * The initial default value is `250` or the value specified via the command line option `--network-family-autoselection-attempt-timeout`.
+     * The initial default value is `500` or the value specified via the command line option `--network-family-autoselection-attempt-timeout`.
      * @returns The current default value of the `autoSelectFamilyAttemptTimeout` option.
      * @since v19.8.0, v18.8.0
      */
@@ -1071,6 +1057,6 @@ declare module "net" {
         static parse(input: string): SocketAddress | undefined;
     }
 }
-declare module "node:net" {
-    export * from "net";
+declare module "net" {
+    export * from "node:net";
 }

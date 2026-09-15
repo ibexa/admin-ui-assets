@@ -1,10 +1,4 @@
-/**
- * The `dns.promises` API provides an alternative set of asynchronous DNS methods
- * that return `Promise` objects rather than using callbacks. The API is accessible
- * via `import { promises as dnsPromises } from 'node:dns'` or `import dnsPromises from 'node:dns/promises'`.
- * @since v10.6.0
- */
-declare module "dns/promises" {
+declare module "node:dns/promises" {
     import {
         AnyRecord,
         CaaRecord,
@@ -189,7 +183,7 @@ declare module "dns/promises" {
      *     refresh: 900,
      *     retry: 900,
      *     expire: 1800,
-     *     minttl: 60 } ]
+     *     minttl: 60 } ];
      * ```
      * @since v10.6.0
      */
@@ -232,7 +226,7 @@ declare module "dns/promises" {
      *   regexp: '',
      *   replacement: '_sip._udp.example.com',
      *   order: 30,
-     *   preference: 100
+     *   preference: 100,
      * }
      * ```
      * @since v10.6.0
@@ -271,7 +265,7 @@ declare module "dns/promises" {
      *   refresh: 10000,
      *   retry: 2400,
      *   expire: 604800,
-     *   minttl: 3600
+     *   minttl: 3600,
      * }
      * ```
      * @since v10.6.0
@@ -291,7 +285,7 @@ declare module "dns/promises" {
      *   priority: 10,
      *   weight: 5,
      *   port: 21223,
-     *   name: 'service.example.com'
+     *   name: 'service.example.com',
      * }
      * ```
      * @since v10.6.0
@@ -312,10 +306,10 @@ declare module "dns/promises" {
      *   certUsage: 3,
      *   selector: 1,
      *   match: 1,
-     *   data: [ArrayBuffer]
+     *   data: [ArrayBuffer],
      * }
      * ```
-     * @since v22.15.0
+     * @since v23.9.0, v22.15.0
      */
     function resolveTlsa(hostname: string): Promise<TlsaRecord[]>;
     /**
@@ -498,6 +492,6 @@ declare module "dns/promises" {
         setServers: typeof setServers;
     }
 }
-declare module "node:dns/promises" {
-    export * from "dns/promises";
+declare module "dns/promises" {
+    export * from "node:dns/promises";
 }

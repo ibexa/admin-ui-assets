@@ -1,18 +1,7 @@
-/**
- * The `fs/promises` API provides asynchronous file system methods that return
- * promises.
- *
- * The promise APIs use the underlying Node.js threadpool to perform file
- * system operations off the event loop thread. These operations are not
- * synchronized or threadsafe. Care must be taken when performing multiple
- * concurrent modifications on the same file or data corruption may occur.
- * @since v10.0.0
- */
-declare module "fs/promises" {
-    import { NonSharedBuffer } from "node:buffer";
+declare module "node:fs/promises" {
+    import { BufferView, NonSharedBuffer } from "node:buffer";
     import { Abortable } from "node:events";
-    import { Stream } from "node:stream";
-    import { ReadableStream } from "node:stream/web";
+    import { Interface as ReadlineInterface } from "node:readline";
     import {
         BigIntStats,
         BigIntStatsFs,
@@ -21,6 +10,7 @@ declare module "fs/promises" {
         CopyOptions,
         Dir,
         Dirent,
+        EncodingOption,
         GlobOptions,
         GlobOptionsWithFileTypes,
         GlobOptionsWithoutFileTypes,
@@ -30,12 +20,15 @@ declare module "fs/promises" {
         OpenDirOptions,
         OpenMode,
         PathLike,
+        ReadFileOptions,
+        ReadFileOptionsWithBuffer,
+        ReadFileOptionsWithBufferEncoding,
+        ReadFileOptionsWithStringEncoding,
         ReadOptions,
         ReadOptionsWithBuffer,
         ReadPosition,
         ReadStream,
         ReadVResult,
-        RmDirOptions,
         RmOptions,
         StatFsOptions,
         StatOptions,
@@ -47,7 +40,8 @@ declare module "fs/promises" {
         WriteStream,
         WriteVResult,
     } from "node:fs";
-    import { Interface as ReadlineInterface } from "node:readline";
+    import { ByteReadableStream, Transform, Writer } from "node:stream/iter";
+    import { ReadableStream } from "node:stream/web";
     interface FileChangeInfo<T extends string | Buffer> {
         eventType: WatchEventType;
         filename: T | null;
@@ -94,6 +88,57 @@ declare module "fs/promises" {
     }
     interface ReadableWebStreamOptions {
         autoClose?: boolean | undefined;
+    }
+    interface PullOptions extends Abortable {
+        /**
+         * Close the file handle when the stream ends.
+         * @default false
+         */
+        autoClose?: boolean | undefined;
+        /**
+         * Byte offset to begin reading from. When specified,
+         * reads use explicit positioning (`pread` semantics).
+         */
+        start?: number | undefined;
+        /**
+         * Maximum number of bytes to read before ending the
+         * iterator. Reads stop when `limit` bytes have been delivered or EOF is
+         * reached, whichever comes first.
+         */
+        limit?: number | undefined;
+        /**
+         * Size in bytes of the buffer allocated for each
+         * read operation.
+         * @default 131072
+         */
+        chunkSize?: number | undefined;
+    }
+    interface WriterOptions {
+        /**
+         * Close the file handle when the writer ends or fails.
+         * @default false
+         */
+        autoClose?: boolean | undefined;
+        /**
+         * Byte offset to start writing at. When specified,
+         * writes use explicit positioning.
+         */
+        start?: number | undefined;
+        /**
+         * Maximum number of bytes the writer will accept.
+         * Async writes (`write()`, `writev()`) that would exceed the limit reject
+         * with `ERR_OUT_OF_RANGE`. Sync writes (`writeSync()`, `writevSync()`)
+         * return `false`.
+         */
+        limit?: number | undefined;
+        /**
+         * Maximum chunk size in bytes for synchronous write
+         * operations. Writes larger than this threshold fall back to async I/O.
+         * Set this to match the reader's `chunkSize` for optimal `pipeTo()`
+         * performance.
+         * @default 131072
+         */
+        chunkSize?: number | undefined;
     }
     // TODO: Add `EventEmitter` close
     interface FileHandle {
@@ -217,6 +262,41 @@ declare module "fs/promises" {
          */
         datasync(): Promise<void>;
         /**
+         * Return the file contents as an async iterable using the
+         * [`node:stream/iter`](https://nodejs.org/docs/latest-v26.x/api/stream_iter.html) pull model. Reads are performed in `chunkSize`-byte
+         * chunks (default 128 KB). If transforms are provided, they are applied
+         * via [`stream/iter pull()`](https://nodejs.org/docs/latest-v26.x/api/stream_iter.html#pullsource-transforms-options).
+         *
+         * The file handle is locked while the iterable is being consumed and unlocked
+         * when iteration completes, an error occurs, or the consumer breaks.
+         *
+         * This function is only available when the `--experimental-stream-iter` flag is
+         * enabled.
+         *
+         * ```js
+         * import { open } from 'node:fs/promises';
+         * import { text } from 'node:stream/iter';
+         * import { compressGzip } from 'node:zlib/iter';
+         *
+         * const fh = await open('input.txt', 'r');
+         *
+         * // Read as text
+         * console.log(await text(fh.pull({ autoClose: true })));
+         *
+         * // Read 1 KB starting at byte 100
+         * const fh2 = await open('input.txt', 'r');
+         * console.log(await text(fh2.pull({ start: 100, limit: 1024, autoClose: true })));
+         *
+         * // Read with compression
+         * const fh3 = await open('input.txt', 'r');
+         * const compressed = fh3.pull(compressGzip(), { autoClose: true });
+         * ```
+         * @since v25.9.0
+         * @experimental
+         */
+        pull(...transforms: Transform[]): ByteReadableStream;
+        pull(...args: [...transforms: Transform[], options: PullOptions]): ByteReadableStream;
+        /**
          * Request that all data for the open file descriptor is flushed to the storage
          * device. The specific implementation is operating system and device specific.
          * Refer to the POSIX [`fsync(2)`](http://man7.org/linux/man-pages/man2/fsync.2.html) documentation for more detail.
@@ -280,39 +360,61 @@ declare module "fs/promises" {
          *
          * If `options` is a string, then it specifies the `encoding`.
          *
+         * If `buffer` is provided and no encoding is specified, the returned {Buffer} is
+         * a view over the supplied buffer containing only the bytes read. If the
+         * supplied buffer is too small to contain the entire file, the operation will
+         * fail.
+         *
          * The `FileHandle` has to support reading.
          *
-         * If one or more `filehandle.read()` calls are made on a file handle and then a `filehandle.readFile()` call is made, the data will be read from the current
+         * If one or more `filehandle.read()` calls are made on a file handle and then a
+         * `filehandle.readFile()` call is made, the data will be read from the current
          * position till the end of the file. It doesn't always read from the beginning
          * of the file.
+         *
+         * An example using the `buffer` option with a pre-allocated buffer:
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         * import { open } from 'node:fs/promises';
+         *
+         * const file = await open('./some/file/to/read');
+         * try {
+         *   const buf = Buffer.alloc(16384);
+         *   const contents = await file.readFile({ buffer: buf });
+         *   console.log(contents); // A view over `buf` containing only the bytes read
+         * } finally {
+         *   await file.close();
+         * }
+         * ```
+         *
+         * An example using the `buffer` option with a function returning a buffer:
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         * import { open } from 'node:fs/promises';
+         *
+         * const file = await open('./some/file/to/read');
+         * try {
+         *   const contents = await file.readFile({
+         *     buffer: (size) => Buffer.alloc(size),
+         *   });
+         *   console.log(contents);
+         * } finally {
+         *   await file.close();
+         * }
+         * ```
          * @since v10.0.0
-         * @return Fulfills upon a successful read with the contents of the file. If no encoding is specified (using `options.encoding`), the data is returned as a {Buffer} object. Otherwise, the
-         * data will be a string.
+         * @returns Fulfills upon a successful read with the contents of the
+         * file. If no encoding is specified (using `options.encoding`), the data is
+         * returned as a `Buffer` object. Otherwise, the data will be a string.
          */
-        readFile(
-            options?:
-                | ({ encoding?: null | undefined } & Abortable)
-                | null,
-        ): Promise<NonSharedBuffer>;
-        /**
-         * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
-         * The `FileHandle` must have been opened for reading.
-         */
-        readFile(
-            options:
-                | ({ encoding: BufferEncoding } & Abortable)
-                | BufferEncoding,
-        ): Promise<string>;
-        /**
-         * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
-         * The `FileHandle` must have been opened for reading.
-         */
-        readFile(
-            options?:
-                | (ObjectEncodingOptions & Abortable)
-                | BufferEncoding
-                | null,
-        ): Promise<string | NonSharedBuffer>;
+        readFile<T extends NodeJS.ArrayBufferView>(
+            options: Omit<ReadFileOptionsWithBuffer<T>, "flag">,
+        ): Promise<BufferView<T>>;
+        readFile(options?: Omit<ReadFileOptionsWithBufferEncoding, "flag"> | null): Promise<NonSharedBuffer>;
+        readFile(options: Omit<ReadFileOptionsWithStringEncoding, "flag"> | BufferEncoding): Promise<string>;
+        readFile(options: Omit<ReadFileOptions, "flag"> | BufferEncoding | null): Promise<string | NonSharedBuffer>;
         /**
          * Convenience method to create a `readline` interface and stream over the file.
          * See `filehandle.createReadStream()` for the options.
@@ -469,6 +571,45 @@ declare module "fs/promises" {
             position?: number,
         ): Promise<WriteVResult<TBuffers>>;
         /**
+         * Return a [`node:stream/iter`](https://nodejs.org/docs/latest-v26.x/api/stream_iter.html) writer backed by this file handle.
+         *
+         * The writer supports both `Symbol.asyncDispose` and `Symbol.dispose`:
+         *
+         * * `await using w = fh.writer()` — if the writer is still open (no `end()`
+         *   called), `asyncDispose` calls `fail()`. If `end()` is pending, it waits
+         *   for it to complete.
+         * * `using w = fh.writer()` — calls `fail()` unconditionally.
+         *
+         * The `writeSync()` and `writevSync()` methods enable the try-sync fast path
+         * used by [`stream/iter pipeTo()`](https://nodejs.org/docs/latest-v26.x/api/stream_iter.html#pipetosource-transforms-writer). When the reader's chunk size matches the
+         * writer's `chunkSize`, all writes in a `pipeTo()` pipeline complete
+         * synchronously with zero promise overhead.
+         *
+         * This function is only available when the `--experimental-stream-iter` flag is
+         * enabled.
+         *
+         * ```js
+         * import { open } from 'node:fs/promises';
+         * import { from, pipeTo } from 'node:stream/iter';
+         * import { compressGzip } from 'node:zlib/iter';
+         *
+         * // Async pipeline
+         * const fh = await open('output.gz', 'w');
+         * await pipeTo(from('Hello!'), compressGzip(), fh.writer({ autoClose: true }));
+         *
+         * // Sync pipeline with limit
+         * const src = await open('input.txt', 'r');
+         * const dst = await open('output.txt', 'w');
+         * const w = dst.writer({ limit: 1024 * 1024 }); // Max 1 MB
+         * await pipeTo(src.pull({ autoClose: true }), w);
+         * await w.end();
+         * await dst.close();
+         * ```
+         * @since v25.9.0
+         * @experimental
+         */
+        writer(options?: WriterOptions): Writer;
+        /**
          * Read from a file and write to an array of [ArrayBufferView](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView) s
          * @since v13.13.0, v12.17.0
          * @param [position='null'] The offset from the beginning of the file where the data should be read from. If `position` is not a `number`, the data will be read from the current position.
@@ -499,7 +640,7 @@ declare module "fs/promises" {
         /**
          * Calls `filehandle.close()` and returns a promise that fulfills when the
          * filehandle is closed.
-         * @since v20.4.0
+         * @since v20.4.0, v18.8.0
          */
         [Symbol.asyncDispose](): Promise<void>;
     }
@@ -608,7 +749,7 @@ declare module "fs/promises" {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-    function rmdir(path: PathLike, options?: RmDirOptions): Promise<void>;
+    function rmdir(path: PathLike): Promise<void>;
     /**
      * Removes files and directories (modeled on the standard POSIX `rm` utility).
      * @since v14.14.0
@@ -820,19 +961,42 @@ declare module "fs/promises" {
      * @since v10.0.0
      * @return Fulfills with the {fs.Stats} object for the given `path`.
      */
+    function stat(path: PathLike): Promise<Stats>;
     function stat(
         path: PathLike,
         opts?: StatOptions & {
             bigint?: false | undefined;
+            throwIfNoEntry?: true | undefined;
         },
     ): Promise<Stats>;
     function stat(
         path: PathLike,
         opts: StatOptions & {
             bigint: true;
+            throwIfNoEntry?: true | undefined;
         },
     ): Promise<BigIntStats>;
-    function stat(path: PathLike, opts?: StatOptions): Promise<Stats | BigIntStats>;
+    function stat(
+        path: PathLike,
+        opts: StatOptions & {
+            bigint?: false | undefined;
+            throwIfNoEntry: false;
+        },
+    ): Promise<Stats | undefined>;
+    function stat(
+        path: PathLike,
+        opts: StatOptions & {
+            bigint: true;
+            throwIfNoEntry: false;
+        },
+    ): Promise<BigIntStats | undefined>;
+    function stat(
+        path: PathLike,
+        opts: StatOptions & {
+            throwIfNoEntry?: true | undefined;
+        },
+    ): Promise<Stats | BigIntStats>;
+    function stat(path: PathLike, opts?: StatOptions): Promise<Stats | BigIntStats | undefined>;
     /**
      * @since v19.6.0, v18.15.0
      * @return Fulfills with the {fs.StatFs} object for the given `path`.
@@ -987,6 +1151,40 @@ declare module "fs/promises" {
         prefix: string,
         options?: ObjectEncodingOptions | BufferEncoding | null,
     ): Promise<string | NonSharedBuffer>;
+    interface DisposableTempDir extends AsyncDisposable {
+        /**
+         * The path of the created directory.
+         */
+        path: string;
+        /**
+         * A function which removes the created directory.
+         */
+        remove(): Promise<void>;
+        /**
+         * The same as `remove`.
+         */
+        [Symbol.asyncDispose](): Promise<void>;
+    }
+    /**
+     * The resulting Promise holds an async-disposable object whose `path` property
+     * holds the created directory path. When the object is disposed, the directory
+     * and its contents will be removed asynchronously if it still exists. If the
+     * directory cannot be deleted, disposal will throw an error. The object has an
+     * async `remove()` method which will perform the same task.
+     *
+     * Both this function and the disposal function on the resulting object are
+     * async, so it should be used with `await` + `await using` as in
+     * `await using dir = await fsPromises.mkdtempDisposable('prefix')`.
+     *
+     * <!-- TODO: link MDN docs for disposables once https://github.com/mdn/content/pull/38027 lands -->
+     *
+     * For detailed information, see the documentation of `fsPromises.mkdtemp()`.
+     *
+     * The optional `options` argument can be a string specifying an encoding, or an
+     * object with an `encoding` property specifying the character encoding to use.
+     * @since v24.4.0
+     */
+    function mkdtempDisposable(prefix: PathLike, options?: EncodingOption): Promise<DisposableTempDir>;
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
      * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -1137,50 +1335,21 @@ declare module "fs/promises" {
      * @param path filename or `FileHandle`
      * @return Fulfills with the contents of the file.
      */
+    function readFile<T extends NodeJS.ArrayBufferView>(
+        path: PathLike | FileHandle,
+        options: ReadFileOptionsWithBuffer<T>,
+    ): Promise<BufferView<T>>;
     function readFile(
         path: PathLike | FileHandle,
-        options?:
-            | ({
-                encoding?: null | undefined;
-                flag?: OpenMode | undefined;
-            } & Abortable)
-            | null,
+        options?: ReadFileOptionsWithBufferEncoding | null,
     ): Promise<NonSharedBuffer>;
-    /**
-     * Asynchronously reads the entire contents of a file.
-     * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
-     * If a `FileHandle` is provided, the underlying file will _not_ be closed automatically.
-     * @param options An object that may contain an optional flag.
-     * If a flag is not provided, it defaults to `'r'`.
-     */
     function readFile(
         path: PathLike | FileHandle,
-        options:
-            | ({
-                encoding: BufferEncoding;
-                flag?: OpenMode | undefined;
-            } & Abortable)
-            | BufferEncoding,
+        options: ReadFileOptionsWithStringEncoding | BufferEncoding,
     ): Promise<string>;
-    /**
-     * Asynchronously reads the entire contents of a file.
-     * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
-     * If a `FileHandle` is provided, the underlying file will _not_ be closed automatically.
-     * @param options An object that may contain an optional flag.
-     * If a flag is not provided, it defaults to `'r'`.
-     */
     function readFile(
         path: PathLike | FileHandle,
-        options?:
-            | (
-                & ObjectEncodingOptions
-                & Abortable
-                & {
-                    flag?: OpenMode | undefined;
-                }
-            )
-            | BufferEncoding
-            | null,
+        options: ReadFileOptions | BufferEncoding | null,
     ): Promise<string | NonSharedBuffer>;
     /**
      * Asynchronously open a directory for iterative scanning. See the POSIX [`opendir(3)`](http://man7.org/linux/man-pages/man3/opendir.3.html) documentation for more detail.
@@ -1270,13 +1439,15 @@ declare module "fs/promises" {
      * When copying a directory to another directory, globs are not supported and
      * behavior is similar to `cp dir1/ dir2/`.
      * @since v16.7.0
-     * @experimental
      * @param src source path to copy.
      * @param dest destination path to copy to.
      * @return Fulfills with `undefined` upon success.
      */
     function cp(source: string | URL, destination: string | URL, opts?: CopyOptions): Promise<void>;
     /**
+     * When `followSymlinks` is enabled, detected symbolic link cycles are not
+     * traversed recursively.
+     *
      * ```js
      * import { glob } from 'node:fs/promises';
      *
@@ -1301,6 +1472,6 @@ declare module "fs/promises" {
         options: GlobOptions,
     ): NodeJS.AsyncIterator<Dirent | string>;
 }
-declare module "node:fs/promises" {
-    export * from "fs/promises";
+declare module "fs/promises" {
+    export * from "node:fs/promises";
 }
