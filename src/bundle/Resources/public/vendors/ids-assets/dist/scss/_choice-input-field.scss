@@ -9,6 +9,10 @@
     align-items: center;
     gap: calculateRem(8px);
 
+    &__input-wrapper {
+        display: flex;
+    }
+
     &--disabled {
         .ids-choice-input-label {
             color: var(--ids-input-disabled-text-color, #{$color-neutral-150});
