@@ -60,4 +60,10 @@ $input-sizes: (
             height: calculateRem(32px);
         }
     }
+
+    &--search {
+        &::-webkit-search-cancel-button {
+            display: none;
+        }
+    }
 }

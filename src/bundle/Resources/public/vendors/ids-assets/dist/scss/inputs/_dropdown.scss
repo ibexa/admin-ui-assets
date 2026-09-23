@@ -9,6 +9,7 @@ $item-gap: calculateRem(4px);
     $self: &;
 
     position: relative;
+    min-width: 0;
 
     &__source {
         @include utils-mixins.hidden;
@@ -38,10 +39,16 @@ $item-gap: calculateRem(4px);
     &__selection-info-items {
         min-width: 0;
         font-size: $text-font-size-m;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     &__placeholder {
         color: $color-neutral-160;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     &__items-container {
