@@ -42,4 +42,26 @@
             display: none;
         }
     }
+
+    &:has(.ids-input--number) &__actions {
+        padding-right: calculateRem(38px);
+    }
+
+    &:has(.ids-input--number) &__action {
+        position: absolute;
+        top: 50%;
+        right: calculateRem(31px);
+        transform: translateY(-50%);
+
+        &--hidden {
+            display: block;
+            visibility: hidden;
+        }
+    }
+
+    &:has(.ids-input--number) .ids-input--number::-webkit-inner-spin-button {
+        position: relative;
+        z-index: 1;
+        left: calculateRem(22px);
+    }
 }
