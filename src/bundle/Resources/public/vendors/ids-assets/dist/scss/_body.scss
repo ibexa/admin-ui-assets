@@ -1,0 +1,38 @@
+@use 'variables' as *;
+
+@mixin body($weight: $text-font-weight-normal, $style: normal) {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    line-height: $body-line-height;
+}
+
+@mixin body-xl($weight: $text-font-weight-normal, $style: normal) {
+    @include body($weight, $style);
+
+    font-size: $body-xl-font-size;
+}
+
+@mixin body-l($weight: $text-font-weight-normal, $style: normal) {
+    @include body($weight, $style);
+
+    font-size: $body-l-font-size;
+}
+
+@mixin body-m($weight: $text-font-weight-normal, $style: normal) {
+    @include body($weight, $style);
+
+    font-size: $body-m-font-size;
+}
+
+@mixin body-s($weight: $text-font-weight-normal, $style: normal) {
+    @include body($weight, $style);
+
+    font-size: $body-s-font-size;
+}
+
+@mixin body-xs($weight: $text-font-weight-normal, $style: normal) {
+    @include body($weight, $style);
+
+    font-size: $body-xs-font-size;
+}
