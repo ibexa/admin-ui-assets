@@ -26,7 +26,6 @@ var Tag = exports.Tag = function Tag(_ref) {
     size = _ref$size === void 0 ? _Tag.TagSize.Medium : _ref$size,
     type = _ref.type;
   var isGhostType = function isGhostType(tagType) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
     return Object.values(_Tag.TagGhostType).includes(tagType);
   };
   var isGhost = isGhostType(type);

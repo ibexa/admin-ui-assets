@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+@mixin code {
+    font-family: $font-family-code;
+    font-weight: $text-font-weight-normal;
+    line-height: $code-line-height;
+}
+
+@mixin code-l {
+    @include code;
+
+    font-size: $code-l-font-size;
+}
+
+@mixin code-m {
+    @include code;
+
+    font-size: $code-m-font-size;
+}
+
+@mixin code-s {
+    @include code;
+
+    font-size: $code-s-font-size;
+}
