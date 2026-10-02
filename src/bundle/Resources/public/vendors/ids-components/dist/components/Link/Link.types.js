@@ -7,6 +7,7 @@ exports.LinkVariant = exports.LinkType = exports.LinkSize = void 0;
 var LinkSize = exports.LinkSize = /*#__PURE__*/function (LinkSize) {
   LinkSize["Medium"] = "medium";
   LinkSize["Small"] = "small";
+  LinkSize["Inline"] = "inline";
   return LinkSize;
 }({});
 var LinkType = exports.LinkType = /*#__PURE__*/function (LinkType) {

@@ -249,6 +249,11 @@ $btns-sizes: (
         'padding-x': calculateRem(12px),
         'icon-padding': calculateRem(4px),
     ),
+    'inline': (
+        'height': auto,
+        'padding-x': 0,
+        'icon-padding': calculateRem(4px),
+    ),
 );
 
 .ids-btn {
@@ -359,5 +364,16 @@ $btns-sizes: (
 
     &--primary {
         border: 0;
+    }
+
+    &--inline {
+        border: 0;
+        border-radius: $border-radius-small;
+
+        &:focus-visible:not([disabled], [aria-disabled='true']) {
+            box-shadow:
+                0 0 0 calculateRem(1px) var(--ids-focus-border-color),
+                var(--ids-focus-box-shadow);
+        }
     }
 }

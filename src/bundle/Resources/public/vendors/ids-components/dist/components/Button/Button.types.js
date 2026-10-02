@@ -7,6 +7,7 @@ exports.IconPosition = exports.ButtonType = exports.ButtonSize = void 0;
 var ButtonSize = exports.ButtonSize = /*#__PURE__*/function (ButtonSize) {
   ButtonSize["Medium"] = "medium";
   ButtonSize["Small"] = "small";
+  ButtonSize["Inline"] = "inline";
   return ButtonSize;
 }({});
 var ButtonType = exports.ButtonType = /*#__PURE__*/function (ButtonType) {
