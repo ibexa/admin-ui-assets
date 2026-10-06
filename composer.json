@@ -6,7 +6,7 @@
         "ezsystems/ezplatform-admin-ui-assets": "*"
     },
     "require": {
-        "php": ">=8.3",
+        "php": ">=8.5",
         "symfony/config": "^8.1",
         "symfony/dependency-injection": "^8.1",
         "symfony/http-kernel": "^8.1",
