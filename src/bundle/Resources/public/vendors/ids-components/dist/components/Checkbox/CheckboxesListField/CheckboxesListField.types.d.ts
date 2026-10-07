@@ -4,7 +4,9 @@ import { Direction as CheckboxesListFieldDirection } from '@ids-partials/BaseInp
 import { HelperTextProps } from '@ids-components/HelperText/HelperText.types';
 import { LabelProps } from '@ids-components/Label/Label.types';
 export { CheckboxesListFieldDirection };
-export type CheckboxesListFieldItem = Omit<CheckboxFieldProps, 'name' | 'checked'>;
+export type CheckboxesListFieldItem = Omit<CheckboxFieldProps, 'name' | 'checked'> & {
+    value: string;
+};
 export declare enum CheckboxesListFieldAction {
     Check = "check",
     Uncheck = "uncheck"
