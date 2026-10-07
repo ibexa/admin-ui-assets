@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.DropdownMultiInputStateful = exports.DropdownMultiInput = void 0;
 var _react = _interopRequireDefault(require("react"));
-var _focus = require("../utils/focus");
 var _BaseDropdown = require("../../../partials/BaseDropdown");
+var _focus = require("../utils/focus");
 var _Checkbox = require("../../Checkbox");
 var _Chip = require("../../Chip");
 var _OverflowList = require("../../OverflowList");
@@ -74,7 +74,8 @@ var DropdownMultiInput = exports.DropdownMultiInput = function DropdownMultiInpu
       className: "ids-dropdown__item-label"
     }, item.label));
   };
-  var selectedItems = value.length ? items.filter(function (item) {
+  var flatItems = (0, _BaseDropdown.flattenDropdownItems)(items);
+  var selectedItems = value.length ? flatItems.filter(function (item) {
     return value.includes(item.id);
   }) : [];
   var renderSelectedItems = function renderSelectedItems() {
@@ -96,23 +97,33 @@ var DropdownMultiInput = exports.DropdownMultiInput = function DropdownMultiInpu
       }
     });
   };
+  var renderOption = function renderOption(item) {
+    return /*#__PURE__*/_react["default"].createElement("option", {
+      key: item.id,
+      value: item.id
+    }, item.label);
+  };
+  var renderOptionGroup = function renderOptionGroup(group) {
+    var _group$id;
+    return /*#__PURE__*/_react["default"].createElement("optgroup", {
+      key: (_group$id = group.id) !== null && _group$id !== void 0 ? _group$id : group.label,
+      label: group.label
+    }, (0, _BaseDropdown.flattenDropdownItems)(group.items).map(renderOption));
+  };
   var renderSource = function renderSource() {
     return /*#__PURE__*/_react["default"].createElement("select", {
       defaultValue: value,
       multiple: true,
       name: name,
       tabIndex: -1
-    }, items.map(function (item) {
-      return /*#__PURE__*/_react["default"].createElement("option", {
-        key: item.id,
-        value: item.id
-      }, item.label);
+    }, items.map(function (entry) {
+      return (0, _BaseDropdown.isDropdownItemGroup)(entry) ? renderOptionGroup(entry) : renderOption(entry);
     }));
   };
   var getFocusableElements = function getFocusableElements(_ref4) {
     var itemsList = _ref4.itemsList,
       search = _ref4.search;
-    var focusableElements = [].concat(_toConsumableArray(search instanceof HTMLElement ? [search] : []), _toConsumableArray(Array.from(itemsList.children).reduce(function (acc, child) {
+    var focusableElements = [].concat(_toConsumableArray(search instanceof HTMLElement ? [search] : []), _toConsumableArray(Array.from(itemsList.querySelectorAll('.ids-dropdown__item')).reduce(function (acc, child) {
       if (child instanceof HTMLElement) {
         var checkbox = child.querySelector('.ids-input--checkbox');
         if (checkbox instanceof HTMLElement && !checkbox.classList.contains('ids-input--disabled')) {

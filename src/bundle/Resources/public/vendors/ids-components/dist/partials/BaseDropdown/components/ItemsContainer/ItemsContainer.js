@@ -7,8 +7,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.ItemsContainer = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _reactPopper = require("react-popper");
+var _items = require("../../utils/items");
+var _ItemsList = require("../ItemsList");
 var _Search = require("../Search");
-var _idsCore = require("@ids-core");
+var _Translator = require("../../../../context/Translator");
 var _useKeyEvent = require("../../../../hooks/useKeyEvent");
 var _ItemsContainer = require("./ItemsContainer.types");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != _typeof(e) && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
@@ -26,7 +28,7 @@ function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" !=
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 var VIEWPORT_MARGIN = 16;
 var ItemsContainer = exports.ItemsContainer = function ItemsContainer(_ref) {
-  var _attributes$popper;
+  var _filteredItems$, _attributes$popper;
   var closeDropdown = _ref.closeDropdown,
     filterFunction = _ref.filterFunction,
     getItemAttributes = _ref.getItemAttributes,
@@ -38,6 +40,8 @@ var ItemsContainer = exports.ItemsContainer = function ItemsContainer(_ref) {
     onDropdownItemClick = _ref.onDropdownItemClick,
     referenceElement = _ref.referenceElement,
     renderItem = _ref.renderItem;
+  var Translator = (0, _react.useContext)(_Translator.TranslatorContext);
+  var groupIdPrefix = (0, _react.useId)();
   var searchRef = (0, _react.useRef)(null);
   var itemsRef = (0, _react.useRef)(null);
   var _useState = (0, _react.useState)(false),
@@ -70,15 +74,18 @@ var ItemsContainer = exports.ItemsContainer = function ItemsContainer(_ref) {
     }),
     styles = _usePopper.styles,
     attributes = _usePopper.attributes;
-  var hasSearchInput = items.length > maxVisibleItems;
-  var filteredItems = (0, _react.useMemo)(function () {
-    if (!searchTerm) {
-      return items;
-    }
-    return items.filter(function (item) {
-      return filterFunction(item, searchTerm);
-    });
+  var flatItems = (0, _react.useMemo)(function () {
+    return (0, _items.flattenDropdownItems)(items);
+  }, [items]);
+  var hasSearchInput = flatItems.length > maxVisibleItems;
+  var filteredEntries = (0, _react.useMemo)(function () {
+    return (0, _items.filterDropdownEntries)(items, searchTerm, filterFunction);
   }, [items, searchTerm, filterFunction]);
+  var filteredItems = (0, _react.useMemo)(function () {
+    return (0, _items.flattenDropdownItems)(filteredEntries);
+  }, [filteredEntries]);
+  var hasNoResults = !!searchTerm && filteredItems.length === 0;
+  var firstFocusableItemId = hasSearchInput ? undefined : (_filteredItems$ = filteredItems[0]) === null || _filteredItems$ === void 0 ? void 0 : _filteredItems$.id;
   var onItemClick = function onItemClick(item) {
     onDropdownItemClick(item, {
       closeDropdown: closeDropdown
@@ -242,24 +249,16 @@ var ItemsContainer = exports.ItemsContainer = function ItemsContainer(_ref) {
     className: "ids-dropdown__items",
     ref: itemsRef,
     style: getItemsStyles()
-  }, filteredItems.map(function (item, index) {
-    var dropdownItemClassName = (0, _idsCore.createCssClassNames)({
-      'ids-dropdown__item': true,
-      'ids-dropdown__item--selected': isItemSelected(item)
-    });
-    return /*#__PURE__*/_react["default"].createElement("li", _extends({
-      className: dropdownItemClassName,
-      key: item.id,
-      onClick: function onClick() {
-        onItemClick(item);
-      },
-      ref: function ref(node) {
-        if (index === 0 && !hasSearchInput && node) {
-          node.focus();
-        }
-      },
-      role: "button",
-      tabIndex: 0
-    }, getItemAttributes(item)), renderItem(item));
-  })));
+  }, /*#__PURE__*/_react["default"].createElement(_ItemsList.ItemsList, {
+    entries: filteredEntries,
+    firstFocusableItemId: firstFocusableItemId,
+    getItemAttributes: getItemAttributes,
+    groupIdPrefix: groupIdPrefix,
+    isItemSelected: isItemSelected,
+    onItemClick: onItemClick,
+    renderItem: renderItem
+  })), hasNoResults && /*#__PURE__*/_react["default"].createElement("div", {
+    "aria-live": "polite",
+    className: "ids-dropdown__no-results"
+  }, Translator.trans(/*@Desc("No results found")*/'ids.dropdown.search.no_results')));
 };
