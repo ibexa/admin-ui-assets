@@ -6,11 +6,11 @@
         "ezsystems/ezplatform-admin-ui-assets": "*"
     },
     "require": {
-        "php": ">=8.3",
-        "symfony/config": "^7.4",
-        "symfony/dependency-injection": "^7.4",
-        "symfony/http-kernel": "^7.4",
-        "symfony/yaml": "^7.4"
+        "php": ">=8.5",
+        "symfony/config": "^8.1",
+        "symfony/dependency-injection": "^8.1",
+        "symfony/http-kernel": "^8.1",
+        "symfony/yaml": "^8.1"
     },
     "require-dev": {
         "ibexa/code-style": "~2.0.0"
