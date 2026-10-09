@@ -9,6 +9,7 @@ $alert-types: (
         'accent': $color-success-60,
         'icon': $color-success-80,
         'title': $color-success-80,
+        'title-hover': $color-success-100,
     ),
     'warning': (
         'bg': $color-warning-5,
@@ -16,6 +17,7 @@ $alert-types: (
         'accent': $color-warning-60,
         'icon': $color-warning-80,
         'title': $color-warning-100,
+        'title-hover': $color-warning-120,
     ),
     'error': (
         'bg': $color-error-5,
@@ -23,6 +25,7 @@ $alert-types: (
         'accent': $color-error-60,
         'icon': $color-error-80,
         'title': $color-error-80,
+        'title-hover': $color-error-100,
     ),
     'info': (
         'bg': $color-info-5,
@@ -30,6 +33,7 @@ $alert-types: (
         'accent': $color-info-60,
         'icon': $color-info-80,
         'title': $color-info-80,
+        'title-hover': $color-info-100,
     ),
 );
 $alert-line-height: calculateRem(21px);
@@ -76,11 +80,23 @@ $alert-line-height: calculateRem(21px);
         font-weight: $text-font-weight-semi;
         color: var(--ids-alert-title-color);
         overflow-wrap: break-word;
+
+        a:hover {
+            color: var(--ids-alert-title-hover-color);
+        }
     }
 
     &__description {
         color: $color-neutral-200;
         overflow-wrap: break-word;
+    }
+
+    &__title,
+    &__description {
+        a {
+            text-decoration: underline;
+            color: inherit;
+        }
     }
 
     &__actions {
@@ -95,6 +111,7 @@ $alert-line-height: calculateRem(21px);
 
         width: calculateRem(16px);
         height: $alert-line-height;
+        margin-left: calculateRem(8px);
         padding: 0;
     }
 }
