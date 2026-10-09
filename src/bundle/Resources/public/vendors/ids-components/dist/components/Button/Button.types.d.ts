@@ -2,7 +2,8 @@ import type { ButtonHTMLAttributes } from 'react';
 import { BaseComponentAriaAttributes } from '@ids-types/general';
 export declare enum ButtonSize {
     Medium = "medium",
-    Small = "small"
+    Small = "small",
+    None = "none"
 }
 export declare enum ButtonType {
     Primary = "primary",
