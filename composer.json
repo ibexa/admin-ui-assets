@@ -15,11 +15,18 @@
         "php": "^7.4 || ^8.0",
         "symfony/http-kernel": "^5.0"
     },
+    "require-dev": {
+        "ibexa/code-style": "~2.3.1"
+    },
     "autoload": {
         "psr-4": {
             "EzSystems\\EzPlatformAdminUiAssetsBundle\\": "/",
             "Ibexa\\Bundle\\AdminUiAssets\\": "src/bundle/"
         }
+    },
+    "scripts": {
+        "fix-cs": "php-cs-fixer fix --config=.php-cs-fixer.php --show-progress=dots",
+        "check-cs": "@fix-cs --dry-run"
     },
     "extra": {
         "branch-alias": {
