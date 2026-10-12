@@ -2,13 +2,13 @@
 @use 'variables' as *;
 
 html {
-    font-size: $base-font-size;
     line-height: $base-line-height;
     letter-spacing: calculateRem(0.12px);
 }
 
 body {
     font-family: $font-family;
+    font-size: $text-font-size-m;
 }
 
 *[hidden] {
