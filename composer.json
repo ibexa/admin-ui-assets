@@ -13,7 +13,7 @@
         "symfony/yaml": "^8.1"
     },
     "require-dev": {
-        "ibexa/code-style": "~2.0.0"
+        "ibexa/code-style": "~2.3.1"
     },
     "autoload": {
         "psr-4": {
