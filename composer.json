@@ -10,7 +10,7 @@
         "symfony/http-kernel": "^7.2"
     },
     "require-dev": {
-        "ibexa/code-style": "~2.0.0"
+        "ibexa/code-style": "~2.3.1"
     },
     "autoload": {
         "psr-4": {
