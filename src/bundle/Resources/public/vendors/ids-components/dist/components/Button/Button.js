@@ -17,7 +17,7 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r; if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) { var i = r.call(t, e || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === e ? String : Number)(t); }
-var ICON_SIZE_MAPPING = _defineProperty(_defineProperty({}, _Button.ButtonSize.Medium, _Icon.IconSize.Small), _Button.ButtonSize.Small, _Icon.IconSize.Small);
+var ICON_SIZE_MAPPING = _defineProperty(_defineProperty(_defineProperty({}, _Button.ButtonSize.Medium, _Icon.IconSize.Small), _Button.ButtonSize.Small, _Icon.IconSize.Small), _Button.ButtonSize.None, _Icon.IconSize.Small);
 var Button = exports.Button = function Button(_ref) {
   var onClick = _ref.onClick,
     _ref$children = _ref.children,
