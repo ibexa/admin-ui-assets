@@ -1,0 +1,33 @@
+name: Backend CI
+
+on:
+    push:
+        branches:
+            - '[0-9]+.[0-9]+'
+    pull_request: ~
+    workflow_dispatch: ~
+
+jobs:
+    cs-fix:
+        name: Run code style check
+        runs-on: "ubuntu-26.04"
+        strategy:
+            matrix:
+                php:
+                    - '8.3'
+        steps:
+            -   uses: actions/checkout@v7
+
+            -   uses: ibexa/gh-workflows/actions/composer-install@main
+                with:
+                    php-version: ${{ matrix.php }}
+                    gh-client-id: ${{ secrets.AUTOMATION_CLIENT_ID }}
+                    gh-client-secret: ${{ secrets.AUTOMATION_CLIENT_SECRET }}
+                    satis-network-key: ${{ secrets.SATIS_NETWORK_KEY }}
+                    satis-network-token: ${{ secrets.SATIS_NETWORK_TOKEN }}
+
+            -   name: Run code style check
+                shell: bash
+                run: |
+                    set -euo pipefail
+                    composer run-script check-cs -- --format=checkstyle | cs2pr
