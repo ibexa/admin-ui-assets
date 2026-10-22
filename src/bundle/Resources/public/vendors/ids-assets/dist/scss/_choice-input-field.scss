@@ -20,12 +20,6 @@
         }
     }
 
-    &--error {
-        .ids-choice-input-label {
-            color: var(--ids-input-error-text-color, #{$color-error-80});
-        }
-    }
-
     &:hover:not(&--disabled) {
         .ids-choice-input-label {
             color: var(--ids-input-hover-text-color);
