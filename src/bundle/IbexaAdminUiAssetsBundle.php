@@ -10,6 +10,4 @@ namespace Ibexa\Bundle\AdminUiAssets;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-final class IbexaAdminUiAssetsBundle extends Bundle
-{
-}
+final class IbexaAdminUiAssetsBundle extends Bundle {}

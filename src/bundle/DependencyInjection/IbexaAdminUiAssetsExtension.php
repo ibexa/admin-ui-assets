@@ -16,8 +16,10 @@ use Symfony\Component\Yaml\Yaml;
 
 final class IbexaAdminUiAssetsExtension extends Extension implements PrependExtensionInterface
 {
-    public function load(array $configs, ContainerBuilder $container): void
-    {
+    public function load(
+        array $configs,
+        ContainerBuilder $container
+    ): void {
         // Intentionally left empty: this bundle only prepends Bazinga JS translation config.
     }
 
