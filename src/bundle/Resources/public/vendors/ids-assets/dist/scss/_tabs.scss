@@ -1,0 +1,106 @@
+@use 'functions' as *;
+@use 'variables' as *;
+@use 'body';
+
+.ids-tabs {
+    &__list {
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 0;
+        padding: 0;
+        border-bottom: calculateRem(1px) solid $color-neutral-70;
+        list-style: none;
+    }
+
+    &__item {
+        flex-shrink: 0;
+        margin-bottom: calculateRem(-1px);
+    }
+
+    &__tab {
+        @include body.body-m;
+
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: calculateRem(4px);
+        height: calculateRem(40px);
+        padding: calculateRem(8px) calculateRem(24px) calculateRem(11px);
+        border: 0;
+        background: transparent;
+        color: $color-neutral-240;
+        white-space: nowrap;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color $transition-duration $transition-timing-function;
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: calculateRem(3px);
+            border-radius: $border-radius-medium $border-radius-medium 0 0;
+            background: transparent;
+            transition: background-color $transition-duration $transition-timing-function;
+        }
+
+        &:hover {
+            color: $color-primary-80;
+            text-decoration: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:focus-visible {
+            border-radius: $border-radius-medium;
+            box-shadow: $box-shadow-focus-primary;
+        }
+
+        &--selected,
+        &[aria-selected='true'] {
+            font-weight: $text-font-weight-semi;
+
+            &::after {
+                background: $color-primary-80;
+            }
+        }
+
+        &--error {
+            color: $color-error-80;
+
+            &:hover {
+                color: $color-error-80;
+            }
+        }
+
+        &:disabled,
+        &--disabled,
+        &[aria-disabled='true'] {
+            color: $color-neutral-110;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    }
+
+    &__tab-label {
+        display: inline-flex;
+        flex-direction: column;
+
+        &::before {
+            content: attr(data-label);
+            height: 0;
+            overflow: hidden;
+            font-weight: $text-font-weight-semi;
+            visibility: hidden;
+            user-select: none;
+        }
+    }
+
+    &__tab-error-icon {
+        fill: currentColor;
+    }
+}

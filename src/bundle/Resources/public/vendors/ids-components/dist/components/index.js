@@ -179,6 +179,17 @@ Object.keys(_RadioButton).forEach(function (key) {
     }
   });
 });
+var _Tabs = require("./Tabs");
+Object.keys(_Tabs).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _Tabs[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _Tabs[key];
+    }
+  });
+});
 var _Tag = require("./Tag");
 Object.keys(_Tag).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;

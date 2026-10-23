@@ -1,7 +1,7 @@
 /*!
- * Chart.js v4.5.1
+ * Chart.js v4.6.1
  * https://www.chartjs.org
- * (c) 2025 Chart.js Contributors
+ * (c) 2026 Chart.js Contributors
  * Released under the MIT License
  */
 'use strict';
@@ -2326,10 +2326,12 @@ function getMaximumSize(canvas, bbWidth, bbHeight, aspectRatio) {
         canvas.style.height = `${chart.height}px`;
         canvas.style.width = `${chart.width}px`;
     }
-    if (chart.currentDevicePixelRatio !== pixelRatio || canvas.height !== deviceHeight || canvas.width !== deviceWidth) {
+    const canvasHeight = Math.floor(deviceHeight);
+    const canvasWidth = Math.floor(deviceWidth);
+    if (chart.currentDevicePixelRatio !== pixelRatio || canvas.height !== canvasHeight || canvas.width !== canvasWidth) {
         chart.currentDevicePixelRatio = pixelRatio;
-        canvas.height = deviceHeight;
-        canvas.width = deviceWidth;
+        canvas.height = canvasHeight;
+        canvas.width = canvasWidth;
         chart.ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
         return true;
     }
@@ -2912,4 +2914,4 @@ exports.uid = uid;
 exports.unclipArea = unclipArea;
 exports.unlistenArrayEvents = unlistenArrayEvents;
 exports.valueOrDefault = valueOrDefault;
-//# sourceMappingURL=helpers.dataset.cjs.map
+//# sourceMappingURL=index.cjs.map
