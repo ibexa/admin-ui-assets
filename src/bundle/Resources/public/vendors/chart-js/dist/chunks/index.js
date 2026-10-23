@@ -1,7 +1,7 @@
 /*!
- * Chart.js v4.5.1
+ * Chart.js v4.6.1
  * https://www.chartjs.org
- * (c) 2025 Chart.js Contributors
+ * (c) 2026 Chart.js Contributors
  * Released under the MIT License
  */
 import { Color } from '@kurkle/color';
@@ -2324,10 +2324,12 @@ function getMaximumSize(canvas, bbWidth, bbHeight, aspectRatio) {
         canvas.style.height = `${chart.height}px`;
         canvas.style.width = `${chart.width}px`;
     }
-    if (chart.currentDevicePixelRatio !== pixelRatio || canvas.height !== deviceHeight || canvas.width !== deviceWidth) {
+    const canvasHeight = Math.floor(deviceHeight);
+    const canvasWidth = Math.floor(deviceWidth);
+    if (chart.currentDevicePixelRatio !== pixelRatio || canvas.height !== canvasHeight || canvas.width !== canvasWidth) {
         chart.currentDevicePixelRatio = pixelRatio;
-        canvas.height = deviceHeight;
-        canvas.width = deviceWidth;
+        canvas.height = canvasHeight;
+        canvas.width = canvasWidth;
         chart.ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
         return true;
     }
@@ -2785,4 +2787,4 @@ function getDatasetClipArea(chart, meta) {
 }
 
 export { unclipArea as $, _rlookupByKey as A, _lookupByKey as B, _isPointInArea as C, getAngleFromPoint as D, toPadding as E, each as F, getMaximumSize as G, HALF_PI as H, _getParentNode as I, readUsedSize as J, supportsEventListenerOptions as K, throttled as L, _isDomSupported as M, _factorize as N, finiteOrDefault as O, PI as P, callback as Q, _addGrace as R, _limitValue as S, TAU as T, toDegrees as U, _measureText as V, _int16Range as W, _alignPixel as X, clipArea as Y, renderText as Z, _arrayUnique as _, resolve as a, getStyle as a$, toFont as a0, _toLeftRightCenter as a1, _alignStartEnd as a2, overrides as a3, merge as a4, _capitalize as a5, descriptors as a6, isFunction as a7, _attachContext as a8, _createResolver as a9, getRtlAdapter as aA, overrideTextDirection as aB, _textX as aC, restoreTextDirection as aD, drawPointLegend as aE, distanceBetweenPoints as aF, noop as aG, _setMinAndMaxByKey as aH, niceNum as aI, almostWhole as aJ, almostEquals as aK, _decimalPlaces as aL, Ticks as aM, log10 as aN, _longestText as aO, _filterBetween as aP, _lookup as aQ, isPatternOrGradient as aR, getHoverColor as aS, clone as aT, _merger as aU, _mergerIf as aV, _deprecated as aW, _splitKey as aX, toFontString as aY, splineCurve as aZ, splineCurveMonotone as a_, _descriptors as aa, mergeIf as ab, uid as ac, debounce as ad, retinaScale as ae, clearCanvas as af, setsEqual as ag, getDatasetClipArea as ah, _elementsEqual as ai, _isClickEvent as aj, _isBetween as ak, _normalizeAngle as al, _readValueToProps as am, _updateBezierControlPoints as an, _computeSegments as ao, _boundSegments as ap, _steppedInterpolation as aq, _bezierInterpolation as ar, _pointInLine as as, _steppedLineTo as at, _bezierCurveTo as au, drawPoint as av, addRoundedRectPath as aw, toTRBL as ax, toTRBLCorners as ay, _boundSegment as az, isArray as b, fontString as b0, toLineHeight as b1, PITAU as b2, INFINITY as b3, RAD_PER_DEG as b4, QUARTER_PI as b5, TWO_THIRDS_PI as b6, _angleDiff as b7, color as c, defaults as d, effects as e, resolveObjectKey as f, isNumberFinite as g, defined as h, isObject as i, createContext as j, isNullOrUndef as k, listenArrayEvents as l, toPercentage as m, toDimension as n, formatNumber as o, _angleBetween as p, _getStartAndCountOfVisiblePoints as q, requestAnimFrame as r, sign as s, toRadians as t, unlistenArrayEvents as u, valueOrDefault as v, _scaleRangesChanged as w, isNumber as x, _parseObjectDataRadialScale as y, getRelativePosition as z };
-//# sourceMappingURL=helpers.dataset.js.map
+//# sourceMappingURL=index.js.map

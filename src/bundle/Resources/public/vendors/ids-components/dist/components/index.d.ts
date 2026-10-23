@@ -14,5 +14,6 @@ export * from './InputText';
 export * from './Label';
 export * from './Link';
 export * from './RadioButton';
+export * from './Tabs';
 export * from './Tag';
 export * from './ToggleButton';
