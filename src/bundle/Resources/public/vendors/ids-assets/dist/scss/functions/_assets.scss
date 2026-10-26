@@ -1,5 +1,0 @@
-@use '../variables' as *;
-
-@function assets($path) {
-    @return url($assets-base-path + $path);
-}
