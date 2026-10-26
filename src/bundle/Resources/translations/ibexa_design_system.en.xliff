@@ -9,13 +9,17 @@
         <source>Select an item</source>
         <target>Select an item</target>
       </trans-unit>
-      <trans-unit id="ids.dropdown.placeholder.all">
+      <trans-unit id="ids.dropdown.placeholder.all" resname="ids.dropdown.placeholder.all">
         <source>All</source>
         <target>All</target>
       </trans-unit>
       <trans-unit id="ids.dropdown.search.placeholder" resname="ids.dropdown.search.placeholder">
         <source>Search...</source>
         <target>Search...</target>
+      </trans-unit>
+      <trans-unit id="ids.dropdown.search.no_results" resname="ids.dropdown.search.no_results">
+        <source>No results found</source>
+        <target>No results found</target>
       </trans-unit>
       <trans-unit id="ids.toggle.label.on" resname="ids.toggle.label.on">
         <source>On</source>
