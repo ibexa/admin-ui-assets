@@ -1,0 +1,379 @@
+@use 'sass:map';
+@use 'functions' as *;
+@use 'variables' as *;
+@use 'mixins/buttons' as mixins;
+@use 'mixins/theming';
+
+// Browsers can't handle transitioning between gradients and single colors (it flickers), therefore fake gradient is needed
+$fake-bg-gradient: linear-gradient(0, $color-primary-80 100%, $color-primary-80 100%);
+
+$btns-types: (
+    'primary': (
+        'default': (
+            'text': $color-neutral-10,
+            'bg': $gradient-primary-1,
+            'border': transparent,
+        ),
+        'hover': (
+            'text': $color-neutral-10,
+            'bg': $gradient-primary-2,
+            'border': transparent,
+        ),
+        'active': (
+            'text': $color-neutral-10,
+            'bg': $fake-bg-gradient,
+            'border': transparent,
+        ),
+        'focus': (
+            'text': $color-neutral-10,
+            'bg': $gradient-primary-1,
+            'border': transparent,
+            'box-shadow': $box-shadow-focus-primary,
+        ),
+        'disabled': (
+            'text': $color-neutral-110,
+            'bg': $color-neutral-50,
+            'border': transparent,
+        ),
+    ),
+    'secondary': (
+        'default': (
+            'text': $color-primary-80,
+            'bg': transparent,
+            'border': $color-primary-80,
+        ),
+        'hover': (
+            'text': $color-primary-100,
+            'bg': transparent,
+            'border': $color-primary-100,
+        ),
+        'active': (
+            'text': $color-primary-100,
+            'bg': transparent,
+            'border': $color-primary-100,
+        ),
+        'focus': (
+            'text': $color-primary-80,
+            'bg': transparent,
+            'border': $color-primary-80,
+            'box-shadow': $box-shadow-focus-primary,
+        ),
+        'disabled': (
+            'text': $color-neutral-110,
+            'bg': transparent,
+            'border': $color-neutral-80,
+        ),
+    ),
+    'tertiary': (
+        'default': (
+            'text': $color-primary-80,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'hover': (
+            'text': $color-primary-100,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'active': (
+            'text': $color-primary-100,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'focus': (
+            'text': $color-primary-80,
+            'bg': transparent,
+            'border': $color-primary-80,
+            'box-shadow': $box-shadow-focus-primary,
+        ),
+        'disabled': (
+            'text': $color-neutral-110,
+            'bg': transparent,
+            'border': transparent,
+        ),
+    ),
+    'secondary-alt': (
+        'default': (
+            'text': $color-neutral-240,
+            'bg': transparent,
+            'border': $color-neutral-80,
+        ),
+        'hover': (
+            'text': $color-neutral-240,
+            'bg': transparent,
+            'border': $color-neutral-120,
+        ),
+        'active': (
+            'text': $color-neutral-240,
+            'bg': transparent,
+            'border': $color-neutral-120,
+        ),
+        'focus': (
+            'text': $color-neutral-240,
+            'bg': transparent,
+            'border': $color-primary-80,
+            'box-shadow': $box-shadow-focus-primary,
+        ),
+        'disabled': (
+            'text': $color-neutral-110,
+            'bg': transparent,
+            'border': $color-neutral-80,
+        ),
+    ),
+    'tertiary-alt': (
+        'default': (
+            'text': $color-neutral-240,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'hover': (
+            'text': $color-neutral-240,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'active': (
+            'text': $color-neutral-240,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'focus': (
+            'text': $color-neutral-240,
+            'bg': transparent,
+            'border': $color-primary-80,
+            'box-shadow': $box-shadow-focus-primary,
+        ),
+        'disabled': (
+            'text': $color-neutral-110,
+            'bg': transparent,
+            'border': transparent,
+        ),
+    ),
+);
+
+// TODO(IBX-12056): the design only covers `secondary` on a dark surface; the others mirror it for now.
+$btns-types-dark: (
+    'secondary': (
+        'default': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': $color-neutral-10,
+        ),
+        'hover': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': $color-neutral-10,
+        ),
+        'active': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': $color-neutral-10,
+        ),
+        'focus': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': $color-neutral-10,
+            'box-shadow': $box-shadow-focus-dark_surface,
+        ),
+        'disabled': (
+            'text': $color-neutral-160,
+            'bg': transparent,
+            'border': $color-neutral-160,
+        ),
+    ),
+    'secondary-alt': (
+        'default': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': $color-neutral-10,
+        ),
+        'hover': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': $color-neutral-10,
+        ),
+        'active': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': $color-neutral-10,
+        ),
+        'focus': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': $color-neutral-10,
+            'box-shadow': $box-shadow-focus-dark_surface,
+        ),
+        'disabled': (
+            'text': $color-neutral-160,
+            'bg': transparent,
+            'border': $color-neutral-160,
+        ),
+    ),
+    'tertiary-alt': (
+        'default': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'hover': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'active': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': transparent,
+        ),
+        'focus': (
+            'text': $color-neutral-10,
+            'bg': transparent,
+            'border': transparent,
+            'box-shadow': $box-shadow-focus-dark_surface,
+        ),
+        'disabled': (
+            'text': $color-neutral-160,
+            'bg': transparent,
+            'border': transparent,
+        ),
+    ),
+);
+
+$btns-sizes: (
+    'medium': (
+        'height': calculateRem(40px),
+        'padding-x': calculateRem(12px),
+        'icon-padding': calculateRem(4px),
+    ),
+    'small': (
+        'height': calculateRem(32px),
+        'padding-x': calculateRem(12px),
+        'icon-padding': calculateRem(4px),
+    ),
+    'none': (
+        'height': auto,
+        'padding-x': 0,
+        'icon-padding': calculateRem(4px),
+    ),
+);
+
+.ids-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    outline: none;
+    border-radius: $border-radius-medium;
+    font-family: $font-family;
+    text-decoration: none;
+    font-size: $text-font-size-m;
+    font-weight: $text-font-weight-semi;
+    cursor: pointer;
+    color: var(--ids-default-text-color);
+    fill: var(--ids-default-text-color);
+    background: var(--ids-default-bg-color);
+    border: calculateRem(1px) solid var(--ids-default-border-color);
+    transition: all $transition-duration $transition-timing-function;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    &:focus-visible {
+        color: var(--ids-focus-text-color);
+        fill: var(--ids-focus-text-color);
+        background: var(--ids-focus-bg-color);
+        border-color: var(--ids-focus-border-color);
+        box-shadow: var(--ids-focus-box-shadow);
+    }
+
+    &:hover {
+        color: var(--ids-hover-text-color);
+        fill: var(--ids-hover-text-color);
+        background: var(--ids-hover-bg-color);
+        border-color: var(--ids-hover-border-color);
+    }
+
+    &:active {
+        color: var(--ids-active-text-color);
+        fill: var(--ids-active-text-color);
+        background: var(--ids-active-bg-color);
+        border-color: var(--ids-active-border-color);
+    }
+
+    &[disabled],
+    &:disabled,
+    &[aria-disabled='true'] {
+        color: var(--ids-disabled-text-color);
+        fill: var(--ids-disabled-text-color);
+        background: var(--ids-disabled-bg-color);
+        border-color: var(--ids-disabled-border-color);
+        box-shadow: none;
+        pointer-events: none;
+    }
+
+    &__icon {
+        line-height: 0;
+    }
+
+    &__label {
+        line-height: $base-line-height;
+    }
+
+    @each $name, $states in $btns-types {
+        &--#{$name} {
+            @include mixins.button-variant(
+                map.get($states, 'default'),
+                map.get($states, 'hover'),
+                map.get($states, 'active'),
+                map.get($states, 'focus'),
+                map.get($states, 'disabled')
+            );
+
+            $dark-states: map.get($btns-types-dark, $name);
+
+            @if $dark-states {
+                @include theming.on-dark {
+                    @include mixins.button-variant(
+                        map.get($dark-states, 'default'),
+                        map.get($dark-states, 'hover'),
+                        map.get($dark-states, 'active'),
+                        map.get($dark-states, 'focus'),
+                        map.get($dark-states, 'disabled')
+                    );
+                }
+            }
+        }
+    }
+
+    @each $name, $values in $btns-sizes {
+        &--#{$name} {
+            height: map.get($values, 'height');
+            padding: 0 map.get($values, 'padding-x');
+
+            &.ids-btn--icon-only {
+                width: map.get($values, 'height');
+                padding: 0;
+            }
+
+            .ids-btn__icon + .ids-btn__label {
+                padding-left: map.get($values, 'icon-padding');
+            }
+        }
+    }
+
+    &--primary {
+        border: 0;
+    }
+
+    &--none {
+        border: 0;
+        border-radius: $border-radius-small;
+
+        &:focus-visible:not([disabled], [aria-disabled='true']) {
+            box-shadow:
+                0 0 0 calculateRem(1px) var(--ids-focus-border-color),
+                var(--ids-focus-box-shadow);
+        }
+    }
+}

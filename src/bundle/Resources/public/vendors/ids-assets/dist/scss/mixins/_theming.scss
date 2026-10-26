@@ -1,0 +1,9 @@
+@mixin on-dark {
+    @container style(--ids-mode: dark) {
+        @content;
+    }
+
+    &:where(.ids-mode-dark) {
+        @content;
+    }
+}
