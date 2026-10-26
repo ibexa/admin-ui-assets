@@ -54,7 +54,14 @@ rm "yarn.lock"
 
 echo "# Installing dependendencies"
 yarn install
+check_process "install the dependencies"
 yarn run prepare-release
+
+echo "# Checking the design system files"
+for DS_DIR in ids-assets ids-components ids-core; do
+    [ -n "$(ls -A "$VENDOR_DIR/$DS_DIR/dist" 2>/dev/null)" ]
+    check_process "find the built design system files in $VENDOR_DIR/$DS_DIR/dist"
+done
 
 echo "# Removing unused files from Bootstrap"
 rm -r "$BOOTSTRAP_DIR/dist/css" "$BOOTSTRAP_DIR/js" $BOOTSTRAP_DIR/dist/js/bootstrap.js $BOOTSTRAP_DIR/dist/js/bootstrap.js.map $BOOTSTRAP_DIR/dist/js/bootstrap.bundle.js $BOOTSTRAP_DIR/dist/js/bootstrap.bundle.js.map $BOOTSTRAP_DIR/dist/js/bootstrap.bundle.min.js $BOOTSTRAP_DIR/dist/js/bootstrap.bundle.min.js.map
