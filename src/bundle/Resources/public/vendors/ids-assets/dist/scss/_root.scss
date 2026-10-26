@@ -1,0 +1,24 @@
+@use 'functions/calculate.rem' as *;
+@use 'variables' as *;
+
+html {
+    line-height: $base-line-height;
+    letter-spacing: calculateRem(0.12px);
+}
+
+body {
+    font-family: $font-family;
+    font-size: $text-font-size-m;
+}
+
+*[hidden] {
+    display: none !important;
+}
+
+.ids-mode-dark {
+    --ids-mode: dark;
+}
+
+.ids-mode-light {
+    --ids-mode: light;
+}

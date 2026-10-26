@@ -1,0 +1,16 @@
+@use 'sass:map';
+@use '../functions' as *;
+
+@mixin tag-state($variables, $prefix) {
+    @each $key, $value in $variables {
+        --ids-#{$prefix}-#{$key}-color: #{$value};
+    }
+}
+
+@mixin tag-variant($default, $dark: false) {
+    @include tag-state($default, 'default');
+
+    @if $dark {
+        @include tag-state($dark, 'dark');
+    }
+}
