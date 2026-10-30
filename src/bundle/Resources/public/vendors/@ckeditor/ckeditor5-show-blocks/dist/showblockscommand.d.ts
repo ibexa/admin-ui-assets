@@ -1,0 +1,32 @@
+/**
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+/**
+* @module show-blocks/showblockscommand
+*/
+import { Command, type Editor } from "@ckeditor/ckeditor5-core";
+/**
+* The show blocks command.
+*
+* Displays the HTML element names for content blocks.
+*/
+export declare class ShowBlocksCommand extends Command {
+	/**
+	* Flag indicating whether the command is active, i.e. content blocks are displayed.
+	*/
+	value: boolean;
+	/**
+	* @inheritDoc
+	*/
+	constructor(editor: Editor);
+	/**
+	* @inheritDoc
+	*/
+	override refresh(): void;
+	/**
+	* Toggles the visibility of content blocks.
+	* Only roots that accept block-level content are affected.
+	*/
+	override execute(): void;
+}

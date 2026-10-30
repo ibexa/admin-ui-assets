@@ -1,11 +1,13 @@
 /**
- * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
  */
 
 ( e => {
-const { [ 'de' ]: { dictionary, getPluralForm } } = {"de":{"dictionary":{"Copy selected content":"Markierten Inhalt kopieren","Paste content":"Inhalt einfügen","Paste content as plain text":"Inhalt als Klartext einfügen"},getPluralForm(n){return (n != 1);}}};
+const { [ 'de' ]: translations } = {"de":{"dictionary":{"Copy selected content":"Markierten Inhalt kopieren","Paste content":"Inhalt einfügen","Paste content as plain text":"Inhalt als Klartext einfügen"}}};
 e[ 'de' ] ||= { dictionary: {}, getPluralForm: null };
-e[ 'de' ].dictionary = Object.assign( e[ 'de' ].dictionary, dictionary );
-e[ 'de' ].getPluralForm = getPluralForm;
+e[ 'de' ].dictionary = Object.assign( e[ 'de' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'de' ].getPluralForm = translations.getPluralForm;
+}
 } )( window.CKEDITOR_TRANSLATIONS ||= {} );

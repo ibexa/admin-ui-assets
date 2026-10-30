@@ -1,0 +1,33 @@
+/**
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+/**
+* @module basic-styles/code
+*/
+import { Plugin, type PluginDependenciesOf } from "@ckeditor/ckeditor5-core";
+import { CodeEditing } from "./code/codeediting.js";
+import { CodeUI } from "./code/codeui.js";
+/**
+* The code feature.
+*
+* For a detailed overview check the {@glink features/basic-styles Basic styles feature} guide
+* and the {@glink api/basic-styles package page}.
+*
+* This is a "glue" plugin which loads the {@link module:basic-styles/code/codeediting~CodeEditing code editing feature}
+* and {@link module:basic-styles/code/codeui~CodeUI code UI feature}.
+*/
+export declare class Code extends Plugin {
+	/**
+	* @inheritDoc
+	*/
+	static get requires(): PluginDependenciesOf<[CodeEditing, CodeUI]>;
+	/**
+	* @inheritDoc
+	*/
+	static get pluginName(): "Code";
+	/**
+	* @inheritDoc
+	*/
+	static override get isOfficialPlugin(): true;
+}

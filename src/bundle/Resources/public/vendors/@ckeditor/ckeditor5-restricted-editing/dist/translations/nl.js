@@ -1,5 +1,5 @@
 /**
- * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
  */
-export default {"nl":{"dictionary":{"Disable editing":"Bewerken uitschakelen","Enable editing":"Bewerken inschakelen","Previous editable region":"Vorig bewerkbaar gebied","Next editable region":"Volgend bewerkbaar gebied","Navigate editable regions":"Navigeer bewerkbare gebieden"},getPluralForm(n){return (n != 1);}}}
+export default {"nl":{"dictionary":{"Disable editing":"Bewerken uitschakelen","Enable editing":"Bewerken inschakelen","Disable inline editing":"Inline-bewerking uitschakelen","Enable inline editing":"Inline-bewerking inschakelen","Disable block editing":"Blokbewerking uitschakelen","Enable block editing":"Blokbewerking inschakelen","Previous editable region":"Vorig bewerkbaar gebied","Next editable region":"Volgend bewerkbaar gebied","Navigate editable regions":"Navigeer bewerkbare gebieden"}}}

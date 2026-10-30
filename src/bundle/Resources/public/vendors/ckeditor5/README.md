@@ -2,7 +2,7 @@ CKEditor&nbsp;5 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg
 ===================================
 
 [![npm version](https://badge.fury.io/js/ckeditor5.svg)](https://www.npmjs.com/package/ckeditor5)
-[![Coverage Status](https://coveralls.io/repos/github/ckeditor/ckeditor5/badge.svg?branch=master)](https://coveralls.io/github/ckeditor/ckeditor5?branch=master)
+[![codecov](https://codecov.io/gh/ckeditor/ckeditor5/branch/master/graph/badge.svg)](https://codecov.io/gh/ckeditor/ckeditor5)
 [![CircleCI](https://circleci.com/gh/ckeditor/ckeditor5.svg?style=shield)](https://app.circleci.com/pipelines/github/ckeditor/ckeditor5?branch=master)
 ![TypeScript Support](https://badgen.net/badge/Built%20With/TypeScript/blue)
 
@@ -17,6 +17,7 @@ CKEditor&nbsp;5 is a modern JavaScript rich-text editor with MVC architecture, c
 
 - [Quick start](#quick-start)
 	- [CKEditor 5 Builder](#ckeditor-5-builder)
+	- [Build with AI](#build-with-ai)
 	- [TypeScript support](#typescript-support)
 	- [CKEditor 5 advanced installation](#ckeditor-5-advanced-installation)
 		- [CKEditor 5 Framework](#ckeditor-5-framework)
@@ -38,9 +39,13 @@ Refer to the [Quick Start](https://ckeditor.com/docs/ckeditor5/latest/getting-st
 
 The easiest way to start using CKEditor&nbsp;5 with all the features you need is to prepare a customized setup with the [CKEditor&nbsp;5 Builder](https://ckeditor.com/ckeditor-5/builder). All you need to do is choose the preferred editor type as a base, add all the required plugins, and download the ready-to-use package.
 
+### Build with AI
+
+You can also set up CKEditor&nbsp;5 with an AI coding agent such as Claude Code, Cursor, Codex, or Copilot. Install the official CKEditor skill, and your agent will handle the installation, configuration, and licensing for you. See the [Build with AI](https://ckeditor.com/docs/ckeditor5/latest/getting-started/ai-coding-agents.html) guide.
+
 ### TypeScript support
 
-CKEditor&nbsp;5 is a TypeScript project. Starting from v37.0.0, it offers native type definitions. Check out our dedicated guide to read more about [TypeScript support](https://ckeditor.com/docs/ckeditor5/latest/getting-started/setup/typescript-support.html).
+CKEditor&nbsp;5 is a TypeScript project. Starting from v37.0.0, official packages provide native type definitions.
 
 ### CKEditor 5 advanced installation
 

@@ -1,7 +1,16 @@
 {
   "name": "@ckeditor/ckeditor5-engine",
-  "version": "45.2.2",
+  "version": "48.5.3",
   "description": "The editing engine of CKEditor 5 – the best browser-based rich text editor.",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "CKSource (http://cksource.com/)",
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "bugs": "https://github.com/ckeditor/ckeditor5/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-engine"
+  },
   "keywords": [
     "wysiwyg",
     "rich text",
@@ -18,50 +27,22 @@
     "ckeditor",
     "ckeditor5",
     "ckeditor 5",
-    "ckeditor5-lib",
-    "ckeditor5-dll"
+    "ckeditor5-lib"
   ],
   "type": "module",
-  "main": "src/index.js",
-  "dependencies": {
-    "@ckeditor/ckeditor5-utils": "45.2.2",
-    "es-toolkit": "1.32.0"
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
   },
-  "author": "CKSource (http://cksource.com/)",
-  "license": "SEE LICENSE IN LICENSE.md",
-  "homepage": "https://ckeditor.com/ckeditor-5",
-  "bugs": "https://github.com/ckeditor/ckeditor5/issues",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ckeditor/ckeditor5.git",
-    "directory": "packages/ckeditor5-engine"
+  "dependencies": {
+    "@ckeditor/ckeditor5-utils": "48.5.3",
+    "es-toolkit": "1.52.0"
   },
   "files": [
     "dist",
-    "lang",
-    "src/**/*.js",
-    "src/**/*.d.ts",
-    "theme",
     "CHANGELOG.md"
   ],
-  "types": "src/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./src/index.d.ts",
-      "import": "./src/index.js",
-      "default": "./src/index.js"
-    },
-    "./dist/*": {
-      "types": "./src/index.d.ts",
-      "import": "./dist/*",
-      "default": "./dist/*"
-    },
-    "./src/*": {
-      "types": "./src/*.d.ts",
-      "import": "./src/*",
-      "default": "./src/*"
-    },
-    "./theme/*": "./theme/*",
-    "./package.json": "./package.json"
-  }
+  "types": "./dist/index.d.ts"
 }

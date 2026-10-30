@@ -5,17 +5,21 @@
 			"className": "RestrictedEditingMode",
 			"description": "Enables defining which parts of a document can be editable for users with restricted editing rights. It allows you to edit only within the created editable areas.",
 			"docs": "features/restricted-editing.html",
-			"path": "src/restrictededitingmode.js",
+			"path": "src/restrictededitingmode.ts",
 			"uiComponents": [
 				{
-					"type": "SplitButton",
+					"type": "Dropdown",
 					"name": "restrictedEditing",
-					"iconPath": "@ckeditor/ckeditor5-icons/theme/icons/content-lock.svg"
+					"iconName": "IconContentLock"
 				}
 			],
 			"htmlOutput": [
 				{
 					"elements": "span",
+					"classes": "restricted-editing-exception"
+				},
+				{
+					"elements": "div",
 					"classes": "restricted-editing-exception"
 				}
 			]
@@ -25,17 +29,31 @@
 			"className": "StandardEditingMode",
 			"description": "Enables freely editing the document and defining which parts can be editable for users with restricted editing rights. It allows you to create editable areas.",
 			"docs": "features/restricted-editing.html#running-the-standard-editing-mode",
-			"path": "src/standardeditingmode.js",
+			"path": "src/standardeditingmode.ts",
 			"uiComponents": [
 				{
 					"type": "Button",
-					"name": "restrictedEditingException",
-					"iconPath": "@ckeditor/ckeditor5-icons/theme/icons/content-unlock.svg"
+					"name": "restrictedEditingException:inline",
+					"iconName": "IconContentUnlock"
+				},
+				{
+					"type": "Button",
+					"name": "restrictedEditingException:block",
+					"iconName": "IconContentUnlock"
+				},
+				{
+					"type": "Dropdown",
+					"name": "restrictedEditingException:dropdown",
+					"iconName": "IconContentUnlock"
 				}
 			],
 			"htmlOutput": [
 				{
 					"elements": "span",
+					"classes": "restricted-editing-exception"
+				},
+				{
+					"elements": "div",
 					"classes": "restricted-editing-exception"
 				}
 			]

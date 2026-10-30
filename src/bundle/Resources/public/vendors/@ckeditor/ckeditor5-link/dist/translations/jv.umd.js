@@ -1,11 +1,13 @@
 /**
- * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
  */
 
 ( e => {
-const { [ 'jv' ]: { dictionary, getPluralForm } } = {"jv":{"dictionary":{"Unlink":"","Link":"","Link URL":"","Link URL must not be empty.":"","Link image":"","Edit link":"","Open link in new tab":"","Open in a new tab":"","Downloadable":"","Create link":"","Move out of a link":"","Link properties":"","Displayed text":"","No links available":""},getPluralForm(n){return (n !== 0);}}};
+const { [ 'jv' ]: translations } = {"jv":{"dictionary":{"Unlink":"","Link":"","Link URL":"","Link URL must not be empty.":"","Link image":"","Link properties":"","Edit link":"","Open link in new tab":"","Open in a new tab":"","Downloadable":"","Create link":"","Move out of a link":"","Displayed text":"","No links available":"","This link has no URL":""}}};
 e[ 'jv' ] ||= { dictionary: {}, getPluralForm: null };
-e[ 'jv' ].dictionary = Object.assign( e[ 'jv' ].dictionary, dictionary );
-e[ 'jv' ].getPluralForm = getPluralForm;
+e[ 'jv' ].dictionary = Object.assign( e[ 'jv' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'jv' ].getPluralForm = translations.getPluralForm;
+}
 } )( window.CKEDITOR_TRANSLATIONS ||= {} );

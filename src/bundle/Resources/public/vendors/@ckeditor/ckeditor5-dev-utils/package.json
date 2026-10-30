@@ -1,6 +1,6 @@
 {
   "name": "@ckeditor/ckeditor5-dev-utils",
-  "version": "47.1.1",
+  "version": "61.4.0",
   "description": "Utils for CKEditor 5 development tools packages.",
   "keywords": [],
   "author": "CKSource (http://cksource.com/)",
@@ -13,35 +13,27 @@
     "directory": "packages/ckeditor5-dev-utils"
   },
   "engines": {
-    "node": ">=20.0.0",
+    "node": ">=24.11.0",
     "npm": ">=5.7.1"
   },
-  "main": "lib/index.js",
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "lib"
+    "dist"
   ],
   "dependencies": {
-    "@ckeditor/ckeditor5-dev-translations": "^47.1.1",
-    "chalk": "^5.0.0",
+    "@types/pacote": "^11.1.8",
+    "@types/shelljs": "^0.10.0",
+    "@types/through2": "^2.0.41",
     "cli-cursor": "^5.0.0",
-    "cli-spinners": "^3.0.0",
-    "css-loader": "^7.0.0",
-    "cssnano": "^7.0.0",
-    "esbuild-loader": "^4.0.0",
-    "fs-extra": "^11.0.0",
+    "cli-spinners": "^3.4.0",
+    "glob": "^13.0.6",
     "is-interactive": "^2.0.0",
-    "mini-css-extract-plugin": "^2.4.2",
-    "mocha": "^10.0.0",
-    "postcss": "^8.4.12",
-    "postcss-import": "^16.0.0",
-    "postcss-loader": "^8.0.0",
-    "postcss-mixins": "^11.0.0",
-    "postcss-nesting": "^13.0.0",
-    "raw-loader": "^4.0.1",
-    "shelljs": "^0.8.1",
-    "style-loader": "^4.0.0",
-    "terser-webpack-plugin": "^5.0.0",
-    "through2": "^4.0.0"
+    "pacote": "^21.5.0",
+    "shelljs": "^0.10.0",
+    "simple-git": "^3.36.0",
+    "through2": "^4.0.2",
+    "upath": "^2.0.1"
   }
 }

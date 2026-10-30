@@ -1,0 +1,40 @@
+/**
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+/**
+* @module media-embed/mediaembedresize/resizemediaembedcommand
+*/
+import { Command } from "@ckeditor/ckeditor5-core";
+/**
+* The resize media embed command.
+*/
+export declare class ResizeMediaEmbedCommand extends Command {
+	/**
+	* The current width of the selected media embed, or `null` if not resized.
+	*/
+	value: string | null;
+	/**
+	* @inheritDoc
+	*/
+	override refresh(): void;
+	/**
+	* Executes the command.
+	*
+	* ```ts
+	* // Sets the width as a percentage of the parent width:
+	* editor.execute( 'resizeMediaEmbed', { width: '50%' } );
+	*
+	* // Removes the resize and restores the default width:
+	* editor.execute( 'resizeMediaEmbed', { width: null } );
+	* ```
+	*
+	* @param options
+	* @param options.width The new width of the media embed as a CSS `width` value
+	* (e.g. `'50%'`), or `null` to remove the resize.
+	* @fires execute
+	*/
+	override execute(options: {
+		width: string | null;
+	}): void;
+}
