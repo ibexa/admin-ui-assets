@@ -57,7 +57,9 @@ check_process "merge $BRANCH to $NEXT_BRANCH"
 
 jq --indent 4 '.scripts["postinstall"] = "(cd node_modules/@ibexa/design-system && yarn install &&yarn packages:build)"' package.json > package.json.tmp && mv package.json.tmp package.json
 ./bin/prepare_release_files.sh
+RELEASE_FILES_STATUS=$?
 git checkout HEAD -- package.json
+[ $RELEASE_FILES_STATUS -eq 0 ]
 check_process "prepare the release files"
 
 if [ -n "$(git status --porcelain -- src/bundle/Resources)" ]; then

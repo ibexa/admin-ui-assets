@@ -42,8 +42,8 @@
     },
     "homepage": "https://github.com/ibexa/admin-ui-assets#readme",
     "dependencies": {
-        "ckeditor5": "^45.0.0",
-        "@ckeditor/ckeditor5-dev-utils": "^47.0.0",
+        "ckeditor5": "^48.5.1",
+        "@ckeditor/ckeditor5-dev-utils": "^61.1.0",
         "bootstrap": "^5.3.5",
         "chart.js": "^4.4.8",
         "chartjs-plugin-datalabels": "^2.2.0",
