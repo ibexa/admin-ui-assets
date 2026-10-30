@@ -1,11 +1,13 @@
 /**
- * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
  */
 
 ( e => {
-const { [ 'eu' ]: { dictionary, getPluralForm } } = {"eu":{"dictionary":{"Words: %0":"","Characters: %0":""},getPluralForm(n){return (n != 1);}}};
+const { [ 'eu' ]: translations } = {"eu":{"dictionary":{"Words: %0":"","Characters: %0":""}}};
 e[ 'eu' ] ||= { dictionary: {}, getPluralForm: null };
-e[ 'eu' ].dictionary = Object.assign( e[ 'eu' ].dictionary, dictionary );
-e[ 'eu' ].getPluralForm = getPluralForm;
+e[ 'eu' ].dictionary = Object.assign( e[ 'eu' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'eu' ].getPluralForm = translations.getPluralForm;
+}
 } )( window.CKEDITOR_TRANSLATIONS ||= {} );

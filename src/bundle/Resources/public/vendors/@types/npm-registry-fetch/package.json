@@ -1,0 +1,26 @@
+{
+    "name": "@types/npm-registry-fetch",
+    "version": "8.0.9",
+    "description": "TypeScript definitions for npm-registry-fetch",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/npm-registry-fetch",
+    "license": "MIT",
+    "contributors": [],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/npm-registry-fetch"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/node": "*",
+        "@types/node-fetch": "*",
+        "@types/npm-package-arg": "*",
+        "@types/npmlog": "*",
+        "@types/ssri": "*"
+    },
+    "peerDependencies": {},
+    "typesPublisherContentHash": "37ea0ae42c5471c32da1d561f403971bcd512e8ff8d0bd3feb932508703b5b68",
+    "typeScriptVersion": "5.2"
+}

@@ -1,0 +1,30 @@
+{
+    "name": "@types/pacote",
+    "version": "11.1.8",
+    "description": "TypeScript definitions for pacote",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/pacote",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Jack Bates",
+            "githubUsername": "jablko",
+            "url": "https://github.com/jablko"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/pacote"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/node": "*",
+        "@types/npm-registry-fetch": "*",
+        "@types/npmlog": "*",
+        "@types/ssri": "*"
+    },
+    "typesPublisherContentHash": "32e08b69fb41cd224700828a7da4caba47c36c4a369791003ab38866f9ec53dc",
+    "typeScriptVersion": "4.5"
+}

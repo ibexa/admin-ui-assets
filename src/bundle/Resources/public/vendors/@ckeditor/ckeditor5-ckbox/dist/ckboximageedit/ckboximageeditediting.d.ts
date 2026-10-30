@@ -1,0 +1,33 @@
+/**
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+/**
+* @module ckbox/ckboximageedit/ckboximageeditediting
+*/
+import { PendingActions, Plugin, type PluginDependenciesOf } from "@ckeditor/ckeditor5-core";
+import { Notification } from "@ckeditor/ckeditor5-ui";
+import { ImageEditing, ImageUtils } from "@ckeditor/ckeditor5-image";
+import { CKBoxEditing } from "../ckboxediting.js";
+import { CKBoxUtils } from "../ckboxutils.js";
+/**
+* The CKBox image edit editing plugin.
+*/
+export declare class CKBoxImageEditEditing extends Plugin {
+	/**
+	* @inheritDoc
+	*/
+	static get pluginName(): "CKBoxImageEditEditing";
+	/**
+	* @inheritDoc
+	*/
+	static override get isOfficialPlugin(): true;
+	/**
+	* @inheritDoc
+	*/
+	static get requires(): PluginDependenciesOf<[CKBoxEditing, CKBoxUtils, PendingActions, Notification, ImageUtils, ImageEditing]>;
+	/**
+	* @inheritDoc
+	*/
+	init(): void;
+}

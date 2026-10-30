@@ -1,402 +1,442 @@
 /**
- * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
  */
-import { Plugin } from '@ckeditor/ckeditor5-core/dist/index.js';
-import { HtmlDataProcessor } from '@ckeditor/ckeditor5-engine/dist/index.js';
-import { marked } from 'marked';
-import Turndown from 'turndown';
-import { gfm } from 'turndown-plugin-gfm';
-import { ClipboardPipeline } from '@ckeditor/ckeditor5-clipboard/dist/index.js';
+import { Plugin } from "@ckeditor/ckeditor5-core";
+import { HtmlDataProcessor } from "@ckeditor/ckeditor5-engine";
+import { unified } from "unified";
+import remarkGfm from "remark-gfm";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import remarkBreaks from "remark-breaks";
+import rehypeStringify from "rehype-dom-stringify";
+import { visit } from "unist-util-visit";
+import { toHtml } from "hast-util-to-html";
+import { fromDom } from "hast-util-from-dom";
+import rehypeParse from "rehype-dom-parse";
+import rehypeRemark from "rehype-remark";
+import remarkStringify from "remark-stringify";
+import { h } from "hastscript";
+import { ClipboardPipeline } from "@ckeditor/ckeditor5-clipboard";
 
 /**
- * This is a helper class used by the {@link module:markdown-gfm/markdown Markdown feature} to convert Markdown to HTML.
- */ class MarkdownToHtml {
-    _parser;
-    _options = {
-        gfm: true,
-        breaks: true,
-        tables: true,
-        xhtml: true,
-        headerIds: false
-    };
-    constructor(){
-        // Overrides.
-        marked.use({
-            tokenizer: {
-                // Disable the autolink rule in the lexer.
-                autolink: ()=>null,
-                url: ()=>null
-            },
-            renderer: {
-                checkbox (...args) {
-                    // Remove bogus space after <input type="checkbox"> because it would be preserved
-                    // by DomConverter as it's next to an inline object.
-                    return Object.getPrototypeOf(this).checkbox.call(this, ...args).trimRight();
-                },
-                code (...args) {
-                    // Since marked v1.2.8, every <code> gets a trailing "\n" whether it originally
-                    // ended with one or not (see https://github.com/markedjs/marked/issues/1884 to learn why).
-                    // This results in a redundant soft break in the model when loaded into the editor, which
-                    // is best prevented at this stage. See https://github.com/ckeditor/ckeditor5/issues/11124.
-                    return Object.getPrototypeOf(this).code.call(this, ...args).replace('\n</code>', '</code>');
-                }
-            }
-        });
-        this._parser = marked;
-    }
-    parse(markdown) {
-        return this._parser.parse(markdown, this._options);
-    }
-}
-
-const autolinkRegex = /* #__PURE__ */ new RegExp(// Prefix.
-/\b(?:(?:https?|ftp):\/\/|www\.)/.source + // Domain name.
-/(?![-_])(?:[-_a-z0-9\u00a1-\uffff]{1,63}\.)+(?:[a-z\u00a1-\uffff]{2,63})/.source + // The rest.
-/(?:[^\s<>]*)/.source, 'gi');
-class UpdatedTurndown extends Turndown {
-    escape(string) {
-        const originalEscape = super.escape;
-        function escape(string) {
-            string = originalEscape(string);
-            // Escape "<".
-            string = string.replace(/</g, '\\<');
-            return string;
-        }
-        // Urls should not be escaped. Our strategy is using a regex to find them and escape everything
-        // which is out of the matches parts.
-        let escaped = '';
-        let lastLinkEnd = 0;
-        for (const match of this._matchAutolink(string)){
-            const index = match.index;
-            // Append the substring between the last match and the current one (if anything).
-            if (index > lastLinkEnd) {
-                escaped += escape(string.substring(lastLinkEnd, index));
-            }
-            const matchedURL = match[0];
-            escaped += matchedURL;
-            lastLinkEnd = index + matchedURL.length;
-        }
-        // Add text after the last link or at the string start if no matches.
-        if (lastLinkEnd < string.length) {
-            escaped += escape(string.substring(lastLinkEnd, string.length));
-        }
-        return escaped;
-    }
-    /**
-	 * Trimming end of link.
-	 * https://github.github.com/gfm/#autolinks-extension-
-	 */ *_matchAutolink(string) {
-        for (const match of string.matchAll(autolinkRegex)){
-            const matched = match[0];
-            const length = this._autolinkFindEnd(matched);
-            yield Object.assign([
-                matched.substring(0, length)
-            ], {
-                index: match.index
-            });
-        // We could adjust regex.lastIndex but it's not needed because what we skipped is for sure not a valid URL.
-        }
-    }
-    /**
-	 * Returns the new length of the link (after it would trim trailing characters).
-	 */ _autolinkFindEnd(string) {
-        let length = string.length;
-        while(length > 0){
-            const char = string[length - 1];
-            if ('?!.,:*_~\'"'.includes(char)) {
-                length--;
-            } else if (char == ')') {
-                let openBrackets = 0;
-                for(let i = 0; i < length; i++){
-                    if (string[i] == '(') {
-                        openBrackets++;
-                    } else if (string[i] == ')') {
-                        openBrackets--;
-                    }
-                }
-                // If there is fewer opening brackets then closing ones we should remove a closing bracket.
-                if (openBrackets < 0) {
-                    length--;
-                } else {
-                    break;
-                }
-            } else {
-                break;
-            }
-        }
-        return length;
-    }
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+/**
+* @module markdown-gfm/markdown2html/markdown2html
+*/
+/**
+* The default `unified()` plugin chain used by {@link module:markdown-gfm/markdown2html/markdown2html~MarkdownGfmMdToHtml}.
+* This object is frozen and must not be mutated. Pass a copy to the constructor if you need to customize the plugin chain.
+*
+* Learn more about the `unified()` plugin chain in the [unified](https://github.com/unifiedjs/unified) documentation.
+*/
+const MarkdownGfmMdToHtmlDefaultPlugins = Object.freeze({
+	remarkParse,
+	remarkGfm: [remarkGfm, { singleTilde: true }],
+	remarkBreaks,
+	remarkRehype: [remarkRehype, { allowDangerousHtml: true }],
+	rehypeDomRaw,
+	deleteClassesFromToDoLists,
+	rehypeStringify
+});
+/**
+* This is a helper class used by the {@link module:markdown-gfm/markdown Markdown feature} to convert Markdown to HTML.
+*/
+var MarkdownGfmMdToHtml = class {
+	_processor;
+	/**
+	* Creates a new instance of MarkdownGfmMdToHtml.
+	* @param {Object} options - The options for the MarkdownGfmMdToHtml instance.
+	* @param {Record<string, Pluggable>} options.plugins - The plugins to be used by the `unified().use()` processor for converting
+	* Markdown to HTML. By default, {@link ~MarkdownGfmMdToHtmlDefaultPlugins} is used.
+	* You can override the defaults by passing your own plugins.
+	*
+	* Learn more about the `unified()` plugin chain in the [unified](https://github.com/unifiedjs/unified) documentation.
+	*/
+	constructor({ plugins = MarkdownGfmMdToHtmlDefaultPlugins } = {}) {
+		this._processor = unified().use({ plugins: Object.values(plugins) });
+	}
+	parse(markdown) {
+		return this._processor.processSync(markdown).toString().replaceAll("\n</code>", "</code>");
+	}
+};
+/**
+* Rehype plugin that improves handling of the To-do lists by removing:
+*  * default classes added to `<ul>`, `<ol>`, and `<li>` elements.
+*  * bogus space after <input type="checkbox"> because it would be preserved by ViewDomConverter as it's next to an inline object.
+*/
+function deleteClassesFromToDoLists() {
+	return (tree) => {
+		visit(tree, "element", (node) => {
+			if (node.tagName === "ul" || node.tagName === "ol" || node.tagName === "li") {
+				node.children = node.children.filter((child) => child.type !== "text" || !!child.value.trim());
+				delete node.properties.className;
+			}
+		});
+	};
 }
 /**
- * This is a helper class used by the {@link module:markdown-gfm/markdown Markdown feature} to convert HTML to Markdown.
- */ class HtmlToMarkdown {
-    _parser;
-    constructor(){
-        this._parser = this._createParser();
-    }
-    parse(html) {
-        return this._parser.turndown(html);
-    }
-    keep(elements) {
-        this._parser.keep(elements);
-    }
-    _createParser() {
-        const parser = new UpdatedTurndown({
-            codeBlockStyle: 'fenced',
-            hr: '---',
-            headingStyle: 'atx'
-        });
-        parser.use([
-            gfm,
-            this._todoList
-        ]);
-        return parser;
-    }
-    // This is a copy of the original taskListItems rule from turndown-plugin-gfm, with minor changes.
-    _todoList(turndown) {
-        turndown.addRule('taskListItems', {
-            filter (node) {
-                return node.type === 'checkbox' && // Changes here as CKEditor outputs a deeper structure.
-                (node.parentNode.nodeName === 'LI' || node.parentNode.parentNode.nodeName === 'LI');
-            },
-            replacement (content, node) {
-                return (node.checked ? '[x]' : '[ ]') + ' ';
-            }
-        });
-    }
+* Rehype plugin to parse raw HTML nodes inside Markdown. This plugin is used instead of `rehype-raw` or `rehype-stringify`,
+* because those plugins rely on `parse5` DOM parser which is heavy and redundant in the browser environment where we can
+* use the native DOM APIs.
+*
+* This plugins finds any node (root or element) whose children include `raw` nodes and reparses them like so:
+* 1. Serializes its children to an HTML string.
+* 2. Reparses the HTML string using a `<template>` element.
+* 3. Converts each parsed DOM node back into HAST nodes.
+* 4. Replaces the original children with the newly created HAST nodes.
+*/
+function rehypeDomRaw() {
+	return (tree) => {
+		visit(tree, ["root", "element"], (node) => {
+			/* v8 ignore next -- @preserve */
+			if (!isNodeRootOrElement(node)) return;
+			if (!node.children.some((child) => child.type === "raw")) return;
+			const template = document.createElement("template");
+			template.innerHTML = toHtml({
+				type: "root",
+				children: node.children
+			}, { allowDangerousHtml: true });
+			node.children = Array.from(template.content.childNodes).map((domNode) => fromDom(domNode));
+		});
+	};
+}
+/**
+* Only needed for the type guard.
+*/
+function isNodeRootOrElement(node) {
+	return (node.type === "root" || node.type === "element") && node.children;
 }
 
 /**
- * This data processor implementation uses GitHub Flavored Markdown as input/output data.
- *
- * See the {@glink features/markdown Markdown output} guide to learn more on how to enable it.
- */ class GFMDataProcessor {
-    /**
-	 * HTML data processor used to process HTML produced by the Markdown-to-HTML converter and the other way.
-	 */ _htmlDP;
-    /**
-	 * Helper for converting Markdown to HTML.
-	 */ _markdown2html;
-    /**
-	 * Helper for converting HTML to Markdown.
-	 */ _html2markdown;
-    /**
-	 * Creates a new instance of the Markdown data processor class.
-	 */ constructor(document){
-        this._htmlDP = new HtmlDataProcessor(document);
-        this._markdown2html = new MarkdownToHtml();
-        this._html2markdown = new HtmlToMarkdown();
-    }
-    /**
-	 * Keeps the specified element in the output as HTML. This is useful if the editor contains
-	 * features producing HTML that is not a part of the Markdown standard.
-	 *
-	 * By default, all HTML tags are removed.
-	 *
-	 * @param element The element name to be kept.
-	 */ keepHtml(element) {
-        this._html2markdown.keep([
-            element
-        ]);
-    }
-    /**
-	 * Converts the provided Markdown string to a view tree.
-	 *
-	 * @param data A Markdown string.
-	 * @returns The converted view element.
-	 */ toView(data) {
-        const html = this._markdown2html.parse(data);
-        return this._htmlDP.toView(html);
-    }
-    /**
-	 * Converts the provided {@link module:engine/view/documentfragment~DocumentFragment} to data format &ndash; in this
-	 * case to a Markdown string.
-	 *
-	 * @returns Markdown string.
-	 */ toData(viewFragment) {
-        const html = this._htmlDP.toData(viewFragment);
-        return this._html2markdown.parse(html);
-    }
-    /**
-	 * Registers a {@link module:engine/view/matcher~MatcherPattern} for view elements whose content should be treated as raw data
-	 * and not processed during the conversion from Markdown to view elements.
-	 *
-	 * The raw data can be later accessed by a
-	 * {@link module:engine/view/element~Element#getCustomProperty custom property of a view element} called `"$rawContent"`.
-	 *
-	 * @param pattern The pattern matching all view elements whose content should
-	 * be treated as raw data.
-	 */ registerRawContentMatcher(pattern) {
-        this._htmlDP.registerRawContentMatcher(pattern);
-    }
-    /**
-	 * This method does not have any effect on the data processor result. It exists for compatibility with the
-	 * {@link module:engine/dataprocessor/dataprocessor~DataProcessor `DataProcessor` interface}.
-	 */ useFillerType() {}
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+/**
+* @module markdown-gfm/html2markdown/html2markdown
+*/
+var MarkdownGfmHtmlToMd = class {
+	_processor;
+	_keepRawTags = [];
+	constructor() {
+		this._buildProcessor();
+	}
+	keep(tagName) {
+		this._keepRawTags.push(tagName.toLowerCase());
+		this._buildProcessor();
+	}
+	parse(html) {
+		return this._processor.processSync(html).toString().trim();
+	}
+	/**
+	* Returns handlers for raw HTML tags that should be kept in the Markdown output.
+	*/
+	_getRawTagsHandlers() {
+		return this._keepRawTags.reduce((handlers, tagName) => {
+			handlers[tagName] = (state, node) => {
+				const tag = toHtml(h(node.tagName, node.properties), {
+					allowDangerousHtml: true,
+					closeSelfClosing: true
+				});
+				const endOfOpeningTagIndex = tag.indexOf(">");
+				const openingTag = tag.slice(0, endOfOpeningTagIndex + 1);
+				const closingTag = tag.slice(endOfOpeningTagIndex + 1);
+				return [
+					{
+						type: "html",
+						value: openingTag
+					},
+					...state.all(node),
+					{
+						type: "html",
+						value: closingTag
+					}
+				];
+			};
+			return handlers;
+		}, {});
+	}
+	_buildProcessor() {
+		this._processor = unified().use(rehypeParse).use(removeLabelFromCheckboxes).use(rehypeRemark, { handlers: this._getRawTagsHandlers() }).use(remarkGfm, { singleTilde: true }).use(remarkBreaks).use(remarkStringify, {
+			resourceLink: true,
+			emphasis: "_",
+			rule: "-",
+			handlers: { break: () => "\n" },
+			unsafe: [{ character: "<" }]
+		});
+	}
+};
+/**
+* Removes `<label>` element from TODO lists, so that `<input>` and `text` are direct children of `<li>`.
+*/
+function removeLabelFromCheckboxes() {
+	return function(tree) {
+		visit(tree, "element", (node, index, parent) => {
+			if (index !== null && node.tagName === "label" && parent.type === "element" && parent.tagName === "li") parent.children.splice(index, 1, ...node.children);
+		});
+	};
 }
 
 /**
- * The GitHub Flavored Markdown (GFM) plugin.
- *
- * For a detailed overview, check the {@glink features/markdown Markdown feature} guide.
- */ class Markdown extends Plugin {
-    /**
-	 * @inheritDoc
-	 */ constructor(editor){
-        super(editor);
-        editor.data.processor = new GFMDataProcessor(editor.data.viewDocument);
-    }
-    /**
-	 * @inheritDoc
-	 */ static get pluginName() {
-        return 'Markdown';
-    }
-    /**
-	 * @inheritDoc
-	 */ static get isOfficialPlugin() {
-        return true;
-    }
-}
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+/**
+* @module markdown-gfm/gfmdataprocessor
+*/
+/**
+* This data processor implementation uses GitHub Flavored Markdown as input/output data.
+*
+* See the {@glink features/markdown Markdown output} guide to learn more on how to enable it.
+*/
+var MarkdownGfmDataProcessor = class {
+	/**
+	* HTML data processor used to process HTML produced by the Markdown-to-HTML converter and the other way.
+	*/
+	_htmlDP;
+	/**
+	* Helper for converting Markdown to HTML.
+	*/
+	_markdown2html;
+	/**
+	* Helper for converting HTML to Markdown.
+	*/
+	_html2markdown;
+	/**
+	* Creates a new instance of the Markdown data processor class.
+	*/
+	constructor(document) {
+		this._htmlDP = new HtmlDataProcessor(document);
+		this._markdown2html = new MarkdownGfmMdToHtml();
+		this._html2markdown = new MarkdownGfmHtmlToMd();
+	}
+	/**
+	* Keeps the specified element in the output as HTML. This is useful if the editor contains
+	* features producing HTML that is not a part of the Markdown standard.
+	*
+	* By default, all HTML tags are removed.
+	*
+	* @param element The element name to be kept.
+	*/
+	keepHtml(element) {
+		this._html2markdown.keep(element);
+	}
+	/**
+	* Converts the provided Markdown string to a view tree.
+	*
+	* @param data A Markdown string.
+	* @returns The converted view element.
+	*/
+	toView(data) {
+		const html = this._markdown2html.parse(data);
+		return this._htmlDP.toView(html);
+	}
+	/**
+	* Converts the provided {@link module:engine/view/documentfragment~ViewDocumentFragment} to data format &ndash; in this
+	* case to a Markdown string.
+	*
+	* @returns Markdown string.
+	*/
+	toData(viewFragment) {
+		const html = this._htmlDP.toData(viewFragment);
+		return this._html2markdown.parse(html);
+	}
+	/**
+	* Registers a {@link module:engine/view/matcher~MatcherPattern} for view elements whose content should be treated as raw data
+	* and not processed during the conversion from Markdown to view elements.
+	*
+	* The raw data can be later accessed by a
+	* {@link module:engine/view/element~ViewElement#getCustomProperty custom property of a view element} called `"$rawContent"`.
+	*
+	* @param pattern The pattern matching all view elements whose content should
+	* be treated as raw data.
+	*/
+	registerRawContentMatcher(pattern) {
+		this._htmlDP.registerRawContentMatcher(pattern);
+	}
+	/**
+	* This method does not have any effect on the data processor result. It exists for compatibility with the
+	* {@link module:engine/dataprocessor/dataprocessor~DataProcessor `DataProcessor` interface}.
+	*/
+	useFillerType() {}
+};
 
+/**
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+/**
+* @module markdown-gfm/markdown
+*/
+/**
+* The GitHub Flavored Markdown (GFM) plugin.
+*
+* For a detailed overview, check the {@glink features/markdown Markdown feature} guide.
+*/
+var Markdown = class extends Plugin {
+	/**
+	* @inheritDoc
+	*/
+	constructor(editor) {
+		super(editor);
+		editor.data.processor = new MarkdownGfmDataProcessor(editor.data.viewDocument);
+	}
+	/**
+	* @inheritDoc
+	*/
+	static get pluginName() {
+		return "Markdown";
+	}
+	/**
+	* @inheritDoc
+	*/
+	static get isOfficialPlugin() {
+		return true;
+	}
+};
+
+/**
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+/**
+* @module markdown-gfm/pastefrommarkdownexperimental
+*/
 const ALLOWED_MARKDOWN_FIRST_LEVEL_TAGS = [
-    'SPAN',
-    'BR',
-    'PRE',
-    'CODE'
+	"SPAN",
+	"BR",
+	"PRE",
+	"CODE"
 ];
 /**
- * The GitHub Flavored Markdown (GFM) paste plugin.
- *
- * For a detailed overview, check the {@glink features/pasting/paste-markdown Paste Markdown feature} guide.
- */ class PasteFromMarkdownExperimental extends Plugin {
-    /**
-	 * @internal
-	 */ _gfmDataProcessor;
-    /**
-	 * @inheritDoc
-	 */ constructor(editor){
-        super(editor);
-        this._gfmDataProcessor = new GFMDataProcessor(editor.data.viewDocument);
-    }
-    /**
-	 * @inheritDoc
-	 */ static get pluginName() {
-        return 'PasteFromMarkdownExperimental';
-    }
-    /**
-	 * @inheritDoc
-	 */ static get isOfficialPlugin() {
-        return true;
-    }
-    /**
-	 * @inheritDoc
-	 */ static get requires() {
-        return [
-            ClipboardPipeline
-        ];
-    }
-    /**
-	 * @inheritDoc
-	 */ init() {
-        const editor = this.editor;
-        const view = editor.editing.view;
-        const viewDocument = view.document;
-        const clipboardPipeline = editor.plugins.get('ClipboardPipeline');
-        let shiftPressed = false;
-        this.listenTo(viewDocument, 'keydown', (evt, data)=>{
-            shiftPressed = data.shiftKey;
-        });
-        this.listenTo(clipboardPipeline, 'inputTransformation', (evt, data)=>{
-            if (shiftPressed) {
-                return;
-            }
-            const dataAsTextHtml = data.dataTransfer.getData('text/html');
-            if (!dataAsTextHtml) {
-                const dataAsTextPlain = data.dataTransfer.getData('text/plain');
-                data.content = this._gfmDataProcessor.toView(dataAsTextPlain);
-                return;
-            }
-            const markdownFromHtml = this._parseMarkdownFromHtml(dataAsTextHtml);
-            if (markdownFromHtml) {
-                data.content = this._gfmDataProcessor.toView(markdownFromHtml);
-            }
-        });
-    }
-    /**
-	 * Determines if the code copied from a website in the `text/html` type can be parsed as Markdown.
-	 * It removes any OS-specific HTML tags, for example, <meta> on macOS and <!--StartFragment--> on Windows.
-	 * Then removes a single wrapper HTML tag or wrappers for sibling tags, and if there are no more tags left,
-	 * returns the remaining text. Returns null if there are any remaining HTML tags detected.
-	 *
-	 * @param htmlString Clipboard content in the `text/html` type format.
-	 */ _parseMarkdownFromHtml(htmlString) {
-        const withoutOsSpecificTags = this._removeOsSpecificTags(htmlString);
-        if (!this._containsOnlyAllowedFirstLevelTags(withoutOsSpecificTags)) {
-            return null;
-        }
-        const withoutWrapperTag = this._removeFirstLevelWrapperTagsAndBrs(withoutOsSpecificTags);
-        if (this._containsAnyRemainingHtmlTags(withoutWrapperTag)) {
-            return null;
-        }
-        return this._replaceHtmlReservedEntitiesWithCharacters(withoutWrapperTag);
-    }
-    /**
-	 * Removes OS-specific tags.
-	 *
-	 * @param htmlString Clipboard content in the `text/html` type format.
-	 */ _removeOsSpecificTags(htmlString) {
-        // Removing the <meta> tag present on Mac.
-        const withoutMetaTag = htmlString.replace(/^<meta\b[^>]*>/, '').trim();
-        // Removing the <html> tag present on Windows.
-        const withoutHtmlTag = withoutMetaTag.replace(/^<html>/, '').replace(/<\/html>$/, '').trim();
-        // Removing the <body> tag present on Windows.
-        const withoutBodyTag = withoutHtmlTag.replace(/^<body>/, '').replace(/<\/body>$/, '').trim();
-        // Removing the <!--StartFragment--> tag present on Windows.
-        return withoutBodyTag.replace(/^<!--StartFragment-->/, '').replace(/<!--EndFragment-->$/, '').trim();
-    }
-    /**
-	 * If the input HTML string contains any first-level formatting tags
-	 * like <b>, <strong>, or <i>, we should not treat it as Markdown.
-	 *
-	 * @param htmlString Clipboard content.
-	 */ _containsOnlyAllowedFirstLevelTags(htmlString) {
-        const parser = new DOMParser();
-        const { body: tempElement } = parser.parseFromString(htmlString, 'text/html');
-        const tagNames = Array.from(tempElement.children).map((el)=>el.tagName);
-        return tagNames.every((el)=>ALLOWED_MARKDOWN_FIRST_LEVEL_TAGS.includes(el));
-    }
-    /**
-	 * Removes multiple HTML wrapper tags from a list of sibling HTML tags.
-	 *
-	 * @param htmlString Clipboard content without any OS-specific tags.
-	 */ _removeFirstLevelWrapperTagsAndBrs(htmlString) {
-        const parser = new DOMParser();
-        const { body: tempElement } = parser.parseFromString(htmlString, 'text/html');
-        const brElements = tempElement.querySelectorAll('br');
-        for (const br of brElements){
-            br.replaceWith('\n');
-        }
-        const outerElements = tempElement.querySelectorAll(':scope > *');
-        for (const element of outerElements){
-            const elementClone = element.cloneNode(true);
-            element.replaceWith(...elementClone.childNodes);
-        }
-        return tempElement.innerHTML;
-    }
-    /**
-	 * Determines if a string contains any HTML tags.
-	 */ _containsAnyRemainingHtmlTags(str) {
-        return str.includes('<');
-    }
-    /**
-	 * Replaces the reserved HTML entities with the actual characters.
-	 *
-	 * @param htmlString Clipboard content without any tags.
-	 */ _replaceHtmlReservedEntitiesWithCharacters(htmlString) {
-        return htmlString.replace(/&gt;/g, '>').replace(/&lt;/g, '<').replace(/&nbsp;/g, ' ');
-    }
-}
+* The GitHub Flavored Markdown (GFM) paste plugin.
+*
+* For a detailed overview, check the {@glink features/pasting/paste-markdown Paste Markdown feature} guide.
+*/
+var PasteFromMarkdownExperimental = class extends Plugin {
+	/**
+	* @internal
+	*/
+	_gfmDataProcessor;
+	/**
+	* @inheritDoc
+	*/
+	constructor(editor) {
+		super(editor);
+		this._gfmDataProcessor = new MarkdownGfmDataProcessor(editor.data.viewDocument);
+	}
+	/**
+	* @inheritDoc
+	*/
+	static get pluginName() {
+		return "PasteFromMarkdownExperimental";
+	}
+	/**
+	* @inheritDoc
+	*/
+	static get isOfficialPlugin() {
+		return true;
+	}
+	/**
+	* @inheritDoc
+	*/
+	static get requires() {
+		return [ClipboardPipeline];
+	}
+	/**
+	* @inheritDoc
+	*/
+	init() {
+		const editor = this.editor;
+		const viewDocument = editor.editing.view.document;
+		const clipboardPipeline = editor.plugins.get("ClipboardPipeline");
+		let shiftPressed = false;
+		this.listenTo(viewDocument, "keydown", (evt, data) => {
+			shiftPressed = data.shiftKey;
+		});
+		this.listenTo(clipboardPipeline, "inputTransformation", (evt, data) => {
+			if (shiftPressed) return;
+			const dataAsTextHtml = data.dataTransfer.getData("text/html");
+			if (!dataAsTextHtml) {
+				const dataAsTextPlain = data.dataTransfer.getData("text/plain");
+				data.content = this._gfmDataProcessor.toView(dataAsTextPlain);
+				return;
+			}
+			const markdownFromHtml = this._parseMarkdownFromHtml(dataAsTextHtml);
+			if (markdownFromHtml) data.content = this._gfmDataProcessor.toView(markdownFromHtml);
+		});
+	}
+	/**
+	* Determines if the code copied from a website in the `text/html` type can be parsed as Markdown.
+	* It removes any OS-specific HTML tags, for example, <meta> on macOS and <!--StartFragment--> on Windows.
+	* Then removes a single wrapper HTML tag or wrappers for sibling tags, and if there are no more tags left,
+	* returns the remaining text. Returns null if there are any remaining HTML tags detected.
+	*
+	* @param htmlString Clipboard content in the `text/html` type format.
+	*/
+	_parseMarkdownFromHtml(htmlString) {
+		const withoutOsSpecificTags = this._removeOsSpecificTags(htmlString);
+		if (!this._containsOnlyAllowedFirstLevelTags(withoutOsSpecificTags)) return null;
+		const withoutWrapperTag = this._removeFirstLevelWrapperTagsAndBrs(withoutOsSpecificTags);
+		if (this._containsAnyRemainingHtmlTags(withoutWrapperTag)) return null;
+		return this._replaceHtmlReservedEntitiesWithCharacters(withoutWrapperTag);
+	}
+	/**
+	* Removes OS-specific tags.
+	*
+	* @param htmlString Clipboard content in the `text/html` type format.
+	*/
+	_removeOsSpecificTags(htmlString) {
+		return htmlString.replace(/^<meta\b[^>]*>/, "").trim().replace(/^<html>/, "").replace(/<\/html>$/, "").trim().replace(/^<body>/, "").replace(/<\/body>$/, "").trim().replace(/^<!--StartFragment-->/, "").replace(/<!--EndFragment-->$/, "").trim();
+	}
+	/**
+	* If the input HTML string contains any first-level formatting tags
+	* like <b>, <strong>, or <i>, we should not treat it as Markdown.
+	*
+	* @param htmlString Clipboard content.
+	*/
+	_containsOnlyAllowedFirstLevelTags(htmlString) {
+		const { body: tempElement } = new DOMParser().parseFromString(htmlString, "text/html");
+		return Array.from(tempElement.children).map((el) => el.tagName).every((el) => ALLOWED_MARKDOWN_FIRST_LEVEL_TAGS.includes(el));
+	}
+	/**
+	* Removes multiple HTML wrapper tags from a list of sibling HTML tags.
+	*
+	* @param htmlString Clipboard content without any OS-specific tags.
+	*/
+	_removeFirstLevelWrapperTagsAndBrs(htmlString) {
+		const { body: tempElement } = new DOMParser().parseFromString(htmlString, "text/html");
+		const brElements = tempElement.querySelectorAll("br");
+		for (const br of brElements) br.replaceWith("\n");
+		const outerElements = tempElement.querySelectorAll(":scope > *");
+		for (const element of outerElements) {
+			const elementClone = element.cloneNode(true);
+			element.replaceWith(...elementClone.childNodes);
+		}
+		return tempElement.innerHTML;
+	}
+	/**
+	* Determines if a string contains any HTML tags.
+	*/
+	_containsAnyRemainingHtmlTags(str) {
+		return str.includes("<");
+	}
+	/**
+	* Replaces the reserved HTML entities with the actual characters.
+	*
+	* @param htmlString Clipboard content without any tags.
+	*/
+	_replaceHtmlReservedEntitiesWithCharacters(htmlString) {
+		return htmlString.replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&nbsp;/g, " ");
+	}
+};
 
-export { GFMDataProcessor, Markdown, MarkdownToHtml, PasteFromMarkdownExperimental };
+/**
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+
+export { Markdown, MarkdownGfmDataProcessor, MarkdownGfmHtmlToMd, MarkdownGfmMdToHtml, MarkdownGfmMdToHtmlDefaultPlugins, PasteFromMarkdownExperimental };
 //# sourceMappingURL=index.js.map

@@ -2,7 +2,7 @@ CKEditor&nbsp;5 Emoji feature
 =============================
 
 [![npm version](https://badge.fury.io/js/%40ckeditor%2Fckeditor5-emoji.svg)](https://www.npmjs.com/package/@ckeditor/ckeditor5-emoji)
-[![Coverage Status](https://coveralls.io/repos/github/ckeditor/ckeditor5/badge.svg?branch=master)](https://coveralls.io/github/ckeditor/ckeditor5?branch=master)
+[![codecov](https://codecov.io/gh/ckeditor/ckeditor5/branch/master/graph/badge.svg)](https://codecov.io/gh/ckeditor/ckeditor5)
 [![CircleCI](https://circleci.com/gh/ckeditor/ckeditor5.svg?style=shield)](https://app.circleci.com/pipelines/github/ckeditor/ckeditor5?branch=master)
 
 This package implements the Emoji feature for CKEditor&nbsp;5.
@@ -31,7 +31,7 @@ See the [`@ckeditor/ckeditor5-emoji` package](https://ckeditor.com/docs/ckeditor
 
 Licensed under a dual-license model, this software is available under:
 
-* the [GNU General Public License Version 2 or later](http://www.gnu.org/licenses/gpl.html),
+* the [GNU General Public License Version 2 or later](https://www.gnu.org/licenses/gpl.html),
 * or commercial license terms from CKSource Holding sp. z o.o.
 
 For more information, see: [https://ckeditor.com/legal/ckeditor-licensing-options](https://ckeditor.com/legal/ckeditor-licensing-options).

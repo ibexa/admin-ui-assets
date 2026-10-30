@@ -1,11 +1,13 @@
 /**
- * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
  */
 
 ( e => {
-const { [ 'gu' ]: { dictionary, getPluralForm } } = {"gu":{"dictionary":{"Open file manager":"","Cannot determine a category for the uploaded file.":"","Cannot access default workspace.":"","You have no image editing permissions.":"","Edit image":"","Processing the edited image.":"","Server failed to process the image.":"","Failed to determine category of edited image.":""},getPluralForm(n){return (n != 1);}}};
+const { [ 'gu' ]: translations } = {"gu":{"dictionary":{"Open file manager":"","Cannot determine a category for the uploaded file.":"","Cannot access default workspace.":"","You have no image editing permissions.":"","Edit image":"","Processing the edited image.":"","Server failed to process the image.":"","Failed to determine category of edited image.":""}}};
 e[ 'gu' ] ||= { dictionary: {}, getPluralForm: null };
-e[ 'gu' ].dictionary = Object.assign( e[ 'gu' ].dictionary, dictionary );
-e[ 'gu' ].getPluralForm = getPluralForm;
+e[ 'gu' ].dictionary = Object.assign( e[ 'gu' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'gu' ].getPluralForm = translations.getPluralForm;
+}
 } )( window.CKEDITOR_TRANSLATIONS ||= {} );

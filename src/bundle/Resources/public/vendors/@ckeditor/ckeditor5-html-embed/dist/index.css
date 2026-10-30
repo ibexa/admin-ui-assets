@@ -1,68 +1,176 @@
 /**
- * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
  */
-/*
- * Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
- * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
- */
-
-/* The feature container. */
-.ck-widget.raw-html-embed {
-	/* Give the embed some air. */
-	/* The first value should be equal to --ck-spacing-large variable if used in the editor context
-	to avoid the content jumping (See https://github.com/ckeditor/ckeditor5/issues/9825). */
-	margin: 0.9em auto;
-	position: relative;
-	display: flow-root;
-
-	/* Give the html embed some minimal width in the content to prevent them
-	from being "squashed" in tight spaces, e.g. in table cells (https://github.com/ckeditor/ckeditor5/issues/8331) */
-	min-width: 15em;
-
-	/* Don't inherit the style, e.g. when in a block quote. */
-	font-style: normal;
-
-	/* ----- Emebed label in the upper left corner ----------------------------------------------- */
+:root {
+  --ck-html-embed-content-width: calc(100% - 1.5 * var(--ck-icon-size));
+  --ck-html-embed-source-height: 10em;
+  --ck-html-embed-unfocused-outline-width: 1px;
+  --ck-html-embed-content-min-height: calc(var(--ck-icon-size) + var(--ck-spacing-standard));
+  --ck-html-embed-source-disabled-background: var(--ck-color-base-foreground);
+  --ck-html-embed-source-disabled-color: #737373;
 }
-.ck-widget.raw-html-embed::before {
-		position: absolute;
 
-		/* Make sure the content does not cover the label. */
-		z-index: 1;
-	}
-/* ----- Emebed internals --------------------------------------------------------------------- */
-/* The switch mode button wrapper. */
+.ck-widget.raw-html-embed {
+  font-size: var(--ck-font-size-base);
+  background-color: var(--ck-color-base-foreground);
+  min-width: 15em;
+  margin: .9em auto;
+  display: flow-root;
+  position: relative;
+}
+
+.ck-widget.raw-html-embed:not(.ck-widget_selected):not(:hover) {
+  outline: var(--ck-html-embed-unfocused-outline-width) dashed var(--ck-color-widget-blurred-border);
+}
+
+.ck-widget.raw-html-embed[dir="ltr"] {
+  text-align: left;
+}
+
+.ck-widget.raw-html-embed[dir="rtl"] {
+  text-align: right;
+}
+
+.ck-widget.raw-html-embed:before {
+  content: attr(data-html-embed-label);
+  top: calc(-1 * var(--ck-html-embed-unfocused-outline-width));
+  left: var(--ck-spacing-standard);
+  transition: background var(--ck-widget-handler-animation-duration) var(--ck-widget-handler-animation-curve);
+  padding: calc(var(--ck-spacing-tiny) + var(--ck-html-embed-unfocused-outline-width)) var(--ck-spacing-small) var(--ck-spacing-tiny);
+  border-radius: 0 0 var(--ck-border-radius) var(--ck-border-radius);
+  color: var(--ck-color-base-background);
+  font-size: var(--ck-font-size-tiny);
+  font-family: var(--ck-font-face);
+  z-index: 1;
+  background: #999;
+  position: absolute;
+}
+
+.ck-widget.raw-html-embed[dir="rtl"]:before {
+  left: auto;
+  right: var(--ck-spacing-standard);
+}
+
+.ck-widget.raw-html-embed[dir="ltr"] .ck-widget__type-around .ck-widget__type-around__button.ck-widget__type-around__button_before {
+  margin-left: 50px;
+}
+
+.ck.ck-editor__editable.ck-blurred .ck-widget.raw-html-embed.ck-widget_selected:before {
+  padding: var(--ck-spacing-tiny) var(--ck-spacing-small);
+  top: 0;
+}
+
+.ck.ck-editor__editable:not(.ck-blurred) .ck-widget.raw-html-embed.ck-widget_selected:before {
+  padding: var(--ck-spacing-tiny) var(--ck-spacing-small);
+  background: var(--ck-color-focus-border);
+  top: 0;
+}
+
+.ck.ck-editor__editable .ck-widget.raw-html-embed:not(.ck-widget_selected):hover:before {
+  padding: var(--ck-spacing-tiny) var(--ck-spacing-small);
+  top: 0;
+}
+
+.ck-widget.raw-html-embed .raw-html-embed__content-wrapper {
+  padding: var(--ck-spacing-standard);
+}
+
 .ck-widget.raw-html-embed .raw-html-embed__buttons-wrapper {
-		position: absolute;
-		display: flex;
-		flex-direction: column;
-	}
+  top: var(--ck-spacing-standard);
+  right: var(--ck-spacing-standard);
+  display: flex;
+  position: absolute;
+}
+
+.ck-widget.raw-html-embed .raw-html-embed__buttons-wrapper .ck-button.raw-html-embed__save-button {
+  color: var(--ck-color-button-save);
+}
+
+.ck-widget.raw-html-embed .raw-html-embed__buttons-wrapper .ck-button.raw-html-embed__cancel-button {
+  color: var(--ck-color-button-cancel);
+}
+
+.ck-widget.raw-html-embed .raw-html-embed__buttons-wrapper .ck-button:not(:first-child) {
+  margin-top: var(--ck-spacing-small);
+}
+
+.ck-widget.raw-html-embed .raw-html-embed__buttons-wrapper {
+  flex-direction: column;
+}
+
+.ck-widget.raw-html-embed[dir="rtl"] .raw-html-embed__buttons-wrapper {
+  left: var(--ck-spacing-standard);
+  right: auto;
+}
+
+.ck-widget.raw-html-embed .raw-html-embed__source {
+  box-sizing: border-box;
+  height: var(--ck-html-embed-source-height);
+  width: var(--ck-html-embed-content-width);
+  resize: none;
+  min-width: 0;
+  padding: var(--ck-spacing-standard);
+  tab-size: 4;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: var(--ck-font-size-base);
+  text-align: left;
+  direction: ltr;
+}
+
+.ck-widget.raw-html-embed .raw-html-embed__source[disabled] {
+  background: var(--ck-html-embed-source-disabled-background);
+  color: var(--ck-html-embed-source-disabled-color);
+  -webkit-text-fill-color: var(--ck-html-embed-source-disabled-color);
+  opacity: 1;
+}
+
 .ck-widget.raw-html-embed .raw-html-embed__preview {
-		position: relative;
-		overflow: hidden;
-		display: flex;
-	}
+  min-height: var(--ck-html-embed-content-min-height);
+  width: var(--ck-html-embed-content-width);
+  position: relative;
+  overflow: hidden;
+}
+
+.ck-editor__editable:not(.ck-read-only) :is(.ck-widget.raw-html-embed .raw-html-embed__preview) {
+  pointer-events: none;
+}
+
+.ck-widget.raw-html-embed .raw-html-embed__preview {
+  display: flex;
+}
+
 .ck-widget.raw-html-embed .raw-html-embed__preview-content {
-		width: 100%;
-		position: relative;
-		margin: auto;
+  box-sizing: border-box;
+  background-color: var(--ck-color-base-foreground);
+  border-collapse: separate;
+  width: 100%;
+  margin: auto;
+  display: table;
+  position: relative;
+}
 
-		/* Gives spacing to the small renderable elements, so they always cover the placeholder. */
-		display: table;
-		border-collapse: separate;
-		border-spacing: 7px;
-	}
+.ck-widget.raw-html-embed .raw-html-embed__preview-content > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ck-widget.raw-html-embed .raw-html-embed__preview-content {
+  border-spacing: 7px;
+}
+
 .ck-widget.raw-html-embed .raw-html-embed__preview-placeholder {
-		position: absolute;
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
+  color: var(--ck-html-embed-source-disabled-color);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  inset: 0;
+}
 
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+.ck-widget.raw-html-embed {
+  font-style: normal;
+}
 
 /*# sourceMappingURL=index.css.map */

@@ -1,0 +1,37 @@
+{
+    "name": "@types/ssri",
+    "version": "7.1.5",
+    "description": "TypeScript definitions for ssri",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/ssri",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Jeow Li Huan",
+            "githubUsername": "huan086",
+            "url": "https://github.com/huan086"
+        },
+        {
+            "name": "ExE Boss",
+            "githubUsername": "ExE-Boss",
+            "url": "https://github.com/ExE-Boss"
+        },
+        {
+            "name": "Piotr Błażejewicz",
+            "githubUsername": "peterblazejewicz",
+            "url": "https://github.com/peterblazejewicz"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/ssri"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/node": "*"
+    },
+    "typesPublisherContentHash": "ca7c12037d397e29e8722806983e4f11f1f557f295358128c2941e79a1da6212",
+    "typeScriptVersion": "4.5"
+}

@@ -1,11 +1,13 @@
 /**
- * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
  */
 
 ( e => {
-const { [ 'tk' ]: { dictionary, getPluralForm } } = {"tk":{"dictionary":{"Font Size":"Şrift ölçegi","Tiny":"Kiçijik","Small":"Kiçi","Big":"Uly","Huge":"Ägirt","Font Family":"Şrift maşgalasy","Default":"Bellenen","Font Color":"Şriftiň reňki","Font Background Color":"Şriftiň fon reňki","Document colors":"Resminamanyň reňkleri"},getPluralForm(n){return (n != 1);}}};
+const { [ 'tk' ]: translations } = {"tk":{"dictionary":{"Font Size":"Şrift ölçegi","Tiny":"Kiçijik","Small":"Kiçi","Big":"Uly","Huge":"Ägirt","Font Family":"Şrift maşgalasy","Default":"Bellenen","Font Color":"Şriftiň reňki","Font Background Color":"Şriftiň fon reňki","Document colors":"Resminamanyň reňkleri"}}};
 e[ 'tk' ] ||= { dictionary: {}, getPluralForm: null };
-e[ 'tk' ].dictionary = Object.assign( e[ 'tk' ].dictionary, dictionary );
-e[ 'tk' ].getPluralForm = getPluralForm;
+e[ 'tk' ].dictionary = Object.assign( e[ 'tk' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'tk' ].getPluralForm = translations.getPluralForm;
+}
 } )( window.CKEDITOR_TRANSLATIONS ||= {} );

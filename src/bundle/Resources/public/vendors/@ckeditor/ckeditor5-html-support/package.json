@@ -1,7 +1,16 @@
 {
   "name": "@ckeditor/ckeditor5-html-support",
-  "version": "45.2.2",
+  "version": "48.5.3",
   "description": "HTML Support feature for CKEditor 5.",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "CKSource (http://cksource.com/)",
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "bugs": "https://github.com/ckeditor/ckeditor5/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-html-support"
+  },
   "keywords": [
     "ckeditor",
     "ckeditor5",
@@ -11,64 +20,33 @@
     "compatibility",
     "content compatibility",
     "html support",
-    "generic html support",
-    "ckeditor5-dll"
+    "generic html support"
   ],
   "type": "module",
-  "main": "src/index.js",
-  "dependencies": {
-    "@ckeditor/ckeditor5-core": "45.2.2",
-    "@ckeditor/ckeditor5-engine": "45.2.2",
-    "@ckeditor/ckeditor5-enter": "45.2.2",
-    "@ckeditor/ckeditor5-heading": "45.2.2",
-    "@ckeditor/ckeditor5-image": "45.2.2",
-    "@ckeditor/ckeditor5-list": "45.2.2",
-    "@ckeditor/ckeditor5-table": "45.2.2",
-    "@ckeditor/ckeditor5-utils": "45.2.2",
-    "@ckeditor/ckeditor5-widget": "45.2.2",
-    "ckeditor5": "45.2.2",
-    "es-toolkit": "1.32.0"
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
   },
-  "author": "CKSource (http://cksource.com/)",
-  "license": "SEE LICENSE IN LICENSE.md",
-  "homepage": "https://ckeditor.com/ckeditor-5",
-  "bugs": "https://github.com/ckeditor/ckeditor5/issues",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ckeditor/ckeditor5.git",
-    "directory": "packages/ckeditor5-html-support"
+  "dependencies": {
+    "@ckeditor/ckeditor5-clipboard": "48.5.3",
+    "@ckeditor/ckeditor5-core": "48.5.3",
+    "@ckeditor/ckeditor5-engine": "48.5.3",
+    "@ckeditor/ckeditor5-enter": "48.5.3",
+    "@ckeditor/ckeditor5-heading": "48.5.3",
+    "@ckeditor/ckeditor5-image": "48.5.3",
+    "@ckeditor/ckeditor5-list": "48.5.3",
+    "@ckeditor/ckeditor5-remove-format": "48.5.3",
+    "@ckeditor/ckeditor5-table": "48.5.3",
+    "@ckeditor/ckeditor5-utils": "48.5.3",
+    "@ckeditor/ckeditor5-widget": "48.5.3",
+    "es-toolkit": "1.52.0"
   },
   "files": [
     "dist",
-    "lang",
-    "src/**/*.js",
-    "src/**/*.d.ts",
-    "theme",
-    "build",
     "ckeditor5-metadata.json",
     "CHANGELOG.md"
   ],
-  "types": "src/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./src/index.d.ts",
-      "import": "./src/index.js",
-      "default": "./src/index.js"
-    },
-    "./dist/*": {
-      "types": "./src/index.d.ts",
-      "import": "./dist/*",
-      "default": "./dist/*"
-    },
-    "./src/*": {
-      "types": "./src/*.d.ts",
-      "import": "./src/*",
-      "default": "./src/*"
-    },
-    "./build/*": "./build/*",
-    "./lang/*": "./lang/*",
-    "./theme/*": "./theme/*",
-    "./ckeditor5-metadata.json": "./ckeditor5-metadata.json",
-    "./package.json": "./package.json"
-  }
+  "types": "./dist/index.d.ts"
 }

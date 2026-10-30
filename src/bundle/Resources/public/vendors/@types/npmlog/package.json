@@ -1,0 +1,32 @@
+{
+    "name": "@types/npmlog",
+    "version": "7.0.0",
+    "description": "TypeScript definitions for npmlog",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/npmlog",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Daniel Schmidt",
+            "githubUsername": "DanielMSchmidt",
+            "url": "https://github.com/DanielMSchmidt"
+        },
+        {
+            "name": "Joseph Wynn",
+            "githubUsername": "wildlyinaccurate",
+            "url": "https://github.com/wildlyinaccurate"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/npmlog"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/node": "*"
+    },
+    "typesPublisherContentHash": "2ba008479326773958156c3d7775f58f2972c16ce01a538c9b21fbbec6bae17d",
+    "typeScriptVersion": "4.5"
+}

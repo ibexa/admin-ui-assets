@@ -1,11 +1,13 @@
 /**
- * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
  */
 
 ( e => {
-const { [ 'pt' ]: { dictionary, getPluralForm } } = {"pt":{"dictionary":{"Insert HTML":"Inserir HTML","HTML snippet":"Fragmento de HTML","Paste raw HTML here...":"Colar aqui HTML em bruto...","Edit source":"Editar fonte","Save changes":"Guardar alterações","No preview available":"Pré-visualização indisponível","Empty snippet content":"Conteúdo de fragmento vazio"},getPluralForm(n){return (n != 1);}}};
+const { [ 'pt' ]: translations } = {"pt":{"dictionary":{"Insert HTML":"Inserir HTML","HTML snippet":"Fragmento de HTML","Paste raw HTML here...":"Colar aqui HTML em bruto...","Edit source":"Editar fonte","Save changes":"Guardar alterações","No preview available":"Pré-visualização indisponível","Empty snippet content":"Conteúdo de fragmento vazio"}}};
 e[ 'pt' ] ||= { dictionary: {}, getPluralForm: null };
-e[ 'pt' ].dictionary = Object.assign( e[ 'pt' ].dictionary, dictionary );
-e[ 'pt' ].getPluralForm = getPluralForm;
+e[ 'pt' ].dictionary = Object.assign( e[ 'pt' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'pt' ].getPluralForm = translations.getPluralForm;
+}
 } )( window.CKEDITOR_TRANSLATIONS ||= {} );

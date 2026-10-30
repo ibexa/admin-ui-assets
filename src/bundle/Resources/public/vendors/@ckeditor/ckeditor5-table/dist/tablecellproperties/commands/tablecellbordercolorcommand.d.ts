@@ -1,0 +1,37 @@
+/**
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+/**
+* @module table/tablecellproperties/commands/tablecellbordercolorcommand
+*/
+import type { ModelElement } from "@ckeditor/ckeditor5-engine";
+import type { Editor } from "@ckeditor/ckeditor5-core";
+import { TableCellPropertyCommand } from "./tablecellpropertycommand.js";
+/**
+* The table cell border color command.
+*
+* The command is registered by the {@link module:table/tablecellproperties/tablecellpropertiesediting~TableCellPropertiesEditing} as
+* the `'tableCellBorderColor'` editor command.
+*
+* To change the border color of selected cells, execute the command:
+*
+* ```ts
+* editor.execute( 'tableCellBorderColor', {
+*   value: '#f00'
+* } );
+* ```
+*/
+export declare class TableCellBorderColorCommand extends TableCellPropertyCommand {
+	/**
+	* Creates a new `TableCellBorderColorCommand` instance.
+	*
+	* @param editor An editor in which this command will be used.
+	* @param defaultValue The default value of the attribute.
+	*/
+	constructor(editor: Editor, defaultValue: string);
+	/**
+	* @inheritDoc
+	*/
+	protected override _getAttribute(tableCell: ModelElement): unknown;
+}

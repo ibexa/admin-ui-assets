@@ -1,11 +1,13 @@
 /**
- * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
  */
 
 ( e => {
-const { [ 'oc' ]: { dictionary, getPluralForm } } = {"oc":{"dictionary":{"media widget":"","Media URL":"","Paste the media URL in the input.":"","Tip: Paste the URL into the content to embed faster.":"","The URL must not be empty.":"","This media URL is not supported.":"","Insert media":"","Media":"","Media toolbar":"","Open media in new tab":"","Media embed":""},getPluralForm(n){return (n > 1);}}};
+const { [ 'oc' ]: translations } = {"oc":{"dictionary":{"media widget":"","Media URL":"","Paste the media URL in the input.":"","Tip: Paste the URL into the content to embed faster.":"","The URL must not be empty.":"","This media URL is not supported.":"","Insert media":"","Media embed":"","Media":"","Media toolbar":"","Open media in new tab":"","Left aligned media":"","Centered media":"","Right aligned media":"","Resize media":"","Resize media to %0":"","Resize media to the original size":"","Resize media (in %0)":"","Custom media size":"","Media resize list":"","Media Resize":""}}};
 e[ 'oc' ] ||= { dictionary: {}, getPluralForm: null };
-e[ 'oc' ].dictionary = Object.assign( e[ 'oc' ].dictionary, dictionary );
-e[ 'oc' ].getPluralForm = getPluralForm;
+e[ 'oc' ].dictionary = Object.assign( e[ 'oc' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'oc' ].getPluralForm = translations.getPluralForm;
+}
 } )( window.CKEDITOR_TRANSLATIONS ||= {} );

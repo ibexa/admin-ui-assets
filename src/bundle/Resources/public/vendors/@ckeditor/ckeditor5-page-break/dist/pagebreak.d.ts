@@ -1,0 +1,32 @@
+/**
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+/**
+* @module page-break/pagebreak
+*/
+import { Plugin, type PluginDependenciesOf } from "@ckeditor/ckeditor5-core";
+import { Widget } from "@ckeditor/ckeditor5-widget";
+import { PageBreakEditing } from "./pagebreakediting.js";
+import { PageBreakUI } from "./pagebreakui.js";
+/**
+* The page break feature.
+*
+* It provides the possibility to insert a page break into the rich-text editor.
+*
+* For a detailed overview, check the {@glink features/page-break Page break feature} documentation.
+*/
+export declare class PageBreak extends Plugin {
+	/**
+	* @inheritDoc
+	*/
+	static get requires(): PluginDependenciesOf<[PageBreakEditing, PageBreakUI, Widget]>;
+	/**
+	* @inheritDoc
+	*/
+	static get pluginName(): "PageBreak";
+	/**
+	* @inheritDoc
+	*/
+	static override get isOfficialPlugin(): true;
+}

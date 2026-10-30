@@ -1,11 +1,13 @@
 /**
- * @license Copyright (c) 2003-2025, CKSource Holding sp. z o.o. All rights reserved.
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
  */
 
 ( e => {
-const { [ 'fa' ]: { dictionary, getPluralForm } } = {"fa":{"dictionary":{"Enter fullscreen mode":"","Leave fullscreen mode":"","Fullscreen mode":"","Toggle fullscreen mode":"","Document outline":"","Connected users":""},getPluralForm(n){return 0;}}};
+const { [ 'fa' ]: translations } = {"fa":{"dictionary":{"Enter fullscreen mode":"","Leave fullscreen mode":"","Fullscreen mode":"","Toggle fullscreen mode":"","Document outline":"","Connected users":"","Show left sidebar":"","Hide left sidebar":"","Toggle sidebar":""}}};
 e[ 'fa' ] ||= { dictionary: {}, getPluralForm: null };
-e[ 'fa' ].dictionary = Object.assign( e[ 'fa' ].dictionary, dictionary );
-e[ 'fa' ].getPluralForm = getPluralForm;
+e[ 'fa' ].dictionary = Object.assign( e[ 'fa' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'fa' ].getPluralForm = translations.getPluralForm;
+}
 } )( window.CKEDITOR_TRANSLATIONS ||= {} );

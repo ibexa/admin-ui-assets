@@ -1,0 +1,1700 @@
+/**
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+/**
+* @module core/editor/editorconfig
+*/
+import type { ArrayOrItem, Translations } from "@ckeditor/ckeditor5-utils";
+import { type Context } from "../context.js";
+import type { PluginConstructor } from "../plugin.js";
+import type { EditorRootAttributes, Editor } from "./editor.js";
+import type { MenuBarConfig } from "@ckeditor/ckeditor5-ui";
+import type { EngineConfig } from "@ckeditor/ckeditor5-engine";
+/**
+* CKEditor configuration options.
+*
+* An object defining the editor configuration can be passed when initializing the editor:
+*
+* ```ts
+* EditorClass
+* 	.create( {
+* 		toolbar: [ 'bold', 'italic' ],
+* 		image: {
+* 			styles: [
+* 				...
+* 			]
+* 		}
+* 	} )
+* 	.then( ... )
+* 	.catch( ... );
+* ```
+*/
+export interface EditorConfig extends EngineConfig {
+	/**
+	* The DOM element that will be the source for the created editor.
+	*
+	* **Note:** This option is only available in the {@link module:editor-classic/classiceditor~ClassicEditor}.
+	* Other editor types expect configuration for the root elements to be passed in the
+	* {@link module:core/editor/editorconfig~EditorConfig#roots `config.roots`} configuration.
+	*
+	* If a DOM element is passed, its content will be automatically loaded to the editor upon initialization
+	* and the {@link module:editor-classic/classiceditorui~ClassicEditorUI#element editor element} will replace the passed element
+	* in the DOM (the original one will be hidden and the editor will be injected next to it).
+	*
+	* If the {@link module:core/editor/editorconfig~EditorConfig#updateSourceElementOnDestroy updateSourceElementOnDestroy}
+	* option is set to `true`, the editor data will be set back to the original element once the editor is destroyed and when a form,
+	* in which this element is contained, is submitted (if the original element is a `<textarea>`). This ensures seamless integration
+	* with native web forms.
+	*
+	* If the element is not provided, a detached editor will be created. In this case you need to insert it into the DOM manually.
+	* It is available under the {@link module:editor-classic/classiceditorui~ClassicEditorUI#element `editor.ui.element`} property.
+	*/
+	attachTo?: HTMLElement;
+	context?: Context;
+	/**
+	* The list of additional plugins to load along those already available in the
+	* editor. It extends the {@link #plugins `plugins`} configuration.
+	*
+	* ```ts
+	* function MyPlugin( editor ) {
+	* 	// ...
+	* }
+	*
+	* const config = {
+	* 	extraPlugins: [ MyPlugin ]
+	* };
+	* ```
+	*
+	* **Note:** This configuration works only for simple plugins which utilize the
+	* {@link module:core/plugin~PluginInterface plugin interface} and have no dependencies. To extend a
+	* build with complex features, try [CKEditr 5 Builder](https://ckeditor.com/ckeditor-5/builder?redirect=docs).
+	*
+	* **Note:** Make sure you include the new features in you toolbar configuration. Learn more
+	* about the {@glink getting-started/setup/toolbar toolbar setup}.
+	*/
+	extraPlugins?: Array<PluginConstructor<Editor>>;
+	/**
+	* The initial editor data to be used instead of the provided element's HTML content.
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		root: {
+	* 			initialData: '<h2>Initial data</h2><p>Foo bar.</p>'
+	* 		}
+	* 	} )
+	* 	.then( ... )
+	* 	.catch( ... );
+	* ```
+	*
+	* By default, the editor is initialized with the content of the element on which this editor is initialized.
+	* This configuration option lets you override this behavior and pass different initial data.
+	* It is especially useful if it is difficult for your integration to put the data inside the HTML element.
+	*
+	* If your editor implementation uses multiple roots, you should pass an object with keys corresponding to the editor
+	* roots names and values equal to the data that should be set in each root:
+	*
+	* ```ts
+	* MultiRootEditor.create( {
+	* 	roots: {
+	* 		header: {
+	* 			element: document.querySelector( '#header' ),
+	* 			initialData: '<p>Content for header part.</p>'
+	* 		},
+	* 		content: {
+	* 			element: document.querySelector( '#content' ),
+	* 			initialData: '<p>Content for main part.</p>'
+	* 		},
+	* 		leftSide: {
+	* 			element: document.querySelector( '#left-side' ),
+	* 			initialData: '<p>Content for left-side box.</p>'
+	* 		},
+	* 		rightSide: {
+	* 			element: document.querySelector( '#right-side' ),
+	* 			initialData: '<p>Content for right-side box.</p>'
+	* 		}
+	* 	}
+	* } )
+	* .then( ... )
+	* .catch( ... );
+	* ```
+	*
+	* See also {@link module:core/editor/editor~Editor.create Editor.create()} documentation for the editor implementation which you use.
+	*
+	* **Note:** If `config.initialData` is set together with `config.root.initialData` or `config.roots.<rootName>.initialData`,
+	* an error will be thrown as those options exclude themselves.
+	*
+	* If `config.initialData` is not set when the editor is initialized, the data received in `Editor.create()` call
+	* will be used to set `config.initialData`. As a result, `initialData` is always set in the editor's config and
+	* plugins can read and/or modify it during initialization.
+	*
+	* **This property has been deprecated and will be removed in the future versions of CKEditor. Please use
+	* {@link module:core/editor/editorconfig~EditorConfig#root `config.root.initialData`} instead.
+	* For the {@link module:editor-multi-root/multirooteditor~MultiRootEditor multi-root editor}, use
+	* {@link module:core/editor/editorconfig~EditorConfig#roots `config.roots.<rootName>.initialData`}.**
+	*
+	* @deprecated
+	*/
+	initialData?: string | Record<string, string>;
+	/**
+	* The language of the editor UI and its content.
+	*
+	* Simple usage (change the language of the UI and the content):
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		// The UI of the editor as well as its content will be in German.
+	* 		language: 'de'
+	* 	} )
+	* 	.then( editor => {
+	* 		console.log( editor );
+	* 	} )
+	* 	.catch( error => {
+	* 		console.error( error );
+	* 	} );
+	* ```
+	*
+	* Use different languages for the UI and the content using the {@link module:core/editor/editorconfig~LanguageConfig configuration}
+	* syntax:
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		language: {
+	* 			// The UI will be in English.
+	* 			ui: 'en',
+	*
+	* 			// But the content will be edited in Arabic.
+	* 			content: 'ar'
+	* 		}
+	* 	} )
+	* 	.then( editor => {
+	* 		console.log( editor );
+	* 	} )
+	* 	.catch( error => {
+	* 		console.error( error );
+	* 	} );
+	* ```
+	*
+	* The language of the content has an impact on the editing experience, for instance it affects screen readers
+	* and spell checkers. It is also particularly useful for typing in certain languages (e.g. right–to–left ones)
+	* because it changes the default alignment of the text.
+	*
+	* The language codes are defined in the [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) standard.
+	*
+	* You need to add the corresponding translation file for the new UI language to work.
+	* Translation files are available on CDN:
+	*
+	* ```html
+	* <script type="importmap">
+	* {
+	*   "imports": {
+	*     "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/<VERSION>/ckeditor5.js",
+	*     "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/<VERSION>/"
+	*   }
+	* }
+	* <\/script>
+	* <script type="module">
+	* import { ClassicEditor, Essentials, Paragraph } from 'ckeditor5';
+	* import { translations } from 'ckeditor5/dist/translations/pl.js';
+	*
+	* await ClassicEditor.create( {
+	*   attachTo: document.querySelector( '#editor' ),
+	*   plugins: [
+	*     Essentials,
+	*     Paragraph,
+	*   ],
+	*   toolbar: {
+	*     items: [ 'undo', 'redo' ]
+	*   },
+	*   translations
+	* } );
+	* <\/script>
+	* ```
+	*
+	* You can add translation using NPM as well.
+	*
+	* ```html
+	* import { ClassicEditor, Essentials, Paragraph } from 'ckeditor5';
+	* import { translations } from 'ckeditor5/dist/translations/pl.js';
+	*
+	* import 'ckeditor5/dist/styles.css';
+	*
+	* await ClassicEditor.create( {
+	*   attachTo: document.querySelector( '#editor' ),
+	*   plugins: [
+	*     Essentials,
+	*     Paragraph,
+	*   ],
+	*   toolbar: {
+	*     items: [ 'undo', 'redo' ]
+	*   },
+	*   translations
+	* } );
+	* ```
+	*
+	* Check the {@glink getting-started/setup/ui-language UI language} guide for more information about
+	* the localization options and translation process.
+	*/
+	language?: string | LanguageConfig;
+	/**
+	* The editor menu bar configuration.
+	*
+	* **Note**: The menu bar is not available in all editor types. Currently, only the
+	* {@link module:editor-classic/classiceditor~ClassicEditor Classic editor} and
+	* {@link module:editor-decoupled/decouplededitor~DecoupledEditor Decoupled editor}
+	* support this feature. Setting the `config.menuBar` configuration for other editor types will have no effect.
+	*
+	* In Classic editor, the menu bar is hidden by default. Set the `isVisible` configuration flag to `true` in order to show it:
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		menuBar: {
+	* 			isVisible: true
+	* 		}
+	* 	} )
+	* 	.then( ... );
+	* ```
+	*
+	* When using the Decoupled editor, you will need to insert the menu bar in a desired place yourself. For example:
+	*
+	* ```ts
+	* DecoupledEditor
+	* 	.create( {
+	* 		root: { element: document.querySelector( '#editor' ) },
+	* 		toolbar: [ 'undo', 'redo', 'bold', 'italic', 'numberedList', 'bulletedList' ],
+	* 	} )
+	*  .then( editor => {
+	* 		document.getElementById( '#menuBarContainer' ).appendChild( editor.ui.view.menuBarView.element );
+	* 	} );
+	* ```
+	*
+	* **Note**: You do not have to set the `items` property in this configuration in order to use the menu bar.
+	* By default, a {@link module:ui/menubar/utils#DefaultMenuBarItems default set of items} is used that already includes
+	* **all core editor features**. For your convenience, there are `config.menuBar.addItems` and
+	* `config.menuBar.removeItems` options available that will help you adjust the default configuration without setting the
+	* entire menu bar structure from scratch (see below).
+	*
+	* **Removing items from the menu bar**
+	*
+	* You can use the `config.menuBar.removeItems` option to remove items from the default menu bar configuration. You can
+	* remove individual buttons (e.g. "Bold" or "Block quote"), item groups (e.g. the basic styles section that
+	* includes multiple buttons such as "Bold", "Italic", "Underline", etc.), or whole menus (e.g. the "Insert" menu). Please
+	* refer to the {@link module:ui/menubar/utils#DefaultMenuBarItems default configuration} to see default buttons/groups/menus
+	* and their structure.
+	*
+	* To remove individual buttons from the menu bar:
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		menuBar: {
+	* 			// Removes "Bold" and "Block quote" buttons from their respective menus.
+	* 			removeItems: [ 'menuBar:bold', 'menuBar:blockQuote' ]
+	* 		}
+	* 	} )
+	* 	.then( ... );
+	* ```
+	*
+	* To remove a group of buttons from the menu bar:
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		menuBar: {
+	* 			// Removes the entire basic styles group ("Bold", "Italic", "Underline", etc.) from the "Format" menu.
+	* 			removeItems: [ 'basicStyles' ]
+	* 		}
+	* 	} )
+	* 	.then( ... );
+	* ```
+	*
+	* To remove a menu from the menu bar:
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		menuBar: {
+	* 			// Removes the whole top-level "Insert" menu from the menu bar.
+	* 			removeItems: [ 'insert' ]
+	* 		}
+	* 	} )
+	* 	.then( ... );
+	* ```
+	*
+	* **Adding items to the menu bar**
+	*
+	* Using the `config.menuBar.addItems` option you can add individual buttons, button groups or entire menus to the structure
+	* of the menu bar. You can add existing components that you removed from their original position, or add your own components.
+	*
+	* **Note**: When adding items please make sure that features (editor plugins) that bring specific menu bar items are loaded.
+	* For instance, the "Bold" button will not show up in the menu bar unless the {@glink features/basic-styles basic styles} feature is
+	* loaded. {@link module:core/editor/editorconfig~EditorConfig#plugins Learn more} about loading plugins.
+	*
+	* Each entry in the `config.menuBar.addItems` is an object with one of the following properties:
+	*
+	* * `item` &ndash; A name of the button to be added to a specific button group (e.g. `'menuBar:bold'` or `'myButton'`),
+	* * `menu` &ndash; A {@link module:ui/menubar/menubarview#MenuBarMenuDefinition definition of a menu} that should be added to
+	* the menu bar,
+	* * `group` &ndash; A {@link module:ui/menubar/menubarview#MenuBarMenuGroupDefinition definition of a button group} that should be
+	* added to a specific menu.
+	*
+	* Additionally, each entry must define the `position` property that accepts the following values:
+	* * `'start'` &ndash; Adds a top-level menu (e.g. "Format", "Insert", etc.) at the beginning of the menu bar,
+	* * `'start:GROUP_OR_MENU'` &ndash; Adds a button/group at the beginning of the specific group/menu,
+	* * `'end'` &ndash; Adds a top-level menu (e.g. "Format", "Insert", etc.) at the end of the menu bar,
+	* * `'end:GROUP_OR_MENU'` &ndash; Adds a button/group at the end of the specific group/menu,
+	* * `'after:BUTTON_OR_GROUP_OR_MENU'` &ndash; Adds a button/group/menu right after the specific button/group/menu,
+	* * `'before:BUTTON_OR_GROUP_OR_MENU'` &ndash; Adds a button/group/menu right after the specific button/group/menu.
+	*
+	* Please refer to the {@link module:ui/menubar/utils#DefaultMenuBarItems default configuration} to learn about the
+	* names of buttons and positions they can be added at.
+	*
+	* To add a new top-level menu with specific buttons at the end of the menu bar:
+	*
+	* ```ts
+	*  ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		menuBar: {
+	*  		addItems: [
+	* 				{
+	* 					menu: {
+	* 						menuId: 'my-menu',
+	* 						label: 'My menu',
+	* 						groups: [
+	* 							{
+	* 								groupId: 'my-buttons',
+	* 								items: [
+	* 									'menuBar:bold',
+	* 									'menuBar:italic',
+	* 									'menuBar:underline'
+	* 								]
+	* 							}
+	* 						]
+	* 					},
+	* 					position: 'end'
+	* 				}
+	* 			]
+	* 		}
+	* 	} )
+	* 	.then( ... );
+	* ```
+	*
+	* To add a new group of buttons to the "Format" menu after basic styles buttons ("Bold", "Italic", "Underline", etc.):
+	*
+	* ```ts
+	*  ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		menuBar: {
+	*  		addItems: [
+	* 				{
+	* 					group: {
+	* 						groupId: 'my-buttons',
+	* 						items: [
+	* 							'myButton1',
+	* 							'myButton2',
+	* 						]
+	* 					},
+	* 					position: 'after:basicStyles'
+	* 				}
+	* 			]
+	* 		}
+	* 	} )
+	* 	.then( ... );
+	* ```
+	*
+	* To add a new button to the basic styles group ("Bold", "Italic", "Underline", etc.) in the "Format" menu:
+	*
+	* ```ts
+	*  ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		menuBar: {
+	*  		addItems: [
+	* 				{
+	* 					item: 'myButton',
+	* 					position: 'end:basicStyles'
+	* 				}
+	* 			]
+	* 		}
+	* 	} )
+	* 	.then( ... );
+	* ```
+	*
+	* To add a new sub-menu in the "Format" menu:
+	*
+	* ```ts
+	*  ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		menuBar: {
+	*  		addItems: [
+	* 				{
+	* 					menu: {
+	* 						menuId: 'my-sub-menu',
+	* 						label: 'My sub-menu',
+	* 						groups: [
+	* 							{
+	* 								groupId: 'my-buttons',
+	* 								items: [
+	* 									'myButton1',
+	* 									'myButton2',
+	* 								]
+	* 							}
+	* 						]
+	* 					},
+	* 					position: 'after:basicStyles'
+	* 				}
+	* 			]
+	* 		}
+	* 	} )
+	* 	.then( ... );
+	* ```
+	*
+	* **Defining menu bar from scratch**
+	*
+	* If the `config.menuBar.addItems` and `config.menuBar.removeItems` options are not enough to adjust the
+	* {@link module:ui/menubar/utils#DefaultMenuBarItems default configuration}, you can set the menu bar structure from scratch.
+	*
+	* For instance, to create a minimalistic menu bar configuration with just two main categories (menus), use the following code snippet:
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		menuBar: {
+	* 			items: [
+	* 				{
+	* 					menuId: 'formatting',
+	* 					label: 'Formatting',
+	* 					groups: [
+	* 						{
+	* 							groupId: 'basicStyles',
+	* 							items: [
+	* 								'menuBar:bold',
+	* 								'menuBar:italic',
+	* 							]
+	* 						},
+	* 						{
+	* 							groupId: 'misc',
+	* 							items: [
+	* 								'menuBar:heading',
+	* 								'menuBar:bulletedList',
+	* 								'menuBar:numberedList'
+	* 							]
+	* 						}
+	* 					]
+	* 				},
+	* 				{
+	* 					menuId: 'myButtons',
+	* 					label: 'My actions',
+	* 					groups: [
+	* 						{
+	* 							groupId: 'undo',
+	* 							items: [
+	* 								'myButton1',
+	* 								'myButton2'
+	* 							]
+	* 						}
+	* 					]
+	* 				}
+	* 			]
+	* 		}
+	* 	} )
+	* 	.then( ... );
+	* ```
+	*/
+	menuBar?: MenuBarConfig;
+	/**
+	* Specifies the text displayed in the editor when there is no content (editor is empty). It is intended to
+	* help users locate the editor in the application (form) and prompt them to input the content. Work similarly
+	* as to the native DOM
+	* [`placeholder` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#The_placeholder_attribute)
+	* used by inputs.
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		root: {
+	* 			placeholder: 'Type some text...'
+	* 		}
+	* 	} )
+	* 	.then( ... )
+	* 	.catch( ... );
+	* ```
+	*
+	* If your editor implementation uses multiple roots, you should pass an object with keys corresponding to the editor
+	* roots names and values equal to the placeholder that should be set in each root:
+	*
+	* ```ts
+	* MultiRootEditor.create( {
+	* 	roots: {
+	* 		header: {
+	* 			element: document.querySelector( '#header' ),
+	* 			placeholder: 'Type header...'
+	* 		},
+	* 		content: {
+	* 			element: document.querySelector( '#content' ),
+	* 			placeholder: 'Type content...'
+	* 		},
+	* 		leftSide: {
+	* 			element: document.querySelector( '#left-side' ),
+	* 			placeholder: 'Type left-side...'
+	* 		},
+	* 		rightSide: {
+	* 			element: document.querySelector( '#right-side' ),
+	* 			placeholder: 'Type right-side...'
+	* 		}
+	* 	}
+	* } )
+	* .then( ... )
+	* .catch( ... );
+	* ```
+	*
+	* The placeholder text is displayed as a pseudo–element of an empty paragraph in the editor content.
+	* The paragraph has the `.ck-placeholder` CSS class and the `data-placeholder` attribute.
+	*
+	* ```html
+	* <p data-placeholder="Type some text..." class="ck-placeholder">
+	* 	::before
+	* </p>
+	* ```
+	*
+	* **Note**: Placeholder text can also be set using the `placeholder` attribute if a `<textarea>` is passed to
+	* the `create()` method, e.g. {@link module:editor-classic/classiceditor~ClassicEditor.create `ClassicEditor.create()`}.
+	*
+	* **Note**: This configuration has precedence over the value of the `placeholder` attribute of a `<textarea>`
+	* element passed to the `create()` method.
+	*
+	* See the {@glink features/editor-placeholder "Editor placeholder"} guide for more information and live examples.
+	*
+	* **This property has been deprecated and will be removed in the future versions of CKEditor. Please use
+	* {@link module:core/editor/editorconfig~EditorConfig#root `config.root.placeholder`} instead.
+	* For the {@link module:editor-multi-root/multirooteditor~MultiRootEditor multi-root editor}, use
+	* {@link module:core/editor/editorconfig~EditorConfig#roots `config.roots.<rootName>.placeholder`}.**
+	*
+	* @deprecated
+	*/
+	placeholder?: string | Record<string, string>;
+	/**
+	* The list of plugins to load.
+	*
+	* ```ts
+	* import {
+	* // A preset of plugins is a plugin as well.
+	* 	Essentials,
+	* // The bold plugin.
+	* 	Bold
+	* } from 'ckeditor5';
+	*
+	* const config = {
+	* 	plugins: [ Essentials, Bold ]
+	* };
+	* ```
+	*
+	* **Note:** To load additional plugins, you should use the {@link #extraPlugins `extraPlugins`} configuration.
+	* To narrow the list of loaded plugins, use the {@link #removePlugins `removePlugins`} configuration.
+	*/
+	plugins?: Array<PluginConstructor<Editor> | string>;
+	/**
+	* The list of plugins which should not be loaded despite being available in
+	* the editor.
+	*
+	* ```ts
+	* const config = {
+	* 	removePlugins: [ 'Bold', 'Italic' ]
+	* };
+	* ```
+	*
+	* **Note:** Be careful when removing plugins using `config.removePlugins`.
+	* If removed plugins were providing toolbar buttons, the default toolbar configuration included in a build
+	* will become invalid. In such case you need to provide the updated
+	* {@link module:core/editor/editorconfig~EditorConfig#toolbar toolbar configuration}.
+	*/
+	removePlugins?: Array<PluginConstructor<Editor> | string>;
+	substitutePlugins?: Array<PluginConstructor<Editor>>;
+	/**
+	* The editor toolbar configuration.
+	*
+	* Simple format (specifies only toolbar items):
+	*
+	* ```ts
+	* const config = {
+	* 	toolbar: [ 'bold', 'italic', '|', 'undo', 'redo' ]
+	* };
+	* ```
+	*
+	* Extended format:
+	*
+	* ```ts
+	* const config = {
+	* 	toolbar: {
+	* 		items: [ 'bold', 'italic', '|', 'undo', 'redo', '-', 'numberedList', 'bulletedList' ],
+	*
+	* 		shouldNotGroupWhenFull: true
+	* 	}
+	* };
+	* ```
+	*
+	* Options which can be set using the extended format:
+	*
+	* * **`toolbar.items`** &ndash; An array of toolbar item names. The components (buttons, dropdowns, etc.) which can be used
+	*	as toolbar items are defined in `editor.ui.componentFactory` and can be listed using the following snippet:
+	*
+	*	```ts
+	*	Array.from( editor.ui.componentFactory.names() );
+	*	```
+	*
+	*	You can also use `'|'` to create a separator between groups of items:
+	*
+	*	```
+	*	toolbar: [ 'bold', 'italic', '|', 'undo', 'redo' ]
+	*	```
+	*
+	* or `'-'` to make a line break and render items in multiple lines:
+	*
+	*	```
+	*	toolbar: [ 'bold', 'italic', '-', 'undo', 'redo' ]
+	*	```
+	*
+	*	Line break will work only in the extended format when `shouldNotGroupWhenFull` option is set to `true`.
+	*
+	*	**Note**: To save space in your toolbar, you can group several items into a dropdown:
+	*
+	*	```
+	*	toolbar: [
+	*		{
+	*			label: 'Basic styles',
+	*			icon: 'text',
+	*			items: [ 'bold', 'italic', ... ]
+	*		},
+	*		'|',
+	*		'undo', 'redo'
+	*	]
+	*	```
+	*
+	*	The code above will create a "Basic styles" dropdown with a "text" icon containing the "bold" and "italic" buttons.
+	*	You can customize the look of the dropdown by setting the `withText`, `icon`, and `tooltip` properties:
+	*
+	*	* **Displaying a label**
+	*
+	*		For instance, to hide the icon and to display the label only, you can use the following configuration:
+	*
+	*		```ts
+	*		{
+	*			label: 'Basic styles',
+	*			// Show the textual label of the drop-down. Note that the "icon" property is not configured.
+	*			withText: true,
+	*			items: [ 'bold', 'italic', ... ]
+	*		}
+	*		```
+	*
+	*	* **Selecting an icon**
+	*
+	*		You can use one of the common icons provided by the editor (`'bold'`, `'plus'`, `'text'`, `'importExport'`, `'alignLeft'`,
+	*		`'paragraph'`, `'threeVerticalDots'`, `'dragIndicator'`, `'pilcrow'`):
+	*
+	*		```ts
+	*		{
+	*			label: '...',
+	*			// A "plus" sign icon works best for content insertion tools.
+	*			icon: 'plus',
+	*			items: [ ... ]
+	*		}
+	*		```
+	*
+	*		If no icon is specified, `'threeVerticalDots'` will be used as a default:
+	*
+	*		```ts
+	*		// No icon specified, using a default one.
+	*		{
+	*			label: 'Default icon',
+	*			items: [ ... ]
+	*		}
+	*		```
+	*
+	*		If `icon: false` is configured, no icon will be displayed at all and the text label will show up instead:
+	*
+	*		```ts
+	*		// This drop-down has no icon. The text label will be displayed instead.
+	*		{
+	*			label: 'No icon',
+	*			icon: false,
+	*			items: [ ... ]
+	*		}
+	*		```
+	*
+	*		You can also set a custom icon for the drop-down by passing an SVG string:
+	*
+	*		```ts
+	*		{
+	*			label: '...',
+	*			// If you want your icon to change the color dynamically (e.g. when the dropdown opens), avoid fill="..."
+	*			// and stroke="..." styling attributes. Use solid shapes and avoid paths with strokes.
+	*			icon: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">...</svg>',
+	*			items: [ ... ]
+	*		}
+	*		```
+	*
+	*	* **Customizing the tooltip**
+	*
+	*		By default, the tooltip of the button shares its text with the label. You can customize it to better describe your dropdown
+	*		using the `tooltip` property ({@link module:ui/button/buttonview~ButtonView#tooltip learn more}):
+	*
+	*		```ts
+	*		{
+	*			label: 'Drop-down label',
+	*			tooltip: 'Custom tooltip of the drop-down',
+	*			icon: '...',
+	*			items: [ ... ]
+	*		}
+	*		```
+	*
+	* * **`toolbar.viewportTopOffset` (deprecated)** &ndash; The offset (in pixels) from the top of the viewport used when positioning a
+	*	sticky toolbar.
+	*	Useful when a page with which the editor is being integrated has some other sticky or fixed elements
+	*	(e.g. the top menu). Thanks to setting the toolbar offset the toolbar will not be positioned underneath or above the page's UI.
+	*
+	*	**This property has been deprecated and will be removed in the future versions of CKEditor. Please use
+	*	`{@link module:core/editor/editorconfig~EditorConfig#ui EditorConfig#ui.viewportOffset}` instead.**
+	*
+	* * **`toolbar.shouldNotGroupWhenFull`** &ndash; When set to `true`, the toolbar will stop grouping items
+	*	and let them wrap to the next line if there is not enough space to display them in a single row.
+	*/
+	toolbar?: ToolbarConfig;
+	/**
+	* The editor UI configuration.
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		ui: { ... }
+	* 	} )
+	* 	.then( ... )
+	* 	.catch( ... );
+	* ```
+	*
+	* Options which can be set using the UI configuration:
+	*
+	* * **`ui.viewportOffset`** &ndash; The offset (in pixels) of the viewport from every direction. It is
+	* used when positioning a sticky toolbar or other absolutely positioned UI elements.
+	* Useful when a page with which the editor is being integrated has some other sticky or fixed elements
+	* (e.g. the top menu). Thanks to setting the UI viewport offset, the toolbar and other contextual balloons will not be positioned
+	* underneath or above the page's UI.
+	*
+	* 	```ts
+	* 	ui: {
+	* 		viewportOffset: { top: 10, right: 10, bottom: 10, left: 10 }
+	* 	}
+	* 	```
+	*
+	* 	**Note:** If you want to modify the viewport offset in runtime (after the editor was created), you can do that by overriding
+	* 	{@link module:ui/editorui/editorui~EditorUI#viewportOffset `editor.ui.viewportOffset`}.
+	*
+	* * **`ui.poweredBy`** &ndash; The configuration of the project logo displayed over the editor's editing area in
+	*  open-source integrations. It allows customizing the position of the logo to minimize the risk of collision with the
+	*  editor content and UI.
+	*
+	* 	The following configuration properties are supported:
+	*
+	* 	* **`position`** &ndash; The position of the project's logo (default: `'border'`).
+	* 		* When `'inside'`, the logo will be displayed within the boundaries of the editing area.
+	* 		* When `'border'`, the logo will be displayed over the bottom border of the editing area.
+	*
+	* 	* **`side`** (`'left'` or `'right'`, default: `'right'`) &ndash; The side of the editing area where the
+	* 	logo will be displayed.
+	*
+	* 		**Note**: If {@link module:core/editor/editorconfig~EditorConfig#language `config.language`} is set to an RTL (right-to-left)
+	* 		language, the side switches to `'left'` by default.
+	*
+	* 	* **`label`** (default: `'Powered by'`) &ndash; The label displayed next to the project's logo.
+	*
+	* 		**Note**: Set the value to `null` to display the logo without any text.
+	*
+	* 	* **`verticalOffset`** (default: `5`) &ndash; The vertical distance the logo can be moved away from its default position.
+	*
+	* 		**Note**: If `position` is `'border'`, the offset is measured from the (vertical) center of the logo.
+	*
+	* 	* **`horizontalOffset`** (default: `5`) &ndash; The horizontal distance between the side of the editing root and the
+	* 	nearest side of the logo.
+	*
+	* 	```ts
+	* 	ui: {
+	* 		poweredBy: {
+	* 			position: 'border',
+	* 			side: 'left',
+	* 			verticalOffset: 2,
+	* 			horizontalOffset: 30
+	* 		}
+	* 	}
+	*/
+	ui?: UiConfig;
+	/**
+	* Enables updating the source element after the editor is destroyed.
+	*
+	* Enabling this option might have some security implications, as the editor doesn't have control over all data
+	* in the output.
+	*
+	* Be careful, especially while using the
+	* {@glink features/markdown Markdown}, {@glink features/html/general-html-support General HTML Support}, or
+	* {@glink features/html/html-embed HTML embed} features.
+	*/
+	updateSourceElementOnDestroy?: boolean;
+	/**
+	* The CKEditor 5 license key. If you want to obtain a license key, please do one of the following:
+	*
+	* * Create a free account, and test the premium features with a [14-day free trial](https://portal.ckeditor.com/checkout?plan=free).
+	* * [Contact us](https://ckeditor.com/contact/) for a commercial license.
+	* * If you are using the editor under a GPL license or another license from our Open Source Initiative,
+	*   use the 'GPL' license key instead.
+	*/
+	licenseKey?: string;
+	/**
+	* Translations to be used in the editor.
+	*/
+	translations?: ArrayOrItem<Translations>;
+	/**
+	* Label which briefly describes the editing area. Used for the `aria-label` attribute set on the editor editing area,
+	* helping assistive technologies to tell apart multiple editor instances (editing areas) on the page. If not set,
+	* a default "Rich Text Editor. Editing area [name of the area]" is used instead.
+	*
+	* It can also be used by other features when referring to this editing area (e.g. AI features).
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		root: {
+	* 			label: 'Article main content'
+	* 		}
+	* 	} )
+	* 	.then( ... )
+	* 	.catch( ... );
+	* ```
+	*
+	* If your editor implementation uses multiple roots, you should pass an object with keys corresponding to the editor
+	* roots names and values equal to the label that should be used for each root:
+	*
+	* ```ts
+	* MultiRootEditor.create( {
+	* 	roots: {
+	* 		header: {
+	* 			element: document.querySelector( '#header' ),
+	* 			label: 'Article header'
+	* 		},
+	* 		content: {
+	* 			element: document.querySelector( '#content' ),
+	* 			label: 'Article main content'
+	* 		},
+	* 		sideQuote: {
+	* 			element: document.querySelector( '#side-quote' ),
+	* 			label: 'Side-quote'
+	* 		},
+	* 		relatedLinks: {
+	* 			element: document.querySelector( '#related-links' ),
+	* 			label: 'Related links'
+	* 		}
+	* 	}
+	* } )
+	* .then( ... )
+	* .catch( ... );
+	* ```
+	*
+	* **This property has been deprecated and will be removed in the future versions of CKEditor. Please use
+	* {@link module:core/editor/editorconfig~EditorConfig#root `config.root.label`} instead.
+	* For the {@link module:editor-multi-root/multirooteditor~MultiRootEditor multi-root editor}, use
+	* {@link module:core/editor/editorconfig~EditorConfig#roots `config.roots.<rootName>.label`}.**
+	*
+	* @deprecated
+	*/
+	label?: string | Record<string, string>;
+	/**
+	* The root configuration for the default `main` root. Use this option to configure the initial data,
+	* placeholder, label, and source element for a single-root editor.
+	*
+	* This is the recommended way to configure a single-root editor:
+	*
+	* ```ts
+	* // Classic editor – uses `attachTo` for the source element.
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		root: {
+	* 			initialData: '<p>Hello world!</p>',
+	* 			placeholder: 'Type some text...'
+	* 		}
+	* 	} )
+	* 	.then( ... )
+	* 	.catch( ... );
+	* ```
+	*
+	* ```ts
+	* // Inline editor – uses `root.element` for the source element.
+	* InlineEditor
+	* 	.create( {
+	* 		root: {
+	* 			element: document.querySelector( '#editor' ),
+	* 			initialData: '<p>Hello world!</p>',
+	* 			placeholder: 'Type some text...'
+	* 		}
+	* 	} )
+	* 	.then( ... )
+	* 	.catch( ... );
+	* ```
+	*
+	* ```ts
+	* // Balloon editor – uses `root.element` for the source element.
+	* BalloonEditor
+	* 	.create( {
+	* 		root: {
+	* 			element: document.querySelector( '#editor' ),
+	* 			placeholder: 'Type some text...'
+	* 		}
+	* 	} )
+	* 	.then( ... )
+	* 	.catch( ... );
+	* ```
+	*
+	* ```ts
+	* // Decoupled editor – uses `root.element` for the source element.
+	* // The toolbar and editable area must be manually added to the DOM.
+	* DecoupledEditor
+	* 	.create( {
+	* 		root: {
+	* 			element: document.querySelector( '#editor' ),
+	* 			initialData: '<p>Hello world!</p>'
+	* 		}
+	* 	} )
+	* 	.then( editor => {
+	* 		document.querySelector( '#toolbar' ).appendChild( editor.ui.view.toolbar.element );
+	* 	} )
+	* 	.catch( ... );
+	* ```
+	*
+	* Internally, this option is an alias for `config.roots.main`. If both `config.root` and `config.roots.main`
+	* are set, an error will be thrown.
+	*
+	* For the {@link module:editor-multi-root/multirooteditor~MultiRootEditor multi-root editor}, use the
+	* {@link module:core/editor/editorconfig~EditorConfig#roots `config.roots`} option instead to define
+	* configuration for each root individually.
+	*/
+	root?: RootConfig;
+	/**
+	* The root configuration options grouped by the root name. This option is used primarily by the
+	* {@link module:editor-multi-root/multirooteditor~MultiRootEditor multi-root editor} to define
+	* configuration for each root individually.
+	*
+	* For a typical single-root editor, use the simpler {@link module:core/editor/editorconfig~EditorConfig#root `config.root`}
+	* option instead.
+	*
+	* ```ts
+	* // Using existing DOM elements as source for each root.
+	* MultiRootEditor.create( {
+	* 	roots: {
+	* 		header: {
+	* 			element: document.querySelector( '#header' ),
+	* 			placeholder: 'Type header...',
+	* 			label: 'Article header'
+	* 		},
+	* 		content: {
+	* 			element: document.querySelector( '#content' ),
+	* 			placeholder: 'Type content...',
+	* 			label: 'Article main content'
+	* 		}
+	* 	}
+	* } )
+	* .then( editor => {
+	* 	document.querySelector( '#toolbar' ).appendChild( editor.ui.view.toolbar.element );
+	* } )
+	* .catch( ... );
+	* ```
+	*
+	* ```ts
+	* // Creating a detached editor with initial data for each root.
+	* MultiRootEditor.create( {
+	* 	roots: {
+	* 		header: {
+	* 			initialData: '<h2>Article title</h2>',
+	* 			placeholder: 'Type header...',
+	* 			label: 'Article header'
+	* 		},
+	* 		content: {
+	* 			initialData: '<p>Article body...</p>',
+	* 			placeholder: 'Type content...',
+	* 			label: 'Article main content'
+	* 		}
+	* 	}
+	* } )
+	* .then( editor => {
+	* 	document.querySelector( '#toolbar' ).appendChild( editor.ui.view.toolbar.element );
+	*
+	* 	for ( const rootName of editor.ui.getEditableElementsNames() ) {
+	* 		document.querySelector( '#editables' ).appendChild( editor.ui.view.getEditable( rootName ).element );
+	* 	}
+	* } )
+	* .catch( ... );
+	* ```
+	*/
+	roots?: Record<string, RootConfig>;
+}
+/**
+* Configuration for an editor root. It is used in {@link module:core/editor/editorconfig~EditorConfig#root `EditorConfig#root`} and
+* {@link module:core/editor/editorconfig~EditorConfig#roots `EditorConfig#roots.<rootName>`}.
+*
+* For a typical single-root editor (Classic, Inline, Balloon, Decoupled), use
+* {@link module:core/editor/editorconfig~EditorConfig#root `config.root`} to set the root configuration.
+* For the {@link module:editor-multi-root/multirooteditor~MultiRootEditor multi-root editor}, use
+* {@link module:core/editor/editorconfig~EditorConfig#roots `config.roots`} to define configuration for each root.
+*
+* ```ts
+* // Classic editor – the source element is set via `config.attachTo`.
+* ClassicEditor.create( {
+* 	attachTo: document.querySelector( '#editor' ),
+* 	root: {
+* 		initialData: '<p>Hello world!</p>',
+* 		placeholder: 'Type some text...',
+* 		label: 'Article main content'
+* 	}
+* } );
+* ```
+*
+* ```ts
+* // Inline editor – the source element is set via `root.element`.
+* InlineEditor.create( {
+* 	root: {
+* 		element: document.querySelector( '#editor' ),
+* 		initialData: '<p>Hello world!</p>',
+* 		placeholder: 'Type some text...',
+* 		label: 'Article main content'
+* 	}
+* } );
+* ```
+*
+* ```ts
+* // Multi-root editor – each root is configured separately via `config.roots`.
+* MultiRootEditor.create( {
+* 	roots: {
+* 		header: {
+* 			element: document.querySelector( '#header' ),
+* 			placeholder: 'Type header...',
+* 			label: 'Article header'
+* 		},
+* 		content: {
+* 			element: document.querySelector( '#content' ),
+* 			placeholder: 'Type content...',
+* 			label: 'Article main content'
+* 		}
+* 	}
+* } );
+* ```
+*/
+export interface RootConfig {
+	/**
+	* The DOM element to use as the editor's editable root, or a description of one to create.
+	*
+	* Accepted forms:
+	*
+	* * An existing DOM element.
+	*
+	*   Its content is automatically loaded to the editor upon initialization (but only when
+	*   {@link #initialData `initialData`} is not set).
+	*
+	*   The editor data will be set back to the original element once the editor is destroyed only if the
+	*   {@link module:core/editor/editorconfig~EditorConfig#updateSourceElementOnDestroy `updateSourceElementOnDestroy`}
+	*   option is set to `true`.
+	*
+	*   Not accepted by {@link module:editor-classic/classiceditor~ClassicEditor} - use
+	*   {@link module:core/editor/editorconfig~EditorConfig#attachTo `config.attachTo`} instead.
+	*
+	* * A tag name string, e.g. `'h1'`. The editor creates a fresh element with that tag and uses it as the editable.
+	*
+	* * A {@link ~ViewRootElementDefinition} object. The editor creates a fresh element matching the definition and
+	* uses it as the editable.
+	*
+	* ```ts
+	* // Tag name string.
+	* BalloonEditor.create( {
+	* 	root: {
+	* 		element: 'h1'
+	* 	}
+	* } );
+	*
+	* // Element definition.
+	* BalloonEditor.create( {
+	* 	root: {
+	* 		element: {
+	* 			name: 'h1',
+	* 			classes: [ 'article-title' ],
+	* 			styles: { 'font-weight': 'bold' },
+	* 			attributes: { 'data-id': '123' }
+	* 		}
+	* 	}
+	* } );
+	* ```
+	*
+	* Unless an existing DOM element is provided, a detached editor will be created. In this case you need to insert
+	* it into the DOM manually.
+	*/
+	element?: HTMLElement | string | ViewRootElementDefinition;
+	/**
+	* The initial editor data to be used instead of the HTML content of the
+	* {@link module:core/editor/editorconfig~RootConfig#element source element}.
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		root: {
+	* 			initialData: '<h2>Initial data</h2><p>Foo bar.</p>'
+	* 		}
+	* 	} )
+	* 	.then( ... )
+	* 	.catch( ... );
+	* ```
+	*
+	* By default, the editor is initialized with the content of the source element on which this editor root is initialized.
+	* This configuration option lets you override this behavior and pass different initial data.
+	* It is especially useful if it is difficult for your integration to put the data inside the HTML element.
+	*
+	* If your editor implementation uses multiple roots, you should provide config for roots individually:
+	*
+	* ```ts
+	* MultiRootEditor.create( {
+	* 	roots: {
+	* 		header: {
+	* 			element: document.querySelector( '#header' ),
+	* 			initialData: '<p>Content for header part.</p>'
+	* 		},
+	* 		content: {
+	* 			element: document.querySelector( '#content' ),
+	* 			initialData: '<p>Content for main part.</p>'
+	* 		},
+	* 		leftSide: {
+	* 			element: document.querySelector( '#left-side' ),
+	* 			initialData: '<p>Content for left-side box.</p>'
+	* 		},
+	* 		rightSide: {
+	* 			element: document.querySelector( '#right-side' ),
+	* 			initialData: '<p>Content for right-side box.</p>'
+	* 		}
+	* 	}
+	* } )
+	* .then( ... )
+	* .catch( ... );
+	* ```
+	*
+	* See also {@link module:core/editor/editor~Editor.create Editor.create()} documentation for the editor implementation which you use.
+	*/
+	initialData?: string;
+	/**
+	* Specifies the text displayed in the editor when there is no content (editor is empty). It is intended to
+	* help users locate the editor in the application (form) and prompt them to input the content. Works similarly
+	* to the native DOM
+	* [`placeholder` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#The_placeholder_attribute)
+	* used by inputs.
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		root: {
+	* 			placeholder: 'Type some text...'
+	* 		}
+	* 	} )
+	* 	.then( ... )
+	* 	.catch( ... );
+	* ```
+	*
+	* If your editor implementation uses multiple roots, you should provide config for roots individually:
+	*
+	* ```ts
+	* MultiRootEditor.create( {
+	* 	roots: {
+	* 		header: {
+	* 			element: document.querySelector( '#header' ),
+	* 			placeholder: 'Type header...'
+	* 		},
+	* 		content: {
+	* 			element: document.querySelector( '#content' ),
+	* 			placeholder: 'Type content...'
+	* 		},
+	* 		leftSide: {
+	* 			element: document.querySelector( '#left-side' ),
+	* 			placeholder: 'Type left-side...'
+	* 		},
+	* 		rightSide: {
+	* 			element: document.querySelector( '#right-side' ),
+	* 			placeholder: 'Type right-side...'
+	* 		}
+	* 	}
+	* } )
+	* .then( ... )
+	* .catch( ... );
+	* ```
+	*
+	* The placeholder text is displayed as a pseudo–element of an empty paragraph in the editor content.
+	* The paragraph has the `.ck-placeholder` CSS class and the `data-placeholder` attribute.
+	*
+	* ```html
+	* <p data-placeholder="Type some text..." class="ck-placeholder">
+	* 	::before
+	* </p>
+	* ```
+	*
+	* **Note**: Placeholder text can also be set using the `placeholder` attribute if a `<textarea>` is passed to
+	* the `create()` method, e.g. {@link module:editor-classic/classiceditor~ClassicEditor.create `ClassicEditor.create()`}.
+	*
+	* **Note**: This configuration has precedence over the value of the `placeholder` attribute of a `<textarea>`
+	* element passed to the `create()` method.
+	*
+	* See the {@glink features/editor-placeholder "Editor placeholder"} guide for more information and live examples.
+	*/
+	placeholder?: string;
+	/**
+	* The name of the model root element to use for this editor root.
+	*
+	* By default, the editor creates model roots using the generic `$root` element, which allows all standard block
+	* content (paragraphs, headings, lists, tables, etc.). You can set this option to a custom element name if you
+	* need a root with different schema rules — for example, a root that restricts or extends what content is allowed
+	* at the top level.
+	*
+	* The element name must be registered in the {@link module:engine/model/schema~ModelSchema schema} before or during
+	* editor initialization. See the {@glink framework/deep-dive/schema "Schema"} guide for more information about
+	* generic items like `$root` and `$inlineRoot`.
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		root: {
+	* 			modelElement: '$inlineRoot'
+	* 		}
+	* 	} )
+	* 	.then( ... )
+	* 	.catch( ... );
+	* ```
+	*
+	* If your editor implementation uses multiple roots, you can set a different model element for each root:
+	*
+	* ```ts
+	* MultiRootEditor.create( {
+	* 	roots: {
+	* 		header: {
+	* 			modelElement: '$inlineRoot',
+	* 			initialData: 'My document title'
+	* 		},
+	* 		content: {
+	* 			initialData: '<p>Main content goes here.</p>'
+	* 		}
+	* 	}
+	* } )
+	* .then( ... )
+	* .catch( ... );
+	* ```
+	*
+	* @default '$root'
+	*/
+	modelElement?: string;
+	/**
+	* Label which briefly describes this editing area.
+	*
+	* It is used for the `aria-label` attribute set on the editor editing area, helping assistive technologies
+	* to tell apart multiple editor instances (editing areas) on the page. If not set, a default
+	* "Rich Text Editor. Editing area [name of the area]" is used instead.
+	*
+	* It can also be used by other features when referring to this editing area.
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		root: {
+	* 			label: 'Article main content'
+	* 		}
+	* 	} )
+	* 	.then( ... )
+	* 	.catch( ... );
+	* ```
+	*
+	* If your editor implementation uses multiple roots, you should provide config for roots individually:
+	*
+	* ```ts
+	* MultiRootEditor.create( {
+	* 	roots: {
+	* 		header: {
+	* 			element: document.querySelector( '#header' ),
+	* 			label: 'Article header'
+	* 		},
+	* 		content: {
+	* 			element: document.querySelector( '#content' ),
+	* 			label: 'Article main content'
+	* 		},
+	* 		sideQuote: {
+	* 			element: document.querySelector( '#side-quote' ),
+	* 			label: 'Side-quote'
+	* 		},
+	* 		relatedLinks: {
+	* 			element: document.querySelector( '#related-links' ),
+	* 			label: 'Related links'
+	* 		}
+	* 	}
+	* } )
+	* .then( ... )
+	* .catch( ... );
+	* ```
+	*/
+	label?: string;
+	/**
+	* An optional, longer description of this editing area. It is intended as a stable, human-readable identifier
+	* so features can match a root across sessions, for instance AI features interacting with multiple editor instances
+	* and multi-root editors.
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		root: {
+	* 			description: '...'
+	* 		}
+	* 	} )
+	* 	.then( ... )
+	* 	.catch( ... );
+	* ```
+	*
+	* If your editor implementation uses multiple roots, you should provide config for roots individually:
+	*
+	* ```ts
+	* MultiRootEditor.create( {
+	* 	roots: {
+	* 		chapter1: {
+	* 			element: document.querySelector( '#chapter1' ),
+	* 			description: 'Editing root for the first chapter.'
+	* 		},
+	* 		chapter2: {
+	* 			element: document.querySelector( '#chapter2' ),
+	* 			description: 'Editing root for the second chapter.'
+	* 		},
+	* 		chapter3: {
+	* 			element: document.querySelector( '#chapter3' ),
+	* 			description: 'Editing root for the third chapter.'
+	* 		}
+	* 	}
+	* } )
+	* .then( ... )
+	* .catch( ... );
+	* ```
+	*/
+	description?: string;
+	/**
+	* An optional, human-readable name of this editing area.
+	*
+	* Unlike {@link #label `label`} (which is primarily used as the `aria-label` accessibility text), the title is
+	* intended as a semantic name that features can present to users or send to external services. For instance, the
+	* AI features use it to tell roots apart, so that requests scoped to a specific area ("edit the title",
+	* "summarize the introduction") can be routed to the intended root.
+	*
+	* ```ts
+	* ClassicEditor
+	* 	.create( {
+	* 		attachTo: document.querySelector( '#editor' ),
+	* 		root: {
+	* 			title: 'Article main content'
+	* 		}
+	* 	} )
+	* 	.then( ... )
+	* 	.catch( ... );
+	* ```
+	*
+	* If your editor implementation uses multiple roots, you should provide config for roots individually:
+	*
+	* ```ts
+	* MultiRootEditor.create( {
+	* 	roots: {
+	* 		header: {
+	* 			element: document.querySelector( '#header' ),
+	* 			title: 'Article header'
+	* 		},
+	* 		content: {
+	* 			element: document.querySelector( '#content' ),
+	* 			title: 'Article main content'
+	* 		}
+	* 	}
+	* } )
+	* .then( ... )
+	* .catch( ... );
+	* ```
+	*/
+	title?: string;
+	/**
+	* Initial root attributes for a root.
+	*
+	* **Note: You must provide full set of attributes for each root. If an attribute is not set on a root, set the value to `null`.
+	* Only provided attribute keys will be returned by {@link module:core/editor/editor~Editor#getRootAttributes} or
+	*  {@link module:editor-multi-root/multirooteditor~MultiRootEditor#getRootsAttributes}.**
+	*
+	* Roots attributes hold additional data related to the document roots, in addition to the regular document data (which usually is
+	* HTML). In roots attributes, for each root, you can store arbitrary key-value pairs with attributes connected with that root.
+	* Use it to store any custom data that is specific to your integration or custom features.
+	*
+	* Currently, any official plugins do not use root attributes. This is a mechanism that is prepared for custom features
+	* and non-standard integrations. If you do not provide any custom feature that would use root attributes, you do not need to
+	* handle (save and load) this property.
+	*
+	* ```ts
+	* ClassicEditor.create( {
+	* 	root: {
+	* 		modelAttributes: { customAttribute: true }
+	* 	}
+	* } )
+	* .then( ... )
+	* .catch( ... );
+	* ```
+	*
+	* If your editor implementation uses multiple roots, you should provide attributes for roots individually:
+	*
+	* ```ts
+	* MultiRootEditor.create(
+	* 	{
+	* 		roots: {
+	* 			uid1: {
+	* 				// ... other root config
+	* 				modelAttributes: { order: 20, isLocked: false } // Third, unlocked.
+	* 			},
+	* 			uid2: {
+	* 				// ... other root config
+	* 				modelAttributes: { order: 10, isLocked: true } // Second, locked.
+	* 			},
+	* 			uid3: {
+	* 				// ... other root config
+	* 				modelAttributes: { order: 30, isLocked: true } // Fourth, locked.
+	* 			},
+	* 			uid4: {
+	* 				// ... other root config
+	* 				modelAttributes: { order: 0, isLocked: false } // First, unlocked.
+	* 			}
+	* 		}
+	* 	}
+	* )
+	* .then( ... )
+	* .catch( ... );
+	* ```
+	*
+	* Note, that the above code snippet is only an example. You need to implement your own features that will use these attributes.
+	*
+	* Roots attributes can be changed the same way as attributes set on other model nodes:
+	*
+	* ```ts
+	* editor.model.change( writer => {
+	* 	const root = editor.model.getRoot( 'uid3' );
+	*
+	* 	writer.setAttribute( 'order', 40, root );
+	* } );
+	* ```
+	*
+	* You can react to root attributes changes by listening to
+	* {@link module:engine/model/document~ModelDocument#event:change:data document `change:data` event}:
+	*
+	* ```ts
+	* editor.model.document.on( 'change:data', () => {
+	* 	const changedRoots = editor.model.document.differ.getChangedRoots();
+	*
+	* 	for ( const change of changedRoots ) {
+	* 		if ( change.attributes ) {
+	* 			const root = editor.model.getRoot( change.name );
+	*
+	* 			// ...
+	* 		}
+	* 	}
+	* } );
+	* ```
+	*/
+	modelAttributes?: EditorRootAttributes;
+}
+/**
+* A description of the DOM element used as an editor's editable root, accepted by
+* {@link module:core/editor/editorconfig~RootConfig#element `config.root.element`}.
+*
+* ```ts
+* const element: ViewRootElementDefinition = {
+* 	name: 'h1',
+* 	classes: [ 'article-title' ],
+* 	styles: { 'font-weight': 'bold' },
+* 	attributes: { 'data-id': '123' }
+* };
+* ```
+*
+* `class` and `style` may also be passed as strings inside `attributes` as a shorthand:
+*
+* ```ts
+* const element: ViewRootElementDefinition = {
+* 	name: 'h1',
+* 	attributes: { class: 'article-title', style: 'font-weight: bold' }
+* };
+* ```
+*/
+export interface ViewRootElementDefinition {
+	/**
+	* The DOM tag name to use. Defaults to `'div'` when not provided, so integrators can keep the default element and
+	* still specify {@link #classes}, {@link #styles}, or {@link #attributes}.
+	*/
+	name?: string;
+	/**
+	* Class name or array of class names to apply to the editable element. Each name can be provided as a string.
+	*/
+	classes?: string | Array<string>;
+	/**
+	* Inline styles to apply to the editable element as a record of style properties.
+	*/
+	styles?: Record<string, string>;
+	/**
+	* Additional DOM attributes to apply to the editable element.
+	*/
+	attributes?: Record<string, string>;
+}
+/**
+* The configuration of the editor language.
+*
+* ```ts
+* ClassicEditor
+* 	.create( {
+* 		attachTo: document.querySelector( '#editor' ),
+* 		language: ... // The editor language configuration.
+* 	} )
+* 	.then( editor => {
+* 		console.log( editor );
+* 	} )
+* 	.catch( error => {
+* 		console.error( error );
+* 	} );
+* ```
+*
+* See {@link module:core/editor/editorconfig~EditorConfig all editor options}.
+*/
+export interface LanguageConfig {
+	/**
+	* Allows to use a different language for the editor UI.
+	*
+	* The language codes are defined in the [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) standard.
+	*/
+	ui?: string;
+	/**
+	* Allows to use a different language of the editor content.
+	*
+	* The language codes are defined in the [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) standard.
+	*/
+	content?: string;
+}
+export type ToolbarConfig = Array<ToolbarConfigItem> | {
+	items?: Array<ToolbarConfigItem>;
+	removeItems?: Array<string>;
+	shouldNotGroupWhenFull?: boolean;
+	icon?: string;
+};
+export type ToolbarConfigItem = string | {
+	items: Array<ToolbarConfigItem>;
+	label: string;
+	icon?: string | false;
+	withText?: boolean;
+	tooltip?: boolean | string | ((label: string, keystroke: string | undefined) => string);
+};
+/**
+* The “Powered by CKEditor” logo configuration options.
+**/
+export interface PoweredByConfig {
+	/**
+	* The position of the project's logo.
+	*
+	* * When `'inside'`, the logo will be displayed within the boundaries of the editing area.
+	* * When `'border'`, the logo will be displayed over the bottom border of the editing area.
+	*
+	* @default 'border'
+	*/
+	position?: "inside" | "border";
+	/**
+	* Allows choosing the side of the editing area where the logo will be displayed.
+	*
+	* **Note:** If {@link module:core/editor/editorconfig~EditorConfig#language `config.language`} is set to an RTL (right-to-left)
+	* language, the side switches to `'left'` by default.
+	*
+	* @default 'right'
+	*/
+	side?: "left" | "right";
+	/**
+	* Allows changing the label displayed next to the CKEditor logo.
+	*
+	* **Note:** Set the value to `null` to hide the label.
+	*
+	* @default 'Powered by'
+	*/
+	label?: string | null;
+	/**
+	* The vertical distance the logo can be moved away from its default position.
+	*
+	* **Note:** If `position` is `'border'`, the offset is measured from the (vertical) center of the logo.
+	*
+	* @default 5
+	*/
+	verticalOffset?: number;
+	/**
+	* The horizontal distance between the side of the editing root and the nearest side of the logo.
+	*
+	* @default 5
+	*/
+	horizontalOffset?: number;
+	/**
+	* Allows to show the logo even if the valid commercial license is configured using
+	* the {@link module:core/editor/editorconfig~EditorConfig#licenseKey `config.licenseKey`} setting.
+	*
+	* @default false
+	*/
+	forceVisible?: boolean;
+}
+/**
+* The offset (in pixels) of the viewport from every direction used when positioning a sticky toolbar or other
+* absolutely positioned UI elements.
+*/
+export interface ViewportOffsetConfig {
+	/**
+	* The bottom offset in pixels.
+	*/
+	bottom?: number;
+	/**
+	* The left offset in pixels.
+	*/
+	left?: number;
+	/**
+	* The right offset in pixels.
+	*/
+	right?: number;
+	/**
+	* The top offset in pixels.
+	*/
+	top?: number;
+}
+export interface UiConfig {
+	/**
+	* The viewport offset used for positioning various absolutely positioned UI elements.
+	*
+	* Read more in {@link module:core/editor/editorconfig~ViewportOffsetConfig}.
+	**/
+	viewportOffset?: ViewportOffsetConfig;
+	/**
+	* The configuration of the “Powered by CKEditor” logo.
+	*
+	* Read more in {@link module:core/editor/editorconfig~PoweredByConfig}.
+	**/
+	poweredBy?: PoweredByConfig;
+}
