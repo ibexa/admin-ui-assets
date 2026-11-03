@@ -41,6 +41,7 @@ $body-line-height: $base-line-height !default;
 $code-line-height: $base-line-height !default;
 
 $text-font-weight-normal: 400 !default;
+$text-font-weight-medium: 500 !default;
 $text-font-weight-semi: 600 !default;
 
 $font-family:
@@ -55,3 +56,4 @@ $font-family:
 $font-family-alt: 'Manrope', 'Futura', 'Avenir Next', 'Trebuchet MS', 'Verdana', sans-serif !default;
 $font-family-code:
     'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
+$font-family-accent: 'Bodoni Moda', 'Bodoni 72', 'Didot', serif !default;
