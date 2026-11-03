@@ -1,0 +1,18 @@
+{
+	"plugins": [
+		{
+			"name": "Fullscreen mode",
+			"className": "Fullscreen",
+			"description": "Opens the editor in the fullscreen mode to allow for more comfortable content editing.",
+			"docs": "features/fullscreen.html",
+			"path": "src/fullscreen.ts",
+			"uiComponents": [
+				{
+					"type": "Button",
+					"name": "fullscreen",
+					"iconName": "IconFullscreenEnter"
+				}
+			]
+		}
+	]
+}

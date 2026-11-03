@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'en-au' ]: translations } = {"en-au":{"dictionary":{"media widget":"media widget","Media URL":"Media URL","Paste the media URL in the input.":"Paste the media URL in the input.","Tip: Paste the URL into the content to embed faster.":"Tip: Paste the URL into the content to embed faster.","The URL must not be empty.":"The URL must not be empty.","This media URL is not supported.":"This media URL is not supported.","Insert media":"Insert media","Media embed":"Media embed","Media":"","Media toolbar":"Media toolbar","Open media in new tab":"Open media in new tab","Left aligned media":"Left aligned media","Centered media":"Centered media","Right aligned media":"Right aligned media","Resize media":"Resize media","Resize media to %0":"Resize media to %0","Resize media to the original size":"Resize media to the original size","Resize media (in %0)":"Resize media (in %0)","Custom media size":"Custom media size","Media resize list":"Media resize list","Media Resize":"Media Resize"}}};
+e[ 'en-au' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'en-au' ].dictionary = Object.assign( e[ 'en-au' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'en-au' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

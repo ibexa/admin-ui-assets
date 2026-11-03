@@ -1,0 +1,37 @@
+/**
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+/**
+* @module image/image
+*/
+import { Plugin, type PluginDependenciesOf } from "@ckeditor/ckeditor5-core";
+import { ImageBlock } from "./imageblock.js";
+import { ImageInline } from "./imageinline.js";
+/**
+* The image plugin.
+*
+* For a detailed overview, check the {@glink features/images/images-overview image feature} documentation.
+*
+* This is a "glue" plugin which loads the following plugins:
+*
+* * {@link module:image/imageblock~ImageBlock},
+* * {@link module:image/imageinline~ImageInline},
+*
+* Usually, it is used in conjunction with other plugins from this package. See the {@glink api/image package page}
+* for more information.
+*/
+export declare class Image extends Plugin {
+	/**
+	* @inheritDoc
+	*/
+	static get requires(): PluginDependenciesOf<[ImageBlock, ImageInline]>;
+	/**
+	* @inheritDoc
+	*/
+	static get pluginName(): "Image";
+	/**
+	* @inheritDoc
+	*/
+	static override get isOfficialPlugin(): true;
+}

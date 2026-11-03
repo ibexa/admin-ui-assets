@@ -1,0 +1,49 @@
+{
+  "name": "@ckeditor/ckeditor5-emoji",
+  "version": "48.5.3",
+  "description": "Emoji feature for CKEditor 5.",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "CKSource (http://cksource.com/)",
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "bugs": "https://github.com/ckeditor/ckeditor5/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-emoji"
+  },
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-feature",
+    "ckeditor5-plugin"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "*.css",
+    "src/index.ts",
+    "dist/translations/*.umd.js"
+  ],
+  "dependencies": {
+    "@ckeditor/ckeditor5-core": "48.5.3",
+    "@ckeditor/ckeditor5-icons": "48.5.3",
+    "@ckeditor/ckeditor5-mention": "48.5.3",
+    "@ckeditor/ckeditor5-typing": "48.5.3",
+    "@ckeditor/ckeditor5-ui": "48.5.3",
+    "@ckeditor/ckeditor5-utils": "48.5.3",
+    "fuzzysort": "3.1.0",
+    "es-toolkit": "1.52.0"
+  },
+  "files": [
+    "dist",
+    "ckeditor5-metadata.json",
+    "CHANGELOG.md"
+  ],
+  "types": "./dist/index.d.ts"
+}

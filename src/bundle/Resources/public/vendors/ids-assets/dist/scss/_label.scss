@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.ids-label {
+    font-size: $text-font-size-s;
+    color: var(--ids-label-default-text-color, #{$color-neutral-160});
+
+    &--required {
+        &::after {
+            content: '*';
+        }
+    }
+
+    &--error {
+        color: var(--ids-label-error-text-color, #{$color-error-80});
+    }
+}

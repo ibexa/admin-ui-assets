@@ -1,0 +1,185 @@
+{
+	"plugins": [
+		{
+			"name": "Media embed",
+			"className": "MediaEmbed",
+			"description": "Allows for inserting embeddable media such as YouTube or Vimeo videos, Instagram posts and tweets or Google Maps into your rich-text content.",
+			"docs": "features/media-embed/media-embed.html",
+			"path": "src/mediaembed.ts",
+			"uiComponents": [
+				{
+					"type": "SplitButton",
+					"name": "mediaEmbed",
+					"iconName": "IconMedia"
+				}
+			],
+			"htmlOutput": [
+				{
+					"elements": "figure",
+					"classes": "media"
+				},
+				{
+					"elements": "oembed",
+					"attributes": "url",
+					"_comment": "If `config.mediaEmbed.previewsInData` is turned off, the media preview is not displayed and the media is represented using only the `<oembed>` tag (by default)."
+				},
+				{
+					"elements": "div",
+					"attributes": "data-oembed-url",
+					"isAlternative": true,
+					"_comment": "If `config.mediaEmbed.previewsInData` is turned on, the media preview is displayed in the view."
+				},
+				{
+					"elements": "*",
+					"attributes": "url",
+					"isAlternative": true,
+					"_comment": "If `config.mediaEmbed.previewsInData` is turned off, the plugin can be configured to return any element name specified by `config.mediaEmbed.elementName`."
+				},
+				{
+					"elements": "div",
+					"isAlternative": true,
+					"_comment": "A plain wrapper element placed between the outer `<div data-oembed-url>` and the preview `<iframe>`."
+				},
+				{
+					"elements": "iframe",
+					"styles": [
+						"aspect-ratio",
+						"border",
+						"display",
+						"height",
+						"width"
+					],
+					"attributes": [
+						"*allow*",
+						"frameborder",
+						"height",
+						"referrerpolicy",
+						"src",
+						"width"
+					],
+					"isAlternative": true,
+					"_comment": "If `config.mediaEmbed.previewsInData` is turned on, the media preview is displayed in the view."
+				},
+				{
+					"elements": "*",
+					"classes": "*",
+					"styles": "*",
+					"attributes": "*",
+					"isAlternative": true,
+					"_comment": "The plugin can be configured to return any element with any class, inline style, and attribute, via `config.mediaEmbed.providers` for previewable media."
+				}
+			]
+		},
+		{
+			"name": "Media embed resize",
+			"className": "MediaEmbedResize",
+			"description": "Allows for resizing media embeds using drag handles, a toolbar dropdown, or standalone buttons for predefined sizes plus a custom-width balloon.",
+			"docs": "features/media-embed/media-embed-resize.html",
+			"path": "src/mediaembedresize.ts",
+			"requires": [
+				"MediaEmbed"
+			],
+			"htmlOutput": [
+				{
+					"elements": "figure",
+					"classes": "media_resized",
+					"styles": [
+						"width"
+					]
+				}
+			]
+		},
+		{
+			"name": "Media embed style",
+			"className": "MediaEmbedStyle",
+			"description": "Adds configurable styles (such as alignments) to media embeds.",
+			"docs": "features/media-embed/media-embed-styles.html",
+			"path": "src/mediaembedstyle.ts",
+			"requires": [
+				"MediaEmbed"
+			],
+			"uiComponents": [
+				{
+					"type": "Button",
+					"name": "mediaEmbed:alignLeft",
+					"toolbars": [
+						"mediaEmbed.toolbar"
+					],
+					"iconName": "IconObjectInlineLeft"
+				},
+				{
+					"type": "Button",
+					"name": "mediaEmbed:alignBlockLeft",
+					"toolbars": [
+						"mediaEmbed.toolbar"
+					],
+					"iconName": "IconObjectLeft"
+				},
+				{
+					"type": "Button",
+					"name": "mediaEmbed:alignCenter",
+					"toolbars": [
+						"mediaEmbed.toolbar"
+					],
+					"iconName": "IconObjectCenter"
+				},
+				{
+					"type": "Button",
+					"name": "mediaEmbed:alignBlockRight",
+					"toolbars": [
+						"mediaEmbed.toolbar"
+					],
+					"iconName": "IconObjectRight"
+				},
+				{
+					"type": "Button",
+					"name": "mediaEmbed:alignRight",
+					"toolbars": [
+						"mediaEmbed.toolbar"
+					],
+					"iconName": "IconObjectInlineRight"
+				},
+				{
+					"type": "SplitButton",
+					"name": "mediaEmbed:wrapText",
+					"toolbars": [
+						"mediaEmbed.toolbar"
+					],
+					"iconName": "IconObjectInlineLeft"
+				},
+				{
+					"type": "SplitButton",
+					"name": "mediaEmbed:breakText",
+					"toolbars": [
+						"mediaEmbed.toolbar"
+					],
+					"iconName": "IconObjectCenter"
+				}
+			],
+			"htmlOutput": [
+				{
+					"elements": "figure",
+					"classes": [
+						"media-style-align-left",
+						"media-style-block-align-left",
+						"media-style-block-align-right",
+						"media-style-align-right"
+					]
+				}
+			]
+		},
+		{
+			"name": "Media embed toolbar",
+			"className": "MediaEmbedToolbar",
+			"description": "Implements an optional toolbar for media embed that shows when the media element is selected.",
+			"docs": "features/media-embed/media-embed.html",
+			"path": "src/mediaembedtoolbar.ts",
+			"requires": [
+				"MediaEmbed"
+			],
+			"registeredToolbars": [
+				"mediaEmbed.toolbar"
+			]
+		}
+	]
+}

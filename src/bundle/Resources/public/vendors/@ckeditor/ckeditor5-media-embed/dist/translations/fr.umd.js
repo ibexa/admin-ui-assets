@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'fr' ]: translations } = {"fr":{"dictionary":{"media widget":"Widget média","Media URL":"URL de média","Paste the media URL in the input.":"Coller l'URL du média","Tip: Paste the URL into the content to embed faster.":"Astuce : Copier l'URL du média dans le contenu pour l'insérer plus rapidement","The URL must not be empty.":"L'URL ne doit pas être vide.","This media URL is not supported.":"Cette URL de média n'est pas supportée.","Insert media":"Insérer un média","Media embed":"Intégration de médias","Media":"Média","Media toolbar":"Barre d'outils des médias","Open media in new tab":"Ouvrir le média dans un nouvel onglet","Left aligned media":"Médias alignés à gauche","Centered media":"Médias alignés au centre","Right aligned media":"Médias alignés à droite","Resize media":"Redimensionner le média","Resize media to %0":"Redimensionner le média à %0","Resize media to the original size":"Redimensionner le média à sa taille d'origine","Resize media (in %0)":"Redimensionner les médias (dans %0)","Custom media size":"Format de média personnalisé","Media resize list":"Liste des redimensionnement des médias","Media Resize":"Redimensionnement des médias"}}};
+e[ 'fr' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'fr' ].dictionary = Object.assign( e[ 'fr' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'fr' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

@@ -1,0 +1,37 @@
+/**
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+/**
+* @module media-embed/mediaembed
+*/
+import { Plugin, type PluginDependenciesOf } from "@ckeditor/ckeditor5-core";
+import { Widget } from "@ckeditor/ckeditor5-widget";
+import { MediaEmbedEditing } from "./mediaembedediting.js";
+import { AutoMediaEmbed } from "./automediaembed.js";
+import { MediaEmbedUI } from "./mediaembedui.js";
+/**
+* The media embed plugin.
+*
+* For a detailed overview, check the {@glink features/media-embed/media-embed Media Embed feature documentation}.
+*
+* This is a "glue" plugin which loads the following plugins:
+*
+* * The {@link module:media-embed/mediaembedediting~MediaEmbedEditing media embed editing feature},
+* * The {@link module:media-embed/mediaembedui~MediaEmbedUI media embed UI feature} and
+* * The {@link module:media-embed/automediaembed~AutoMediaEmbed auto-media embed feature}.
+*/
+export declare class MediaEmbed extends Plugin {
+	/**
+	* @inheritDoc
+	*/
+	static get requires(): PluginDependenciesOf<[MediaEmbedEditing, MediaEmbedUI, AutoMediaEmbed, Widget]>;
+	/**
+	* @inheritDoc
+	*/
+	static get pluginName(): "MediaEmbed";
+	/**
+	* @inheritDoc
+	*/
+	static override get isOfficialPlugin(): true;
+}

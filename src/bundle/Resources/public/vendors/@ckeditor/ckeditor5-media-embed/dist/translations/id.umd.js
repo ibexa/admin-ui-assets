@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'id' ]: translations } = {"id":{"dictionary":{"media widget":"widget media","Media URL":"URL Media","Paste the media URL in the input.":"Tempelkan URL ke dalam bidang masukan.","Tip: Paste the URL into the content to embed faster.":"Tip: Tempelkan URL ke bagian konten untuk sisip cepat.","The URL must not be empty.":"URL tidak boleh kosong.","This media URL is not supported.":"URL media ini tidak didukung.","Insert media":"Sisipkan media","Media embed":"Sematkan media","Media":"Media","Media toolbar":"Alat media","Open media in new tab":"Buka media di tab baru","Left aligned media":"Media rata kiri","Centered media":"Media tengah","Right aligned media":"Media rata kanan","Resize media":"Ubah ukuran media","Resize media to %0":"Ubah ukuran media menjadi %0","Resize media to the original size":"Kembalikan ukuran media ke ukuran asli","Resize media (in %0)":"Ubah ukuran media (dalam %0)","Custom media size":"Ukuran media kustom","Media resize list":"Daftar ukuran media","Media Resize":"Ubah Ukuran Media"}}};
+e[ 'id' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'id' ].dictionary = Object.assign( e[ 'id' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'id' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

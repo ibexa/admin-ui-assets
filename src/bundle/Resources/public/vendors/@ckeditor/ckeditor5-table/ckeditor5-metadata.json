@@ -1,0 +1,275 @@
+{
+	"plugins": [
+		{
+			"name": "Table",
+			"className": "Table",
+			"description": "Adds table creation and editing tools that help content authors bring tabular data into their documents.",
+			"docs": "features/tables/tables.html",
+			"path": "src/table.ts",
+			"uiComponents": [
+				{
+					"type": "SplitButton",
+					"name": "insertTable",
+					"iconName": "IconTable"
+				},
+				{
+					"type": "Button",
+					"name": "tableColumn",
+					"toolbars": [
+						"table.contentToolbar"
+					],
+					"iconName": "IconTableColumn"
+				},
+				{
+					"type": "Button",
+					"name": "tableRow",
+					"toolbars": [
+						"table.contentToolbar"
+					],
+					"iconName": "IconTableRow"
+				},
+				{
+					"type": "Button",
+					"name": "mergeTableCells",
+					"toolbars": [
+						"table.contentToolbar"
+					],
+					"iconName": "IconTableMergeCell"
+				}
+			],
+			"htmlOutput": [
+				{
+					"elements": "figure",
+					"classes": "table"
+				},
+				{
+					"elements": [
+						"table",
+						"thead",
+						"tbody",
+						"tfoot",
+						"tr"
+					]
+				},
+				{
+					"elements": [
+						"td",
+						"th"
+					],
+					"attributes": [
+						"colspan",
+						"rowspan"
+					]
+				}
+			]
+		},
+		{
+			"name": "Table cell properties",
+			"className": "TableCellProperties",
+			"description": "Adds the ability to style individual table cells.",
+			"docs": "features/tables/tables-styling.html",
+			"path": "src/tablecellproperties",
+			"requires": [
+				"Table",
+				"TableToolbar"
+			],
+			"uiComponents": [
+				{
+					"type": "Button",
+					"name": "tableCellProperties",
+					"toolbars": [
+						"table.contentToolbar"
+					],
+					"iconName": "IconTableCellProperties"
+				}
+			],
+			"htmlOutput": [
+				{
+					"elements": [
+						"td",
+						"th"
+					],
+					"styles": [
+						"background-color",
+						"border",
+						"border-*",
+						"height",
+						"padding",
+						"text-align",
+						"vertical-align",
+						"width"
+					]
+				}
+			]
+		},
+		{
+			"name": "Table properties",
+			"className": "TableProperties",
+			"description": "Adds the ability to style entire tables.",
+			"docs": "features/tables/tables-styling.html",
+			"path": "src/tableproperties",
+			"requires": [
+				"Table",
+				"TableToolbar"
+			],
+			"uiComponents": [
+				{
+					"type": "Button",
+					"name": "tableProperties",
+					"toolbars": [
+						"table.contentToolbar"
+					],
+					"iconName": "IconTableProperties"
+				}
+			],
+			"htmlOutput": [
+				{
+					"elements": "figure",
+					"styles": [
+						"float",
+						"height",
+						"width",
+						"margin-left",
+						"margin-right"
+					],
+					"classes": [
+						"table-style-align-left",
+						"table-style-align-center",
+						"table-style-align-right",
+						"table-style-block-align-left",
+						"table-style-block-align-right"
+					]
+				},
+				{
+					"elements": "table",
+					"styles": [
+						"background-color",
+						"border",
+						"border-*"
+					]
+				}
+			]
+		},
+		{
+			"name": "Table layout",
+			"className": "TableLayout",
+			"description": "Adds support for different table types and layouts, allowing to distinguish between content tables and layout tables.",
+			"docs": "features/tables/layout-tables.html",
+			"path": "src/tablelayout",
+			"requires": [
+				"Table",
+				"TableToolbar"
+			],
+			"uiComponents": [
+				{
+					"type": "Button",
+					"name": "insertTableLayout",
+					"iconName": "IconTableLayout"
+				},
+				{
+					"type": "Button",
+					"name": "tableType",
+					"toolbars": [
+						"table.contentToolbar"
+					],
+					"iconName": "IconTableProperties"
+				}
+			],
+			"htmlOutput": [
+				{
+					"classes": [
+						"layout-table",
+						"content-table"
+					]
+				}
+			]
+		},
+		{
+			"name": "Table toolbar",
+			"className": "TableToolbar",
+			"description": "Creates configurable toolbars for both the table feature and table content. They show up when the table widget or the content inside a table cell are selected.",
+			"docs": "features/tables/tables-installation.html#toolbars",
+			"path": "src/tabletoolbar.ts",
+			"requires": [
+				"Table"
+			],
+			"registeredToolbars": [
+				"table.contentToolbar",
+				"table.tableToolbar"
+			]
+		},
+		{
+			"name": "Table caption",
+			"className": "TableCaption",
+			"description": "Adds support for table captions, which inform the reader about the content of the table. Using captions is also beneficial from the accessibility point of view.",
+			"docs": "features/tables/tables-caption.html",
+			"path": "src/tablecaption.ts",
+			"requires": [
+				"Table"
+			],
+			"htmlOutput": [
+				{
+					"elements": "figcaption",
+					"attributes": "data-placeholder"
+				}
+			]
+		},
+		{
+			"name": "Table column resize",
+			"className": "TableColumnResize",
+			"description": "Adds support for table column resize, which allows to set the width of each column in a table using a resize handle or by entering an exact value in the cell width field. Column widths can be expressed in percentages or pixels, following the table width unit.",
+			"docs": "features/tables/tables-resize.html",
+			"path": "src/tablecolumnresize.ts",
+			"requires": [
+				"Table"
+			],
+			"htmlOutput": [
+				{
+					"elements": "colgroup"
+				},
+				{
+					"elements": "col",
+					"styles": "width"
+				}
+			]
+		},
+		{
+			"name": "Table scroll",
+			"className": "TableScroll",
+			"description": "Adds horizontal scrolling to tables that are wider than the space available to them, so their content stays readable instead of squeezing the columns or breaking the page layout.",
+			"docs": "features/tables/tables-scroll.html",
+			"path": "src/tablescroll.ts",
+			"requires": [
+				"Table",
+				"TableProperties"
+			]
+		},
+		{
+			"name": "PlainTableOutput",
+			"className": "PlainTableOutput",
+			"description": "This plugin strips the `<figure>` tag which surrounds tables, and moves attributes to the `<table>` in the data downcast.",
+			"docs": "features/tables/layout-tables.html",
+			"path": "src/plaintableoutput.ts",
+			"htmlOutput": [
+				{
+					"elements": [
+						"table",
+						"thead",
+						"tbody",
+						"tr"
+					]
+				},
+				{
+					"elements": [
+						"td",
+						"th"
+					],
+					"attributes": [
+						"colspan",
+						"rowspan"
+					]
+				}
+			]
+		}
+	]
+}

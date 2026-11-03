@@ -1,0 +1,55 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+.ck.ck-placeholder, .ck .ck-placeholder {
+  position: relative;
+}
+
+@media (forced-colors: active) {
+  .ck.ck-placeholder, .ck .ck-placeholder {
+    forced-color-adjust: preserve-parent-color;
+  }
+}
+
+:is(.ck.ck-placeholder, .ck .ck-placeholder):before {
+  content: attr(data-placeholder);
+  cursor: text;
+  pointer-events: none;
+  padding-left: inherit;
+  padding-right: inherit;
+  box-sizing: border-box;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+@media (forced-colors: none) {
+  :is(.ck.ck-placeholder, .ck .ck-placeholder):before {
+    color: var(--ck-color-engine-placeholder-text);
+  }
+}
+
+@media (forced-colors: active) {
+  :is(.ck.ck-placeholder, .ck .ck-placeholder):before {
+    margin-left: 1px;
+    font-style: italic;
+  }
+}
+
+.ck.ck-read-only .ck-placeholder:before {
+  display: none;
+}
+
+.ck.ck-reset_all .ck-placeholder {
+  position: relative;
+}
+
+.ck.ck-editor__editable span[data-ck-unsafe-element] {
+  display: none;
+}
+
+/*# sourceMappingURL=index.css.map */

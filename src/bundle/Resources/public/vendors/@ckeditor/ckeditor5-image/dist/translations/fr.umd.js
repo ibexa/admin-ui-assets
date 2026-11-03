@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'fr' ]: translations } = {"fr":{"dictionary":{"image widget":"Objet image","In line":"Aligné","Side image":"Image latérale","Full size image":"Image taille réelle","Left aligned image":"Image alignée à gauche","Centered image":"Image centrée","Right aligned image":"Image alignée à droite","Change image text alternative":"Changer le texte alternatif à l’image","Text alternative":"Texte alternatif","Enter image caption":"Saisir la légende de l’image","Insert image":"Insérer une image","Replace image":"Remplacer l'image","Upload from computer":"Télécharger depuis l'ordinateur","Replace from computer":"Remplacer depuis l'ordinateur","Upload image from computer":"Télécharger une image depuis l'ordinateur","Image from computer":"Image provenant d'un ordinateur","From computer":"Depuis l'ordinateur","Replace image from computer":"Remplacer l'image depuis l'ordinateur","Upload failed":"Échec de l'envoi","You have no image upload permissions.":"Vous n'êtes pas autorisé à télécharger des images.","Image toolbar":"Barre d'outils des images","Resize image":"Redimensionner l'image","Resize image to %0":"Redimensionner à %0","Resize image to the original size":"Appliquer les dimensions d'origine","Resize image (in %0)":"Redimensionner l'image (en %0)","Custom image size":"Taille d'image personnalisée","Image resize list":"Liste des tailles d'images","Insert image via URL":"Insérer une image à partir d'une URL","Insert via URL":"Insérer par URL","Image via URL":"Image par URL","Via URL":"Par URL","Update image URL":"Modifier l'URL de l'image","Caption for the image":"Légende de l'image","Caption for image: %0":"Légende de l'image : %0","Uploading image":"Téléchargement de l'image","Image upload complete":"Téléchargement de l'image terminé","Error during image upload":"Une erreur s'est produite lors du téléchargement de l'image.","Image":"Image","Image Resize":"Redimensionnement de l'image","Text Alternative":"Alternative textuelle"}}};
+e[ 'fr' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'fr' ].dictionary = Object.assign( e[ 'fr' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'fr' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

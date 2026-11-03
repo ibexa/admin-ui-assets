@@ -1,0 +1,23 @@
+{
+	"plugins": [
+		{
+			"name": "Undo",
+			"className": "Undo",
+			"description": "Support the undo and redo functionalities.",
+			"docs": "features/undo-redo.html",
+			"path": "src/undo.ts",
+			"uiComponents": [
+				{
+					"type": "Button",
+					"name": "undo",
+					"iconName": "IconUndo"
+				},
+				{
+					"type": "Button",
+					"name": "redo",
+					"iconName": "IconRedo"
+				}
+			]
+		}
+	]
+}

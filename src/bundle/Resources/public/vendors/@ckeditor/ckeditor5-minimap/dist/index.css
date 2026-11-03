@@ -1,0 +1,81 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+:root {
+  --ck-color-minimap-tracker-background: 208, 0%, 51%;
+  --ck-color-minimap-iframe-outline: #bfbfbf;
+  --ck-color-minimap-iframe-shadow: #0000001c;
+  --ck-color-minimap-progress-background: #666;
+}
+
+.ck.ck-minimap {
+  -webkit-user-select: none;
+  user-select: none;
+  background: var(--ck-color-base-background);
+  position: absolute;
+}
+
+.ck.ck-minimap, .ck.ck-minimap iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.ck.ck-minimap iframe {
+  pointer-events: none;
+  outline: 1px solid var(--ck-color-minimap-iframe-outline);
+  box-shadow: 0 2px 5px var(--ck-color-minimap-iframe-shadow);
+  border: 0;
+  margin: 0;
+  position: relative;
+}
+
+.ck.ck-minimap .ck.ck-minimap__position-tracker {
+  background: hsla(var(--ck-color-minimap-tracker-background), .2);
+  z-index: 1;
+  width: 100%;
+  transition: background .1s ease-in-out;
+  position: absolute;
+  top: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ck.ck-minimap .ck.ck-minimap__position-tracker {
+    transition: none;
+  }
+}
+
+.ck.ck-minimap .ck.ck-minimap__position-tracker:hover {
+  background: hsla(var(--ck-color-minimap-tracker-background), .3);
+}
+
+.ck.ck-minimap .ck.ck-minimap__position-tracker.ck-minimap__position-tracker_dragging, .ck.ck-minimap .ck.ck-minimap__position-tracker.ck-minimap__position-tracker_dragging:hover {
+  background: hsla(var(--ck-color-minimap-tracker-background), .4);
+}
+
+:is(.ck.ck-minimap .ck.ck-minimap__position-tracker.ck-minimap__position-tracker_dragging, .ck.ck-minimap .ck.ck-minimap__position-tracker.ck-minimap__position-tracker_dragging:hover):after {
+  opacity: 1;
+}
+
+.ck.ck-minimap .ck.ck-minimap__position-tracker:after {
+  content: attr(data-progress) "%";
+  background: var(--ck-color-minimap-progress-background);
+  color: var(--ck-color-base-background);
+  border: 1px solid var(--ck-color-base-background);
+  opacity: 0;
+  border-radius: 3px;
+  padding: 2px 4px;
+  font-size: 10px;
+  transition: opacity .1s ease-in-out;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ck.ck-minimap .ck.ck-minimap__position-tracker:after {
+    transition: none;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

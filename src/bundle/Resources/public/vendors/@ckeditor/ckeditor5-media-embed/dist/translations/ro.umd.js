@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'ro' ]: translations } = {"ro":{"dictionary":{"media widget":"widget media","Media URL":"Media URL","Paste the media URL in the input.":"Adaugă URL-ul media in input.","Tip: Paste the URL into the content to embed faster.":"Sugestie: adaugă URL-ul în conținut pentru a fi adăugat mai rapid.","The URL must not be empty.":"URL-ul nu trebuie să fie gol.","This media URL is not supported.":"Acest URL media nu este suportat.","Insert media":"Inserează media","Media embed":"Încorporare media","Media":"Multimedia","Media toolbar":"Bară media","Open media in new tab":"Deschideți conținutul media într-o filă nouă","Left aligned media":"Conținut media aliniat la stânga","Centered media":"Conținut media centrat","Right aligned media":"Conținut media aliniat la dreapta","Resize media":"Redimensionați media","Resize media to %0":"Redimensionați media la %0","Resize media to the original size":"Redimensionați media la original","Resize media (in %0)":"Redimensionați media (în %0)","Custom media size":"Redimensionați media personalizat","Media resize list":"Listă redimensionare media","Media Resize":"Redimensionare media"}}};
+e[ 'ro' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'ro' ].dictionary = Object.assign( e[ 'ro' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'ro' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

@@ -1,0 +1,11 @@
+{
+	"plugins": [
+		{
+			"name": "CKFinder upload adapter",
+			"className": "CKFinderUploadAdapter",
+			"path": "src/uploadadapter.ts",
+			"description": "Implements the CKEditor 5 upload adapter compatible with the CKFinder file manager and uploader's server–side connector.",
+			"docs": "features/images/image-upload/image-upload.html#ckfinder"
+		}
+	]
+}

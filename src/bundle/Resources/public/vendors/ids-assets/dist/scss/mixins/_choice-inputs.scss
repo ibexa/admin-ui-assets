@@ -1,0 +1,13 @@
+@use '../functions' as *;
+@use '../variables' as *;
+
+@mixin choice-input-base {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: calculateRem(16px);
+    height: calculateRem(16px);
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}

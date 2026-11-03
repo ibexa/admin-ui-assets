@@ -1,0 +1,24 @@
+@use 'functions' as *;
+@use 'variables' as *;
+
+.ids-expander {
+    display: flex;
+    align-items: center;
+    height: calculateRem(34px);
+
+    .ids-btn__label {
+        display: flex;
+    }
+
+    &--has-label {
+        .ids-icon {
+            margin-left: calculateRem(8px);
+        }
+    }
+
+    &--is-expanded {
+        .ids-icon {
+            transform: rotate(180deg);
+        }
+    }
+}

@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'eo' ]: translations } = {"eo":{"dictionary":{"Insert table":"","Insert table layout":"","Header column":"","Insert column left":"","Insert column right":"","Delete column":"","Select column":"","Column":"","Header row":"","Footer row":"","Insert row below":"","Insert row above":"","Delete row":"","Select row":"","Row":"","Merge cell up":"","Merge cell right":"","Merge cell down":"","Merge cell left":"","Split cell vertically":"","Split cell horizontally":"","Merge cells":"","Table toolbar":"","Table properties":"","Cell properties":"","Cell type":"","Data cell":"","Header cell":"","Column header":"","Row header":"","Border":"","Style":"","Width":"","Height":"","Color":"","Background":"","Padding":"","Dimensions":"","Table cell text alignment":"","Table Alignment":"","Horizontal text alignment toolbar":"","Vertical text alignment toolbar":"","Table alignment toolbar":"","None":"","Solid":"","Dotted":"","Dashed":"","Double":"","Groove":"","Ridge":"","Inset":"","Outset":"","Align cell text to the left":"","Align cell text to the center":"","Align cell text to the right":"","Justify cell text":"","Align cell text to the top":"","Align cell text to the middle":"","Align cell text to the bottom":"","Align table to the left with text wrapping":"","Center table with no text wrapping":"","Align table to the right with text wrapping":"","Align table to the left with no text wrapping":"","Align table to the right with no text wrapping":"","The color is invalid. Try \"#FF0000\" or \"rgb(255,0,0)\" or \"red\".":"","The value is invalid. Try \"10px\" or \"2em\" or simply \"2\".":"","Enter table caption":"","Keystrokes that can be used in a table cell":"","Move the selection to the next cell":"","Move the selection to the previous cell":"","Insert a new table row (when in the last cell of a table)":"","Navigate through the table":"","Table":"","Table layout":"","Layout table":"","Content table":"","Choose table type":"","Table type":"","Table type options":""}}};
+e[ 'eo' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'eo' ].dictionary = Object.assign( e[ 'eo' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'eo' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'ru' ]: translations } = {"ru":{"dictionary":{"Unlink":"Убрать ссылку","Link":"Ссылка","Link URL":"Ссылка URL","Link URL must not be empty.":"URL-адрес ссылки не должен быть пустым.","Link image":"Ссылка на изображение","Link properties":"Свойства ссылки","Edit link":"Редактировать ссылку","Open link in new tab":"Открыть ссылку в новой вкладке","Open in a new tab":"Открыть в новой вкладке","Downloadable":"Загружаемые","Create link":"Создать ссылку","Move out of a link":"Выйти из ссылки","Displayed text":"Отображаемый текст","No links available":"Нет доступных ссылок","This link has no URL":"У этой ссылки нет URL-адреса"}}};
+e[ 'ru' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'ru' ].dictionary = Object.assign( e[ 'ru' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'ru' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

@@ -1,0 +1,24 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+.ck.ck-editor__main > .ck-editor__editable {
+  background: var(--ck-color-base-background);
+  border-radius: var(--ck-rounded-corners-radius);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+  border-color: var(--ck-color-base-border);
+}
+
+.ck.ck-editor {
+  position: relative;
+}
+
+.ck.ck-editor .ck-editor__top .ck-sticky-panel .ck-toolbar {
+  z-index: var(--ck-z-panel);
+}
+
+/*# sourceMappingURL=index.css.map */

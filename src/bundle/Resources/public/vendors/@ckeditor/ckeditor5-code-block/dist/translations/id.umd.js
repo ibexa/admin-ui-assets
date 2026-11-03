@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'id' ]: translations } = {"id":{"dictionary":{"Insert code block":"Sisipkan blok kode","Plain text":"Teks mentah","Leaving %0 code snippet":"meninggalkan %0 cuplikan kode","Entering %0 code snippet":"memasuki %0 cuplikan kode","Entering code snippet":"memasuki cuplikan kode","Leaving code snippet":"meninggalkan cuplikan kode","Code block":"Blok kode"}}};
+e[ 'id' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'id' ].dictionary = Object.assign( e[ 'id' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'id' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

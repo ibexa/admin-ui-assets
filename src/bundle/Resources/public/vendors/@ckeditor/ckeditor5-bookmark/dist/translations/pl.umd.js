@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'pl' ]: translations } = {"pl":{"dictionary":{"Bookmark":"Zakładka","Edit bookmark":"Edytuj zakładkę","Remove bookmark":"Usuń zakładkę","Bookmark name":"Nazwa zakładki","Enter the bookmark name without spaces.":"Wprowadź nazwę zakładki bez spacji.","Bookmark must not be empty.":"Nazwa zakładki nie może być pusta.","Bookmark name cannot contain space characters.":"Nazwa zakładki nie może zawierać spacji.","Bookmark name already exists.":"Zakładka o takiej nazwie już istnieje.","bookmark widget":"widżet zakładek","Bookmark toolbar":"Pasek narzędzi zakładek","Bookmarks":"Zakładki","No bookmarks available.":"Brak dostępnych zakładek.","Scroll to bookmark":"Przewiń do zakładki"}}};
+e[ 'pl' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'pl' ].dictionary = Object.assign( e[ 'pl' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'pl' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

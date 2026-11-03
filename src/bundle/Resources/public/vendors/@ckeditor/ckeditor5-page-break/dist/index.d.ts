@@ -1,0 +1,14 @@
+/**
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+/**
+* @module page-break
+*/
+export { PageBreak } from "./pagebreak.js";
+export { PageBreakEditing } from "./pagebreakediting.js";
+export { PageBreakUI } from "./pagebreakui.js";
+export { PageBreakCommand } from "./pagebreakcommand.js";
+import "../theme/index-editor.css";
+import "../theme/index-content.css";
+import "./augmentation.js";

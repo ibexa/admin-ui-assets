@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'be' ]: translations } = {"be":{"dictionary":{"Rich Text Editor":"Рэдактар","Edit block":"Рэдагаваць блок","Click to edit block":"Націсніце, каб рэдагаваць блок","Drag to move":"Перацягніце","Next":"Наступны","Previous":"Папярэдні","Editor toolbar":"Панэль інструментаў рэдактара","Dropdown toolbar":"Выпадаючая панэль інструментаў","Dropdown menu":"Выпадаючае меню","Black":"Чорны","Dim grey":"Цёмны серы","Grey":"Серы","Light grey":"Светла-серы","White":"Белы","Red":"Чырвоны","Orange":"Аранжавы","Yellow":"Жоўты","Light green":"Салатавы","Green":"Зялёны","Aquamarine":"Аквамарынавы","Turquoise":"Бірузовы","Light blue":"Блакітны","Blue":"Сіні","Purple":"Фіялетавы","Editor block content toolbar":"Панэль інструментаў рэдактара","Editor contextual toolbar":"Кантэкстуальная панэль інструментаў рэдактара","HEX":"HEX","No results found":"Няма вынікаў","No searchable items":"Няма элементаў для пошуку","Editor dialog":"Дыялогавае акно рэдактара","Close":"Закрыць","Help Contents. To close this dialog press ESC.":"Змест дапамогі. Каб закрыць гэта дыялогавае акно, націсніце ESC.","Below, you can find a list of keyboard shortcuts that can be used in the editor.":"Ніжэй вы можаце знайсці спіс камбінацый клавіш, якія можна выкарыстоўваць у рэдактары.","(may require <kbd>Fn</kbd>)":"(можа патрабаваць <kbd>Fn</kbd>)","Accessibility":"Даступнасць","Accessibility help":"Дапамога па спецыяльных магчымасцях","Press %0 for help.":"Націсніце %0 для атрымання дапамогі.","Move focus in and out of an active dialog window":"Перамясціць фокус у актыўнае дыялогавае акно і наадварот.","MENU_BAR_MENU_FILE":"Файл","MENU_BAR_MENU_EDIT":"Рэдагаваць","MENU_BAR_MENU_VIEW":"Паглядзець","MENU_BAR_MENU_INSERT":"Уставіць","MENU_BAR_MENU_FORMAT":"Фармат","MENU_BAR_MENU_TOOLS":"Інструменты","MENU_BAR_MENU_HELP":"Дапамога","MENU_BAR_MENU_TEXT":"Тэкст","MENU_BAR_MENU_FONT":"Шрыфт","Editor menu bar":"Панэль меню рэдактара","Please enter a valid color (e.g. \"ff0000\").":"Увядзіце сапраўдны колер (напрыклад, \"ff0000\")."}}};
+e[ 'be' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'be' ].dictionary = Object.assign( e[ 'be' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'be' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

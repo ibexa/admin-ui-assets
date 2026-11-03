@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'ca' ]: translations } = {"ca":{"dictionary":{"media widget":"giny multimèdia","Media URL":"URL dels mitjans","Paste the media URL in the input.":"Enganxar l'URL del contingut multimèdia a l'entrada.","Tip: Paste the URL into the content to embed faster.":"Consell: Enganxa l'URL al contingut per inserir-lo més ràpid.","The URL must not be empty.":"L'URL no pot estar buit.","This media URL is not supported.":"Aquest URL multimèdia no és compatible.","Insert media":"Introduir multimèdia","Media embed":"Insereix contingut multimèdia","Media":"Multimèdia","Media toolbar":"Barra d'eines multimèdia","Open media in new tab":"Obriu l'enllaç a una nova pestanya","Left aligned media":"Element multimèdia alineat a l’esquerra","Centered media":"Element multimèdia centrat","Right aligned media":"Element multimèdia alineat a la dreta","Resize media":"Redimensioneu el contingut multimèdia","Resize media to %0":"Redimensioneu el contingut multimèdia a %0","Resize media to the original size":"Redimensioneu el contingut multimèdia a la mida original","Resize media (in %0)":"Redimensioneu el contingut multimèdia (en %0)","Custom media size":"Mida del contingut multimèdia personalitzada","Media resize list":"Llista de redimensions del contingut multimèdia","Media Resize":"Redimensió del contingut multimèdia"}}};
+e[ 'ca' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'ca' ].dictionary = Object.assign( e[ 'ca' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'ca' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

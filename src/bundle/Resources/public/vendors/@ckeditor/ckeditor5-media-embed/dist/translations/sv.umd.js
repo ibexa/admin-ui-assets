@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'sv' ]: translations } = {"sv":{"dictionary":{"media widget":"mediewidget","Media URL":"Medie-URL","Paste the media URL in the input.":"Klistra in medie-URL:en i indata.","Tip: Paste the URL into the content to embed faster.":"Tips: Klistra in URL:en i innehållet för snabbare inbäddning.","The URL must not be empty.":"URL:en får inte vara tom.","This media URL is not supported.":"Medie-URL:en stöds inte.","Insert media":"Lägg in media","Media embed":"Medieinbäddning","Media":"Media","Media toolbar":"Medieverktygsfält","Open media in new tab":"Öppna media i ny flik","Left aligned media":"Vänsterjusterade media","Centered media":"Centrerade media","Right aligned media":"Högerjusterade media","Resize media":"Ändra storlek på media","Resize media to %0":"Ändra storlek på media till %0","Resize media to the original size":"Återställ media till originalstorlek","Resize media (in %0)":"Ändra storlek på media (i %0)","Custom media size":"Anpassad mediastorlek","Media resize list":"Lista över storleksändringar för media","Media Resize":"Storleksändring för media"}}};
+e[ 'sv' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'sv' ].dictionary = Object.assign( e[ 'sv' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'sv' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

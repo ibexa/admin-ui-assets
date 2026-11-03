@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'sk' ]: translations } = {"sk":{"dictionary":{"Find and replace":"Vyhľadať a nahradiť","Find in text…":"Vyhľadať v texte...","Find":"Vyhľadať","Previous result":"Predchádzajúci výsledok","Next result":"Nasledujúci výsledok","Replace":"Nahradiť","Replace all":"Nahradiť všetko","Match case":"Presná zhoda","Whole words only":"Iba celé slová","Replace with…":"Nahradiť za...","Text to find must not be empty.":"Text vyhľadávania nemôže byť prázdny.","Tip: Find some text first in order to replace it.":"Tip: Najskôr vyhľadajte text, ktorý následne môžete nahradiť.","Advanced options":"Pokročilé nastavenia","Find in the document":"Nájsť v dokumente"}}};
+e[ 'sk' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'sk' ].dictionary = Object.assign( e[ 'sk' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'sk' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

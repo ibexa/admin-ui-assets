@@ -1,0 +1,26 @@
+@use 'sass:map';
+@use 'functions' as *;
+@use 'variables' as *;
+@use 'mixins/inputs' as inputs-mixins;
+
+$input-sizes: (
+    'small': (
+        'font-size': $text-font-size-s,
+        'padding': calculateRem(7px) calculateRem(16px) calculateRem(7px),
+    ),
+    'medium': (
+        'font-size': $text-font-size-m,
+        'padding': calculateRem(9px) calculateRem(16px) calculateRem(10px),
+    ),
+);
+
+.ids-input {
+    @include inputs-mixins.input-base;
+
+    @each $name, $properties in $input-sizes {
+        &--#{$name} {
+            font-size: map.get($properties, 'font-size');
+            padding: map.get($properties, 'padding');
+        }
+    }
+}

@@ -1,0 +1,87 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+:root {
+  --ck-bookmark-icon-hover-fill-color: var(--ck-color-widget-hover-border);
+  --ck-bookmark-icon-selected-fill-color: var(--ck-color-focus-border);
+  --ck-bookmark-icon-animation-duration: var(--ck-widget-handler-animation-duration);
+  --ck-bookmark-icon-animation-curve: var(--ck-widget-handler-animation-curve);
+}
+
+.ck .ck-bookmark.ck-widget {
+  outline: none;
+  display: inline-block;
+}
+
+.ck .ck-bookmark.ck-widget .ck-bookmark__icon .ck-icon__fill {
+  transition: fill var(--ck-bookmark-icon-animation-duration) var(--ck-bookmark-icon-animation-curve);
+}
+
+.ck .ck-bookmark.ck-widget:hover .ck-bookmark__icon .ck-icon__fill {
+  fill: var(--ck-bookmark-icon-hover-fill-color);
+}
+
+.ck .ck-bookmark.ck-widget.ck-widget_selected .ck-bookmark__icon .ck-icon__fill {
+  fill: var(--ck-bookmark-icon-selected-fill-color);
+}
+
+.ck .ck-bookmark.ck-widget.ck-widget_selected, .ck .ck-bookmark.ck-widget.ck-widget_selected:hover {
+  outline: none;
+}
+
+.ck .ck-bookmark.ck-widget .ck-bookmark__icon {
+  display: block;
+  position: relative;
+  top: -.1em;
+}
+
+.ck .ck-bookmark.ck-widget .ck-bookmark__icon .ck-icon {
+  vertical-align: middle;
+  width: auto;
+  height: 1.2em;
+}
+
+.ck .ck-fake-bookmark-selection {
+  background: var(--ck-color-link-fake-selection);
+}
+
+.ck .ck-fake-bookmark-selection_collapsed {
+  border-right: 1px solid var(--ck-color-base-text);
+  outline: 1px solid #ffffff80;
+  height: 100%;
+  margin-right: -1px;
+}
+
+.ck.ck-bookmark-balloon .ck.ck-toolbar > .ck-toolbar__items {
+  flex-wrap: nowrap;
+}
+
+.ck.ck-bookmark-toolbar__preview {
+  padding: 0 var(--ck-spacing-medium);
+  max-width: var(--ck-input-width);
+  text-overflow: ellipsis;
+  text-align: center;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  min-width: 3em;
+  font-weight: normal;
+  overflow: hidden;
+}
+
+:root {
+  --ck-bookmark-form-width: 340px;
+}
+
+@media screen and (width <= 600px) {
+  :root {
+    --ck-bookmark-form-width: 300px;
+  }
+}
+
+.ck.ck-bookmark-form {
+  width: var(--ck-bookmark-form-width);
+}
+
+/*# sourceMappingURL=index.css.map */

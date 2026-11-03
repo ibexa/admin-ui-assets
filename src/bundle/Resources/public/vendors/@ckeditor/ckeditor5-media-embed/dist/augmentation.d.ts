@@ -1,0 +1,35 @@
+/**
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+import type { MediaEmbedConfig, AutoMediaEmbed, MediaEmbed, MediaEmbedEditing, MediaEmbedToolbar, MediaEmbedUI, MediaEmbedCommand, MediaEmbedResize, MediaEmbedResizeEditing, MediaEmbedResizeHandles, MediaEmbedResizeButtons, MediaEmbedCustomResizeUI, ResizeMediaEmbedCommand, MediaEmbedStyle, MediaEmbedStyleEditing, MediaEmbedStyleUI, MediaEmbedStyleCommand } from "./index.js";
+declare module "@ckeditor/ckeditor5-core" {
+	interface EditorConfig {
+		/**
+		* The configuration of the {@link module:media-embed/mediaembed~MediaEmbed} feature.
+		*
+		* Read more in {@link module:media-embed/mediaembedconfig~MediaEmbedConfig}.
+		*/
+		mediaEmbed?: MediaEmbedConfig;
+	}
+	interface PluginsMap {
+		[AutoMediaEmbed.pluginName]: AutoMediaEmbed;
+		[MediaEmbed.pluginName]: MediaEmbed;
+		[MediaEmbedEditing.pluginName]: MediaEmbedEditing;
+		[MediaEmbedToolbar.pluginName]: MediaEmbedToolbar;
+		[MediaEmbedUI.pluginName]: MediaEmbedUI;
+		[MediaEmbedResize.pluginName]: MediaEmbedResize;
+		[MediaEmbedResizeEditing.pluginName]: MediaEmbedResizeEditing;
+		[MediaEmbedResizeHandles.pluginName]: MediaEmbedResizeHandles;
+		[MediaEmbedResizeButtons.pluginName]: MediaEmbedResizeButtons;
+		[MediaEmbedCustomResizeUI.pluginName]: MediaEmbedCustomResizeUI;
+		[MediaEmbedStyle.pluginName]: MediaEmbedStyle;
+		[MediaEmbedStyleEditing.pluginName]: MediaEmbedStyleEditing;
+		[MediaEmbedStyleUI.pluginName]: MediaEmbedStyleUI;
+	}
+	interface CommandsMap {
+		mediaEmbed: MediaEmbedCommand;
+		resizeMediaEmbed: ResizeMediaEmbedCommand;
+		mediaStyle: MediaEmbedStyleCommand;
+	}
+}

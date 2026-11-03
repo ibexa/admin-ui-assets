@@ -1,0 +1,30 @@
+/**
+* @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+* For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+*/
+/**
+* @module bookmark/bookmark
+*/
+import { Plugin, type PluginDependenciesOf } from "@ckeditor/ckeditor5-core";
+import { Widget } from "@ckeditor/ckeditor5-widget";
+import { BookmarkUI } from "./bookmarkui.js";
+import { BookmarkEditing } from "./bookmarkediting.js";
+/**
+* The bookmark feature.
+*
+* For a detailed overview, check the {@glink features/bookmarks Bookmarks} feature guide.
+*/
+export declare class Bookmark extends Plugin {
+	/**
+	* @inheritDoc
+	*/
+	static get pluginName(): "Bookmark";
+	/**
+	* @inheritDoc
+	*/
+	static get requires(): PluginDependenciesOf<[BookmarkEditing, BookmarkUI, Widget]>;
+	/**
+	* @inheritDoc
+	*/
+	static override get isOfficialPlugin(): true;
+}

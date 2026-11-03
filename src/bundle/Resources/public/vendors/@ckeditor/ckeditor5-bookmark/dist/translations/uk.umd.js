@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'uk' ]: translations } = {"uk":{"dictionary":{"Bookmark":"Закладка","Edit bookmark":"Редагувати закладку","Remove bookmark":"Видалити закладку","Bookmark name":"Назва закладки","Enter the bookmark name without spaces.":"Введіть назву закладки без пробілів.","Bookmark must not be empty.":"Закладка не може бути порожньою.","Bookmark name cannot contain space characters.":"Назва закладки не може містити пробілів.","Bookmark name already exists.":"Назва закладки вже існує.","bookmark widget":"віджет закладок","Bookmark toolbar":"Панель закладок","Bookmarks":"Закладки","No bookmarks available.":"Немає доступних закладок.","Scroll to bookmark":"Прокрутити до закладки"}}};
+e[ 'uk' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'uk' ].dictionary = Object.assign( e[ 'uk' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'uk' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

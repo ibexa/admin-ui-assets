@@ -1,0 +1,52 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+.ck-content .page-break {
+  clear: both;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0;
+  display: flex;
+  position: relative;
+}
+
+.ck-content .page-break:after {
+  content: "";
+  border-bottom: 2px dashed #c4c4c4;
+  width: 100%;
+  position: absolute;
+}
+
+.ck-content .page-break__label {
+  z-index: 1;
+  text-transform: uppercase;
+  color: #333;
+  -webkit-user-select: none;
+  user-select: none;
+  background: #fff;
+  border: 1px solid #c4c4c4;
+  border-radius: 2px;
+  padding: .3em .6em;
+  font-size: .75em;
+  font-weight: bold;
+  display: block;
+  position: relative;
+  box-shadow: 2px 2px 1px #00000026;
+}
+
+@media print {
+  .ck-content .page-break {
+    padding: 0;
+  }
+
+  .ck-content .page-break:after {
+    display: none;
+  }
+
+  .ck-content :has( + .page-break) {
+    margin-bottom: 0;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

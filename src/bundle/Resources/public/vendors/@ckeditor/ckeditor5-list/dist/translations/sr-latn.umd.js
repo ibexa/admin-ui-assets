@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'sr-latn' ]: translations } = {"sr-latn":{"dictionary":{"Numbered List":"Lista sa brojevima","Bulleted List":"Nabrajane liste","To-do List":"Lista obaveza","Bulleted list styles toolbar":"Traka sa alatkama za nabrajane liste","Numbered list styles toolbar":"Traka sa altakama za liste sa brojevima","Toggle the disc list style":"Uključite / isključite stil liste diskova","Toggle the circle list style":"Uključite / isključite stil liste krugova","Toggle the square list style":"Uključite / isključite stil liste kvadrata","Toggle the decimal list style":"Uključi / isključi stil dekadne liste","Toggle the decimal with leading zero list style":"Prebaci decimalni znak sa vodećim stilom liste nula","Toggle the lower–roman list style":"Uključite / isključite stil donje rimske liste","Toggle the upper–roman list style":"Uključite / isključite stil gornje rimske liste","Toggle the lower–latin list style":"Uključite / isključite stil donje liste latinice","Toggle the upper–latin list style":"Uključite / isključite stil gornje liste latinice","Toggle the arabic-indic list style":"","Arabic-indic":"","Disc":"Disk","Circle":"Krug","Square":"Kvadrat","Decimal":"Decimala","Decimal with leading zero":"Decimalni broj sa nulom na početku","Lower–roman":"Donji - rimski","Upper-roman":"Gornji - rimski","Lower-latin":"Donji - latinski","Upper-latin":"Gornji - latinski","List properties":"Navedite svojstva","Start at":"Početi u","Invalid start index value.":"Nevažeća vrednost početnog indeksa.","Start index must be greater than 0.":"Početni indeks mora biti veći od 0.","Reversed order":"Obrnuti redosled","Keystrokes that can be used in a list":"Pritisci na tastere koji se mogu koristiti na listi","Increase list item indent":"Povećaj uvlačenje stavke liste","Decrease list item indent":"Smanji uvlačenje stavke liste","Entering a to-do list":"Unošenje liste obaveza","Leaving a to-do list":"Ostavljanje liste obaveza"}}};
+e[ 'sr-latn' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'sr-latn' ].dictionary = Object.assign( e[ 'sr-latn' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'sr-latn' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

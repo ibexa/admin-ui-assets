@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'be' ]: translations } = {"be":{"dictionary":{"media widget":"медыя-віджэт","Media URL":"URL медыя","Paste the media URL in the input.":"Уставіць URL медыя ў поле ўводу.","Tip: Paste the URL into the content to embed faster.":"Падказка: Уставіць URL у кантэнт для ўключэння хутчэй.","The URL must not be empty.":"URL не павінен быць пустым.","This media URL is not supported.":"Гэты медыя URL не падтрымліваецца.","Insert media":"Уставіць медыя","Media embed":"","Media":"Медыя","Media toolbar":"Панель інструментаў медыя","Open media in new tab":"Адкрыць медыя ў новай картцы","Left aligned media":"","Centered media":"","Right aligned media":"","Resize media":"","Resize media to %0":"","Resize media to the original size":"","Resize media (in %0)":"","Custom media size":"","Media resize list":"","Media Resize":""}}};
+e[ 'be' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'be' ].dictionary = Object.assign( e[ 'be' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'be' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

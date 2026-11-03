@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'fa' ]: translations } = {"fa":{"dictionary":{"Bold":"درشت","Italic":"کج","Underline":"خط زیر","Code":"کد","Strikethrough":"خط خورده","Subscript":"پایین نویس","Superscript":"بالانویس","Italic text":"","Move out of an inline code style":"","Bold text":"","Underline text":"","Strikethrough text":""}}};
+e[ 'fa' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'fa' ].dictionary = Object.assign( e[ 'fa' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'fa' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

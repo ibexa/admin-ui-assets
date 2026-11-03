@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'es' ]: translations } = {"es":{"dictionary":{"Enter fullscreen mode":"Entrar al modo de pantalla completa","Leave fullscreen mode":"Salir del modo de pantalla completa","Fullscreen mode":"Modo de pantalla completa","Toggle fullscreen mode":"Alternar modo de pantalla completa","Document outline":"Boceto del documento","Connected users":"Usuarios conectados","Show left sidebar":"Mostrar barra lateral izquierda","Hide left sidebar":"Ocultar la barra lateral izquierda","Toggle sidebar":"Activar o desactivar la barra lateral"}}};
+e[ 'es' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'es' ].dictionary = Object.assign( e[ 'es' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'es' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

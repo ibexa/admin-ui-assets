@@ -1,0 +1,5 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+export default {"hr":{"dictionary":{"media widget":"dodatak za medije","Media URL":"URL medija","Paste the media URL in the input.":"Zalijepi URL medija u ulaz.","Tip: Paste the URL into the content to embed faster.":"Natuknica: Za brže ugrađivanje zalijepite URL u sadržaj.","The URL must not be empty.":"URL ne smije biti prazan.","This media URL is not supported.":"URL nije podržan.","Insert media":"Ubaci medij","Media embed":"","Media":"","Media toolbar":"Traka za medije","Open media in new tab":"Otvori medije u novoj kartici","Left aligned media":"","Centered media":"","Right aligned media":"","Resize media":"","Resize media to %0":"","Resize media to the original size":"","Resize media (in %0)":"","Custom media size":"","Media resize list":"","Media Resize":""}}}

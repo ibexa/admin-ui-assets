@@ -1,0 +1,56 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+.ck-content .media {
+  clear: both;
+  min-width: 15em;
+  margin: .9em auto;
+  display: block;
+}
+
+.ck-content .media:has( > div[data-oembed-url*="open.spotify.com"]) {
+  width: 300px;
+  min-width: 286px;
+}
+
+.ck-content .media.media_resized {
+  box-sizing: border-box;
+  max-width: 100%;
+  display: block;
+}
+
+.ck-content .media.media_resized > div[data-oembed-url] {
+  width: 100%;
+}
+
+:root {
+  --ck-content-media-style-spacing: 1.5em;
+}
+
+.ck-content .media.media-style-align-left, .ck-content .media.media-style-align-right {
+  clear: none;
+  width: 100%;
+}
+
+.ck-content .media.media-style-align-left {
+  float: left;
+  margin-right: var(--ck-content-media-style-spacing);
+}
+
+.ck-content .media.media-style-align-right {
+  float: right;
+  margin-left: var(--ck-content-media-style-spacing);
+}
+
+.ck-content .media.media-style-block-align-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.ck-content .media.media-style-block-align-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/*# sourceMappingURL=index-content.css.map */

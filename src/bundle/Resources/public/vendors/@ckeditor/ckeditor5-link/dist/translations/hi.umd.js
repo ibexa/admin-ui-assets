@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'hi' ]: translations } = {"hi":{"dictionary":{"Unlink":"Unlink","Link":"Link","Link URL":"Link URL","Link URL must not be empty.":"लिंक का URL रिक्त नहीं होना चाहिए.","Link image":"Link image","Link properties":"गुण लिंक करें","Edit link":"Edit link","Open link in new tab":"Open link in new tab","Open in a new tab":"Open in a new tab","Downloadable":"Downloadable","Create link":"लिंक बनाएँ","Move out of a link":"लिंक के बाहर जाएँ","Displayed text":"प्रदर्शित टेक्स्ट","No links available":"कोई लिंक उपलब्ध नहीं है","This link has no URL":"इस लिंक का कोई URL नहीं है."}}};
+e[ 'hi' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'hi' ].dictionary = Object.assign( e[ 'hi' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'hi' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

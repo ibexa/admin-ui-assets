@@ -1,0 +1,29 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+.ck.ck-heading_heading1 .ck-button__label {
+  font-size: 20px;
+}
+
+.ck.ck-heading_heading2 .ck-button__label {
+  font-size: 17px;
+}
+
+.ck.ck-heading_heading3 .ck-button__label {
+  font-size: 14px;
+}
+
+.ck[class*="ck-heading_heading"] {
+  font-weight: bold;
+}
+
+.ck.ck-dropdown.ck-heading-dropdown .ck-dropdown__button .ck-button__label {
+  width: 8em;
+}
+
+.ck.ck-dropdown.ck-heading-dropdown .ck-dropdown__panel .ck-list__item {
+  min-width: 18em;
+}
+
+/*# sourceMappingURL=index.css.map */

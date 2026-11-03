@@ -1,0 +1,102 @@
+@use '../functions' as *;
+@use '../variables' as *;
+@use '../mixins/inputs' as inputs-mixins;
+@use '../mixins/utils' as utils-mixins;
+
+.ids-toggle {
+    $self: &;
+
+    display: flex;
+    align-items: center;
+
+    &__source {
+        @include utils-mixins.hidden;
+    }
+
+    &__widget {
+        box-sizing: content-box;
+        position: relative;
+        width: calculateRem(48px);
+        height: calculateRem(24px);
+        background-color: $color-neutral-80;
+        border: calculateRem(1px) solid $color-neutral-10;
+        border-radius: calculateRem(12px);
+        cursor: pointer;
+    }
+
+    &__indicator {
+        width: calculateRem(18px);
+        height: calculateRem(18px);
+        background-color: $color-neutral-10;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+        top: calculateRem(3px);
+        left: 0;
+        transition: all $transition-duration $transition-timing-function;
+        transform: translateX(calculateRem(3px));
+    }
+
+    &__label {
+        padding-left: calculateRem(8px);
+    }
+
+    &--checked {
+        #{$self} {
+            &__widget {
+                background-color: $color-success-80;
+            }
+
+            &__indicator {
+                transform: translateX(calculateRem(26px));
+            }
+        }
+    }
+
+    &--disabled {
+        cursor: not-allowed;
+
+        #{$self} {
+            &__widget {
+                background-color: $color-neutral-40;
+            }
+
+            &__indicator {
+                background-color: $color-neutral-70;
+            }
+        }
+    }
+
+    &--focused {
+        #{$self} {
+            &__widget {
+                @include inputs-mixins.input-focus;
+
+                border-color: $color-neutral-10;
+            }
+        }
+    }
+
+    &--small {
+        #{$self} {
+            &__widget {
+                width: calculateRem(32px);
+                height: calculateRem(16px);
+                border-radius: calculateRem(8px);
+            }
+
+            &__indicator {
+                width: calculateRem(10px);
+                height: calculateRem(10px);
+            }
+        }
+
+        #{$self}--checked {
+            #{$self} {
+                &__indicator {
+                    transform: translateX(calculateRem(19px));
+                }
+            }
+        }
+    }
+}

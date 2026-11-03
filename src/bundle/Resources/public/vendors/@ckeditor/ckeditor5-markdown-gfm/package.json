@@ -1,0 +1,57 @@
+{
+  "name": "@ckeditor/ckeditor5-markdown-gfm",
+  "version": "48.5.3",
+  "description": "GitHub Flavored Markdown data processor for CKEditor 5.",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "CKSource (http://cksource.com/)",
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "bugs": "https://github.com/ckeditor/ckeditor5/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-markdown-gfm"
+  },
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-feature",
+    "ckeditor5-plugin"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "*.css",
+    "src/index.ts",
+    "dist/translations/*.umd.js"
+  ],
+  "dependencies": {
+    "@ckeditor/ckeditor5-clipboard": "48.5.3",
+    "@ckeditor/ckeditor5-core": "48.5.3",
+    "@ckeditor/ckeditor5-engine": "48.5.3",
+    "hast-util-from-dom": "5.0.1",
+    "hast-util-to-html": "9.0.5",
+    "hastscript": "9.0.1",
+    "rehype-dom-parse": "5.0.2",
+    "rehype-dom-stringify": "4.0.2",
+    "rehype-remark": "10.0.1",
+    "remark-breaks": "4.0.0",
+    "remark-gfm": "4.0.1",
+    "remark-parse": "11.0.0",
+    "remark-rehype": "11.1.2",
+    "remark-stringify": "11.0.0",
+    "unified": "11.0.5",
+    "unist-util-visit": "5.0.0"
+  },
+  "files": [
+    "dist",
+    "ckeditor5-metadata.json",
+    "CHANGELOG.md"
+  ],
+  "types": "./dist/index.d.ts"
+}

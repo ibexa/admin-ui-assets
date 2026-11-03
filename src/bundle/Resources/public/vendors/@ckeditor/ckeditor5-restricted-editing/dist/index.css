@@ -1,0 +1,65 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+:root {
+  --ck-color-restricted-editing-exception-background: #ffa94c33;
+  --ck-color-restricted-editing-exception-hover-background: #ffa94c59;
+  --ck-color-restricted-editing-exception-brackets: #cc690066;
+  --ck-color-restricted-editing-selected-exception-background: #ffa94c80;
+  --ck-color-restricted-editing-selected-exception-brackets: #cc690099;
+}
+
+.ck-editor__editable .restricted-editing-exception {
+  background-color: var(--ck-color-restricted-editing-exception-background);
+  border: 1px solid;
+  border-image: linear-gradient(to right,
+		var(--ck-color-restricted-editing-exception-brackets) 0%,
+		var(--ck-color-restricted-editing-exception-brackets) 5px,
+		#0000 6px,
+		#0000 calc(100% - 6px),
+		var(--ck-color-restricted-editing-exception-brackets) calc(100% - 5px),
+		var(--ck-color-restricted-editing-exception-brackets) 100%) 1;
+  transition: background .2s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ck-editor__editable .restricted-editing-exception {
+    transition: none;
+  }
+}
+
+.ck-editor__editable .restricted-editing-exception.restricted-editing-exception_selected {
+  background-color: var(--ck-color-restricted-editing-selected-exception-background);
+  border-image: linear-gradient(to right,
+			var(--ck-color-restricted-editing-selected-exception-brackets) 0%,
+			var(--ck-color-restricted-editing-selected-exception-brackets) 5px,
+			var(--ck-color-restricted-editing-selected-exception-brackets) calc(100% - 5px),
+			var(--ck-color-restricted-editing-selected-exception-brackets) 100%) 1;
+}
+
+.ck-editor__editable .restricted-editing-exception.restricted-editing-exception_collapsed {
+  padding-left: 1ch;
+}
+
+.ck-restricted-editing_mode_restricted {
+  cursor: default;
+}
+
+.ck-restricted-editing_mode_restricted * {
+  cursor: default;
+}
+
+.ck-restricted-editing_mode_restricted .restricted-editing-exception {
+  cursor: text;
+}
+
+.ck-restricted-editing_mode_restricted .restricted-editing-exception * {
+  cursor: text;
+}
+
+.ck-restricted-editing_mode_restricted .restricted-editing-exception:hover {
+  background: var(--ck-color-restricted-editing-exception-hover-background);
+}
+
+/*# sourceMappingURL=index.css.map */

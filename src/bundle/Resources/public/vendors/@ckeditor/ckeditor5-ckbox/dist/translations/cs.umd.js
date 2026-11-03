@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'cs' ]: translations } = {"cs":{"dictionary":{"Open file manager":"Otevřít správce souborů","Cannot determine a category for the uploaded file.":"Nelze určit kategorii pro nahraný soubor.","Cannot access default workspace.":"Nelze získat přístup k výchozímu pracovišti.","You have no image editing permissions.":"Nemáte oprávnění k úpravám obrázků.","Edit image":"Upravit obrázek","Processing the edited image.":"Zpracování upraveného obrázku.","Server failed to process the image.":"Serveru se nepodařilo zpracovat obrázek.","Failed to determine category of edited image.":"Nepodařilo se určit kategorii upraveného obrázku."}}};
+e[ 'cs' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'cs' ].dictionary = Object.assign( e[ 'cs' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'cs' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

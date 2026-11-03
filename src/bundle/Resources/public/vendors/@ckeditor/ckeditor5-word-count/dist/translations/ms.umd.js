@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'ms' ]: translations } = {"ms":{"dictionary":{"Words: %0":"Perkataan: %0","Characters: %0":"Aksara: %0"}}};
+e[ 'ms' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'ms' ].dictionary = Object.assign( e[ 'ms' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'ms' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

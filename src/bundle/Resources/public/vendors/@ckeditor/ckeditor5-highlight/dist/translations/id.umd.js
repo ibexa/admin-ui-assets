@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'id' ]: translations } = {"id":{"dictionary":{"Yellow marker":"Marka kuning","Green marker":"Marka hijau","Pink marker":"Marka merah jambu","Blue marker":"Marka biru","Red pen":"Pena merah","Green pen":"Pena hijau","Remove highlight":"Hapus tanda","Highlight":"Tanda","Text highlight toolbar":"Alat penanda teks"}}};
+e[ 'id' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'id' ].dictionary = Object.assign( e[ 'id' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'id' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

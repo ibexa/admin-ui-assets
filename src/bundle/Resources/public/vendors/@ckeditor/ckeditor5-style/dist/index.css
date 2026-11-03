@@ -1,0 +1,133 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+.ck.ck-dropdown.ck-style-dropdown.ck-style-dropdown_multiple-active > .ck-button > .ck-button__label {
+  font-style: italic;
+}
+
+:root {
+  --ck-style-panel-button-width: 120px;
+  --ck-style-panel-button-height: 80px;
+  --ck-style-panel-button-label-background: #f0f0f0;
+  --ck-style-panel-button-hover-label-background: #ebebeb;
+  --ck-style-panel-button-hover-border-color: #b3b3b3;
+  --ck-style-panel-columns: 3;
+}
+
+.ck.ck-style-panel .ck-style-grid {
+  row-gap: var(--ck-spacing-large);
+  column-gap: var(--ck-spacing-large);
+  grid-template-columns: repeat(var(--ck-style-panel-columns),auto);
+  display: grid;
+}
+
+.ck.ck-style-panel .ck-style-grid .ck-style-grid__button {
+  --ck-color-button-default-hover-background: var(--ck-color-base-background);
+  --ck-color-button-default-active-background: var(--ck-color-base-background);
+  width: var(--ck-style-panel-button-width);
+  height: var(--ck-style-panel-button-height);
+  justify-content: space-between;
+  padding: 0;
+  display: flex;
+}
+
+.ck.ck-style-panel .ck-style-grid .ck-style-grid__button:not(:focus) {
+  border: 1px solid var(--ck-color-base-border);
+}
+
+.ck.ck-style-panel .ck-style-grid .ck-style-grid__button .ck-button__label {
+  width: 100%;
+  height: 22px;
+  padding: 0 var(--ck-spacing-medium);
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  line-height: 22px;
+  overflow: hidden;
+}
+
+.ck.ck-style-panel .ck-style-grid .ck-style-grid__button .ck-style-grid__button__preview {
+  opacity: .9;
+  width: 100%;
+  padding: var(--ck-spacing-medium);
+  background: var(--ck-color-base-background);
+  border: 2px solid var(--ck-color-base-background);
+  box-sizing: border-box;
+  flex-grow: 1;
+  flex-basis: 100%;
+  place-content: center flex-start;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+}
+
+.ck.ck-style-panel .ck-style-grid .ck-style-grid__button.ck-disabled {
+  --ck-color-button-default-disabled-background: var(--ck-color-base-foreground);
+}
+
+.ck.ck-style-panel .ck-style-grid .ck-style-grid__button.ck-disabled:not(:focus) {
+  border-color: var(--ck-style-panel-button-label-background);
+}
+
+.ck.ck-style-panel .ck-style-grid .ck-style-grid__button.ck-disabled .ck-style-grid__button__preview {
+  opacity: .4;
+  border-color: var(--ck-color-base-foreground);
+  filter: saturate(.3);
+}
+
+.ck.ck-style-panel .ck-style-grid .ck-style-grid__button.ck-on {
+  border-color: var(--ck-color-base-active);
+}
+
+.ck.ck-style-panel .ck-style-grid .ck-style-grid__button.ck-on .ck-button__label {
+  box-shadow: 0 -1px 0 var(--ck-color-base-active);
+  z-index: 1;
+}
+
+.ck.ck-style-panel .ck-style-grid .ck-style-grid__button.ck-on:hover {
+  border-color: var(--ck-color-base-active-focus);
+}
+
+.ck.ck-style-panel .ck-style-grid .ck-style-grid__button:not(.ck-on) .ck-button__label {
+  background: var(--ck-style-panel-button-label-background);
+}
+
+.ck.ck-style-panel .ck-style-grid .ck-style-grid__button:not(.ck-on):hover .ck-button__label {
+  background: var(--ck-style-panel-button-hover-label-background);
+}
+
+.ck.ck-style-panel .ck-style-grid .ck-style-grid__button:hover:not(.ck-disabled):not(.ck-on) {
+  border-color: var(--ck-style-panel-button-hover-border-color);
+}
+
+.ck.ck-style-panel .ck-style-grid .ck-style-grid__button:hover:not(.ck-disabled):not(.ck-on) .ck-style-grid__button__preview {
+  opacity: 1;
+}
+
+.ck.ck-style-panel .ck-style-grid .ck-style-grid__button {
+  flex-direction: column;
+}
+
+.ck.ck-style-panel .ck-style-grid {
+  justify-content: start;
+}
+
+.ck.ck-style-panel .ck-style-panel__style-group > .ck-label {
+  margin: var(--ck-spacing-large) 0;
+}
+
+.ck.ck-style-panel .ck-style-panel__style-group:first-child > .ck-label {
+  margin-top: 0;
+}
+
+:root {
+  --ck-style-panel-max-height: 470px;
+}
+
+.ck.ck-style-panel {
+  padding: var(--ck-spacing-large);
+  max-height: var(--ck-style-panel-max-height);
+  overflow-y: auto;
+}
+
+/*# sourceMappingURL=index.css.map */

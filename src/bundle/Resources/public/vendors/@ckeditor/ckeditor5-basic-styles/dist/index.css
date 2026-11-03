@@ -1,0 +1,15 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+.ck.ck-editor__editable .ck-code_selected {
+  background-color: #c7c7c780;
+}
+
+.ck-content code {
+  background-color: #c7c7c74d;
+  border-radius: 2px;
+  padding: .15em;
+}
+
+/*# sourceMappingURL=index.css.map */

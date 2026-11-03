@@ -1,0 +1,137 @@
+{
+	"plugins": [
+		{
+			"name": "Bold",
+			"className": "Bold",
+			"description": "Implements bold formatting support. It is a part of the basic text styles package.",
+			"docs": "features/basic-styles.html",
+			"path": "src/bold.ts",
+			"uiComponents": [
+				{
+					"type": "Button",
+					"name": "bold",
+					"iconName": "IconBold"
+				}
+			],
+			"htmlOutput": [
+				{
+					"elements": "strong"
+				}
+			]
+		},
+		{
+			"name": "Code",
+			"className": "Code",
+			"description": "Implements inline code formatting support. It is a part of the basic text styles package.",
+			"docs": "features/basic-styles.html",
+			"path": "src/code.ts",
+			"uiComponents": [
+				{
+					"type": "Button",
+					"name": "code",
+					"iconName": "IconCode"
+				}
+			],
+			"htmlOutput": [
+				{
+					"elements": "code"
+				}
+			]
+		},
+		{
+			"name": "Italic",
+			"className": "Italic",
+			"description": "Implements italic formatting support. It is a part of the basic text styles package.",
+			"docs": "features/basic-styles.html",
+			"path": "src/italic.ts",
+			"uiComponents": [
+				{
+					"type": "Button",
+					"name": "italic",
+					"iconName": "IconItalic"
+				}
+			],
+			"htmlOutput": [
+				{
+					"elements": "i"
+				}
+			]
+		},
+		{
+			"name": "Strikethrough",
+			"className": "Strikethrough",
+			"description": "Implements strikethrough formatting support. It is a part of the basic text styles package.",
+			"docs": "features/basic-styles.html",
+			"path": "src/strikethrough.ts",
+			"uiComponents": [
+				{
+					"type": "Button",
+					"name": "strikethrough",
+					"iconName": "IconStrikethrough"
+				}
+			],
+			"htmlOutput": [
+				{
+					"elements": "s"
+				}
+			]
+		},
+		{
+			"name": "Subscript",
+			"className": "Subscript",
+			"description": "Implements subscript formatting support. It is a part of the basic text styles package.",
+			"docs": "features/basic-styles.html",
+			"path": "src/subscript.ts",
+			"uiComponents": [
+				{
+					"type": "Button",
+					"name": "subscript",
+					"iconName": "IconSubscript"
+				}
+			],
+			"htmlOutput": [
+				{
+					"elements": "sub"
+				}
+			]
+		},
+		{
+			"name": "Superscript",
+			"className": "Superscript",
+			"description": "Implements superscript formatting support. It is a part of the basic text styles package.",
+			"docs": "features/basic-styles.html",
+			"path": "src/superscript.ts",
+			"uiComponents": [
+				{
+					"type": "Button",
+					"name": "superscript",
+					"iconName": "IconSuperscript"
+				}
+			],
+			"htmlOutput": [
+				{
+					"elements": "sup"
+				}
+			]
+		},
+		{
+			"name": "Underline",
+			"className": "Underline",
+			"description": "Implements underline formatting support. It is a part of the basic text styles package.",
+			"docs": "features/basic-styles.html",
+			"path": "src/underline.ts",
+			"uiComponents": [
+				{
+					"type": "Button",
+					"name": "underline",
+					"iconName": "IconUnderline"
+				}
+			],
+			"htmlOutput": [
+				{
+					"elements": "u"
+				}
+			]
+		}
+	]
+}

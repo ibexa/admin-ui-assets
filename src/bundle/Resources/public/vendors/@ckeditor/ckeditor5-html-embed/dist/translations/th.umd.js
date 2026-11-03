@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'th' ]: translations } = {"th":{"dictionary":{"Insert HTML":"แทรก HTML","HTML snippet":"ส่วนย่อยของ HTML","Paste raw HTML here...":"วาง HTML ดิบที่นี่...","Edit source":"แก้ไขซอร์ส","Save changes":"บันทึกการเปลี่ยนแปลง","No preview available":"ไม่มีภาพตัวอย่างให้ใช้งาน","Empty snippet content":"เนื้อหาส่วนย่อยว่างเปล่า"}}};
+e[ 'th' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'th' ].dictionary = Object.assign( e[ 'th' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'th' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

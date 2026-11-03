@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'ca' ]: translations } = {"ca":{"dictionary":{"Emoji":"Emoji","Show all emoji...":"Mostra tots els emojis...","Find an emoji (min. 2 characters)":"Troba un emoji (mín. 2 caràcters)","No emojis were found matching \"%0\".":"No s'ha trobat cap emoji que coincideixi amb \"%0\".","Keep on typing to see the emoji.":"Continua escrivint per veure l'emoji.","The query must contain at least two characters.":"La consulta ha de contenir com a mínim dos caràcters.","Smileys & Expressions":"Emoticones i expressions","Gestures & People":"Gestos i gent","Animals & Nature":"Animals i naturalesa","Food & Drinks":"Menjar i beguda","Travel & Places":"Viatges i llocs","Activities":"Activitats","Objects":"Objectes","Symbols":"Símbols","Flags":"Banderes","Select skin tone":"Selecciona el to de pell","Default skin tone":"To de pell predeterminat","Light skin tone":"To de pell clar","Medium Light skin tone":"To de pell mitjà-clar","Medium skin tone":"To de pell mitjà","Medium Dark skin tone":"To de pell mitjà-fosc","Dark skin tone":"To de pell fosc","Emoji picker":"Selector d'emojis"}}};
+e[ 'ca' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'ca' ].dictionary = Object.assign( e[ 'ca' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'ca' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

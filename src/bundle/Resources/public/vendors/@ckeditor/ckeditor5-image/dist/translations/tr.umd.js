@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'tr' ]: translations } = {"tr":{"dictionary":{"image widget":"resim aracı","In line":"Aynı hizada","Side image":"Yan Görsel","Full size image":"Tam Boyut Görsel","Left aligned image":"Sola hizalı görsel","Centered image":"Ortalanmış görsel","Right aligned image":"Sağa hizalı görsel","Change image text alternative":"Görsel alternatif yazısını değiştir","Text alternative":"Yazı alternatifi","Enter image caption":"Resim açıklaması gir","Insert image":"Görsel Ekle","Replace image":"Resmi değiştir","Upload from computer":"Bilgisayardan yükle","Replace from computer":"Bilgisayardan değiştir","Upload image from computer":"Bilgisayardan görüntü yükle","Image from computer":"Bilgisayardan görüntü","From computer":"Bilgisayardan","Replace image from computer":"Görüntüyü bilgisayardan değiştir","Upload failed":"Yükleme başarsız","You have no image upload permissions.":"Görüntü yükleme izniniz yok.","Image toolbar":"Resim araç çubuğu","Resize image":"Resmi boyutlandır","Resize image to %0":"Resmi %0 ölçülerine boyutlandır","Resize image to the original size":"Resmi orijinal büyüklüğüne al","Resize image (in %0)":"Resmi yeniden boyutlandır (%0 olarak)","Custom image size":"Özel resim boyutu","Image resize list":"Resim yeniden boyutlandırma listesi","Insert image via URL":"URL ile görüntü ekle","Insert via URL":"URL aracılığıyla ekle","Image via URL":"URL aracılığıyla görsel","Via URL":"URL'den","Update image URL":"Görüntü URL'sini güncelle","Caption for the image":"Resim için başlık","Caption for image: %0":"Resim için başlık: %0","Uploading image":"Resim yükleniyor","Image upload complete":"Resim yüklemesi tamamlandı","Error during image upload":"Resim yükleme sırasında hata oluştu","Image":"Görsel","Image Resize":"Görüntü Yeniden Boyutlandırma","Text Alternative":"Metin Alternatifi"}}};
+e[ 'tr' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'tr' ].dictionary = Object.assign( e[ 'tr' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'tr' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

@@ -1,0 +1,32 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+:root {
+  --ck-color-code-block-label-background: #757575;
+}
+
+.ck.ck-editor__editable pre[data-language]:after {
+  content: attr(data-language);
+  background: var(--ck-color-code-block-label-background);
+  font-size: 10px;
+  font-family: var(--ck-font-face);
+  padding: var(--ck-spacing-tiny) var(--ck-spacing-medium);
+  color: #fff;
+  white-space: nowrap;
+  line-height: 16px;
+  position: absolute;
+  top: -1px;
+  right: 10px;
+}
+
+.ck.ck-code-block-dropdown .ck-dropdown__panel {
+  max-height: 250px;
+  overflow: hidden auto;
+}
+
+.ck.ck-editor__editable pre {
+  position: relative;
+}
+
+/*# sourceMappingURL=index-editor.css.map */

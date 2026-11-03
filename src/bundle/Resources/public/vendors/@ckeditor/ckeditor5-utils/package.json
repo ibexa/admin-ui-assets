@@ -1,0 +1,36 @@
+{
+  "name": "@ckeditor/ckeditor5-utils",
+  "version": "48.5.3",
+  "description": "Miscellaneous utilities used by CKEditor 5.",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "CKSource (http://cksource.com/)",
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "bugs": "https://github.com/ckeditor/ckeditor5/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-utils"
+  },
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-lib"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-ui": "48.5.3",
+    "es-toolkit": "1.52.0"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "types": "./dist/index.d.ts"
+}

@@ -1,0 +1,13 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+
+( e => {
+const { [ 'zh' ]: translations } = {"zh":{"dictionary":{"media widget":"影音小工具","Media URL":"影音網址","Paste the media URL in the input.":"在輸入框貼上影音網址。","Tip: Paste the URL into the content to embed faster.":"提示：在內容貼上網址更快崁入。","The URL must not be empty.":"網址不能空白。","This media URL is not supported.":"不支援此影音網址。","Insert media":"插入影音","Media embed":"媒體嵌入","Media":"媒體","Media toolbar":"影音工具","Open media in new tab":"在新分頁打開媒體","Left aligned media":"靠左對齊媒體","Centered media":"置中媒體","Right aligned media":"靠右對齊媒體","Resize media":"調整媒體大小","Resize media to %0":"將媒體大小調整為 %0","Resize media to the original size":"將媒體調整為原始大小","Resize media (in %0)":"調整媒體大小（以 %0 為單位）","Custom media size":"自訂媒體大小","Media resize list":"媒體大小調整清單","Media Resize":"媒體大小調整"}}};
+e[ 'zh' ] ||= { dictionary: {}, getPluralForm: null };
+e[ 'zh' ].dictionary = Object.assign( e[ 'zh' ].dictionary, translations.dictionary );
+if ( translations.getPluralForm ) {
+e[ 'zh' ].getPluralForm = translations.getPluralForm;
+}
+} )( window.CKEDITOR_TRANSLATIONS ||= {} );

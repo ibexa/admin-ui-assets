@@ -1,0 +1,20 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+.ck-content blockquote {
+  border-left: 5px solid #ccc;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  font-style: italic;
+  overflow: hidden;
+}
+
+.ck-content[dir="rtl"] blockquote {
+  border-left: 0;
+  border-right: 5px solid #ccc;
+}
+
+/*# sourceMappingURL=index.css.map */

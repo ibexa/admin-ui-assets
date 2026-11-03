@@ -1,0 +1,336 @@
+/**
+ * @license Copyright (c) 2003-2026, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-licensing-options
+ */
+.ck-editor__editable .ck-list-bogus-paragraph {
+  display: block;
+}
+
+:root {
+  --ck-list-style-button-size: 44px;
+}
+
+.ck.ck-list-styles-list {
+  row-gap: var(--ck-spacing-medium);
+  column-gap: var(--ck-spacing-medium);
+  padding: var(--ck-spacing-large);
+  grid-template-columns: repeat(3, auto);
+}
+
+.ck.ck-list-styles-list .ck-button {
+  width: var(--ck-list-style-button-size);
+  height: var(--ck-list-style-button-size);
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+}
+
+.ck.ck-list-styles-list .ck-button .ck-icon {
+  width: var(--ck-list-style-button-size);
+  height: var(--ck-list-style-button-size);
+}
+
+.ck.ck-list-styles-list {
+  display: grid;
+}
+
+.ck.ck-list-properties.ck-list-properties_without-styles {
+  padding: var(--ck-spacing-large);
+}
+
+.ck.ck-list-properties.ck-list-properties_without-styles > * {
+  min-width: 14em;
+}
+
+.ck.ck-list-properties.ck-list-properties_without-styles > * + * {
+  margin-top: var(--ck-spacing-standard);
+}
+
+.ck.ck-list-properties.ck-list-properties_with-numbered-properties > .ck-list-styles-list {
+  grid-template-columns: repeat(4, auto);
+}
+
+.ck.ck-list-properties.ck-list-properties_with-numbered-properties > .ck-collapsible {
+  border-top: 1px solid var(--ck-color-base-border);
+}
+
+.ck.ck-list-properties.ck-list-properties_with-numbered-properties > .ck-collapsible > .ck-collapsible__children > * {
+  width: 100%;
+}
+
+.ck.ck-list-properties.ck-list-properties_with-numbered-properties > .ck-collapsible > .ck-collapsible__children > * + * {
+  margin-top: var(--ck-spacing-standard);
+}
+
+.ck.ck-list-properties .ck.ck-numbered-list-properties__start-index .ck-input {
+  width: 100%;
+  min-width: auto;
+}
+
+.ck.ck-list-properties .ck.ck-numbered-list-properties__reversed-order {
+  margin-bottom: calc(-1 * var(--ck-spacing-tiny));
+  background: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.ck.ck-list-properties .ck.ck-numbered-list-properties__reversed-order:active, .ck.ck-list-properties .ck.ck-numbered-list-properties__reversed-order:hover {
+  box-shadow: none;
+  background: none;
+  border-color: #0000;
+}
+
+:root {
+  --ck-content-todo-list-checkmark-size: 16px;
+}
+
+.ck-editor__editable.ck-content .todo-list .todo-list__label > span[contenteditable="false"] > input {
+  -webkit-appearance: none;
+  width: var(--ck-content-todo-list-checkmark-size);
+  height: var(--ck-content-todo-list-checkmark-size);
+  vertical-align: middle;
+  border: 0;
+  margin-left: 0;
+  margin-right: -15px;
+  display: inline-block;
+  position: relative;
+  left: -25px;
+  right: 0;
+}
+
+[dir="rtl"]:is(.ck-editor__editable.ck-content .todo-list .todo-list__label > span[contenteditable="false"] > input) {
+  margin-left: -15px;
+  margin-right: 0;
+  left: 0;
+  right: -25px;
+}
+
+.ck-editor__editable.ck-content .todo-list .todo-list__label > span[contenteditable="false"] > input:before {
+  box-sizing: border-box;
+  content: "";
+  border: 1px solid #333;
+  border-radius: 2px;
+  width: 100%;
+  height: 100%;
+  transition: box-shadow .25s ease-in-out;
+  display: block;
+  position: absolute;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ck-editor__editable.ck-content .todo-list .todo-list__label > span[contenteditable="false"] > input:before {
+    transition: none;
+  }
+}
+
+.ck-editor__editable.ck-content .todo-list .todo-list__label > span[contenteditable="false"] > input:after {
+  box-sizing: content-box;
+  pointer-events: none;
+  content: "";
+  left: calc(var(--ck-content-todo-list-checkmark-size) / 3);
+  top: calc(var(--ck-content-todo-list-checkmark-size) / 5.3);
+  width: calc(var(--ck-content-todo-list-checkmark-size) / 5.3);
+  height: calc(var(--ck-content-todo-list-checkmark-size) / 2.6);
+  border-style: solid;
+  border-color: #0000;
+  border-width: 0 calc(var(--ck-content-todo-list-checkmark-size) / 8) calc(var(--ck-content-todo-list-checkmark-size) / 8) 0;
+  display: block;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.ck-editor__editable.ck-content .todo-list .todo-list__label > span[contenteditable="false"] > input[checked]:before {
+  background: #26ab33;
+  border-color: #26ab33;
+}
+
+.ck-editor__editable.ck-content .todo-list .todo-list__label > span[contenteditable="false"] > input[checked]:after {
+  border-color: #fff;
+}
+
+.ck-editor__editable.ck-content .todo-list .todo-list__label > input, .ck-editor__editable.ck-content .todo-list .todo-list__label > span[contenteditable="false"] > input {
+  cursor: pointer;
+}
+
+:is(.ck-editor__editable.ck-content .todo-list .todo-list__label > input, .ck-editor__editable.ck-content .todo-list .todo-list__label > span[contenteditable="false"] > input):hover:before {
+  box-shadow: 0 0 0 5px #0000001a;
+}
+
+.ck-editor__editable.ck-content .todo-list .todo-list__label.todo-list__label_without-description input[type="checkbox"] {
+  position: absolute;
+}
+
+:root {
+  --ck-content-list-marker-color: var(--ck-content-font-color);
+  --ck-content-list-marker-font-family: var(--ck-content-font-family);
+  --ck-content-list-marker-font-size: var(--ck-content-font-size);
+  --ck-content-todo-list-checkmark-size: 16px;
+}
+
+.ck-content li > p:first-of-type {
+  margin-top: 0;
+}
+
+.ck-content li > p:only-of-type {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.ck-content li.ck-list-marker-bold::marker {
+  font-weight: bold;
+}
+
+.ck-content li.ck-list-marker-italic::marker {
+  font-style: italic;
+}
+
+.ck-content li.ck-list-marker-color::marker {
+  color: var(--ck-content-list-marker-color);
+}
+
+.ck-content li.ck-list-marker-font-family::marker {
+  font-family: var(--ck-content-list-marker-font-family);
+}
+
+.ck-content li.ck-list-marker-font-size::marker {
+  font-size: var(--ck-content-list-marker-font-size);
+}
+
+.ck-content li.ck-list-marker-font-size-tiny::marker {
+  font-size: var(--ck-content-font-size-tiny);
+}
+
+.ck-content li.ck-list-marker-font-size-small::marker {
+  font-size: var(--ck-content-font-size-small);
+}
+
+.ck-content li.ck-list-marker-font-size-big::marker {
+  font-size: var(--ck-content-font-size-big);
+}
+
+.ck-content li.ck-list-marker-font-size-huge::marker {
+  font-size: var(--ck-content-font-size-huge);
+}
+
+.ck-content ol {
+  list-style-type: decimal;
+}
+
+.ck-content ol ol {
+  list-style-type: lower-latin;
+}
+
+.ck-content ol ol ol {
+  list-style-type: lower-roman;
+}
+
+.ck-content ol ol ol ol {
+  list-style-type: upper-latin;
+}
+
+.ck-content ol ol ol ol ol {
+  list-style-type: upper-roman;
+}
+
+.ck-content ul {
+  list-style-type: disc;
+}
+
+.ck-content ul ul {
+  list-style-type: circle;
+}
+
+.ck-content ul ul ul {
+  list-style-type: square;
+}
+
+.ck-content ul ul ul ul {
+  list-style-type: square;
+}
+
+.ck-content .todo-list .todo-list__label > input {
+  -webkit-appearance: none;
+  width: var(--ck-content-todo-list-checkmark-size);
+  height: var(--ck-content-todo-list-checkmark-size);
+  vertical-align: middle;
+  border: 0;
+  margin-left: 0;
+  margin-right: -15px;
+  display: inline-block;
+  position: relative;
+  left: -25px;
+  right: 0;
+}
+
+[dir="rtl"]:is(.ck-content .todo-list .todo-list__label > input) {
+  margin-left: -15px;
+  margin-right: 0;
+  left: 0;
+  right: -25px;
+}
+
+.ck-content .todo-list .todo-list__label > input:before {
+  box-sizing: border-box;
+  content: "";
+  border: 1px solid #333;
+  border-radius: 2px;
+  width: 100%;
+  height: 100%;
+  transition: box-shadow .25s ease-in-out;
+  display: block;
+  position: absolute;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ck-content .todo-list .todo-list__label > input:before {
+    transition: none;
+  }
+}
+
+.ck-content .todo-list .todo-list__label > input:after {
+  box-sizing: content-box;
+  pointer-events: none;
+  content: "";
+  left: calc(var(--ck-content-todo-list-checkmark-size) / 3);
+  top: calc(var(--ck-content-todo-list-checkmark-size) / 5.3);
+  width: calc(var(--ck-content-todo-list-checkmark-size) / 5.3);
+  height: calc(var(--ck-content-todo-list-checkmark-size) / 2.6);
+  border-style: solid;
+  border-color: #0000;
+  border-width: 0 calc(var(--ck-content-todo-list-checkmark-size) / 8) calc(var(--ck-content-todo-list-checkmark-size) / 8) 0;
+  display: block;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.ck-content .todo-list .todo-list__label > input[checked]:before {
+  background: #26ab33;
+  border-color: #26ab33;
+}
+
+.ck-content .todo-list .todo-list__label > input[checked]:after {
+  border-color: #fff;
+}
+
+.ck-content .todo-list {
+  list-style: none;
+}
+
+.ck-content .todo-list li {
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.ck-content .todo-list li .todo-list {
+  margin-top: 5px;
+}
+
+.ck-content .todo-list .todo-list__label .todo-list__label__description {
+  vertical-align: middle;
+}
+
+.ck-content .todo-list .todo-list__label.todo-list__label_without-description input[type="checkbox"] {
+  position: absolute;
+}
+
+/*# sourceMappingURL=index.css.map */
