@@ -166,18 +166,6 @@ $item-gap: calculateRem(4px);
         font-size: $text-font-size-m;
     }
 
-    &--error {
-        #{$self}__placeholder {
-            color: $color-error-90;
-        }
-
-        .ids-expander--has-icon {
-            .ids-icon {
-                fill: $color-error-90;
-            }
-        }
-    }
-
     &--single {
         #{$self} {
             &__item {

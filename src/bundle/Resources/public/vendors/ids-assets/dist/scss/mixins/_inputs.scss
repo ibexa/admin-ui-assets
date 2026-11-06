@@ -33,6 +33,10 @@
         border-color: var(--ids-input-hover-border-color, #{$color-neutral-120});
     }
 
+    &--error:hover:not(&--disabled) {
+        border-color: var(--ids-input-error-hover-border-color, #{$color-error-100});
+    }
+
     &:active {
         border-color: var(--ids-input-active-border-color, #{$color-primary-90});
     }
