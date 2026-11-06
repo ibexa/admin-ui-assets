@@ -18,6 +18,7 @@ export interface ItemsContainerProps<T extends BaseDropdownItem> {
     filterFunction: (item: T, searchTerm: string) => boolean;
     getItemAttributes: (item: T) => React.HTMLAttributes<HTMLElement>;
     getNextFocusableItem: GetNextFocusableItemType;
+    hasSearch: boolean;
     isItemSelected: (item: T) => boolean;
     isOpen: boolean;
     items: BaseDropdownEntry<T>[];
