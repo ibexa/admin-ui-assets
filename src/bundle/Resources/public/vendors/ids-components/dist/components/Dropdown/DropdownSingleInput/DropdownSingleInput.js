@@ -11,7 +11,7 @@ var _focus = require("../utils/focus");
 var _Icon = require("../../Icon");
 var _idsCore = require("@ids-core");
 var _withStateValue = require("../../../hoc/withStateValue");
-var _excluded = ["name", "className", "items", "onChange", "value"];
+var _excluded = ["name", "className", "items", "onChange", "type", "value"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
@@ -36,6 +36,7 @@ var DropdownSingleInput = exports.DropdownSingleInput = function DropdownSingleI
     onChange = _ref$onChange === void 0 ? function () {
       return undefined;
     } : _ref$onChange,
+    type = _ref.type,
     _ref$value = _ref.value,
     value = _ref$value === void 0 ? '' : _ref$value,
     restProps = _objectWithoutProperties(_ref, _excluded);
@@ -55,13 +56,25 @@ var DropdownSingleInput = exports.DropdownSingleInput = function DropdownSingleI
   var isItemSelected = function isItemSelected(item) {
     return item.id === value;
   };
+  var renderSelectedItemIcon = function renderSelectedItemIcon() {
+    if (type === _BaseDropdown.DropdownType.Chip) {
+      return /*#__PURE__*/_react["default"].createElement("span", {
+        "aria-hidden": "true",
+        className: "ids-dropdown__item-check"
+      }, /*#__PURE__*/_react["default"].createElement(_Icon.Icon, {
+        name: "form-check",
+        size: _Icon.IconSize.TinySmall
+      }));
+    }
+    return /*#__PURE__*/_react["default"].createElement(_Icon.Icon, {
+      name: "check-circle",
+      size: _Icon.IconSize.TinySmall
+    });
+  };
   var renderItem = function renderItem(item) {
     return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("span", {
       className: "ids-dropdown__item-label"
-    }, item.label), isItemSelected(item) && /*#__PURE__*/_react["default"].createElement(_Icon.Icon, {
-      name: "check-circle",
-      size: _Icon.IconSize.TinySmall
-    }));
+    }, item.label), isItemSelected(item) && renderSelectedItemIcon());
   };
   var renderOption = function renderOption(item) {
     return /*#__PURE__*/_react["default"].createElement("option", {
@@ -107,7 +120,8 @@ var DropdownSingleInput = exports.DropdownSingleInput = function DropdownSingleI
       var _selectedItem$label;
       return (_selectedItem$label = selectedItem === null || selectedItem === void 0 ? void 0 : selectedItem.label) !== null && _selectedItem$label !== void 0 ? _selectedItem$label : '';
     },
-    renderSource: renderSource
+    renderSource: renderSource,
+    type: type
   }));
 };
 var DropdownSingleInputStateful = exports.DropdownSingleInputStateful = (0, _withStateValue.withStateValue)(DropdownSingleInput);

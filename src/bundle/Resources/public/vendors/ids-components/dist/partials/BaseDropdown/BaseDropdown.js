@@ -1,28 +1,31 @@
 "use strict";
 
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.BaseDropdown = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _Expander = require("../../components/Expander");
+var _Icon = require("../../components/Icon");
 var _ItemsContainer = require("./components/ItemsContainer");
 var _Translator = require("../../context/Translator");
 var _idsCore = require("@ids-core");
 var _useKeyEvent = require("../../hooks/useKeyEvent");
+var _BaseDropdown = require("./BaseDropdown.types");
 var cache;
 function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var r, c, a = Object.defineProperty, n = { __proto__: null, "default": e }; if (Object(e) !== e) return n; if (cache || "function" != typeof WeakMap || (cache = new WeakMap()), cache) { if (cache.has(e)) return cache.get(e); cache.set(e, n); } for (c in e) "default" !== c && {}.hasOwnProperty.call(e, c) && ((r = a && Object.getOwnPropertyDescriptor(e, c)) && (r.get || r.set) ? a(n, c, r) : n[c] = e[c]); return n; }
-function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r; if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) { var i = r.call(t, e || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === e ? String : Number)(t); }
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r; if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) { var i = r.call(t, e || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === e ? String : Number)(t); }
 var MAX_VISIBLE_ITEMS = 10;
+var CHIP_ICON_SIZE_MAPPING = _defineProperty(_defineProperty({}, _BaseDropdown.DropdownSize.Medium, _Icon.IconSize.TinySmall), _BaseDropdown.DropdownSize.Small, _Icon.IconSize.Tiny);
 var BaseDropdown = exports.BaseDropdown = function BaseDropdown(_ref) {
   var children = _ref.children,
     _ref$isEmpty = _ref.isEmpty,
@@ -33,6 +36,14 @@ var BaseDropdown = exports.BaseDropdown = function BaseDropdown(_ref) {
     disabled = _ref$disabled === void 0 ? false : _ref$disabled,
     _ref$error = _ref.error,
     error = _ref$error === void 0 ? false : _ref$error,
+    _ref$icon = _ref.icon,
+    icon = _ref$icon === void 0 ? '' : _ref$icon,
+    _ref$label = _ref.label,
+    label = _ref$label === void 0 ? '' : _ref$label,
+    _ref$size = _ref.size,
+    size = _ref$size === void 0 ? _BaseDropdown.DropdownSize.Medium : _ref$size,
+    _ref$type = _ref.type,
+    type = _ref$type === void 0 ? _BaseDropdown.DropdownType.Input : _ref$type,
     _ref$filterFunction = _ref.filterFunction,
     filterFunction = _ref$filterFunction === void 0 ? function (item, searchTerm) {
       return item.label.toLowerCase().includes(searchTerm.toLowerCase());
@@ -73,15 +84,16 @@ var BaseDropdown = exports.BaseDropdown = function BaseDropdown(_ref) {
     _useState4 = _slicedToArray(_useState3, 2),
     isOpen = _useState4[0],
     setIsOpen = _useState4[1];
-  var dropdownClassName = (0, _idsCore.createCssClassNames)(_defineProperty({
+  var isChip = type === _BaseDropdown.DropdownType.Chip;
+  var dropdownClassName = (0, _idsCore.createCssClassNames)(_defineProperty(_defineProperty(_defineProperty(_defineProperty({
     'ids-dropdown': true,
-    'ids-dropdown--disabled': disabled,
-    'ids-dropdown--error': error
-  }, className, !!className));
+    'ids-dropdown--chip': isChip
+  }, "ids-dropdown--".concat(size), isChip), 'ids-dropdown--disabled', disabled), 'ids-dropdown--error', error), className, !!className));
   var dropdownWidgetClassName = (0, _idsCore.createCssClassNames)({
-    'ids-dropdown__widget ids-input': true,
-    'ids-input--disabled': disabled,
-    'ids-input--error': error
+    'ids-dropdown__widget': true,
+    'ids-input': !isChip,
+    'ids-input--disabled': !isChip && disabled,
+    'ids-input--error': !isChip && error
   });
   var toggleDropdown = function toggleDropdown() {
     setIsOpen(!isOpen);
@@ -103,6 +115,26 @@ var BaseDropdown = exports.BaseDropdown = function BaseDropdown(_ref) {
       className: "ids-dropdown__selection-info-items"
     }, renderSelectedItems());
   };
+  var renderChipIcon = function renderChipIcon() {
+    if (!isChip || !icon) {
+      return null;
+    }
+    return /*#__PURE__*/_react["default"].createElement("span", {
+      "aria-hidden": "true",
+      className: "ids-dropdown__icon"
+    }, /*#__PURE__*/_react["default"].createElement(_Icon.Icon, {
+      name: icon,
+      size: CHIP_ICON_SIZE_MAPPING[size]
+    }));
+  };
+  var renderChipLabel = function renderChipLabel() {
+    if (!isChip || !label) {
+      return null;
+    }
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      className: "ids-dropdown__label"
+    }, label);
+  };
   (0, _useKeyEvent.useKeyDown)(['Enter', ' '], function (event) {
     var activeElement = window.document.activeElement;
     if (activeElement === referenceElement) {
@@ -120,7 +152,7 @@ var BaseDropdown = exports.BaseDropdown = function BaseDropdown(_ref) {
     ref: setReferenceElement,
     role: "button",
     tabIndex: 0
-  }, /*#__PURE__*/_react["default"].createElement("div", {
+  }, renderChipIcon(), renderChipLabel(), /*#__PURE__*/_react["default"].createElement("div", {
     className: "ids-dropdown__selection-info"
   }, renderSelectionInfo()), /*#__PURE__*/_react["default"].createElement("div", {
     className: "ids-dropdown__expander"
@@ -136,6 +168,7 @@ var BaseDropdown = exports.BaseDropdown = function BaseDropdown(_ref) {
     filterFunction: filterFunction,
     getItemAttributes: getItemAttributes,
     getNextFocusableItem: getNextFocusableItem,
+    hasSearch: !isChip,
     isItemSelected: isItemSelected,
     isOpen: isOpen,
     items: items,

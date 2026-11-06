@@ -1,9 +1,30 @@
+@use 'sass:map';
 @use '../functions' as *;
 @use '../variables' as *;
 @use '../mixins/utils' as utils-mixins;
+@use '../mixins/theming';
 
 $item-height: calculateRem(32px);
 $item-gap: calculateRem(4px);
+$chip-item-height: calculateRem(21px);
+$chip-sizes: (
+    'medium': (
+        'height': calculateRem(24px),
+        'padding-x': calculateRem(8px),
+        'gap': calculateRem(6px),
+        'font-size': $text-font-size-s,
+        'line-height': calculateRem(18px),
+        'icon-size': calculateRem(16px),
+    ),
+    'small': (
+        'height': calculateRem(16px),
+        'padding-x': calculateRem(6px),
+        'gap': calculateRem(4px),
+        'font-size': $text-font-size-xs,
+        'line-height': calculateRem(15px),
+        'icon-size': calculateRem(12px),
+    ),
+);
 
 .ids-dropdown {
     $self: &;
@@ -52,10 +73,13 @@ $item-gap: calculateRem(4px);
     }
 
     &__items-container {
+        --ids-mode: light;
+
         max-width: min(calculateRem(560px), var(--ids-dropdown-available-width, 100vw));
         border-radius: $border-radius-medium;
         border: calculateRem(1px) solid $color-neutral-80;
         background-color: $color-neutral-10;
+        color: $color-neutral-240;
         box-shadow: $box-shadow-medium;
         margin: calculateRem(4px) 0;
         box-sizing: border-box;
@@ -260,6 +284,156 @@ $item-gap: calculateRem(4px);
                         min-width: 0;
                         margin: 0 calculateRem(5px);
                     }
+                }
+            }
+        }
+    }
+
+    &--chip {
+        display: inline-flex;
+        max-width: 100%;
+        font-weight: $text-font-weight-normal;
+
+        #{$self}__widget {
+            min-width: 0;
+            box-sizing: border-box;
+            border: calculateRem(1px) solid $color-neutral-80;
+            border-radius: calculateRem(16px);
+            background-color: $color-neutral-10;
+            color: $color-neutral-240;
+            fill: $color-neutral-200;
+            outline: none;
+            transition-property: background-color, border-color, box-shadow;
+            transition-duration: $transition-duration;
+            transition-timing-function: $transition-timing-function;
+
+            &:hover {
+                border-color: $color-neutral-120;
+            }
+
+            &:focus-visible {
+                border-color: $color-primary-80;
+                box-shadow: $box-shadow-focus-primary;
+            }
+
+            @include theming.on-dark {
+                border-color: $color-neutral-210;
+                background-color: $color-neutral-220;
+                color: $color-neutral-10;
+                fill: $color-neutral-10;
+
+                &:hover {
+                    border-color: $color-neutral-170;
+                }
+
+                &:focus-visible {
+                    border-color: $color-neutral-80;
+                    box-shadow: $box-shadow-focus-dark_surface;
+                }
+            }
+        }
+
+        #{$self}__icon {
+            display: flex;
+            flex-shrink: 0;
+        }
+
+        #{$self}__label {
+            color: $color-neutral-200;
+            white-space: nowrap;
+
+            @include theming.on-dark {
+                color: $color-neutral-140;
+            }
+        }
+
+        #{$self}__selection-info {
+            height: auto;
+        }
+
+        #{$self}__selection-info-items {
+            font-size: inherit;
+        }
+
+        #{$self}__expander .ids-expander.ids-btn {
+            padding: 0;
+            border: 0;
+            fill: inherit;
+        }
+
+        #{$self}__items-container {
+            border-radius: $border-radius-large;
+            box-shadow: none;
+        }
+
+        #{$self}__items {
+            padding: calculateRem(4px) calculateRem(8px);
+            max-height: calc(($chip-item-height + $item-gap) * var(--max-visible-items, 10) + calculateRem(4px));
+        }
+
+        #{$self}__item {
+            justify-content: flex-start;
+            gap: calculateRem(4px);
+            min-height: $chip-item-height;
+            padding: 0;
+            border: 0;
+            border-radius: $border-radius-small;
+            color: $color-neutral-200;
+            font-weight: $text-font-weight-semi;
+            line-height: $chip-item-height;
+
+            &--selected {
+                background-color: transparent;
+                color: $color-success-80;
+                fill: $color-success-80;
+            }
+
+            &:not(#{$self}__item--selected) #{$self}__item-check {
+                display: none;
+            }
+        }
+
+        #{$self}__item-check {
+            display: flex;
+            flex-shrink: 0;
+        }
+
+        &#{$self}--disabled {
+            #{$self}__widget {
+                border-color: $color-neutral-80;
+                background-color: $color-neutral-50;
+                color: $color-neutral-110;
+                fill: $color-neutral-110;
+                pointer-events: none;
+
+                @include theming.on-dark {
+                    border-color: $color-neutral-210;
+                    background-color: $color-neutral-220;
+                    color: $color-neutral-140;
+                    fill: $color-neutral-140;
+                }
+            }
+
+            #{$self}__label {
+                color: inherit;
+            }
+        }
+
+        @each $name, $values in $chip-sizes {
+            &#{$self}--#{$name} {
+                #{$self}__widget {
+                    height: map.get($values, 'height');
+                    padding: 0 map.get($values, 'padding-x');
+                    gap: map.get($values, 'gap');
+                    font-size: map.get($values, 'font-size');
+                    line-height: map.get($values, 'line-height');
+                }
+
+                #{$self}__icon,
+                #{$self}__expander .ids-expander.ids-btn,
+                #{$self}__expander .ids-icon {
+                    width: map.get($values, 'icon-size');
+                    height: map.get($values, 'icon-size');
                 }
             }
         }

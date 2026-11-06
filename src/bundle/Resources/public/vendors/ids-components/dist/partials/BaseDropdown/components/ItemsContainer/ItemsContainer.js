@@ -34,6 +34,7 @@ var ItemsContainer = exports.ItemsContainer = function ItemsContainer(_ref) {
     filterFunction = _ref.filterFunction,
     getItemAttributes = _ref.getItemAttributes,
     getNextFocusableItem = _ref.getNextFocusableItem,
+    hasSearch = _ref.hasSearch,
     isItemSelected = _ref.isItemSelected,
     isOpen = _ref.isOpen,
     items = _ref.items,
@@ -78,7 +79,7 @@ var ItemsContainer = exports.ItemsContainer = function ItemsContainer(_ref) {
   var flatItems = (0, _react.useMemo)(function () {
     return (0, _items.flattenDropdownItems)(items);
   }, [items]);
-  var hasSearchInput = flatItems.length > maxVisibleItems;
+  var hasSearchInput = hasSearch && flatItems.length > maxVisibleItems;
   var filteredEntries = (0, _react.useMemo)(function () {
     return (0, _items.filterDropdownEntries)(items, searchTerm, filterFunction);
   }, [items, searchTerm, filterFunction]);
