@@ -239,14 +239,26 @@ $item-gap: calculateRem(4px);
                 }
             }
 
+            &__selection-info-items {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                overflow: visible;
+            }
+
             &__selection-info {
                 .ids-overflow-list {
+                    flex-grow: 1;
                     min-width: 0;
-                    margin: calculateRem(-4px);
+                    margin: calculateRem(-4px) calculateRem(-5px);
+
+                    &__items {
+                        padding-block: calculateRem(4px);
+                    }
 
                     .ids-chip {
                         min-width: 0;
-                        margin: 0 calculateRem(4px) 0;
+                        margin: 0 calculateRem(5px);
                     }
                 }
             }

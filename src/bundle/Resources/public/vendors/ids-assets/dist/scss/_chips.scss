@@ -6,40 +6,52 @@
 .ids-chip {
     @extend .ids-tag;
 
-    background: $color-neutral-20;
-    border: calculateRem(1px) solid $color-neutral-70;
-    height: calculateRem(28px);
+    gap: calculateRem(4px);
+    height: calculateRem(24px);
+    padding: 0 calculateRem(2px) 0 calculateRem(8px);
+    border: calculateRem(1px) solid $color-neutral-80;
+    border-radius: $border-radius-large;
+    background: $color-neutral-10;
+    color: $color-neutral-240;
+    fill: $color-neutral-240;
     outline: none;
     opacity: 1;
     visibility: visible;
     box-sizing: border-box;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: $transition-duration;
+    transition-timing-function: $transition-timing-function;
+
+    &:not(:has(.ids-chip__delete)) {
+        padding-right: calculateRem(8px);
+    }
 
     &:hover {
         border-color: $color-primary-80;
+        background: $color-neutral-30;
     }
 
-    &:focus {
-        outline: none;
+    &:hover:has(.ids-chip__delete:hover) {
+        border-color: $color-neutral-80;
+    }
+
+    &:focus-visible {
         border-color: $color-primary-80;
+        background: $color-neutral-10;
         box-shadow: $box-shadow-focus-primary;
     }
 
-    &:focus:not(:focus-visible) {
-        border-color: $color-neutral-70;
-        box-shadow: none;
-    }
-
     &--disabled {
-        background: $color-neutral-20;
-        border-color: $color-neutral-70;
-        color: $color-neutral-130;
-
+        &,
         &:hover {
-            border-color: $color-neutral-70;
+            border-color: $color-neutral-80;
+            background: $color-neutral-50;
+            color: $color-neutral-110;
+            fill: $color-neutral-110;
         }
 
         .ids-chip__delete {
-            fill: $color-neutral-130;
+            fill: $color-neutral-110;
         }
     }
 
@@ -48,16 +60,16 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        line-height: calculateRem(18px);
     }
 
     &__delete {
         display: flex;
         align-items: center;
+        flex-shrink: 0;
         justify-content: center;
         width: calculateRem(20px);
         height: calculateRem(20px);
-        padding: 0;
-        margin-left: calculateRem(4px);
         border: none;
         background: none;
         cursor: pointer;
@@ -69,32 +81,37 @@
             height: calculateRem(20px);
         }
 
-        &:focus {
-            outline: none;
-            border: calculateRem(1px) solid $color-primary-80;
-            box-shadow: $box-shadow-focus-primary;
+        .ids-icon {
+            width: calculateRem(16px);
+            height: calculateRem(16px);
         }
 
-        &:hover {
+        &:focus-visible {
             border: calculateRem(1px) solid $color-primary-80;
+            background: $color-neutral-10;
+            box-shadow: $box-shadow-focus-primary;
         }
 
         &:disabled {
             cursor: not-allowed;
-            opacity: 0.5;
             background-color: transparent;
             pointer-events: none;
         }
     }
 
     &--error {
-        border-color: $color-error-80;
-        background-color: $color-error-20;
-        color: $color-error-90;
-        fill: $color-error-90;
+        background-color: $color-neutral-10;
+        color: $color-error-80;
+        fill: $color-error-80;
+
+        &,
+        &:hover,
+        &:hover:has(.ids-chip__delete:hover) {
+            border-color: $color-error-80;
+        }
 
         .ids-chip__delete.ids-btn--icon-only {
-            fill: $color-error-90;
+            fill: $color-error-80;
         }
     }
 }
