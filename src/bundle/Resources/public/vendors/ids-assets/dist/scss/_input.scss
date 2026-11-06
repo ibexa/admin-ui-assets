@@ -54,7 +54,12 @@ $input-sizes: (
     }
 
     &--text,
-    &--email {
+    &--password,
+    &--email,
+    &--number,
+    &--tel,
+    &--search,
+    &--url {
         height: calculateRem(40px);
 
         &.ids-input--small {
