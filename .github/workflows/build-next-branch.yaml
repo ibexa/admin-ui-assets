@@ -16,10 +16,10 @@ jobs:
     steps:
       - name: Generate GitHub App token and configure git
         id: bot
-        uses: ibexa/gh-workflows/actions/app-git-identity@main
+        uses: ibexa/gh-workflows/actions/setup-app-git-identity@main
         with:
-          client-id: ${{ secrets.AUTOMATION_CLIENT_ID }}
-          private-key: ${{ secrets.AUTOMATION_CLIENT_SECRET }}
+          gh-client-id: ${{ secrets.AUTOMATION_CLIENT_ID }}
+          gh-client-secret: ${{ secrets.AUTOMATION_CLIENT_SECRET }}
 
       - name: Checkout
         uses: actions/checkout@v7
