@@ -132,3 +132,10 @@
     font-weight: 600;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Bodoni Moda';
+    src: assets('font/BodoniModa-Italic.ttf');
+    font-weight: 400 900;
+    font-style: italic;
+}
