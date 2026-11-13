@@ -31,6 +31,7 @@ $input-sizes: (
         --ids-input-disabled-border-color: #{$color-neutral-210};
         --ids-input-error-bg-color: #{$color-neutral-220};
         --ids-input-error-border-color: #{$color-error-80};
+        --ids-input-error-hover-border-color: #{$color-error-60};
         --ids-input-error-text-color: #{$color-neutral-10};
 
         &::placeholder {
@@ -42,14 +43,6 @@ $input-sizes: (
         &--#{$name} {
             font-size: map.get($properties, 'font-size');
             padding: map.get($properties, 'padding');
-        }
-    }
-
-    &--error {
-        @include theming.on-dark {
-            &:hover:not(.ids-input--disabled) {
-                border-color: $color-error-60;
-            }
         }
     }
 

@@ -8,16 +8,11 @@
 
     @include theming.on-dark {
         --ids-label-default-text-color: #{$color-neutral-10};
-        --ids-label-error-text-color: #{$color-neutral-10};
     }
 
     &--required {
         &::after {
             content: '*';
         }
-    }
-
-    &--error {
-        color: var(--ids-label-error-text-color, #{$color-error-80});
     }
 }
