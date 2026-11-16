@@ -31,15 +31,21 @@ var VIEWPORT_MARGIN = 16;
 var ItemsContainer = exports.ItemsContainer = function ItemsContainer(_ref) {
   var _filteredItems$, _attributes$popper;
   var closeDropdown = _ref.closeDropdown,
+    _ref$containerAttribu = _ref.containerAttributes,
+    containerAttributes = _ref$containerAttribu === void 0 ? {} : _ref$containerAttribu,
     filterFunction = _ref.filterFunction,
     getItemAttributes = _ref.getItemAttributes,
     getNextFocusableItem = _ref.getNextFocusableItem,
+    hasSearch = _ref.hasSearch,
     isItemSelected = _ref.isItemSelected,
     isOpen = _ref.isOpen,
     items = _ref.items,
     maxVisibleItems = _ref.maxVisibleItems,
+    _ref$minWidth = _ref.minWidth,
+    minWidth = _ref$minWidth === void 0 ? 0 : _ref$minWidth,
     onDropdownItemClick = _ref.onDropdownItemClick,
     referenceElement = _ref.referenceElement,
+    renderFooter = _ref.renderFooter,
     renderItem = _ref.renderItem;
   var Translator = (0, _react.useContext)(_Translator.TranslatorContext);
   var groupIdPrefix = (0, _react.useId)();
@@ -78,7 +84,7 @@ var ItemsContainer = exports.ItemsContainer = function ItemsContainer(_ref) {
   var flatItems = (0, _react.useMemo)(function () {
     return (0, _items.flattenDropdownItems)(items);
   }, [items]);
-  var hasSearchInput = flatItems.length > maxVisibleItems;
+  var hasSearchInput = hasSearch !== null && hasSearch !== void 0 ? hasSearch : flatItems.length > maxVisibleItems;
   var filteredEntries = (0, _react.useMemo)(function () {
     return (0, _items.filterDropdownEntries)(items, searchTerm, filterFunction);
   }, [items, searchTerm, filterFunction]);
@@ -94,7 +100,7 @@ var ItemsContainer = exports.ItemsContainer = function ItemsContainer(_ref) {
   };
   var itemsContainerStyles = _objectSpread(_objectSpread({}, styles.popper), {}, {
     '--ids-dropdown-available-width': itemsContainerAvailableWidth ? "".concat(itemsContainerAvailableWidth, "px") : undefined,
-    minWidth: itemsContainerWidth ? "".concat(itemsContainerWidth, "px") : 'auto'
+    minWidth: itemsContainerWidth || minWidth ? "".concat(Math.max(itemsContainerWidth, minWidth), "px") : 'auto'
   });
   var getItemsStyles = function getItemsStyles() {
     var itemsStyles = {
@@ -241,7 +247,7 @@ var ItemsContainer = exports.ItemsContainer = function ItemsContainer(_ref) {
     className: "ids-dropdown__items-container",
     ref: setPopperElement,
     style: itemsContainerStyles
-  }, attributes.popper), /*#__PURE__*/_react["default"].createElement(_Search.Search, {
+  }, containerAttributes, attributes.popper), /*#__PURE__*/_react["default"].createElement(_Search.Search, {
     isVisible: hasSearchInput,
     searchRef: searchRef,
     searchTerm: searchTerm,
@@ -261,5 +267,5 @@ var ItemsContainer = exports.ItemsContainer = function ItemsContainer(_ref) {
   })), hasNoResults && /*#__PURE__*/_react["default"].createElement("div", {
     "aria-live": "polite",
     className: "ids-dropdown__no-results"
-  }, Translator.trans(/*@Desc("No results found")*/'ids.dropdown.search.no_results')));
+  }, Translator.trans(/*@Desc("No results found")*/'ids.dropdown.search.no_results')), renderFooter === null || renderFooter === void 0 ? void 0 : renderFooter());
 };
