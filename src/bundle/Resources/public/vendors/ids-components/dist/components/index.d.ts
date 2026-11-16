@@ -8,6 +8,7 @@ export * from './Checkbox';
 export * from './ChoiceInputLabel';
 export * from './Dropdown';
 export * from './Expander';
+export * from './FilterDropdown';
 export * from './HelperText';
 export * from './Icon';
 export * from './InputText';

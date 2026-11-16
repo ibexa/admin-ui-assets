@@ -37,6 +37,10 @@
         <source>Toggle password visibility</source>
         <target>Toggle password visibility</target>
       </trans-unit>
+      <trans-unit id="ids.filter_dropdown.clear.label" resname="ids.filter_dropdown.clear.label">
+        <source>Clear</source>
+        <target>Clear</target>
+      </trans-unit>
       <trans-unit id="ibexa.chip.delete-btn.label" resname="ibexa.chip.delete-btn.label">
         <source>Delete</source>
         <target>Delete</target>
