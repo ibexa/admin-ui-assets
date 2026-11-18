@@ -1,5 +1,9 @@
 import { BaseComponentAttributes } from '@ids-types/general';
 import { GetNextFocusableItemType } from './components/ItemsContainer/ItemsContainer.types';
+export declare enum DropdownSize {
+    Medium = "medium",
+    Small = "small"
+}
 export interface BaseDropdownItem {
     id: string;
     label: string;
@@ -30,4 +34,5 @@ export interface BaseDropdownProps<T extends BaseDropdownItem> extends BaseCompo
     renderItem?: (item: T) => React.ReactNode;
     renderSelectedItems?: () => React.ReactNode;
     renderSource?: () => React.ReactNode;
+    size?: DropdownSize;
 }
