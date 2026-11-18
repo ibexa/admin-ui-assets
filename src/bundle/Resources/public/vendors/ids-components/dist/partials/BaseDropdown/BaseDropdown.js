@@ -11,6 +11,7 @@ var _ItemsContainer = require("./components/ItemsContainer");
 var _Translator = require("../../context/Translator");
 var _idsCore = require("@ids-core");
 var _useKeyEvent = require("../../hooks/useKeyEvent");
+var _BaseDropdown = require("./BaseDropdown.types");
 var cache;
 function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var r, c, a = Object.defineProperty, n = { __proto__: null, "default": e }; if (Object(e) !== e) return n; if (cache || "function" != typeof WeakMap || (cache = new WeakMap()), cache) { if (cache.has(e)) return cache.get(e); cache.set(e, n); } for (c in e) "default" !== c && {}.hasOwnProperty.call(e, c) && ((r = a && Object.getOwnPropertyDescriptor(e, c)) && (r.get || r.set) ? a(n, c, r) : n[c] = e[c]); return n; }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
@@ -33,6 +34,8 @@ var BaseDropdown = exports.BaseDropdown = function BaseDropdown(_ref) {
     disabled = _ref$disabled === void 0 ? false : _ref$disabled,
     _ref$error = _ref.error,
     error = _ref$error === void 0 ? false : _ref$error,
+    _ref$size = _ref.size,
+    size = _ref$size === void 0 ? _BaseDropdown.DropdownSize.Medium : _ref$size,
     _ref$filterFunction = _ref.filterFunction,
     filterFunction = _ref$filterFunction === void 0 ? function (item, searchTerm) {
       return item.label.toLowerCase().includes(searchTerm.toLowerCase());
@@ -73,11 +76,9 @@ var BaseDropdown = exports.BaseDropdown = function BaseDropdown(_ref) {
     _useState4 = _slicedToArray(_useState3, 2),
     isOpen = _useState4[0],
     setIsOpen = _useState4[1];
-  var dropdownClassName = (0, _idsCore.createCssClassNames)(_defineProperty({
-    'ids-dropdown': true,
-    'ids-dropdown--disabled': disabled,
-    'ids-dropdown--error': error
-  }, className, !!className));
+  var dropdownClassName = (0, _idsCore.createCssClassNames)(_defineProperty(_defineProperty(_defineProperty(_defineProperty({
+    'ids-dropdown': true
+  }, "ids-dropdown--".concat(size), true), 'ids-dropdown--disabled', disabled), 'ids-dropdown--error', error), className, !!className));
   var dropdownWidgetClassName = (0, _idsCore.createCssClassNames)({
     'ids-dropdown__widget ids-input': true,
     'ids-input--disabled': disabled,
