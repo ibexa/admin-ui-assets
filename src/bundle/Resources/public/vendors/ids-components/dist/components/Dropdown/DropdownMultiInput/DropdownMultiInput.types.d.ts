@@ -1,4 +1,4 @@
-import { BaseDropdownEntry, BaseDropdownItem, BaseDropdownItemGroup } from '@ids-partials/BaseDropdown';
+import { BaseDropdownEntry, BaseDropdownItem, BaseDropdownItemGroup, DropdownSize } from '@ids-partials/BaseDropdown';
 import { BaseComponentAttributes } from '@ids-types/general';
 export type DropdownMultiInputItem = BaseDropdownItem;
 export type DropdownMultiInputItemGroup = BaseDropdownItemGroup<DropdownMultiInputItem>;
@@ -14,5 +14,6 @@ export interface DropdownMultiInputProps extends BaseComponentAttributes {
     items?: DropdownMultiInputEntry[];
     onChange?: (value: string[], itemValue: string, action: DropdownMultiInputAction) => void;
     placeholder?: string;
+    size?: DropdownSize;
     value?: string[];
 }

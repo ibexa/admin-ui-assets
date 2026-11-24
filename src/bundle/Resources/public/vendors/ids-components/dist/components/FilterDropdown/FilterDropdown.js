@@ -150,7 +150,7 @@ var FilterDropdown = exports.FilterDropdown = function FilterDropdown(_ref) {
       search = _ref2.search;
     var checkboxes = Array.from(itemsList.querySelectorAll('.ids-dropdown__item .ids-input--checkbox'));
     var clearBtn = (_itemsList$parentElem = itemsList.parentElement) === null || _itemsList$parentElem === void 0 ? void 0 : _itemsList$parentElem.querySelector('.ids-dropdown__footer .ids-btn');
-    return [].concat(_toConsumableArray(search instanceof HTMLElement ? [search] : []), checkboxes, _toConsumableArray(clearBtn ? [clearBtn] : []));
+    return [].concat(_toConsumableArray(search instanceof HTMLElement ? [search] : []), _toConsumableArray(checkboxes), _toConsumableArray(clearBtn ? [clearBtn] : []));
   };
   return /*#__PURE__*/_react["default"].createElement("div", _extends({
     className: rootClassName
