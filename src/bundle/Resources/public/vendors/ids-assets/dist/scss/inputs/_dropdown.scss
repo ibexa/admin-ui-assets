@@ -253,4 +253,19 @@ $item-gap: calculateRem(4px);
             }
         }
     }
+
+    &--small {
+        #{$self}__widget.ids-input {
+            box-sizing: border-box;
+            height: calculateRem(32px);
+            padding: 0 calculateRem(8px);
+            font-size: $text-font-size-m;
+            line-height: $base-line-height;
+        }
+
+        #{$self}__widget.ids-input #{$self}__expander .ids-expander.ids-btn {
+            padding: 0;
+            border: 0;
+        }
+    }
 }
