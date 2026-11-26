@@ -91,6 +91,17 @@ Object.keys(_ChoiceInputLabel).forEach(function (key) {
     }
   });
 });
+var _ChipDropdown = require("./ChipDropdown");
+Object.keys(_ChipDropdown).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _ChipDropdown[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _ChipDropdown[key];
+    }
+  });
+});
 var _Dropdown = require("./Dropdown");
 Object.keys(_Dropdown).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;

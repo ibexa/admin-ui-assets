@@ -56,6 +56,7 @@ $item-gap: calculateRem(4px);
         border-radius: $border-radius-medium;
         border: calculateRem(1px) solid $color-neutral-80;
         background-color: $color-neutral-10;
+        color: $color-neutral-240;
         box-shadow: $box-shadow-medium;
         margin: calculateRem(4px) 0;
         box-sizing: border-box;

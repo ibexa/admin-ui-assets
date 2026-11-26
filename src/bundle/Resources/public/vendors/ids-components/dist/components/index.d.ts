@@ -6,6 +6,7 @@ export * from './Badge';
 export * from './Button';
 export * from './Checkbox';
 export * from './ChoiceInputLabel';
+export * from './ChipDropdown';
 export * from './Dropdown';
 export * from './Expander';
 export * from './FilterDropdown';
