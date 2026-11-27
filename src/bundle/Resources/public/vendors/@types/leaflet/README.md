@@ -8,7 +8,7 @@ This package contains type definitions for leaflet (https://github.com/Leaflet/L
 Files were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/leaflet.
 
 ### Additional Details
- * Last updated: Sat, 01 Aug 2026 03:43:12 GMT
+ * Last updated: Wed, 25 Nov 2026 06:39:42 GMT
  * Dependencies: [@types/geojson](https://npmjs.com/package/@types/geojson)
 
 # Credits

@@ -1,6 +1,6 @@
 {
     "name": "@types/leaflet",
-    "version": "1.9.22",
+    "version": "1.9.23",
     "description": "TypeScript definitions for leaflet",
     "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/leaflet",
     "license": "MIT",
@@ -58,6 +58,6 @@
         "@types/geojson": "*"
     },
     "peerDependencies": {},
-    "typesPublisherContentHash": "10d3d4f7c92592ed5f3e7719cc591c07424ce81e313718ae8ac10010af9a3404",
+    "typesPublisherContentHash": "b7d5b4c6f441362703447e85bc08e479b7f6a2dfad8f22739a2e42c7e36f0448",
     "typeScriptVersion": "5.6"
 }

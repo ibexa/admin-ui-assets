@@ -89,6 +89,10 @@ $alert-line-height: calculateRem(21px);
     &__description {
         color: $color-neutral-200;
         overflow-wrap: break-word;
+
+        a:hover {
+            color: $color-neutral-240;
+        }
     }
 
     &__title,
